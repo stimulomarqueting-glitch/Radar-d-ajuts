@@ -152,7 +152,10 @@ class TestCataleg(unittest.TestCase):
     def test_cataleg_valid(self):
         cat = dades.carrega()
         self.assertGreater(len(cat.convocatories), 50)
-        self.assertIn("doga", cat.perfils)
+        self.assertEqual(list(cat.perfils), ["stimulo"])  # el radar puntua només per a Stimulo
+        tots = dades.carrega(inclou_inactius=True)
+        self.assertIn("doga", tots.perfils)  # client de servei, desactivat
+        self.assertFalse(tots.perfils["doga"].actiu)
 
     def test_ics_valid(self):
         cat = dades.carrega()

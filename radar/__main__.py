@@ -6,6 +6,7 @@
     python -m radar perfil doga                  # millors oportunitats per a un perfil
     python -m radar importa-excel fitxer.xlsx    # normalitza l'Excel i diu què falta al catàleg
     python -m radar vigila                       # consulta BDNS, F&T UE, TED i PLACSP (requereix xarxa)
+    python -m radar avisa [--envia]              # correu de línies noves amb potencial + socis de Holded
 """
 
 from __future__ import annotations
@@ -15,7 +16,10 @@ import datetime as dt
 import sys
 from pathlib import Path
 
-from . import calendari, dades, excel, informe, ics, vigilancia
+import json
+import os
+
+from . import avisos, calendari, dades, excel, holded, informe, ics, socis, vigilancia
 from .puntuacio import puntua
 
 ARREL = dades.ARREL
@@ -61,7 +65,7 @@ def ordre_alertes(args) -> int:
 
 
 def ordre_perfil(args) -> int:
-    cat = dades.carrega()
+    cat = dades.carrega(inclou_inactius=True)
     avui = _avui(args.avui)
     if args.id not in cat.perfils:
         print(f"Perfil desconegut. Opcions: {', '.join(cat.perfils)}", file=sys.stderr)
@@ -110,6 +114,64 @@ def ordre_vigila(args) -> int:
     return 0
 
 
+def _contactes(args) -> tuple[list, str]:
+    """Contactes de Holded: fitxer indicat, API (HOLDED_API_KEY) o exportació privada."""
+    try:
+        if args.contactes:
+            return holded.des_de_fitxer(Path(args.contactes)), ""
+        if os.environ.get("HOLDED_API_KEY"):
+            return holded.des_de_api(), ""
+        local = ARREL / "privat" / "holded_contactes.json"
+        if local.exists():
+            return holded.des_de_fitxer(local), ""
+        return [], "Sense socis suggerits: no hi ha accés als contactes de Holded (configura HOLDED_API_KEY)."
+    except Exception as e:  # sense contactes l'avís continua sent útil
+        return [], f"Sense socis suggerits: error llegint Holded ({type(e).__name__})."
+
+
+def ordre_avisa(args) -> int:
+    cat = dades.carrega()
+    avui = _avui(args.avui)
+    cfg = {**avisos.CONFIG_PER_DEFECTE, **cat.config.get("avisos", {})}
+    fitxer_estat = ARREL / "data" / "estat" / "notificades.json"
+    estat = avisos.llegeix_estat(fitxer_estat)
+    candidates = avisos.candidates(cat, avui, cfg)
+    if args.inicialitza:
+        avisos.desa_estat(fitxer_estat, estat, candidates, avui)
+        print(f"{len(candidates)} línies marcades com a ja avisades (no s'envia res).")
+        return 0
+    noves = candidates if args.tot else avisos.noves(candidates, estat)
+    maxim = args.maxim or cfg["maxim_linies"]
+    principals, resum = noves[:maxim], noves[maxim:]
+    novetats = []
+    if args.novetats and Path(args.novetats).exists():
+        novetats = json.loads(Path(args.novetats).read_text(encoding="utf-8"))
+    if not principals and not novetats:
+        print("Cap línia nova amb potencial: no s'envia cap correu.")
+        return 0
+    contactes, motiu = _contactes(args)
+    llista_socis = socis.construeix(contactes) if contactes else []
+    avisos.afegeix_socis(principals, llista_socis, cat, cfg["maxim_socis"])
+    assumpte, text, cos_html = avisos.compon(principals, avui, cfg, resum, novetats, motiu)
+    copia = avisos.desa_copia(ARREL / "privat" / "avisos", avui, assumpte, text, cos_html)
+    print(f"{assumpte}\nCòpia local (no es desa a git): {copia.relative_to(ARREL)}")
+    if not args.envia:
+        print("Vista prèvia: no s'ha enviat (afegeix --envia).")
+        return 0
+    if not avisos.smtp_configurat():
+        print("No s'ha enviat: falten SMTP_HOST, SMTP_USER, SMTP_PASSWORD o RADAR_DESTINATARI.")
+        return 0
+    try:
+        destinataris = avisos.envia(assumpte, text, cos_html, cfg["remitent_nom"])
+    except Exception as e:
+        print(f"Error enviant el correu: {type(e).__name__}: {e}")
+        return 1
+    if not args.sense_estat:
+        avisos.desa_estat(fitxer_estat, estat, principals + resum, avui)
+    print(f"Enviat a {len(destinataris)} destinatari(s).")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     comu = argparse.ArgumentParser(add_help=False)
     comu.add_argument("--avui", help="data de referència AAAA-MM-DD (per defecte, avui)")
@@ -128,6 +190,15 @@ def main(argv: list[str] | None = None) -> int:
     i.add_argument("fitxer")
     i.set_defaults(f=ordre_importa_excel)
     sub.add_parser("vigila", parents=[comu]).set_defaults(f=ordre_vigila)
+    av = sub.add_parser("avisa", parents=[comu], help="correu amb les línies noves amb potencial")
+    av.add_argument("--envia", action="store_true", help="envia per SMTP (variables SMTP_* i RADAR_DESTINATARI)")
+    av.add_argument("--contactes", help="JSON de contactes de Holded (si no, HOLDED_API_KEY o privat/)")
+    av.add_argument("--novetats", help="JSON de novetats dels vigilants (sortida/novetats.json)")
+    av.add_argument("--tot", action="store_true", help="inclou també les línies ja avisades")
+    av.add_argument("--maxim", type=int, help="línies amb fitxa completa (per defecte, config.avisos.maxim_linies)")
+    av.add_argument("--inicialitza", action="store_true", help="marca les línies actuals com a avisades")
+    av.add_argument("--sense-estat", action="store_true", help="no actualitza data/estat/notificades.json")
+    av.set_defaults(f=ordre_avisa)
     args = ap.parse_args(argv)
     return args.f(args)
 

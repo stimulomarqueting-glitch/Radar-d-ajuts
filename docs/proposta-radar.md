@@ -1,19 +1,24 @@
 # Radar d'ajuts, subvencions i licitacions — Proposta v1
 
-_Stimulo · Inbrooll · 06/10/2026_
+_Stimulo · 06/10/2026 (actualitzada: puntuació només per a Stimulo i avís per correu amb socis de Holded)_
 
 ## 1. Què ha de fer el radar
 
-El radar ha de fer quatre coses:
+El radar és de Stimulo i ha de fer cinc coses:
 
-1. **Detectar** finançament públic i privat on Stimulo o Inbrooll poden entrar: com a beneficiaris,
-   com a socis d'un consorci o com a proveïdors i agents tecnològics externs d'un client.
+1. **Detectar** finançament públic i privat on Stimulo pot entrar: com a beneficiària, com a sòcia
+   d'un consorci o com a proveïdora i agent tecnològic extern d'un client.
 2. **Anticipar.** Moltes convocatòries anuals tanquen abans que se'n sàpiga res. El radar estima la
    propera edició a partir de l'anterior i avisa amb 60 dies de marge.
 3. **Distribuir per zona.** Cada oportunitat indica on ha d'estar establert el beneficiari. Així es pot
    enviar només als clients que hi poden optar.
-4. **Ordenar.** Una puntuació d'encaix per perfil (Stimulo, Inbrooll, cada client) separa el que és
-   prioritari del que és soroll.
+4. **Ordenar.** Una puntuació d'encaix amb Stimulo separa el que és prioritari del que és soroll.
+   Si un client contracta el servei (com podria ser DOGA), se n'activa el perfil i també es puntua per a ell.
+5. **Avisar per correu.** Quan surt una línia nova amb potencial, Stimulo rep un correu amb:
+   - inici, finalització, import i descripció;
+   - per què encaixem;
+   - altres consideracions;
+   - socis potencials trets de Holded, cadascun amb un esborrany de correu a punt per enviar.
 
 ## 2. Punt de partida: el recull 2025
 
@@ -90,14 +95,13 @@ per a les de Barcelona ciutat (`ES-CT-BCN`). Alguns casos reals del catàleg:
 | Exploració tecnològica (ACCIÓ) | `ES-CT` | Tots els clients catalans |
 | Horizon Europe, EIC, Eurostars | `EU` | Tots (en consorci europeu) |
 
-**Sortida:** `sortida/enviaments_per_zona.csv` creua cada client (perfil `tipus: client`) amb les
-oportunitats obertes o que obren en 120 dies on és elegible com a beneficiari amb prioritat A o B.
-És la llista base per a una tramesa de correu per zona.
+**Socis per zona.** En l'avís per correu, el radar només proposa com a sol·licitant un contacte
+de Holded que sigui de la zona elegible. La zona surt de la província de l'adreça de Holded, de la
+classificació privada o, si no n'hi ha, del prefix telefònic. Els socis de consorci (centres de
+recerca, hospitals) es proposen pel tema, sense filtre de zona.
 
-**Passos següents:**
-- Carregar la llista de clients des del CRM, amb el municipi convertit a codi de zona.
-- Fer l'enviament amb l'eina de mailing habitual.
-- Mentre el fitxer de clients tingui dades reals, el repositori ha de ser privat.
+**Clients de servei.** Si un client contracta el radar, s'activa el seu perfil (`actiu: true`).
+Llavors `sortida/enviaments_per_zona.csv` creua aquest client amb les oportunitats de la seva zona.
 
 ## 5. Fonts i cadència de vigilància
 
@@ -105,7 +109,7 @@ Les fonts són a `data/fonts.yaml` (33 fonts). Es vigilen amb tres cadències:
 
 | Cadència | Fonts | Mètode |
 |---|---|---|
-| **Automàtica setmanal** (GitHub Actions, dilluns) | BDNS/InfoSubvenciones (totes les convocatòries d'Espanya, Generalitat inclosa) · Funding & Tenders de la UE (Horizon, EIC, EDF, cascada) · TED · PLACSP | API: es filtren per paraules clau i codis CPV, s'escriu `sortida/novetats.md` i s'obre un *issue* amb les alertes dels 14 dies següents |
+| **Automàtica** (GitHub Actions, dilluns i dijous) | BDNS/InfoSubvenciones (totes les convocatòries d'Espanya, Generalitat inclosa) · Funding & Tenders de la UE (Horizon, EIC, EDF, cascada) · TED · PLACSP | API: es filtren per paraules clau i codis CPV, s'escriu `sortida/novetats.md` i les novetats van al correu de l'avís |
 | **Setmanal manual** | ACCIÓ (llistat i agenda de sessions), CIDO de la Diputació de Barcelona, DOGC, sala de premsa del Govern, CDTI, EIC | Web: el futur scraping detectarà fitxes noves d'ACCIÓ, que de 2027 duran identificador `27xxx` |
 | **Mensual** | AGAUR, calendari de l'Agencia Estatal de Investigación, Ministeri d'Indústria, Defensa (ETID), Agencia Espacial Española, EUDIS, DIANA, EIT, universitats (F2I, UPC), fundacions | Web i butlletins (secpho, CaixaResearch) |
 
@@ -115,7 +119,7 @@ primera execució de GitHub Actions. Si una font falla, la resta continua i l'er
 
 ## 6. Puntuació i alertes
 
-**Encaix (0–100)** per a cada perfil de `data/perfils.yaml`:
+**Encaix (0–100)** amb el perfil actiu de `data/perfils.yaml` (Stimulo):
 
 | Component | Pes | Com es calcula |
 |---|---|---|

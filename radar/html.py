@@ -149,9 +149,9 @@ footer p { margin: 0; max-width: 90ch; }
     <div class="marca">
       <span class="eti" id="generat">Radar d'ajuts · subvencions · licitacions</span>
       <h1>Radar d'ajuts Stimulo</h1>
-      <p class="sub">Oportunitats de finançament públic i privat ordenades per encaix amb cada perfil, amb la zona on ha d'estar el beneficiari i les properes senyals d'alerta.</p>
+      <p class="sub">Oportunitats de finançament públic i privat ordenades per encaix amb Stimulo, amb la zona on ha d'estar el beneficiari i les properes senyals d'alerta.</p>
     </div>
-    <div class="perfils">
+    <div class="perfils" id="bloc-perfils">
       <span>Puntuació per a</span>
       <div class="seg" id="perfils" role="group" aria-label="Perfil"></div>
     </div>
@@ -232,6 +232,7 @@ function elegible(c, zona) { if (!zona) return true; const cami = new Set(avantp
 
 function iniFiltres() {
   const seg = document.getElementById("perfils");
+  document.getElementById("bloc-perfils").hidden = D.perfils.length < 2;
   seg.innerHTML = D.perfils.map(p => `<button type="button" data-id="${esc(p.id)}" aria-pressed="${p.id === perfil}">${esc(p.nom)}</button>`).join("");
   seg.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; perfil = b.dataset.id; desa("perfil", perfil);
     seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.id === perfil)); pinta(); });
@@ -284,7 +285,7 @@ function fila(c) {
   const focusPerfil = new Set(temes ? temes.slice(7).split(", ") : []);
   return `<details class="op">
     <summary>
-      <span class="punts p-${e.prioritat}" title="Encaix per a ${esc(p.nom)}">${e.punts}<small>${e.prioritat}</small></span>
+      <span class="punts p-${e.prioritat}" title="Encaix amb ${esc(p.nom)}">${e.punts}<small>${e.prioritat}</small></span>
       <span class="tit"><strong>${esc(c.nom)}</strong>
         <span class="meta"><span>${esc(c.entitat)}</span><span>${NIVELLS[c.nivell]}</span><span>${e.rol ? esc(NOMS_ROL[e.rol]) : "sense rol"}</span><span>${eur(c.import_max_eur)}${c.intensitat_max ? " · " + c.intensitat_max + "%" : ""}</span></span></span>
       <span class="estat e-${f.estat}${f.estimada && f.estat !== "permanent" ? " e-estimada" : ""}">${esc(f.text)}${quan}</span>
@@ -333,7 +334,7 @@ function pinta() {
   document.getElementById("k-properes").textContent = C.filter(c => c.finestra.estat === "propera" && c.finestra.obertura && dies(c.finestra.obertura) <= 90).length;
   document.getElementById("k-senyals").textContent = D.agenda.filter(s => dies(s.data) <= 14).length;
   document.getElementById("k-a").textContent = C.filter(c => c.encaix[perfil].prioritat === "A" && c.finestra.estat !== "tancada").length;
-  document.getElementById("k-a-txt").textContent = `prioritat A per a ${nom}`;
+  document.getElementById("k-a-txt").textContent = D.perfils.length > 1 ? `prioritat A per a ${nom}` : "prioritat A";
   pintaAgenda();
 }
 

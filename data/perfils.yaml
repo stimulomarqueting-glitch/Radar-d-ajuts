@@ -1,4 +1,8 @@
-# Perfils que el radar puntua: les empreses del grup (Stimulo, Inbrooll) i els clients.
+# Perfils del radar. El radar és de Stimulo: la puntuació, el tauler i els avisos per correu
+# es fan només per als perfils amb `actiu: true` (per defecte, només Stimulo).
+#
+# Servei a clients: si un client (p. ex. DOGA) contracta el radar, n'hi ha prou amb posar el seu
+# perfil a `actiu: true` per puntuar-lo i generar-ne els enviaments per zona.
 #
 # - tipus: agencia | empresa | client
 # - zona: codi de data/zones.yaml (on està establerta l'entitat)
@@ -9,13 +13,14 @@
 # - focus: interessos temàtics ponderats 1-3 (vocabulari a radar/dades.py > FOCUS)
 # - paraules_clau: termes que els vigilants automàtics busquen a BDNS, F&T, TED i PLACSP
 #
-# Per afegir un client nou, copia el bloc de DOGA. El fitxer `sortida/enviaments_per_zona.csv`
-# creua cada client amb les convocatòries obertes o imminents de la seva zona.
+# Els socis potencials per a cada ajut no surten d'aquí sinó dels contactes de Holded
+# (radar/socis.py), que mai es desen al repositori.
 
 perfils:
   stimulo:
     nom: Stimulo
     tipus: agencia
+    actiu: true
     zona: ES-CT-B
     descripcio: >
       Agència de disseny i desenvolupament de producte (Stimulo Design SL, des del 2003). Disseny
@@ -43,6 +48,7 @@ perfils:
       industria: 2
       defensa: 1
       espai: 1
+      talent: 2
       ia: 1
       digital: 1
     paraules_clau:
@@ -73,40 +79,12 @@ perfils:
       - medical device
       - economía circular
 
-  inbrooll:
-    nom: Inbrooll
-    tipus: empresa
-    zona: ES-CT-GI
-    descripcio: >
-      Inbrooll Industries SL (Palol de Revardit, Girona). Enginyeria i fabricació per encàrrec
-      d'electrònica, mecànica, microfluídica i IoT; ISO 13485, 9001 i 14001; laboratori d'assajos.
-      Soci tecnològic estratègic de Stimulo.
-    beneficiari_com: [pime]
-    rols: [beneficiari, soci, proveidor_extern, subcontractat]
-    trl: [4, 9]
-    focus:
-      dispositius_medics: 3
-      salut: 3
-      industria: 3
-      prova_concepte: 2
-      cooperacio: 2
-      mobilitat: 2
-      digital: 2
-      economia_circular: 1
-      deep_tech: 1
-      energia: 1
-    paraules_clau:
-      - fabricación de dispositivos médicos
-      - microfluídica
-      - microfluidics
-      - electrónica embebida
-      - IoT
-      - industrialización
-      - punto de recarga
 
+  # --- Clients de servei (inactius fins que contractin el radar) ------------------------------
   doga:
     nom: DOGA
     tipus: client
+    actiu: false
     zona: ES-CT-B
     contacte: Responsable de nous productes
     descripcio: >
@@ -147,6 +125,15 @@ config:
   pesos: {tematica: 40, rol: 20, zona: 15, trl: 10, impacte: 15}
   # Dies d'antelació de cada senyal d'alerta. Vegeu radar/calendari.py
   alertes: {preparar: 60, vigilar: 14, tancament: 21, tall: 45}
+  # Avís per correu de línies noves amb potencial (python -m radar avisa)
+  avisos:
+    prioritats: [A]          # prioritats que sempre s'avisen
+    prioritat_b_dies: 45     # les B s'avisen si obren o tanquen en aquest nombre de dies
+    antelacio_dies: 60       # una línia propera s'avisa quan falten aquests dies per obrir
+    maxim_linies: 8          # línies amb fitxa completa per correu (la resta, en taula resum)
+    maxim_socis: 3           # socis suggerits per línia
+    remitent_nom: Radar d'ajuts Stimulo
+    signatura: "Xavi\nStimulo · stimulo.com"
   vigilancia:
     paisos_ted: [ESP]
     # CPV de serveis on Stimulo pot licitar (disseny, R+D, enginyeria, assajos)

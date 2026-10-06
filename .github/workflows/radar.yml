@@ -1,9 +1,14 @@
-name: Radar d'ajuts (setmanal)
+name: Radar d'ajuts
 
 on:
   schedule:
-    - cron: "17 6 * * 1"  # dilluns a les 06:17 UTC
-  workflow_dispatch: {}
+    - cron: "17 6 * * 1,4"  # dilluns i dijous a les 06:17 UTC
+  workflow_dispatch:
+    inputs:
+      tot:
+        description: "Envia per correu totes les línies amb potencial (també les ja avisades)"
+        type: boolean
+        default: false
   push:
     paths:
       - "data/**"
@@ -21,6 +26,17 @@ concurrency:
 jobs:
   radar:
     runs-on: ubuntu-latest
+    env:
+      # Correu (vegeu README > Avís per correu). Sense aquests secrets, l'avís no s'envia.
+      SMTP_HOST: ${{ secrets.SMTP_HOST }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      SMTP_FROM: ${{ secrets.SMTP_FROM }}
+      RADAR_DESTINATARI: ${{ secrets.RADAR_DESTINATARI }}
+      # Holded (només lectura) i classificació privada de socis: mai es desen al repositori
+      HOLDED_API_KEY: ${{ secrets.HOLDED_API_KEY }}
+      RADAR_SOCIS_YAML: ${{ secrets.RADAR_SOCIS_YAML }}
     steps:
       - uses: actions/checkout@v4
 
@@ -40,10 +56,15 @@ jobs:
         if: github.event_name != 'push'
         run: python -m radar vigila
 
-      - name: Informe, calendari d'alertes i enviaments per zona
+      - name: Informe, tauler i calendari d'alertes
         run: python -m radar informe
 
-      - name: Desa les sortides
+      - name: Avís per correu de línies noves amb potencial
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: python -m radar avisa --envia --novetats sortida/novetats.json ${{ inputs.tot && '--tot --maxim 12' || '' }}
+
+      - name: Desa les sortides (sense dades de contactes)
         run: |
           git config user.name "radar-ajuts[bot]"
           git config user.email "radar-ajuts@users.noreply.github.com"
@@ -55,8 +76,8 @@ jobs:
             git push
           fi
 
-      - name: Avís setmanal (issue) amb novetats i alertes dels propers 14 dies
-        if: github.event_name != 'push'
+      - name: Avís a GitHub (només si el correu no està configurat)
+        if: github.event_name != 'push' && env.SMTP_HOST == ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -69,7 +90,7 @@ jobs:
             echo
             if [ -f sortida/novetats.md ]; then cat sortida/novetats.md; fi
             echo
-            echo "Tauler: sortida/radar.html · Calendari: sortida/alertes.ics · Enviaments: sortida/enviaments_per_zona.csv"
+            echo "Configura els secrets SMTP_* i RADAR_DESTINATARI per rebre l'avís complet per correu (amb socis de Holded)."
           } > avis.md
           gh label create radar --color 2A3DBA --description "Radar d'ajuts" 2>/dev/null || true
-          gh issue create --title "Radar d'ajuts — setmana del $(date +%d/%m/%Y)" --body-file avis.md --label radar
+          gh issue create --title "Radar d'ajuts — $(date +%d/%m/%Y)" --body-file avis.md --label radar

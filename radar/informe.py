@@ -100,11 +100,12 @@ def markdown(cat: Cataleg, avui: dt.date, dies_agenda: int = 180) -> str:
                  f"{s.convocatoria.entitat} · {s.convocatoria.nom} | {s.text} |")
     l.append("")
 
-    l.append("## 3. Millors oportunitats per perfil")
+    l.append("## 3. Millors oportunitats" + (" per perfil" if len(perfils) > 1 else f" per a {perfils[0].nom}"))
     for p in perfils:
         l.append("")
-        l.append(f"### {p.nom} ({cat.zones.nom(p.zona)})")
-        l.append("")
+        if len(perfils) > 1:
+            l.append(f"### {p.nom} ({cat.zones.nom(p.zona)})")
+            l.append("")
         l.append("| Punts | Convocatòria | Rol | Finestra | Per què |")
         l.append("|---|---|---|---|---|")
         candidats = [r for r in files if r["e"][p.id].prioritat in ("A", "B") and r["f"].estat != "tancada"]
@@ -116,7 +117,7 @@ def markdown(cat: Cataleg, avui: dt.date, dies_agenda: int = 180) -> str:
                      f"{'; '.join(e.motius)} |")
     l.append("")
 
-    l.append("## 4. Per zona geogràfica (per a enviaments a clients)")
+    l.append("## 4. Per zona geogràfica on ha d'estar el beneficiari")
     l.append("")
     per_zona: dict[str, list] = {}
     for r in files:
@@ -250,15 +251,19 @@ def genera_tot(cat: Cataleg, avui: dt.date, dir_sortida: Path) -> list[Path]:
     )
     generats.append(ics_path)
 
-    env = enviaments(cat, avui)
+    # Enviaments per zona: només si algun client de servei té el perfil actiu (p. ex. DOGA)
     csv_path = dir_sortida / "enviaments_per_zona.csv"
-    camps = ["client", "zona_client", "contacte", "convocatoria", "entitat", "zona_elegible", "estat", "obertura",
-             "tancament", "dates_estimades", "punts", "prioritat", "motius", "url"]
-    with open(csv_path, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=camps)
-        w.writeheader()
-        w.writerows(env)
-    generats.append(csv_path)
+    if any(p.tipus == "client" for p in cat.perfils.values()):
+        env = enviaments(cat, avui)
+        camps = ["client", "zona_client", "contacte", "convocatoria", "entitat", "zona_elegible", "estat", "obertura",
+                 "tancament", "dates_estimades", "punts", "prioritat", "motius", "url"]
+        with open(csv_path, "w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=camps)
+            w.writeheader()
+            w.writerows(env)
+        generats.append(csv_path)
+    elif csv_path.exists():
+        csv_path.unlink()
 
     js = dir_sortida / "radar.json"
     js.write_text(json.dumps(dades_json(cat, avui), ensure_ascii=False, indent=1), encoding="utf-8")

@@ -7,20 +7,6 @@
    "tipus": "agencia",
    "zona": "Província de Barcelona",
    "codi_zona": "ES-CT-B"
-  },
-  {
-   "id": "inbrooll",
-   "nom": "Inbrooll",
-   "tipus": "empresa",
-   "zona": "Província de Girona",
-   "codi_zona": "ES-CT-GI"
-  },
-  {
-   "id": "doga",
-   "nom": "DOGA",
-   "tipus": "client",
-   "zona": "Província de Barcelona",
-   "codi_zona": "ES-CT-B"
   }
  ],
  "zones": {
@@ -187,24 +173,6 @@
       "temes: sostenibilitat, prova_concepte, deep_tech, industria, ia, digital",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 78,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, prova_concepte, digital, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 78,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, sostenibilitat, prova_concepte, digital",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -260,24 +228,6 @@
       "temes: sostenibilitat, prova_concepte, mobilitat, industria",
       "rol: proveidor_extern"
      ]
-    },
-    "inbrooll": {
-     "punts": 72,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, prova_concepte, mobilitat",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 87,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: mobilitat, industria, automocio, sostenibilitat, prova_concepte",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -328,24 +278,6 @@
      "motius": [
       "temes: sostenibilitat, industria",
       "rol: subcontractat"
-     ]
-    },
-    "inbrooll": {
-     "punts": 60,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 68,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, sostenibilitat",
-      "rol: beneficiari"
      ]
     }
    }
@@ -406,24 +338,6 @@
      "rol": "beneficiari",
      "motius": [
       "temes: sostenibilitat, prova_concepte, dual, deep_tech, salut, industria, digital, defensa",
-      "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 81,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: salut, industria, prova_concepte, digital, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 81,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, automocio, sostenibilitat, prova_concepte, dual, digital",
       "rol: beneficiari"
      ]
     }
@@ -491,24 +405,6 @@
       "temes: transferencia, sostenibilitat, prova_concepte, dual, deep_tech, salut, fotonica, dispositius_medics, cooperacio, agrotech, ia, espai",
       "rol: soci"
      ]
-    },
-    "inbrooll": {
-     "punts": 81,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: salut, dispositius_medics, prova_concepte, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 74,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: sostenibilitat, prova_concepte, cooperacio, agrotech, dual",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -568,24 +464,6 @@
       "temes: transferencia, deep_tech, industria, cooperacio",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 76,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 73,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, cooperacio",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -643,24 +521,6 @@
       "temes: sostenibilitat, prova_concepte, industria, digital",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 75,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, prova_concepte, digital",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: industria, sostenibilitat, prova_concepte, digital",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -717,24 +577,6 @@
       "temes: sostenibilitat, industria, economia_circular",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 70,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, energia, economia_circular",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: industria, sostenibilitat, economia_circular, energia",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -782,24 +624,6 @@
      "motius": [
       "temes: industria",
       "sense rol possible"
-     ]
-    },
-    "inbrooll": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria",
-      "rol: beneficiari"
      ]
     }
    }
@@ -854,24 +678,6 @@
      "motius": [
       "temes: disseny, cooperacio, ia, digital",
       "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 57,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: digital, cooperacio",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 33,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: cooperacio, digital",
-      "sense rol possible"
      ]
     }
    }
@@ -928,24 +734,6 @@
       "temes: prova_concepte, deep_tech",
       "rol: proveidor_extern"
      ]
-    },
-    "inbrooll": {
-     "punts": 58,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: prova_concepte, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: prova_concepte",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -1000,24 +788,6 @@
      "motius": [
       "temes: transferencia, prova_concepte, deep_tech",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 44,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: prova_concepte, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 26,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: prova_concepte",
-      "sense rol possible"
      ]
     }
    }
@@ -1076,24 +846,6 @@
       "temes: transferencia, prova_concepte, disseny, deep_tech",
       "rol: proveidor_extern"
      ]
-    },
-    "inbrooll": {
-     "punts": 59,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: prova_concepte, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: prova_concepte",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -1145,23 +897,7 @@
      "prioritat": "C",
      "rol": null,
      "motius": [
-      "temes: transferencia",
-      "sense rol possible"
-     ]
-    },
-    "inbrooll": {
-     "punts": 32,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "sense rol possible"
-     ]
-    },
-    "doga": {
-     "punts": 32,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
+      "temes: transferencia, talent",
       "sense rol possible"
      ]
     }
@@ -1213,29 +949,11 @@
    },
    "encaix": {
     "stimulo": {
-     "punts": 76,
-     "prioritat": "B",
+     "punts": 83,
+     "prioritat": "A",
      "rol": "beneficiari",
      "motius": [
-      "temes: transferencia, deep_tech, cooperacio",
-      "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 61,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 57,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio",
+      "temes: transferencia, deep_tech, talent, cooperacio",
       "rol: beneficiari"
      ]
     }
@@ -1288,24 +1006,6 @@
      "motius": [
       "temes: industria",
       "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 60,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: industria",
-      "sense rol possible"
      ]
     }
    }
@@ -1362,25 +1062,6 @@
       "rol: proveidor_extern",
       "fora de zona com a beneficiari (ES-CT-B)"
      ]
-    },
-    "inbrooll": {
-     "punts": 54,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: industria, digital, economia_circular",
-      "rol: proveidor_extern",
-      "fora de zona com a beneficiari (ES-CT-GI)"
-     ]
-    },
-    "doga": {
-     "punts": 39,
-     "prioritat": "NE",
-     "rol": null,
-     "motius": [
-      "temes: industria, sostenibilitat, economia_circular, digital",
-      "fora de zona com a beneficiari (ES-CT-B)"
-     ]
     }
    }
   },
@@ -1431,24 +1112,6 @@
      "rol": "beneficiari",
      "motius": [
       "temes: dual, industria, defensa",
-      "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 55,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 59,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, dual",
       "rol: beneficiari"
      ]
     }
@@ -1502,23 +1165,6 @@
      "motius": [
       "temes: deep_tech, fotonica, espai",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 45,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 26,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "sense rol possible"
      ]
     }
    }
@@ -1576,24 +1222,6 @@
       "temes: transferencia, prova_concepte, deep_tech, salut",
       "rol: proveidor_extern"
      ]
-    },
-    "inbrooll": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: salut, prova_concepte, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 36,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: prova_concepte",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -1646,24 +1274,6 @@
      "motius": [
       "temes: transferencia, prova_concepte, robotica, mobilitat, fotonica",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 51,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: prova_concepte, mobilitat",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: mobilitat, robotica, prova_concepte",
-      "sense rol possible"
      ]
     }
    }
@@ -1719,24 +1329,6 @@
      "motius": [
       "temes: transferencia, prova_concepte, deep_tech, robotica, industria",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 61,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: industria, prova_concepte, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: industria, robotica, prova_concepte",
-      "sense rol possible"
      ]
     }
    }
@@ -1797,24 +1389,6 @@
       "temes: sostenibilitat, deep_tech, industria, cooperacio, digital",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 79,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, digital, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 79,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, sostenibilitat, cooperacio, digital",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -1869,24 +1443,6 @@
      "motius": [
       "temes: sostenibilitat, industria, digital",
       "rol: subcontractat"
-     ]
-    },
-    "inbrooll": {
-     "punts": 78,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, digital",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 82,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, sostenibilitat, digital",
-      "rol: beneficiari"
      ]
     }
    }
@@ -1945,24 +1501,6 @@
       "temes: transferencia, deep_tech, industria, cooperacio",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 71,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 64,
-     "prioritat": "C",
-     "rol": "soci",
-     "motius": [
-      "temes: industria, cooperacio",
-      "rol: soci"
-     ]
     }
    }
   },
@@ -2017,24 +1555,6 @@
      "motius": [
       "temes: prova_concepte, deep_tech",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 61,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: prova_concepte, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: prova_concepte",
-      "sense rol possible"
      ]
     }
    }
@@ -2095,24 +1615,6 @@
      "motius": [
       "temes: sostenibilitat, dual, deep_tech, salut, cooperacio, defensa",
       "rol: soci"
-     ]
-    },
-    "inbrooll": {
-     "punts": 75,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: salut, cooperacio, energia, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 71,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: sostenibilitat, cooperacio, energia, dual",
-      "rol: beneficiari"
      ]
     }
    }
@@ -2180,25 +1682,6 @@
       "rol: subcontractat",
       "fora de zona com a beneficiari (ES-CT-B)"
      ]
-    },
-    "inbrooll": {
-     "punts": 63,
-     "prioritat": "C",
-     "rol": "subcontractat",
-     "motius": [
-      "temes: salut, digital, cooperacio, deep_tech",
-      "rol: subcontractat",
-      "fora de zona com a beneficiari (ES-CT-GI)"
-     ]
-    },
-    "doga": {
-     "punts": 33,
-     "prioritat": "NE",
-     "rol": null,
-     "motius": [
-      "temes: sostenibilitat, cooperacio, digital",
-      "fora de zona com a beneficiari (ES-CT-B)"
-     ]
     }
    }
   },
@@ -2252,24 +1735,6 @@
      "motius": [
       "temes: transferencia, cooperacio",
       "rol: soci"
-     ]
-    },
-    "inbrooll": {
-     "punts": 52,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 52,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio",
-      "rol: beneficiari"
      ]
     }
    }
@@ -2327,24 +1792,6 @@
      "motius": [
       "temes: prova_concepte, dual, deep_tech, robotica, defensa",
       "rol: soci"
-     ]
-    },
-    "inbrooll": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: prova_concepte, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 73,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: robotica, prova_concepte, dual",
-      "rol: beneficiari"
      ]
     }
    }
@@ -2404,24 +1851,6 @@
       "temes: dual, deep_tech, salut, industria, fotonica, cooperacio, digital",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 86,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: salut, industria, digital, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 75,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, cooperacio, dual, digital",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -2474,24 +1903,6 @@
       "temes: digital",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 61,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: digital",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 37,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: digital",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -2533,24 +1944,6 @@
    "encaix": {
     "stimulo": {
      "punts": 23,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: digital",
-      "sense rol possible"
-     ]
-    },
-    "inbrooll": {
-     "punts": 47,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: digital",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 24,
      "prioritat": "C",
      "rol": null,
      "motius": [
@@ -2605,24 +1998,6 @@
       "temes: ia, digital",
       "sense rol possible"
      ]
-    },
-    "inbrooll": {
-     "punts": 51,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: digital",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 27,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: digital",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -2669,28 +2044,11 @@
    },
    "encaix": {
     "stimulo": {
-     "punts": 54,
+     "punts": 61,
      "prioritat": "C",
      "rol": "beneficiari",
      "motius": [
-      "temes: deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 48,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 44,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
+      "temes: deep_tech, talent",
       "rol: beneficiari"
      ]
     }
@@ -2740,29 +2098,11 @@
    },
    "encaix": {
     "stimulo": {
-     "punts": 75,
-     "prioritat": "B",
+     "punts": 81,
+     "prioritat": "A",
      "rol": "beneficiari",
      "motius": [
-      "temes: transferencia, deep_tech, cooperacio",
-      "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 59,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 55,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio",
+      "temes: transferencia, deep_tech, talent, cooperacio",
       "rol: beneficiari"
      ]
     }
@@ -2821,24 +2161,6 @@
       "temes: transferencia, deep_tech, industria, cooperacio",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 63,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, cooperacio",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -2894,24 +2216,6 @@
      "motius": [
       "temes: transferencia, prova_concepte, deep_tech",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 61,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: prova_concepte, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: prova_concepte",
-      "sense rol possible"
      ]
     }
    }
@@ -2971,24 +2275,6 @@
       "temes: dual, deep_tech, robotica, ia, espai, defensa",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 56,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 64,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: robotica, dual",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -3040,24 +2326,6 @@
      "motius": [
       "temes: dual, deep_tech, defensa",
       "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 48,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 28,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: dual",
-      "sense rol possible"
      ]
     }
    }
@@ -3112,23 +2380,6 @@
       "temes: deep_tech, espai",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 48,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 44,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -3178,24 +2429,6 @@
      "motius": [
       "temes: sostenibilitat, industria",
       "sense rol possible"
-     ]
-    },
-    "inbrooll": {
-     "punts": 70,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, energia",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 77,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, sostenibilitat, energia",
-      "rol: beneficiari"
      ]
     }
    }
@@ -3249,24 +2482,6 @@
       "temes: deep_tech, digital",
       "rol: proveidor_extern"
      ]
-    },
-    "inbrooll": {
-     "punts": 55,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: digital, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 28,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: digital",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -3317,23 +2532,6 @@
      "motius": [
       "temes: deep_tech",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 48,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 24,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "sense rol possible"
      ]
     }
    }
@@ -3394,24 +2592,6 @@
       "temes: transferencia, prova_concepte, salut, dispositius_medics",
       "rol: proveidor_extern"
      ]
-    },
-    "inbrooll": {
-     "punts": 80,
-     "prioritat": "A",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: salut, dispositius_medics, prova_concepte",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: prova_concepte",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -3464,24 +2644,6 @@
       "temes: sostenibilitat, deep_tech, salut",
       "rol: proveidor_extern"
      ]
-    },
-    "inbrooll": {
-     "punts": 52,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: salut, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 30,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: sostenibilitat",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -3532,24 +2694,6 @@
      "motius": [
       "temes: transferencia, prova_concepte, deep_tech",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 50,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: prova_concepte, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 32,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: prova_concepte",
-      "sense rol possible"
      ]
     }
    }
@@ -3603,23 +2747,6 @@
       "temes: sostenibilitat, agrotech",
       "rol: proveidor_extern"
      ]
-    },
-    "inbrooll": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 39,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: sostenibilitat, agrotech",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -3672,24 +2799,6 @@
      "motius": [
       "temes: sostenibilitat, deep_tech, mobilitat, economia_circular",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 58,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: mobilitat, energia, economia_circular, deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: mobilitat, sostenibilitat, economia_circular, energia",
-      "sense rol possible"
      ]
     }
    }
@@ -3750,24 +2859,6 @@
       "temes: transferencia, deep_tech, cooperacio",
       "rol: soci"
      ]
-    },
-    "inbrooll": {
-     "punts": 71,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 67,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -3825,24 +2916,6 @@
      "motius": [
       "temes: transferencia, prova_concepte, deep_tech",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 71,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: prova_concepte, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: prova_concepte",
-      "sense rol possible"
      ]
     }
    }
@@ -3903,24 +2976,6 @@
       "temes: sostenibilitat, dual, deep_tech, salut, dispositius_medics",
       "rol: proveidor_extern"
      ]
-    },
-    "inbrooll": {
-     "punts": 85,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: salut, dispositius_medics, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: sostenibilitat, dual",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -3958,7 +3013,7 @@
     "pime"
    ],
    "rols_stimulo": [
-    "proveidor_extern"
+    "assessor"
    ],
    "excel_fila": 25,
    "finestra": {
@@ -3970,29 +3025,11 @@
    },
    "encaix": {
     "stimulo": {
-     "punts": 88,
-     "prioritat": "A",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: sostenibilitat, dual, deep_tech, digital",
-      "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 71,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: digital, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
      "punts": 40,
      "prioritat": "C",
      "rol": null,
      "motius": [
-      "temes: sostenibilitat, dual, digital",
+      "temes: sostenibilitat, dual, deep_tech, digital",
       "sense rol possible"
      ]
     }
@@ -4044,23 +3081,6 @@
      "motius": [
       "temes: deep_tech",
       "rol: proveidor_extern"
-     ]
-    },
-    "inbrooll": {
-     "punts": 45,
-     "prioritat": "C",
-     "rol": "proveidor_extern",
-     "motius": [
-      "temes: deep_tech",
-      "rol: proveidor_extern"
-     ]
-    },
-    "doga": {
-     "punts": 27,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "sense rol possible"
      ]
     }
    }
@@ -4119,24 +3139,6 @@
       "temes: deep_tech, industria, cooperacio",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 77,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 70,
-     "prioritat": "B",
-     "rol": "soci",
-     "motius": [
-      "temes: industria, cooperacio",
-      "rol: soci"
-     ]
     }
    }
   },
@@ -4193,24 +3195,6 @@
      "motius": [
       "temes: sostenibilitat, industria, cooperacio, digital",
       "rol: soci"
-     ]
-    },
-    "inbrooll": {
-     "punts": 70,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, digital, cooperacio",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 74,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, sostenibilitat, cooperacio, digital",
-      "rol: beneficiari"
      ]
     }
    }
@@ -4271,24 +3255,6 @@
       "temes: sostenibilitat, deep_tech, cooperacio",
       "rol: soci"
      ]
-    },
-    "inbrooll": {
-     "punts": 60,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 64,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: sostenibilitat, cooperacio",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -4347,24 +3313,6 @@
       "temes: sostenibilitat, deep_tech, industria, economia_circular, cooperacio",
       "rol: soci"
      ]
-    },
-    "inbrooll": {
-     "punts": 80,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, cooperacio, economia_circular, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 88,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, sostenibilitat, economia_circular, cooperacio",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -4421,24 +3369,6 @@
      "motius": [
       "temes: deep_tech, robotica, industria, cooperacio, ia",
       "rol: soci"
-     ]
-    },
-    "inbrooll": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 70,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, robotica, cooperacio",
-      "rol: beneficiari"
      ]
     }
    }
@@ -4497,24 +3427,6 @@
       "temes: sostenibilitat, mobilitat, cooperacio",
       "rol: soci"
      ]
-    },
-    "inbrooll": {
-     "punts": 63,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: mobilitat, cooperacio, energia",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 81,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: mobilitat, automocio, sostenibilitat, cooperacio, energia",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -4569,24 +3481,6 @@
      "motius": [
       "temes: sostenibilitat, cooperacio, agrotech",
       "rol: soci"
-     ]
-    },
-    "inbrooll": {
-     "punts": 52,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: sostenibilitat, cooperacio, agrotech",
-      "rol: beneficiari"
      ]
     }
    }
@@ -4644,24 +3538,6 @@
      "motius": [
       "temes: deep_tech, salut, dispositius_medics, cooperacio",
       "rol: soci"
-     ]
-    },
-    "inbrooll": {
-     "punts": 88,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: salut, dispositius_medics, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 62,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio",
-      "rol: beneficiari"
      ]
     }
    }
@@ -4722,24 +3598,6 @@
       "temes: salut, robotica, agrotech, ia, digital",
       "rol: soci"
      ]
-    },
-    "inbrooll": {
-     "punts": 68,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: salut, digital",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 68,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: robotica, agrotech, digital",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -4796,24 +3654,6 @@
       "temes: sostenibilitat, economia_circular",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 52,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: energia, economia_circular",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 63,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: sostenibilitat, economia_circular, energia",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -4867,24 +3707,6 @@
      "rol": "soci",
      "motius": [
       "temes: transferencia, sostenibilitat, cooperacio",
-      "rol: soci"
-     ]
-    },
-    "inbrooll": {
-     "punts": 52,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: cooperacio",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 55,
-     "prioritat": "C",
-     "rol": "soci",
-     "motius": [
-      "temes: sostenibilitat, cooperacio",
       "rol: soci"
      ]
     }
@@ -4943,24 +3765,6 @@
       "temes: dual, deep_tech, robotica, defensa",
       "rol: soci"
      ]
-    },
-    "inbrooll": {
-     "punts": 59,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: robotica, dual",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -5018,24 +3822,6 @@
       "temes: prova_concepte, dual, deep_tech, defensa",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 65,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: prova_concepte, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 61,
-     "prioritat": "C",
-     "rol": "soci",
-     "motius": [
-      "temes: prova_concepte, dual",
-      "rol: soci"
-     ]
     }
    }
   },
@@ -5087,23 +3873,6 @@
      "motius": [
       "temes: dual, defensa",
       "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 48,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 31,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: dual",
-      "sense rol possible"
      ]
     }
    }
@@ -5160,24 +3929,6 @@
      "motius": [
       "temes: dual, deep_tech, robotica, espai, defensa",
       "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 54,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: robotica, dual",
-      "sense rol possible"
      ]
     }
    }
@@ -5236,24 +3987,6 @@
       "temes: sostenibilitat, deep_tech, mobilitat, cooperacio",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 63,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: mobilitat, cooperacio, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 70,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: mobilitat, sostenibilitat, cooperacio",
-      "rol: beneficiari"
-     ]
     }
    }
   },
@@ -5310,23 +4043,6 @@
       "temes: salut, dispositius_medics",
       "rol: soci"
      ]
-    },
-    "inbrooll": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: salut, dispositius_medics",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": "soci",
-     "motius": [
-      "rol: soci"
-     ]
     }
    }
   },
@@ -5380,24 +4096,6 @@
      "motius": [
       "temes: sostenibilitat, industria",
       "rol: soci"
-     ]
-    },
-    "inbrooll": {
-     "punts": 59,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, energia",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, sostenibilitat, energia",
-      "rol: beneficiari"
      ]
     }
    }
@@ -5454,24 +4152,6 @@
       "temes: prova_concepte, deep_tech, robotica, industria, dispositius_medics, ia",
       "rol: beneficiari"
      ]
-    },
-    "inbrooll": {
-     "punts": 81,
-     "prioritat": "A",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: industria, dispositius_medics, prova_concepte, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 40,
-     "prioritat": "C",
-     "rol": null,
-     "motius": [
-      "temes: industria, robotica, prova_concepte",
-      "sense rol possible"
-     ]
     }
    }
   },
@@ -5525,24 +4205,6 @@
      "rol": "beneficiari",
      "motius": [
       "temes: prova_concepte, dual, disseny, deep_tech, salut",
-      "rol: beneficiari"
-     ]
-    },
-    "inbrooll": {
-     "punts": 66,
-     "prioritat": "B",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: salut, prova_concepte, deep_tech",
-      "rol: beneficiari"
-     ]
-    },
-    "doga": {
-     "punts": 55,
-     "prioritat": "C",
-     "rol": "beneficiari",
-     "motius": [
-      "temes: prova_concepte, dual",
       "rol: beneficiari"
      ]
     }

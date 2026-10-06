@@ -59,6 +59,8 @@ FOCUS = (
     "cooperacio",
 )
 ROLS = ("beneficiari", "soci", "proveidor_extern", "subcontractat", "assessor")
+# Tipus de soci que el radar busca a Holded per a cada convocatòria (radar/socis.py)
+TIPUS_SOCI = ("recerca", "hospital", "empresa", "startup", "cluster", "inversor")
 
 
 @dataclass
@@ -105,6 +107,9 @@ class Convocatoria:
     fonts_verificacio: list[str] = field(default_factory=list)
     excel_fila: int | None = None
     confianca: str = "mitjana"  # alta (font oficial verificada) / mitjana / baixa (estimació)
+    encaix_stimulo: str = ""  # per què encaixa amb Stimulo (text curat per a l'avís per correu)
+    punts_forts: list[str] = field(default_factory=list)  # altres consideracions positives
+    socis_cal: list[str] = field(default_factory=list)  # tipus de soci a buscar (vegeu radar/socis.py)
 
 
 @dataclass
@@ -121,6 +126,7 @@ class Perfil:
     paraules_clau: list[str] = field(default_factory=list)
     sectors: list[str] = field(default_factory=list)
     contacte: str = ""
+    actiu: bool = True  # els perfils inactius (clients de servei) no es puntuen per defecte
 
 
 @dataclass
@@ -207,6 +213,8 @@ def _convocatoria(d: dict, zones: Zones) -> Convocatoria:
         _comprova(f_, FOCUS, ctx + " (focus)")
     for r in d.get("rols_stimulo", []):
         _comprova(r, ROLS, ctx + " (rols_stimulo)")
+    for s in d.get("socis_cal", []):
+        _comprova(s, TIPUS_SOCI, ctx + " (socis_cal)")
 
     cal = d.get("calendari", {}) or {}
     _comprova(cal.get("recurrencia", "desconeguda"), RECURRENCIES, ctx + " (recurrencia)")
@@ -258,6 +266,9 @@ def _convocatoria(d: dict, zones: Zones) -> Convocatoria:
         fonts_verificacio=list(d.get("fonts_verificacio", [])),
         excel_fila=d.get("excel_fila"),
         confianca=d.get("confianca", "mitjana"),
+        encaix_stimulo=d.get("encaix_stimulo", "").strip(),
+        punts_forts=list(d.get("punts_forts", [])),
+        socis_cal=list(d.get("socis_cal", [])),
     )
 
 
@@ -282,10 +293,12 @@ def _perfil(id_: str, d: dict, zones: Zones) -> Perfil:
         paraules_clau=list(d.get("paraules_clau", [])),
         sectors=list(d.get("sectors", [])),
         contacte=d.get("contacte", ""),
+        actiu=bool(d.get("actiu", True)),
     )
 
 
-def carrega(dir_dades: Path = DIR_DADES) -> Cataleg:
+def carrega(dir_dades: Path = DIR_DADES, inclou_inactius: bool = False) -> Cataleg:
+    """Carrega el catàleg. Per defecte només hi entren els perfils actius (Stimulo)."""
     zones = Zones(_llegeix_yaml(dir_dades / "zones.yaml"))
     brut = _llegeix_yaml(dir_dades / "convocatories.yaml")
     convocatories = [_convocatoria(d, zones) for d in brut["convocatories"]]
@@ -296,6 +309,10 @@ def carrega(dir_dades: Path = DIR_DADES) -> Cataleg:
 
     perfils_brut = _llegeix_yaml(dir_dades / "perfils.yaml")
     perfils = {pid: _perfil(pid, d, zones) for pid, d in perfils_brut["perfils"].items()}
+    if not inclou_inactius:
+        perfils = {pid: p for pid, p in perfils.items() if p.actiu}
+    if not perfils:
+        raise ErrorValidacio("Cal com a mínim un perfil actiu a data/perfils.yaml")
 
     fonts = [Font(**f) for f in _llegeix_yaml(dir_dades / "fonts.yaml")["fonts"]]
     for f in fonts:

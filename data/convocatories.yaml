@@ -65,6 +65,12 @@ convocatories:
     - https://cido.diba.cat/subvencions/21935051/subvencions-per-a-projectes-dinnovacio-empresarial-rdi-any-2026-linia-de-projectes-dexploracio-tecnologica-generalitat-de-catalunya-agencia-per-a-la-competitivitat-de-lempresa-accio
     - https://govern.cat/salapremsa/notes-premsa/858792/govern-activa-primers-17-milions-deuros-dajuts-inclosos-lestrategia-dinnovacio-empresarial-catalunya-2026-2030
   confianca: alta
+  encaix_stimulo: 'Stimulo és l''«agent tecnològic extern» que la convocatòria fa obligatori: prototip, MVP i validació per a un client industrial català.'
+  punts_forts:
+    - 75 % de subvenció i bestreta del 60 %.
+    - Admet grans empreses (règim de minimis).
+    - 'Projecte petit (~40.000 €) i ràpid (10 mesos): bona porta d''entrada amb clients industrials.'
+  socis_cal: [empresa, startup]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -100,6 +106,8 @@ convocatories:
   fonts_verificacio:
     - https://www.canal21ebre.com/ajuts-accio-innovacio-empresarial-2026/
   confianca: mitjana
+  encaix_stimulo: Stimulo com a proveïdor de disseny i prototipatge d'un client de la cadena de valor de l'automoció i la mobilitat.
+  socis_cal: [empresa]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -195,6 +203,12 @@ convocatories:
     - https://www.viaempresa.cat/innovacio/govern-aporta-18-milions-accelerar-innovacio-tecnologica-proves-concepte_2240865_102.html
     - https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/actualitat/detalls/noticia/20260923_pilot
   confianca: mitjana
+  encaix_stimulo: 'Programa pensat per al que fa Stimulo: portar un resultat de recerca a prototip validat o a producció pilot dins d''un consorci amb una universitat o centre i una empresa. Stimulo hi aporta disseny, enginyeria i industrialització com a soci empresarial.'
+  punts_forts:
+    - 'Programa nou (18 M€): primera edició, amb menys competència.'
+    - 'Àmbits prioritaris que coincideixen amb els de Stimulo: fotònica, agrotech, salut i tecnologies mèdiques, IA.'
+    - Consorcis petits (2–5 entitats), fàcils de muntar amb socis habituals.
+  socis_cal: [recerca, hospital, empresa]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -343,6 +357,8 @@ convocatories:
   fonts_verificacio:
     - https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/detalls/noticia/20260512_cupons
   confianca: mitjana
+  encaix_stimulo: 'Stimulo n''és beneficiària directa: el cupó de programes europeus (12.000 €) pot pagar la preparació d''una proposta EIC, Horizon o Eurostars, i el de protecció, el registre de dissenys industrials.'
+  socis_cal: [empresa]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -430,6 +446,8 @@ convocatories:
     o crear una spin-off. És exactament la fase que fa Stimulo: oferir-se als grups abans de febrer.
   url: https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-21429-IdC-Producte
   confianca: mitjana
+  encaix_stimulo: 'Els grups de recerca necessiten prototips i proves de concepte per transferir: Stimulo hi entra com a proveïdor contractat pel grup.'
+  socis_cal: [recerca]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -484,6 +502,7 @@ convocatories:
     finestra estimada pot estar oberta ara mateix. L'IEEC complementa amb doctorats en l'àmbit espai.
   url: https://doctoratsindustrials.gencat.cat
   confianca: baixa
+  socis_cal: [recerca]
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -579,6 +598,7 @@ convocatories:
   descripcio: Incubació de startups que fan servir tecnologia o dades espacials.
   url: https://esabicbarcelona.pmt.es/
   confianca: mitjana
+  socis_cal: [startup]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -613,6 +633,7 @@ convocatories:
   fonts_verificacio:
     - https://www.fbg.ub.edu/actualitat/la-universitat-de-barcelona-destinara-mes-de-100-000-euros-per-impulsar-la-transferencia-de-la-recerca-a-traves-dels-f2i/
   confianca: alta
+  socis_cal: [recerca]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -745,6 +766,8 @@ convocatories:
     encaixa per plantilla de grup. Via natural Stimulo + UPC-CD6 / Eurecat / Leitat.
   url: https://www.cdti.es/ayudas/proyectos-de-id-de-transferencia-tecnologica-cervera-0
   confianca: alta
+  encaix_stimulo: 'Projecte d''R+D propi de Stimulo amb un centre tecnològic o una universitat (UPC, Eurecat...): fins al 90 % del pressupost i un 33 % no reemborsable.'
+  socis_cal: [recerca]
   calendari:
     recurrencia: continua
     estat: permanent
@@ -924,6 +947,8 @@ convocatories:
     - https://www.boe.es/boe/dias/2026/05/29/pdfs/BOE-B-2026-17584.pdf
     - https://www.secpho.org/casos/qleaf-invitro/
   confianca: alta
+  encaix_stimulo: És la via que Stimulo ja domina amb secpho (Q LEAF IN VITRO, SEPTIBELL, DRONSTORE II).
+  socis_cal: [cluster, empresa, recerca]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -1018,6 +1043,8 @@ convocatories:
   descripcio: Incorporar doctors a l'R+D empresarial.
   url: https://www.ciencia.gob.es/Convocatorias/2026/PTQ2026.html
   confianca: alta
+  encaix_stimulo: Incorporar un doctor a Stimulo durant 3 anys per reforçar la línia deep tech, amb el contracte cofinançat.
+  socis_cal: [recerca]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -1042,6 +1069,8 @@ convocatories:
   descripcio: Contracte de doctorand en un projecte d'R+D de l'empresa amb una universitat.
   url: https://www.apte.org/ayudas-para-contratos-de-doctorados-industriales-2026
   confianca: alta
+  encaix_stimulo: Doctorand a Stimulo amb una universitat per a una línia de recerca aplicada (p. ex. ecodisseny o fotònica).
+  socis_cal: [recerca]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -1263,6 +1292,11 @@ convocatories:
   fonts_verificacio:
     - https://caixaresearch.org/en/caixaimpulse-health-innovation-call-results-2026
   confianca: alta
+  encaix_stimulo: La fase 2 (fins a 150.000 €) inclou el disseny del prototip i la validació de l'ús previst. Stimulo, amb Inbrooll (ISO 13485), hi entra com a proveïdor del grup de recerca o de l'hospital sol·licitant.
+  punts_forts:
+    - Referència privada d'alt impacte en salut a Espanya i Portugal.
+    - Fins a 500.000 € a la fase 3.
+  socis_cal: [hospital, recerca]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -1285,6 +1319,7 @@ convocatories:
   descripcio: Premi i acompanyament a startups; visibilitat alta.
   url: https://www.caixabank.com/es/actualidad/noticias/arranca-la-convocatoria-para-participar-en-los-premios-emprendexxi-impulsados-por-caixabank-y-enisa?id=44289
   confianca: alta
+  socis_cal: [startup]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -1445,6 +1480,12 @@ convocatories:
   fonts_verificacio:
     - https://eic.ec.europa.eu/news/european-innovation-council-opens-defence-and-dual-use-technologies-2026-06-17_en
   confianca: alta
+  encaix_stimulo: 'A través de startups deep tech clients: Stimulo com a proveïdor de producte i industrialització dins del pressupost de la proposta.'
+  punts_forts:
+    - Obert a tecnologies d'ús dual des del 17/06/2026.
+    - Subvenció de fins a 2,5 M€ més capital de l'EIC Fund.
+    - Els guanyadors de NEOTEC hi tenen accés directe (Plug-in).
+  socis_cal: [startup, inversor]
   calendari:
     recurrencia: multiples_talls
     estat: oberta
@@ -1461,7 +1502,7 @@ convocatories:
   zones: [EU]
   ambit_geografic: Startups, pimes i small mid-caps de la UE i associats.
   beneficiaris: [startup, pime]
-  rols_stimulo: [proveidor_extern]
+  rols_stimulo: [assessor]
   focus: [deep_tech, dual, sostenibilitat, digital]
   import_max_eur: 30000000
   trl: [8, 9]
@@ -1521,6 +1562,8 @@ convocatories:
   fonts_verificacio:
     - https://myeurekaproject.org/competition/26/overview
   confianca: alta
+  encaix_stimulo: Stimulo, Inbrooll o una pime client pot liderar un projecte d'R+D internacional amb finançament del CDTI per a la part espanyola.
+  socis_cal: [empresa, startup, recerca]
   calendari:
     recurrencia: multiples_talls
     estat: prevista
@@ -1595,6 +1638,8 @@ convocatories:
   fonts_verificacio:
     - https://www.effra.eu/wp-content/uploads/2025/10/MiE-Calls-20262027.pdf
   confianca: mitjana
+  encaix_stimulo: Soci pime de disseny i ecodisseny en un consorci europeu de fabricació avançada i circular (re-fabricació, materials circulars del disseny al mercat).
+  socis_cal: [empresa, recerca]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -1688,6 +1733,8 @@ convocatories:
   descripcio: HLTH-2027-01/02 obren el 29/10/2026; termini o fase 1 el 17/02/2027; fase 2 el 16/09/2027.
   url: https://www.ffg.at/en/europa/heu/cluster1/call2027-twostage
   confianca: mitjana
+  encaix_stimulo: Soci pime de disseny de dispositius (diagnòstic al punt d'atenció) en un consorci europeu amb hospitals i centres de recerca.
+  socis_cal: [hospital, recerca, empresa]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -1822,6 +1869,11 @@ convocatories:
   fonts_verificacio:
     - https://www.zabala.eu/news/edip-defence-industry/
   confianca: baixa
+  encaix_stimulo: Subvencions de fins a 200.000 € per a pimes que porten una tecnologia de defensa de TRL 4 a TRL 7. Stimulo s'hi pot presentar amb un producte d'ús dual propi (drons, robòtica, sensors) o acompanyar una pime client.
+  punts_forts:
+    - 'Unes 170 subvencions: probabilitat d''èxit alta per a un instrument europeu.'
+    - 'Precedent de Stimulo: DRONSTORE II (dron autònom per a l''Exèrcit, via secpho).'
+  socis_cal: [empresa, startup, recerca]
   calendari:
     recurrencia: puntual
     estat: oberta
