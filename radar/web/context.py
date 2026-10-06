@@ -48,7 +48,9 @@ def fitxa_convocatoria(c: Convocatoria, avui: dt.date) -> str:
     return yaml.safe_dump(dades, allow_unicode=True, sort_keys=False, width=110)
 
 
-def construeix(cat: Cataleg, c: Convocatoria, titol: str, idea: str, socis: list[dict], avui: dt.date) -> str:
+def construeix(cat: Cataleg, c: Convocatoria, titol: str, idea: str, socis: list[dict], avui: dt.date,
+               client: str = "") -> str:
+    """`client`: bloc de context del client (screening.context_client) si la sol·licitud no és de Stimulo."""
     perfil = next(iter(cat.perfils.values()))
     stimulo = (f"{perfil.descripcio}\nUbicació: {cat.zones.nom(perfil.zona)}.\n"
                f"Àmbits prioritaris (pes 1–3): {', '.join(f'{k} ({v})' for k, v in perfil.focus.items())}.")
@@ -64,6 +66,7 @@ def construeix(cat: Cataleg, c: Convocatoria, titol: str, idea: str, socis: list
     parts = [
         ROL,
         _bloc("stimulo", stimulo),
+        *([_bloc("client", client)] if client else []),
         _bloc("convocatoria", fitxa_convocatoria(c, avui)),
         _bloc("projecte", f"Títol de treball: {titol}\nIdea inicial: {idea or '(per definir amb tu)'}"),
         _bloc("socis_potencials", socis_txt + "\n(Contactes de Stimulo a Holded; dades privades.)"),

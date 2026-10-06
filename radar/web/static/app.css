@@ -105,3 +105,8 @@ button.plantilla[disabled] { opacity: .55; cursor: not-allowed; }
   nav.app .sortir { margin-left: 0; }
   .taula th, .taula td { padding: 8px; }
 }
+
+/* Clients */
+.cap-client { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; }
+.cap-client h2 { margin: 0; }
+small.bloc-petit { display: block; color: var(--muted); }

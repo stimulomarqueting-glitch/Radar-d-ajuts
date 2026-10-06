@@ -1,0 +1,162 @@
+# Client de servei: screening d'ajuts per divisions (python -m radar screening doga).
+#
+# Les divisions són una HIPÒTESI feta a partir de fonts públiques (web, fires i directoris): s'han
+# de validar amb DOGA abans d'enviar-li l'informe. Cada divisió és un perfil del radar: hereta del
+# client la zona, la mida i els rols, i hi afegeix els temes (focus 1-3), el TRL i les idees de projecte.
+#
+# Dades confidencials del client (pressupostos, full de ruta, ajuts rebuts): a privat/clients/doga.yaml,
+# que té prioritat sobre aquest fitxer i no es puja mai al repositori.
+
+id: doga
+nom: DOGA
+rao_social: DOGA SA
+web: https://www.doga.es
+zona: ES-CT-B
+ubicacio: Abrera (Baix Llobregat)
+mida: gran_empresa
+beneficiari_com: [gran_empresa]
+rols: [beneficiari, soci]
+contacte: Responsable de nous productes
+descripcio: >
+  Fabricant fundat el 1958 amb seu a Abrera. Disseny i fabricació de motors i motorreductors DC
+  (escombretes i brushless, fins a 72 V), sistemes de neteja de parabrisa, elevavidres i altres
+  components per a vehicle industrial, bus, maquinària agrícola i d'obra, ferrocarril i nàutica.
+  Presència a Europa, Amèrica, Àsia i Àfrica.
+estat_dades: Hipòtesi a partir de fonts públiques. Validar amb DOGA abans de lliurar l'informe.
+fonts:
+  - https://suppliers.catalonia.com/detail/doga-sa/570
+  - https://digital.agritechnica.com/newfront/exhibitor/doga-sa
+  - https://exhibitorsearch.messefrankfurt.com/images/original/mics/10000007202401/0051397476/1652874737545_DOGA-20PARTS-20AFTERMARKET-20COMPANY-20PROFILE.pdf
+  - https://datasheets.globalspec.com/ds/17/DOGASA/C9719BF3-9345-4424-8FA8-5AAD820B0FAD
+consideracions:
+  - "Gran empresa: queden fora les línies només per a pimes (Cupons, EIC Accelerator, Eurostars com a líder…). Les intensitats d'ajut són les de gran empresa: més baixes que el màxim de cada fitxa."
+  - "Cooperar amb pimes i centres (Stimulo, grups de recerca) puja la intensitat en molts programes d'R+D i és obligatori en d'altres (PILOT, Exploració tecnològica)."
+  - "Règim de minimis: cal saber quants ajuts ha rebut DOGA en els darrers 3 exercicis (màxim 300.000 €)."
+  - "Té experiència justificant ajuts públics: PERTE VEC II (2023)."
+preguntes:
+  - Les divisions i els responsables són els d'aquest informe? Quina es vol prioritzar?
+  - "Full de ruta de producte 2027 de cada divisió: quins 2 o 3 desenvolupaments s'han de validar abans d'invertir?"
+  - Pressupost d'R+D 2027 i capacitat interna per justificar (hores, auditoria).
+  - Ajuts de minimis rebuts des de 2024.
+  - Plantilla i facturació consolidades del grup (midcap o gran empresa).
+  - Interès per consorcis europeus (Horizon Europe, EUREKA) i per mercats d'ús dual.
+
+divisions:
+  - id: motors
+    nom: Motors i motorreductors
+    descripcio: >
+      Motors i motorreductors DC d'escombretes (PMDC) i brushless (BLDC) fins a 72 V, a mida del
+      client. Plataforma brushless BRL100 (24 V, CANopen).
+    mercats: [vehicle industrial, maquinària agrícola, robòtica mòbil, mobilitat elèctrica lleugera, ferrocarril, automatització]
+    trl: [4, 8]
+    focus:
+      industria: 3
+      robotica: 3
+      mobilitat: 3
+      agrotech: 2
+      automocio: 2
+      prova_concepte: 2
+      energia: 2
+      sostenibilitat: 2
+      cooperacio: 2
+      dual: 2
+      digital: 1
+      deep_tech: 1
+    paraules_clau: [motor eléctrico, motorreductor, brushless, BLDC, actuador, electric drive]
+    idees:
+      - titol: Plataforma brushless modular per a robots agrícoles i de camp
+        focus: [robotica, agrotech, prova_concepte, industria]
+        stimulo: Arquitectura de producte, segellat IP, DFMA i integració al robot.
+      - titol: Motor amb electrònica integrada i diagnosi CANopen per a manteniment predictiu
+        focus: [digital, ia, mobilitat, industria]
+        stimulo: Envolupant, gestió tèrmica i interfície de diagnosi.
+      - titol: Motors sense terres rares (ferrita o reluctància)
+        focus: [sostenibilitat, economia_circular, deep_tech, energia]
+        stimulo: Comparativa de conceptes, carcasses lleugeres i banc d'assaig.
+      - titol: Actuadors robustos per a vehicles terrestres no tripulats i drons
+        focus: [dual, defensa, robotica]
+        stimulo: Disseny robust i experiència en projectes de drons (DRONSTORE II).
+
+  - id: neteja
+    nom: Sistemes de neteja i visibilitat
+    descripcio: >
+      Sistemes d'eixugaparabrises i rentadors, dipòsits i productes de plàstic bufat per a bus,
+      camió, maquinària d'obra i agrícola, tren i nàutica.
+    mercats: [bus, camió, maquinària d'obra i agrícola, ferrocarril, nàutica]
+    trl: [4, 9]
+    focus:
+      automocio: 3
+      mobilitat: 3
+      industria: 2
+      sostenibilitat: 2
+      economia_circular: 2
+      prova_concepte: 2
+      cooperacio: 2
+      fotonica: 1
+      ia: 1
+      aigua: 1
+    paraules_clau: [limpiaparabrisas, wiper system, sistema de limpieza, sensores ADAS, limpieza de sensores]
+    idees:
+      - titol: Neteja de càmeres i sensors LiDAR per a maquinària autònoma, ADAS i tren
+        focus: [mobilitat, automocio, fotonica, prova_concepte]
+        stimulo: Concepte, prototip i assajos; xarxa fotònica de secpho.
+      - titol: Eixugaparabrises elèctric lleuger i de baix consum per a bus i camió elèctric
+        focus: [mobilitat, energia, sostenibilitat, automocio]
+        stimulo: Redisseny, aligeuriment i DFMA.
+      - titol: Rentadors amb menys aigua i dipòsits de plàstic reciclat
+        focus: [economia_circular, sostenibilitat, aigua]
+        stimulo: Ecodisseny, anàlisi de cicle de vida i materials.
+
+  - id: components
+    nom: Components de vehicle
+    descripcio: >
+      Elevavidres, retrovisors, peces estampades i forjades per a transmissions i altres
+      components per a fabricants de vehicles.
+    mercats: [vehicle industrial, bus, microcotxes i vehicle elèctric, maquinària]
+    trl: [6, 9]
+    focus:
+      automocio: 3
+      industria: 3
+      economia_circular: 2
+      sostenibilitat: 2
+      mobilitat: 2
+      digital: 1
+      energia: 1
+      cooperacio: 1
+    paraules_clau: [elevalunas, retrovisor, estampación, componentes de automoción]
+    idees:
+      - titol: Peces estampades i bufades més lleugeres i amb material reciclat
+        focus: [economia_circular, sostenibilitat, industria]
+        stimulo: Ecodisseny i redisseny per a menys material i menys passos de fabricació.
+      - titol: Digitalització i automatització de les línies d'estampació
+        focus: [industria, digital, ia]
+        stimulo: Disseny d'utillatges i d'interfícies d'operari.
+      - titol: Elevavidres i mecanismes per a vehicle elèctric lleuger
+        focus: [mobilitat, automocio, energia]
+        stimulo: Disseny del mecanisme, prototip i validació.
+
+  - id: postvenda
+    nom: Recanvis i postvenda
+    descripcio: >
+      Recanvis i postvenda (DOGA Parts): catàleg de recanvis per a vehicle industrial, bus i
+      maquinària, amb distribució internacional.
+    mercats: [tallers i distribuïdors, flotes, exportació]
+    trl: [6, 9]
+    focus:
+      internacionalitzacio: 3
+      digital: 3
+      economia_circular: 2
+      sostenibilitat: 2
+      automocio: 2
+      ia: 1
+    paraules_clau: [recambios, aftermarket, posventa, remanufactura]
+    idees:
+      - titol: Catàleg digital i configurador de recanvis
+        focus: [digital, ia, internacionalitzacio]
+        stimulo: Disseny de servei i experiència d'usuari.
+      - titol: Programa de remanufactura de motors i eixugaparabrises
+        focus: [economia_circular, sostenibilitat]
+        stimulo: Disseny per al desmuntatge i la reparació.
+      - titol: Entrada a nous mercats de postvenda
+        focus: [internacionalitzacio]
+        stimulo: Adaptació de producte i material comercial.

@@ -3,7 +3,7 @@
 {% block contingut %}
 <header class="cap">
   <div class="marca">
-    <span class="eti">Sol·licitud · {{ e.estat }}</span>
+    <span class="eti">Sol·licitud · {{ e.estat }}{% if e.client %} · per a {{ e.client.nom }}{% if e.client.divisio_nom %} ({{ e.client.divisio_nom }}){% endif %}{% endif %}</span>
     <h1>{{ e.titol }}</h1>
     <p class="sub">{% if c %}{{ c.nom }} · {{ c.entitat }}{% else %}{{ e.convocatoria_id }} (ja no és al catàleg){% endif %}
       {% if f %} · <span class="estat e-{{ f.estat }}{% if f.estimada %} e-estimada{% endif %}">{{ f.descripcio }}</span>{% endif %}</p>

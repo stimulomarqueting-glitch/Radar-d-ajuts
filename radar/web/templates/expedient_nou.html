@@ -3,13 +3,18 @@
 {% block contingut %}
 <header class="cap">
   <div class="marca">
-    <span class="eti">Nova sol·licitud</span>
+    <span class="eti">Nova sol·licitud{% if cl %} · per a {{ cl.nom }}{% if dv %} · {{ dv.nom }}{% endif %}{% endif %}</span>
     <h1>{{ c.nom if c else "Tria la convocatòria" }}</h1>
     {% if c %}<p class="sub">{{ c.entitat }} · {{ c.ambit_geografic or zones.etiqueta(c.zones) }}</p>{% endif %}
   </div>
 </header>
 
 <form method="post" action="/expedients" class="formulari ample">
+  {% if cl %}
+  <input type="hidden" name="client" value="{{ cl.id }}">
+  <input type="hidden" name="divisio" value="{{ dv.id if dv else '' }}">
+  <p class="avis-ok">Sol·licitud per al client <strong>{{ cl.nom }}</strong>{% if dv %} (divisió {{ dv.nom }}){% endif %}. L'assistent redactarà en nom del client, amb Stimulo com a proveïdor tecnològic o soci.</p>
+  {% endif %}
   <div class="camp"><label for="convocatoria">Convocatòria</label>
     <select id="convocatoria" name="convocatoria" required data-navega="convocatoria">
       <option value="">— Tria'n una —</option>
@@ -19,18 +24,23 @@
   {% if c %}
   <section class="targeta">
     <dl class="fitxa">
+      {% if encaix_client %}
+      <div><dt>Encaix amb {{ dv.nom }}</dt><dd>{{ encaix_client.punts }} punts · prioritat {{ encaix_client.prioritat }}</dd></div>
+      {% else %}
       <div><dt>Encaix</dt><dd>{{ linia.e.punts }} punts · prioritat {{ linia.e.prioritat }}</dd></div>
+      {% endif %}
       <div><dt>Finestra</dt><dd>{{ linia.f.descripcio }}</dd></div>
       <div><dt>Ajut</dt><dd>{{ c.ajuda_text or (c.import_max_eur|eur) or "—" }}</dd></div>
-      <div><dt>Rol de Stimulo</dt><dd>{{ linia.e.rol }}</dd></div>
+      {% if not cl %}<div><dt>Rol de Stimulo</dt><dd>{{ linia.e.rol }}</dd></div>{% endif %}
     </dl>
     {% if c.encaix_stimulo %}<p>{{ c.encaix_stimulo }}</p>{% endif %}
   </section>
 
   <div class="camp"><label for="titol">Títol de treball del projecte</label>
-    <input id="titol" name="titol" maxlength="200" placeholder="{{ c.nom }}"></div>
+    <input id="titol" name="titol" maxlength="200" placeholder="{{ (cl.nom ~ ' · ' ~ c.nom) if cl else c.nom }}"></div>
   <div class="camp"><label for="idea">Idea inicial (opcional: la podeu definir amb l'assistent)</label>
-    <textarea id="idea" name="idea" rows="6" placeholder="Producte o tecnologia, client o soci, repte, què volem desenvolupar, TRL actual…"></textarea></div>
+    <textarea id="idea" name="idea" rows="6" placeholder="Producte o tecnologia, client o soci, repte, què volem desenvolupar, TRL actual…">{% for i in idees %}{{ i.titol }}{% if i.stimulo %} (Stimulo: {{ i.stimulo }}){% endif %}
+{% endfor %}</textarea></div>
 
   <fieldset class="socis-tria">
     <legend>Socis potencials (contactes de Holded)</legend>

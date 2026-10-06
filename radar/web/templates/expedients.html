@@ -12,11 +12,12 @@
 {% if files %}
 <div class="taula-embolcall">
 <table class="taula">
-  <thead><tr><th>Sol·licitud</th><th>Convocatòria</th><th>Termini</th><th>Documents</th><th>Estat</th><th>Actualitzat</th></tr></thead>
+  <thead><tr><th>Sol·licitud</th><th>Per a</th><th>Convocatòria</th><th>Termini</th><th>Documents</th><th>Estat</th><th>Actualitzat</th></tr></thead>
   <tbody>
   {% for r in files %}
   <tr>
     <td><a href="/expedients/{{ r.e.id }}"><strong>{{ r.e.titol }}</strong></a></td>
+    <td>{% if r.e.client %}{{ r.e.client.nom }}{% if r.e.client.divisio_nom %}<small class="bloc-petit">{{ r.e.client.divisio_nom }}</small>{% endif %}{% else %}Stimulo{% endif %}</td>
     <td>{{ r.c.nom if r.c else r.e.convocatoria_id }}</td>
     <td>
       {% if r.f %}

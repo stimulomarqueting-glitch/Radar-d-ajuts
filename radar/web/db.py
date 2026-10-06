@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS expedients (
     idea TEXT NOT NULL DEFAULT '',
     socis TEXT NOT NULL DEFAULT '[]',          -- JSON: socis triats
     estat TEXT NOT NULL DEFAULT 'en preparació', -- en preparació / presentat / concedit / denegat / arxivat
+    client TEXT NOT NULL DEFAULT '',           -- JSON {id, nom, divisio, divisio_nom} si és per a un client
     context_sistema TEXT NOT NULL,             -- instantània del context (fixa durant tota la conversa)
     creat TEXT NOT NULL,
     actualitzat TEXT NOT NULL
@@ -70,6 +71,9 @@ class BaseDades:
         self._lock = threading.Lock()
         with self.connexio() as c:
             c.executescript(ESQUEMA)
+            columnes = {f["name"] for f in c.execute("PRAGMA table_info(expedients)")}
+            if "client" not in columnes:  # bases creades abans dels clients de servei
+                c.execute("ALTER TABLE expedients ADD COLUMN client TEXT NOT NULL DEFAULT ''")
 
     @contextmanager
     def connexio(self):
@@ -84,32 +88,32 @@ class BaseDades:
                 c.close()
 
     # --- expedients
-    def crea_expedient(self, convocatoria_id: str, titol: str, idea: str, socis: list[dict], context: str) -> int:
+    def crea_expedient(self, convocatoria_id: str, titol: str, idea: str, socis: list[dict], context: str,
+                       client: dict | None = None) -> int:
         with self.connexio() as c:
             cur = c.execute(
-                "INSERT INTO expedients (convocatoria_id, titol, idea, socis, context_sistema, creat, actualitzat) "
-                "VALUES (?, ?, ?, ?, ?, ?, ?)",
-                (convocatoria_id, titol, idea, json.dumps(socis, ensure_ascii=False), context, ara(), ara()))
+                "INSERT INTO expedients (convocatoria_id, titol, idea, socis, context_sistema, client, creat, actualitzat) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                (convocatoria_id, titol, idea, json.dumps(socis, ensure_ascii=False), context,
+                 json.dumps(client, ensure_ascii=False) if client else "", ara(), ara()))
             return cur.lastrowid
+
+    @staticmethod
+    def _fila(fila) -> dict:
+        d = dict(fila)
+        d["socis"] = json.loads(d["socis"])
+        d["client"] = json.loads(d["client"]) if d.get("client") else None
+        return d
 
     def expedient(self, id_: int) -> dict | None:
         with self.connexio() as c:
             fila = c.execute("SELECT * FROM expedients WHERE id = ?", (id_,)).fetchone()
-        if not fila:
-            return None
-        d = dict(fila)
-        d["socis"] = json.loads(d["socis"])
-        return d
+        return self._fila(fila) if fila else None
 
     def expedients(self) -> list[dict]:
         with self.connexio() as c:
             files = c.execute("SELECT * FROM expedients ORDER BY actualitzat DESC").fetchall()
-        sortida = []
-        for f in files:
-            d = dict(f)
-            d["socis"] = json.loads(d["socis"])
-            sortida.append(d)
-        return sortida
+        return [self._fila(f) for f in files]
 
     def actualitza_expedient(self, id_: int, **camps) -> None:
         permesos = {"titol", "idea", "estat"}

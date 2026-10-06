@@ -13,6 +13,7 @@ amb un assistent de Claude que ja té tot el context de Stimulo, de l'ajut i del
 - **Briefing DOGA:** [docs/briefing-doga.md](docs/briefing-doga.md)
 - **Manual de gestió d'ajuts:** [docs/gestio-ajuts.md](docs/gestio-ajuts.md)
 - **Instal·lació al VPS:** [docs/desplegament.md](docs/desplegament.md)
+- **Servei de screening per a clients:** [docs/servei-screening.md](docs/servei-screening.md)
 - **Informe actual:** [sortida/radar.md](sortida/radar.md) · tauler: `sortida/radar.html` · calendari: `sortida/alertes.ics`
 
 ## Com funciona
@@ -90,6 +91,13 @@ fonts, per aquest ordre:
    `radar-tipus-recerca`, que es poden posar directament a Holded.
 3. Heurístiques pel nom de l'organització.
 
+## Screening per a clients
+
+Per a un client amb diverses divisions (per exemple DOGA), cada divisió es puntua com un perfil del
+radar i en surt un informe per lliurar: línies elegibles, idea de projecte, paper de Stimulo i
+calendari de 12 mesos. `python -m radar screening doga` el genera a `privat/clients/doga/`, i a
+l'aplicació és a **Clients**. Vegeu [docs/servei-screening.md](docs/servei-screening.md).
+
 ## Aplicació web i assistent de propostes
 
 `python -m radar web` (en local) o `docker compose up -d` (al VPS, vegeu
@@ -106,6 +114,7 @@ fonts, per aquest ordre:
     anteriors i es pot aturar.
   - Adjunts (bases en PDF, ofertes, CV, imatges), edició manual amb versions i exportació a Word o
     Markdown.
+- **Clients:** screening per divisions i sol·licituds en nom del client.
 - **Socis:** contactes de Holded agrupats per organització i, per a cada convocatòria, els que hi
   encaixen amb el correu ja redactat.
 - **Avisos:** historial de revisions, correus desats i botó «Revisar ara».
@@ -128,6 +137,7 @@ python -m radar diari                           # revisió del matí: vigila + i
 python -m radar programador                     # servei que fa la revisió cada dia a RADAR_HORA
 python -m radar web                             # aplicació web a http://127.0.0.1:8000
 python -m radar contrasenya                     # genera les claus d'accés per al fitxer .env
+python -m radar screening doga                  # informe per a un client, divisió per divisió
 python -m radar perfil doga                     # encaix per a un client de servei (encara que estigui inactiu)
 python -m radar importa-excel fitxer.xlsx       # importa el recull i diu quines files no tenen fitxa
 python -m radar vigila                          # consulta les API (cal xarxa)

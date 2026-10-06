@@ -101,10 +101,10 @@ L'encaix és la puntuació 0–100 del radar per al perfil DOGA (A ≥ 80, B ≥
 - **Setmanes 2–4:** projecte industrial a la **CDTI LIC/PID** (oberta) i decisió sobre Horizon CL4 (termini 02/02/2027).
 - **Abans de l'estiu de 2027:** tenir preparada la proposta d'**Exploració tecnològica 2027** (Stimulo/Inbrooll com
   a agent extern). El calendari del radar avisarà el 30/05/2027.
-- **Servei de radar per a DOGA (opcional):**
-  - El perfil de DOGA ja és a `data/perfils.yaml`, però desactivat.
-  - Si DOGA contracta el servei, n'hi ha prou amb posar-lo a `actiu: true`.
-  - A partir d'aquí, el radar el puntua i en genera els enviaments per zona.
+- **Servei de screening per a DOGA (opcional):**
+  - Demo amb quatre divisions a `data/clients/doga.yaml`: motors, neteja, components i postvenda.
+  - `python -m radar screening doga` genera l'informe; a l'aplicació és a **Clients**.
+  - Com es fa i què s'entrega: [servei-screening.md](servei-screening.md).
 
 **Pendent de verificar abans de comprometre res:**
 - Si una agència de disseny compta com a "proveïdor especialitzat" a les bases EMT/2403/2026.

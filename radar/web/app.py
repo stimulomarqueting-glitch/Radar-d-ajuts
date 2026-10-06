@@ -23,14 +23,15 @@ import uuid
 from pathlib import Path
 from urllib.parse import quote, urlparse
 
-from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
+from fastapi import FastAPI, File, Form, HTTPException, Query, Request, UploadFile
 from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from markupsafe import Markup
 
-from .. import avisos, calendari, dades, diari, informe
+from .. import avisos, calendari, dades, diari, informe, screening
 from .. import socis as mod_socis
+from ..puntuacio import puntua
 from . import auth, context, exporta, ia, plantilles
 from .config import Config
 from .db import BaseDades
@@ -44,6 +45,8 @@ PUBLIQUES = ("/entrar", "/static/", "/salut")
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; "
        "font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; "
        "frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
+CSP_INFORME = ("default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; "
+               "font-src https://fonts.gstatic.com; img-src data:; frame-ancestors 'none'; base-uri 'none'; form-action 'none'")
 CSP_AVIS = "default-src 'none'; style-src 'unsafe-inline'; img-src data:; frame-ancestors 'none'; base-uri 'none'"
 RE_AVIS = re.compile(r"^avis-\d{4}-\d{2}-\d{2}\.html$")
 MIME_DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -140,6 +143,9 @@ class Estat:
                 self._cat, self._cat_clau = dades.carrega(), clau
             return self._cat
 
+    def clients(self) -> dict[str, screening.Client]:
+        return screening.carrega_clients(self.cataleg())
+
     def socis(self, refresca: bool = False) -> tuple[list, str]:
         with self._lock:
             if refresca or self._socis is None or time.time() - self._socis_hora > 3600:
@@ -169,7 +175,8 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
     app.mount("/static", StaticFiles(directory=str(DIR / "static")), name="static")
     plantilles_web = Jinja2Templates(directory=str(DIR / "templates"))
     plantilles_web.env.filters.update(data=data_curta, eur=eur, md=markdown_html, json_script=json_script)
-    plantilles_web.env.globals.update(NOMS_FOCUS=avisos.NOMS_FOCUS, NOMS_TIPUS=avisos.NOMS_TIPUS)
+    plantilles_web.env.globals.update(NOMS_FOCUS=avisos.NOMS_FOCUS, NOMS_TIPUS=avisos.NOMS_TIPUS,
+                                      missatge=screening.missatge_divisio)
 
     def pagina(request: Request, nom: str, seccio: str = "", status_code: int = 200, **ctx) -> HTMLResponse:
         ctx.update(usuari=getattr(request.state, "usuari", None), seccio=seccio)
@@ -188,6 +195,25 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
             return cat.per_id(id_)
         except KeyError:
             return None
+
+    def client_i_divisio(id_client: str, id_divisio: str):
+        """Client i divisió (o None) a partir dels identificadors; 400 si no existeixen."""
+        if not id_client:
+            return None, None
+        cl = estat.clients().get(id_client)
+        if not cl:
+            raise HTTPException(400, "Client desconegut")
+        try:
+            return cl, (cl.divisio(id_divisio) if id_divisio else None)
+        except KeyError:
+            raise HTTPException(400, "Divisió desconeguda")
+
+    def context_expedient(cat, c, titol: str, idea: str, socis: list[dict], client: dict | None) -> str:
+        bloc = ""
+        if client:
+            cl, dv = client_i_divisio(client.get("id", ""), client.get("divisio", ""))
+            bloc = screening.context_client(cl, dv)
+        return context.construeix(cat, c, titol, idea, socis, dt.date.today(), bloc)
 
     def convocatoria_o_400(cat: dades.Cataleg, id_: str):
         c = busca_convocatoria(cat, id_)
@@ -300,23 +326,32 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
         return pagina(request, "expedients.html", "expedients", files=files)
 
     @app.get("/expedients/nou", response_class=HTMLResponse)
-    def expedient_nou(request: Request, convocatoria: str = ""):
+    def expedient_nou(request: Request, convocatoria: str = "", client: str = "", divisio: str = ""):
         cat, avui = estat.cataleg(), dt.date.today()
         c = busca_convocatoria(cat, convocatoria)
+        cl, dv = client_i_divisio(client, divisio)
         llista = sorted(cat.convocatories, key=lambda x: x.nom.lower())
-        propostes, motiu, linia = [], "", None
+        propostes, motiu, linia, encaix_client, idees = [], "", None, None, []
         if c:
             linia = avisos.linia(cat, c, avui)
             socis, motiu = estat.socis()
             propostes = mod_socis.proposa(c, socis, cat.zones, maxim=8) if socis else []
-        return pagina(request, "expedient_nou.html", "expedients", c=c, llista=llista, linia=linia,
-                      propostes=propostes, motiu_socis=motiu, zones=cat.zones)
+            if dv:
+                encaix_client = puntua(c, dv.perfil, cat.zones, cat.config.get("pesos"))
+                idees = screening._idees(c, dv, maxim=3)
+        return pagina(request, "expedient_nou.html", "clients" if cl else "expedients", c=c, llista=llista,
+                      linia=linia, propostes=propostes, motiu_socis=motiu, zones=cat.zones, cl=cl, dv=dv,
+                      encaix_client=encaix_client, idees=idees)
 
     @app.post("/expedients")
     def crea_expedient(request: Request, convocatoria: str = Form(...), titol: str = Form(""), idea: str = Form(""),
-                       socis: list[str] = Form(default=[]), socis_extra: str = Form("")):
-        cat, avui = estat.cataleg(), dt.date.today()
+                       socis: list[str] = Form(default=[]), socis_extra: str = Form(""), client: str = Form(""),
+                       divisio: str = Form("")):
+        cat = estat.cataleg()
         c = convocatoria_o_400(cat, convocatoria)
+        cl, dv = client_i_divisio(client, divisio)
+        dades_client = {"id": cl.id, "nom": cl.nom, "divisio": dv.id if dv else "",
+                        "divisio_nom": dv.nom if dv else ""} if cl else None
         triats = []
         if socis:
             llista, _ = estat.socis()
@@ -334,11 +369,12 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
         for linia in socis_extra.splitlines():
             if linia.strip():
                 triats.append({"nom": linia.strip()[:200], "tipus": "", "relacio": "afegit a mà", "focus": []})
-        titol = (titol.strip() or c.nom)[:200]
+        titol = (titol.strip() or (f"{cl.nom} · {c.nom}" if cl else c.nom))[:200]
         idea = idea.strip()[:8000]
-        sistema = context.construeix(cat, c, titol, idea, triats, avui)
-        id_ = estat.db.crea_expedient(c.id, titol, idea, triats, sistema)
-        estat.db.registra("expedient_creat", json.dumps({"id": id_, "convocatoria": c.id}))
+        sistema = context_expedient(cat, c, titol, idea, triats, dades_client)
+        id_ = estat.db.crea_expedient(c.id, titol, idea, triats, sistema, dades_client)
+        estat.db.registra("expedient_creat", json.dumps({"id": id_, "convocatoria": c.id,
+                                                         "client": dades_client["id"] if dades_client else ""}))
         return RedirectResponse(f"/expedients/{id_}", status_code=303)
 
     @app.get("/expedients/{id_}", response_class=HTMLResponse)
@@ -371,8 +407,8 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
             if not estat.db.missatges(id_):
                 cat = estat.cataleg()
                 c = convocatoria_o_400(cat, e["convocatoria_id"])
-                estat.db.actualitza_context(id_, context.construeix(
-                    cat, c, canvis.get("titol", e["titol"]), canvis["idea"], e["socis"], dt.date.today()))
+                estat.db.actualitza_context(id_, context_expedient(
+                    cat, c, canvis.get("titol", e["titol"]), canvis["idea"], e["socis"], e["client"]))
             else:  # la conversa ja ha començat: arriba a l'assistent com a document editat
                 estat.db.desa_document(id_, DOC_IDEA, "Idea del projecte", canvis["idea"], origen="edició manual")
         estat.db.actualitza_expedient(id_, **canvis)
@@ -495,6 +531,33 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
         e = expedient_o_404(id_)
         return Response(exporta.zip_markdown(estat.db.documents_actuals(id_)), media_type="application/zip",
                         headers={"Content-Disposition": f'attachment; filename="{slug(e["titol"])}.zip"'})
+
+    # --- Clients de servei (screening per divisions)
+    @app.get("/clients", response_class=HTMLResponse)
+    def clients_pagina(request: Request):
+        cat, avui = estat.cataleg(), dt.date.today()
+        files = []
+        for cl in estat.clients().values():
+            sc = screening.screening(cat, cl, avui)
+            files.append({"cl": cl, "sc": sc, "xifres": screening.xifres(sc),
+                          "expedients": [e for e in estat.db.expedients() if (e["client"] or {}).get("id") == cl.id]})
+        return pagina(request, "clients.html", "clients", files=files)
+
+    @app.get("/clients/{id_}/informe", response_class=HTMLResponse)
+    def client_informe(id_: str, divisio: list[str] = Query(default=[]), descarrega: bool = False):
+        cl = estat.clients().get(id_)
+        if not cl:
+            raise HTTPException(404, "Client no trobat")
+        cat, avui = estat.cataleg(), dt.date.today()
+        sc = screening.screening(cat, cl, avui, divisio or None)
+        cos = screening.informe_html(sc, app=not descarrega)
+        pagina_html = ('<!doctype html><html lang="ca"><head><meta charset="utf-8">'
+                       '<meta name="viewport" content="width=device-width, initial-scale=1">'
+                       + cos.replace("</style>", "</style></head><body>", 1) + "</body></html>")
+        capcaleres = {"Content-Security-Policy": CSP_INFORME}
+        if descarrega:
+            capcaleres["Content-Disposition"] = f'attachment; filename="screening-{slug(cl.nom)}-{avui:%Y-%m-%d}.html"'
+        return HTMLResponse(pagina_html, headers=capcaleres)
 
     # --- Socis (Holded)
     @app.get("/socis", response_class=HTMLResponse)

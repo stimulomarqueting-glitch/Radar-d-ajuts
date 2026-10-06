@@ -11,6 +11,7 @@
     python -m radar programador                  # servei: revisió diària a RADAR_HORA (VPS)
     python -m radar web                          # aplicació web (tauler, expedients i assistent)
     python -m radar contrasenya                  # genera les claus d'accés de l'aplicació
+    python -m radar screening doga               # informe d'ajuts per a un client, per divisions
 """
 
 from __future__ import annotations
@@ -35,7 +36,11 @@ def _avui(valor: str | None) -> dt.date:
 
 def ordre_valida(_args) -> int:
     cat = dades.carrega()
-    print(f"OK: {len(cat.convocatories)} convocatòries, {len(cat.perfils)} perfils, {len(cat.fonts)} fonts.")
+    from . import screening
+
+    clients = screening.carrega_clients(cat)
+    print(f"OK: {len(cat.convocatories)} convocatòries, {len(cat.perfils)} perfils, {len(cat.fonts)} fonts, "
+          f"{len(clients)} clients ({sum(len(c.divisions) for c in clients.values())} divisions).")
     sense_url = [c.id for c in cat.convocatories if not c.url]
     if sense_url:
         print("Avís: convocatòries sense URL:", ", ".join(sense_url))
@@ -64,6 +69,29 @@ def ordre_alertes(args) -> int:
         marca = "≈" if s.estimada else " "
         print(f"{marca}{s.data:%d/%m/%Y}  {ics.ICONES.get(s.tipus, ' ')} {s.tipus:<9} "
               f"{s.convocatoria.entitat} · {s.convocatoria.nom}\n             {s.text}")
+    return 0
+
+
+def ordre_screening(args) -> int:
+    from . import screening
+
+    cat = dades.carrega()
+    clients = screening.carrega_clients(cat)
+    if args.client not in clients:
+        print(f"Client desconegut. Opcions: {', '.join(clients) or 'cap (data/clients/*.yaml)'}", file=sys.stderr)
+        return 2
+    client = clients[args.client]
+    divisions = args.divisio or None
+    if divisions and (desconegudes := set(divisions) - {d.id for d in client.divisions}):
+        print(f"Divisió desconeguda: {', '.join(desconegudes)}. Opcions: {', '.join(d.id for d in client.divisions)}",
+              file=sys.stderr)
+        return 2
+    sc = screening.screening(cat, client, _avui(args.avui), divisions, maxim=args.maxim)
+    dir_sortida = Path(args.sortida) if args.sortida else ARREL / "privat" / "clients" / client.id
+    for r in sc.resultats:
+        print(f"{r.divisio.nom}: {len(r.oportunitats)} línies · {screening.missatge_divisio(r)}")
+    for tipus, ruta in screening.genera(sc, dir_sortida, cat.config.get("alertes")).items():
+        print(f"→ {ruta}")
     return 0
 
 
@@ -201,6 +229,12 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("id")
     p.add_argument("-n", type=int, default=15)
     p.set_defaults(f=ordre_perfil)
+    sc = sub.add_parser("screening", parents=[comu], help="informe d'ajuts per a un client, divisió per divisió")
+    sc.add_argument("client", help="id del client (data/clients/<id>.yaml)")
+    sc.add_argument("--divisio", action="append", help="limita'l a una divisió (es pot repetir)")
+    sc.add_argument("--maxim", type=int, default=8, help="línies per divisió (per defecte, 8)")
+    sc.add_argument("--sortida", help="carpeta de sortida (per defecte, privat/clients/<id>/)")
+    sc.set_defaults(f=ordre_screening)
     i = sub.add_parser("importa-excel", parents=[comu])
     i.add_argument("fitxer")
     i.set_defaults(f=ordre_importa_excel)

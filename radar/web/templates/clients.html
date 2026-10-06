@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block titol %}Clients{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">Servei de screening</span>
+    <h1>Clients</h1>
+    <p class="sub">El radar aplicat a cada divisió d'un client: línies elegibles, idea de projecte, paper de Stimulo i calendari. L'informe es pot ensenyar aquí mateix o descarregar i enviar.</p>
+  </div>
+</header>
+
+{% for x in files %}
+<section class="bloc">
+  <div class="cap-client">
+    <div>
+      <h2>{{ x.cl.nom }}</h2>
+      <p class="ajuda">{{ x.cl.rao_social }} · {{ x.cl.ubicacio or x.cl.zona }} · {{ x.cl.contacte }}</p>
+    </div>
+    <div class="accions">
+      <a class="boto" href="/clients/{{ x.cl.id }}/informe">Obrir l'informe</a>
+      <a class="boto secundari" href="/clients/{{ x.cl.id }}/informe?descarrega=1">Descarregar (HTML)</a>
+    </div>
+  </div>
+  {% if x.cl.estat_dades %}<p class="avis-error">{{ x.cl.estat_dades }}</p>{% endif %}
+  <dl class="fitxa">
+    <div><dt>Línies elegibles</dt><dd>{{ x.xifres.linies }}</dd></div>
+    <div><dt>Prioritat A</dt><dd>{{ x.xifres.a }}</dd></div>
+    <div><dt>Obertes ara o tot l'any</dt><dd>{{ x.xifres.obertes }}</dd></div>
+    <div><dt>Sol·licituds en marxa</dt><dd>{{ x.expedients|length }}</dd></div>
+  </dl>
+  <div class="taula-embolcall">
+  <table class="taula">
+    <thead><tr><th>Divisió</th><th>Línies</th><th>Resum</th><th></th></tr></thead>
+    <tbody>
+    {% for r in x.sc.resultats %}
+    <tr><td><strong>{{ r.divisio.nom }}</strong></td><td class="num">{{ r.oportunitats|length }}</td>
+      <td>{{ missatge(r) }}</td>
+      <td><a href="/clients/{{ x.cl.id }}/informe?divisio={{ r.divisio.id }}">Informe de la divisió</a></td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% if x.expedients %}
+  <h3>Sol·licituds</h3>
+  <ul class="docs">{% for e in x.expedients %}<li><a href="/expedients/{{ e.id }}">{{ e.titol }}</a> <small>{{ e.client.divisio_nom }} · {{ e.estat }}</small></li>{% endfor %}</ul>
+  {% endif %}
+</section>
+{% else %}
+<div class="buit">Encara no hi ha cap client. Afegeix-ne un a <code>data/clients/</code> (o <code>privat/clients/</code> si té dades confidencials) seguint l'exemple de DOGA.</div>
+{% endfor %}
+{% endblock %}
