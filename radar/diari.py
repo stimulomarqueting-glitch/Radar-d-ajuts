@@ -218,5 +218,6 @@ def programador(hora: str | None = None, zona: str | None = None, path_db: Path 
 
             BaseDades(Path(path_db)).registra("revisio_diaria", json.dumps(
                 {"assumpte": r.assumpte, "missatge": r.missatge, "linies": r.linies, "novetats": r.novetats,
-                 "recordatoris": r.recordatoris, "licitacions": r.licitacions, "errors": list(r.errors)},
+                 "recordatoris": r.recordatoris, "licitacions": r.licitacions,
+                 "errors": {k: str(v)[:300] for k, v in r.errors.items()}},
                 ensure_ascii=False))

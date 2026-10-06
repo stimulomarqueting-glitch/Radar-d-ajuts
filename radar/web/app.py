@@ -758,7 +758,8 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
                 r = diari.executa_diari(dt.date.today(), envia=bool(envia), path_db=cfg.db)
                 estat.db.registra("revisio_manual", json.dumps(
                     {"assumpte": r.assumpte, "missatge": r.missatge, "linies": r.linies, "novetats": r.novetats,
-                     "recordatoris": r.recordatoris, "errors": list(r.errors)}, ensure_ascii=False))
+                     "recordatoris": r.recordatoris, "licitacions": r.licitacions,
+                     "errors": {k: str(v)[:300] for k, v in r.errors.items()}}, ensure_ascii=False))
             except Exception as ex:
                 estat.db.registra("revisio_manual", json.dumps({"missatge": f"Error: {type(ex).__name__}"}))
             finally:
