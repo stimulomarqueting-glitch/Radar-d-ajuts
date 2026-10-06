@@ -112,6 +112,14 @@ fonts:
     frequencia: setmanal
     cobreix: Indústria del Coneixement, Doctorats Industrials, PILOT
 
+  - id: agaur-idc
+    nom: AGAUR – Programa Indústria del Coneixement (Llavor, Producte, Innovadors)
+    nivell: catalunya
+    url: https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del-coneixement/index.html
+    metode: web
+    frequencia: setmanal
+    cobreix: Convocatòria anual de transferència (gener–març); avís perquè Stimulo s'ofereixi als grups de recerca
+
   - id: raisc
     nom: RAISC – Registre d'ajuts i subvencions de Catalunya (dades obertes)
     nivell: catalunya

@@ -281,12 +281,12 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
     if not linies and novetats:
         assumpte = f"Radar d'ajuts · {len(novetats)} novetats a les fonts oficials · {avui:%d/%m/%Y}"
     elif not linies and recordatoris:
-        assumpte = f"Radar d'ajuts · recordatoris dels teus expedients · {avui:%d/%m/%Y}"
+        assumpte = f"Radar d'ajuts · recordatoris d'avui · {avui:%d/%m/%Y}"
 
     # ---- text pla
     t = [assumpte, ""]
     if recordatoris:
-        t += ["Els teus expedients:"] + [f"- {r}" for r in recordatoris] + [""]
+        t += ["Recordatoris d'avui:"] + [f"- {r}" for r in recordatoris] + [""]
     for i, l in enumerate(linies, 1):
         t += [f"{i}. {l.c.nom} — {l.c.entitat}", f"   {l.motiu} · encaix {l.e.punts}/100 ({l.e.prioritat})"]
         t += [f"   {k}: {v}" for k, v in _camps(l)]
@@ -334,7 +334,7 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
         h.append(f'<p style="margin:0 0 16px;color:{gris};font-size:13px">{e(sense_socis_motiu)}</p>')
     if recordatoris:
         h.append(f'<div style="background:#fff;border:1px solid {linia};border-left:4px solid #B3261E;border-radius:10px;'
-                 f'padding:14px 18px;margin:0 0 14px"><p style="margin:0 0 6px;font-size:14px"><b>Els teus expedients</b></p>'
+                 f'padding:14px 18px;margin:0 0 14px"><p style="margin:0 0 6px;font-size:14px"><b>Recordatoris d’avui</b></p>'
                  f'<ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.5">'
                  + "".join(f"<li>{e(r)}</li>" for r in recordatoris) + "</ul></div>")
     for i, l in enumerate(linies, 1):

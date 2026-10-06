@@ -1,4 +1,4 @@
-"""Revisió de cada matí: vigilància de fonts, informe, avís per correu i recordatoris d'expedients.
+"""Revisió de cada matí: vigilància de fonts, informe, avís per correu i recordatoris (expedients i dates de revisió).
 
     python -m radar diari                 # una revisió ara (envia el correu si hi ha novetats)
     python -m radar programador           # servei: una revisió cada dia a RADAR_HORA (07:30, Europe/Madrid)
@@ -77,6 +77,13 @@ def recordatoris_expedients(cat: dades.Cataleg, avui: dt.date, path_db: Path | N
     return sortida
 
 
+def senyals_manuals(cat: dades.Cataleg, avui: dt.date) -> list[str]:
+    """Dates de revisió posades a mà al catàleg (`calendari.revisar`) que toquen avui."""
+    return [f"{c.nom} ({c.entitat}): {c.calendari.revisar_motiu or 'revisar l’estat a la font oficial'}"
+            + (f" — {c.url}" if c.url else "")
+            for c in cat.convocatories if c.calendari.revisar == avui]
+
+
 def prepara_avis(avui: dt.date, envia: bool = False, tot: bool = False, maxim: int | None = None,
                  novetats: list[dict] | None = None, fitxer_contactes: str | None = None,
                  path_db: Path | None = None, actualitza_estat: bool = True) -> ResultatAvis:
@@ -89,7 +96,7 @@ def prepara_avis(avui: dt.date, envia: bool = False, tot: bool = False, maxim: i
     maxim = maxim or cfg["maxim_linies"]
     principals, resum = noves[:maxim], noves[maxim:]
     novetats = novetats or []
-    recordatoris = recordatoris_expedients(cat, avui, path_db)
+    recordatoris = senyals_manuals(cat, avui) + recordatoris_expedients(cat, avui, path_db)
     r = ResultatAvis(linies=len(noves), novetats=len(novetats), recordatoris=len(recordatoris))
     if not principals and not novetats and not recordatoris:
         r.missatge = "Cap novetat: no s'envia cap correu."

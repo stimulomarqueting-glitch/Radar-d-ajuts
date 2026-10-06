@@ -856,6 +856,33 @@ TRIGGER;RELATED=START:PT9H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:agaur-idc-producte-vigilar-20261116@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:👀 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Producte — vigilar
+DESCRIPTION:Indústria del Coneixement – Producte: començar a contactar 
+ OTRI i grups de recerca per entrar als projectes de la convocatòria 2027\
+ nData confirmada.\nÀmbit: Equips de recerca d'entitats amb seu a Cataluny
+ a: universitats\, centres de recerca\, centres tecnològics\, fundacions h
+ ospitalàries i fundacions de recerca sense ànim de lucre.\nAjut: Fins a 
+ 150.000 €\, 18 mesos (pròrroga possible)\, amb pla d'acompanyament en v
+ alorització i transferència.\nFitxa: https://agaur.gencat.cat/ca/beques-
+ i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del
+ -coneixement/index.html
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Producte — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:he-cl4-adra-robotica-2027-obertura-20261117@radar-ajuts.stimulo
 DTSTAMP:20261006T060000Z
 DTSTART;VALUE=DATE:20261117
@@ -1013,14 +1040,17 @@ DTEND;VALUE=DATE:20261204
 SUMMARY:🟡 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Innovadors — preparar (estimada)
 DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/02/2027\nDat
- a estimada. Verificar a la font oficial.\nÀmbit: Entitats de recerca cata
- lanes.\nAjut: Fins a 84.000 € (mínim 60.000 € per a contractació)\, 
- 18 mesos.\nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dac
- tuacio/transferencia-coneixement/programa-industria-coneixement/
+ a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'enti
+ tats amb seu a Catalunya: universitats\, centres de recerca\, centres tecn
+ ològics\, fundacions hospitalàries i fundacions de recerca sense ànim d
+ e lucre.\nAjut: Fins a 84.000 € (mínim 60.000 € per contractar la per
+ sona innovadora)\, 18 mesos.\nFitxa: https://agaur.gencat.cat/ca/beques-i-
+ ajuts/pagines-especials/transferencia_coneixement/programa-industria-del-c
+ oneixement/index.html
 CATEGORIES:catalunya,preparar
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🟡 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -1036,14 +1066,17 @@ DTEND;VALUE=DATE:20261204
 SUMMARY:🟡 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Llavor — preparar (estimada)
 DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/02/2027\nDat
- a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univ
- ersitats i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: ht
- tps://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia
- -coneixement/programa-industria-coneixement/
+ a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'enti
+ tats amb seu a Catalunya: universitats\, centres de recerca\, centres tecn
+ ològics\, fundacions hospitalàries i fundacions de recerca sense ànim d
+ e lucre.\nAjut: 20.000 € fixos\, 6 mesos (no prorrogable)\, amb pla d'ac
+ ompanyament d'experts.\nFitxa: https://agaur.gencat.cat/ca/beques-i-ajuts/
+ pagines-especials/transferencia_coneixement/programa-industria-del-coneixe
+ ment/index.html
 CATEGORIES:catalunya,preparar
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🟡 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -1059,14 +1092,17 @@ DTEND;VALUE=DATE:20261204
 SUMMARY:🟡 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Producte — preparar (estimada)
 DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/02/2027\nDat
- a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univ
- ersitats i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrro
- ga possible).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocato
- ries-per-temes/02-21429-IdC-Producte
+ a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'enti
+ tats amb seu a Catalunya: universitats\, centres de recerca\, centres tecn
+ ològics\, fundacions hospitalàries i fundacions de recerca sense ànim d
+ e lucre.\nAjut: Fins a 150.000 €\, 18 mesos (pròrroga possible)\, amb p
+ la d'acompanyament en valorització i transferència.\nFitxa: https://agau
+ r.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement
+ /programa-industria-del-coneixement/index.html
 CATEGORIES:catalunya,preparar
 TRANSP:TRANSPARENT
-URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
- 1429-IdC-Producte
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🟡 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -1485,14 +1521,17 @@ DTEND;VALUE=DATE:20270119
 SUMMARY:👀 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Innovadors — vigilar (estimada)
 DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
- imada. Verificar a la font oficial.\nÀmbit: Entitats de recerca catalanes
- .\nAjut: Fins a 84.000 € (mínim 60.000 € per a contractació)\, 18 me
- sos.\nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuaci
- o/transferencia-coneixement/programa-industria-coneixement/
+ imada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'entitats 
+ amb seu a Catalunya: universitats\, centres de recerca\, centres tecnològ
+ ics\, fundacions hospitalàries i fundacions de recerca sense ànim de luc
+ re.\nAjut: Fins a 84.000 € (mínim 60.000 € per contractar la persona 
+ innovadora)\, 18 mesos.\nFitxa: https://agaur.gencat.cat/ca/beques-i-ajuts
+ /pagines-especials/transferencia_coneixement/programa-industria-del-coneix
+ ement/index.html
 CATEGORIES:catalunya,vigilar
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:👀 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -1508,14 +1547,17 @@ DTEND;VALUE=DATE:20270119
 SUMMARY:👀 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Llavor — vigilar (estimada)
 DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
- imada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'universit
- ats i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: https:/
- /recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-cone
- ixement/programa-industria-coneixement/
+ imada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'entitats 
+ amb seu a Catalunya: universitats\, centres de recerca\, centres tecnològ
+ ics\, fundacions hospitalàries i fundacions de recerca sense ànim de luc
+ re.\nAjut: 20.000 € fixos\, 6 mesos (no prorrogable)\, amb pla d'acompan
+ yament d'experts.\nFitxa: https://agaur.gencat.cat/ca/beques-i-ajuts/pagin
+ es-especials/transferencia_coneixement/programa-industria-del-coneixement/
+ index.html
 CATEGORIES:catalunya,vigilar
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:👀 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -1531,14 +1573,17 @@ DTEND;VALUE=DATE:20270119
 SUMMARY:👀 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Producte — vigilar (estimada)
 DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
- imada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'universit
- ats i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrroga po
- ssible).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-
- per-temes/02-21429-IdC-Producte
+ imada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'entitats 
+ amb seu a Catalunya: universitats\, centres de recerca\, centres tecnològ
+ ics\, fundacions hospitalàries i fundacions de recerca sense ànim de luc
+ re.\nAjut: Fins a 150.000 €\, 18 mesos (pròrroga possible)\, amb pla d'
+ acompanyament en valorització i transferència.\nFitxa: https://agaur.gen
+ cat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement/prog
+ rama-industria-del-coneixement/index.html
 CATEGORIES:catalunya,vigilar
 TRANSP:TRANSPARENT
-URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
- 1429-IdC-Producte
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:👀 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -1708,14 +1753,17 @@ DTEND;VALUE=DATE:20270202
 SUMMARY:🟢 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Innovadors — obertura (estimada)
 DESCRIPTION:Obertura estimada: Indústria del Coneixement – Innovadors\nD
- ata estimada. Verificar a la font oficial.\nÀmbit: Entitats de recerca ca
- talanes.\nAjut: Fins a 84.000 € (mínim 60.000 € per a contractació)\
- , 18 mesos.\nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_d
- actuacio/transferencia-coneixement/programa-industria-coneixement/
+ ata estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'en
+ titats amb seu a Catalunya: universitats\, centres de recerca\, centres te
+ cnològics\, fundacions hospitalàries i fundacions de recerca sense ànim
+  de lucre.\nAjut: Fins a 84.000 € (mínim 60.000 € per contractar la p
+ ersona innovadora)\, 18 mesos.\nFitxa: https://agaur.gencat.cat/ca/beques-
+ i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del
+ -coneixement/index.html
 CATEGORIES:catalunya,obertura
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🟢 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -1731,14 +1779,17 @@ DTEND;VALUE=DATE:20270202
 SUMMARY:🟢 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Llavor — obertura (estimada)
 DESCRIPTION:Obertura estimada: Indústria del Coneixement – Llavor\nData 
- estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univer
- sitats i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: http
- s://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-c
- oneixement/programa-industria-coneixement/
+ estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'entita
+ ts amb seu a Catalunya: universitats\, centres de recerca\, centres tecnol
+ ògics\, fundacions hospitalàries i fundacions de recerca sense ànim de 
+ lucre.\nAjut: 20.000 € fixos\, 6 mesos (no prorrogable)\, amb pla d'acom
+ panyament d'experts.\nFitxa: https://agaur.gencat.cat/ca/beques-i-ajuts/pa
+ gines-especials/transferencia_coneixement/programa-industria-del-coneixeme
+ nt/index.html
 CATEGORIES:catalunya,obertura
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🟢 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -1754,14 +1805,17 @@ DTEND;VALUE=DATE:20270202
 SUMMARY:🟢 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Producte — obertura (estimada)
 DESCRIPTION:Obertura estimada: Indústria del Coneixement – Producte\nDat
- a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univ
- ersitats i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrro
- ga possible).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocato
- ries-per-temes/02-21429-IdC-Producte
+ a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'enti
+ tats amb seu a Catalunya: universitats\, centres de recerca\, centres tecn
+ ològics\, fundacions hospitalàries i fundacions de recerca sense ànim d
+ e lucre.\nAjut: Fins a 150.000 €\, 18 mesos (pròrroga possible)\, amb p
+ la d'acompanyament en valorització i transferència.\nFitxa: https://agau
+ r.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement
+ /programa-industria-del-coneixement/index.html
 CATEGORIES:catalunya,obertura
 TRANSP:TRANSPARENT
-URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
- 1429-IdC-Producte
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🟢 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -2248,14 +2302,17 @@ DTEND;VALUE=DATE:20270311
 SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Innovadors — tancament (estimada)
 DESCRIPTION:Darrera revisió: tancament estimat el 31/03/2027\nData estimad
- a. Verificar a la font oficial.\nÀmbit: Entitats de recerca catalanes.\nA
- jut: Fins a 84.000 € (mínim 60.000 € per a contractació)\, 18 mesos.
- \nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/tr
- ansferencia-coneixement/programa-industria-coneixement/
+ a. Verificar a la font oficial.\nÀmbit: Equips de recerca d'entitats amb 
+ seu a Catalunya: universitats\, centres de recerca\, centres tecnològics\
+ , fundacions hospitalàries i fundacions de recerca sense ànim de lucre.\
+ nAjut: Fins a 84.000 € (mínim 60.000 € per contractar la persona inno
+ vadora)\, 18 mesos.\nFitxa: https://agaur.gencat.cat/ca/beques-i-ajuts/pag
+ ines-especials/transferencia_coneixement/programa-industria-del-coneixemen
+ t/index.html
 CATEGORIES:catalunya,tancament
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -2271,14 +2328,17 @@ DTEND;VALUE=DATE:20270311
 SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Llavor — tancament (estimada)
 DESCRIPTION:Darrera revisió: tancament estimat el 31/03/2027\nData estimad
- a. Verificar a la font oficial.\nÀmbit: Equips de recerca d'universitats 
- i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: https://rec
- ercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-coneixem
- ent/programa-industria-coneixement/
+ a. Verificar a la font oficial.\nÀmbit: Equips de recerca d'entitats amb 
+ seu a Catalunya: universitats\, centres de recerca\, centres tecnològics\
+ , fundacions hospitalàries i fundacions de recerca sense ànim de lucre.\
+ nAjut: 20.000 € fixos\, 6 mesos (no prorrogable)\, amb pla d'acompanyame
+ nt d'experts.\nFitxa: https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-e
+ specials/transferencia_coneixement/programa-industria-del-coneixement/inde
+ x.html
 CATEGORIES:catalunya,tancament
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -2294,14 +2354,17 @@ DTEND;VALUE=DATE:20270311
 SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Producte — tancament (estimada)
 DESCRIPTION:Darrera revisió: tancament estimat el 31/03/2027\nData estimad
- a. Verificar a la font oficial.\nÀmbit: Equips de recerca d'universitats 
- i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrroga possib
- le).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-
- temes/02-21429-IdC-Producte
+ a. Verificar a la font oficial.\nÀmbit: Equips de recerca d'entitats amb 
+ seu a Catalunya: universitats\, centres de recerca\, centres tecnològics\
+ , fundacions hospitalàries i fundacions de recerca sense ànim de lucre.\
+ nAjut: Fins a 150.000 €\, 18 mesos (pròrroga possible)\, amb pla d'acom
+ panyament en valorització i transferència.\nFitxa: https://agaur.gencat.
+ cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement/programa
+ -industria-del-coneixement/index.html
 CATEGORIES:catalunya,tancament
 TRANSP:TRANSPARENT
-URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
- 1429-IdC-Producte
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -2564,14 +2627,17 @@ DTEND;VALUE=DATE:20270401
 SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Innovadors — tancament (estimada)
 DESCRIPTION:Tancament estimat: Indústria del Coneixement – Innovadors\nD
- ata estimada. Verificar a la font oficial.\nÀmbit: Entitats de recerca ca
- talanes.\nAjut: Fins a 84.000 € (mínim 60.000 € per a contractació)\
- , 18 mesos.\nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_d
- actuacio/transferencia-coneixement/programa-industria-coneixement/
+ ata estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'en
+ titats amb seu a Catalunya: universitats\, centres de recerca\, centres te
+ cnològics\, fundacions hospitalàries i fundacions de recerca sense ànim
+  de lucre.\nAjut: Fins a 84.000 € (mínim 60.000 € per contractar la p
+ ersona innovadora)\, 18 mesos.\nFitxa: https://agaur.gencat.cat/ca/beques-
+ i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del
+ -coneixement/index.html
 CATEGORIES:catalunya,tancament
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -2587,14 +2653,17 @@ DTEND;VALUE=DATE:20270401
 SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Llavor — tancament (estimada)
 DESCRIPTION:Tancament estimat: Indústria del Coneixement – Llavor\nData 
- estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univer
- sitats i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: http
- s://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-c
- oneixement/programa-industria-coneixement/
+ estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'entita
+ ts amb seu a Catalunya: universitats\, centres de recerca\, centres tecnol
+ ògics\, fundacions hospitalàries i fundacions de recerca sense ànim de 
+ lucre.\nAjut: 20.000 € fixos\, 6 mesos (no prorrogable)\, amb pla d'acom
+ panyament d'experts.\nFitxa: https://agaur.gencat.cat/ca/beques-i-ajuts/pa
+ gines-especials/transferencia_coneixement/programa-industria-del-coneixeme
+ nt/index.html
 CATEGORIES:catalunya,tancament
 TRANSP:TRANSPARENT
-URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
- encia-coneixement/programa-industria-coneixement/
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
@@ -2610,14 +2679,17 @@ DTEND;VALUE=DATE:20270401
 SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
  l Coneixement – Producte — tancament (estimada)
 DESCRIPTION:Tancament estimat: Indústria del Coneixement – Producte\nDat
- a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univ
- ersitats i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrro
- ga possible).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocato
- ries-per-temes/02-21429-IdC-Producte
+ a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'enti
+ tats amb seu a Catalunya: universitats\, centres de recerca\, centres tecn
+ ològics\, fundacions hospitalàries i fundacions de recerca sense ànim d
+ e lucre.\nAjut: Fins a 150.000 €\, 18 mesos (pròrroga possible)\, amb p
+ la d'acompanyament en valorització i transferència.\nFitxa: https://agau
+ r.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement
+ /programa-industria-del-coneixement/index.html
 CATEGORIES:catalunya,tancament
 TRANSP:TRANSPARENT
-URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
- 1429-IdC-Producte
+URL:https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferen
+ cia_coneixement/programa-industria-del-coneixement/index.html
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri

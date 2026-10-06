@@ -407,23 +407,37 @@ convocatories:
   origen: public
   instrument: subvencio
   zones: [ES-CT]
-  ambit_geografic: Equips de recerca d'universitats i centres catalans.
-  beneficiaris: [universitat, centre_recerca]
+  ambit_geografic: "Equips de recerca d'entitats amb seu a Catalunya: universitats, centres de recerca, centres tecnològics, fundacions hospitalàries i fundacions de recerca sense ànim de lucre."
+  beneficiaris: [universitat, centre_recerca, centre_tecnologic, hospital, entitat_sense_anim_lucre]
   rols_stimulo: [proveidor_extern]
-  focus: [transferencia, prova_concepte, deep_tech]
+  focus: [transferencia, prova_concepte, deep_tech, disseny]
   import_max_eur: 20000
   durada_max_mesos: 6
   trl: [1, 3]
-  ajuda_text: "20.000 € fixos, 6 mesos."
-  descripcio: Projectes amb potencial de valorització en fase inicial (preprototip).
-  url: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-coneixement/programa-industria-coneixement/
+  ajuda_text: "20.000 € fixos, 6 mesos (no prorrogable), amb pla d'acompanyament d'experts."
+  descripcio: >
+    Primera fase de valorització: protecció del coneixement generat i primeres proves (preprototip),
+    amb un pla de suport d'experts per a la validació tècnica i comercial.
+  url: https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del-coneixement/index.html
+  fonts_verificacio:
+    - https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/03-21892-IdC-Innovadors?historic=1805e2cb-2495-11ee-912a-005056ba51b2
+    - https://recerca.url.edu/ca/node/13776
+    - https://xarxah2cat.org/industria-del-coneixement-agaur/
+    - https://tecnociminnova.com/ca/buscador-ayudas/catalunya/cat-programaindustriadelconeixement2026llavorproduct
   confianca: mitjana
+  encaix_stimulo: "Preprototip i primera validació d'usuari: un encàrrec curt de disseny per al grup de recerca, que prepara el pas a Producte."
+  socis_cal: [recerca, hospital]
+  notes: >
+    Programa de tres ajuts encadenats (Llavor → Producte → Innovadors). Dades verificades amb fonts
+    secundàries que citen les convocatòries 2025 i 2026; la pàgina oficial d'AGAUR no s'ha pogut
+    consultar directament. En edicions antigues hi havia una modalitat «Mercat» (préstec participatiu
+    d'IFEM/ICF per a spin-offs) que no apareix a les convocatòries 2025 i 2026.
   calendari:
     recurrencia: anual
     estat: tancada
     obertura: 2026-02-01
     tancament: 2026-03-31
-    finestra_habitual: "Publicació a finals de gener; presentació febrer–març"
+    finestra_habitual: "Publicació a finals de gener; presentació de l'1 de febrer al 31 de març (edicions 2025 i 2026)"
 
 - id: agaur-idc-producte
   excel_fila: 9
@@ -433,27 +447,43 @@ convocatories:
   origen: public
   instrument: subvencio
   zones: [ES-CT]
-  ambit_geografic: Equips de recerca d'universitats i centres catalans.
-  beneficiaris: [universitat, centre_recerca]
+  ambit_geografic: "Equips de recerca d'entitats amb seu a Catalunya: universitats, centres de recerca, centres tecnològics, fundacions hospitalàries i fundacions de recerca sense ànim de lucre."
+  beneficiaris: [universitat, centre_recerca, centre_tecnologic, hospital, entitat_sense_anim_lucre]
   rols_stimulo: [proveidor_extern, subcontractat]
   focus: [transferencia, prova_concepte, deep_tech, disseny]
   import_max_eur: 150000
   durada_max_mesos: 18
   trl: [3, 6]
-  ajuda_text: "Fins a 150.000 €, 18 mesos (pròrroga possible)."
+  ajuda_text: "Fins a 150.000 €, 18 mesos (pròrroga possible), amb pla d'acompanyament en valorització i transferència."
   descripcio: >
-    Prototip i prova de concepte per reduir incerteses tècniques i comercials abans de llicenciar
-    o crear una spin-off. És exactament la fase que fa Stimulo: oferir-se als grups abans de febrer.
-  url: https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-21429-IdC-Producte
+    Segona fase de valorització: prova de concepte i prototip per reduir les incerteses tècniques i
+    comercials abans de llicenciar la tecnologia o crear una spin-off.
+  url: https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del-coneixement/index.html
+  fonts_verificacio:
+    - https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/03-21892-IdC-Innovadors?historic=1805e2cb-2495-11ee-912a-005056ba51b2
+    - https://recerca.url.edu/ca/node/13776
+    - https://xarxah2cat.org/industria-del-coneixement-agaur/
+    - https://tecnociminnova.com/ca/buscador-ayudas/catalunya/cat-programaindustriadelconeixement2026llavorproduct
   confianca: mitjana
-  encaix_stimulo: 'Els grups de recerca necessiten prototips i proves de concepte per transferir: Stimulo hi entra com a proveïdor contractat pel grup.'
-  socis_cal: [recerca]
+  encaix_stimulo: "És exactament la fase que fa Stimulo: el grup de recerca contracta el disseny, el prototip i la validació. Cal entrar al pressupost del grup abans que el presenti (febrer–març)."
+  punts_forts:
+    - Fins a 150.000 € per projecte i 18 mesos: prou per a un prototip complet.
+    - 'Convocatòria anual i previsible: es pot preparar amb els grups des de novembre.'
+    - Porta d'entrada a spin-offs que després seran clients (NEOTEC, EIC Accelerator).
+  socis_cal: [recerca, hospital]
+  notes: >
+    Acció comercial: entre novembre i gener, contactar les oficines de transferència (FBG-UB, UPC,
+    UAB, CSIC, centres CERCA, fundacions hospitalàries) i els grups amb resultats a TRL 3–4 per
+    oferir-los el prototip com a part del pressupost. Comprovar a les bases 2027 el límit de
+    subcontractació.
   calendari:
     recurrencia: anual
     estat: tancada
     obertura: 2026-02-01
     tancament: 2026-03-31
-    finestra_habitual: "Publicació a finals de gener; presentació febrer–març"
+    finestra_habitual: "Publicació a finals de gener; presentació de l'1 de febrer al 31 de març (edicions 2025 i 2026)"
+    revisar: 2026-11-16
+    revisar_motiu: "Indústria del Coneixement – Producte: començar a contactar OTRI i grups de recerca per entrar als projectes de la convocatòria 2027"
 
 - id: agaur-idc-innovadors
   excel_fila: 10
@@ -463,22 +493,30 @@ convocatories:
   origen: public
   instrument: beca_contracte
   zones: [ES-CT]
-  ambit_geografic: Entitats de recerca catalanes.
-  beneficiaris: [universitat, centre_recerca]
+  ambit_geografic: "Equips de recerca d'entitats amb seu a Catalunya: universitats, centres de recerca, centres tecnològics, fundacions hospitalàries i fundacions de recerca sense ànim de lucre."
+  beneficiaris: [universitat, centre_recerca, centre_tecnologic, hospital, entitat_sense_anim_lucre]
   rols_stimulo: [assessor]
   focus: [transferencia, talent]
   import_max_eur: 84000
   durada_max_mesos: 18
   trl: [2, 6]
-  ajuda_text: "Fins a 84.000 € (mínim 60.000 € per a contractació), 18 mesos."
-  descripcio: Contractar perfils emprenedors que liderin la transferència (spin-off, llicència).
-  url: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-coneixement/programa-industria-coneixement/
+  ajuda_text: "Fins a 84.000 € (mínim 60.000 € per contractar la persona innovadora), 18 mesos."
+  descripcio: >
+    Projectes de valorització i transferència liderats per una persona innovadora en residència a
+    l'entitat de recerca (camí cap a spin-off o llicència).
+  url: https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del-coneixement/index.html
+  fonts_verificacio:
+    - https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/03-21892-IdC-Innovadors?historic=1805e2cb-2495-11ee-912a-005056ba51b2
+    - https://recerca.url.edu/ca/node/13776
+    - https://xarxah2cat.org/industria-del-coneixement-agaur/
+    - https://tecnociminnova.com/ca/buscador-ayudas/catalunya/cat-programaindustriadelconeixement2026llavorproduct
   confianca: mitjana
   calendari:
     recurrencia: anual
     estat: tancada
     obertura: 2026-02-01
     tancament: 2026-03-31
+    finestra_habitual: "Publicació a finals de gener; presentació de l'1 de febrer al 31 de març (edicions 2025 i 2026)"
 
 - id: agaur-doctorats-industrials
   excel_fila: 11

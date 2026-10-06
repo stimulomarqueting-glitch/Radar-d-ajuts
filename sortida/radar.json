@@ -744,30 +744,34 @@
    "nivell": "catalunya",
    "origen": "public",
    "instrument": "subvencio",
-   "descripcio": "Projectes amb potencial de valorització en fase inicial (preprototip).",
+   "descripcio": "Primera fase de valorització: protecció del coneixement generat i primeres proves (preprototip), amb un pla de suport d'experts per a la validació tècnica i comercial.",
    "zones": [
     "ES-CT"
    ],
    "zona_etiqueta": "Catalunya",
-   "ambit_geografic": "Equips de recerca d'universitats i centres catalans.",
+   "ambit_geografic": "Equips de recerca d'entitats amb seu a Catalunya: universitats, centres de recerca, centres tecnològics, fundacions hospitalàries i fundacions de recerca sense ànim de lucre.",
    "focus": [
     "transferencia",
     "prova_concepte",
-    "deep_tech"
+    "deep_tech",
+    "disseny"
    ],
    "intensitat_max": null,
    "import_max_eur": 20000,
-   "ajuda_text": "20.000 € fixos, 6 mesos.",
+   "ajuda_text": "20.000 € fixos, 6 mesos (no prorrogable), amb pla d'acompanyament d'experts.",
    "trl": [
     1,
     3
    ],
-   "url": "https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-coneixement/programa-industria-coneixement/",
-   "notes": "",
+   "url": "https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del-coneixement/index.html",
+   "notes": "Programa de tres ajuts encadenats (Llavor → Producte → Innovadors). Dades verificades amb fonts secundàries que citen les convocatòries 2025 i 2026; la pàgina oficial d'AGAUR no s'ha pogut consultar directament. En edicions antigues hi havia una modalitat «Mercat» (préstec participatiu d'IFEM/ICF per a spin-offs) que no apareix a les convocatòries 2025 i 2026.",
    "confianca": "mitjana",
    "beneficiaris": [
     "universitat",
-    "centre_recerca"
+    "centre_recerca",
+    "centre_tecnologic",
+    "hospital",
+    "entitat_sense_anim_lucre"
    ],
    "rols_stimulo": [
     "proveidor_extern"
@@ -782,11 +786,11 @@
    },
    "encaix": {
     "stimulo": {
-     "punts": 73,
-     "prioritat": "B",
+     "punts": 83,
+     "prioritat": "A",
      "rol": "proveidor_extern",
      "motius": [
-      "temes: transferencia, prova_concepte, deep_tech",
+      "temes: transferencia, prova_concepte, disseny, deep_tech",
       "rol: proveidor_extern"
      ]
     }
@@ -799,12 +803,12 @@
    "nivell": "catalunya",
    "origen": "public",
    "instrument": "subvencio",
-   "descripcio": "Prototip i prova de concepte per reduir incerteses tècniques i comercials abans de llicenciar o crear una spin-off. És exactament la fase que fa Stimulo: oferir-se als grups abans de febrer.",
+   "descripcio": "Segona fase de valorització: prova de concepte i prototip per reduir les incerteses tècniques i comercials abans de llicenciar la tecnologia o crear una spin-off.",
    "zones": [
     "ES-CT"
    ],
    "zona_etiqueta": "Catalunya",
-   "ambit_geografic": "Equips de recerca d'universitats i centres catalans.",
+   "ambit_geografic": "Equips de recerca d'entitats amb seu a Catalunya: universitats, centres de recerca, centres tecnològics, fundacions hospitalàries i fundacions de recerca sense ànim de lucre.",
    "focus": [
     "transferencia",
     "prova_concepte",
@@ -813,17 +817,20 @@
    ],
    "intensitat_max": null,
    "import_max_eur": 150000,
-   "ajuda_text": "Fins a 150.000 €, 18 mesos (pròrroga possible).",
+   "ajuda_text": "Fins a 150.000 €, 18 mesos (pròrroga possible), amb pla d'acompanyament en valorització i transferència.",
    "trl": [
     3,
     6
    ],
-   "url": "https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-21429-IdC-Producte",
-   "notes": "",
+   "url": "https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del-coneixement/index.html",
+   "notes": "Acció comercial: entre novembre i gener, contactar les oficines de transferència (FBG-UB, UPC, UAB, CSIC, centres CERCA, fundacions hospitalàries) i els grups amb resultats a TRL 3–4 per oferir-los el prototip com a part del pressupost. Comprovar a les bases 2027 el límit de subcontractació.",
    "confianca": "mitjana",
    "beneficiaris": [
     "universitat",
-    "centre_recerca"
+    "centre_recerca",
+    "centre_tecnologic",
+    "hospital",
+    "entitat_sense_anim_lucre"
    ],
    "rols_stimulo": [
     "proveidor_extern",
@@ -856,29 +863,32 @@
    "nivell": "catalunya",
    "origen": "public",
    "instrument": "beca_contracte",
-   "descripcio": "Contractar perfils emprenedors que liderin la transferència (spin-off, llicència).",
+   "descripcio": "Projectes de valorització i transferència liderats per una persona innovadora en residència a l'entitat de recerca (camí cap a spin-off o llicència).",
    "zones": [
     "ES-CT"
    ],
    "zona_etiqueta": "Catalunya",
-   "ambit_geografic": "Entitats de recerca catalanes.",
+   "ambit_geografic": "Equips de recerca d'entitats amb seu a Catalunya: universitats, centres de recerca, centres tecnològics, fundacions hospitalàries i fundacions de recerca sense ànim de lucre.",
    "focus": [
     "transferencia",
     "talent"
    ],
    "intensitat_max": null,
    "import_max_eur": 84000,
-   "ajuda_text": "Fins a 84.000 € (mínim 60.000 € per a contractació), 18 mesos.",
+   "ajuda_text": "Fins a 84.000 € (mínim 60.000 € per contractar la persona innovadora), 18 mesos.",
    "trl": [
     2,
     6
    ],
-   "url": "https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-coneixement/programa-industria-coneixement/",
+   "url": "https://agaur.gencat.cat/ca/beques-i-ajuts/pagines-especials/transferencia_coneixement/programa-industria-del-coneixement/index.html",
    "notes": "",
    "confianca": "mitjana",
    "beneficiaris": [
     "universitat",
-    "centre_recerca"
+    "centre_recerca",
+    "centre_tecnologic",
+    "hospital",
+    "entitat_sense_anim_lucre"
    ],
    "rols_stimulo": [
     "assessor"
@@ -4544,6 +4554,15 @@
    "entitat": "EOI (Ministeris d'Indústria, Defensa i Ciència)",
    "estimada": false,
    "text": "IN+DEF (EOI): comprovar si obre nous reptes d'ús dual"
+  },
+  {
+   "data": "2026-11-16",
+   "tipus": "vigilar",
+   "id": "agaur-idc-producte",
+   "nom": "Indústria del Coneixement – Producte",
+   "entitat": "AGAUR (Departament de Recerca i Universitats)",
+   "estimada": false,
+   "text": "Indústria del Coneixement – Producte: començar a contactar OTRI i grups de recerca per entrar als projectes de la convocatòria 2027"
   },
   {
    "data": "2026-11-17",

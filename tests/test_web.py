@@ -326,6 +326,12 @@ class TestUtilitats(unittest.TestCase):
             self.assertIn("d'aquí a 7 dies", r[0])
             self.assertEqual(diari.recordatoris_expedients(cat, tancament - dt.timedelta(days=8), path), [])
 
+    def test_dates_de_revisio_al_correu_del_mati(self):
+        cat = dades.carrega()
+        r = diari.senyals_manuals(cat, dt.date(2026, 11, 16))
+        self.assertTrue(any("Indústria del Coneixement – Producte" in x and "OTRI" in x for x in r))
+        self.assertEqual(diari.senyals_manuals(cat, dt.date(2026, 11, 17)), [])
+
 
 if __name__ == "__main__":
     unittest.main()
