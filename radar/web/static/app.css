@@ -110,3 +110,10 @@ button.plantilla[disabled] { opacity: .55; cursor: not-allowed; }
 .cap-client { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; }
 .cap-client h2 { margin: 0; }
 small.bloc-petit { display: block; color: var(--muted); }
+
+/* Defensa i espai */
+.punts-mini { display: inline-block; font: 500 13px/1 var(--f-mono); padding: 5px 7px; border-radius: 6px; white-space: nowrap; }
+.punts-mini.p-A { background: var(--accent); color: var(--accent-ink); }
+.punts-mini.p-B { background: var(--accent-soft); color: var(--accent); }
+.punts-mini.p-C, .punts-mini.p-NE { background: var(--off-soft); color: var(--muted); }
+.etiqueta-tipus { font: 500 11px/1 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 4px 6px; border-radius: 4px; margin-right: 6px; }

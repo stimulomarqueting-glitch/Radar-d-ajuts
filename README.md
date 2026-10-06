@@ -91,6 +91,21 @@ fonts, per aquest ordre:
    `radar-tipus-recerca`, que es poden posar directament a Holded.
 3. Heurístiques pel nom de l'organització.
 
+## Defensa, ús dual i espai
+
+A més dels ajuts (tema «ús dual», «defensa» o «espai» al tauler), `data/ecosistema.yaml` recull les
+portes d'entrada al sector per a Stimulo i els clients:
+- **Actors:** primes com Indra, enginyeries com GUTMAR, clústers com AeroS, consultories com White
+  Cirrus i estudis de referència.
+- **Trobades i programes:** FEINDEF 27, el programa de capacitació d'ACCIÓ i l'EOI, i les trobades
+  d'Indra i d'AeroS.
+- **Requisits que demanen els compradors:** registre DGAM, PECAL/AQAP 2110, habilitacions de
+  seguretat, NCAGE, control de doble ús i PIC.
+
+Les trobades arriben al correu del matí 21, 7 i 1 dies abans. A l'aplicació són a **Defensa i espai**,
+i el resum es desa a `sortida/ecosistema.md`. Els informes de screening hi afegeixen la secció
+«Entrar al sector» per a les divisions amb aquests temes.
+
 ## Screening per a clients
 
 Per a un client amb diverses divisions (per exemple DOGA), cada divisió es puntua com un perfil del

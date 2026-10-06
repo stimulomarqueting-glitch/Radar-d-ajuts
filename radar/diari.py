@@ -96,7 +96,10 @@ def prepara_avis(avui: dt.date, envia: bool = False, tot: bool = False, maxim: i
     maxim = maxim or cfg["maxim_linies"]
     principals, resum = noves[:maxim], noves[maxim:]
     novetats = novetats or []
-    recordatoris = senyals_manuals(cat, avui) + recordatoris_expedients(cat, avui, path_db)
+    from . import ecosistema
+
+    recordatoris = (senyals_manuals(cat, avui) + ecosistema.recordatoris(ecosistema.carrega(cat), avui)
+                    + recordatoris_expedients(cat, avui, path_db))
     r = ResultatAvis(linies=len(noves), novetats=len(novetats), recordatoris=len(recordatoris))
     if not principals and not novetats and not recordatoris:
         r.missatge = "Cap novetat: no s'envia cap correu."

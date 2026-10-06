@@ -259,6 +259,79 @@ fonts:
     frequencia: setmanal
     cobreix: Convocatòries obertes de tercers en projectes europeus
 
+  # --- Defensa, ús dual i espai: ecosistema (vegeu data/ecosistema.yaml) ---------------------
+  - id: eic-defensa
+    nom: EIC – defensa i ús dual (notícies i sessions)
+    nivell: europa
+    url: https://eic.ec.europa.eu/news/european-innovation-council-opens-defence-and-dual-use-technologies-2026-06-17_en
+    metode: web
+    frequencia: setmanal
+    cobreix: STEP Scale Up Defence, Accelerator i STEP oberts a ús dual
+
+  - id: redes-dual
+    nom: Red.es – infraestructures d'ús dual
+    nivell: estat
+    url: https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/detalls/noticia/20261006_tecnologia-dual
+    metode: web
+    frequencia: setmanal
+    cobreix: Convocatòries de recerca i d'assaig i experimentació en tecnologies d'ús dual
+
+  - id: indra-premsa
+    nom: Indra Group – sala de premsa (aliances i trobades amb proveïdors)
+    nivell: estat
+    url: https://www.indragroup.com/
+    metode: web
+    frequencia: setmanal
+    cobreix: Encuentros del Ecosistema de la Industria Nacional de Defensa, acords amb pimes i proveïdors
+
+  - id: aeros
+    nom: AeroS – ecosistema aeronàutic, espacial i de defensa de Catalunya (activitats)
+    nivell: catalunya
+    url: https://www.aeros-ecosystem.com/ca/detallactivitat/defensa-i-empresa-industria-financament-i-cultura-de-defensa-a-catalunya
+    metode: web
+    frequencia: setmanal
+    cobreix: Jornades, programes executius i trobades de defensa i espai a Catalunya
+
+  - id: accio-dual
+    nom: ACCIÓ – capacitació en seguretat i defensa
+    nivell: catalunya
+    url: https://www.accio.gencat.cat/programa-sessio-capacitacio-multisectorial
+    metode: web
+    frequencia: setmanal
+    cobreix: Dual Technology & Industry Readiness Programme (sessions per sectors)
+
+  - id: white-cirrus
+    nom: White Cirrus – workshops de defensa
+    nivell: estat
+    url: https://whitecirrus.com/services/workshop-defensa/
+    metode: web
+    frequencia: mensual
+    cobreix: Workshops per a empreses que volen entrar a defensa i ús dual
+
+  - id: gutmar
+    nom: GUTMAR – notícies
+    nivell: catalunya
+    url: https://www.gutmar.com/
+    metode: web
+    frequencia: mensual
+    cobreix: Aliances industrials de defensa a Catalunya (Indra, GDELS-Santa Bárbara)
+
+  - id: digital-profiles
+    nom: Digital Profiles – trobades i talent tecnològic
+    nivell: catalunya
+    url: https://www.digitalprofiles.net/
+    metode: web
+    frequencia: mensual
+    cobreix: Trobades i talent per a empreses tecnològiques (vincle amb defensa per confirmar)
+
+  - id: feindef
+    nom: FEINDEF – fira de defensa i seguretat (Madrid)
+    nivell: estat
+    url: https://www.feindef.com/
+    metode: web
+    frequencia: mensual
+    cobreix: FEINDEF 27 (18–20/05/2027) i brokerage event
+
   # --- Privats i fundacions ------------------------------------------------------------------
   - id: caixaresearch
     nom: CaixaResearch (Fundació "la Caixa")

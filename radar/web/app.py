@@ -29,7 +29,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from markupsafe import Markup
 
-from .. import avisos, calendari, dades, diari, informe, screening
+from .. import avisos, calendari, dades, diari, ecosistema, informe, screening
 from .. import socis as mod_socis
 from ..puntuacio import puntua
 from . import auth, context, exporta, ia, plantilles
@@ -558,6 +558,23 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
         if descarrega:
             capcaleres["Content-Disposition"] = f'attachment; filename="screening-{slug(cl.nom)}-{avui:%Y-%m-%d}.html"'
         return HTMLResponse(pagina_html, headers=capcaleres)
+
+    # --- Ecosistema de defensa, ús dual i espai
+    @app.get("/ecosistema", response_class=HTMLResponse)
+    def ecosistema_pagina(request: Request):
+        cat, avui = estat.cataleg(), dt.date.today()
+        eco = ecosistema.carrega(cat)
+        linies = []
+        for c in cat.convocatories:
+            if set(c.focus) & ecosistema.AMBITS_SECTOR:
+                f = calendari.propera_finestra(c, avui)
+                if f.estat not in ("tancada", "sense_dades"):
+                    linies.append({"c": c, "f": f, "e": avisos.linia(cat, c, avui).e})
+        linies.sort(key=lambda x: -x["e"].punts)
+        actors = sorted(eco.actors, key=lambda a: (ecosistema.TIPUS_ACTOR.index(a.tipus), a.nom))
+        return pagina(request, "ecosistema.html", "ecosistema", trobades=ecosistema.trobades_actives(eco, avui),
+                      actors=actors, requisits=eco.requisits, linies=linies, avui=avui,
+                      NOMS=ecosistema.NOMS_TIPUS)
 
     # --- Socis (Holded)
     @app.get("/socis", response_class=HTMLResponse)

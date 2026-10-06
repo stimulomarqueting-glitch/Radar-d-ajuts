@@ -16,6 +16,15 @@ Per a cada oportunitat l'informe diu: què finança, l'ajut, la finestra (amb �
 del client (sol·licitant o soci), el paper de Stimulo, la idea de projecte de la divisió que hi encaixa i
 el que cal tenir en compte (consorci, intensitat per a gran empresa, *minimis*, préstec).
 
+**Entrar al sector de defensa i ús dual.** Si alguna divisió té temes d'ús dual, defensa o espai,
+l'informe hi afegeix una secció amb:
+- els ajuts d'aquests temes on el client pot participar;
+- les properes trobades i programes per entrar al sector;
+- amb qui parlar (contractistes principals, enginyeries, clústers);
+- els requisits que demanaran els compradors.
+
+Les dades són a `data/ecosistema.yaml`.
+
 ## Com es fa
 
 1. **Perfil per divisió** (reunió d'1 hora + fitxa). Per a cada divisió: productes, mercats, TRL

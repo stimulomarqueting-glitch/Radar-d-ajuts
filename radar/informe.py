@@ -265,6 +265,12 @@ def genera_tot(cat: Cataleg, avui: dt.date, dir_sortida: Path) -> list[Path]:
     elif csv_path.exists():
         csv_path.unlink()
 
+    from . import ecosistema  # importació local: ecosistema depèn de dades, com aquest mòdul
+
+    eco_md = dir_sortida / "ecosistema.md"
+    eco_md.write_text(ecosistema.markdown(ecosistema.carrega(cat), avui), encoding="utf-8")
+    generats.append(eco_md)
+
     js = dir_sortida / "radar.json"
     js.write_text(json.dumps(dades_json(cat, avui), ensure_ascii=False, indent=1), encoding="utf-8")
     generats.append(js)

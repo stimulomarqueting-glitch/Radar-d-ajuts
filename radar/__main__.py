@@ -38,9 +38,13 @@ def ordre_valida(_args) -> int:
     cat = dades.carrega()
     from . import screening
 
+    from . import ecosistema
+
     clients = screening.carrega_clients(cat)
+    eco = ecosistema.carrega(cat)
     print(f"OK: {len(cat.convocatories)} convocatòries, {len(cat.perfils)} perfils, {len(cat.fonts)} fonts, "
-          f"{len(clients)} clients ({sum(len(c.divisions) for c in clients.values())} divisions).")
+          f"{len(clients)} clients ({sum(len(c.divisions) for c in clients.values())} divisions), "
+          f"ecosistema: {len(eco.actors)} actors, {len(eco.trobades)} trobades, {len(eco.requisits)} requisits.")
     sense_url = [c.id for c in cat.convocatories if not c.url]
     if sense_url:
         print("Avís: convocatòries sense URL:", ", ".join(sense_url))

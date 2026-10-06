@@ -21,7 +21,7 @@ from urllib.parse import urlparse
 
 import yaml
 
-from . import calendari, ics
+from . import calendari, ecosistema, ics
 from .dades import ARREL, DIR_DADES, FOCUS, Cataleg, Convocatoria, ErrorValidacio, Perfil, _perfil
 from .puntuacio import Encaix, puntua
 from .socis import tipus_necessaris
@@ -111,6 +111,7 @@ class Screening:
     resultats: list[ResultatDivisio]
     n_convocatories: int
     matriu: list[dict] = field(default_factory=list)  # [{c, f, punts: {divisio: Encaix}}]
+    sector: dict | None = None  # entrar a defensa i ús dual (divisions amb aquests temes)
 
     @property
     def oportunitats(self) -> list[Oportunitat]:
@@ -236,7 +237,30 @@ def screening(cat: Cataleg, client: Client, avui: dt.date, divisions: list[str] 
         sc.matriu.append({"c": o.c, "f": o.f,
                           "punts": {r.divisio.id: puntua(o.c, r.divisio.perfil, cat.zones, pesos) for r in resultats}})
     sc.matriu.sort(key=lambda m: -max(e.punts for e in m["punts"].values()))
+    sc.sector = _sector(cat, client, triades, finestres, avui, horitzo_dies)
     return sc
+
+
+def _sector(cat: Cataleg, client: Client, divisions: list[Divisio], finestres: dict, avui: dt.date,
+            horitzo: int) -> dict | None:
+    """Ajuts duals elegibles, portes d'entrada, actors i requisits per a les divisions amb temes de defensa."""
+    divs = [d for d in divisions if set(d.perfil.focus) & ecosistema.AMBITS_SECTOR]
+    if not divs:
+        return None
+    pesos, linies = cat.config.get("pesos"), []
+    for c in cat.convocatories:
+        if not set(c.focus) & ecosistema.AMBITS_SECTOR or not _dins_horitzo(finestres[c.id], avui, horitzo):
+            continue
+        millor = max(((puntua(c, d.perfil, cat.zones, pesos), d) for d in divs), key=lambda x: x[0].punts)
+        if millor[0].rol:
+            linies.append({"c": c, "f": finestres[c.id], "e": millor[0], "divisio": millor[1]})
+    linies.sort(key=lambda x: -x["e"].punts)
+    eco = ecosistema.carrega(cat)
+    temes = ecosistema.AMBITS_SECTOR | {t for d in divs for t in d.perfil.focus}
+    actors = [a for a in eco.actors if set(a.ambits) & ecosistema.AMBITS_SECTOR and set(a.ambits) & temes]
+    trobades = [t for t in ecosistema.trobades_actives(eco, avui, horitzo) if set(t.ambits) & temes]
+    return {"divisions": divs, "linies": linies[:6], "actors": actors, "trobades": trobades,
+            "requisits": eco.requisits}
 
 
 # --- Textos comuns --------------------------------------------------------------------------------
@@ -349,6 +373,18 @@ def markdown(sc: Screening) -> str:
             if o.c.url:
                 t.append(f"- Fitxa: {o.c.url}")
             t.append("")
+    if sc.sector:
+        st = sc.sector
+        t += ["## Entrar al sector de defensa i ús dual", "",
+              f"Per a {', '.join(d.nom for d in st['divisions'])}.", "", "**Ajuts d'ús dual i defensa**", ""]
+        t += [f"- {x['c'].nom} — {x['e'].punts}/100 ({x['e'].prioritat}) · {finestra_text(x['f'])}" for x in st["linies"]]
+        t += ["", "**Portes d'entrada**", ""]
+        t += [f"- {x.nom} · {x.quan()}" + (f" · {x.lloc}" if x.lloc else "") for x in st["trobades"]]
+        t += ["", "**Amb qui parlar**", ""]
+        t += [f"- {a.nom}: {a.per_als_clients}" for a in st["actors"]]
+        t += ["", "**Requisits que demanaran**", ""]
+        t += [f"- {r.nom}: {r.quan}" for r in st["requisits"]]
+        t.append("")
     if cl.consideracions:
         t += ["## A tenir en compte", ""] + [f"- {c}" for c in cl.consideracions] + [""]
     if cl.preguntes:
@@ -487,6 +523,15 @@ td.punt { text-align: center; white-space: nowrap; }
 .serveis div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; display: grid; gap: 6px; align-content: start; font-size: 14px; }
 .serveis b { font-family: var(--f-display); font-size: 16px; }
 .serveis span { color: var(--muted); }
+.llista-neta { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.llista-neta li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: start; font-size: 14px; }
+.llista-neta li:not(:has(> .p, > .xip-tipus)) { grid-template-columns: minmax(0, 1fr); }
+.llista-neta li span { min-width: 0; }
+.llista-neta small { display: block; color: var(--muted); font-size: 13px; }
+.llista-neta .p { min-width: 40px; }
+.xip-tipus { font: 500 10px/1.2 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 4px 6px; border-radius: 4px; white-space: nowrap; margin-top: 2px; }
+.sector > header { padding-top: 18px; border-top: 2px solid var(--ink); }
+.bloc h3 { font-size: 16px; }
 footer { color: var(--muted); font-size: 13px; display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px; }
 footer p { max-width: 100ch; overflow-wrap: anywhere; }
 @media (max-width: 900px) {
@@ -566,6 +611,39 @@ def _calendari_html(sc: Screening) -> str:
             f'style="--l:{esquerra:.2f}%;--w:{amplada:.2f}%" title="{_e(finestra_text(f))}"></span></div>')
     return ('<div class="cal"><div class="cal-grid"><div class="cal-cap"></div><div class="cal-mesos">'
             + "".join(f"<span>{m}</span>" for m in mesos) + "</div>" + "".join(files) + "</div></div>")
+
+
+def _sector_html(sc: Screening) -> str:
+    st = sc.sector
+    divs = " ".join(d.id for d in st["divisions"])
+    h = [f'<section class="seccio sector" data-divisio="{_e(divs)}" aria-labelledby="t-sector"><header>'
+         '<span class="eti">Defensa, ús dual i espai</span>'
+         '<h2 id="t-sector">Entrar al sector de defensa i ús dual</h2>'
+         f'<p class="sub">Per a {_e(", ".join(d.nom for d in st["divisions"]))}: ajuts on '
+         f'{_e(sc.client.nom)} pot participar, portes d\'entrada al sector, amb qui parlar i què demanaran els compradors.</p>'
+         '</header><div class="dues">']
+    h.append('<div class="bloc"><h3>Ajuts d\'ús dual i defensa</h3><ul class="llista-neta">'
+             + "".join(f'<li><span class="p p-{x["e"].prioritat if x["e"].prioritat in ("A", "B") else "no"}">'
+                       f'{x["e"].punts}</span><span><b>{_e(x["c"].nom)}</b><small>{_e(finestra_text(x["f"]))} · '
+                       f'{_e(x["divisio"].nom)}</small></span></li>' for x in st["linies"])
+             + "</ul></div>")
+    h.append('<div class="bloc"><h3>Portes d\'entrada</h3><ul class="llista-neta">'
+             + "".join(f'<li><span class="xip-tipus">{_e(ecosistema.NOMS_TIPUS[t.tipus])}</span><span><b>'
+                       + (f'<a href="{_e(t.url)}" target="_blank" rel="noopener">{_e(t.nom)}</a>' if t.url else _e(t.nom))
+                       + f'</b><small>{_e(t.quan())}{" · " + _e(t.lloc) if t.lloc else ""}</small>'
+                       + (f"<small>{_e(t.per_als_clients)}</small>" if t.per_als_clients else "") + "</span></li>"
+                       for t in st["trobades"])
+             + "</ul></div></div><div class=\"dues\">")
+    h.append('<div class="bloc"><h3>Amb qui parlar</h3><ul class="llista-neta">'
+             + "".join(f'<li><span class="xip-tipus">{_e(ecosistema.NOMS_TIPUS[a.tipus])}</span><span><b>{_e(a.nom)}</b>'
+                       f'<small>{_e(a.per_als_clients)}</small></span></li>' for a in st["actors"])
+             + "</ul></div>")
+    h.append('<div class="bloc"><h3>Requisits que demanaran</h3><ul class="llista-neta">'
+             + "".join(f'<li><span><b>{_e(r.nom)}</b><small>{_e(r.quan)}'
+                       + (" Per verificar." if r.confianca == "baixa" else "") + "</small></span></li>"
+                       for r in st["requisits"])
+             + "</ul></div></div></section>")
+    return "".join(h)
 
 
 def informe_html(sc: Screening, app: bool = False) -> str:
@@ -683,6 +761,8 @@ def informe_html(sc: Screening, app: bool = False) -> str:
              '<div class="llegenda"><span><i class="l1"></i>Dates confirmades</span>'
              '<span><i class="l2"></i>Dates estimades (edició anterior)</span><span><i class="l3"></i>Oberta tot l\'any</span>'
              f'</div></header>{_calendari_html(sc)}</section>')
+    if sc.sector:
+        h.append(_sector_html(sc))
     h.append("</div>")  # .contingut
 
     # Consideracions i preguntes

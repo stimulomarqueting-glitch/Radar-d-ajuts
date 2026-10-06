@@ -46,8 +46,8 @@ perfils:
       economia_circular: 2
       cooperacio: 2
       industria: 2
-      defensa: 1
-      espai: 1
+      defensa: 2
+      espai: 2
       talent: 2
       ia: 1
       digital: 1
@@ -66,6 +66,13 @@ perfils:
       - tecnologías disruptivas
       - doble uso
       - dual use
+      - defensa
+      - defence
+      - seguridad y defensa
+      - antidrón
+      - counter-drone
+      - aeroespacial
+      - aerospace
       - transferencia de conocimiento
       - transferència de coneixement
       - valorización

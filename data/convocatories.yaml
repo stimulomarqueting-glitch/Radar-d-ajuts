@@ -597,28 +597,40 @@ convocatories:
     tancament: 2026-07-17
 
 - id: catalunya-seguretat-defensa
-  nom: "Programa de capacitació d'empreses catalanes en seguretat i defensa (fins a 400 empreses)"
-  entitat: Generalitat de Catalunya
+  nom: "Dual Technology & Industry Readiness Programme (capacitació en seguretat i defensa, fins a 400 empreses)"
+  entitat: ACCIÓ i EOI, amb el Ministeri de Defensa i AeroS
   nivell: catalunya
   origen: public
   instrument: acceleracio
   zones: [ES-CT]
-  ambit_geografic: Empreses catalanes amb capacitats d'ús dual.
+  ambit_geografic: Empreses catalanes, sobretot pimes d'automoció, aeroespacial, metal·lúrgia i maquinària.
   beneficiaris: [pime, gran_empresa]
   rols_stimulo: [beneficiari]
-  focus: [dual, defensa, industria]
-  ajuda_text: "Capacitació i acompanyament per entrar a la cadena de valor de seguretat i defensa."
+  focus: [dual, defensa, industria, automocio, espai]
+  ajuda_text: "Sessions presencials de 7 hores: finançament europeu, homologació de solucions, cooperació amb centres i accés a contractació estatal i europea."
   descripcio: >
-    Programa anunciat l'abril de 2026 per capacitar fins a 400 empreses; la Cambra de Barcelona
-    identifica 812 empreses catalanes d'ús dual. L'Estratègia d'innovació prioritza seguretat i defensa.
-  notes: Organisme gestor i calendari no verificats. Porta d'entrada per a Stimulo i DOGA al mercat dual.
+    Programa d'ACCIÓ i l'Escuela de Organización Industrial (EOI) per capacitar fins a 400 empreses
+    perquè entrin a la cadena de valor de seguretat i defensa amb productes d'ús dual. Sessions des
+    del 27/04/2026 a Barcelona, Girona, Tarragona i Lleida, la primera dedicada a l'automoció. Inclou
+    un cicle de trobades per explorar oportunitats de negoci. La Cambra de Barcelona identifica 812
+    empreses catalanes amb capacitats d'ús dual.
+  notes: >
+    Calendari de noves sessions per confirmar a ACCIÓ. Porta d'entrada per a Stimulo i per a clients
+    industrials (p. ex. DOGA, automoció). Complementa IN+DEF (EOI) a escala estatal.
   url: https://govern.cat/gov/notes-premsa/811465/nou-programa-per-capacitar-fins-a-400-empreses-catalanes-perque-s-introdueixin-en-el-sector-de-la-seguretat-i-la-defensa
-  confianca: baixa
+  fonts_verificacio:
+    - https://www.eleconomista.es/industria/noticias/13865078/04/26/la-generalitat-ayudara-a-400-empresas-catalanas-a-entrar-en-el-negocio-de-la-defensa.html
+    - https://www.catnoticias.es/articulo/defensa-y-seguridad/govern-impulsa-nuevo-programa-capacitar-400-empresas-catalanas-sector-seguridad-defensa/20260420000001007531.html
+    - https://www.accio.gencat.cat/programa-sessio-capacitacio-multisectorial
+    - https://cambrabcn.org/wp-content/uploads/2026/05/Base-tecnologica-i-industrial-Catalunya_Maig_2026.pdf
+  confianca: mitjana
+  encaix_stimulo: "Formació i xarxa per entrar al sector dual; Stimulo hi pot anar com a empresa i recomanar-lo als clients industrials."
   calendari:
     recurrencia: desconeguda
-    estat: desconegut
+    estat: oberta
+    obertura: 2026-04-27
     revisar: 2026-10-20
-    revisar_motiu: "Programa seguretat i defensa (Generalitat): saber qui el gestiona i com inscriure-s'hi"
+    revisar_motiu: "Dual Technology & Industry Readiness (ACCIÓ/EOI): consultar les properes sessions i inscriure-hi Stimulo i clients"
 
 - id: esa-bic-barcelona
   nom: "ESA BIC Barcelona (incubació espacial)"
@@ -1205,7 +1217,11 @@ convocatories:
   focus: [dual, defensa, deep_tech]
   ajuda_text: "Reptes tecnològics d'ús dual, hackatons i formació; objectiu 500 pimes i startups."
   descripcio: Programa d'innovació oberta per entrar a la cadena de valor de defensa.
-  notes: Llançat el 30/03/2026; candidatures 9–18/07/2026 (no verificat). Saber si hi haurà noves rondes.
+  notes: >
+    Ecosistema IN+DEF presentat el 30/03/2026 en l'acord dels ministeris de Defensa, Ciència i
+    Indústria per integrar pimes i empreses emergents a la cadena de valor de defensa. Candidatures
+    9–18/07/2026 (no verificat). Saber si hi haurà noves rondes. A Catalunya, l'EOI coorganitza amb
+    ACCIÓ el programa de capacitació en seguretat i defensa.
   url: https://www.eoi.es/es/noticias/eoi-lanza-el-programa-indef-una-iniciativa-destinada-incorporar-pymes-y-startups-en-la-cadena-de-valor-del-ambito-de-la-defensa
   confianca: baixa
   calendari:
@@ -1528,6 +1544,85 @@ convocatories:
     recurrencia: multiples_talls
     estat: oberta
     talls: [2026-11-04, 2027-02-03, 2027-04-01, 2027-09-01, 2027-11-03]
+
+- id: eic-step-defence-scaleup
+  nom: "EIC STEP Scale Up Defence 2026"
+  entitat: Comissió Europea – EIC
+  nivell: europa
+  origen: public
+  instrument: capital
+  fons: UE – Horizon Europe (Defence Mini-Omnibus)
+  zones: [EU]
+  ambit_geografic: Empreses d'estats membres de la UE, països de l'EEE associats a Horitzó Europa i Ucraïna.
+  beneficiaris: [startup, pime]
+  rols_stimulo: [proveidor_extern, assessor]
+  focus: [defensa, dual, deep_tech, robotica, creixement_startup]
+  import_max_eur: 30000000
+  pressupost_total_eur: 100000000
+  trl: [7, 9]
+  ajuda_text: "Inversió en capital de 10–30 M€ per empresa, dins de rondes de 50–150 M€; cal acreditar com a mínim un 20 % de coinversió privada."
+  descripcio: >
+    Primera convocatòria europea d'inversió directa en capital per a empreses de defensa: escalar
+    capacitats industrials crítiques (defensa aèria i antimíssil, drons i antidrons, altres
+    tecnologies de defensa). Forma part de l'obertura de l'EIC a defensa i ús dual del 17/06/2026,
+    que també obre l'EIC Accelerator i l'EIC STEP Scale Up a tecnologies d'ús dual.
+  notes: Resultats a principis de 2027. Sessió informativa de l'EIC el 24/06/2026.
+  url: https://eic.ec.europa.eu/news/european-innovation-council-opens-defence-and-dual-use-technologies-2026-06-17_en
+  fonts_verificacio:
+    - https://www.ffg.at/en/europa/heu/eic/calls/step_defence_2026
+    - https://www.eura-ag.com/en/blog/eic-froedert-nun-auch-dual-use-und-verteidigung
+    - https://innovayt.eu/news/eic-defence-dual-use-technologies/
+  confianca: mitjana
+  encaix_stimulo: "Per a scale-ups clients de defensa (drons, antidrons, sensors) que han d'industrialitzar: Stimulo com a proveïdor de producte i industrialització amb el capital captat."
+  punts_forts:
+    - Termini 28/10/2026.
+    - Fins a 30 M€ d'inversió directa de l'EIC per empresa.
+  socis_cal: [inversor]
+  calendari:
+    recurrencia: puntual
+    estat: oberta
+    obertura: 2026-06-30
+    tancament: 2026-10-28
+
+- id: redes-infraestructures-us-dual
+  nom: "Infraestructures per a recerca, assaig i experimentació en tecnologies d'ús dual (Red.es 2026)"
+  entitat: Red.es (Ministeri per a la Transformació Digital i de la Funció Pública)
+  nivell: estat
+  origen: public
+  instrument: subvencio
+  fons: FEDER
+  zones: [ES]
+  ambit_geografic: >-
+    Convocatòria de recerca: universitats públiques i els seus instituts, organismes públics de
+    recerca i centres públics d'R+D. Es preveuen convocatòries d'assaig i experimentació per a
+    centres tecnològics estatals i empreses.
+  beneficiaris: [universitat, centre_recerca, centre_tecnologic]
+  rols_stimulo: [proveidor_extern]
+  focus: [dual, defensa, deep_tech, ia, fotonica, espai]
+  pressupost_total_eur: 162000000
+  ajuda_text: "Paquet de més de 162 M€ en ajuts per a infraestructures d'ús dual, cofinançat amb FEDER."
+  descripcio: >
+    Construcció i millora d'infraestructures d'ús dual en els àmbits de la Recomanació (UE) 2023/2113:
+    semiconductors avançats, IA, quàntica, biotecnologia, connectivitat avançada, sensors avançats,
+    tecnologies espacials i de propulsió, entre d'altres. Bases: Ordre TDF/811/2026, de 22 de juliol;
+    convocatòria de recerca: resolució de Red.es del 30/09/2026.
+  notes: >
+    Termini de sol·licitud per confirmar al BOE. Per a Stimulo, oportunitat com a proveïdor de
+    disseny d'equips, bancs d'assaig i instal·lacions per als centres beneficiaris; per a clients
+    empresa, vigilar la convocatòria d'assaig i experimentació.
+  url: https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/detalls/noticia/20261006_tecnologia-dual
+  fonts_verificacio:
+    - https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/detalls/noticia/20260810_us-dual
+    - https://www.boe.es/boe/dias/2026/08/01/pdfs/BOE-A-2026-16837.pdf
+  confianca: mitjana
+  encaix_stimulo: "Els centres que creïn infraestructures d'assaig dual necessiten disseny d'equips i bancs d'assaig: Stimulo com a proveïdor."
+  socis_cal: [recerca]
+  calendari:
+    recurrencia: puntual
+    estat: oberta
+    obertura: 2026-10-06
+    revisar: 2026-10-13
+    revisar_motiu: "Red.es infraestructures d'ús dual: confirmar el termini al BOE i si s'obre la convocatòria per a empreses i centres tecnològics"
 
 - id: eic-step-scaleup
   excel_fila: 25

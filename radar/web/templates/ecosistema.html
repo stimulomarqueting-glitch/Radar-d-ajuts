@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block titol %}Defensa i espai{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">Ecosistema · ús dual, defensa i espai</span>
+    <h1>Defensa i espai</h1>
+    <p class="sub">Ajuts d'ús dual i defensa, trobades i programes per entrar al sector, actors amb qui parlar i requisits que demanen els compradors. Les trobades arriben al correu del matí 21, 7 i 1 dies abans.</p>
+  </div>
+</header>
+
+<section class="bloc">
+  <h2>Ajuts d'ús dual, defensa i espai</h2>
+  <div class="taula-embolcall">
+  <table class="taula">
+    <thead><tr><th>Encaix</th><th>Línia</th><th>Finestra</th><th>Ajut</th></tr></thead>
+    <tbody>
+    {% for x in linies %}
+    <tr><td class="num"><span class="punts-mini p-{{ x.e.prioritat }}">{{ x.e.punts }} {{ x.e.prioritat }}</span></td>
+      <td><strong>{{ x.c.nom }}</strong><small class="bloc-petit">{{ x.c.entitat }}</small></td>
+      <td><span class="estat e-{{ x.f.estat }}{% if x.f.estimada %} e-estimada{% endif %}">{{ x.f.descripcio }}</span></td>
+      <td>{{ x.c.ajuda_text or (x.c.import_max_eur|eur) }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="bloc">
+  <h2>Trobades i programes</h2>
+  <div class="esborranys">
+  {% for t in trobades %}
+    <div class="targeta">
+      <p><span class="etiqueta-tipus">{{ NOMS[t.tipus] }}</span> <strong>{{ t.nom }}</strong></p>
+      <p class="ajuda">{{ t.quan() }}{% if t.lloc %} · {{ t.lloc }}{% endif %} · {{ t.organitza }}{% if t.confianca == "baixa" %} · per verificar{% endif %}</p>
+      <p>{{ t.descripcio }}</p>
+      {% if t.per_als_clients %}<p><b>Per als clients:</b> {{ t.per_als_clients }}</p>{% endif %}
+      {% if t.nota %}<p class="ajuda">{{ t.nota }}</p>{% endif %}
+      {% if t.url %}<p><a href="{{ t.url }}" target="_blank" rel="noopener">Més informació ↗</a></p>{% endif %}
+    </div>
+  {% endfor %}
+  </div>
+</section>
+
+<section class="bloc">
+  <h2>Actors</h2>
+  <div class="taula-embolcall">
+  <table class="taula">
+    <thead><tr><th>Actor</th><th>Què és</th><th>Per als clients</th><th>Acció de Stimulo</th></tr></thead>
+    <tbody>
+    {% for a in actors %}
+    <tr><td><strong>{% if a.url %}<a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.nom }}</a>{% else %}{{ a.nom }}{% endif %}</strong>
+        <small class="bloc-petit">{{ NOMS[a.tipus] }}{% if a.confianca == "baixa" %} · per verificar{% endif %}</small></td>
+      <td>{{ a.descripcio }}</td><td>{{ a.per_als_clients }}</td><td>{{ a.accio }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="bloc">
+  <h2>Requisits per entrar al sector</h2>
+  <ul class="docs">
+  {% for r in requisits %}
+    <li><strong>{{ r.nom }}</strong>{% if r.confianca == "baixa" %} <small class="bloc-petit">per verificar</small>{% endif %}
+      <small class="bloc-petit">{{ r.quan }} {{ r.descripcio }}</small></li>
+  {% endfor %}
+  </ul>
+</section>
+{% endblock %}

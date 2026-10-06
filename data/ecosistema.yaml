@@ -1,0 +1,262 @@
+# Ecosistema de defensa, ús dual i espai: qui hi ha, on es troba el sector i què cal per entrar-hi.
+#
+# No són ajuts (aquests són a convocatories.yaml): són les portes d'entrada al sector per a Stimulo i
+# per als clients industrials. El radar en treu:
+#   - recordatoris al correu del matí (21, 7 i 1 dies abans de cada trobada, i el mateix dia);
+#   - la pàgina «Ecosistema» de l'aplicació i sortida/ecosistema.md;
+#   - la secció «Entrar al sector» dels informes de screening per a clients amb focus dual, defensa o espai.
+#
+# tipus d'actor: prime | enginyeria | consultoria | cluster | talent | estudi
+# tipus de trobada: fira | trobada | jornada | workshop | programa
+# ambits: vocabulari de temes del radar (dual, defensa, espai, robotica, industria…)
+# confianca: alta | mitjana | baixa (baixa = dada per verificar a la font)
+
+actors:
+  - id: indra
+    nom: Indra Group
+    tipus: prime
+    ambits: [defensa, dual, espai, digital]
+    zona: ES
+    descripcio: >
+      Primer contractista tecnològic de defensa a Espanya. El maig de 2026 va reunir més de 200
+      empreses catalanes a la IV Trobada de l'Ecosistema de la Indústria Nacional de Defensa
+      (Barcelona) i hi va signar 19 acords en ciberseguretat, ciberdefensa, espai i ús dual. Les
+      seves compres a proveïdors catalans van créixer un 57 % el primer semestre de 2026; l'objectiu
+      és arribar a 1.500 llocs de treball i 550 M€ de facturació a Catalunya el 2027.
+    per_als_clients: >
+      Porta d'entrada com a proveïdor o soci tecnològic dels Programes Especials de Modernització
+      (PEM), que integren capacitats de pimes en grans projectes industrials.
+    accio: Seguir les trobades d'ecosistema i presentar-hi les capacitats de Stimulo i dels clients.
+    url: https://www.indragroup.com/
+    fonts:
+      - https://www.indragroup.com/cms-content/2026/05/260511-NP-Indra-Group-Alianzas_Cataluna_castellano.pdf
+      - https://www.elespanol.com/observatorio-defensa/20260511/indra-moviliza-empresas-catalanas-fomentar-alianzas-acelerar-modernizacion-defensa/1003744240223_0.html
+      - https://es.ara.cat/economia/industria/indra-busca-alianzas-impulsar-industria-defensa-cataluna_1_5733167.html
+    confianca: alta
+
+  - id: gutmar
+    nom: GUTMAR
+    tipus: enginyeria
+    ambits: [defensa, espai, industria, dual]
+    zona: ES-CT-B
+    descripcio: >
+      Empresa de Sant Cugat del Vallès (1951) de mecànica d'alta precisió i muntatge de conjunts
+      mecatrònics per a aeronàutica, espai, defensa, seguretat i fusió nuclear: 110 persones i més de
+      15.000 m² de plantes. El setembre de 2026 va signar amb Indra un acord per industrialitzar a
+      Catalunya components crítics de sistemes de defensa terrestres, navals i aeroespacials, i té un
+      acord amb GDELS-Santa Bárbara Sistemas per a projectes d'ús dual. Propietat de Lauria Partners,
+      amb el fons Hyperion.
+    per_als_clients: Soci industrial o subcontractista per fabricar i qualificar components de defensa.
+    accio: Explorar una col·laboració Stimulo–GUTMAR (disseny de producte + fabricació qualificada).
+    url: https://www.gutmar.com/
+    fonts:
+      - https://www.indragroup.com/cms-content/2026/09/260901-NP-Indra-Group-alianza-Gutmar_VCAS.pdf
+      - https://www.escudodigital.com/empresas/gdels-sbs-y-gutmar-se-asocian-para-desarrollar-proyectos-de-tecnologias-de-uso-dual.html
+      - https://capital-riesgo.es/es/articles/hyperion-y-lauria-partners-adquieren-gutmar/
+    confianca: alta
+
+  - id: aeros
+    nom: AeroS
+    tipus: cluster
+    ambits: [espai, defensa, dual, industria]
+    zona: ES-CT
+    descripcio: >
+      Organització que articula l'ecosistema aeronàutic, espacial i de defensa de Catalunya: més de
+      110 empreses i socis institucionals, industrials i tecnològics. Impulsa projectes col·laboratius,
+      posicionament internacional i entrada a cadenes de valor europees. Organitza jornades com
+      «Defensa i empresa: indústria, finançament i cultura de defensa a Catalunya» i col·labora en el
+      programa de capacitació en seguretat i defensa d'ACCIÓ i l'EOI.
+    per_als_clients: Xarxa, jornades i projectes col·laboratius amb la indústria aeroespacial i de defensa catalana.
+    accio: Valorar fer-se'n soci i portar-hi clients industrials.
+    url: https://www.aeros-ecosystem.com/ca/detallactivitat/defensa-i-empresa-industria-financament-i-cultura-de-defensa-a-catalunya
+    fonts:
+      - https://theobjective.com/actualidad/2026-02-11/ap-institute-y-aeros-defensa-industria/
+    confianca: alta
+
+  - id: white-cirrus
+    nom: White Cirrus
+    tipus: consultoria
+    ambits: [dual, defensa]
+    zona: ES-AN
+    descripcio: >
+      Consultora d'estratègia i innovació en tecnologies d'ús dual per a defensa i seguretat, amb seu a
+      Sevilla. Assessora startups i scale-ups en estratègia, inversió i expansió internacional, i
+      ofereix workshops de defensa per a empreses.
+    per_als_clients: Workshop per entendre el mercat de defensa i preparar l'entrada (ofertes, socis, homologacions).
+    accio: Valorar un workshop conjunt per a clients industrials que volen entrar a defensa.
+    url: https://whitecirrus.com/services/workshop-defensa/
+    fonts:
+      - https://www.b2match.com/e/feindef-2025/participants/2939638
+    confianca: mitjana
+
+  - id: digital-profiles
+    nom: Digital Profiles
+    tipus: talent
+    ambits: [digital, ia]
+    zona: ES-CT-B
+    descripcio: >
+      Startup de Barcelona (2022) de talent i serveis digitals que connecta empreses amb talent
+      tecnològic. Stimulo la té identificada per trobades del sector; el vincle amb defensa i
+      aeroespacial està per confirmar.
+    per_als_clients: Talent tecnològic i trobades per a equips que entren en projectes de defensa.
+    accio: Confirmar quines trobades de defensa o aeroespacial organitza.
+    url: https://www.digitalprofiles.net/
+    fonts:
+      - https://startupshub.catalonia.com/startup/barcelona/digital-profiles/7744
+    confianca: baixa
+
+  - id: cambra-bcn-dual
+    nom: Cambra de Barcelona – base tecnològica i industrial d'ús dual
+    tipus: estudi
+    ambits: [dual, defensa, industria]
+    zona: ES-CT
+    descripcio: >
+      Informe «El potencial de la base tecnològica i industrial d'ús dual» (maig 2026), que identifica
+      812 empreses catalanes amb capacitats d'ús dual.
+    per_als_clients: Mapa per trobar socis i clients potencials del sector dual a Catalunya.
+    accio: Creuar-lo amb els contactes de Holded per detectar clients amb potencial dual.
+    url: https://cambrabcn.org/wp-content/uploads/2026/05/Base-tecnologica-i-industrial-Catalunya_Maig_2026.pdf
+    confianca: alta
+
+trobades:
+  - id: feindef-2027
+    nom: FEINDEF 27 – Fira Internacional de Defensa i Seguretat
+    tipus: fira
+    organitza: Fundación FEINDEF (IFEMA Madrid)
+    ambits: [defensa, dual, espai]
+    zona: ES
+    lloc: IFEMA Madrid
+    inici: 2027-05-18
+    fi: 2027-05-20
+    recurrencia: biennal
+    descripcio: >
+      Cinquena edició de la fira de referència de la indústria de defensa i seguretat a Espanya. A un
+      any vista ja superava en un 25 % la superfície de l'edició de 2025, amb un 37 % d'expositors
+      nous. L'edició de 2025 va tenir un brokerage event de reunions B2B.
+    per_als_clients: Reunions B2B amb primes, ministeri i compradors; exposar productes d'ús dual.
+    url: https://www.feindef.com/
+    fonts:
+      - https://www.feindef.com/pdf/260617_NP_comercializaci%C3%B3n%20feria%20a%20un%20a%C3%B1o.pdf
+      - https://www.b2match.com/e/feindef-2025/participants/2939638
+    confianca: alta
+
+  - id: accio-dual-readiness
+    nom: Dual Technology & Industry Readiness Programme (sessions per sectors)
+    tipus: programa
+    organitza: ACCIÓ i EOI, amb el Ministeri de Defensa i AeroS
+    ambits: [dual, defensa, automocio, espai, industria]
+    zona: ES-CT
+    lloc: Barcelona, Girona, Tarragona i Lleida
+    inici: 2026-04-27
+    convocatoria: catalunya-seguretat-defensa
+    recurrencia: continua
+    descripcio: >
+      Sessions presencials de 7 hores per a pimes d'automoció, aeroespacial, metal·lúrgia i maquinària:
+      finançament europeu, homologació de solucions, cooperació amb centres i accés a contractació
+      estatal i europea. Objectiu: 400 empreses.
+    per_als_clients: La primera sessió va ser per a l'automoció; encaix directe per a proveïdors com DOGA.
+    url: https://www.accio.gencat.cat/programa-sessio-capacitacio-multisectorial
+    confianca: mitjana
+
+  - id: indra-trobades-ecosistema
+    nom: Trobades de l'Ecosistema de la Indústria Nacional de Defensa (Indra)
+    tipus: trobada
+    organitza: Indra Group
+    ambits: [defensa, dual, espai]
+    zona: ES
+    recurrencia: diverses per any
+    descripcio: >
+      Trobades regionals d'Indra amb la indústria: III al Corredor Nord (març de 2026) i IV a
+      Barcelona (maig de 2026), on es van signar 19 acords amb empreses catalanes.
+    per_als_clients: Conèixer els programes d'Indra i presentar capacitats com a proveïdor.
+    url: https://www.indragroup.com/
+    fonts:
+      - https://www.indragroup.com/cms-content/2026/03/260317-Ampliacion-NP-Indra-Group-III-Encuentro-Industria-Nacional-Defensa-Corredor-Norte.pdf
+      - https://www.indragroup.com/cms-content/2026/05/260511-NP-Indra-Group-Plan-Cataluna_V10-castellano.pdf
+    confianca: alta
+
+  - id: aeros-defensa-empresa
+    nom: "Defensa i empresa: indústria, finançament i cultura de defensa a Catalunya (AeroS)"
+    tipus: jornada
+    organitza: AeroS
+    ambits: [defensa, dual, espai]
+    zona: ES-CT
+    descripcio: Jornada d'AeroS sobre indústria, finançament i cultura de defensa a Catalunya.
+    per_als_clients: Conèixer finançament i compradors del sector a Catalunya.
+    url: https://www.aeros-ecosystem.com/ca/detallactivitat/defensa-i-empresa-industria-financament-i-cultura-de-defensa-a-catalunya
+    confianca: baixa
+    nota: Data i format per confirmar a la pàgina de l'activitat.
+
+  - id: ap-institute-programa-defensa
+    nom: Programa Executiu d'Accés i Oportunitats al Sector de la Defensa
+    tipus: programa
+    organitza: AP Institute i AeroS
+    ambits: [defensa, dual]
+    zona: ES-CT
+    lloc: Barcelona (híbrid, a temps parcial)
+    inici: 2026-02-27
+    recurrencia: anual
+    descripcio: >
+      Programa formatiu per a pimes, empreses industrials i tecnològiques que volen entrar, créixer o
+      consolidar-se a la cadena de valor de defensa nacional i europea, amb professorat institucional,
+      militar i de grans empreses del sector.
+    per_als_clients: Formació directiva per decidir l'entrada al sector.
+    url: https://theobjective.com/actualidad/2026-02-11/ap-institute-y-aeros-defensa-industria/
+    confianca: mitjana
+    nota: Edició de 2026 ja començada; vigilar la convocatòria de 2027.
+
+  - id: white-cirrus-workshop
+    nom: Workshop de defensa (White Cirrus)
+    tipus: workshop
+    organitza: White Cirrus
+    ambits: [defensa, dual]
+    zona: ES
+    recurrencia: a demanda
+    descripcio: Workshop per a empreses que volen entrar al mercat de defensa i ús dual.
+    per_als_clients: Format a mida per a l'equip directiu d'un client.
+    url: https://whitecirrus.com/services/workshop-defensa/
+    confianca: mitjana
+
+requisits:
+  - id: registre-dgam
+    nom: Registre d'Empreses de la DGAM (Ministeri de Defensa)
+    quan: Per contractar amb el Ministeri de Defensa; també cal per certificar-se en PECAL.
+    descripcio: Inscripció al registre de la Direcció General d'Armament i Material.
+    fonts:
+      - https://caetraprogramme.institutofomentomurcia.es/wp-content/uploads/2024/11/3_Guia_CAETRA_PECAL_AQAP.pdf
+    confianca: mitjana
+
+  - id: pecal-aqap
+    nom: Certificació PECAL/AQAP 2110
+    quan: Contractes de defensa amb disseny, desenvolupament i producció.
+    descripcio: >
+      Requisits de qualitat de l'OTAN (versió espanyola PECAL). Parteixen d'un sistema ISO 9001:2015
+      i hi afegeixen requisits propis de defensa.
+    fonts:
+      - https://www.gmv.com/en/docs/specific-purposes-defense/pecalaqap-2110-2210-2310
+      - https://caetraprogramme.institutofomentomurcia.es/wp-content/uploads/2024/11/3_Guia_CAETRA_PECAL_AQAP.pdf
+    confianca: alta
+
+  - id: habilitacio-seguretat
+    nom: Habilitació de Seguretat d'Empresa (HSEM) i d'Establiment (HSES)
+    quan: Contractes amb accés a informació classificada.
+    descripcio: Es tramita davant l'Oficina Nacional de Seguretat (CNI).
+    confianca: mitjana
+
+  - id: ncage
+    nom: Codi NCAGE (Sistema OTAN de Catalogació)
+    quan: Ser proveïdor de defensa i de molts contractistes principals.
+    descripcio: Identificador internacional de proveïdor de l'OTAN. Procediment per verificar.
+    confianca: baixa
+
+  - id: control-doble-us
+    nom: Control d'exportació de productes de doble ús (Reglament (UE) 2021/821)
+    quan: Exportar fora de la UE productes, programari o tecnologia de doble ús llistats.
+    descripcio: Cal llicència d'exportació per als productes inclosos a les llistes del Reglament.
+    confianca: alta
+
+  - id: pic-ue
+    nom: Codi PIC al portal Funding & Tenders de la UE
+    quan: Participar en EDF, EDIP, EIC i Horizon Europe.
+    descripcio: Registre únic de l'entitat per a totes les convocatòries de la Comissió Europea.
+    confianca: alta

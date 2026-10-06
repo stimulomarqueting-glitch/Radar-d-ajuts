@@ -6,6 +6,31 @@ METHOD:PUBLISH
 X-WR-CALNAME:Radar d'ajuts Stimulo
 X-WR-TIMEZONE:Europe/Madrid
 BEGIN:VEVENT
+UID:eic-step-defence-scaleup-tancament-20261007@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261008
+SUMMARY:🔴 Comissió Europea – EIC · EIC STEP Scale Up Defence 2026 
+ — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 28/10/2026\nData confi
+ rmada.\nÀmbit: Empreses d'estats membres de la UE\, països de l'EEE asso
+ ciats a Horitzó Europa i Ucraïna.\nAjut: Inversió en capital de 10–30
+  M€ per empresa\, dins de rondes de 50–150 M€\; cal acreditar com a 
+ mínim un 20 % de coinversió privada.\nFitxa: https://eic.ec.europa.eu/ne
+ ws/european-innovation-council-opens-defence-and-dual-use-technologies-202
+ 6-06-17_en
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://eic.ec.europa.eu/news/european-innovation-council-opens-defence
+ -and-dual-use-technologies-2026-06-17_en
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · EIC STEP Scale Up Defence 202
+ 6 — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:accio-cupons-vigilar-20261008@radar-ajuts.stimulo
 DTSTAMP:20261006T060000Z
 DTSTART;VALUE=DATE:20261008
@@ -332,6 +357,35 @@ TRIGGER;RELATED=START:PT9H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:redes-infraestructures-us-dual-vigilar-20261013@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+SUMMARY:👀 Red.es (Ministeri per a la Transformació Digital i de la Func
+ ió Pública) · Infraestructures per a recerca\, assaig i experimentació
+  en tecnologies d'ús dual (Red.es 2026) — vigilar
+DESCRIPTION:Red.es infraestructures d'ús dual: confirmar el termini al BOE
+  i si s'obre la convocatòria per a empreses i centres tecnològics\nData 
+ confirmada.\nÀmbit: Convocatòria de recerca: universitats públiques i e
+ ls seus instituts\, organismes públics de recerca i centres públics d'R+
+ D. Es preveuen convocatòries d'assaig i experimentació per a centres tec
+ nològics estatals i empreses.\nAjut: Paquet de més de 162 M€ en ajuts 
+ per a infraestructures d'ús dual\, cofinançat amb FEDER.\nFitxa: https:/
+ /exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus
+ /detalls/noticia/20261006_tecnologia-dual
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fon
+ s_europeus/detalls/noticia/20261006_tecnologia-dual
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Red.es (Ministeri per a la Transformació Digital i de la 
+ Funció Pública) · Infraestructures per a recerca\, assaig i experimenta
+ ció en tecnologies d'ús dual (Red.es 2026) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:agaur-doctorats-industrials-tancament-20261015@radar-ajuts.stimulo
 DTSTAMP:20261006T060000Z
 DTSTART;VALUE=DATE:20261015
@@ -426,14 +480,17 @@ UID:catalunya-seguretat-defensa-vigilar-20261020@radar-ajuts.stimulo
 DTSTAMP:20261006T060000Z
 DTSTART;VALUE=DATE:20261020
 DTEND;VALUE=DATE:20261021
-SUMMARY:👀 Generalitat de Catalunya · Programa de capacitació d'emprese
- s catalanes en seguretat i defensa (fins a 400 empreses) — vigilar
-DESCRIPTION:Programa seguretat i defensa (Generalitat): saber qui el gestio
- na i com inscriure-s'hi\nData confirmada.\nÀmbit: Empreses catalanes amb 
- capacitats d'ús dual.\nAjut: Capacitació i acompanyament per entrar a la
-  cadena de valor de seguretat i defensa.\nFitxa: https://govern.cat/gov/no
- tes-premsa/811465/nou-programa-per-capacitar-fins-a-400-empreses-catalanes
- -perque-s-introdueixin-en-el-sector-de-la-seguretat-i-la-defensa
+SUMMARY:👀 ACCIÓ i EOI\, amb el Ministeri de Defensa i AeroS · Dual Tec
+ hnology & Industry Readiness Programme (capacitació en seguretat i defens
+ a\, fins a 400 empreses) — vigilar
+DESCRIPTION:Dual Technology & Industry Readiness (ACCIÓ/EOI): consultar le
+ s properes sessions i inscriure-hi Stimulo i clients\nData confirmada.\nÀ
+ mbit: Empreses catalanes\, sobretot pimes d'automoció\, aeroespacial\, me
+ tal·lúrgia i maquinària.\nAjut: Sessions presencials de 7 hores: finan
+ çament europeu\, homologació de solucions\, cooperació amb centres i ac
+ cés a contractació estatal i europea.\nFitxa: https://govern.cat/gov/not
+ es-premsa/811465/nou-programa-per-capacitar-fins-a-400-empreses-catalanes-
+ perque-s-introdueixin-en-el-sector-de-la-seguretat-i-la-defensa
 CATEGORIES:catalunya,vigilar
 TRANSP:TRANSPARENT
 URL:https://govern.cat/gov/notes-premsa/811465/nou-programa-per-capacitar-f
@@ -441,8 +498,9 @@ URL:https://govern.cat/gov/notes-premsa/811465/nou-programa-per-capacitar-f
  retat-i-la-defensa
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:👀 Generalitat de Catalunya · Programa de capacitació d'emp
- reses catalanes en seguretat i defensa (fins a 400 empreses) — vigilar
+DESCRIPTION:👀 ACCIÓ i EOI\, amb el Ministeri de Defensa i AeroS · Dual
+  Technology & Industry Readiness Programme (capacitació en seguretat i de
+ fensa\, fins a 400 empreses) — vigilar
 TRIGGER;RELATED=START:PT9H
 END:VALARM
 END:VEVENT
@@ -556,6 +614,31 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:🔴 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open
   i Challenges) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-step-defence-scaleup-tancament-20261028@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:🔴 Comissió Europea – EIC · EIC STEP Scale Up Defence 2026 
+ — tancament
+DESCRIPTION:Tancament confirmat: EIC STEP Scale Up Defence 2026\nData confi
+ rmada.\nÀmbit: Empreses d'estats membres de la UE\, països de l'EEE asso
+ ciats a Horitzó Europa i Ucraïna.\nAjut: Inversió en capital de 10–30
+  M€ per empresa\, dins de rondes de 50–150 M€\; cal acreditar com a 
+ mínim un 20 % de coinversió privada.\nFitxa: https://eic.ec.europa.eu/ne
+ ws/european-innovation-council-opens-defence-and-dual-use-technologies-202
+ 6-06-17_en
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://eic.ec.europa.eu/news/european-innovation-council-opens-defence
+ -and-dual-use-technologies-2026-06-17_en
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · EIC STEP Scale Up Defence 202
+ 6 — tancament
 TRIGGER;RELATED=START:PT9H
 END:VALARM
 END:VEVENT
