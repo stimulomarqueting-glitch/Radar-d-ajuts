@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block titol %}Licitacions{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">PSCP · PLACSP · TED</span>
+    <h1>Licitacions</h1>
+    <p class="sub">Anuncis amb encaix per a Stimulo, amb un semàfor orientatiu fet amb les dades de l'anunci. La decisió es pren amb els plecs: cada licitació té la seva fitxa de decisió i l'assistent pot llegir-los.</p>
+  </div>
+  <form method="post" action="/licitacions/cerca"><button class="boto" type="submit" {% if en_marxa %}disabled{% endif %}>{{ "Cercant…" if en_marxa else "Cercar ara" }}</button></form>
+</header>
+
+{% if missatge %}<p class="avis-ok" role="status">{{ missatge }}</p>{% endif %}
+
+<section class="resum" aria-label="Resum">
+  <div><b>{{ compte["nova"] }}</b><span>noves per revisar</span></div>
+  <div><b>{{ compte["en anàlisi"] }}</b><span>en anàlisi</span></div>
+  <div><b>{{ compte["go"] }}</b><span>go (preparant oferta)</span></div>
+  <div><b>{{ urgents }}</b><span>terminis en 7 dies</span></div>
+</section>
+
+<form method="get" action="/licitacions" class="filtres">
+  <div class="camp"><label for="f-estat">Estat</label>
+    <select id="f-estat" name="estat">
+      <option value="">Tots</option>
+      <option value="actives" {% if filtre.estat == "actives" %}selected{% endif %}>Actives (noves, en anàlisi i go)</option>
+      {% for e in estats %}<option value="{{ e }}" {% if filtre.estat == e %}selected{% endif %}>{{ e }}</option>{% endfor %}
+    </select></div>
+  <div class="camp"><label for="f-semafor">Semàfor</label>
+    <select id="f-semafor" name="semafor">
+      <option value="">Tots</option>
+      {% for s, t in [("verd", "Analitzar"), ("groc", "Vigilar"), ("vermell", "Termini massa just"), ("gris", "Informació")] %}
+      <option value="{{ s }}" {% if filtre.semafor == s %}selected{% endif %}>{{ t }}</option>{% endfor %}
+    </select></div>
+  <div class="camp"><label for="f-q">Cerca</label><input id="f-q" name="q" type="search" value="{{ filtre.q }}" placeholder="disseny, prototip, ajuntament…"></div>
+  <button class="boto secundari" type="submit">Filtrar</button>
+</form>
+
+{% if files %}
+<div class="taula-embolcall">
+<table class="taula">
+  <thead><tr><th></th><th>Licitació</th><th>Import</th><th>Termini</th><th>Estat</th><th>Font</th></tr></thead>
+  <tbody>
+  {% for r in files %}
+  <tr>
+    <td class="num"><span class="semafor s-{{ r.avaluacio.semafor }}" title="{{ r.avaluacio.recomanacio }}">{{ r.avaluacio.punts }}</span></td>
+    <td><a href="/licitacio?id={{ r.id|urlencode }}"><strong>{{ r.dades.titol }}</strong></a><small class="bloc-petit">{{ r.dades.organ }}</small></td>
+    <td class="num">{{ (r.dades.import_eur or r.dades.valor_estimat)|eur or "—" }}</td>
+    <td class="num">{% if r.dades.termini %}{{ r.dades.termini|data }}<small class="bloc-petit {% if r.dies is not none and r.dies <= 7 %}urgent{% endif %}">{% if r.dies is none %}{% elif r.dies < 0 %}tancada{% elif r.dies == 0 %}avui{% else %}{{ r.dies }} dies{% endif %}</small>{% else %}—{% endif %}</td>
+    <td>{{ r.estat }}{% if r.responsable %}<small class="bloc-petit">{{ r.responsable }}</small>{% endif %}</td>
+    <td>{{ r.font }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% else %}
+<div class="buit">Encara no hi ha licitacions{% if filtre.estat or filtre.semafor or filtre.q %} amb aquests filtres{% endif %}. La revisió del matí en cerca de noves a la PSCP, la PLACSP i TED; també pots fer «Cercar ara» o afegir-ne una a mà.</div>
+{% endif %}
+
+<details class="bloc">
+  <summary><strong>Afegir una licitació a mà</strong> <span class="ajuda">(una que t'han passat o que has vist en una altra plataforma)</span></summary>
+  <form method="post" action="/licitacions/nova" class="formulari ample">
+    <div class="camp"><label for="n-titol">Objecte del contracte</label><input id="n-titol" name="titol" required maxlength="300"></div>
+    <div class="camp"><label for="n-organ">Òrgan de contractació</label><input id="n-organ" name="organ" maxlength="200"></div>
+    <div class="camp"><label for="n-url">Enllaç a l'anunci</label><input id="n-url" name="url" type="url" maxlength="500" placeholder="https://contractaciopublica.cat/…"></div>
+    <div class="camp"><label for="n-exp">Expedient</label><input id="n-exp" name="expedient" maxlength="80"></div>
+    <div class="camp"><label for="n-termini">Termini d'ofertes</label><input id="n-termini" name="termini" type="date"></div>
+    <div class="camp"><label for="n-import">Pressupost base sense IVA (€)</label><input id="n-import" name="import_eur" inputmode="decimal"></div>
+    <div class="camp"><label for="n-cpv">CPV</label><input id="n-cpv" name="cpv" placeholder="71320000"></div>
+    <div class="camp"><label for="n-proc">Procediment</label><input id="n-proc" name="procediment" placeholder="Obert simplificat"></div>
+    <button class="boto" type="submit">Afegir i avaluar</button>
+  </form>
+</details>
+{% endblock %}

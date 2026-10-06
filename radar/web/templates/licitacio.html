@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block titol %}{{ lic.titol[:60] }}{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti"><a href="/licitacions">← Licitacions</a> · {{ lic.font }}</span>
+    <h1>{{ lic.titol }}</h1>
+    <p class="sub">{{ lic.organ }}{% if lic.expedient %} · Expedient {{ lic.expedient }}{% endif %}</p>
+  </div>
+  <div class="accions">
+    {% if lic.url %}<a class="boto secundari" href="{{ lic.url }}" target="_blank" rel="noopener">Anunci oficial ↗</a>{% endif %}
+    <a class="boto secundari" href="/licitacio/fitxa.docx?id={{ r.id|urlencode }}">Fitxa de decisió (Word)</a>
+    <form method="post" action="/licitacio/expedient?id={{ r.id|urlencode }}" class="en-linia">
+      <button class="boto" type="submit">{{ "Obrir l'oferta amb l'assistent" if r.expedient_id else "Preparar l'oferta amb l'assistent" }}</button></form>
+  </div>
+</header>
+
+<div class="espai">
+  <div class="xat">
+    <section class="bloc">
+      <div class="cap-client">
+        <h2><span class="semafor s-{{ av.semafor }}">{{ av.punts }}</span> {{ av.recomanacio }}</h2>
+        <span class="ajuda">Orientatiu: només amb les dades de l'anunci. Decideix amb els plecs.</span>
+      </div>
+      <dl class="fitxa">
+        <div><dt>Pressupost base sense IVA</dt><dd>{{ lic.import_eur|eur or "—" }}</dd></div>
+        <div><dt>Valor estimat</dt><dd>{{ lic.valor_estimat|eur or "—" }}</dd></div>
+        <div><dt>Termini d'ofertes</dt><dd>{% if lic.termini %}{{ lic.termini|data }} · {% if r.dies < 0 %}tancat{% elif r.dies == 0 %}avui{% else %}{{ r.dies }} dies{% endif %}{% else %}per confirmar{% endif %}</dd></div>
+        <div><dt>Procediment</dt><dd>{{ lic.procediment or "—" }}</dd></div>
+        <div><dt>Tipus</dt><dd>{{ lic.tipus or "—" }}</dd></div>
+        <div><dt>CPV</dt><dd>{{ lic.cpv|join(", ") or "—" }}</dd></div>
+        <div><dt>Lloc</dt><dd>{{ lic.lloc or "—" }}</dd></div>
+        <div><dt>Fase</dt><dd>{{ lic.fase or "—" }}</dd></div>
+      </dl>
+      {% if av.motius %}<p><b>Per què:</b> {{ av.motius|join(" · ") }}</p>{% endif %}
+      {% if av.alertes %}<ul class="avis-error">{% for a in av.alertes %}<li>{{ a }}</li>{% endfor %}</ul>{% endif %}
+    </section>
+
+    <section class="bloc" aria-label="Fitxa de decisió">
+      <div class="md">{{ fitxa|md }}</div>
+    </section>
+  </div>
+
+  <aside class="lateral">
+    <section class="bloc">
+      <h2>Decisió</h2>
+      <form method="post" action="/licitacio?id={{ r.id|urlencode }}" class="formulari">
+        <div class="camp"><label for="d-estat">Estat</label>
+          <select id="d-estat" name="estat">{% for e in estats %}<option {% if e == r.estat %}selected{% endif %}>{{ e }}</option>{% endfor %}</select></div>
+        <div class="camp"><label for="d-resp">Responsable</label><input id="d-resp" name="responsable" value="{{ r.responsable }}" maxlength="100"></div>
+        <div class="camp"><label for="d-motiu">Motiu (go / no-go)</label><textarea id="d-motiu" name="motiu" rows="3">{{ r.motiu }}</textarea></div>
+        <div class="camp"><label for="d-notes">Notes</label><textarea id="d-notes" name="notes" rows="5">{{ r.notes }}</textarea></div>
+        <button class="boto" type="submit">Desar</button>
+      </form>
+    </section>
+    <section class="bloc">
+      <h2>Compartir</h2>
+      <p class="ajuda">Resum per enviar a l'equip o a un soci (correu, missatgeria). La fitxa en Word inclou les comprovacions i la decisió.</p>
+      <pre class="correu" id="resum-licitacio">{{ resum }}</pre>
+      <button type="button" class="boto secundari" data-copia="resum-licitacio">Copiar el resum</button>
+    </section>
+  </aside>
+</div>
+{% endblock %}

@@ -14,6 +14,7 @@ amb un assistent de Claude que ja té tot el context de Stimulo, de l'ajut i del
 - **Manual de gestió d'ajuts:** [docs/gestio-ajuts.md](docs/gestio-ajuts.md)
 - **Instal·lació al VPS:** [docs/desplegament.md](docs/desplegament.md)
 - **Servei de screening per a clients:** [docs/servei-screening.md](docs/servei-screening.md)
+- **Licitacions (valoració i funcionament):** [docs/licitacions.md](docs/licitacions.md)
 - **Informe actual:** [sortida/radar.md](sortida/radar.md) · tauler: `sortida/radar.html` · calendari: `sortida/alertes.ics`
 
 ## Com funciona
@@ -24,7 +25,8 @@ data/convocatories.yaml  (catàleg curat: 74 fitxes)
 data/perfils.yaml        (Stimulo; clients de servei desactivats)          ──▶ radar ──▶ sortida/
 data/zones.yaml          (jerarquia geogràfica ISO 3166-2)                       radar.md · radar.html · alertes.ics
 data/fonts.yaml          (33 fonts vigilades)
-APIs: BDNS · Funding & Tenders UE · TED · PLACSP ──vigila──▶ sortida/novetats.md
+APIs: BDNS · Funding & Tenders UE ──vigila──▶ sortida/novetats.md
+PSCP · PLACSP · TED ──licitacions──▶ sortida/licitacions.md (+ app > Licitacions)
 Holded (només lectura) + classificació privada ──avisa──▶ correu a Stimulo (mai al repositori)
 ```
 
@@ -91,6 +93,21 @@ fonts, per aquest ordre:
    `radar-tipus-recerca`, que es poden posar directament a Holded.
 3. Heurístiques pel nom de l'organització.
 
+## Licitacions
+
+Finestra apart a l'aplicació (**Licitacions**), perquè el cicle és diferent del dels ajuts: més volum,
+dies per respondre i la decisió als plecs.
+- **Cerca:** cada matí a la PSCP (dades obertes de la Generalitat), la PLACSP i TED.
+- **Semàfor orientatiu:** analitzar, vigilar, termini massa just o informació.
+- **Seguiment:** de la decisió go / no-go, amb responsable i motiu.
+- **Fitxa de decisió:** en Word, amb les comprovacions que cal fer als plecs.
+- **Assistent:** prepara l'anàlisi dels plecs, la memòria tècnica, l'oferta econòmica i la
+  documentació.
+- **Correu del matí:** les noves surten en una secció pròpia, amb recordatoris de termini.
+
+`python -m radar licitacions` fa la cerca des de la línia d'ordres. Valoració de complexitat i
+opcions per compartir la informació: [docs/licitacions.md](docs/licitacions.md).
+
 ## Defensa, ús dual i espai
 
 A més dels ajuts (tema «ús dual», «defensa» o «espai» al tauler), `data/ecosistema.yaml` recull les
@@ -153,6 +170,7 @@ python -m radar programador                     # servei que fa la revisió cada
 python -m radar web                             # aplicació web a http://127.0.0.1:8000
 python -m radar contrasenya                     # genera les claus d'accés per al fitxer .env
 python -m radar screening doga                  # informe per a un client, divisió per divisió
+python -m radar licitacions                     # licitacions de PSCP, PLACSP i TED amb semàfor
 python -m radar perfil doga                     # encaix per a un client de servei (encara que estigui inactiu)
 python -m radar importa-excel fitxer.xlsx       # importa el recull i diu quines files no tenen fitxa
 python -m radar vigila                          # consulta les API (cal xarxa)

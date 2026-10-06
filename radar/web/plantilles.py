@@ -18,12 +18,21 @@ INSTRUCCIONS_COMUNES = (
 )
 
 
+INSTRUCCIONS_LICITACIO = (
+    "Escriu el document complet en Markdown, sense preàmbul ni comentaris abans o després. Segueix "
+    "l'estructura, l'extensió i els criteris que fixen els plecs (PCAP i PPT). Si no tens els plecs, "
+    "demana'ls (es poden adjuntar en PDF) o consulta l'enllaç de l'anunci; no suposis requisits. On falti "
+    "informació escriu [PENDENT: què cal]. Acaba amb un apartat «Preguntes per completar»."
+)
+
+
 @dataclass(frozen=True)
 class Plantilla:
     tipus: str
     titol: str
     descripcio: str
     instruccio: str
+    ambit: str = "ajut"  # ajut / licitacio
 
 
 PLANTILLES = [
@@ -79,9 +88,49 @@ PLANTILLES = [
               "signatures i les validacions dels socis."),
 ]
 
+PLANTILLES += [
+    Plantilla("plecs", "Anàlisi dels plecs i go/no-go",
+              "Solvència, criteris i pes del preu, propietat intel·lectual, riscos i recomanació",
+              "Llegeix els plecs (PCAP, PPT i annexos) i omple la fitxa de decisió: solvència econòmica i tècnica "
+              "que es demana i si Stimulo la compleix; criteris d'adjudicació amb el pes de cadascun i quin "
+              "percentatge és preu; fórmula del preu i llindar de baixa anormal; cessió de drets de propietat "
+              "intel·lectual i industrial dels dissenys; equip mínim; terminis, fites i penalitats; garanties; "
+              "subcontractació, UTE i lots; documentació i data límit de preguntes. Acaba amb una recomanació "
+              "go / no-go amb els motius, els riscos i les hores estimades de preparació.", "licitacio"),
+    Plantilla("oferta_tecnica", "Memòria tècnica de l'oferta",
+              "Proposta per als criteris de judici de valor",
+              "Redacta la memòria tècnica seguint exactament l'índex, l'extensió màxima i els criteris de judici "
+              "de valor dels plecs: comprensió del repte, metodologia de disseny i desenvolupament, pla de treball "
+              "i fites, equip i dedicació, control de qualitat, millores i referències de Stimulo. No incloguis "
+              "cap dada de l'oferta econòmica ni dels criteris automàtics (s'han de presentar en sobres separats).",
+              "licitacio"),
+    Plantilla("oferta_economica", "Oferta econòmica i costos",
+              "Estructura de costos, preu i escenaris de puntuació",
+              "Prepara l'estructura de costos (hores per perfil i tarifa, materials i prototips, assajos, "
+              "desplaçaments, subcontractes), el marge i el preu final sense IVA. Calcula la puntuació econòmica "
+              "amb la fórmula dels plecs per a diversos escenaris de baixa i avisa del llindar de baixa anormal.",
+              "licitacio"),
+    Plantilla("documentacio_admin", "Documentació administrativa i calendari",
+              "DEUC, declaracions, RELI/ROLECE, sobre digital i tancament intern",
+              "Fes la checklist del sobre administratiu (DEUC, declaracions responsables, inscripció al RELI o "
+              "ROLECE, acreditació de solvència, compromís d'UTE si cal), com es presenta (sobre digital, "
+              "signatura electrònica) i un calendari intern amb el tancament 3 dies abans del termini.",
+              "licitacio"),
+]
+
 PER_TIPUS = {p.tipus: p for p in PLANTILLES}
+SEQUENCIES = {
+    "ajut": ["encaix", "fitxa", "memoria", "pla_treball", "pressupost", "impacte", "consorci", "correus", "resum",
+             "checklist"],
+    "licitacio": ["plecs", "oferta_tecnica", "oferta_economica", "documentacio_admin"],
+}
+
+
+def per_ambit(ambit: str) -> list[Plantilla]:
+    return [p for p in PLANTILLES if p.ambit == ambit]
 
 
 def instruccio(tipus: str) -> str:
     p = PER_TIPUS[tipus]
-    return f"Prepara el document «{p.titol}». {p.instruccio}\n\n{INSTRUCCIONS_COMUNES}"
+    comunes = INSTRUCCIONS_LICITACIO if p.ambit == "licitacio" else INSTRUCCIONS_COMUNES
+    return f"Prepara el document «{p.titol}». {p.instruccio}\n\n{comunes}"

@@ -51,6 +51,19 @@ CREATE TABLE IF NOT EXISTS fitxers (
     enviat INTEGER NOT NULL DEFAULT 0,         -- 1 quan ja s'ha passat a l'assistent
     creat TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS licitacions (
+    id TEXT PRIMARY KEY,                       -- font:clau (pscp:…, placsp:…, ted:…, manual:…)
+    font TEXT NOT NULL,
+    dades TEXT NOT NULL,                       -- JSON: anunci normalitzat (radar.licitacions.Licitacio)
+    avaluacio TEXT NOT NULL,                   -- JSON: semàfor, punts, motius i alertes
+    estat TEXT NOT NULL DEFAULT 'nova',        -- nova / en anàlisi / go / no-go / presentada / guanyada / perduda / descartada
+    responsable TEXT NOT NULL DEFAULT '',
+    motiu TEXT NOT NULL DEFAULT '',            -- motiu de la decisió go / no-go
+    notes TEXT NOT NULL DEFAULT '',
+    expedient_id INTEGER,                      -- expedient de l'assistent per preparar l'oferta
+    detectada TEXT NOT NULL,
+    actualitzat TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS esdeveniments (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     tipus TEXT NOT NULL,
@@ -225,6 +238,43 @@ class BaseDades:
     def esborra_fitxer(self, expedient_id: int, id_: int) -> None:
         with self.connexio() as c:
             c.execute("DELETE FROM fitxers WHERE expedient_id = ? AND id = ?", (expedient_id, id_))
+
+    # --- licitacions (seguiment de decisions)
+    def desa_licitacio(self, dades: dict, avaluacio: dict) -> None:
+        """Afegeix o actualitza l'anunci i l'avaluació; l'estat, el responsable i les notes no es toquen."""
+        with self.connexio() as c:
+            c.execute(
+                "INSERT INTO licitacions (id, font, dades, avaluacio, detectada, actualitzat) VALUES (?, ?, ?, ?, ?, ?) "
+                "ON CONFLICT(id) DO UPDATE SET dades = excluded.dades, avaluacio = excluded.avaluacio, "
+                "actualitzat = excluded.actualitzat",
+                (dades["id"], dades["font"], json.dumps(dades, ensure_ascii=False),
+                 json.dumps(avaluacio, ensure_ascii=False), ara(), ara()))
+
+    @staticmethod
+    def _fila_licitacio(f) -> dict:
+        d = dict(f)
+        d["dades"] = json.loads(d["dades"])
+        d["avaluacio"] = json.loads(d["avaluacio"])
+        return d
+
+    def licitacions(self) -> list[dict]:
+        with self.connexio() as c:
+            files = c.execute("SELECT * FROM licitacions ORDER BY detectada DESC").fetchall()
+        return [self._fila_licitacio(f) for f in files]
+
+    def licitacio(self, id_: str) -> dict | None:
+        with self.connexio() as c:
+            f = c.execute("SELECT * FROM licitacions WHERE id = ?", (id_,)).fetchone()
+        return self._fila_licitacio(f) if f else None
+
+    def actualitza_licitacio(self, id_: str, **camps) -> None:
+        permesos = {"estat", "responsable", "motiu", "notes", "expedient_id"}
+        camps = {k: v for k, v in camps.items() if k in permesos}
+        if not camps:
+            return
+        sets = ", ".join(f"{k} = ?" for k in camps)
+        with self.connexio() as c:
+            c.execute(f"UPDATE licitacions SET {sets}, actualitzat = ? WHERE id = ?", (*camps.values(), ara(), id_))
 
     # --- registre
     def registra(self, tipus: str, detall: str) -> None:

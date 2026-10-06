@@ -5,7 +5,7 @@
   <div class="marca">
     <span class="eti">Sol·licitud · {{ e.estat }}{% if e.client %} · per a {{ e.client.nom }}{% if e.client.divisio_nom %} ({{ e.client.divisio_nom }}){% endif %}{% endif %}</span>
     <h1>{{ e.titol }}</h1>
-    <p class="sub">{% if c %}{{ c.nom }} · {{ c.entitat }}{% else %}{{ e.convocatoria_id }} (ja no és al catàleg){% endif %}
+    <p class="sub">{% if lic %}Licitació · {{ lic.dades.organ }}{% if lic.dades.termini %} · termini {{ lic.dades.termini|data }}{% endif %} · <a href="/licitacio?id={{ lic.id|urlencode }}">fitxa de decisió</a>{% elif c %}{{ c.nom }} · {{ c.entitat }}{% else %}{{ e.convocatoria_id }} (ja no és al catàleg){% endif %}
       {% if f %} · <span class="estat e-{{ f.estat }}{% if f.estimada %} e-estimada{% endif %}">{{ f.descripcio }}</span>{% endif %}</p>
   </div>
   <div class="accions">
@@ -19,7 +19,11 @@
     <div class="missatges" id="missatges">
       {% if not missatges %}
       <div class="benvinguda">
+        {% if lic %}
+        <p><strong>Com començar.</strong> Adjunta els plecs (PCAP, PPT i annexos en PDF) i demana l'<em>Anàlisi dels plecs i go/no-go</em>. Amb la decisió presa, prepara la memòria tècnica, l'oferta econòmica i la documentació administrativa.</p>
+        {% else %}
         <p><strong>Com començar.</strong> Demana primer l'<em>Anàlisi d'elegibilitat i encaix</em>: l'assistent revisarà les bases oficials i et dirà si val la pena. Després pots anar document per document o fer servir «Preparar-ho tot».</p>
+        {% endif %}
         <p>També pots adjuntar les bases en PDF, ofertes, CV o qualsevol document de suport.</p>
       </div>
       {% endif %}

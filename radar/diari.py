@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from . import avisos, calendari, dades, holded, informe, socis, vigilancia
+from . import avisos, calendari, dades, holded, informe, licitacions, socis, vigilancia
 
 ARREL = dades.ARREL
 DIES_RECORDATORI = (21, 14, 7, 3, 1, 0)
@@ -27,6 +27,7 @@ class ResultatAvis:
     linies: int = 0
     novetats: int = 0
     recordatoris: int = 0
+    licitacions: int = 0
     enviat: bool = False
     copia: Path | None = None
     missatge: str = ""
@@ -84,9 +85,29 @@ def senyals_manuals(cat: dades.Cataleg, avui: dt.date) -> list[str]:
             for c in cat.convocatories if c.calendari.revisar == avui]
 
 
+def recordatoris_licitacions(avui: dt.date, path_db: Path | None) -> list[str]:
+    """Terminis de les licitacions en anàlisi o amb decisió «go» (7, 3, 1 i 0 dies abans)."""
+    if not path_db or not Path(path_db).exists():
+        return []
+    from .web.db import BaseDades
+
+    sortida = []
+    for r in BaseDades(Path(path_db)).licitacions():
+        if r["estat"] not in licitacions.ESTATS_ACTIUS or not r["dades"].get("termini"):
+            continue
+        termini = dt.date.fromisoformat(r["dades"]["termini"])
+        dies = (termini - avui).days
+        if dies in licitacions.DIES_RECORDATORI:
+            quan = "avui" if dies == 0 else f"d'aquí a {dies} dies"
+            sortida.append(f"Licitació «{r['dades']['titol'][:90]}» ({r['estat']}): el termini d'ofertes acaba {quan}, "
+                           f"el {termini:%d/%m/%Y}.")
+    return sortida
+
+
 def prepara_avis(avui: dt.date, envia: bool = False, tot: bool = False, maxim: int | None = None,
                  novetats: list[dict] | None = None, fitxer_contactes: str | None = None,
-                 path_db: Path | None = None, actualitza_estat: bool = True) -> ResultatAvis:
+                 path_db: Path | None = None, actualitza_estat: bool = True,
+                 noves_licitacions: list | None = None) -> ResultatAvis:
     cat = dades.carrega()
     cfg = {**avisos.CONFIG_PER_DEFECTE, **cat.config.get("avisos", {})}
     fitxer_estat = ARREL / "data" / "estat" / "notificades.json"
@@ -99,16 +120,18 @@ def prepara_avis(avui: dt.date, envia: bool = False, tot: bool = False, maxim: i
     from . import ecosistema
 
     recordatoris = (senyals_manuals(cat, avui) + ecosistema.recordatoris(ecosistema.carrega(cat), avui)
-                    + recordatoris_expedients(cat, avui, path_db))
+                    + recordatoris_expedients(cat, avui, path_db) + recordatoris_licitacions(avui, path_db))
+    lics = [(l, a) for l, a in (noves_licitacions or []) if a.semafor in ("verd", "groc")][:8]
     r = ResultatAvis(linies=len(noves), novetats=len(novetats), recordatoris=len(recordatoris))
-    if not principals and not novetats and not recordatoris:
+    r.licitacions = len(lics)
+    if not principals and not novetats and not recordatoris and not lics:
         r.missatge = "Cap novetat: no s'envia cap correu."
         return r
     contactes, motiu = contactes_holded(fitxer_contactes)
     llista_socis = socis.construeix(contactes) if contactes else []
     avisos.afegeix_socis(principals, llista_socis, cat, cfg["maxim_socis"])
     r.assumpte, text, cos_html = avisos.compon(principals, avui, cfg, resum, novetats,
-                                               motiu if principals else "", recordatoris)
+                                               motiu if principals else "", recordatoris, lics)
     r.copia = avisos.desa_copia(ARREL / "privat" / "avisos", avui, r.assumpte, text, cos_html)
     if not envia:
         r.missatge = "Vista prèvia: no s'ha enviat."
@@ -142,6 +165,19 @@ def executa_diari(avui: dt.date | None = None, envia: bool = True, path_db: Path
         novetats = json.loads(vigilancia.a_json(noves))
     except Exception as e:
         errors["vigilancia"] = f"{type(e).__name__}: {e}"
+    noves_lics = []
+    try:
+        cat = dades.carrega()
+        db = None
+        if path_db:
+            from .web.db import BaseDades
+
+            db = BaseDades(Path(path_db))
+        res = licitacions.executa(cat, avui, ARREL / "sortida", ARREL / "data" / "estat" / "licitacions-vistes.json", db)
+        noves_lics = res["noves"]
+        errors.update({f"licitacions.{k}": v for k, v in res["errors"].items()})
+    except Exception as e:
+        errors["licitacions"] = f"{type(e).__name__}: {e}"
     try:
         cat = dades.carrega()
         informe.genera_tot(cat, avui, ARREL / "sortida")
@@ -151,7 +187,7 @@ def executa_diari(avui: dt.date | None = None, envia: bool = True, path_db: Path
     except Exception as e:
         errors["informe"] = f"{type(e).__name__}: {e}"
     try:
-        r = prepara_avis(avui, envia=envia, novetats=novetats, path_db=path_db)
+        r = prepara_avis(avui, envia=envia, novetats=novetats, path_db=path_db, noves_licitacions=noves_lics)
     except Exception as e:
         r = ResultatAvis(missatge=f"Error preparant l'avís: {type(e).__name__}: {e}")
         errors["avis"] = traceback.format_exc(limit=3)
@@ -182,4 +218,5 @@ def programador(hora: str | None = None, zona: str | None = None, path_db: Path 
 
             BaseDades(Path(path_db)).registra("revisio_diaria", json.dumps(
                 {"assumpte": r.assumpte, "missatge": r.missatge, "linies": r.linies, "novetats": r.novetats,
-                 "recordatoris": r.recordatoris, "errors": list(r.errors)}, ensure_ascii=False))
+                 "recordatoris": r.recordatoris, "licitacions": r.licitacions, "errors": list(r.errors)},
+                ensure_ascii=False))

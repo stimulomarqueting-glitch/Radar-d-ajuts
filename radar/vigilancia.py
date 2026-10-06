@@ -1,4 +1,4 @@
-"""Vigilants de fonts obertes: detecten convocatòries i licitacions noves que coincideixen
+"""Vigilants de fonts obertes: detecten convocatòries noves (BDNS, Funding & Tenders) que coincideixen
 amb les paraules clau dels perfils i les deixen a sortida/novetats.md per revisar.
 
 Pensats per executar-se setmanalment des de GitHub Actions (.github/workflows/radar.yml).
@@ -218,13 +218,10 @@ def placsp(paraules: list[str], cpvs: list[str]) -> list[Troballa]:
 def executa(config: dict, paraules: list[str], fitxer_vistos: Path) -> tuple[list[Troballa], dict[str, str]]:
     """Executa tots els vigilants i retorna només les troballes noves (no vistes abans)."""
     vistos = set(json.loads(fitxer_vistos.read_text())) if fitxer_vistos.exists() else set()
-    cpvs = [str(c) for c in config.get("cpv", [])]
-    paisos = config.get("paisos_ted", ["ESP"])
+    # Les licitacions (TED, PLACSP i PSCP) tenen el seu propi mòdul: radar/licitacions.py
     vigilants = {
         "bdns": lambda: bdns(paraules),
         "sedia": lambda: sedia(paraules),
-        "ted": lambda: ted(cpvs, paisos),
-        "placsp": lambda: placsp(paraules, [c[:5] for c in cpvs]),
     }
     noves, errors = [], {}
     for nom, funcio in vigilants.items():

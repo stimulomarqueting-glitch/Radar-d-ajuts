@@ -12,6 +12,7 @@
     python -m radar web                          # aplicació web (tauler, expedients i assistent)
     python -m radar contrasenya                  # genera les claus d'accés de l'aplicació
     python -m radar screening doga               # informe d'ajuts per a un client, per divisions
+    python -m radar licitacions                  # licitacions (PSCP, PLACSP, TED) amb semàfor go/no-go
 """
 
 from __future__ import annotations
@@ -99,6 +100,26 @@ def ordre_screening(args) -> int:
     return 0
 
 
+def ordre_licitacions(args) -> int:
+    from . import licitacions
+
+    cat = dades.carrega()
+    avui = _avui(args.avui)
+    db = None
+    if _path_db().exists():
+        from .web.db import BaseDades
+
+        db = BaseDades(_path_db())
+    r = licitacions.executa(cat, avui, DIR_SORTIDA, ARREL / "data" / "estat" / "licitacions-vistes.json", db)
+    print(f"{r['totes']} anuncis llegits · {r['rellevants']} amb encaix · {len(r['noves'])} nous")
+    for l, a in r["noves"][:20]:
+        print(f"  [{a.semafor}] {licitacions.resum_curt(l, a)}")
+    for font, error in r["errors"].items():
+        print(f"  Error a {font}: {error}")
+    print("→ sortida/licitacions.md")
+    return 0
+
+
 def ordre_perfil(args) -> int:
     cat = dades.carrega(inclou_inactius=True)
     avui = _avui(args.avui)
@@ -164,10 +185,15 @@ def ordre_avisa(args) -> int:
     novetats = []
     if args.novetats and Path(args.novetats).exists():
         novetats = json.loads(Path(args.novetats).read_text(encoding="utf-8"))
+    noves_lics = []
+    if args.licitacions:
+        from . import licitacions
+
+        noves_lics = licitacions.llegeix_noves(Path(args.licitacions))
     try:
         r = diari.prepara_avis(avui, envia=args.envia, tot=args.tot, maxim=args.maxim, novetats=novetats,
                                fitxer_contactes=args.contactes, path_db=_path_db(),
-                               actualitza_estat=not args.sense_estat)
+                               actualitza_estat=not args.sense_estat, noves_licitacions=noves_lics)
     except Exception as e:
         print(f"Error enviant el correu: {type(e).__name__}: {e}")
         return 1
@@ -239,6 +265,8 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--maxim", type=int, default=8, help="línies per divisió (per defecte, 8)")
     sc.add_argument("--sortida", help="carpeta de sortida (per defecte, privat/clients/<id>/)")
     sc.set_defaults(f=ordre_screening)
+    sub.add_parser("licitacions", parents=[comu],
+                   help="cerca licitacions (PSCP, PLACSP, TED) i les avalua").set_defaults(f=ordre_licitacions)
     i = sub.add_parser("importa-excel", parents=[comu])
     i.add_argument("fitxer")
     i.set_defaults(f=ordre_importa_excel)
@@ -248,6 +276,7 @@ def main(argv: list[str] | None = None) -> int:
     av.add_argument("--contactes", help="JSON de contactes de Holded (si no, HOLDED_API_KEY o privat/)")
     av.add_argument("--novetats", help="JSON de novetats dels vigilants (sortida/novetats.json)")
     av.add_argument("--tot", action="store_true", help="inclou també les línies ja avisades")
+    av.add_argument("--licitacions", help="JSON de licitacions noves (sortida/licitacions-noves.json)")
     av.add_argument("--maxim", type=int, help="línies amb fitxa completa (per defecte, config.avisos.maxim_linies)")
     av.add_argument("--inicialitza", action="store_true", help="marca les línies actuals com a avisades")
     av.add_argument("--sense-estat", action="store_true", help="no actualitza data/estat/notificades.json")

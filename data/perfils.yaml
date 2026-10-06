@@ -141,6 +141,46 @@ config:
     maxim_socis: 3           # socis suggerits per línia
     remitent_nom: Radar d'ajuts Stimulo
     signatura: "Xavi\nStimulo · stimulo.com"
+  # Licitacions (python -m radar licitacions; aplicació > Licitacions). Vegeu docs/licitacions.md
+  licitacions:
+    # CPV de serveis on Stimulo encaixa de ple (la resta de CPV de vigilancia.cpv sumen menys)
+    cpv_principals: ["71320000", "79930000", "73100000", "73300000", "73420000"]
+    paraules_clau:
+      - disseny industrial
+      - diseño industrial
+      - disseny de producte
+      - diseño de producto
+      - desenvolupament de producte
+      - desarrollo de producto
+      - prototip
+      - prototipo
+      - prototipado
+      - prova de concepte
+      - prueba de concepto
+      - ecodisseny
+      - ecodiseño
+      - enginyeria de producte
+      - ingeniería de producto
+      - compra pública innovadora
+      - compra pública precomercial
+      - dispositiu mèdic
+      - producto sanitario
+      - mobiliari urbà
+      - mobiliario urbano
+      - senyalètica
+      - señalética
+      - dron
+      - robòtica
+      - robótica
+    # Paraules del títol que descarten un anunci encara que el CPV encaixi
+    exclou: [obres, obras, neteja d'edificis, limpieza de edificios, vigilància, vigilancia y seguridad, assegurances, seguros]
+    import_min: 15000        # per sota, l'esforç d'oferta rarament compensa
+    import_max: 750000       # per sobre, cal solvència alta o UTE
+    dies_minims: 10          # menys dies que aquests: termini just
+    xifra_negoci_anual: null # posa-hi la xifra de negoci de Stimulo per avisar de la solvència econòmica
+    pscp_dataset: ybgg-dgi6  # dades obertes de la PSCP (analisi.transparenciacatalunya.cat)
+    placsp_agregades_url: "" # canal ATOM d'agregació de la PLACSP (inclou plataformes autonòmiques); per validar
+    dies_cerca: 7
   vigilancia:
     paisos_ted: [ESP]
     # CPV de serveis on Stimulo pot licitar (disseny, R+D, enginyeria, assajos)

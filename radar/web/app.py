@@ -13,6 +13,7 @@ from __future__ import annotations
 import asyncio
 import datetime as dt
 import hmac
+import io
 import json
 import os
 import re
@@ -29,7 +30,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from markupsafe import Markup
 
-from .. import avisos, calendari, dades, diari, ecosistema, informe, screening
+from .. import avisos, calendari, dades, diari, ecosistema, informe, licitacions, screening
 from .. import socis as mod_socis
 from ..puntuacio import puntua
 from . import auth, context, exporta, ia, plantilles
@@ -39,8 +40,7 @@ from .render import markdown_html
 
 DIR = Path(__file__).resolve().parent
 ESTATS = ["en preparació", "presentat", "concedit", "denegat", "arxivat"]
-SEQUENCIA = ["encaix", "fitxa", "memoria", "pla_treball", "pressupost", "impacte", "consorci", "correus", "resum",
-             "checklist"]
+PREFIX_LICITACIO = "licitacio:"
 PUBLIQUES = ("/entrar", "/static/", "/salut")
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; "
        "font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; "
@@ -66,7 +66,7 @@ def data_curta(valor) -> str:
         return ""
     if isinstance(valor, str):
         try:
-            valor = dt.datetime.fromisoformat(valor)
+            valor = dt.date.fromisoformat(valor) if len(valor) == 10 else dt.datetime.fromisoformat(valor)
         except ValueError:
             return valor
     if isinstance(valor, dt.datetime):
@@ -321,6 +321,9 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
         for e in estat.db.expedients():
             c = busca_convocatoria(cat, e["convocatoria_id"])
             f = calendari.propera_finestra(c, avui) if c else None
+            if e["convocatoria_id"].startswith(PREFIX_LICITACIO):
+                lic = estat.db.licitacio(e["convocatoria_id"][len(PREFIX_LICITACIO):])
+                e = {**e, "licitacio": lic}
             files.append({"e": e, "c": c, "f": f, "docs": len(estat.db.documents_actuals(e["id"])),
                           "dies": (f.tancament - avui).days if f and f.estat == "oberta" and f.tancament else None})
         return pagina(request, "expedients.html", "expedients", files=files)
@@ -381,17 +384,22 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
     def expedient(request: Request, id_: int):
         e = expedient_o_404(id_)
         cat, avui = estat.cataleg(), dt.date.today()
-        c = busca_convocatoria(cat, e["convocatoria_id"])
+        lic = None
+        if e["convocatoria_id"].startswith(PREFIX_LICITACIO):
+            lic = estat.db.licitacio(e["convocatoria_id"][len(PREFIX_LICITACIO):])
+        ambit = "licitacio" if e["convocatoria_id"].startswith(PREFIX_LICITACIO) else "ajut"
+        c = busca_convocatoria(cat, e["convocatoria_id"]) if ambit == "ajut" else None
         f = calendari.propera_finestra(c, avui) if c else None
         missatges = [m for m in estat.db.missatges(id_) if m["rol"] in ("user", "assistant") and m["visible"].strip()]
         documents = estat.db.documents_actuals(id_)
         fets = {d["tipus"] for d in documents}
-        return pagina(request, "expedient.html", "expedients", e=e, c=c, f=f, missatges=missatges,
-                      documents=documents, fitxers=estat.db.fitxers(id_), plantilles=plantilles.PLANTILLES,
+        propies = plantilles.per_ambit(ambit)
+        return pagina(request, "expedient.html", "licitacions" if lic else "expedients", e=e, c=c, f=f, lic=lic,
+                      missatges=missatges, documents=documents, fitxers=estat.db.fitxers(id_), plantilles=propies,
                       estats=ESTATS, ia_disponible=estat.ia_disponible(), ocupat=id_ in estat.ocupats,
                       mida_max=cfg.mida_max_fitxer_mb, tipus_acceptats=".pdf,.docx,.txt,.md,.csv,.png,.jpg,.jpeg,.webp,.gif",
-                      app={"id": id_, "pendents": [t for t in SEQUENCIA if t not in fets],
-                           "titols": {p.tipus: p.titol for p in plantilles.PLANTILLES}})
+                      app={"id": id_, "pendents": [t for t in plantilles.SEQUENCIES[ambit] if t not in fets],
+                           "titols": {p.tipus: p.titol for p in propies}})
 
     @app.post("/expedients/{id_}")
     def actualitza_expedient(id_: int, titol: str = Form(None), estat_: str = Form(None, alias="estat"),
@@ -404,7 +412,7 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
             canvis["estat"] = estat_
         if idea is not None and idea.strip() != e["idea"]:
             canvis["idea"] = idea.strip()[:8000]
-            if not estat.db.missatges(id_):
+            if not estat.db.missatges(id_) and not e["convocatoria_id"].startswith(PREFIX_LICITACIO):
                 cat = estat.cataleg()
                 c = convocatoria_o_400(cat, e["convocatoria_id"])
                 estat.db.actualitza_context(id_, context_expedient(
@@ -558,6 +566,130 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
         if descarrega:
             capcaleres["Content-Disposition"] = f'attachment; filename="screening-{slug(cl.nom)}-{avui:%Y-%m-%d}.html"'
         return HTMLResponse(pagina_html, headers=capcaleres)
+
+    # --- Licitacions: detecció, decisió go/no-go i oferta
+    def licitacio_o_404(id_: str) -> dict:
+        r = estat.db.licitacio(id_)
+        if not r:
+            raise HTTPException(404, "Licitació no trobada")
+        return r
+
+    def amb_dies(r: dict, avui: dt.date) -> dict:
+        termini = r["dades"].get("termini")
+        return {**r, "dies": (dt.date.fromisoformat(termini) - avui).days if termini else None}
+
+    @app.get("/licitacions", response_class=HTMLResponse)
+    def licitacions_pagina(request: Request, estat_: str = Query("", alias="estat"), semafor: str = "",
+                           q: str = "", missatge: str = ""):
+        avui = dt.date.today()
+        totes = [amb_dies(r, avui) for r in estat.db.licitacions()]
+        files = totes
+        if estat_ == "actives":
+            files = [r for r in files if r["estat"] in ("nova", "en anàlisi", "go")
+                     and (r["dies"] is None or r["dies"] >= 0)]
+        elif estat_:
+            files = [r for r in files if r["estat"] == estat_]
+        if semafor:
+            files = [r for r in files if r["avaluacio"]["semafor"] == semafor]
+        if q.strip():
+            nq = licitacions.normalitza(q)
+            files = [r for r in files if nq in licitacions.normalitza(f"{r['dades']['titol']} {r['dades']['organ']}")]
+        ordre = {"verd": 0, "groc": 1, "vermell": 2, "gris": 3}
+        files.sort(key=lambda r: (r["dies"] is not None and r["dies"] < 0, ordre.get(r["avaluacio"]["semafor"], 9),
+                                  r["dies"] if r["dies"] is not None else 9999))
+        compte = {e: sum(1 for r in totes if r["estat"] == e) for e in licitacions.ESTATS}
+        urgents = sum(1 for r in totes if r["estat"] in licitacions.ESTATS_ACTIUS and r["dies"] is not None
+                      and 0 <= r["dies"] <= 7)
+        return pagina(request, "licitacions.html", "licitacions", files=files, compte=compte, urgents=urgents,
+                      filtre={"estat": estat_, "semafor": semafor, "q": q}, estats=licitacions.ESTATS,
+                      en_marxa=estat.revisio_en_marxa, missatge=missatge[:200], avui=avui)
+
+    @app.post("/licitacions/cerca")
+    def licitacions_cerca():
+        if estat.revisio_en_marxa:
+            return RedirectResponse("/licitacions?missatge=" + quote("Ja hi ha una cerca en marxa."), status_code=303)
+        estat.revisio_en_marxa = True
+
+        def cerca():
+            try:
+                r = licitacions.executa(estat.cataleg(), dt.date.today(), dades.ARREL / "sortida",
+                                        dades.ARREL / "data" / "estat" / "licitacions-vistes.json", estat.db)
+                estat.db.registra("licitacions_cerca", json.dumps(
+                    {"llegides": r["totes"], "rellevants": r["rellevants"], "noves": len(r["noves"]),
+                     "errors": r["errors"]}, ensure_ascii=False))
+            except Exception as ex:
+                estat.db.registra("licitacions_cerca", json.dumps({"errors": {"general": type(ex).__name__}}))
+            finally:
+                estat.revisio_en_marxa = False
+
+        threading.Thread(target=cerca, daemon=True).start()
+        return RedirectResponse("/licitacions?missatge=" + quote("Cerca en marxa: recarrega d'aquí a un minut."),
+                                status_code=303)
+
+    @app.post("/licitacions/nova")
+    def licitacio_nova(titol: str = Form(...), organ: str = Form(""), url: str = Form(""), expedient: str = Form(""),
+                       termini: str = Form(""), import_eur: str = Form(""), cpv: str = Form(""),
+                       procediment: str = Form("")):
+        avui = dt.date.today()
+        if url and not url.startswith(("http://", "https://")):
+            raise HTTPException(400, "L'enllaç ha de començar per http:// o https://")
+        lic = licitacions.Licitacio(
+            id=f"manual:{slug(titol)[:40]}-{dt.datetime.now():%Y%m%d%H%M%S}", font="manual", titol=titol.strip()[:300],
+            organ=organ.strip()[:200], url=url.strip()[:500], expedient=expedient.strip()[:80],
+            procediment=procediment.strip()[:80], cpv=licitacions._cpvs(cpv), import_eur=licitacions._num(import_eur),
+            termini=licitacions._data(termini), lloc="")
+        av = licitacions.avalua(lic, licitacions.config(estat.cataleg()), avui)
+        estat.db.desa_licitacio(lic.a_dict(), av.a_dict())
+        estat.db.actualitza_licitacio(lic.id, estat="en anàlisi")
+        return RedirectResponse("/licitacio?id=" + quote(lic.id, safe=""), status_code=303)
+
+    @app.get("/licitacio", response_class=HTMLResponse)
+    def licitacio_detall(request: Request, id: str):
+        r = amb_dies(licitacio_o_404(id), dt.date.today())
+        lic = licitacions.Licitacio.de_dict(r["dades"])
+        av = licitacions.Avaluacio(**r["avaluacio"])
+        resum = (f"{lic.titol}\n{lic.organ}\nImport: {licitacions.eur(lic.import_eur or lic.valor_estimat)} · "
+                 f"Termini: {lic.termini:%d/%m/%Y}" if lic.termini else f"{lic.titol}\n{lic.organ}")
+        resum += f"\nRadar: {av.recomanacio} ({av.punts}/100) · Estat: {r['estat']}\n{lic.url}"
+        return pagina(request, "licitacio.html", "licitacions", r=r, lic=lic, av=av, estats=licitacions.ESTATS,
+                      resum=resum, fitxa=licitacions.fitxa_decisio(lic, av, r))
+
+    @app.post("/licitacio")
+    def licitacio_actualitza(id: str, estat_: str = Form("", alias="estat"), responsable: str = Form(""),
+                             motiu: str = Form(""), notes: str = Form("")):
+        licitacio_o_404(id)
+        canvis = {"responsable": responsable.strip()[:100], "motiu": motiu.strip()[:1000], "notes": notes.strip()[:8000]}
+        if estat_ in licitacions.ESTATS:
+            canvis["estat"] = estat_
+        estat.db.actualitza_licitacio(id, **canvis)
+        estat.db.registra("licitacio_decisio", json.dumps({"id": id, "estat": estat_}, ensure_ascii=False))
+        return RedirectResponse("/licitacio?id=" + quote(id, safe=""), status_code=303)
+
+    @app.get("/licitacio/fitxa.docx")
+    def licitacio_fitxa_docx(id: str):
+        r = licitacio_o_404(id)
+        lic = licitacions.Licitacio.de_dict(r["dades"])
+        md = licitacions.fitxa_decisio(lic, licitacions.Avaluacio(**r["avaluacio"]), r)
+        import docx as python_docx
+
+        document = python_docx.Document()
+        exporta.markdown_a_docx(document, md)
+        sortida = io.BytesIO()
+        document.save(sortida)
+        return Response(sortida.getvalue(), media_type=MIME_DOCX,
+                        headers={"Content-Disposition": f'attachment; filename="fitxa-{slug(lic.titol)}.docx"'})
+
+    @app.post("/licitacio/expedient")
+    def licitacio_expedient(id: str):
+        r = licitacio_o_404(id)
+        if r["expedient_id"] and estat.db.expedient(r["expedient_id"]):
+            return RedirectResponse(f"/expedients/{r['expedient_id']}", status_code=303)
+        titol = f"Oferta: {r['dades']['titol']}"[:200]
+        sistema = context.construeix_licitacio(estat.cataleg(), r["dades"], r["avaluacio"], titol, "", dt.date.today())
+        id_exp = estat.db.crea_expedient(PREFIX_LICITACIO + id, titol, "", [], sistema)
+        estat.db.actualitza_licitacio(id, expedient_id=id_exp,
+                                      **({"estat": "en anàlisi"} if r["estat"] == "nova" else {}))
+        return RedirectResponse(f"/expedients/{id_exp}", status_code=303)
 
     # --- Ecosistema de defensa, ús dual i espai
     @app.get("/ecosistema", response_class=HTMLResponse)

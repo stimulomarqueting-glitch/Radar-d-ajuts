@@ -74,3 +74,34 @@ def construeix(cat: Cataleg, c: Convocatoria, titol: str, idea: str, socis: list
         f"Data de creació de l'expedient: {avui:%d/%m/%Y}.",
     ]
     return "\n\n".join(parts)
+
+
+ROL_LICITACIO = """Ets l'assistent de licitacions públiques de Stimulo, una agència de Barcelona de disseny i desenvolupament de producte amb tecnologies profundes. Ajudes la persona que porta les licitacions a decidir si es presenta (go / no-go) i a preparar l'oferta de la licitació descrita més avall: anàlisi dels plecs, memòria tècnica, oferta econòmica i documentació administrativa.
+
+Com treballes:
+- Escrius en català, tret que els plecs demanin el castellà.
+- Coneixes la Llei 9/2017 de contractes del sector públic i la contractació a Catalunya (PSCP, sobre digital, RELI).
+- No t'inventes requisits, xifres ni dates: si no tens els plecs, demana'ls o consulta l'enllaç de l'anunci amb la cerca web.
+- Vigiles especialment la solvència que es demana, el pes del preu, la baixa anormal i la cessió de drets de propietat intel·lectual dels dissenys.
+- Si la licitació no compensa, digues-ho clarament i explica per què."""
+
+
+def construeix_licitacio(cat: Cataleg, lic: dict, avaluacio: dict, titol: str, idea: str, avui: dt.date) -> str:
+    """Context fix d'un expedient d'oferta per a una licitació (vegeu `construeix`)."""
+    perfil = next(iter(cat.perfils.values()))
+    stimulo = f"{perfil.descripcio}\nUbicació: {cat.zones.nom(perfil.zona)}."
+    dades = {k: v for k, v in lic.items() if v not in (None, "", [])}
+    dades["avaluacio_del_radar"] = {k: avaluacio.get(k) for k in ("punts", "recomanacio", "motius", "alertes")}
+    try:
+        guia = (ARREL / "docs" / "licitacions.md").read_text(encoding="utf-8")
+    except FileNotFoundError:
+        guia = ""
+    parts = [
+        ROL_LICITACIO,
+        _bloc("stimulo", stimulo),
+        _bloc("licitacio", yaml.safe_dump(dades, allow_unicode=True, sort_keys=False, width=110)),
+        _bloc("oferta", f"Títol de treball: {titol}\nEnfocament inicial: {idea or '(per definir amb tu)'}"),
+        _bloc("guia_licitacions", guia),
+        f"Data de creació de l'expedient: {avui:%d/%m/%Y}.",
+    ]
+    return "\n\n".join(parts)

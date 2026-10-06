@@ -18,7 +18,7 @@
   <tr>
     <td><a href="/expedients/{{ r.e.id }}"><strong>{{ r.e.titol }}</strong></a></td>
     <td>{% if r.e.client %}{{ r.e.client.nom }}{% if r.e.client.divisio_nom %}<small class="bloc-petit">{{ r.e.client.divisio_nom }}</small>{% endif %}{% else %}Stimulo{% endif %}</td>
-    <td>{{ r.c.nom if r.c else r.e.convocatoria_id }}</td>
+    <td>{% if r.e.licitacio %}Licitació · {{ r.e.licitacio.dades.organ }}{% else %}{{ r.c.nom if r.c else r.e.convocatoria_id }}{% endif %}</td>
     <td>
       {% if r.f %}
         <span class="estat e-{{ r.f.estat }}{% if r.f.estimada %} e-estimada{% endif %}">{{ r.f.descripcio }}</span>

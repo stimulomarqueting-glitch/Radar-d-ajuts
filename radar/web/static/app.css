@@ -117,3 +117,11 @@ small.bloc-petit { display: block; color: var(--muted); }
 .punts-mini.p-B { background: var(--accent-soft); color: var(--accent); }
 .punts-mini.p-C, .punts-mini.p-NE { background: var(--off-soft); color: var(--muted); }
 .etiqueta-tipus { font: 500 11px/1 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 4px 6px; border-radius: 4px; margin-right: 6px; }
+
+/* Licitacions */
+.semafor { display: inline-grid; place-items: center; min-width: 40px; padding: 5px 7px; border-radius: 7px; font: 500 13px/1 var(--f-mono); font-variant-numeric: tabular-nums; }
+.s-verd { background: var(--ok-soft); color: var(--ok); }
+.s-groc { background: var(--warn-soft); color: var(--warn); }
+.s-vermell { background: color-mix(in srgb, var(--danger) 14%, var(--surface)); color: var(--danger); }
+.s-gris { background: var(--off-soft); color: var(--muted); }
+details.bloc > summary { cursor: pointer; }

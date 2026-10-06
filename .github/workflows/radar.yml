@@ -58,13 +58,18 @@ jobs:
         if: github.event_name != 'push'
         run: python -m radar vigila
 
+      - name: Licitacions (PSCP, PLACSP i TED)
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: python -m radar licitacions
+
       - name: Informe, tauler i calendari d'alertes
         run: python -m radar informe
 
       - name: Avís per correu de línies noves amb potencial
         if: github.event_name != 'push'
         continue-on-error: true
-        run: python -m radar avisa --envia --novetats sortida/novetats.json ${{ inputs.tot && '--tot --maxim 12' || '' }}
+        run: python -m radar avisa --envia --novetats sortida/novetats.json --licitacions sortida/licitacions-noves.json ${{ inputs.tot && '--tot --maxim 12' || '' }}
 
       - name: Desa les sortides (sense dades de contactes)
         run: |

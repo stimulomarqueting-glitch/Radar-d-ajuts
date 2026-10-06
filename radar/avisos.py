@@ -269,16 +269,23 @@ def _camps(l: Linia) -> list[tuple[str, str]]:
 
 def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum: list[Linia] | None = None,
            novetats: list[dict] | None = None, sense_socis_motiu: str = "",
-           recordatoris: list[str] | None = None) -> tuple[str, str, str]:
-    """Retorna (assumpte, text pla, html) de l'avís per a Stimulo."""
+           recordatoris: list[str] | None = None, licitacions: list | None = None) -> tuple[str, str, str]:
+    """Retorna (assumpte, text pla, html) de l'avís per a Stimulo.
+
+    `licitacions`: parells (Licitacio, Avaluacio) nous amb semàfor verd o groc (radar.licitacions).
+    """
     cfg = {**CONFIG_PER_DEFECTE, **(config or {})}
     resum = resum or []
     novetats = novetats or []
     recordatoris = recordatoris or []
+    licitacions = licitacions or []
     n = len(linies)
     assumpte = (f"Radar d'ajuts · {n} línia nova amb potencial" if n == 1 else
                 f"Radar d'ajuts · {n} línies noves amb potencial") + f" · {avui:%d/%m/%Y}"
-    if not linies and novetats:
+    if not linies and licitacions:
+        assumpte = (f"Radar d'ajuts · {len(licitacions)} licitaci{'ó nova' if len(licitacions) == 1 else 'ons noves'}"
+                    f" amb encaix · {avui:%d/%m/%Y}")
+    elif not linies and novetats:
         assumpte = f"Radar d'ajuts · {len(novetats)} novetats a les fonts oficials · {avui:%d/%m/%Y}"
     elif not linies and recordatoris:
         assumpte = f"Radar d'ajuts · recordatoris d'avui · {avui:%d/%m/%Y}"
@@ -305,6 +312,17 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
     if resum:
         t += ["Altres línies obertes o properes amb encaix:"]
         t += [f"- {l.c.nom} ({l.c.entitat}) · {l.motiu} · {l.e.punts}/100" for l in resum]
+        t.append("")
+    if licitacions:
+        t += ["LICITACIONS NOVES AMB ENCAIX (detall i decisió a l'aplicació > Licitacions)"]
+        for lic, av in licitacions:
+            icona = {"verd": "[analitzar]", "groc": "[vigilar]"}.get(av.semafor, "")
+            t.append(f"- {icona} {lic.titol} — {lic.organ}")
+            termini = f"{lic.termini:%d/%m/%Y} ({av.dies} dies)" if lic.termini else "per confirmar"
+            t.append(f"  Import: {_eur(lic.import_eur or lic.valor_estimat) or 'per confirmar'} · Termini: {termini}"
+                     f" · {av.punts}/100 · {lic.font}: {lic.url}")
+            for alerta in av.alertes[:2]:
+                t.append(f"  ! {alerta}")
         t.append("")
     if novetats:
         t += ["Detectat a les fonts oficials (pendent de classificar):"]
@@ -381,6 +399,22 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
                      f'<td style="padding:8px 10px;border-top:1px solid {linia};color:{gris}">{e(l.motiu)}</td>'
                      f'<td style="padding:8px 10px;border-top:1px solid {linia};text-align:right">{l.e.punts}</td></tr>')
         h.append("</table>")
+    if licitacions:
+        colors = {"verd": "#19744B", "groc": "#9A5800"}
+        h.append(f'<h3 style="font-size:15px;margin:22px 0 8px">Licitacions noves amb encaix</h3>'
+                 f'<p style="font-size:13px;color:{gris};margin:0 0 8px">Detall, fitxa de decisió i seguiment a '
+                 f'l\'aplicació, secció Licitacions.</p>')
+        for lic, av in licitacions:
+            termini = f"{lic.termini:%d/%m/%Y} · {av.dies} dies" if lic.termini else "termini per confirmar"
+            h.append(f'<div style="background:#fff;border:1px solid {linia};border-left:4px solid '
+                     f'{colors.get(av.semafor, gris)};border-radius:8px;padding:10px 14px;margin:0 0 8px;font-size:13px">'
+                     f'<p style="margin:0 0 4px"><a href="{e(lic.url)}" style="color:{accent};font-weight:bold">'
+                     f'{e(lic.titol[:180])}</a></p>'
+                     f'<p style="margin:0;color:{gris}">{e(lic.organ[:120])} · '
+                     f'{e(_eur(lic.import_eur or lic.valor_estimat) or "import per confirmar")} · {e(termini)} · '
+                     f'{av.punts}/100 · {e(lic.font)}</p>'
+                     + "".join(f'<p style="margin:4px 0 0;color:#9A5800">{e(x)}</p>' for x in av.alertes[:2])
+                     + "</div>")
     if novetats:
         h.append(f'<h3 style="font-size:15px;margin:22px 0 8px">Detectat a les fonts oficials (pendent de classificar)</h3><ul style="font-size:13px;line-height:1.5;padding-left:18px">')
         for nv in novetats[:15]:
