@@ -7,6 +7,10 @@
     python -m radar importa-excel fitxer.xlsx    # normalitza l'Excel i diu què falta al catàleg
     python -m radar vigila                       # consulta BDNS, F&T UE, TED i PLACSP (requereix xarxa)
     python -m radar avisa [--envia]              # correu de línies noves amb potencial + socis de Holded
+    python -m radar diari                        # revisió del matí: vigila + informe + avisa --envia
+    python -m radar programador                  # servei: revisió diària a RADAR_HORA (VPS)
+    python -m radar web                          # aplicació web (tauler, expedients i assistent)
+    python -m radar contrasenya                  # genera les claus d'accés de l'aplicació
 """
 
 from __future__ import annotations
@@ -17,9 +21,8 @@ import sys
 from pathlib import Path
 
 import json
-import os
 
-from . import avisos, calendari, dades, excel, holded, informe, ics, socis, vigilancia
+from . import avisos, calendari, dades, excel, informe, ics, vigilancia
 from .puntuacio import puntua
 
 ARREL = dades.ARREL
@@ -114,62 +117,74 @@ def ordre_vigila(args) -> int:
     return 0
 
 
-def _contactes(args) -> tuple[list, str]:
-    """Contactes de Holded: fitxer indicat, API (HOLDED_API_KEY) o exportació privada."""
-    try:
-        if args.contactes:
-            return holded.des_de_fitxer(Path(args.contactes)), ""
-        if os.environ.get("HOLDED_API_KEY"):
-            return holded.des_de_api(), ""
-        local = ARREL / "privat" / "holded_contactes.json"
-        if local.exists():
-            return holded.des_de_fitxer(local), ""
-        return [], "Sense socis suggerits: no hi ha accés als contactes de Holded (configura HOLDED_API_KEY)."
-    except Exception as e:  # sense contactes l'avís continua sent útil
-        return [], f"Sense socis suggerits: error llegint Holded ({type(e).__name__})."
-
-
 def ordre_avisa(args) -> int:
-    cat = dades.carrega()
+    from . import diari
+
     avui = _avui(args.avui)
-    cfg = {**avisos.CONFIG_PER_DEFECTE, **cat.config.get("avisos", {})}
-    fitxer_estat = ARREL / "data" / "estat" / "notificades.json"
-    estat = avisos.llegeix_estat(fitxer_estat)
-    candidates = avisos.candidates(cat, avui, cfg)
     if args.inicialitza:
-        avisos.desa_estat(fitxer_estat, estat, candidates, avui)
+        cat = dades.carrega()
+        cfg = {**avisos.CONFIG_PER_DEFECTE, **cat.config.get("avisos", {})}
+        fitxer_estat = ARREL / "data" / "estat" / "notificades.json"
+        candidates = avisos.candidates(cat, avui, cfg)
+        avisos.desa_estat(fitxer_estat, avisos.llegeix_estat(fitxer_estat), candidates, avui)
         print(f"{len(candidates)} línies marcades com a ja avisades (no s'envia res).")
         return 0
-    noves = candidates if args.tot else avisos.noves(candidates, estat)
-    maxim = args.maxim or cfg["maxim_linies"]
-    principals, resum = noves[:maxim], noves[maxim:]
     novetats = []
     if args.novetats and Path(args.novetats).exists():
         novetats = json.loads(Path(args.novetats).read_text(encoding="utf-8"))
-    if not principals and not novetats:
-        print("Cap línia nova amb potencial: no s'envia cap correu.")
-        return 0
-    contactes, motiu = _contactes(args)
-    llista_socis = socis.construeix(contactes) if contactes else []
-    avisos.afegeix_socis(principals, llista_socis, cat, cfg["maxim_socis"])
-    assumpte, text, cos_html = avisos.compon(principals, avui, cfg, resum, novetats, motiu)
-    copia = avisos.desa_copia(ARREL / "privat" / "avisos", avui, assumpte, text, cos_html)
-    print(f"{assumpte}\nCòpia local (no es desa a git): {copia.relative_to(ARREL)}")
-    if not args.envia:
-        print("Vista prèvia: no s'ha enviat (afegeix --envia).")
-        return 0
-    if not avisos.smtp_configurat():
-        print("No s'ha enviat: falten SMTP_HOST, SMTP_USER, SMTP_PASSWORD o RADAR_DESTINATARI.")
-        return 0
     try:
-        destinataris = avisos.envia(assumpte, text, cos_html, cfg["remitent_nom"])
+        r = diari.prepara_avis(avui, envia=args.envia, tot=args.tot, maxim=args.maxim, novetats=novetats,
+                               fitxer_contactes=args.contactes, path_db=_path_db(),
+                               actualitza_estat=not args.sense_estat)
     except Exception as e:
         print(f"Error enviant el correu: {type(e).__name__}: {e}")
         return 1
-    if not args.sense_estat:
-        avisos.desa_estat(fitxer_estat, estat, principals + resum, avui)
-    print(f"Enviat a {len(destinataris)} destinatari(s).")
+    if r.assumpte:
+        print(r.assumpte)
+    if r.copia:
+        print(f"Còpia local (no es desa a git): {r.copia.relative_to(ARREL)}")
+    print(r.missatge)
     return 0
+
+
+def _path_db():
+    from .web.config import Config
+
+    return Config().db
+
+
+def ordre_diari(args) -> int:
+    from . import diari
+
+    r = diari.executa_diari(_avui(args.avui), envia=not args.sense_enviar, path_db=_path_db())
+    print(r.assumpte or "Sense correu", "·", r.missatge)
+    for k, v in r.errors.items():
+        print(f"  error {k}: {v.splitlines()[-1] if v else ''}")
+    return 0
+
+
+def ordre_programador(args) -> int:
+    from . import diari
+
+    diari.programador(args.hora, path_db=_path_db())
+    return 0
+
+
+def ordre_web(args) -> int:
+    import os
+
+    import uvicorn
+
+    # Darrere de Caddy (Docker) RADAR_PROXY_IPS=* perquè el límit d'intents vegi la IP real del client
+    uvicorn.run("radar.web.app:crea_app", factory=True, host=args.host, port=args.port, proxy_headers=True,
+                forwarded_allow_ips=os.environ.get("RADAR_PROXY_IPS", "127.0.0.1"))
+    return 0
+
+
+def ordre_contrasenya(_args) -> int:
+    from .web import auth
+
+    return auth.main()
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -199,6 +214,17 @@ def main(argv: list[str] | None = None) -> int:
     av.add_argument("--inicialitza", action="store_true", help="marca les línies actuals com a avisades")
     av.add_argument("--sense-estat", action="store_true", help="no actualitza data/estat/notificades.json")
     av.set_defaults(f=ordre_avisa)
+    di = sub.add_parser("diari", parents=[comu], help="revisió completa: vigilància, informe i avís per correu")
+    di.add_argument("--sense-enviar", action="store_true", help="prepara l'avís però no l'envia")
+    di.set_defaults(f=ordre_diari)
+    pr = sub.add_parser("programador", help="servei: revisió diària a RADAR_HORA (Europe/Madrid)")
+    pr.add_argument("--hora", help="HH:MM (per defecte RADAR_HORA o 07:30)")
+    pr.set_defaults(f=ordre_programador)
+    we = sub.add_parser("web", help="aplicació web (tauler, expedients i assistent)")
+    we.add_argument("--host", default="127.0.0.1")
+    we.add_argument("--port", type=int, default=8000)
+    we.set_defaults(f=ordre_web)
+    sub.add_parser("contrasenya", help="genera les claus d'accés per al fitxer .env").set_defaults(f=ordre_contrasenya)
     args = ap.parse_args(argv)
     return args.f(args)
 

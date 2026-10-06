@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block titol %}Sol·licituds{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">Expedients</span>
+    <h1>Sol·licituds en preparació</h1>
+    <p class="sub">Cada expedient té el seu xat amb l'assistent, amb tot el context de Stimulo, de l'ajut i dels socis. Els documents es desen per versions i es poden exportar a Word.</p>
+  </div>
+  <a class="boto" href="/expedients/nou">Nova sol·licitud</a>
+</header>
+{% if files %}
+<div class="taula-embolcall">
+<table class="taula">
+  <thead><tr><th>Sol·licitud</th><th>Convocatòria</th><th>Termini</th><th>Documents</th><th>Estat</th><th>Actualitzat</th></tr></thead>
+  <tbody>
+  {% for r in files %}
+  <tr>
+    <td><a href="/expedients/{{ r.e.id }}"><strong>{{ r.e.titol }}</strong></a></td>
+    <td>{{ r.c.nom if r.c else r.e.convocatoria_id }}</td>
+    <td>
+      {% if r.f %}
+        <span class="estat e-{{ r.f.estat }}{% if r.f.estimada %} e-estimada{% endif %}">{{ r.f.descripcio }}</span>
+        {% if r.dies is not none %}<small class="{% if r.dies <= 7 %}urgent{% endif %}">{{ 'tanca avui' if r.dies == 0 else 'falten ' ~ r.dies ~ ' dies' }}</small>{% endif %}
+      {% endif %}
+    </td>
+    <td class="num">{{ r.docs }}</td>
+    <td>{{ r.e.estat }}</td>
+    <td class="num">{{ r.e.actualitzat|data }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% else %}
+<div class="buit">Encara no hi ha cap sol·licitud. Obre'n una des del <a href="/">tauler</a> amb «Preparar sol·licitud» o amb el botó «Nova sol·licitud».</div>
+{% endif %}
+{% endblock %}

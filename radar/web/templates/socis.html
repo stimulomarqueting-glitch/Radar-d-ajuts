@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block titol %}Socis{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">Contactes de Holded</span>
+    <h1>Socis i correus</h1>
+    <p class="sub">Tria una convocatòria per veure quins contactes hi encaixen i obrir un esborrany de correu per a cadascun, en català o castellà segons la zona.</p>
+  </div>
+  <form method="post" action="/socis/actualitza"><button class="boto secundari" type="submit">Tornar a llegir Holded</button></form>
+</header>
+
+<form method="get" action="/socis" class="filtres">
+  <div class="camp"><label for="convocatoria">Convocatòria</label>
+    <select id="convocatoria" name="convocatoria" data-navega="convocatoria">
+      <option value="">— Tria'n una —</option>
+      {% for x in llista %}<option value="{{ x.id }}" {% if c and x.id == c.id %}selected{% endif %}>{{ x.nom }}</option>{% endfor %}
+    </select></div>
+  <noscript><button class="boto" type="submit">Veure</button></noscript>
+</form>
+
+{% if motiu %}<p class="avis-error">{{ motiu }}</p>{% endif %}
+
+{% if c %}
+<section class="bloc">
+  <h2>Esborranys per a «{{ c.nom }}»</h2>
+  {% if esborranys %}
+  <div class="esborranys">
+    {% for x in esborranys %}
+    <details class="targeta">
+      <summary><strong>{{ x.p.soci.nom }}</strong> · {{ NOMS_TIPUS.get(x.p.soci.tipus, x.p.soci.tipus) }} · {{ x.p.rol }}
+        <small>{{ x.p.motius|join(" · ") }}</small></summary>
+      <p><b>Per a:</b> {{ x.d.nom }} {% if x.d.per_a %}&lt;{{ x.d.per_a }}&gt;{% else %}(sense correu a Holded){% endif %}{% if x.d.generic %} · adreça genèrica{% endif %}<br>
+         <b>Assumpte:</b> {{ x.d.assumpte }}</p>
+      <pre class="correu" id="correu-{{ loop.index }}">{{ x.d.cos }}</pre>
+      <div class="accions">
+        {% if x.mailto %}<a class="boto" href="{{ x.mailto }}">Obrir al correu</a>{% endif %}
+        <button type="button" class="boto secundari" data-copia="correu-{{ loop.index }}">Copiar el text</button>
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+  {% else %}<p class="ajuda">Cap contacte de Holded encaixa amb aquesta convocatòria.</p>{% endif %}
+</section>
+{% endif %}
+
+<section class="bloc">
+  <h2>Tots els socis ({{ socis|length }})</h2>
+  <p class="ajuda">Organitzacions agrupades a partir dels contactes de Holded. El tipus i els temes es poden corregir al fitxer privat <code>privat/socis.yaml</code> o amb etiquetes <code>radar-…</code> a Holded.</p>
+  <div class="taula-embolcall">
+  <table class="taula">
+    <thead><tr><th>Organització</th><th>Tipus</th><th>Relació</th><th>Zona</th><th>Temes</th><th>Persones</th></tr></thead>
+    <tbody>
+    {% for s in socis %}
+    <tr><td><strong>{{ s.nom }}</strong></td><td>{{ NOMS_TIPUS.get(s.tipus, s.tipus) }}</td><td>{{ s.relacio }}</td>
+      <td>{{ zones.nom(s.zona) if s.zona else "—" }}</td>
+      <td>{% for t in s.focus %}{{ NOMS_FOCUS.get(t, t) }}{% if not loop.last %}, {% endif %}{% endfor %}</td>
+      <td class="num">{{ s.persones|length }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endblock %}

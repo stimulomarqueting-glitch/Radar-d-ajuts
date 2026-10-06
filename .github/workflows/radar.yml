@@ -2,7 +2,7 @@ name: Radar d'ajuts
 
 on:
   schedule:
-    - cron: "17 6 * * 1,4"  # dilluns i dijous a les 06:17 UTC
+    - cron: "17 5 * * *"  # cada matí a les 05:17 UTC (06:17 o 07:17 a Barcelona)
   workflow_dispatch:
     inputs:
       tot:
@@ -25,6 +25,8 @@ concurrency:
 
 jobs:
   radar:
+    # Amb la variable RADAR_PROGRAMADOR=vps, la revisió diària la fa el VPS: aquí no es programa
+    if: github.event_name != 'schedule' || vars.RADAR_PROGRAMADOR != 'vps'
     runs-on: ubuntu-latest
     env:
       # Correu (vegeu README > Avís per correu). Sense aquests secrets, l'avís no s'envia.
@@ -76,11 +78,12 @@ jobs:
             git push
           fi
 
-      - name: Avís a GitHub (només si el correu no està configurat)
+      - name: Avís a GitHub (només si el correu no està configurat; els dilluns)
         if: github.event_name != 'push' && env.SMTP_HOST == ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date +%u)" != "1" ]; then exit 0; fi
           {
             echo "## Alertes dels propers 14 dies"
             echo

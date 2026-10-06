@@ -1,0 +1,9 @@
+.git
+.github
+.env
+.env.*
+privat
+**/__pycache__
+*.pyc
+.venv
+avis.md

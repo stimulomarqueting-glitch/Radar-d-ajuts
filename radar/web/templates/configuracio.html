@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block titol %}Configuració{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">Servidor</span>
+    <h1>Configuració</h1>
+    <p class="sub">Es canvia al fitxer <code>.env</code> del VPS i es reinicia amb <code>docker compose up -d</code>. Vegeu <code>docs/desplegament.md</code>.</p>
+  </div>
+</header>
+
+{% if problemes %}
+<ul class="avis-error">{% for p in problemes %}<li>{{ p }}</li>{% endfor %}</ul>
+{% else %}<p class="avis-ok">Tot configurat.</p>{% endif %}
+
+<section class="bloc">
+  <dl class="fitxa">
+    <div><dt>Usuari</dt><dd>{{ cfg.usuari }}</dd></div>
+    <div><dt>Segon factor (TOTP)</dt><dd>{{ "activat" if cfg.totp_secret else "desactivat" }}</dd></div>
+    <div><dt>Sessió</dt><dd>{{ cfg.hores_sessio }} h · galeta {{ "segura (HTTPS)" if cfg.cookie_segura else "NO segura" }}</dd></div>
+    <div><dt>Model de l'assistent</dt><dd>{{ cfg.model }} · esforç {{ cfg.esforc }}</dd></div>
+    <div><dt>Cerca web de l'assistent</dt><dd>{{ "sí" if cfg.cerca_web else "no" }}</dd></div>
+    <div><dt>Revisió diària</dt><dd>{{ hora }} (Europe/Madrid)</dd></div>
+    <div><dt>Correu (SMTP)</dt><dd>{{ "configurat" if smtp else "no configurat" }}</dd></div>
+    <div><dt>Destinatari dels avisos</dt><dd>{{ destinatari or "—" }}</dd></div>
+    <div><dt>Holded</dt><dd>{{ "connectat" if holded else "sense accés" }}</dd></div>
+    <div><dt>Convocatòries al catàleg</dt><dd>{{ n_convocatories }}</dd></div>
+    <div><dt>Fitxers adjunts</dt><dd>màx. {{ cfg.mida_max_fitxer_mb }} MB</dd></div>
+  </dl>
+</section>
+
+<section class="bloc">
+  <h2>Registre</h2>
+  <div class="taula-embolcall">
+  <table class="taula">
+    <thead><tr><th>Quan</th><th>Esdeveniment</th><th>Detall</th></tr></thead>
+    <tbody>{% for ev in events %}<tr><td class="num">{{ ev.creat|data }}</td><td>{{ ev.tipus }}</td><td class="detall">{{ ev.detall[:200] }}</td></tr>{% endfor %}</tbody>
+  </table>
+  </div>
+</section>
+{% endblock %}

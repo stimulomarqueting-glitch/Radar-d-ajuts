@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>{% block titol %}Radar d'ajuts{% endblock %} · Stimulo</title>
+<link rel="icon" href="/static/icona.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@600;800&display=swap">
+<link rel="stylesheet" href="/static/tauler.css">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="pagina">
+{% if usuari %}
+<nav class="app" aria-label="Seccions">
+  <a class="logo" href="/">Radar · Stimulo</a>
+  <a href="/" {% if seccio == 'tauler' %}aria-current="page"{% endif %}>Tauler</a>
+  <a href="/expedients" {% if seccio == 'expedients' %}aria-current="page"{% endif %}>Sol·licituds</a>
+  <a href="/socis" {% if seccio == 'socis' %}aria-current="page"{% endif %}>Socis</a>
+  <a href="/avisos" {% if seccio == 'avisos' %}aria-current="page"{% endif %}>Avisos</a>
+  <a href="/configuracio" {% if seccio == 'configuracio' %}aria-current="page"{% endif %}>Configuració</a>
+  <form method="post" action="/sortir" class="sortir"><button type="submit" class="enllac">Sortir</button></form>
+</nav>
+{% endif %}
+{% block contingut %}{% endblock %}
+</div>
+<script src="/static/app.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

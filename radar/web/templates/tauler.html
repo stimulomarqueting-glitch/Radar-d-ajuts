@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block titol %}Tauler{% endblock %}
+{% block contingut %}
+{% include "_tauler_cos.html" %}
+<script type="application/json" id="radar-dades">{{ dades|json_script }}</script>
+<script type="application/json" id="radar-app">{{ app|json_script }}</script>
+{% endblock %}
+{% block scripts %}<script src="/static/tauler.js"></script>{% endblock %}

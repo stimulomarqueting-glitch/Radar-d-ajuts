@@ -1,0 +1,576 @@
+"""Aplicació web privada del radar: tauler, expedients amb l'assistent, socis de Holded i avisos.
+
+    python -m radar web                       # http://127.0.0.1:8000 (en local)
+    docker compose up -d                      # al VPS, darrere de Caddy amb HTTPS (vegeu docs/desplegament.md)
+
+Accés d'un sol usuari: contrasenya (PBKDF2), segon factor opcional (TOTP), galeta de sessió signada
+(HttpOnly, Secure, SameSite) i límit d'intents per IP. Les peticions que modifiquen dades han de venir
+del mateix origen. Sense RADAR_CONTRASENYA_HASH i RADAR_SECRET no es pot entrar.
+"""
+
+from __future__ import annotations
+
+import asyncio
+import datetime as dt
+import hmac
+import json
+import os
+import re
+import threading
+import time
+import unicodedata
+import uuid
+from pathlib import Path
+from urllib.parse import quote, urlparse
+
+from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
+from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse, Response, StreamingResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from markupsafe import Markup
+
+from .. import avisos, calendari, dades, diari, informe
+from .. import socis as mod_socis
+from . import auth, context, exporta, ia, plantilles
+from .config import Config
+from .db import BaseDades
+from .render import markdown_html
+
+DIR = Path(__file__).resolve().parent
+ESTATS = ["en preparació", "presentat", "concedit", "denegat", "arxivat"]
+SEQUENCIA = ["encaix", "fitxa", "memoria", "pla_treball", "pressupost", "impacte", "consorci", "correus", "resum",
+             "checklist"]
+PUBLIQUES = ("/entrar", "/static/", "/salut")
+CSP = ("default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; "
+       "font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; "
+       "frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
+CSP_AVIS = "default-src 'none'; style-src 'unsafe-inline'; img-src data:; frame-ancestors 'none'; base-uri 'none'"
+RE_AVIS = re.compile(r"^avis-\d{4}-\d{2}-\d{2}\.html$")
+MIME_DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+DOC_IDEA = "idea"
+
+
+# --- Utilitats -------------------------------------------------------------------------------------
+
+def json_script(dades_) -> Markup:
+    """JSON per incrustar dins de <script type="application/json"> sense poder tancar l'etiqueta."""
+    text = json.dumps(dades_, ensure_ascii=False)
+    return Markup(text.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026"))
+
+
+def data_curta(valor) -> str:
+    if not valor:
+        return ""
+    if isinstance(valor, str):
+        try:
+            valor = dt.datetime.fromisoformat(valor)
+        except ValueError:
+            return valor
+    if isinstance(valor, dt.datetime):
+        if valor.tzinfo:
+            valor = valor.astimezone()
+        return f"{valor:%d/%m/%Y %H:%M}"
+    return f"{valor:%d/%m/%Y}"
+
+
+def eur(valor) -> str:
+    if not valor:
+        return ""
+    return f"{valor:,.0f} €".replace(",", ".")
+
+
+def slug(text: str) -> str:
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    return re.sub(r"[^A-Za-z0-9]+", "-", text).strip("-").lower()[:60] or "expedient"
+
+
+def seguent_segur(valor: str | None) -> str:
+    """Evita redireccions obertes: només rutes locals."""
+    if valor and valor.startswith("/") and not valor.startswith("//") and "\\" not in valor:
+        return valor
+    return "/"
+
+
+def mime_real(capcalera: bytes, nom: str, declarat: str | None) -> str | None:
+    """Tipus del fitxer a partir dels primers bytes (no ens fiem del que declara el navegador)."""
+    if capcalera.startswith(b"%PDF"):
+        return "application/pdf"
+    if capcalera.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "image/png"
+    if capcalera.startswith(b"\xff\xd8\xff"):
+        return "image/jpeg"
+    if capcalera[:6] in (b"GIF87a", b"GIF89a"):
+        return "image/gif"
+    if capcalera[:4] == b"RIFF" and capcalera[8:12] == b"WEBP":
+        return "image/webp"
+    if capcalera.startswith(b"PK\x03\x04") and nom.lower().endswith(".docx"):
+        return MIME_DOCX
+    tipus = ia.tipus_fitxer(nom, declarat)
+    if tipus == "text" and b"\x00" not in capcalera:
+        return {".md": "text/markdown", ".csv": "text/csv"}.get(Path(nom).suffix.lower(), "text/plain")
+    return None
+
+
+class Estat:
+    """Estat compartit de l'aplicació (un sol procés)."""
+
+    def __init__(self, cfg: Config, client=None):
+        self.cfg = cfg
+        self.db = BaseDades(cfg.db)
+        self.limit = auth.LimitIntents()
+        self.client = client
+        self.ocupats: set[int] = set()
+        self.tasques: set[asyncio.Task] = set()
+        self.revisio_en_marxa = False
+        self._cat = None
+        self._cat_clau = None
+        self._socis: list | None = None
+        self._socis_motiu = ""
+        self._socis_hora = 0.0
+        self._lock = threading.Lock()
+
+    @property
+    def configurada(self) -> bool:
+        return bool(self.cfg.contrasenya_hash) and len(self.cfg.secret) >= 32
+
+    def cataleg(self) -> dades.Cataleg:
+        clau = tuple(sorted((p.name, p.stat().st_mtime_ns) for p in dades.DIR_DADES.glob("*.yaml")))
+        with self._lock:
+            if clau != self._cat_clau:
+                self._cat, self._cat_clau = dades.carrega(), clau
+            return self._cat
+
+    def socis(self, refresca: bool = False) -> tuple[list, str]:
+        with self._lock:
+            if refresca or self._socis is None or time.time() - self._socis_hora > 3600:
+                contactes, motiu = diari.contactes_holded()
+                self._socis = mod_socis.construeix(contactes) if contactes else []
+                self._socis_motiu, self._socis_hora = motiu, time.time()
+            return self._socis, self._socis_motiu
+
+    def client_ia(self):
+        if self.client is None:
+            import anthropic
+
+            self.client = anthropic.AsyncAnthropic()
+        return self.client
+
+    def ia_disponible(self) -> bool:
+        return self.client is not None or bool(os.environ.get("ANTHROPIC_API_KEY"))
+
+
+# --- Aplicació -------------------------------------------------------------------------------------
+
+def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
+    cfg = cfg or Config()
+    estat = Estat(cfg, client)
+    app = FastAPI(title="Radar d'ajuts Stimulo", docs_url=None, redoc_url=None, openapi_url=None)
+    app.state.radar = estat
+    app.mount("/static", StaticFiles(directory=str(DIR / "static")), name="static")
+    plantilles_web = Jinja2Templates(directory=str(DIR / "templates"))
+    plantilles_web.env.filters.update(data=data_curta, eur=eur, md=markdown_html, json_script=json_script)
+    plantilles_web.env.globals.update(NOMS_FOCUS=avisos.NOMS_FOCUS, NOMS_TIPUS=avisos.NOMS_TIPUS)
+
+    def pagina(request: Request, nom: str, seccio: str = "", status_code: int = 200, **ctx) -> HTMLResponse:
+        ctx.update(usuari=getattr(request.state, "usuari", None), seccio=seccio)
+        return plantilles_web.TemplateResponse(request, nom, ctx, status_code=status_code)
+
+    def expedient_o_404(id_: int) -> dict:
+        e = estat.db.expedient(id_)
+        if not e:
+            raise HTTPException(404, "Expedient no trobat")
+        return e
+
+    def busca_convocatoria(cat: dades.Cataleg, id_: str):
+        if not id_:
+            return None
+        try:
+            return cat.per_id(id_)
+        except KeyError:
+            return None
+
+    def convocatoria_o_400(cat: dades.Cataleg, id_: str):
+        c = busca_convocatoria(cat, id_)
+        if not c:
+            raise HTTPException(400, "Convocatòria desconeguda")
+        return c
+
+    # --- Seguretat
+    def mateix_origen(request: Request) -> bool:
+        origen = request.headers.get("origin") or request.headers.get("referer")
+        if not origen or origen == "null":
+            return False
+        return urlparse(origen).netloc == request.headers.get("host", "")
+
+    @app.middleware("http")
+    async def seguretat(request: Request, call_next):
+        ruta = request.url.path
+        if request.method not in ("GET", "HEAD", "OPTIONS") and not mateix_origen(request):
+            return PlainTextResponse("Origen de la petició no permès.", status_code=403)
+        usuari = None
+        if estat.configurada:
+            usuari = auth.valida_sessio(cfg.secret, request.cookies.get(auth.NOM_COOKIE))
+            if usuari and not hmac.compare_digest(usuari, cfg.usuari):
+                usuari = None
+        request.state.usuari = usuari
+        if not usuari and not ruta.startswith(PUBLIQUES):
+            if request.method == "GET":
+                desti = ruta + (f"?{request.url.query}" if request.url.query else "")
+                return RedirectResponse("/entrar?seguent=" + quote(desti, safe=""), status_code=303)
+            return PlainTextResponse("Cal iniciar sessió.", status_code=401)
+        resposta = await call_next(request)
+        h = resposta.headers
+        h.setdefault("Content-Security-Policy", CSP)
+        h.setdefault("X-Content-Type-Options", "nosniff")
+        h.setdefault("X-Frame-Options", "DENY")
+        h.setdefault("Referrer-Policy", "same-origin")
+        h.setdefault("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()")
+        h.setdefault("Cross-Origin-Opener-Policy", "same-origin")
+        h.setdefault("X-Robots-Tag", "noindex, nofollow")
+        if cfg.cookie_segura:
+            h.setdefault("Strict-Transport-Security", "max-age=31536000")
+        if not ruta.startswith("/static/"):
+            h.setdefault("Cache-Control", "no-store")
+        return resposta
+
+    @app.get("/salut", response_class=PlainTextResponse)
+    def salut():
+        return "ok"
+
+    # --- Accés
+    @app.get("/entrar", response_class=HTMLResponse)
+    def entrar_form(request: Request, seguent: str = "/"):
+        if request.state.usuari:
+            return RedirectResponse(seguent_segur(seguent), status_code=303)
+        return pagina(request, "entrar.html", seguent=seguent_segur(seguent), totp=bool(cfg.totp_secret),
+                      configurada=estat.configurada, error="")
+
+    @app.post("/entrar", response_class=HTMLResponse)
+    def entrar(request: Request, usuari: str = Form(""), contrasenya: str = Form(""), codi: str = Form(""),
+               seguent: str = Form("/")):
+        ip = request.client.host if request.client else "?"
+        ctx = dict(seguent=seguent_segur(seguent), totp=bool(cfg.totp_secret), configurada=estat.configurada)
+        if not estat.configurada:
+            return pagina(request, "entrar.html", status_code=503, error="L'accés encara no està configurat.", **ctx)
+        if estat.limit.bloquejat(ip):
+            return pagina(request, "entrar.html", status_code=429,
+                          error="Massa intents fallits. Torna-ho a provar d'aquí a 15 minuts.", **ctx)
+        ok_usuari = hmac.compare_digest(usuari.strip().lower().encode(), cfg.usuari.lower().encode())
+        ok_contrasenya = auth.verifica_contrasenya(contrasenya, cfg.contrasenya_hash)
+        ok_codi = not cfg.totp_secret or auth.verifica_totp(cfg.totp_secret, codi.strip())
+        if not (ok_usuari and ok_contrasenya and ok_codi):
+            estat.limit.falla(ip)
+            estat.db.registra("acces_fallit", ip)
+            return pagina(request, "entrar.html", status_code=401, error="Dades d'accés incorrectes.", **ctx)
+        estat.limit.reinicia(ip)
+        estat.db.registra("acces", ip)
+        resposta = RedirectResponse(ctx["seguent"], status_code=303)
+        resposta.set_cookie(auth.NOM_COOKIE, auth.crea_sessio(cfg.secret, cfg.usuari, cfg.hores_sessio),
+                            max_age=cfg.hores_sessio * 3600, httponly=True, secure=cfg.cookie_segura,
+                            samesite="lax", path="/")
+        return resposta
+
+    @app.post("/sortir")
+    def sortir():
+        resposta = RedirectResponse("/entrar", status_code=303)
+        resposta.delete_cookie(auth.NOM_COOKIE, path="/", secure=cfg.cookie_segura, httponly=True, samesite="lax")
+        return resposta
+
+    # --- Tauler
+    @app.get("/", response_class=HTMLResponse)
+    def tauler(request: Request):
+        cat = estat.cataleg()
+        oberts = {}
+        for e in estat.db.expedients():  # del més recent al més antic
+            if e["estat"] != "arxivat":
+                oberts.setdefault(e["convocatoria_id"], e["id"])
+        return pagina(request, "tauler.html", "tauler", dades=informe.dades_json(cat, dt.date.today()),
+                      app={"expedients": oberts})
+
+    # --- Expedients
+    @app.get("/expedients", response_class=HTMLResponse)
+    def expedients(request: Request):
+        cat, avui = estat.cataleg(), dt.date.today()
+        files = []
+        for e in estat.db.expedients():
+            c = busca_convocatoria(cat, e["convocatoria_id"])
+            f = calendari.propera_finestra(c, avui) if c else None
+            files.append({"e": e, "c": c, "f": f, "docs": len(estat.db.documents_actuals(e["id"])),
+                          "dies": (f.tancament - avui).days if f and f.estat == "oberta" and f.tancament else None})
+        return pagina(request, "expedients.html", "expedients", files=files)
+
+    @app.get("/expedients/nou", response_class=HTMLResponse)
+    def expedient_nou(request: Request, convocatoria: str = ""):
+        cat, avui = estat.cataleg(), dt.date.today()
+        c = busca_convocatoria(cat, convocatoria)
+        llista = sorted(cat.convocatories, key=lambda x: x.nom.lower())
+        propostes, motiu, linia = [], "", None
+        if c:
+            linia = avisos.linia(cat, c, avui)
+            socis, motiu = estat.socis()
+            propostes = mod_socis.proposa(c, socis, cat.zones, maxim=8) if socis else []
+        return pagina(request, "expedient_nou.html", "expedients", c=c, llista=llista, linia=linia,
+                      propostes=propostes, motiu_socis=motiu, zones=cat.zones)
+
+    @app.post("/expedients")
+    def crea_expedient(request: Request, convocatoria: str = Form(...), titol: str = Form(""), idea: str = Form(""),
+                       socis: list[str] = Form(default=[]), socis_extra: str = Form("")):
+        cat, avui = estat.cataleg(), dt.date.today()
+        c = convocatoria_o_400(cat, convocatoria)
+        triats = []
+        if socis:
+            llista, _ = estat.socis()
+            per_clau = {p.soci.clau: p for p in mod_socis.proposa(c, llista, cat.zones, maxim=50)}
+            per_clau_soci = {s.clau: s for s in llista}
+            for clau in socis:
+                s = per_clau_soci.get(clau)
+                if not s:
+                    continue
+                dest = s.destinatari or {}
+                contacte = " ".join(filter(None, [dest.get("nom", ""), f"<{dest['email']}>" if dest.get("email") else ""]))
+                triats.append({"nom": s.nom, "tipus": s.tipus, "relacio": s.relacio, "zona": s.zona,
+                               "focus": s.focus, "contacte": contacte, "nota": s.nota,
+                               "rol": per_clau[clau].rol if clau in per_clau else ""})
+        for linia in socis_extra.splitlines():
+            if linia.strip():
+                triats.append({"nom": linia.strip()[:200], "tipus": "", "relacio": "afegit a mà", "focus": []})
+        titol = (titol.strip() or c.nom)[:200]
+        idea = idea.strip()[:8000]
+        sistema = context.construeix(cat, c, titol, idea, triats, avui)
+        id_ = estat.db.crea_expedient(c.id, titol, idea, triats, sistema)
+        estat.db.registra("expedient_creat", json.dumps({"id": id_, "convocatoria": c.id}))
+        return RedirectResponse(f"/expedients/{id_}", status_code=303)
+
+    @app.get("/expedients/{id_}", response_class=HTMLResponse)
+    def expedient(request: Request, id_: int):
+        e = expedient_o_404(id_)
+        cat, avui = estat.cataleg(), dt.date.today()
+        c = busca_convocatoria(cat, e["convocatoria_id"])
+        f = calendari.propera_finestra(c, avui) if c else None
+        missatges = [m for m in estat.db.missatges(id_) if m["rol"] in ("user", "assistant") and m["visible"].strip()]
+        documents = estat.db.documents_actuals(id_)
+        fets = {d["tipus"] for d in documents}
+        return pagina(request, "expedient.html", "expedients", e=e, c=c, f=f, missatges=missatges,
+                      documents=documents, fitxers=estat.db.fitxers(id_), plantilles=plantilles.PLANTILLES,
+                      estats=ESTATS, ia_disponible=estat.ia_disponible(), ocupat=id_ in estat.ocupats,
+                      mida_max=cfg.mida_max_fitxer_mb, tipus_acceptats=".pdf,.docx,.txt,.md,.csv,.png,.jpg,.jpeg,.webp,.gif",
+                      app={"id": id_, "pendents": [t for t in SEQUENCIA if t not in fets],
+                           "titols": {p.tipus: p.titol for p in plantilles.PLANTILLES}})
+
+    @app.post("/expedients/{id_}")
+    def actualitza_expedient(id_: int, titol: str = Form(None), estat_: str = Form(None, alias="estat"),
+                             idea: str = Form(None)):
+        e = expedient_o_404(id_)
+        canvis = {}
+        if titol is not None and titol.strip():
+            canvis["titol"] = titol.strip()[:200]
+        if estat_ in ESTATS:
+            canvis["estat"] = estat_
+        if idea is not None and idea.strip() != e["idea"]:
+            canvis["idea"] = idea.strip()[:8000]
+            if not estat.db.missatges(id_):
+                cat = estat.cataleg()
+                c = convocatoria_o_400(cat, e["convocatoria_id"])
+                estat.db.actualitza_context(id_, context.construeix(
+                    cat, c, canvis.get("titol", e["titol"]), canvis["idea"], e["socis"], dt.date.today()))
+            else:  # la conversa ja ha començat: arriba a l'assistent com a document editat
+                estat.db.desa_document(id_, DOC_IDEA, "Idea del projecte", canvis["idea"], origen="edició manual")
+        estat.db.actualitza_expedient(id_, **canvis)
+        return RedirectResponse(f"/expedients/{id_}", status_code=303)
+
+    @app.post("/expedients/{id_}/xat")
+    async def xat(request: Request, id_: int):
+        e = expedient_o_404(id_)
+        try:
+            cos = await request.json()
+        except ValueError:
+            raise HTTPException(400, "Cos de la petició no vàlid")
+        text = str(cos.get("text", ""))[:20000]
+        accio = str(cos.get("accio", ""))
+        if accio and accio not in plantilles.PER_TIPUS:
+            raise HTTPException(400, "Document desconegut")
+        if not accio and not text.strip():
+            raise HTTPException(400, "Escriu un missatge")
+        if not estat.ia_disponible():
+            return PlainTextResponse("Falta ANTHROPIC_API_KEY al servidor: l'assistent no està disponible.",
+                                     status_code=503)
+        if id_ in estat.ocupats:
+            return PlainTextResponse("L'assistent ja està treballant en aquest expedient. Espera que acabi.",
+                                     status_code=409)
+        estat.ocupats.add(id_)
+        cua: asyncio.Queue = asyncio.Queue()
+
+        async def executa():
+            try:
+                async for ev in ia.torn(estat.db, cfg, e, text, accio, client=estat.client_ia()):
+                    await cua.put(ev)
+            except Exception as ex:  # no es perd mai el final del flux
+                await cua.put({"tipus": "error", "text": f"Error inesperat ({type(ex).__name__})."})
+            finally:
+                estat.ocupats.discard(id_)
+                await cua.put(None)
+
+        # El torn continua encara que es tanqui el navegador: la resposta es desa igualment
+        tasca = asyncio.create_task(executa())
+        estat.tasques.add(tasca)
+        tasca.add_done_callback(estat.tasques.discard)
+
+        async def flux():
+            while True:
+                try:
+                    ev = await asyncio.wait_for(cua.get(), timeout=15)
+                except asyncio.TimeoutError:
+                    yield ": treballant\n\n"
+                    continue
+                if ev is None:
+                    return
+                yield f"data: {json.dumps(ev, ensure_ascii=False)}\n\n"
+
+        return StreamingResponse(flux(), media_type="text/event-stream",
+                                 headers={"Cache-Control": "no-store", "X-Accel-Buffering": "no"})
+
+    @app.post("/expedients/{id_}/fitxers")
+    async def puja_fitxer(id_: int, fitxer: UploadFile = File(...)):
+        expedient_o_404(id_)
+        nom = Path(fitxer.filename or "fitxer").name[:150]
+        maxim = cfg.mida_max_fitxer_mb * 1024 * 1024
+        contingut = await fitxer.read(maxim + 1)
+        if len(contingut) > maxim:
+            raise HTTPException(413, f"El fitxer supera els {cfg.mida_max_fitxer_mb} MB")
+        if not contingut:
+            raise HTTPException(400, "Fitxer buit")
+        mime = mime_real(contingut[:16], nom, fitxer.content_type)
+        if not mime:
+            raise HTTPException(415, "Tipus de fitxer no admès: PDF, Word (.docx), text, Markdown, CSV o imatges")
+        desti = cfg.dir_fitxers / str(id_)
+        desti.mkdir(parents=True, exist_ok=True)
+        ruta = desti / (uuid.uuid4().hex + Path(nom).suffix.lower()[:10])
+        ruta.write_bytes(contingut)
+        estat.db.afegeix_fitxer(id_, nom, str(ruta), mime, len(contingut))
+        return RedirectResponse(f"/expedients/{id_}#fitxers", status_code=303)
+
+    @app.post("/expedients/{id_}/fitxers/{fid}/esborra")
+    def esborra_fitxer(id_: int, fid: int):
+        expedient_o_404(id_)
+        f = estat.db.fitxer(id_, fid)
+        if f:
+            estat.db.esborra_fitxer(id_, fid)
+            ruta = Path(f["ruta"])
+            if ruta.is_relative_to(cfg.dir_fitxers):
+                ruta.unlink(missing_ok=True)
+        return RedirectResponse(f"/expedients/{id_}#fitxers", status_code=303)
+
+    @app.get("/expedients/{id_}/documents/{tipus}", response_class=HTMLResponse)
+    def document(request: Request, id_: int, tipus: str, versio: int | None = None, edita: bool = False):
+        e = expedient_o_404(id_)
+        d = estat.db.document(id_, tipus, versio)
+        if not d:
+            raise HTTPException(404, "Document no trobat")
+        return pagina(request, "document.html", "expedients", e=e, d=d, versions=estat.db.versions(id_, tipus),
+                      edita=edita)
+
+    @app.post("/expedients/{id_}/documents/{tipus}")
+    def desa_document(id_: int, tipus: str, contingut: str = Form(...)):
+        e = expedient_o_404(id_)
+        actual = estat.db.document(id_, tipus)
+        if not actual:
+            raise HTTPException(404, "Document no trobat")
+        contingut = contingut.replace("\r\n", "\n").strip()
+        if contingut and contingut != actual["contingut"]:
+            estat.db.desa_document(id_, tipus, actual["titol"], contingut, origen="edició manual")
+            if tipus == DOC_IDEA:
+                estat.db.actualitza_expedient(id_, idea=contingut)
+        return RedirectResponse(f"/expedients/{e['id']}/documents/{tipus}", status_code=303)
+
+    @app.get("/expedients/{id_}/exporta.docx")
+    def exporta_docx(id_: int):
+        e = expedient_o_404(id_)
+        c = busca_convocatoria(estat.cataleg(), e["convocatoria_id"])
+        contingut = exporta.docx(e, c.nom if c else e["convocatoria_id"], estat.db.documents_actuals(id_))
+        return Response(contingut, media_type=MIME_DOCX,
+                        headers={"Content-Disposition": f'attachment; filename="{slug(e["titol"])}.docx"'})
+
+    @app.get("/expedients/{id_}/exporta.zip")
+    def exporta_zip(id_: int):
+        e = expedient_o_404(id_)
+        return Response(exporta.zip_markdown(estat.db.documents_actuals(id_)), media_type="application/zip",
+                        headers={"Content-Disposition": f'attachment; filename="{slug(e["titol"])}.zip"'})
+
+    # --- Socis (Holded)
+    @app.get("/socis", response_class=HTMLResponse)
+    def socis_pagina(request: Request, convocatoria: str = ""):
+        cat, avui = estat.cataleg(), dt.date.today()
+        llista, motiu = estat.socis()
+        c = busca_convocatoria(cat, convocatoria)
+        esborranys = []
+        if c and llista:
+            lin = avisos.linia(cat, c, avui)
+            cfg_avisos = {**avisos.CONFIG_PER_DEFECTE, **cat.config.get("avisos", {})}
+            for p in mod_socis.proposa(c, llista, cat.zones, maxim=8):
+                d = avisos.esborrany(lin, p, cfg_avisos["signatura"])
+                esborranys.append({"p": p, "d": d, "mailto": avisos._mailto(d) if d["per_a"] else ""})
+        ordenats = sorted(llista, key=lambda s: (s.tipus, s.nom.lower()))
+        return pagina(request, "socis.html", "socis", socis=ordenats, motiu=motiu, c=c, esborranys=esborranys,
+                      llista=sorted(cat.convocatories, key=lambda x: x.nom.lower()), zones=cat.zones)
+
+    @app.post("/socis/actualitza")
+    def socis_actualitza():
+        estat.socis(refresca=True)
+        return RedirectResponse("/socis", status_code=303)
+
+    # --- Avisos i revisió diària
+    dir_avisos = dades.ARREL / "privat" / "avisos"
+
+    @app.get("/avisos", response_class=HTMLResponse)
+    def avisos_pagina(request: Request, missatge: str = ""):
+        fitxers = sorted((p.name for p in dir_avisos.glob("avis-*.html") if RE_AVIS.match(p.name)), reverse=True) \
+            if dir_avisos.exists() else []
+        events = [ev for ev in estat.db.esdeveniments(80) if ev["tipus"].startswith("revisio")]
+        for ev in events:
+            try:
+                ev["dades"] = json.loads(ev["detall"])
+            except ValueError:
+                ev["dades"] = {"missatge": ev["detall"]}
+        return pagina(request, "avisos.html", "avisos", fitxers=fitxers[:60], events=events[:20],
+                      en_marxa=estat.revisio_en_marxa, missatge=missatge[:200],
+                      hora=os.environ.get("RADAR_HORA", "07:30"), smtp=avisos.smtp_configurat())
+
+    @app.post("/avisos/revisio")
+    def avisos_revisio(envia: str = Form("")):
+        if estat.revisio_en_marxa:
+            return RedirectResponse("/avisos?missatge=" + quote("Ja hi ha una revisió en marxa."), status_code=303)
+        estat.revisio_en_marxa = True
+
+        def revisio():
+            try:
+                r = diari.executa_diari(dt.date.today(), envia=bool(envia), path_db=cfg.db)
+                estat.db.registra("revisio_manual", json.dumps(
+                    {"assumpte": r.assumpte, "missatge": r.missatge, "linies": r.linies, "novetats": r.novetats,
+                     "recordatoris": r.recordatoris, "errors": list(r.errors)}, ensure_ascii=False))
+            except Exception as ex:
+                estat.db.registra("revisio_manual", json.dumps({"missatge": f"Error: {type(ex).__name__}"}))
+            finally:
+                estat.revisio_en_marxa = False
+
+        threading.Thread(target=revisio, daemon=True).start()
+        text = "Revisió en marxa" + (" (s'enviarà el correu si hi ha novetats)." if envia else " (vista prèvia).")
+        return RedirectResponse("/avisos?missatge=" + quote(text), status_code=303)
+
+    @app.get("/avisos/{nom}", response_class=HTMLResponse)
+    def avis(nom: str):
+        if not RE_AVIS.match(nom) or not (dir_avisos / nom).is_file():
+            raise HTTPException(404, "Avís no trobat")
+        return HTMLResponse((dir_avisos / nom).read_text(encoding="utf-8"),
+                            headers={"Content-Security-Policy": CSP_AVIS})
+
+    # --- Configuració
+    @app.get("/configuracio", response_class=HTMLResponse)
+    def configuracio(request: Request):
+        cat = estat.cataleg()
+        return pagina(request, "configuracio.html", "configuracio", cfg=cfg, problemes=cfg.problemes(),
+                      smtp=avisos.smtp_configurat(), destinatari=os.environ.get("RADAR_DESTINATARI", ""),
+                      holded=bool(os.environ.get("HOLDED_API_KEY")) or (dades.ARREL / "privat" / "holded_contactes.json").exists(),
+                      hora=os.environ.get("RADAR_HORA", "07:30"), n_convocatories=len(cat.convocatories),
+                      events=estat.db.esdeveniments(30))
+
+    return app

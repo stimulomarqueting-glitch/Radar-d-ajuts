@@ -121,6 +121,13 @@ def candidates(cat: Cataleg, avui: dt.date, config: dict | None = None) -> list[
     return sortida
 
 
+def linia(cat: Cataleg, c: Convocatoria, avui: dt.date) -> Linia:
+    """Una línia concreta, encara que no passi els filtres de l'avís (per a l'aplicació web)."""
+    f = calendari.propera_finestra(c, avui)
+    e = puntua(c, next(iter(cat.perfils.values())), cat.zones, cat.config.get("pesos"))
+    return Linia(c, f, e, clau_edicio(c, f, avui), _motiu(f, avui))
+
+
 def noves(linies: list[Linia], estat: dict) -> list[Linia]:
     return [l for l in linies if l.clau not in estat]
 
@@ -261,19 +268,25 @@ def _camps(l: Linia) -> list[tuple[str, str]]:
 
 
 def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum: list[Linia] | None = None,
-           novetats: list[dict] | None = None, sense_socis_motiu: str = "") -> tuple[str, str, str]:
+           novetats: list[dict] | None = None, sense_socis_motiu: str = "",
+           recordatoris: list[str] | None = None) -> tuple[str, str, str]:
     """Retorna (assumpte, text pla, html) de l'avís per a Stimulo."""
     cfg = {**CONFIG_PER_DEFECTE, **(config or {})}
     resum = resum or []
     novetats = novetats or []
+    recordatoris = recordatoris or []
     n = len(linies)
     assumpte = (f"Radar d'ajuts · {n} línia nova amb potencial" if n == 1 else
                 f"Radar d'ajuts · {n} línies noves amb potencial") + f" · {avui:%d/%m/%Y}"
     if not linies and novetats:
         assumpte = f"Radar d'ajuts · {len(novetats)} novetats a les fonts oficials · {avui:%d/%m/%Y}"
+    elif not linies and recordatoris:
+        assumpte = f"Radar d'ajuts · recordatoris dels teus expedients · {avui:%d/%m/%Y}"
 
     # ---- text pla
     t = [assumpte, ""]
+    if recordatoris:
+        t += ["Els teus expedients:"] + [f"- {r}" for r in recordatoris] + [""]
     for i, l in enumerate(linies, 1):
         t += [f"{i}. {l.c.nom} — {l.c.entitat}", f"   {l.motiu} · encaix {l.e.punts}/100 ({l.e.prioritat})"]
         t += [f"   {k}: {v}" for k, v in _camps(l)]
@@ -319,6 +332,11 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
          f'<h1 style="margin:0 0 16px;font-size:22px;line-height:1.25">{e(assumpte.split(" · ")[1])}</h1>']
     if sense_socis_motiu:
         h.append(f'<p style="margin:0 0 16px;color:{gris};font-size:13px">{e(sense_socis_motiu)}</p>')
+    if recordatoris:
+        h.append(f'<div style="background:#fff;border:1px solid {linia};border-left:4px solid #B3261E;border-radius:10px;'
+                 f'padding:14px 18px;margin:0 0 14px"><p style="margin:0 0 6px;font-size:14px"><b>Els teus expedients</b></p>'
+                 f'<ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.5">'
+                 + "".join(f"<li>{e(r)}</li>" for r in recordatoris) + "</ul></div>")
     for i, l in enumerate(linies, 1):
         c = l.c
         h.append(f'<div style="background:#fff;border:1px solid {linia};border-radius:10px;padding:18px 20px;margin:0 0 14px">')

@@ -1,0 +1,53 @@
+# Radar d'ajuts al VPS: aplicació web + revisió de cada matí + Caddy (HTTPS automàtic).
+#   cp .env.example .env   # i omple-ho (vegeu docs/desplegament.md)
+#   docker compose up -d --build
+services:
+  app:
+    build: .
+    image: radar-ajuts:latest
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      RADAR_PROXY_IPS: "*"        # només Caddy hi arriba (el port no es publica)
+      RADAR_COOKIE_SEGURA: "true"
+    volumes:
+      - ./privat:/app/privat      # base de dades, fitxers adjunts, avisos desats i socis.yaml
+      - estat:/app/data/estat     # convocatòries ja avisades
+      - sortida:/app/sortida
+    expose:
+      - "8000"
+
+  programador:
+    build: .
+    image: radar-ajuts:latest
+    restart: unless-stopped
+    command: ["python", "-m", "radar", "programador"]
+    env_file: .env
+    healthcheck:
+      disable: true
+    volumes:
+      - ./privat:/app/privat
+      - estat:/app/data/estat
+      - sortida:/app/sortida
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      RADAR_DOMINI: ${RADAR_DOMINI:?Defineix RADAR_DOMINI al fitxer .env}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_dades:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+
+volumes:
+  estat:
+  sortida:
+  caddy_dades:
+  caddy_config:

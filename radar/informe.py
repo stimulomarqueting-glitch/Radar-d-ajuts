@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 from . import calendari, ics
-from .dades import Cataleg, Convocatoria
+from .dades import Cataleg
 from .puntuacio import Encaix, puntua
 
 NOMS_NIVELL = {

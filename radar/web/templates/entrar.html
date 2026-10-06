@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block titol %}Entrar{% endblock %}
+{% block contingut %}
+<main class="entrar">
+  <span class="eti-mono">Radar d'ajuts · accés privat</span>
+  <h1>Radar d'ajuts Stimulo</h1>
+  {% if not configurada %}
+  <p class="avis-error">L'accés encara no està configurat. Genera la contrasenya amb <code>python -m radar contrasenya</code> i desa-la al fitxer <code>.env</code> del servidor.</p>
+  {% endif %}
+  {% if error %}<p class="avis-error" role="alert">{{ error }}</p>{% endif %}
+  <form method="post" action="/entrar" class="formulari">
+    <input type="hidden" name="seguent" value="{{ seguent }}">
+    <div class="camp"><label for="usuari">Usuari</label>
+      <input id="usuari" name="usuari" autocomplete="username" required autofocus></div>
+    <div class="camp"><label for="contrasenya">Contrasenya</label>
+      <input id="contrasenya" name="contrasenya" type="password" autocomplete="current-password" required></div>
+    {% if totp %}
+    <div class="camp"><label for="codi">Codi de l'app d'autenticació</label>
+      <input id="codi" name="codi" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" required></div>
+    {% endif %}
+    <button class="boto" type="submit">Entrar</button>
+  </form>
+</main>
+{% endblock %}

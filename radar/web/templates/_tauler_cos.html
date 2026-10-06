@@ -1,0 +1,54 @@
+<header class="cap">
+  <div class="marca">
+    <span class="eti" id="generat">Radar d'ajuts · subvencions · licitacions</span>
+    <h1>Radar d'ajuts Stimulo</h1>
+    <p class="sub">Oportunitats de finançament públic i privat ordenades per encaix amb Stimulo, amb la zona on ha d'estar el beneficiari i les properes senyals d'alerta.</p>
+  </div>
+  <div class="perfils" id="bloc-perfils">
+    <span>Puntuació per a</span>
+    <div class="seg" id="perfils" role="group" aria-label="Perfil"></div>
+  </div>
+</header>
+
+<section class="resum" aria-label="Resum">
+  <div><b id="k-obertes">–</b><span>obertes ara</span></div>
+  <div><b id="k-properes">–</b><span>obren en 90 dies</span></div>
+  <div><b id="k-senyals">–</b><span>senyals en 14 dies</span></div>
+  <div><b id="k-a">–</b><span id="k-a-txt">prioritat A</span></div>
+</section>
+
+<section class="filtres" aria-label="Filtres">
+  <div class="camp"><label for="f-estat">Estat</label>
+    <select id="f-estat">
+      <option value="actives">Obertes, properes i permanents</option>
+      <option value="oberta">Obertes ara</option>
+      <option value="propera">Properes</option>
+      <option value="permanent">Tot l'any</option>
+      <option value="totes">Totes (incl. tancades)</option>
+    </select></div>
+  <div class="camp"><label for="f-zona">Elegible per a un client a</label><select id="f-zona"></select></div>
+  <div class="camp"><label for="f-nivell">Nivell</label>
+    <select id="f-nivell">
+      <option value="">Tots</option><option value="local">Local</option><option value="catalunya">Catalunya</option>
+      <option value="estat">Estat</option><option value="europa">Europa</option><option value="internacional">Internacional</option>
+    </select></div>
+  <div class="camp"><label for="f-focus">Tema</label><select id="f-focus"><option value="">Tots</option></select></div>
+  <div class="camp"><label for="f-text">Cerca</label><input id="f-text" type="search" placeholder="CDTI, prototip, defensa…"></div>
+  <div class="camp"><label for="f-ordre">Ordre</label>
+    <select id="f-ordre"><option value="punts">Per encaix</option><option value="data">Per data</option></select></div>
+  <span class="compte" id="compte"></span>
+</section>
+
+<div class="cos">
+  <main class="llista" id="llista" aria-live="polite"></main>
+  <aside class="senyals" aria-labelledby="t-senyals">
+    <h2 id="t-senyals">Properes senyals</h2>
+    <p class="ajuda">90 dies. ≈ indica una data estimada a partir de l'edició anterior: serveix d'alerta, cal confirmar-la a la font.</p>
+    <div id="agenda"></div>
+  </aside>
+</div>
+
+<footer>
+  <p>Puntuació 0–100: tema 40 · rol 20 · zona 15 · TRL 10 · import 15. A ≥ 80, B ≥ 65. «NE» = no elegible per zona i sense rol indirecte.</p>
+  <p>Font: catàleg <code>data/convocatories.yaml</code> del repositori Radar-d-ajuts (recull 2025 + recerca d'octubre 2026). Confiança baixa = dada pendent de verificar.</p>
+</footer>

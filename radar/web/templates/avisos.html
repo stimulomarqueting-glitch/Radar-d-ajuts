@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block titol %}Avisos{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">Revisió de cada matí · {{ hora }}</span>
+    <h1>Avisos i revisions</h1>
+    <p class="sub">Cada dia a les {{ hora }} el radar consulta les fonts oficials, actualitza el tauler i, si hi ha línies noves amb potencial o terminis dels teus expedients, t'envia un correu.</p>
+  </div>
+</header>
+
+{% if missatge %}<p class="avis-ok" role="status">{{ missatge }}</p>{% endif %}
+{% if not smtp %}<p class="avis-error">El correu no està configurat (SMTP_HOST, SMTP_USER, SMTP_PASSWORD i RADAR_DESTINATARI): les revisions només es desen aquí.</p>{% endif %}
+
+<section class="bloc">
+  <h2>Fer una revisió ara</h2>
+  <form method="post" action="/avisos/revisio" class="accions">
+    <label class="opcio"><input type="checkbox" name="envia" value="1" {% if smtp %}checked{% endif %} {% if not smtp %}disabled{% endif %}> Enviar el correu si hi ha novetats</label>
+    <button class="boto" type="submit" {% if en_marxa %}disabled{% endif %}>{{ "En marxa…" if en_marxa else "Revisar ara" }}</button>
+  </form>
+  <p class="ajuda">Tarda un o dos minuts. Recarrega la pàgina per veure el resultat.</p>
+</section>
+
+<section class="bloc">
+  <h2>Darreres revisions</h2>
+  {% if events %}
+  <div class="taula-embolcall">
+  <table class="taula">
+    <thead><tr><th>Quan</th><th>Tipus</th><th>Resultat</th><th>Línies</th><th>Novetats</th><th>Recordatoris</th><th>Errors</th></tr></thead>
+    <tbody>
+    {% for ev in events %}
+    <tr><td class="num">{{ ev.creat|data }}</td><td>{{ "automàtica" if ev.tipus == "revisio_diaria" else "manual" }}</td>
+      <td>{{ ev.dades.assumpte or ev.dades.missatge }}</td><td class="num">{{ ev.dades.linies }}</td>
+      <td class="num">{{ ev.dades.novetats }}</td><td class="num">{{ ev.dades.recordatoris }}</td>
+      <td>{{ (ev.dades.errors or [])|join(", ") or "—" }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% else %}<p class="ajuda">Encara no hi ha cap revisió registrada.</p>{% endif %}
+</section>
+
+<section class="bloc">
+  <h2>Correus d'avís desats</h2>
+  {% if fitxers %}
+  <ul class="docs">{% for f in fitxers %}<li><a href="/avisos/{{ f }}" target="_blank" rel="noopener">{{ f[5:15] }}</a></li>{% endfor %}</ul>
+  {% else %}<p class="ajuda">Cap encara.</p>{% endif %}
+</section>
+{% endblock %}

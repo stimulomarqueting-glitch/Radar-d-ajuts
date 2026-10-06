@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block titol %}{{ d.titol }}{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti"><a href="/expedients/{{ e.id }}">← {{ e.titol }}</a></span>
+    <h1>{{ d.titol }}</h1>
+    <p class="sub">Versió {{ d.versio }} · {{ d.origen }} · {{ d.creat|data }}</p>
+  </div>
+  <div class="accions">
+    {% if not edita %}<a class="boto" href="?versio={{ d.versio }}&amp;edita=1">Editar</a>{% endif %}
+    <button type="button" class="boto secundari" data-copia="font-document">Copiar el Markdown</button>
+  </div>
+</header>
+
+{% if edita %}
+<form method="post" action="/expedients/{{ e.id }}/documents/{{ d.tipus }}" class="formulari ample">
+  <p class="ajuda">Desar crea una versió nova. L'assistent la tindrà en compte al proper missatge.</p>
+  <label for="contingut" class="ocult">Contingut</label>
+  <textarea id="contingut" name="contingut" rows="28" class="editor">{{ d.contingut }}</textarea>
+  <div class="accions"><button class="boto" type="submit">Desar versió nova</button>
+    <a href="/expedients/{{ e.id }}/documents/{{ d.tipus }}">Cancel·lar</a></div>
+</form>
+{% else %}
+<article class="document md">{{ d.contingut|md }}</article>
+{% endif %}
+<textarea id="font-document" class="ocult" readonly aria-hidden="true" tabindex="-1">{{ d.contingut }}</textarea>
+
+{% if versions|length > 1 %}
+<section class="bloc">
+  <h2>Versions</h2>
+  <ul class="docs">
+    {% for v in versions %}
+    <li><a href="?versio={{ v.versio }}">Versió {{ v.versio }}</a> <small>{{ v.origen }} · {{ v.creat|data }}</small></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

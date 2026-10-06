@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block titol %}{{ e.titol }}{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">Sol·licitud · {{ e.estat }}</span>
+    <h1>{{ e.titol }}</h1>
+    <p class="sub">{% if c %}{{ c.nom }} · {{ c.entitat }}{% else %}{{ e.convocatoria_id }} (ja no és al catàleg){% endif %}
+      {% if f %} · <span class="estat e-{{ f.estat }}{% if f.estimada %} e-estimada{% endif %}">{{ f.descripcio }}</span>{% endif %}</p>
+  </div>
+  <div class="accions">
+    <a class="boto secundari" href="/expedients/{{ e.id }}/exporta.docx">Exportar a Word</a>
+    <a class="boto secundari" href="/expedients/{{ e.id }}/exporta.zip">Markdown (.zip)</a>
+  </div>
+</header>
+
+<div class="espai">
+  <section class="xat" aria-label="Conversa amb l'assistent">
+    <div class="missatges" id="missatges">
+      {% if not missatges %}
+      <div class="benvinguda">
+        <p><strong>Com començar.</strong> Demana primer l'<em>Anàlisi d'elegibilitat i encaix</em>: l'assistent revisarà les bases oficials i et dirà si val la pena. Després pots anar document per document o fer servir «Preparar-ho tot».</p>
+        <p>També pots adjuntar les bases en PDF, ofertes, CV o qualsevol document de suport.</p>
+      </div>
+      {% endif %}
+      {% for m in missatges %}
+      <article class="msg msg-{{ m.rol }}">
+        {% if m.rol == "assistant" %}<div class="md">{{ m.visible|md }}</div>
+        {% else %}<p class="text-usuari">{{ m.visible }}</p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if not ia_disponible %}
+    <p class="avis-error">Falta <code>ANTHROPIC_API_KEY</code> al servidor: l'assistent no està disponible.</p>
+    {% endif %}
+
+    <form class="entrada" id="entrada">
+      <label for="text" class="ocult">Missatge</label>
+      <textarea id="text" name="text" rows="3" placeholder="Pregunta, dona indicacions o enganxa informació… (Ctrl+Retorn per enviar)"></textarea>
+      <div class="accions">
+        <button class="boto" type="submit" id="envia">Envia</button>
+        <button class="boto secundari" type="button" id="atura" hidden>Atura la seqüència</button>
+        <span class="estat-xat" id="estat-xat" aria-live="polite">{% if ocupat %}L'assistent està treballant… recarrega d'aquí a una estona.{% endif %}</span>
+      </div>
+    </form>
+    <details class="pensament" id="pensament" hidden><summary>Raonament de l'assistent</summary><pre id="pensament-text"></pre></details>
+  </section>
+
+  <aside class="lateral">
+    <section class="bloc">
+      <h2>Redactar documents</h2>
+      <p class="ajuda">Cada botó demana un document complet. Les indicacions que escriguis al quadre de text s'hi afegeixen.</p>
+      <div class="plantilles">
+        {% for p in plantilles %}
+        <button type="button" class="plantilla" data-accio="{{ p.tipus }}" title="{{ p.descripcio }}">
+          <strong>{{ p.titol }}</strong><small>{{ p.descripcio }}</small>
+        </button>
+        {% endfor %}
+      </div>
+      <button type="button" class="boto" id="tot">Preparar-ho tot</button>
+      <p class="ajuda" id="tot-ajuda"></p>
+    </section>
+
+    <section class="bloc">
+      <h2>Documents</h2>
+      {% if documents %}
+      <ul class="docs">
+        {% for d in documents %}
+        <li><a href="/expedients/{{ e.id }}/documents/{{ d.tipus }}">{{ d.titol }}</a>
+          <small>v{{ d.versio }} · {{ d.origen }} · {{ d.creat|data }}</small></li>
+        {% endfor %}
+      </ul>
+      {% else %}<p class="ajuda">Encara no n'hi ha cap.</p>{% endif %}
+    </section>
+
+    <section class="bloc" id="fitxers">
+      <h2>Fitxers adjunts</h2>
+      {% if fitxers %}
+      <ul class="docs">
+        {% for x in fitxers %}
+        <li>{{ x.nom }} <small>{{ (x.mida / 1024)|round|int }} kB · {{ "enviat a l'assistent" if x.enviat else "s'enviarà amb el proper missatge" }}</small>
+          <form method="post" action="/expedients/{{ e.id }}/fitxers/{{ x.id }}/esborra" class="en-linia" data-confirma="Treure «{{ x.nom }}»?">
+            <button class="enllac" type="submit">Treure</button></form></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <form method="post" action="/expedients/{{ e.id }}/fitxers" enctype="multipart/form-data" class="puja">
+        <label for="fitxer" class="ocult">Fitxer</label>
+        <input id="fitxer" type="file" name="fitxer" accept="{{ tipus_acceptats }}" required>
+        <button class="boto secundari" type="submit">Adjuntar</button>
+        <small class="ajuda">PDF, Word, text o imatges · màx. {{ mida_max }} MB</small>
+      </form>
+    </section>
+
+    <section class="bloc">
+      <h2>Expedient</h2>
+      <form method="post" action="/expedients/{{ e.id }}" class="formulari">
+        <div class="camp"><label for="e-titol">Títol</label><input id="e-titol" name="titol" value="{{ e.titol }}" maxlength="200"></div>
+        <div class="camp"><label for="e-estat">Estat</label>
+          <select id="e-estat" name="estat">{% for s in estats %}<option {% if s == e.estat %}selected{% endif %}>{{ s }}</option>{% endfor %}</select></div>
+        <div class="camp"><label for="e-idea">Idea del projecte</label><textarea id="e-idea" name="idea" rows="5">{{ e.idea }}</textarea></div>
+        <button class="boto secundari" type="submit">Desar</button>
+      </form>
+      {% if e.socis %}
+      <h3>Socis</h3>
+      <ul class="docs">{% for s in e.socis %}<li>{{ s.nom }} <small>{{ NOMS_TIPUS.get(s.tipus, s.tipus) }}{% if s.rol %} · {{ s.rol }}{% endif %}</small></li>{% endfor %}</ul>
+      {% endif %}
+      {% if c %}<p><a href="/socis?convocatoria={{ c.id }}">Correus per als socis</a>{% if c.url %} · <a href="{{ c.url }}" target="_blank" rel="noopener">Bases oficials ↗</a>{% endif %}</p>{% endif %}
+    </section>
+  </aside>
+</div>
+<script type="application/json" id="expedient-dades">{{ app|json_script }}</script>
+{% endblock %}
+{% block scripts %}<script src="/static/expedient.js"></script>{% endblock %}

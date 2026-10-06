@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block titol %}Nova sol·licitud{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">Nova sol·licitud</span>
+    <h1>{{ c.nom if c else "Tria la convocatòria" }}</h1>
+    {% if c %}<p class="sub">{{ c.entitat }} · {{ c.ambit_geografic or zones.etiqueta(c.zones) }}</p>{% endif %}
+  </div>
+</header>
+
+<form method="post" action="/expedients" class="formulari ample">
+  <div class="camp"><label for="convocatoria">Convocatòria</label>
+    <select id="convocatoria" name="convocatoria" required data-navega="convocatoria">
+      <option value="">— Tria'n una —</option>
+      {% for x in llista %}<option value="{{ x.id }}" {% if c and x.id == c.id %}selected{% endif %}>{{ x.nom }} · {{ x.entitat }}</option>{% endfor %}
+    </select></div>
+
+  {% if c %}
+  <section class="targeta">
+    <dl class="fitxa">
+      <div><dt>Encaix</dt><dd>{{ linia.e.punts }} punts · prioritat {{ linia.e.prioritat }}</dd></div>
+      <div><dt>Finestra</dt><dd>{{ linia.f.descripcio }}</dd></div>
+      <div><dt>Ajut</dt><dd>{{ c.ajuda_text or (c.import_max_eur|eur) or "—" }}</dd></div>
+      <div><dt>Rol de Stimulo</dt><dd>{{ linia.e.rol }}</dd></div>
+    </dl>
+    {% if c.encaix_stimulo %}<p>{{ c.encaix_stimulo }}</p>{% endif %}
+  </section>
+
+  <div class="camp"><label for="titol">Títol de treball del projecte</label>
+    <input id="titol" name="titol" maxlength="200" placeholder="{{ c.nom }}"></div>
+  <div class="camp"><label for="idea">Idea inicial (opcional: la podeu definir amb l'assistent)</label>
+    <textarea id="idea" name="idea" rows="6" placeholder="Producte o tecnologia, client o soci, repte, què volem desenvolupar, TRL actual…"></textarea></div>
+
+  <fieldset class="socis-tria">
+    <legend>Socis potencials (contactes de Holded)</legend>
+    {% if propostes %}
+      {% for p in propostes %}
+      <label class="opcio">
+        <input type="checkbox" name="socis" value="{{ p.soci.clau }}">
+        <span><strong>{{ p.soci.nom }}</strong> · {{ NOMS_TIPUS.get(p.soci.tipus, p.soci.tipus) }} · {{ p.rol }}
+          <small>{{ p.motius|join(" · ") }}</small></span>
+      </label>
+      {% endfor %}
+    {% else %}
+      <p class="ajuda">{{ motiu_socis or "Cap contacte de Holded encaixa amb aquesta convocatòria." }}</p>
+    {% endif %}
+    <div class="camp"><label for="socis_extra">Altres socis (un per línia: nom, tipus i rol)</label>
+      <textarea id="socis_extra" name="socis_extra" rows="3"></textarea></div>
+  </fieldset>
+
+  <div class="accions"><button class="boto" type="submit">Obrir l'expedient</button>
+    <span class="ajuda">El context de l'assistent es prepara ara: Stimulo, la fitxa de l'ajut, el projecte, els socis i la guia de gestió d'ajuts.</span></div>
+  {% endif %}
+</form>
+{% endblock %}
