@@ -1,0 +1,4614 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Stimulo//Radar d'ajuts//CA
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Radar d'ajuts Stimulo
+X-WR-TIMEZONE:Europe/Madrid
+BEGIN:VEVENT
+UID:accio-cupons-vigilar-20261008@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:👀 ACCIÓ · Cupons ACCIÓ 2026 per a la competitivitat empresari
+ al — vigilar
+DESCRIPTION:Cupons ACCIÓ: confirmar quines modalitats segueixen obertes fi
+ ns al 16/11 (programes europeus\, protecció\, IA)\nData confirmada.\nÀmb
+ it: Empreses amb establiment a Catalunya.\nAjut: Estratègia de creixement
+  8.000 €\; adopció d'IA 8.000 €\; protecció de la innovació (patent
+ s\, models d'utilitat\, dissenys industrials europeus) 3.000 €\; program
+ es europeus d'R+D+I 12.000 €\; internacionalització 8.000 €.\nFitxa: 
+ https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio/in
+ dex.html
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio
+ /index.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ · Cupons ACCIÓ 2026 per a la competitivitat empre
+ sarial — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-doctorats-industrials-vigilar-20261008@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:👀 Departament de Recerca i Universitats / AGAUR · Doctorats Ind
+ ustrials (Generalitat) — vigilar
+DESCRIPTION:Doctorats Industrials: verificar si la convocatòria DI-2026/20
+ 27 està oberta\nData confirmada.\nÀmbit: Empreses establertes a Cataluny
+ a + universitat catalana.\nAjut: Contracte de 3 anys (sou mínim 22.000 
+ €/any)\; ajut a l'entitat 12.000 €/any (bases 2025).\nFitxa: https://d
+ octoratsindustrials.gencat.cat
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://doctoratsindustrials.gencat.cat
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Departament de Recerca i Universitats / AGAUR · Doctorats
+  Industrials (Generalitat) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:pilot-autonomia-estrategica-vigilar-20261008@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:👀 Departament de Recerca i Universitats (gestió AGAUR) · PILOT
+  – Programa d'innovació tecnològica per a l'autonomia estratègica —
+  vigilar
+DESCRIPTION:PILOT: confirmar bases\, import per projecte i termini (AGAUR /
+  DOGC) i començar a muntar consorci\nData confirmada.\nÀmbit: Consorcis 
+ amb entitats establertes a Catalunya.\nAjut: 18 M€ en total\; dues modal
+ itats: (1) validació de prototips i (2) producció pilot. Import per proj
+ ecte no verificat.\nFitxa: https://govern.cat/gov/notes-premsa/870016/el-g
+ overn-presenta-pilot-el-nou-programa-per-accelerar-la-innovacio-tecnologic
+ a
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://govern.cat/gov/notes-premsa/870016/el-govern-presenta-pilot-el-
+ nou-programa-per-accelerar-la-innovacio-tecnologica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Departament de Recerca i Universitats (gestió AGAUR) · P
+ ILOT – Programa d'innovació tecnològica per a l'autonomia estratègica
+  — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aei-torres-quevedo-obertura-20261008@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:🟢 Agencia Estatal de Investigación · Torres Quevedo (PTQ) 2026
+  — obertura
+DESCRIPTION:Obertura confirmada: Torres Quevedo (PTQ) 2026\nData confirmada
+ .\nÀmbit: Empreses\, centres tecnològics i associacions empresarials d'E
+ spanya.\nAjut: Ajut per contractar un doctor durant 3 anys en un projecte 
+ d'R+D\; 20\,1 M€.\nFitxa: https://www.ciencia.gob.es/Convocatorias/2026/
+ PTQ2026.html
+CATEGORIES:estat,obertura
+TRANSP:TRANSPARENT
+URL:https://www.ciencia.gob.es/Convocatorias/2026/PTQ2026.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Agencia Estatal de Investigación · Torres Quevedo (PTQ) 
+ 2026 — obertura
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aei-torres-quevedo-tancament-20261008@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:🔴 Agencia Estatal de Investigación · Torres Quevedo (PTQ) 2026
+  — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 29/10/2026\nData confi
+ rmada.\nÀmbit: Empreses\, centres tecnològics i associacions empresarial
+ s d'Espanya.\nAjut: Ajut per contractar un doctor durant 3 anys en un proj
+ ecte d'R+D\; 20\,1 M€.\nFitxa: https://www.ciencia.gob.es/Convocatorias/
+ 2026/PTQ2026.html
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.ciencia.gob.es/Convocatorias/2026/PTQ2026.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Agencia Estatal de Investigación · Torres Quevedo (PTQ) 
+ 2026 — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edip-bravetech-vigilar-20261009@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:👀 Comissió Europea – DG DEFIS · EDIP – BraveTech EU (subve
+ ncions per a pimes de defensa) — vigilar
+DESCRIPTION:BraveTech EU: confirmar dates (finestra set.–des. 2026) i req
+ uisits\nData confirmada.\nÀmbit: Pimes de la UE i d'Ucraïna.\nAjut: ~170
+  subvencions de fins a 200.000 €\; 35\,3 M€\; de TRL 4 a TRL 7.\nFitxa
+ : https://defence-industry-space.ec.europa.eu/edip-work-programme-adopted-
+ 2026-03-30_en
+CATEGORIES:europa,vigilar
+TRANSP:TRANSPARENT
+URL:https://defence-industry-space.ec.europa.eu/edip-work-programme-adopted
+ -2026-03-30_en
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Comissió Europea – DG DEFIS · EDIP – BraveTech EU (s
+ ubvencions per a pimes de defensa) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-inversions-alt-impacte-tancament-20261009@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:🔴 ACCIÓ · Inversions empresarials d'alt impacte — tancament 
+ (estimada)
+DESCRIPTION:Tancament estimat: Inversions empresarials d'alt impacte\nData 
+ estimada. Verificar a la font oficial.\nÀmbit: Empresa establerta o en pr
+ océs d'establir-se a Catalunya.\nAjut: Ocupació: 30% fins 200.000–1.00
+ 0.000 €. Actius: 10–15% fins 300.000–3.000.000 €.\nFitxa: https://
+ www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Inversions empresarials d'alt impacte — tancam
+ ent (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-green-vigilar-20261009@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:👀 ACCIÓ · Projectes d'innovació tecnològica Green – Canvi 
+ climàtic — vigilar
+DESCRIPTION:Green ACCIÓ: verificar si hi ha edició 2026 (la de 2025 tanca
+ va el 16/10)\nData confirmada.\nÀmbit: Pimes industrials o de serveis a l
+ a indústria a Catalunya.\nAjut: Fins al 75%\; màxim 90.000 € (+ audito
+ r fins 1.500 € al 100%).\nFitxa: https://www.accio.gencat.cat/ca/serveis
+ /cercador-ajuts-empresa/
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ · Projectes d'innovació tecnològica Green – Ca
+ nvi climàtic — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fgcsic-comte-innovacion-tancament-20261010@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:🔴 Fundación General CSIC · COMTE-Innovación (Fundación Gener
+ al CSIC) — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 31/10/2026\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Investigadors del CSIC (a Catalun
+ ya: ICMAB\, IIIA\, IRI\, IMB-CNM...).\nAjut: Fins a 10 projectes\; >60.000
+  € de valor estimat en espècie per projecte\; 24 mesos.\nFitxa: https:/
+ /fgcsic.es/convocatoria-evento/comte-innovacion-envalor-2/
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://fgcsic.es/convocatoria-evento/comte-innovacion-envalor-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Fundación General CSIC · COMTE-Innovación (Fundación G
+ eneral CSIC) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-step-scaleup-tall-20261011@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261011
+DTEND;VALUE=DATE:20261012
+SUMMARY:🟠 Comissió Europea – EIC · EIC STEP Scale Up — tall
+DESCRIPTION:Preparar proposta per al tall del 25/11/2026\nData confirmada.\
+ nÀmbit: Startups\, pimes i small mid-caps de la UE i associats.\nAjut: In
+ versió en capital de 10–30 M€.\nFitxa: https://alientt.com/key-change
+ s-in-the-eic-work-programme-2026/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://alientt.com/key-changes-in-the-eic-work-programme-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC · EIC STEP Scale Up — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:caixaimpulse-innovacio-salut-preparar-20261012@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:🟡 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innovaci
+ ó en Salut — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 11/12/2026\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Entitats sense ànim de 
+ lucre d'Espanya i Portugal (universitats\, centres\, hospitals).\nAjut: Fa
+ se 1 fins a 50.000 € (12 m)\; fase 2 fins a 150.000 € (24 m\, inclou d
+ isseny del prototip)\; fase 3 fins a 500.000 €.\nFitxa: https://caixares
+ earch.org/es/convocatoria-caixaimpulse-innovacion-salud
+CATEGORIES:estat,preparar
+TRANSP:TRANSPARENT
+URL:https://caixaresearch.org/es/convocatoria-caixaimpulse-innovacion-salud
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innov
+ ació en Salut — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-estrategia-properes-linies-vigilar-20261013@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+SUMMARY:👀 ACCIÓ / Departament d'Empresa i Treball · Estratègia d'inno
+ vació empresarial 2026-2030: properes línies d'ajut (≈61 M€ pendents
+  de 2026) — vigilar
+DESCRIPTION:Estratègia 2026-2030: comprovar si ACCIÓ ha publicat noves l
+ ínies (≈61 M€ pendents)\nData confirmada.\nÀmbit: Empreses establert
+ es a Catalunya.\nAjut: 78 M€ en ajuts el 2026 (+30%)\; només 16\,9 M€
+  convocats al juliol.\nFitxa: https://govern.cat/gov/notes-premsa/849190/g
+ overn-aprova-lestrategia-dinnovacio-empresarial-catalunya-que-augmenta-30-
+ percent-ajuts-empreses-aquest-2026
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://govern.cat/gov/notes-premsa/849190/govern-aprova-lestrategia-di
+ nnovacio-empresarial-catalunya-que-augmenta-30-percent-ajuts-empreses-aque
+ st-2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ / Departament d'Empresa i Treball · Estratègia d'
+ innovació empresarial 2026-2030: properes línies d'ajut (≈61 M€ pend
+ ents de 2026) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl4-made-in-europe-2027-obertura-20261013@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+SUMMARY:🟢 Comissió Europea · Horizon Europe Clúster 4 – Made in Eur
+ ope 2027 (fabricació avançada i circular) — obertura
+DESCRIPTION:Obertura confirmada: Horizon Europe Clúster 4 – Made in Euro
+ pe 2027 (fabricació avançada i circular)\nData confirmada.\nÀmbit: Cons
+ orcis europeus.\nAjut: IA 70% per a empreses\; p. ex. M-P-02 'Advanced man
+ ufacturing for key products' 36 M€ (6–8 M€/projecte).\nFitxa: https:
+ //ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/w
+ p-call/2026-2027/wp-7-digital-industry-and-space_horizon-2026-2027_en.pdf
+CATEGORIES:europa,obertura
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-7-digital-industry-and-space_horizon-2026-202
+ 7_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Comissió Europea · Horizon Europe Clúster 4 – Made in
+  Europe 2027 (fabricació avançada i circular) — obertura
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-innterconecta-step-vigilar-20261013@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+SUMMARY:👀 CDTI · INNTERCONECTA STEP 2026 — vigilar
+DESCRIPTION:INNTERCONECTA STEP: confirmar dates d'obertura (octubre) i avis
+ ar clients de les comunitats elegibles\nData confirmada.\nÀmbit: NOMÉS c
+ omunitats elegibles FEDER STEP: Andalusia\, Balears\, Canàries\, Castella
+  i Lleó\, Castella-la Manxa\, C. Valenciana\, Extremadura\, Galícia i M
+ úrcia (mínim 2 comunitats). Catalunya NO.\nAjut: Projectes d'1–4 M€ 
+ (mínim 175.000 €/empresa)\; intensitat 65% gran\, 75% mitjana\, 80% pet
+ ita. 138 M€.\nFitxa: https://idrconsulting.com/actualidad/innterconecta-
+ step-2026-cdti-138-millones-octubre
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://idrconsulting.com/actualidad/innterconecta-step-2026-cdti-138-m
+ illones-octubre
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 CDTI · INNTERCONECTA STEP 2026 — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-doctorats-industrials-tancament-20261015@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:🔴 Departament de Recerca i Universitats / AGAUR · Doctorats Ind
+ ustrials (Generalitat) — tancament (estimada)
+DESCRIPTION:Tancament estimat: Doctorats Industrials (Generalitat)\nData es
+ timada. Verificar a la font oficial.\nÀmbit: Empreses establertes a Catal
+ unya + universitat catalana.\nAjut: Contracte de 3 anys (sou mínim 22.000
+  €/any)\; ajut a l'entitat 12.000 €/any (bases 2025).\nFitxa: https://
+ doctoratsindustrials.gencat.cat
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://doctoratsindustrials.gencat.cat
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Departament de Recerca i Universitats / AGAUR · Doctorats
+  Industrials (Generalitat) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl5-2zero-2027-preparar-20261016@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:🟡 Comissió Europea · Horizon Europe Clúster 5 – 2Zero 2027 
+ (vehicles de zero emissions) — preparar
+DESCRIPTION:Preparar projecte i socis: obertura confirmada el 15/12/2026\nD
+ ata confirmada.\nÀmbit: Consorcis europeus.\nAjut: IA 70% per a empreses.
+ \nFitxa: https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021
+ -2027/horizon/wp-call/2026-2027/wp-8-climate-energy-and-mobility_horizon-2
+ 026-2027_en.pdf
+CATEGORIES:europa,preparar
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-8-climate-energy-and-mobility_horizon-2026-20
+ 27_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 Comissió Europea · Horizon Europe Clúster 5 – 2Zero 2
+ 027 (vehicles de zero emissions) — preparar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-green-tancament-20261016@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:🔴 ACCIÓ · Projectes d'innovació tecnològica Green – Canvi 
+ climàtic — tancament (estimada)
+DESCRIPTION:Tancament estimat: Projectes d'innovació tecnològica Green 
+ – Canvi climàtic\nData estimada. Verificar a la font oficial.\nÀmbit: 
+ Pimes industrials o de serveis a la indústria a Catalunya.\nAjut: Fins al
+  75%\; màxim 90.000 € (+ auditor fins 1.500 € al 100%).\nFitxa: https
+ ://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Projectes d'innovació tecnològica Green – Ca
+ nvi climàtic — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-ecosistemes-preparar-20261018@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:🟡 CDTI · Ecosistemas de Innovación y Transferencia — prepara
+ r (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 17/12/2026\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Agrupacions de 4–8 ent
+ itats en ≥3 comunitats autònomes.\nAjut: Projectes de 120.000 €–1 M
+ € (minimis). Cofinançament FEDER segons CA (Catalunya fins al 40%).\nFi
+ txa: https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+CATEGORIES:estat,preparar
+TRANSP:TRANSPARENT
+URL:https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 CDTI · Ecosistemas de Innovación y Transferencia — pre
+ parar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:catalunya-seguretat-defensa-vigilar-20261020@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261021
+SUMMARY:👀 Generalitat de Catalunya · Programa de capacitació d'emprese
+ s catalanes en seguretat i defensa (fins a 400 empreses) — vigilar
+DESCRIPTION:Programa seguretat i defensa (Generalitat): saber qui el gestio
+ na i com inscriure-s'hi\nData confirmada.\nÀmbit: Empreses catalanes amb 
+ capacitats d'ús dual.\nAjut: Capacitació i acompanyament per entrar a la
+  cadena de valor de seguretat i defensa.\nFitxa: https://govern.cat/gov/no
+ tes-premsa/811465/nou-programa-per-capacitar-fins-a-400-empreses-catalanes
+ -perque-s-introdueixin-en-el-sector-de-la-seguretat-i-la-defensa
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://govern.cat/gov/notes-premsa/811465/nou-programa-per-capacitar-f
+ ins-a-400-empreses-catalanes-perque-s-introdueixin-en-el-sector-de-la-segu
+ retat-i-la-defensa
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Generalitat de Catalunya · Programa de capacitació d'emp
+ reses catalanes en seguretat i defensa (fins a 400 empreses) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:esa-bic-barcelona-tancament-20261023@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:🔴 ESA + Generalitat (gestió PMT) · ESA BIC Barcelona (incubaci
+ ó espacial) — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 13/11/2026\nData confi
+ rmada.\nÀmbit: Startups que s'estableixin a Catalunya.\nAjut: 60.000 € 
+ no dilutius (50% ESA / 50% Generalitat) + incubació\; 4 places.\nFitxa: h
+ ttps://esabicbarcelona.pmt.es/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://esabicbarcelona.pmt.es/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ESA + Generalitat (gestió PMT) · ESA BIC Barcelona (incu
+ bació espacial) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-cupons-tancament-20261026@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:🔴 ACCIÓ · Cupons ACCIÓ 2026 per a la competitivitat empresari
+ al — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 16/11/2026\nData confi
+ rmada.\nÀmbit: Empreses amb establiment a Catalunya.\nAjut: Estratègia d
+ e creixement 8.000 €\; adopció d'IA 8.000 €\; protecció de la innova
+ ció (patents\, models d'utilitat\, dissenys industrials europeus) 3.000 
+ €\; programes europeus d'R+D+I 12.000 €\; internacionalització 8.000 
+ €.\nFitxa: https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la
+ -innovacio/index.html
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio
+ /index.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Cupons ACCIÓ 2026 per a la competitivitat empre
+ sarial — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aei-doctorados-industriales-tancament-20261026@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:🔴 Agencia Estatal de Investigación · Doctorados Industriales 2
+ 026 (estatal) — tancament
+DESCRIPTION:Tancament confirmat: Doctorados Industriales 2026 (estatal)\nDa
+ ta confirmada.\nÀmbit: Empreses espanyoles + universitat.\nAjut: Fins a 3
+ 4.400 €/any (salari mínim 25.400 €)\, 4 anys.\nFitxa: https://www.apt
+ e.org/ayudas-para-contratos-de-doctorados-industriales-2026
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.apte.org/ayudas-para-contratos-de-doctorados-industriales-2
+ 026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Agencia Estatal de Investigación · Doctorados Industrial
+ es 2026 (estatal) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cajamar-innova-vigilar-20261027@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261028
+SUMMARY:👀 Grupo Cooperativo Cajamar · Cajamar Innova – incubadora de 
+ tecnologies de l'aigua i agrotech — vigilar
+DESCRIPTION:Cajamar Innova: verificar convocatòries obertes i requisits d'
+ ubicació\nData confirmada.\nÀmbit: Startups de tot Espanya\; incubació 
+ a Almeria (presencialitat no verificada).\nAjut: Incubació d'alta tecnolo
+ gia en aigua i agrotech (cofinançament FEDER/Incyde)\; imports no verific
+ ats.\nFitxa: https://cajamarinnova.es/es/
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://cajamarinnova.es/es/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Grupo Cooperativo Cajamar · Cajamar Innova – incubadora
+  de tecnologies de l'aigua i agrotech — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-pathfinder-tancament-20261028@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:🔴 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open i C
+ hallenges) — tancament
+DESCRIPTION:Tall EIC Pathfinder (Open i Challenges)\nData confirmada.\nÀmb
+ it: Consorcis d'UE + associats (Open: normalment ≥3 entitats de 3 païso
+ s).\nAjut: Subvenció al 100%\; fins a ~3–4 M€ per projecte (lump sum 
+ el 2027).\nFitxa: https://ec.europa.eu/info/funding-tenders/opportunities/
+ portal/screen/opportunities/topic-details/horizon-eic-2026-pathfinderopen
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/o
+ pportunities/topic-details/horizon-eic-2026-pathfinderopen
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open
+  i Challenges) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl1-salut-2027-obertura-20261029@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:🟢 Comissió Europea · Horizon Europe Clúster 1 – Salut 2027 
+ (dispositius i diagnòstic) — obertura
+DESCRIPTION:Obertura confirmada: Horizon Europe Clúster 1 – Salut 2027 (
+ dispositius i diagnòstic)\nData confirmada.\nÀmbit: Consorcis europeus.\
+ nAjut: P. ex. IND-02 'Portable & versatile point-of-care diagnostics': 39\
+ ,3 M€\, 5–7 M€/projecte.\nFitxa: https://www.ffg.at/en/europa/heu/cl
+ uster1/call2027-twostage
+CATEGORIES:europa,obertura
+TRANSP:TRANSPARENT
+URL:https://www.ffg.at/en/europa/heu/cluster1/call2027-twostage
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Comissió Europea · Horizon Europe Clúster 1 – Salut 2
+ 027 (dispositius i diagnòstic) — obertura
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aei-torres-quevedo-tancament-20261029@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:🔴 Agencia Estatal de Investigación · Torres Quevedo (PTQ) 2026
+  — tancament
+DESCRIPTION:Tancament confirmat: Torres Quevedo (PTQ) 2026\nData confirmada
+ .\nÀmbit: Empreses\, centres tecnològics i associacions empresarials d'E
+ spanya.\nAjut: Ajut per contractar un doctor durant 3 anys en un projecte 
+ d'R+D\; 20\,1 M€.\nFitxa: https://www.ciencia.gob.es/Convocatorias/2026/
+ PTQ2026.html
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.ciencia.gob.es/Convocatorias/2026/PTQ2026.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Agencia Estatal de Investigación · Torres Quevedo (PTQ) 
+ 2026 — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fgcsic-comte-innovacion-tancament-20261031@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🔴 Fundación General CSIC · COMTE-Innovación (Fundación Gener
+ al CSIC) — tancament (estimada)
+DESCRIPTION:Tancament estimat: COMTE-Innovación (Fundación General CSIC)\
+ nData estimada. Verificar a la font oficial.\nÀmbit: Investigadors del CS
+ IC (a Catalunya: ICMAB\, IIIA\, IRI\, IMB-CNM...).\nAjut: Fins a 10 projec
+ tes\; >60.000 € de valor estimat en espècie per projecte\; 24 mesos.\nF
+ itxa: https://fgcsic.es/convocatoria-evento/comte-innovacion-envalor-2/
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://fgcsic.es/convocatoria-evento/comte-innovacion-envalor-2/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Fundación General CSIC · COMTE-Innovación (Fundación G
+ eneral CSIC) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-cpp-defensa-vigilar-20261102@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:👀 CDTI (Oficina CPI) + Ministeri de Defensa · Compra Pública P
+ recomercial (CPP) i consultes preliminars de mercat – CDTI / Defensa —
+  vigilar
+DESCRIPTION:CDTI CPI/CPP: revisar noves consultes preliminars de mercat (ro
+ bòtica\, dual)\nData confirmada.\nÀmbit: Licitadors de la UE (consorcis 
+ d'empreses i centres).\nAjut: Contractes de serveis d'R+D (no és subvenci
+ ó). Ex. 2026: robots terrestres autònoms\, 11\,9 M€ IVA inclòs\, 30 m
+ esos.\nFitxa: https://www.cdti.es/noticias/cdti-innovacion-fondos-feder-li
+ citacion-compra-publica-precomercial-robot-terrestre-autonomo-tecnologia-d
+ ual-defensa-civil
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.cdti.es/noticias/cdti-innovacion-fondos-feder-licitacion-co
+ mpra-publica-precomercial-robot-terrestre-autonomo-tecnologia-dual-defensa
+ -civil
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 CDTI (Oficina CPI) + Ministeri de Defensa · Compra Públi
+ ca Precomercial (CPP) i consultes preliminars de mercat – CDTI / Defensa
+  — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eit-health-tancament-20261102@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:🔴 EIT Health · EIT Health – convocatòries 2026 (startups\, v
+ enture building\, ecosistemes) — tancament
+DESCRIPTION:Tall EIT Health – convocatòries 2026 (startups\, venture bui
+ lding\, ecosistemes)\nData confirmada.\nÀmbit: UE + associats.\nAjut: 7 c
+ onvocatòries obertes des de setembre de 2026.\nFitxa: https://eithealth.e
+ u/news-article/eith-call-launch-3/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://eithealth.eu/news-article/eith-call-launch-3/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 EIT Health · EIT Health – convocatòries 2026 (startups
+ \, venture building\, ecosistemes) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fundacion-repsol-fondo-emprendedores-vigilar-20261103@radar-ajuts.stimu
+ lo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:👀 Fundación Repsol · Fondo de Emprendedores – Fundación Rep
+ sol — vigilar
+DESCRIPTION:Fundación Repsol: verificar dates de la propera convocatòria\
+ nData confirmada.\nÀmbit: Startups (principalment espanyoles).\nAjut: Acc
+ eleració amb suport econòmic mensual i pilots a instal·lacions de Repso
+ l (imports no verificats).\nFitxa: https://www.fundacionrepsol.com/
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.fundacionrepsol.com/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Fundación Repsol · Fondo de Emprendedores – Fundación
+  Repsol — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-accelerator-tancament-20261104@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:🔴 Comissió Europea – EIC · EIC Accelerator (Open i Challenge
+ s) — tancament
+DESCRIPTION:Tall EIC Accelerator (Open i Challenges)\nData confirmada.\nÀm
+ bit: Pime o startup individual establerta a la UE o país associat.\nAjut:
+  Subvenció fins a 2\,5 M€ (70%) + inversió en capital via EIC Fund.\nF
+ itxa: https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-sub
+ mit-my-application-503.php
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-submit
+ -my-application-503.php
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · EIC Accelerator (Open i Chall
+ enges) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aee-bass-tancament-20261106@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:🔴 Agencia Espacial Española · BASS 2026 – Agencia Espacial E
+ spañola — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 27/11/2026\nData confi
+ rmada.\nÀmbit: Només empreses espanyoles.\nAjut: Convocatòria de l'AEE 
+ per a empreses espanyoles (imports no verificats).\nFitxa: https://www.aee
+ .gob.es/Convocatorias/2026/BASS.html
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.aee.gob.es/Convocatorias/2026/BASS.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Agencia Espacial Española · BASS 2026 – Agencia Espaci
+ al Española — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:interreg-vigilar-20261109@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:👀 Programes Interreg + autoritats de gestió · Interreg (POCTEF
+ A\, SUDOE\, Euro-MED\, Interreg Europe) — vigilar
+DESCRIPTION:Interreg: revisar convocatòries POCTEFA/SUDOE/Euro-MED de fina
+ l de període\nData confirmada.\nÀmbit: Depèn del programa (POCTEFA zona
+  fronterera ES-FR-AD\; SUDOE ES-PT-FR sud-oest\; Euro-MED\; Interreg Europ
+ e tota la UE).\nAjut: Cofinançament FEDER variable segons programa.\nFitx
+ a: https://www.poctefa.eu/
+CATEGORIES:europa,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.poctefa.eu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Programes Interreg + autoritats de gestió · Interreg (PO
+ CTEFA\, SUDOE\, Euro-MED\, Interreg Europe) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:esa-bic-barcelona-tancament-20261113@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:🔴 ESA + Generalitat (gestió PMT) · ESA BIC Barcelona (incubaci
+ ó espacial) — tancament
+DESCRIPTION:Tancament confirmat: ESA BIC Barcelona (incubació espacial)\nD
+ ata confirmada.\nÀmbit: Startups que s'estableixin a Catalunya.\nAjut: 60
+ .000 € no dilutius (50% ESA / 50% Generalitat) + incubació\; 4 places.\
+ nFitxa: https://esabicbarcelona.pmt.es/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://esabicbarcelona.pmt.es/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ESA + Generalitat (gestió PMT) · ESA BIC Barcelona (incu
+ bació espacial) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-cupons-tancament-20261116@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:🔴 ACCIÓ · Cupons ACCIÓ 2026 per a la competitivitat empresari
+ al — tancament
+DESCRIPTION:Tancament confirmat: Cupons ACCIÓ 2026 per a la competitivitat
+  empresarial\nData confirmada.\nÀmbit: Empreses amb establiment a Catalun
+ ya.\nAjut: Estratègia de creixement 8.000 €\; adopció d'IA 8.000 €\;
+  protecció de la innovació (patents\, models d'utilitat\, dissenys indus
+ trials europeus) 3.000 €\; programes europeus d'R+D+I 12.000 €\; inter
+ nacionalització 8.000 €.\nFitxa: https://www.accio.gencat.cat/en/servei
+ s/innovacio/cupons-a-la-innovacio/index.html
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio
+ /index.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Cupons ACCIÓ 2026 per a la competitivitat empre
+ sarial — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eit-urban-mobility-tancament-20261116@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:🔴 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility –
+  convocatòries (startups i innovació estratègica) — tancament
+DESCRIPTION:Tall EIT Urban Mobility – convocatòries (startups i innovaci
+ ó estratègica)\nData confirmada.\nÀmbit: UE + associats.\nAjut: Financi
+ al Support to Startups i Strategic Innovation (imports per convocatòria\;
+  no verificats).\nFitxa: https://www.eiturbanmobility.eu/call-for-proposal
+ s/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.eiturbanmobility.eu/call-for-proposals/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility
+  – convocatòries (startups i innovació estratègica) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eoi-in-def-vigilar-20261116@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:👀 EOI (Ministeris d'Indústria\, Defensa i Ciència) · IN+DEF 
+ – pimes i startups a la cadena de valor de la defensa — vigilar
+DESCRIPTION:IN+DEF (EOI): comprovar si obre nous reptes d'ús dual\nData co
+ nfirmada.\nÀmbit: Pimes i startups espanyoles.\nAjut: Reptes tecnològics
+  d'ús dual\, hackatons i formació\; objectiu 500 pimes i startups.\nFitx
+ a: https://www.eoi.es/es/noticias/eoi-lanza-el-programa-indef-una-iniciati
+ va-destinada-incorporar-pymes-y-startups-en-la-cadena-de-valor-del-ambito-
+ de-la-defensa
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.eoi.es/es/noticias/eoi-lanza-el-programa-indef-una-iniciati
+ va-destinada-incorporar-pymes-y-startups-en-la-cadena-de-valor-del-ambito-
+ de-la-defensa
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 EOI (Ministeris d'Indústria\, Defensa i Ciència) · IN+D
+ EF – pimes i startups a la cadena de valor de la defensa — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl4-adra-robotica-2027-obertura-20261117@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:🟢 Comissió Europea · Horizon Europe Clúster 4 – AI-Driven R
+ obotics for Industry (ADRA\, 2027) — obertura
+DESCRIPTION:Obertura confirmada: Horizon Europe Clúster 4 – AI-Driven Ro
+ botics for Industry (ADRA\, 2027)\nData confirmada.\nÀmbit: Consorcis eur
+ opeus.\nAjut: Topic CL4-2027-04 DIGITAL-EMERGING-05.\nFitxa: https://ec.eu
+ ropa.eu/info/funding-tenders/opportunities/portal/
+CATEGORIES:europa,obertura
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Comissió Europea · Horizon Europe Clúster 4 – AI-Driv
+ en Robotics for Industry (ADRA\, 2027) — obertura
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-step-scaleup-tancament-20261125@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:🔴 Comissió Europea – EIC · EIC STEP Scale Up — tancament
+DESCRIPTION:Tall EIC STEP Scale Up\nData confirmada.\nÀmbit: Startups\, pi
+ mes i small mid-caps de la UE i associats.\nAjut: Inversió en capital de 
+ 10–30 M€.\nFitxa: https://alientt.com/key-changes-in-the-eic-work-prog
+ ramme-2026/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://alientt.com/key-changes-in-the-eic-work-programme-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · EIC STEP Scale Up — tancame
+ nt
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aee-bass-tancament-20261127@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:🔴 Agencia Espacial Española · BASS 2026 – Agencia Espacial E
+ spañola — tancament
+DESCRIPTION:Tancament confirmat: BASS 2026 – Agencia Espacial Española\n
+ Data confirmada.\nÀmbit: Només empreses espanyoles.\nAjut: Convocatòria
+  de l'AEE per a empreses espanyoles (imports no verificats).\nFitxa: https
+ ://www.aee.gob.es/Convocatorias/2026/BASS.html
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.aee.gob.es/Convocatorias/2026/BASS.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Agencia Espacial Española · BASS 2026 – Agencia Espaci
+ al Española — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:caixaimpulse-innovacio-salut-vigilar-20261127@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:👀 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innovaci
+ ó en Salut — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Entitats sense ànim de lucre
+  d'Espanya i Portugal (universitats\, centres\, hospitals).\nAjut: Fase 1 
+ fins a 50.000 € (12 m)\; fase 2 fins a 150.000 € (24 m\, inclou dissen
+ y del prototip)\; fase 3 fins a 500.000 €.\nFitxa: https://caixaresearch
+ .org/es/convocatoria-caixaimpulse-innovacion-salud
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://caixaresearch.org/es/convocatoria-caixaimpulse-innovacion-salud
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innov
+ ació en Salut — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:women-techeu-tall-20261130@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:🟠 Comissió Europea – EIC · Women TechEU — tall
+DESCRIPTION:Preparar proposta per al tall del 14/01/2027\nData confirmada.\
+ nÀmbit: Startups deep tech liderades per dones a la UE i associats.\nAjut
+ : 75.000 € + mentoria (l'esborrany 2027 el duplica a 150.000 €).\nFitx
+ a: https://womentecheurope.eu/active-calls/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://womentecheurope.eu/active-calls/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC · Women TechEU — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-industrial-tech-vigilar-20261201@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:👀 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleració de
+  hardware (UPC + CIM UPC) — vigilar
+DESCRIPTION:Industrial Tech UPC: demo day (començament de desembre) — ca
+ ptar projectes de hardware\nData confirmada.\nÀmbit: Projectes de recerca
+  i spin-offs a Catalunya.\nAjut: Gratuït\, en espècie: 52 h tècniques (
+ fabricació additiva\, robòtica\, IoT) + 40 h de negoci i mentoria.\nFitx
+ a: https://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-indu
+ strial-tech
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-indu
+ strial-tech
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleraci
+ ó de hardware (UPC + CIM UPC) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-ecosistemes-vigilar-20261203@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+SUMMARY:👀 CDTI · Ecosistemas de Innovación y Transferencia — vigilar
+  (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Agrupacions de 4–8 entitats
+  en ≥3 comunitats autònomes.\nAjut: Projectes de 120.000 €–1 M€ (
+ minimis). Cofinançament FEDER segons CA (Catalunya fins al 40%).\nFitxa: 
+ https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 CDTI · Ecosistemas de Innovación y Transferencia — vig
+ ilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-innovadors-preparar-20261203@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+SUMMARY:🟡 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Innovadors — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/02/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Entitats de recerca cata
+ lanes.\nAjut: Fins a 84.000 € (mínim 60.000 € per a contractació)\, 
+ 18 mesos.\nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dac
+ tuacio/transferencia-coneixement/programa-industria-coneixement/
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Innovadors — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-llavor-preparar-20261203@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+SUMMARY:🟡 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Llavor — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/02/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univ
+ ersitats i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: ht
+ tps://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia
+ -coneixement/programa-industria-coneixement/
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Llavor — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-producte-preparar-20261203@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+SUMMARY:🟡 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Producte — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/02/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univ
+ ersitats i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrro
+ ga possible).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocato
+ ries-per-temes/02-21429-IdC-Producte
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
+ 1429-IdC-Producte
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Producte — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl6-2027-preparar-20261205@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:🟡 Comissió Europea · Horizon Europe Clúster 6 – Alimentaci
+ ó\, bioeconomia i agricultura 2027 — preparar
+DESCRIPTION:Preparar projecte i socis: obertura confirmada el 03/02/2027\nD
+ ata confirmada.\nÀmbit: Consorcis europeus.\nAjut: RIA 100% / IA 70%.\nFi
+ txa: https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-202
+ 7/horizon/wp-call/2026-2027/wp-9-food-bioeconomy-natural-resources-agricul
+ ture-and-environment_horizon-2026-2027_en.pdf
+CATEGORIES:europa,preparar
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-9-food-bioeconomy-natural-resources-agricultu
+ re-and-environment_horizon-2026-2027_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 Comissió Europea · Horizon Europe Clúster 6 – Aliment
+ ació\, bioeconomia i agricultura 2027 — preparar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:caixaimpulse-innovacio-salut-obertura-20261211@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:🟢 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innovaci
+ ó en Salut — obertura (estimada)
+DESCRIPTION:Obertura estimada: CaixaImpulse Innovació en Salut\nData estim
+ ada. Verificar a la font oficial.\nÀmbit: Entitats sense ànim de lucre d
+ 'Espanya i Portugal (universitats\, centres\, hospitals).\nAjut: Fase 1 fi
+ ns a 50.000 € (12 m)\; fase 2 fins a 150.000 € (24 m\, inclou disseny 
+ del prototip)\; fase 3 fins a 500.000 €.\nFitxa: https://caixaresearch.o
+ rg/es/convocatoria-caixaimpulse-innovacion-salud
+CATEGORIES:estat,obertura
+TRANSP:TRANSPARENT
+URL:https://caixaresearch.org/es/convocatoria-caixaimpulse-innovacion-salud
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innov
+ ació en Salut — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eureka-smart-tall-20261212@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:🟠 EUREKA (clúster SMART) + CDTI · EUREKA SMART – Call 10 (fa
+ bricació avançada) — tall
+DESCRIPTION:Preparar proposta per al tall del 26/01/2027\nData confirmada.\
+ nÀmbit: Consorcis internacionals de països EUREKA\; finançament naciona
+ l (CDTI a Espanya).\nAjut: Finançament nacional per a cada soci (condicio
+ ns CDTI).\nFitxa: https://www.eurekanetwork.org/programmes-and-calls/eurek
+ a-clusters/smart-call-10-2026/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://www.eurekanetwork.org/programmes-and-calls/eureka-clusters/smar
+ t-call-10-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 EUREKA (clúster SMART) + CDTI · EUREKA SMART – Call 10
+  (fabricació avançada) — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-step-scaleup-tall-20261214@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:🟠 Comissió Europea – EIC · EIC STEP Scale Up — tall
+DESCRIPTION:Preparar proposta per al tall del 28/01/2027\nData confirmada.\
+ nÀmbit: Startups\, pimes i small mid-caps de la UE i associats.\nAjut: In
+ versió en capital de 10–30 M€.\nFitxa: https://alientt.com/key-change
+ s-in-the-eic-work-programme-2026/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://alientt.com/key-changes-in-the-eic-work-programme-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC · EIC STEP Scale Up — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eit-urban-mobility-tall-20261214@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:🟠 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility –
+  convocatòries (startups i innovació estratègica) — tall
+DESCRIPTION:Preparar proposta per al tall del 28/01/2027\nData confirmada.\
+ nÀmbit: UE + associats.\nAjut: Financial Support to Startups i Strategic 
+ Innovation (imports per convocatòria\; no verificats).\nFitxa: https://ww
+ w.eiturbanmobility.eu/call-for-proposals/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://www.eiturbanmobility.eu/call-for-proposals/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility
+  – convocatòries (startups i innovació estratègica) — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edf-eudis-vigilar-20261215@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:👀 Comissió Europea – DG DEFIS · European Defence Fund (EDF) 
+ – convocatòries pimes i tecnologies disruptives (EUDIS) — vigilar
+DESCRIPTION:EDF: publicació del programa de treball 2027 (topics per a pim
+ es i disruptives)\nData confirmada.\nÀmbit: Entitats de la UE i Noruega n
+ o controlades per tercers països\; consorcis.\nAjut: 2026: SME developmen
+ t 30 M€ (≤6 M€/projecte)\; pimes i organismes de recerca 35 M€ (
+ ≤5 M€)\; disruptives 27 M€ (≤3 M€).\nFitxa: https://eudis.europa
+ .eu/eudis-tracks/sme-calls_en
+CATEGORIES:europa,vigilar
+TRANSP:TRANSPARENT
+URL:https://eudis.europa.eu/eudis-tracks/sme-calls_en
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Comissió Europea – DG DEFIS · European Defence Fund (E
+ DF) – convocatòries pimes i tecnologies disruptives (EUDIS) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl5-2zero-2027-obertura-20261215@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:🟢 Comissió Europea · Horizon Europe Clúster 5 – 2Zero 2027 
+ (vehicles de zero emissions) — obertura
+DESCRIPTION:Obertura confirmada: Horizon Europe Clúster 5 – 2Zero 2027 (
+ vehicles de zero emissions)\nData confirmada.\nÀmbit: Consorcis europeus.
+ \nAjut: IA 70% per a empreses.\nFitxa: https://ec.europa.eu/info/funding-t
+ enders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-8-climate
+ -energy-and-mobility_horizon-2026-2027_en.pdf
+CATEGORIES:europa,obertura
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-8-climate-energy-and-mobility_horizon-2026-20
+ 27_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Comissió Europea · Horizon Europe Clúster 5 – 2Zero 2
+ 027 (vehicles de zero emissions) — obertura
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-ecosistemes-obertura-20261217@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261218
+SUMMARY:🟢 CDTI · Ecosistemas de Innovación y Transferencia — obertur
+ a (estimada)
+DESCRIPTION:Obertura estimada: Ecosistemas de Innovación y Transferencia\n
+ Data estimada. Verificar a la font oficial.\nÀmbit: Agrupacions de 4–8 
+ entitats en ≥3 comunitats autònomes.\nAjut: Projectes de 120.000 €–
+ 1 M€ (minimis). Cofinançament FEDER segons CA (Catalunya fins al 40%).\
+ nFitxa: https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+CATEGORIES:estat,obertura
+TRANSP:TRANSPARENT
+URL:https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 CDTI · Ecosistemas de Innovación y Transferencia — obe
+ rtura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:horizon-europe-pilar2-tall-20261219@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:🟠 Comissió Europea – Funding & Tenders Portal · Horizon Euro
+ pe – Pilar 2 (Clústers 1–6): visió general — tall
+DESCRIPTION:Preparar proposta per al tall del 02/02/2027\nData confirmada.\
+ nÀmbit: Consorcis europeus (habitualment ≥3 entitats de 3 països).\nAj
+ ut: RIA 100%\; IA 70% per a empreses (100% sense ànim de lucre).\nFitxa: 
+ https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – Funding & Tenders Portal · Horizon 
+ Europe – Pilar 2 (Clústers 1–6): visió general — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-accelerator-tall-20261220@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
+SUMMARY:🟠 Comissió Europea – EIC · EIC Accelerator (Open i Challenge
+ s) — tall
+DESCRIPTION:Preparar proposta per al tall del 03/02/2027\nData confirmada.\
+ nÀmbit: Pime o startup individual establerta a la UE o país associat.\nA
+ jut: Subvenció fins a 2\,5 M€ (70%) + inversió en capital via EIC Fund
+ .\nFitxa: https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i
+ -submit-my-application-503.php
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-submit
+ -my-application-503.php
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC · EIC Accelerator (Open i Chall
+ enges) — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-llavor-preparar-20261231@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:🟡 UPC · LLAVOR UPC (valorització en fase inicial) — preparar
+  (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/03/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Investigadors de la UPC.
+ \nAjut: 100.000 € en total\, 10.000 €/projecte.\nFitxa: https://rdi.up
+ c.edu/ca/financament/recerca-innovacio/llavor.pdf
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://rdi.upc.edu/ca/financament/recerca-innovacio/llavor.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 UPC · LLAVOR UPC (valorització en fase inicial) — prep
+ arar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:emprendexxi-tancament-20270101@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:🔴 CaixaBank DayOne + ENISA · Premis EmprendeXXI — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 22/01/2027\nData confi
+ rmada.\nÀmbit: Empreses de base tecnològica amb seu a Espanya constituï
+ des a partir de l'01/01/2023.\nAjut: 17 premis territorials de 6.000 €\;
+  9 Reptes del Demà de 15.000 €\; accèssits de 9.000 €.\nFitxa: https
+ ://www.caixabank.com/es/actualidad/noticias/arranca-la-convocatoria-para-p
+ articipar-en-los-premios-emprendexxi-impulsados-por-caixabank-y-enisa?id=4
+ 4289
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.caixabank.com/es/actualidad/noticias/arranca-la-convocatori
+ a-para-participar-en-los-premios-emprendexxi-impulsados-por-caixabank-y-en
+ isa?id=44289
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 CaixaBank DayOne + ENISA · Premis EmprendeXXI — tancame
+ nt
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:horizon-europe-pilar2-tall-20270103@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:🟠 Comissió Europea – Funding & Tenders Portal · Horizon Euro
+ pe – Pilar 2 (Clústers 1–6): visió general — tall
+DESCRIPTION:Preparar proposta per al tall del 17/02/2027\nData confirmada.\
+ nÀmbit: Consorcis europeus (habitualment ≥3 entitats de 3 països).\nAj
+ ut: RIA 100%\; IA 70% per a empreses (100% sense ànim de lucre).\nFitxa: 
+ https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – Funding & Tenders Portal · Horizon 
+ Europe – Pilar 2 (Clústers 1–6): visió general — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-pathfinder-tall-20270111@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270111
+DTEND;VALUE=DATE:20270112
+SUMMARY:🟠 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open i C
+ hallenges) — tall
+DESCRIPTION:Preparar proposta per al tall del 25/02/2027\nData confirmada.\
+ nÀmbit: Consorcis d'UE + associats (Open: normalment ≥3 entitats de 3 p
+ aïsos).\nAjut: Subvenció al 100%\; fins a ~3–4 M€ per projecte (lump
+  sum el 2027).\nFitxa: https://ec.europa.eu/info/funding-tenders/opportuni
+ ties/portal/screen/opportunities/topic-details/horizon-eic-2026-pathfinder
+ open
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/o
+ pportunities/topic-details/horizon-eic-2026-pathfinderopen
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open
+  i Challenges) — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl4-made-in-europe-2027-tancament-20270112@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270112
+DTEND;VALUE=DATE:20270113
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 4 – Made in Eur
+ ope 2027 (fabricació avançada i circular) — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 02/02/2027\nData confi
+ rmada.\nÀmbit: Consorcis europeus.\nAjut: IA 70% per a empreses\; p. ex. 
+ M-P-02 'Advanced manufacturing for key products' 36 M€ (6–8 M€/proje
+ cte).\nFitxa: https://ec.europa.eu/info/funding-tenders/opportunities/docs
+ /2021-2027/horizon/wp-call/2026-2027/wp-7-digital-industry-and-space_horiz
+ on-2026-2027_en.pdf
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-7-digital-industry-and-space_horizon-2026-202
+ 7_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 4 – Made in
+  Europe 2027 (fabricació avançada i circular) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:women-techeu-tancament-20270114@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:🔴 Comissió Europea – EIC · Women TechEU — tancament
+DESCRIPTION:Tall Women TechEU\nData confirmada.\nÀmbit: Startups deep tech
+  liderades per dones a la UE i associats.\nAjut: 75.000 € + mentoria (l'
+ esborrany 2027 el duplica a 150.000 €).\nFitxa: https://womentecheurope.
+ eu/active-calls/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://womentecheurope.eu/active-calls/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · Women TechEU — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ub-f2i-vigilar-20270115@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:👀 Universitat de Barcelona / Fundació Bosch i Gimpera · F2I 
+ – Fons per a l'Impuls de la Innovació (UB) — vigilar
+DESCRIPTION:F2I UB: publicar-se la llista de projectes guanyadors → oferi
+ r paquet prototip PoC\nData confirmada.\nÀmbit: Grups de recerca de la UB
+  (titular o cotitular del coneixement).\nAjut: 100.000 € en total\, fins
+  a 25.000 €/projecte de prova de concepte + Mentor in Residence.\nFitxa:
+  https://f2i.fbg.ub.edu/
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://f2i.fbg.ub.edu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Universitat de Barcelona / Fundació Bosch i Gimpera · F2
+ I – Fons per a l'Impuls de la Innovació (UB) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eurostars-tall-20270118@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270119
+SUMMARY:🟠 EUREKA + agències nacionals (CDTI a Espanya) · Eurostars-3 
+ — tall
+DESCRIPTION:Preparar proposta per al tall del 04/03/2027\nData confirmada.\
+ nÀmbit: Consorci de ≥2 entitats de ≥2 països Eurostars\; lidera una 
+ pime que fa R+D (pimes ≥50% del cost).\nAjut: Finançament nacional (CDT
+ I per a pimes espanyoles)\; referència de l'Excel: fins a 400.000 € per
+  participant (no verificat).\nFitxa: https://www.eurekanetwork.org/program
+ mes-and-calls/eurostars/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://www.eurekanetwork.org/programmes-and-calls/eurostars/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 EUREKA + agències nacionals (CDTI a Espanya) · Eurostars
+ -3 — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-innovadors-vigilar-20270118@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270119
+SUMMARY:👀 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Innovadors — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Entitats de recerca catalanes
+ .\nAjut: Fins a 84.000 € (mínim 60.000 € per a contractació)\, 18 me
+ sos.\nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuaci
+ o/transferencia-coneixement/programa-industria-coneixement/
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Innovadors — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-llavor-vigilar-20270118@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270119
+SUMMARY:👀 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Llavor — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'universit
+ ats i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: https:/
+ /recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-cone
+ ixement/programa-industria-coneixement/
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Llavor — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-producte-vigilar-20270118@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270119
+SUMMARY:👀 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Producte — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'universit
+ ats i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrroga po
+ ssible).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-
+ per-temes/02-21429-IdC-Producte
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
+ 1429-IdC-Producte
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Producte — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:emprendexxi-tancament-20270122@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270123
+SUMMARY:🔴 CaixaBank DayOne + ENISA · Premis EmprendeXXI — tancament
+DESCRIPTION:Tancament confirmat: Premis EmprendeXXI\nData confirmada.\nÀmb
+ it: Empreses de base tecnològica amb seu a Espanya constituïdes a partir
+  de l'01/01/2023.\nAjut: 17 premis territorials de 6.000 €\; 9 Reptes de
+ l Demà de 15.000 €\; accèssits de 9.000 €.\nFitxa: https://www.caixa
+ bank.com/es/actualidad/noticias/arranca-la-convocatoria-para-participar-en
+ -los-premios-emprendexxi-impulsados-por-caixabank-y-enisa?id=44289
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.caixabank.com/es/actualidad/noticias/arranca-la-convocatori
+ a-para-participar-en-los-premios-emprendexxi-impulsados-por-caixabank-y-en
+ isa?id=44289
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 CaixaBank DayOne + ENISA · Premis EmprendeXXI — tancame
+ nt
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eureka-smart-tancament-20270126@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270126
+DTEND;VALUE=DATE:20270127
+SUMMARY:🔴 EUREKA (clúster SMART) + CDTI · EUREKA SMART – Call 10 (fa
+ bricació avançada) — tancament
+DESCRIPTION:Tall EUREKA SMART – Call 10 (fabricació avançada)\nData con
+ firmada.\nÀmbit: Consorcis internacionals de països EUREKA\; finançamen
+ t nacional (CDTI a Espanya).\nAjut: Finançament nacional per a cada soci 
+ (condicions CDTI).\nFitxa: https://www.eurekanetwork.org/programmes-and-ca
+ lls/eureka-clusters/smart-call-10-2026/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.eurekanetwork.org/programmes-and-calls/eureka-clusters/smar
+ t-call-10-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 EUREKA (clúster SMART) + CDTI · EUREKA SMART – Call 10
+  (fabricació avançada) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl1-salut-2027-tancament-20270127@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270127
+DTEND;VALUE=DATE:20270128
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 1 – Salut 2027 
+ (dispositius i diagnòstic) — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 17/02/2027\nData confi
+ rmada.\nÀmbit: Consorcis europeus.\nAjut: P. ex. IND-02 'Portable & versa
+ tile point-of-care diagnostics': 39\,3 M€\, 5–7 M€/projecte.\nFitxa:
+  https://www.ffg.at/en/europa/heu/cluster1/call2027-twostage
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.ffg.at/en/europa/heu/cluster1/call2027-twostage
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 1 – Salut 2
+ 027 (dispositius i diagnòstic) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-step-scaleup-tancament-20270128@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270128
+DTEND;VALUE=DATE:20270129
+SUMMARY:🔴 Comissió Europea – EIC · EIC STEP Scale Up — tancament
+DESCRIPTION:Tall EIC STEP Scale Up\nData confirmada.\nÀmbit: Startups\, pi
+ mes i small mid-caps de la UE i associats.\nAjut: Inversió en capital de 
+ 10–30 M€.\nFitxa: https://alientt.com/key-changes-in-the-eic-work-prog
+ ramme-2026/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://alientt.com/key-changes-in-the-eic-work-programme-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · EIC STEP Scale Up — tancame
+ nt
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eit-urban-mobility-tancament-20270128@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270128
+DTEND;VALUE=DATE:20270129
+SUMMARY:🔴 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility –
+  convocatòries (startups i innovació estratègica) — tancament
+DESCRIPTION:Tall EIT Urban Mobility – convocatòries (startups i innovaci
+ ó estratègica)\nData confirmada.\nÀmbit: UE + associats.\nAjut: Financi
+ al Support to Startups i Strategic Innovation (imports per convocatòria\;
+  no verificats).\nFitxa: https://www.eiturbanmobility.eu/call-for-proposal
+ s/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.eiturbanmobility.eu/call-for-proposals/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility
+  – convocatòries (startups i innovació estratègica) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:caixaimpulse-innovacio-salut-tancament-20270129@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270129
+DTEND;VALUE=DATE:20270130
+SUMMARY:🔴 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innovaci
+ ó en Salut — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 19/02/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Entitats sense ànim de lucre d'E
+ spanya i Portugal (universitats\, centres\, hospitals).\nAjut: Fase 1 fins
+  a 50.000 € (12 m)\; fase 2 fins a 150.000 € (24 m\, inclou disseny de
+ l prototip)\; fase 3 fins a 500.000 €.\nFitxa: https://caixaresearch.org
+ /es/convocatoria-caixaimpulse-innovacion-salud
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://caixaresearch.org/es/convocatoria-caixaimpulse-innovacion-salud
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innov
+ ació en Salut — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:horizon-europe-pilar2-tall-20270201@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:🟠 Comissió Europea – Funding & Tenders Portal · Horizon Euro
+ pe – Pilar 2 (Clústers 1–6): visió general — tall
+DESCRIPTION:Preparar proposta per al tall del 18/03/2027\nData confirmada.\
+ nÀmbit: Consorcis europeus (habitualment ≥3 entitats de 3 països).\nAj
+ ut: RIA 100%\; IA 70% per a empreses (100% sense ànim de lucre).\nFitxa: 
+ https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – Funding & Tenders Portal · Horizon 
+ Europe – Pilar 2 (Clústers 1–6): visió general — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-innovadors-obertura-20270201@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:🟢 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Innovadors — obertura (estimada)
+DESCRIPTION:Obertura estimada: Indústria del Coneixement – Innovadors\nD
+ ata estimada. Verificar a la font oficial.\nÀmbit: Entitats de recerca ca
+ talanes.\nAjut: Fins a 84.000 € (mínim 60.000 € per a contractació)\
+ , 18 mesos.\nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_d
+ actuacio/transferencia-coneixement/programa-industria-coneixement/
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Innovadors — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-llavor-obertura-20270201@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:🟢 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Llavor — obertura (estimada)
+DESCRIPTION:Obertura estimada: Indústria del Coneixement – Llavor\nData 
+ estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univer
+ sitats i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: http
+ s://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-c
+ oneixement/programa-industria-coneixement/
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Llavor — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-producte-obertura-20270201@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:🟢 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Producte — obertura (estimada)
+DESCRIPTION:Obertura estimada: Indústria del Coneixement – Producte\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univ
+ ersitats i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrro
+ ga possible).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocato
+ ries-per-temes/02-21429-IdC-Producte
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
+ 1429-IdC-Producte
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Producte — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl4-made-in-europe-2027-tancament-20270202@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270202
+DTEND;VALUE=DATE:20270203
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 4 – Made in Eur
+ ope 2027 (fabricació avançada i circular) — tancament
+DESCRIPTION:Tancament confirmat: Horizon Europe Clúster 4 – Made in Euro
+ pe 2027 (fabricació avançada i circular)\nData confirmada.\nÀmbit: Cons
+ orcis europeus.\nAjut: IA 70% per a empreses\; p. ex. M-P-02 'Advanced man
+ ufacturing for key products' 36 M€ (6–8 M€/projecte).\nFitxa: https:
+ //ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/w
+ p-call/2026-2027/wp-7-digital-industry-and-space_horizon-2026-2027_en.pdf
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-7-digital-industry-and-space_horizon-2026-202
+ 7_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 4 – Made in
+  Europe 2027 (fabricació avançada i circular) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:horizon-europe-pilar2-tancament-20270202@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270202
+DTEND;VALUE=DATE:20270203
+SUMMARY:🔴 Comissió Europea – Funding & Tenders Portal · Horizon Euro
+ pe – Pilar 2 (Clústers 1–6): visió general — tancament
+DESCRIPTION:Tall Horizon Europe – Pilar 2 (Clústers 1–6): visió gener
+ al\nData confirmada.\nÀmbit: Consorcis europeus (habitualment ≥3 entita
+ ts de 3 països).\nAjut: RIA 100%\; IA 70% per a empreses (100% sense àni
+ m de lucre).\nFitxa: https://ec.europa.eu/info/funding-tenders/opportuniti
+ es/portal/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – Funding & Tenders Portal · Horizon 
+ Europe – Pilar 2 (Clústers 1–6): visió general — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-accelerator-tancament-20270203@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270203
+DTEND;VALUE=DATE:20270204
+SUMMARY:🔴 Comissió Europea – EIC · EIC Accelerator (Open i Challenge
+ s) — tancament
+DESCRIPTION:Tall EIC Accelerator (Open i Challenges)\nData confirmada.\nÀm
+ bit: Pime o startup individual establerta a la UE o país associat.\nAjut:
+  Subvenció fins a 2\,5 M€ (70%) + inversió en capital via EIC Fund.\nF
+ itxa: https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-sub
+ mit-my-application-503.php
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-submit
+ -my-application-503.php
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · EIC Accelerator (Open i Chall
+ enges) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl6-2027-obertura-20270203@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270203
+DTEND;VALUE=DATE:20270204
+SUMMARY:🟢 Comissió Europea · Horizon Europe Clúster 6 – Alimentaci
+ ó\, bioeconomia i agricultura 2027 — obertura
+DESCRIPTION:Obertura confirmada: Horizon Europe Clúster 6 – Alimentació
+ \, bioeconomia i agricultura 2027\nData confirmada.\nÀmbit: Consorcis eur
+ opeus.\nAjut: RIA 100% / IA 70%.\nFitxa: https://ec.europa.eu/info/funding
+ -tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-9-food-
+ bioeconomy-natural-resources-agriculture-and-environment_horizon-2026-2027
+ _en.pdf
+CATEGORIES:europa,obertura
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-9-food-bioeconomy-natural-resources-agricultu
+ re-and-environment_horizon-2026-2027_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Comissió Europea · Horizon Europe Clúster 6 – Aliment
+ ació\, bioeconomia i agricultura 2027 — obertura
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-neotec-preparar-20270213@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270214
+SUMMARY:🟡 CDTI · NEOTEC — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 14/04/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Petites empreses innovad
+ ores espanyoles de fins a 3 anys.\nAjut: 70% (màx. 250.000 €)\; 85% (m
+ àx. 325.000 €) si contracta un doctor. Capital social ≥20.000 €.\nF
+ itxa: https://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocato
+ ria-NEOTEC-2026.html
+CATEGORIES:estat,preparar
+TRANSP:TRANSPARENT
+URL:https://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocatoria
+ -NEOTEC-2026.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 CDTI · NEOTEC — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-accelerator-tall-20270215@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270215
+DTEND;VALUE=DATE:20270216
+SUMMARY:🟠 Comissió Europea – EIC · EIC Accelerator (Open i Challenge
+ s) — tall
+DESCRIPTION:Preparar proposta per al tall del 01/04/2027\nData confirmada.\
+ nÀmbit: Pime o startup individual establerta a la UE o país associat.\nA
+ jut: Subvenció fins a 2\,5 M€ (70%) + inversió en capital via EIC Fund
+ .\nFitxa: https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i
+ -submit-my-application-503.php
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-submit
+ -my-application-503.php
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC · EIC Accelerator (Open i Chall
+ enges) — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-llavor-vigilar-20270215@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270215
+DTEND;VALUE=DATE:20270216
+SUMMARY:👀 UPC · LLAVOR UPC (valorització en fase inicial) — vigilar 
+ (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Investigadors de la UPC.\nAju
+ t: 100.000 € en total\, 10.000 €/projecte.\nFitxa: https://rdi.upc.edu
+ /ca/financament/recerca-innovacio/llavor.pdf
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://rdi.upc.edu/ca/financament/recerca-innovacio/llavor.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 UPC · LLAVOR UPC (valorització en fase inicial) — vigi
+ lar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:women-techeu-tall-20270215@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270215
+DTEND;VALUE=DATE:20270216
+SUMMARY:🟠 Comissió Europea – EIC · Women TechEU — tall
+DESCRIPTION:Preparar proposta per al tall del 01/04/2027\nData confirmada.\
+ nÀmbit: Startups deep tech liderades per dones a la UE i associats.\nAjut
+ : 75.000 € + mentoria (l'esborrany 2027 el duplica a 150.000 €).\nFitx
+ a: https://womentecheurope.eu/active-calls/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://womentecheurope.eu/active-calls/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC · Women TechEU — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl1-salut-2027-tancament-20270217@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270217
+DTEND;VALUE=DATE:20270218
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 1 – Salut 2027 
+ (dispositius i diagnòstic) — tancament
+DESCRIPTION:Tancament confirmat: Horizon Europe Clúster 1 – Salut 2027 (
+ dispositius i diagnòstic)\nData confirmada.\nÀmbit: Consorcis europeus.\
+ nAjut: P. ex. IND-02 'Portable & versatile point-of-care diagnostics': 39\
+ ,3 M€\, 5–7 M€/projecte.\nFitxa: https://www.ffg.at/en/europa/heu/cl
+ uster1/call2027-twostage
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.ffg.at/en/europa/heu/cluster1/call2027-twostage
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 1 – Salut 2
+ 027 (dispositius i diagnòstic) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:horizon-europe-pilar2-tancament-20270217@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270217
+DTEND;VALUE=DATE:20270218
+SUMMARY:🔴 Comissió Europea – Funding & Tenders Portal · Horizon Euro
+ pe – Pilar 2 (Clústers 1–6): visió general — tancament
+DESCRIPTION:Tall Horizon Europe – Pilar 2 (Clústers 1–6): visió gener
+ al\nData confirmada.\nÀmbit: Consorcis europeus (habitualment ≥3 entita
+ ts de 3 països).\nAjut: RIA 100%\; IA 70% per a empreses (100% sense àni
+ m de lucre).\nFitxa: https://ec.europa.eu/info/funding-tenders/opportuniti
+ es/portal/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – Funding & Tenders Portal · Horizon 
+ Europe – Pilar 2 (Clústers 1–6): visió general — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-ecosistemes-tancament-20270218@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270218
+DTEND;VALUE=DATE:20270219
+SUMMARY:🔴 CDTI · Ecosistemas de Innovación y Transferencia — tancame
+ nt (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 11/03/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Agrupacions de 4–8 entitats en 
+ ≥3 comunitats autònomes.\nAjut: Projectes de 120.000 €–1 M€ (mini
+ mis). Cofinançament FEDER segons CA (Catalunya fins al 40%).\nFitxa: http
+ s://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 CDTI · Ecosistemas de Innovación y Transferencia — tan
+ cament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:caixaimpulse-innovacio-salut-tancament-20270219@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270219
+DTEND;VALUE=DATE:20270220
+SUMMARY:🔴 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innovaci
+ ó en Salut — tancament (estimada)
+DESCRIPTION:Tancament estimat: CaixaImpulse Innovació en Salut\nData estim
+ ada. Verificar a la font oficial.\nÀmbit: Entitats sense ànim de lucre d
+ 'Espanya i Portugal (universitats\, centres\, hospitals).\nAjut: Fase 1 fi
+ ns a 50.000 € (12 m)\; fase 2 fins a 150.000 € (24 m\, inclou disseny 
+ del prototip)\; fase 3 fins a 500.000 €.\nFitxa: https://caixaresearch.o
+ rg/es/convocatoria-caixaimpulse-innovacion-salud
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://caixaresearch.org/es/convocatoria-caixaimpulse-innovacion-salud
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innov
+ ació en Salut — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-pathfinder-tancament-20270225@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270225
+DTEND;VALUE=DATE:20270226
+SUMMARY:🔴 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open i C
+ hallenges) — tancament
+DESCRIPTION:Tall EIC Pathfinder (Open i Challenges)\nData confirmada.\nÀmb
+ it: Consorcis d'UE + associats (Open: normalment ≥3 entitats de 3 païso
+ s).\nAjut: Subvenció al 100%\; fins a ~3–4 M€ per projecte (lump sum 
+ el 2027).\nFitxa: https://ec.europa.eu/info/funding-tenders/opportunities/
+ portal/screen/opportunities/topic-details/horizon-eic-2026-pathfinderopen
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/o
+ pportunities/topic-details/horizon-eic-2026-pathfinderopen
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open
+  i Challenges) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl4-adra-robotica-2027-tancament-20270225@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270225
+DTEND;VALUE=DATE:20270226
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 4 – AI-Driven R
+ obotics for Industry (ADRA\, 2027) — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 18/03/2027\nData confi
+ rmada.\nÀmbit: Consorcis europeus.\nAjut: Topic CL4-2027-04 DIGITAL-EMERG
+ ING-05.\nFitxa: https://ec.europa.eu/info/funding-tenders/opportunities/po
+ rtal/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 4 – AI-Driv
+ en Robotics for Industry (ADRA\, 2027) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eureka-smart-tall-20270301@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270302
+SUMMARY:🟠 EUREKA (clúster SMART) + CDTI · EUREKA SMART – Call 10 (fa
+ bricació avançada) — tall
+DESCRIPTION:Preparar proposta per al tall del 15/04/2027\nData confirmada.\
+ nÀmbit: Consorcis internacionals de països EUREKA\; finançament naciona
+ l (CDTI a Espanya).\nAjut: Finançament nacional per a cada soci (condicio
+ ns CDTI).\nFitxa: https://www.eurekanetwork.org/programmes-and-calls/eurek
+ a-clusters/smart-call-10-2026/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://www.eurekanetwork.org/programmes-and-calls/eureka-clusters/smar
+ t-call-10-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 EUREKA (clúster SMART) + CDTI · EUREKA SMART – Call 10
+  (fabricació avançada) — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-llavor-obertura-20270301@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270302
+SUMMARY:🟢 UPC · LLAVOR UPC (valorització en fase inicial) — obertura
+  (estimada)
+DESCRIPTION:Obertura estimada: LLAVOR UPC (valorització en fase inicial)\n
+ Data estimada. Verificar a la font oficial.\nÀmbit: Investigadors de la U
+ PC.\nAjut: 100.000 € en total\, 10.000 €/projecte.\nFitxa: https://rdi
+ .upc.edu/ca/financament/recerca-innovacio/llavor.pdf
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://rdi.upc.edu/ca/financament/recerca-innovacio/llavor.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 UPC · LLAVOR UPC (valorització en fase inicial) — ober
+ tura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-exploracio-tecnologica-vigilar-20270301@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270302
+SUMMARY:👀 ACCIÓ · Projectes d'exploració tecnològica (línia R+D+i 2
+ 026) — vigilar
+DESCRIPTION:Exploració tecnològica: comprovar si ACCIÓ anuncia l'edició
+  2027 (pla d'ajuts anual / sessions informatives)\nData confirmada.\nÀmbi
+ t: Empreses amb establiment operatiu a Catalunya\, sense restricció secto
+ rial.\nAjut: 75% de la despesa\, màxim 30.000 € (projecte ~40.000 €)\
+ ; pressupost mínim 20.000 €\; 10 mesos\; bestreta 60%\; auditoria al 10
+ 0% fins 1.500 €.\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercado
+ r-ajuts-empresa/ajutsiserveis/26043-projectes-exploracio-tecnologica
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26043-projectes-exploracio-tecnologica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ · Projectes d'exploració tecnològica (línia R+D
+ +i 2026) — vigilar
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edf-eudis-preparar-20270302@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270302
+DTEND;VALUE=DATE:20270303
+SUMMARY:🟡 Comissió Europea – DG DEFIS · European Defence Fund (EDF) 
+ – convocatòries pimes i tecnologies disruptives (EUDIS) — preparar (e
+ stimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/05/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Entitats de la UE i Noru
+ ega no controlades per tercers països\; consorcis.\nAjut: 2026: SME devel
+ opment 30 M€ (≤6 M€/projecte)\; pimes i organismes de recerca 35 M
+ € (≤5 M€)\; disruptives 27 M€ (≤3 M€).\nFitxa: https://eudis.e
+ uropa.eu/eudis-tracks/sme-calls_en
+CATEGORIES:europa,preparar
+TRANSP:TRANSPARENT
+URL:https://eudis.europa.eu/eudis-tracks/sme-calls_en
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 Comissió Europea – DG DEFIS · European Defence Fund (E
+ DF) – convocatòries pimes i tecnologies disruptives (EUDIS) — prepara
+ r (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-feder-innovacio-pimes-preparar-20270302@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270302
+DTEND;VALUE=DATE:20270303
+SUMMARY:🟡 ACCIÓ · Projectes d'innovació tecnològica de pimes (FEDER)
+  — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/05/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Pimes amb establiment a 
+ Catalunya.\nAjut: Fins al 40% (mínim de projecte 100.000 €). Línia de 
+ 5 M€ (2025).\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-aj
+ uts-empresa/
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 ACCIÓ · Projectes d'innovació tecnològica de pimes (FE
+ DER) — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-startup-capital-preparar-20270302@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270302
+DTEND;VALUE=DATE:20270303
+SUMMARY:🟡 ACCIÓ · Startup Capital — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/05/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Startups amb establiment
+  a Catalunya.\nAjut: 75%\, ~100.000 € (pressupost mínim 135.000 €)\, 
+ 24 mesos.\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-e
+ mpresa/
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 ACCIÓ · Startup Capital — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eurostars-tancament-20270304@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270304
+DTEND;VALUE=DATE:20270305
+SUMMARY:🔴 EUREKA + agències nacionals (CDTI a Espanya) · Eurostars-3 
+ — tancament
+DESCRIPTION:Tall Eurostars-3\nData confirmada.\nÀmbit: Consorci de ≥2 en
+ titats de ≥2 països Eurostars\; lidera una pime que fa R+D (pimes ≥50
+ % del cost).\nAjut: Finançament nacional (CDTI per a pimes espanyoles)\; 
+ referència de l'Excel: fins a 400.000 € per participant (no verificat).
+ \nFitxa: https://www.eurekanetwork.org/programmes-and-calls/eurostars/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.eurekanetwork.org/programmes-and-calls/eurostars/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 EUREKA + agències nacionals (CDTI a Espanya) · Eurostars
+ -3 — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-innovadors-tancament-20270310@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Innovadors — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 31/03/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Entitats de recerca catalanes.\nA
+ jut: Fins a 84.000 € (mínim 60.000 € per a contractació)\, 18 mesos.
+ \nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/tr
+ ansferencia-coneixement/programa-industria-coneixement/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Innovadors — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-llavor-tancament-20270310@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Llavor — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 31/03/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Equips de recerca d'universitats 
+ i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: https://rec
+ ercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-coneixem
+ ent/programa-industria-coneixement/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Llavor — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-producte-tancament-20270310@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Producte — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 31/03/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Equips de recerca d'universitats 
+ i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrroga possib
+ le).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-
+ temes/02-21429-IdC-Producte
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
+ 1429-IdC-Producte
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Producte — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-ecosistemes-tancament-20270311@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270311
+DTEND;VALUE=DATE:20270312
+SUMMARY:🔴 CDTI · Ecosistemas de Innovación y Transferencia — tancame
+ nt (estimada)
+DESCRIPTION:Tancament estimat: Ecosistemas de Innovación y Transferencia\n
+ Data estimada. Verificar a la font oficial.\nÀmbit: Agrupacions de 4–8 
+ entitats en ≥3 comunitats autònomes.\nAjut: Projectes de 120.000 €–
+ 1 M€ (minimis). Cofinançament FEDER segons CA (Catalunya fins al 40%).\
+ nFitxa: https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 CDTI · Ecosistemas de Innovación y Transferencia — tan
+ cament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-nuclis-rd-preparar-20270311@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270311
+DTEND;VALUE=DATE:20270312
+SUMMARY:🟡 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — prep
+ arar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 10/05/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Empreses amb establiment
+  operatiu a Catalunya\; poden participar centres TECNIO.\nAjut: Màxim 250
+ .000 €/projecte\; despesa mínima 120.000 €\; 25–70% empresa\, 100% 
+ TECNIO.\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-emp
+ resa/
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — 
+ preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-misiones-preparar-20270313@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270313
+DTEND;VALUE=DATE:20270314
+SUMMARY:🟡 CDTI · Misiones Ciencia e Innovación — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 12/05/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Consorcis de 3–6 empre
+ ses espanyoles (mínim 1 pime).\nAjut: Projectes de 3\,5–10 M€\; 60 M
+ € ampliables a 150 M€ (2026).\nFitxa: https://www.cdti.es/ayudas
+CATEGORIES:estat,preparar
+TRANSP:TRANSPARENT
+URL:https://www.cdti.es/ayudas
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 CDTI · Misiones Ciencia e Innovación — preparar (estim
+ ada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-step-scaleup-tall-20270315@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270315
+DTEND;VALUE=DATE:20270316
+SUMMARY:🟠 Comissió Europea – EIC · EIC STEP Scale Up — tall
+DESCRIPTION:Preparar proposta per al tall del 29/04/2027\nData confirmada.\
+ nÀmbit: Startups\, pimes i small mid-caps de la UE i associats.\nAjut: In
+ versió en capital de 10–30 M€.\nFitxa: https://alientt.com/key-change
+ s-in-the-eic-work-programme-2026/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://alientt.com/key-changes-in-the-eic-work-programme-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC · EIC STEP Scale Up — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-industrial-tech-preparar-20270316@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270316
+DTEND;VALUE=DATE:20270317
+SUMMARY:🟡 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleració de
+  hardware (UPC + CIM UPC) — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 15/05/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Projectes de recerca i s
+ pin-offs a Catalunya.\nAjut: Gratuït\, en espècie: 52 h tècniques (fabr
+ icació additiva\, robòtica\, IoT) + 40 h de negoci i mentoria.\nFitxa: h
+ ttps://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-industri
+ al-tech
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-indu
+ strial-tech
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleraci
+ ó de hardware (UPC + CIM UPC) — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl6-2027-tancament-20270317@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270317
+DTEND;VALUE=DATE:20270318
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 6 – Alimentaci
+ ó\, bioeconomia i agricultura 2027 — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 07/04/2027\nData confi
+ rmada.\nÀmbit: Consorcis europeus.\nAjut: RIA 100% / IA 70%.\nFitxa: http
+ s://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon
+ /wp-call/2026-2027/wp-9-food-bioeconomy-natural-resources-agriculture-and-
+ environment_horizon-2026-2027_en.pdf
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-9-food-bioeconomy-natural-resources-agricultu
+ re-and-environment_horizon-2026-2027_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 6 – Aliment
+ ació\, bioeconomia i agricultura 2027 — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl4-adra-robotica-2027-tancament-20270318@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270318
+DTEND;VALUE=DATE:20270319
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 4 – AI-Driven R
+ obotics for Industry (ADRA\, 2027) — tancament
+DESCRIPTION:Tancament confirmat: Horizon Europe Clúster 4 – AI-Driven Ro
+ botics for Industry (ADRA\, 2027)\nData confirmada.\nÀmbit: Consorcis eur
+ opeus.\nAjut: Topic CL4-2027-04 DIGITAL-EMERGING-05.\nFitxa: https://ec.eu
+ ropa.eu/info/funding-tenders/opportunities/portal/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 4 – AI-Driv
+ en Robotics for Industry (ADRA\, 2027) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:horizon-europe-pilar2-tancament-20270318@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270318
+DTEND;VALUE=DATE:20270319
+SUMMARY:🔴 Comissió Europea – Funding & Tenders Portal · Horizon Euro
+ pe – Pilar 2 (Clústers 1–6): visió general — tancament
+DESCRIPTION:Tall Horizon Europe – Pilar 2 (Clústers 1–6): visió gener
+ al\nData confirmada.\nÀmbit: Consorcis europeus (habitualment ≥3 entita
+ ts de 3 països).\nAjut: RIA 100%\; IA 70% per a empreses (100% sense àni
+ m de lucre).\nFitxa: https://ec.europa.eu/info/funding-tenders/opportuniti
+ es/portal/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – Funding & Tenders Portal · Horizon 
+ Europe – Pilar 2 (Clústers 1–6): visió general — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl5-2zero-2027-tancament-20270324@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270324
+DTEND;VALUE=DATE:20270325
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 5 – 2Zero 2027 
+ (vehicles de zero emissions) — tancament
+DESCRIPTION:Darrera revisió: tancament confirmat el 14/04/2027\nData confi
+ rmada.\nÀmbit: Consorcis europeus.\nAjut: IA 70% per a empreses.\nFitxa: 
+ https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/hor
+ izon/wp-call/2026-2027/wp-8-climate-energy-and-mobility_horizon-2026-2027_
+ en.pdf
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-8-climate-energy-and-mobility_horizon-2026-20
+ 27_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 5 – 2Zero 2
+ 027 (vehicles de zero emissions) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:defensa-coincidente-preparar-20270327@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270327
+DTEND;VALUE=DATE:20270328
+SUMMARY:🟡 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — prepar
+ ar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 26/05/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Empreses i entitats espa
+ nyoles.\nAjut: Microempresa 70%\, petita 60%\, mitjana 40%. 2026: antidron
+ s (975.000 €)\, IA i entorn electromagnètic (805.785 €)\, sensors per
+  a vigilància espacial (975.000 €).\nFitxa: https://tecnologiaeinnovaci
+ on.defensa.gob.es/en/colaboraci%C3%B3n-tecnol%C3%B3gica
+CATEGORIES:estat,preparar
+TRANSP:TRANSPARENT
+URL:https://tecnologiaeinnovacion.defensa.gob.es/en/colaboraci%C3%B3n-tecno
+ l%C3%B3gica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — pr
+ eparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mintur-aei-preparar-20270331@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:🟡 Ministeri d'Indústria i Turisme (DG Indústria i PIME) · Agr
+ upaciones Empresariales Innovadoras (AEI) — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 30/05/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: AEI inscrites al Registr
+ e del Ministeri i les seves entitats associades (secpho\, CIAC\, Catalonia
+ Bio...).\nAjut: L3 R+D+i: recerca industrial 50% (fins 80%)\, desenvolupam
+ ent experimental 25% (fins 60%)\, innovació pime 50%\; màx. 200.000 € 
+ (250.000 €) en R+D.\nFitxa: https://www.mintur.gob.es/portalayudas/agrup
+ acionesempresariales
+CATEGORIES:estat,preparar
+TRANSP:TRANSPARENT
+URL:https://www.mintur.gob.es/portalayudas/agrupacionesempresariales
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 Ministeri d'Indústria i Turisme (DG Indústria i PIME) ·
+  Agrupaciones Empresariales Innovadoras (AEI) — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-innovadors-tancament-20270331@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Innovadors — tancament (estimada)
+DESCRIPTION:Tancament estimat: Indústria del Coneixement – Innovadors\nD
+ ata estimada. Verificar a la font oficial.\nÀmbit: Entitats de recerca ca
+ talanes.\nAjut: Fins a 84.000 € (mínim 60.000 € per a contractació)\
+ , 18 mesos.\nFitxa: https://recercaiuniversitats.gencat.cat/ca/03_ambits_d
+ actuacio/transferencia-coneixement/programa-industria-coneixement/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Innovadors — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-llavor-tancament-20270331@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Llavor — tancament (estimada)
+DESCRIPTION:Tancament estimat: Indústria del Coneixement – Llavor\nData 
+ estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univer
+ sitats i centres catalans.\nAjut: 20.000 € fixos\, 6 mesos.\nFitxa: http
+ s://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-c
+ oneixement/programa-industria-coneixement/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transfer
+ encia-coneixement/programa-industria-coneixement/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Llavor — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:agaur-idc-producte-tancament-20270331@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:🔴 AGAUR (Departament de Recerca i Universitats) · Indústria de
+ l Coneixement – Producte — tancament (estimada)
+DESCRIPTION:Tancament estimat: Indústria del Coneixement – Producte\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Equips de recerca d'univ
+ ersitats i centres catalans.\nAjut: Fins a 150.000 €\, 18 mesos (pròrro
+ ga possible).\nFitxa: https://agaur.gencat.cat/en/beques-i-ajuts/convocato
+ ries-per-temes/02-21429-IdC-Producte
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-2
+ 1429-IdC-Producte
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 AGAUR (Departament de Recerca i Universitats) · Indústri
+ a del Coneixement – Producte — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-neotec-vigilar-20270331@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:👀 CDTI · NEOTEC — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Petites empreses innovadores 
+ espanyoles de fins a 3 anys.\nAjut: 70% (màx. 250.000 €)\; 85% (màx. 3
+ 25.000 €) si contracta un doctor. Capital social ≥20.000 €.\nFitxa: 
+ https://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocatoria-NE
+ OTEC-2026.html
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocatoria
+ -NEOTEC-2026.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 CDTI · NEOTEC — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-accelerator-tancament-20270401@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:🔴 Comissió Europea – EIC · EIC Accelerator (Open i Challenge
+ s) — tancament
+DESCRIPTION:Tall EIC Accelerator (Open i Challenges)\nData confirmada.\nÀm
+ bit: Pime o startup individual establerta a la UE o país associat.\nAjut:
+  Subvenció fins a 2\,5 M€ (70%) + inversió en capital via EIC Fund.\nF
+ itxa: https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-sub
+ mit-my-application-503.php
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-submit
+ -my-application-503.php
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · EIC Accelerator (Open i Chall
+ enges) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:women-techeu-tancament-20270401@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:🔴 Comissió Europea – EIC · Women TechEU — tancament
+DESCRIPTION:Tall Women TechEU\nData confirmada.\nÀmbit: Startups deep tech
+  liderades per dones a la UE i associats.\nAjut: 75.000 € + mentoria (l'
+ esborrany 2027 el duplica a 150.000 €).\nFitxa: https://womentecheurope.
+ eu/active-calls/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://womentecheurope.eu/active-calls/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · Women TechEU — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nato-diana-preparar-20270403@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:🟡 OTAN – DIANA · NATO DIANA Challenge Programme — preparar 
+ (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 02/06/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Països membres de l'OTA
+ N (Espanya elegible).\nAjut: Contracte de 100.000 € (fase 1) + fins a 30
+ 0.000 € (fase 2) + accés a centres d'assaig.\nFitxa: https://www.diana.
+ nato.int/challenges.html
+CATEGORIES:internacional,preparar
+TRANSP:TRANSPARENT
+URL:https://www.diana.nato.int/challenges.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 OTAN – DIANA · NATO DIANA Challenge Programme — prepa
+ rar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl6-2027-tancament-20270407@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270407
+DTEND;VALUE=DATE:20270408
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 6 – Alimentaci
+ ó\, bioeconomia i agricultura 2027 — tancament
+DESCRIPTION:Tancament confirmat: Horizon Europe Clúster 6 – Alimentació
+ \, bioeconomia i agricultura 2027\nData confirmada.\nÀmbit: Consorcis eur
+ opeus.\nAjut: RIA 100% / IA 70%.\nFitxa: https://ec.europa.eu/info/funding
+ -tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-9-food-
+ bioeconomy-natural-resources-agriculture-and-environment_horizon-2026-2027
+ _en.pdf
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-9-food-bioeconomy-natural-resources-agricultu
+ re-and-environment_horizon-2026-2027_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 6 – Aliment
+ ació\, bioeconomia i agricultura 2027 — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-llavor-tancament-20270410@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270411
+SUMMARY:🔴 UPC · LLAVOR UPC (valorització en fase inicial) — tancamen
+ t (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 01/05/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Investigadors de la UPC.\nAjut: 1
+ 00.000 € en total\, 10.000 €/projecte.\nFitxa: https://rdi.upc.edu/ca/
+ financament/recerca-innovacio/llavor.pdf
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://rdi.upc.edu/ca/financament/recerca-innovacio/llavor.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 UPC · LLAVOR UPC (valorització en fase inicial) — tanc
+ ament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:he-cl5-2zero-2027-tancament-20270414@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270414
+DTEND;VALUE=DATE:20270415
+SUMMARY:🔴 Comissió Europea · Horizon Europe Clúster 5 – 2Zero 2027 
+ (vehicles de zero emissions) — tancament
+DESCRIPTION:Tancament confirmat: Horizon Europe Clúster 5 – 2Zero 2027 (
+ vehicles de zero emissions)\nData confirmada.\nÀmbit: Consorcis europeus.
+ \nAjut: IA 70% per a empreses.\nFitxa: https://ec.europa.eu/info/funding-t
+ enders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-8-climate
+ -energy-and-mobility_horizon-2026-2027_en.pdf
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/
+ horizon/wp-call/2026-2027/wp-8-climate-energy-and-mobility_horizon-2026-20
+ 27_en.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea · Horizon Europe Clúster 5 – 2Zero 2
+ 027 (vehicles de zero emissions) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-neotec-obertura-20270414@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270414
+DTEND;VALUE=DATE:20270415
+SUMMARY:🟢 CDTI · NEOTEC — obertura (estimada)
+DESCRIPTION:Obertura estimada: NEOTEC\nData estimada. Verificar a la font o
+ ficial.\nÀmbit: Petites empreses innovadores espanyoles de fins a 3 anys.
+ \nAjut: 70% (màx. 250.000 €)\; 85% (màx. 325.000 €) si contracta un 
+ doctor. Capital social ≥20.000 €.\nFitxa: https://www.ciencia.gob.es/N
+ oticias/2026/abril/MICIU-lanza-convocatoria-NEOTEC-2026.html
+CATEGORIES:estat,obertura
+TRANSP:TRANSPARENT
+URL:https://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocatoria
+ -NEOTEC-2026.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 CDTI · NEOTEC — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eureka-smart-tancament-20270415@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270415
+DTEND;VALUE=DATE:20270416
+SUMMARY:🔴 EUREKA (clúster SMART) + CDTI · EUREKA SMART – Call 10 (fa
+ bricació avançada) — tancament
+DESCRIPTION:Tall EUREKA SMART – Call 10 (fabricació avançada)\nData con
+ firmada.\nÀmbit: Consorcis internacionals de països EUREKA\; finançamen
+ t nacional (CDTI a Espanya).\nAjut: Finançament nacional per a cada soci 
+ (condicions CDTI).\nFitxa: https://www.eurekanetwork.org/programmes-and-ca
+ lls/eureka-clusters/smart-call-10-2026/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.eurekanetwork.org/programmes-and-calls/eureka-clusters/smar
+ t-call-10-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 EUREKA (clúster SMART) + CDTI · EUREKA SMART – Call 10
+  (fabricació avançada) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edf-eudis-vigilar-20270417@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:👀 Comissió Europea – DG DEFIS · European Defence Fund (EDF) 
+ – convocatòries pimes i tecnologies disruptives (EUDIS) — vigilar (es
+ timada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Entitats de la UE i Noruega n
+ o controlades per tercers països\; consorcis.\nAjut: 2026: SME developmen
+ t 30 M€ (≤6 M€/projecte)\; pimes i organismes de recerca 35 M€ (
+ ≤5 M€)\; disruptives 27 M€ (≤3 M€).\nFitxa: https://eudis.europa
+ .eu/eudis-tracks/sme-calls_en
+CATEGORIES:europa,vigilar
+TRANSP:TRANSPARENT
+URL:https://eudis.europa.eu/eudis-tracks/sme-calls_en
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Comissió Europea – DG DEFIS · European Defence Fund (E
+ DF) – convocatòries pimes i tecnologies disruptives (EUDIS) — vigilar
+  (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-feder-innovacio-pimes-vigilar-20270417@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:👀 ACCIÓ · Projectes d'innovació tecnològica de pimes (FEDER)
+  — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Pimes amb establiment a Catal
+ unya.\nAjut: Fins al 40% (mínim de projecte 100.000 €). Línia de 5 M
+ € (2025).\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts
+ -empresa/
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ · Projectes d'innovació tecnològica de pimes (FE
+ DER) — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-startup-capital-vigilar-20270417@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:👀 ACCIÓ · Startup Capital — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Startups amb establiment a Ca
+ talunya.\nAjut: 75%\, ~100.000 € (pressupost mínim 135.000 €)\, 24 me
+ sos.\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empres
+ a/
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ · Startup Capital — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bcn-impulsem-el-que-fas-preparar-20270418@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270419
+SUMMARY:🟡 Ajuntament de Barcelona / Barcelona Activa · Impulsem el que 
+ fas — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 17/06/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Seu o centre de treball 
+ a la ciutat de Barcelona\; facturació ≤1 M€ o ≤20 treballadors.\nAj
+ ut: Fins a 40.000 €\, 12 mesos\; 8 línies.\nFitxa: https://empreses.bar
+ celonactiva.cat/en/impulsem-el-que-fas-2026
+CATEGORIES:local,preparar
+TRANSP:TRANSPARENT
+URL:https://empreses.barcelonactiva.cat/en/impulsem-el-que-fas-2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 Ajuntament de Barcelona / Barcelona Activa · Impulsem el 
+ que fas — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eit-urban-mobility-tall-20270419@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270419
+DTEND;VALUE=DATE:20270420
+SUMMARY:🟠 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility –
+  convocatòries (startups i innovació estratègica) — tall
+DESCRIPTION:Preparar proposta per al tall del 03/06/2027\nData confirmada.\
+ nÀmbit: UE + associats.\nAjut: Financial Support to Startups i Strategic 
+ Innovation (imports per convocatòria\; no verificats).\nFitxa: https://ww
+ w.eiturbanmobility.eu/call-for-proposals/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://www.eiturbanmobility.eu/call-for-proposals/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility
+  – convocatòries (startups i innovació estratègica) — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aei-pruebas-concepto-preparar-20270420@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270420
+DTEND;VALUE=DATE:20270421
+SUMMARY:🟡 Agencia Estatal de Investigación · Pruebas de Concepto — p
+ reparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 19/06/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Grups de recerca amb pro
+ jectes vigents del Pla Estatal.\nAjut: Fins a 300.000 €\, 2 anys\; 30 M
+ €.\nFitxa: https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyecto
+ s-de-i-d-i-para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+CATEGORIES:estat,preparar
+TRANSP:TRANSPARENT
+URL:https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i
+ -para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 Agencia Estatal de Investigación · Pruebas de Concepto 
+ — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-neotec-tancament-20270423@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270423
+DTEND;VALUE=DATE:20270424
+SUMMARY:🔴 CDTI · NEOTEC — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 14/05/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Petites empreses innovadores espa
+ nyoles de fins a 3 anys.\nAjut: 70% (màx. 250.000 €)\; 85% (màx. 325.0
+ 00 €) si contracta un doctor. Capital social ≥20.000 €.\nFitxa: http
+ s://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocatoria-NEOTEC
+ -2026.html
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocatoria
+ -NEOTEC-2026.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 CDTI · NEOTEC — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-nuclis-rd-vigilar-20270426@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270426
+DTEND;VALUE=DATE:20270427
+SUMMARY:👀 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — vigi
+ lar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Empreses amb establiment oper
+ atiu a Catalunya\; poden participar centres TECNIO.\nAjut: Màxim 250.000 
+ €/projecte\; despesa mínima 120.000 €\; 25–70% empresa\, 100% TECNI
+ O.\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — 
+ vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-misiones-vigilar-20270428@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270428
+DTEND;VALUE=DATE:20270429
+SUMMARY:👀 CDTI · Misiones Ciencia e Innovación — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Consorcis de 3–6 empreses e
+ spanyoles (mínim 1 pime).\nAjut: Projectes de 3\,5–10 M€\; 60 M€ am
+ pliables a 150 M€ (2026).\nFitxa: https://www.cdti.es/ayudas
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.cdti.es/ayudas
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 CDTI · Misiones Ciencia e Innovación — vigilar (estima
+ da)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-step-scaleup-tancament-20270429@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270429
+DTEND;VALUE=DATE:20270430
+SUMMARY:🔴 Comissió Europea – EIC · EIC STEP Scale Up — tancament
+DESCRIPTION:Tall EIC STEP Scale Up\nData confirmada.\nÀmbit: Startups\, pi
+ mes i small mid-caps de la UE i associats.\nAjut: Inversió en capital de 
+ 10–30 M€.\nFitxa: https://alientt.com/key-changes-in-the-eic-work-prog
+ ramme-2026/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://alientt.com/key-changes-in-the-eic-work-programme-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · EIC STEP Scale Up — tancame
+ nt
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edf-eudis-obertura-20270501@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:🟢 Comissió Europea – DG DEFIS · European Defence Fund (EDF) 
+ – convocatòries pimes i tecnologies disruptives (EUDIS) — obertura (e
+ stimada)
+DESCRIPTION:Obertura estimada: European Defence Fund (EDF) – convocatòri
+ es pimes i tecnologies disruptives (EUDIS)\nData estimada. Verificar a la 
+ font oficial.\nÀmbit: Entitats de la UE i Noruega no controlades per terc
+ ers països\; consorcis.\nAjut: 2026: SME development 30 M€ (≤6 M€/p
+ rojecte)\; pimes i organismes de recerca 35 M€ (≤5 M€)\; disruptives
+  27 M€ (≤3 M€).\nFitxa: https://eudis.europa.eu/eudis-tracks/sme-cal
+ ls_en
+CATEGORIES:europa,obertura
+TRANSP:TRANSPARENT
+URL:https://eudis.europa.eu/eudis-tracks/sme-calls_en
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Comissió Europea – DG DEFIS · European Defence Fund (E
+ DF) – convocatòries pimes i tecnologies disruptives (EUDIS) — obertur
+ a (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-industrial-tech-vigilar-20270501@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:👀 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleració de
+  hardware (UPC + CIM UPC) — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Projectes de recerca i spin-o
+ ffs a Catalunya.\nAjut: Gratuït\, en espècie: 52 h tècniques (fabricaci
+ ó additiva\, robòtica\, IoT) + 40 h de negoci i mentoria.\nFitxa: https:
+ //www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-industrial-te
+ ch
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-indu
+ strial-tech
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleraci
+ ó de hardware (UPC + CIM UPC) — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-llavor-tancament-20270501@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:🔴 UPC · LLAVOR UPC (valorització en fase inicial) — tancamen
+ t (estimada)
+DESCRIPTION:Tancament estimat: LLAVOR UPC (valorització en fase inicial)\n
+ Data estimada. Verificar a la font oficial.\nÀmbit: Investigadors de la U
+ PC.\nAjut: 100.000 € en total\, 10.000 €/projecte.\nFitxa: https://rdi
+ .upc.edu/ca/financament/recerca-innovacio/llavor.pdf
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://rdi.upc.edu/ca/financament/recerca-innovacio/llavor.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 UPC · LLAVOR UPC (valorització en fase inicial) — tanc
+ ament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-feder-innovacio-pimes-obertura-20270501@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:🟢 ACCIÓ · Projectes d'innovació tecnològica de pimes (FEDER)
+  — obertura (estimada)
+DESCRIPTION:Obertura estimada: Projectes d'innovació tecnològica de pimes
+  (FEDER)\nData estimada. Verificar a la font oficial.\nÀmbit: Pimes amb e
+ stabliment a Catalunya.\nAjut: Fins al 40% (mínim de projecte 100.000 €
+ ). Línia de 5 M€ (2025).\nFitxa: https://www.accio.gencat.cat/ca/servei
+ s/cercador-ajuts-empresa/
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 ACCIÓ · Projectes d'innovació tecnològica de pimes (FE
+ DER) — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-startup-capital-obertura-20270501@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:🟢 ACCIÓ · Startup Capital — obertura (estimada)
+DESCRIPTION:Obertura estimada: Startup Capital\nData estimada. Verificar a 
+ la font oficial.\nÀmbit: Startups amb establiment a Catalunya.\nAjut: 75%
+ \, ~100.000 € (pressupost mínim 135.000 €)\, 24 mesos.\nFitxa: https:
+ //www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 ACCIÓ · Startup Capital — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ub-f2i-preparar-20270502@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270502
+DTEND;VALUE=DATE:20270503
+SUMMARY:🟡 Universitat de Barcelona / Fundació Bosch i Gimpera · F2I 
+ – Fons per a l'Impuls de la Innovació (UB) — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 01/07/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Grups de recerca de la U
+ B (titular o cotitular del coneixement).\nAjut: 100.000 € en total\, fin
+ s a 25.000 €/projecte de prova de concepte + Mentor in Residence.\nFitxa
+ : https://f2i.fbg.ub.edu/
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://f2i.fbg.ub.edu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 Universitat de Barcelona / Fundació Bosch i Gimpera · F2
+ I – Fons per a l'Impuls de la Innovació (UB) — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-nuclis-rd-obertura-20270510@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270510
+DTEND;VALUE=DATE:20270511
+SUMMARY:🟢 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — ober
+ tura (estimada)
+DESCRIPTION:Obertura estimada: Nuclis d'R+D (individuals i en cooperació)\
+ nData estimada. Verificar a la font oficial.\nÀmbit: Empreses amb establi
+ ment operatiu a Catalunya\; poden participar centres TECNIO.\nAjut: Màxim
+  250.000 €/projecte\; despesa mínima 120.000 €\; 25–70% empresa\, 1
+ 00% TECNIO.\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts
+ -empresa/
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — 
+ obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-misiones-obertura-20270512@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270512
+DTEND;VALUE=DATE:20270513
+SUMMARY:🟢 CDTI · Misiones Ciencia e Innovación — obertura (estimada)
+DESCRIPTION:Obertura estimada: Misiones Ciencia e Innovación\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Consorcis de 3–6 empreses espan
+ yoles (mínim 1 pime).\nAjut: Projectes de 3\,5–10 M€\; 60 M€ amplia
+ bles a 150 M€ (2026).\nFitxa: https://www.cdti.es/ayudas
+CATEGORIES:estat,obertura
+TRANSP:TRANSPARENT
+URL:https://www.cdti.es/ayudas
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 CDTI · Misiones Ciencia e Innovación — obertura (estim
+ ada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:defensa-coincidente-vigilar-20270512@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270512
+DTEND;VALUE=DATE:20270513
+SUMMARY:👀 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — vigila
+ r (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Empreses i entitats espanyole
+ s.\nAjut: Microempresa 70%\, petita 60%\, mitjana 40%. 2026: antidrons (97
+ 5.000 €)\, IA i entorn electromagnètic (805.785 €)\, sensors per a vi
+ gilància espacial (975.000 €).\nFitxa: https://tecnologiaeinnovacion.de
+ fensa.gob.es/en/colaboraci%C3%B3n-tecnol%C3%B3gica
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://tecnologiaeinnovacion.defensa.gob.es/en/colaboraci%C3%B3n-tecno
+ l%C3%B3gica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — vi
+ gilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-neotec-tancament-20270514@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270514
+DTEND;VALUE=DATE:20270515
+SUMMARY:🔴 CDTI · NEOTEC — tancament (estimada)
+DESCRIPTION:Tancament estimat: NEOTEC\nData estimada. Verificar a la font o
+ ficial.\nÀmbit: Petites empreses innovadores espanyoles de fins a 3 anys.
+ \nAjut: 70% (màx. 250.000 €)\; 85% (màx. 325.000 €) si contracta un 
+ doctor. Capital social ≥20.000 €.\nFitxa: https://www.ciencia.gob.es/N
+ oticias/2026/abril/MICIU-lanza-convocatoria-NEOTEC-2026.html
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocatoria
+ -NEOTEC-2026.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 CDTI · NEOTEC — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-industrial-tech-obertura-20270515@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:🟢 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleració de
+  hardware (UPC + CIM UPC) — obertura (estimada)
+DESCRIPTION:Obertura estimada: Industrial Tech – preacceleració de hardw
+ are (UPC + CIM UPC)\nData estimada. Verificar a la font oficial.\nÀmbit: 
+ Projectes de recerca i spin-offs a Catalunya.\nAjut: Gratuït\, en espèci
+ e: 52 h tècniques (fabricació additiva\, robòtica\, IoT) + 40 h de nego
+ ci i mentoria.\nFitxa: https://www.upc.edu/emprenupc/ca/noticies/nova-edic
+ io-del-programa-industrial-tech
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-indu
+ strial-tech
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleraci
+ ó de hardware (UPC + CIM UPC) — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mintur-aei-vigilar-20270516@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270516
+DTEND;VALUE=DATE:20270517
+SUMMARY:👀 Ministeri d'Indústria i Turisme (DG Indústria i PIME) · Agr
+ upaciones Empresariales Innovadoras (AEI) — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: AEI inscrites al Registre del
+  Ministeri i les seves entitats associades (secpho\, CIAC\, CataloniaBio..
+ .).\nAjut: L3 R+D+i: recerca industrial 50% (fins 80%)\, desenvolupament e
+ xperimental 25% (fins 60%)\, innovació pime 50%\; màx. 200.000 € (250.
+ 000 €) en R+D.\nFitxa: https://www.mintur.gob.es/portalayudas/agrupacion
+ esempresariales
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.mintur.gob.es/portalayudas/agrupacionesempresariales
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Ministeri d'Indústria i Turisme (DG Indústria i PIME) ·
+  Agrupaciones Empresariales Innovadoras (AEI) — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nato-diana-vigilar-20270519@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270519
+DTEND;VALUE=DATE:20270520
+SUMMARY:👀 OTAN – DIANA · NATO DIANA Challenge Programme — vigilar (
+ estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Països membres de l'OTAN (Es
+ panya elegible).\nAjut: Contracte de 100.000 € (fase 1) + fins a 300.000
+  € (fase 2) + accés a centres d'assaig.\nFitxa: https://www.diana.nato.
+ int/challenges.html
+CATEGORIES:internacional,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.diana.nato.int/challenges.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 OTAN – DIANA · NATO DIANA Challenge Programme — vigil
+ ar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-misiones-tancament-20270522@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270522
+DTEND;VALUE=DATE:20270523
+SUMMARY:🔴 CDTI · Misiones Ciencia e Innovación — tancament (estimada
+ )
+DESCRIPTION:Darrera revisió: tancament estimat el 12/06/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Consorcis de 3–6 empreses espan
+ yoles (mínim 1 pime).\nAjut: Projectes de 3\,5–10 M€\; 60 M€ amplia
+ bles a 150 M€ (2026).\nFitxa: https://www.cdti.es/ayudas
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.cdti.es/ayudas
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 CDTI · Misiones Ciencia e Innovación — tancament (esti
+ mada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:women-techeu-tall-20270524@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270524
+DTEND;VALUE=DATE:20270525
+SUMMARY:🟠 Comissió Europea – EIC · Women TechEU — tall
+DESCRIPTION:Preparar proposta per al tall del 08/07/2027\nData confirmada.\
+ nÀmbit: Startups deep tech liderades per dones a la UE i associats.\nAjut
+ : 75.000 € + mentoria (l'esborrany 2027 el duplica a 150.000 €).\nFitx
+ a: https://womentecheurope.eu/active-calls/
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://womentecheurope.eu/active-calls/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC · Women TechEU — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:defensa-coincidente-obertura-20270526@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270526
+DTEND;VALUE=DATE:20270527
+SUMMARY:🟢 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — obertu
+ ra (estimada)
+DESCRIPTION:Obertura estimada: Programa COINCIDENTE\nData estimada. Verific
+ ar a la font oficial.\nÀmbit: Empreses i entitats espanyoles.\nAjut: Micr
+ oempresa 70%\, petita 60%\, mitjana 40%. 2026: antidrons (975.000 €)\, I
+ A i entorn electromagnètic (805.785 €)\, sensors per a vigilància espa
+ cial (975.000 €).\nFitxa: https://tecnologiaeinnovacion.defensa.gob.es/e
+ n/colaboraci%C3%B3n-tecnol%C3%B3gica
+CATEGORIES:estat,obertura
+TRANSP:TRANSPARENT
+URL:https://tecnologiaeinnovacion.defensa.gob.es/en/colaboraci%C3%B3n-tecno
+ l%C3%B3gica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — ob
+ ertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mintur-aei-obertura-20270530@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270530
+DTEND;VALUE=DATE:20270531
+SUMMARY:🟢 Ministeri d'Indústria i Turisme (DG Indústria i PIME) · Agr
+ upaciones Empresariales Innovadoras (AEI) — obertura (estimada)
+DESCRIPTION:Obertura estimada: Agrupaciones Empresariales Innovadoras (AEI)
+ \nData estimada. Verificar a la font oficial.\nÀmbit: AEI inscrites al Re
+ gistre del Ministeri i les seves entitats associades (secpho\, CIAC\, Cata
+ loniaBio...).\nAjut: L3 R+D+i: recerca industrial 50% (fins 80%)\, desenvo
+ lupament experimental 25% (fins 60%)\, innovació pime 50%\; màx. 200.000
+  € (250.000 €) en R+D.\nFitxa: https://www.mintur.gob.es/portalayudas/
+ agrupacionesempresariales
+CATEGORIES:estat,obertura
+TRANSP:TRANSPARENT
+URL:https://www.mintur.gob.es/portalayudas/agrupacionesempresariales
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Ministeri d'Indústria i Turisme (DG Indústria i PIME) ·
+  Agrupaciones Empresariales Innovadoras (AEI) — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-exploracio-tecnologica-preparar-20270530@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270530
+DTEND;VALUE=DATE:20270531
+SUMMARY:🟡 ACCIÓ · Projectes d'exploració tecnològica (línia R+D+i 2
+ 026) — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 29/07/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Empreses amb establiment
+  operatiu a Catalunya\, sense restricció sectorial.\nAjut: 75% de la desp
+ esa\, màxim 30.000 € (projecte ~40.000 €)\; pressupost mínim 20.000 
+ €\; 10 mesos\; bestreta 60%\; auditoria al 100% fins 1.500 €.\nFitxa: 
+ https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserve
+ is/26043-projectes-exploracio-tecnologica
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26043-projectes-exploracio-tecnologica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 ACCIÓ · Projectes d'exploració tecnològica (línia R+D
+ +i 2026) — preparar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-automocio-mobilitat-preparar-20270530@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270530
+DTEND;VALUE=DATE:20270531
+SUMMARY:🟡 ACCIÓ · Projectes d'innovació tecnològica per al sector de
+  l'automòbil i la mobilitat (línia R+D+i 2026) — preparar (estimada)
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 29/07/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Empreses del sector auto
+ moció/mobilitat i de la seva cadena de subministrament amb establiment a 
+ Catalunya.\nAjut: Fins al 45%\, màxim 90.000 €\; pressupost mínim 40.0
+ 00 €.\nFitxa: https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-
+ tecnologica-per-al-sector-de-lautomobil-i-la-mobilitat-2026/
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tecnologica-p
+ er-al-sector-de-lautomobil-i-la-mobilitat-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 ACCIÓ · Projectes d'innovació tecnològica per al secto
+ r de l'automòbil i la mobilitat (línia R+D+i 2026) — preparar (estimad
+ a)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-rd-quimic-preparar-20270530@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270530
+DTEND;VALUE=DATE:20270531
+SUMMARY:🟡 ACCIÓ · Projectes de recerca aplicada i desenvolupament tecn
+ ològic per a la cadena de valor del sector químic — preparar (estimada
+ )
+DESCRIPTION:Preparar projecte i socis: obertura estimada el 29/07/2027\nDat
+ a estimada. Verificar a la font oficial.\nÀmbit: Empreses de la cadena de
+  valor química amb establiment a Catalunya.\nAjut: Màxim 250.000 €\; p
+ ressupost mínim 120.000 €\; 30 mesos.\nFitxa: https://www.accio.gencat.
+ cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/26049-subvencions-proj
+ ectes-rd-sector-quimic
+CATEGORIES:catalunya,preparar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26049-subvencions-projectes-rd-sector-quimic
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟡 ACCIÓ · Projectes de recerca aplicada i desenvolupament 
+ tecnològic per a la cadena de valor del sector químic — preparar (esti
+ mada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nato-diana-obertura-20270602@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270602
+DTEND;VALUE=DATE:20270603
+SUMMARY:🟢 OTAN – DIANA · NATO DIANA Challenge Programme — obertura 
+ (estimada)
+DESCRIPTION:Obertura estimada: NATO DIANA Challenge Programme\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Països membres de l'OTAN (Espany
+ a elegible).\nAjut: Contracte de 100.000 € (fase 1) + fins a 300.000 €
+  (fase 2) + accés a centres d'assaig.\nFitxa: https://www.diana.nato.int/
+ challenges.html
+CATEGORIES:internacional,obertura
+TRANSP:TRANSPARENT
+URL:https://www.diana.nato.int/challenges.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 OTAN – DIANA · NATO DIANA Challenge Programme — obert
+ ura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eit-urban-mobility-tancament-20270603@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270603
+DTEND;VALUE=DATE:20270604
+SUMMARY:🔴 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility –
+  convocatòries (startups i innovació estratègica) — tancament
+DESCRIPTION:Tall EIT Urban Mobility – convocatòries (startups i innovaci
+ ó estratègica)\nData confirmada.\nÀmbit: UE + associats.\nAjut: Financi
+ al Support to Startups i Strategic Innovation (imports per convocatòria\;
+  no verificats).\nFitxa: https://www.eiturbanmobility.eu/call-for-proposal
+ s/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.eiturbanmobility.eu/call-for-proposals/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility
+  – convocatòries (startups i innovació estratègica) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bcn-impulsem-el-que-fas-vigilar-20270603@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270603
+DTEND;VALUE=DATE:20270604
+SUMMARY:👀 Ajuntament de Barcelona / Barcelona Activa · Impulsem el que 
+ fas — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Seu o centre de treball a la 
+ ciutat de Barcelona\; facturació ≤1 M€ o ≤20 treballadors.\nAjut: F
+ ins a 40.000 €\, 12 mesos\; 8 línies.\nFitxa: https://empreses.barcelon
+ activa.cat/en/impulsem-el-que-fas-2026
+CATEGORIES:local,vigilar
+TRANSP:TRANSPARENT
+URL:https://empreses.barcelonactiva.cat/en/impulsem-el-que-fas-2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Ajuntament de Barcelona / Barcelona Activa · Impulsem el 
+ que fas — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mintur-aei-tancament-20270605@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270605
+DTEND;VALUE=DATE:20270606
+SUMMARY:🔴 Ministeri d'Indústria i Turisme (DG Indústria i PIME) · Agr
+ upaciones Empresariales Innovadoras (AEI) — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 26/06/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: AEI inscrites al Registre del Min
+ isteri i les seves entitats associades (secpho\, CIAC\, CataloniaBio...).\
+ nAjut: L3 R+D+i: recerca industrial 50% (fins 80%)\, desenvolupament exper
+ imental 25% (fins 60%)\, innovació pime 50%\; màx. 200.000 € (250.000 
+ €) en R+D.\nFitxa: https://www.mintur.gob.es/portalayudas/agrupacionesem
+ presariales
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.mintur.gob.es/portalayudas/agrupacionesempresariales
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Ministeri d'Indústria i Turisme (DG Indústria i PIME) ·
+  Agrupaciones Empresariales Innovadoras (AEI) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aei-pruebas-concepto-vigilar-20270605@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270605
+DTEND;VALUE=DATE:20270606
+SUMMARY:👀 Agencia Estatal de Investigación · Pruebas de Concepto — v
+ igilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Grups de recerca amb projecte
+ s vigents del Pla Estatal.\nAjut: Fins a 300.000 €\, 2 anys\; 30 M€.\n
+ Fitxa: https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i
+ -d-i-para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+CATEGORIES:estat,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i
+ -para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Agencia Estatal de Investigación · Pruebas de Concepto 
+ — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdti-misiones-tancament-20270612@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270612
+DTEND;VALUE=DATE:20270613
+SUMMARY:🔴 CDTI · Misiones Ciencia e Innovación — tancament (estimada
+ )
+DESCRIPTION:Tancament estimat: Misiones Ciencia e Innovación\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Consorcis de 3–6 empreses espan
+ yoles (mínim 1 pime).\nAjut: Projectes de 3\,5–10 M€\; 60 M€ amplia
+ bles a 150 M€ (2026).\nFitxa: https://www.cdti.es/ayudas
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.cdti.es/ayudas
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 CDTI · Misiones Ciencia e Innovación — tancament (esti
+ mada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nato-diana-tancament-20270612@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270612
+DTEND;VALUE=DATE:20270613
+SUMMARY:🔴 OTAN – DIANA · NATO DIANA Challenge Programme — tancament
+  (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 03/07/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Països membres de l'OTAN (Espany
+ a elegible).\nAjut: Contracte de 100.000 € (fase 1) + fins a 300.000 €
+  (fase 2) + accés a centres d'assaig.\nFitxa: https://www.diana.nato.int/
+ challenges.html
+CATEGORIES:internacional,tancament
+TRANSP:TRANSPARENT
+URL:https://www.diana.nato.int/challenges.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 OTAN – DIANA · NATO DIANA Challenge Programme — tanca
+ ment (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ub-f2i-vigilar-20270617@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270617
+DTEND;VALUE=DATE:20270618
+SUMMARY:👀 Universitat de Barcelona / Fundació Bosch i Gimpera · F2I 
+ – Fons per a l'Impuls de la Innovació (UB) — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Grups de recerca de la UB (ti
+ tular o cotitular del coneixement).\nAjut: 100.000 € en total\, fins a 2
+ 5.000 €/projecte de prova de concepte + Mentor in Residence.\nFitxa: htt
+ ps://f2i.fbg.ub.edu/
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://f2i.fbg.ub.edu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 Universitat de Barcelona / Fundació Bosch i Gimpera · F2
+ I – Fons per a l'Impuls de la Innovació (UB) — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bcn-impulsem-el-que-fas-obertura-20270617@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270617
+DTEND;VALUE=DATE:20270618
+SUMMARY:🟢 Ajuntament de Barcelona / Barcelona Activa · Impulsem el que 
+ fas — obertura (estimada)
+DESCRIPTION:Obertura estimada: Impulsem el que fas\nData estimada. Verifica
+ r a la font oficial.\nÀmbit: Seu o centre de treball a la ciutat de Barce
+ lona\; facturació ≤1 M€ o ≤20 treballadors.\nAjut: Fins a 40.000 
+ €\, 12 mesos\; 8 línies.\nFitxa: https://empreses.barcelonactiva.cat/en
+ /impulsem-el-que-fas-2026
+CATEGORIES:local,obertura
+TRANSP:TRANSPARENT
+URL:https://empreses.barcelonactiva.cat/en/impulsem-el-que-fas-2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Ajuntament de Barcelona / Barcelona Activa · Impulsem el 
+ que fas — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aei-pruebas-concepto-obertura-20270619@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270619
+DTEND;VALUE=DATE:20270620
+SUMMARY:🟢 Agencia Estatal de Investigación · Pruebas de Concepto — o
+ bertura (estimada)
+DESCRIPTION:Obertura estimada: Pruebas de Concepto\nData estimada. Verifica
+ r a la font oficial.\nÀmbit: Grups de recerca amb projectes vigents del P
+ la Estatal.\nAjut: Fins a 300.000 €\, 2 anys\; 30 M€.\nFitxa: https://
+ www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i-para-la-re
+ alizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+CATEGORIES:estat,obertura
+TRANSP:TRANSPARENT
+URL:https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i
+ -para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Agencia Estatal de Investigación · Pruebas de Concepto 
+ — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aei-pruebas-concepto-tancament-20270619@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270619
+DTEND;VALUE=DATE:20270620
+SUMMARY:🔴 Agencia Estatal de Investigación · Pruebas de Concepto — t
+ ancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 10/07/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Grups de recerca amb projectes vi
+ gents del Pla Estatal.\nAjut: Fins a 300.000 €\, 2 anys\; 30 M€.\nFitx
+ a: https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i
+ -para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i
+ -para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Agencia Estatal de Investigación · Pruebas de Concepto 
+ — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:mintur-aei-tancament-20270626@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270626
+DTEND;VALUE=DATE:20270627
+SUMMARY:🔴 Ministeri d'Indústria i Turisme (DG Indústria i PIME) · Agr
+ upaciones Empresariales Innovadoras (AEI) — tancament (estimada)
+DESCRIPTION:Tancament estimat: Agrupaciones Empresariales Innovadoras (AEI)
+ \nData estimada. Verificar a la font oficial.\nÀmbit: AEI inscrites al Re
+ gistre del Ministeri i les seves entitats associades (secpho\, CIAC\, Cata
+ loniaBio...).\nAjut: L3 R+D+i: recerca industrial 50% (fins 80%)\, desenvo
+ lupament experimental 25% (fins 60%)\, innovació pime 50%\; màx. 200.000
+  € (250.000 €) en R+D.\nFitxa: https://www.mintur.gob.es/portalayudas/
+ agrupacionesempresariales
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.mintur.gob.es/portalayudas/agrupacionesempresariales
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Ministeri d'Indústria i Turisme (DG Indústria i PIME) ·
+  Agrupaciones Empresariales Innovadoras (AEI) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bcn-impulsem-el-que-fas-tancament-20270626@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270626
+DTEND;VALUE=DATE:20270627
+SUMMARY:🔴 Ajuntament de Barcelona / Barcelona Activa · Impulsem el que 
+ fas — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 17/07/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Seu o centre de treball a la ciut
+ at de Barcelona\; facturació ≤1 M€ o ≤20 treballadors.\nAjut: Fins 
+ a 40.000 €\, 12 mesos\; 8 línies.\nFitxa: https://empreses.barcelonacti
+ va.cat/en/impulsem-el-que-fas-2026
+CATEGORIES:local,tancament
+TRANSP:TRANSPARENT
+URL:https://empreses.barcelonactiva.cat/en/impulsem-el-que-fas-2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Ajuntament de Barcelona / Barcelona Activa · Impulsem el 
+ que fas — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-nuclis-rd-tancament-20270630@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270630
+DTEND;VALUE=DATE:20270701
+SUMMARY:🔴 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — tanc
+ ament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 21/07/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Empreses amb establiment operatiu
+  a Catalunya\; poden participar centres TECNIO.\nAjut: Màxim 250.000 €/
+ projecte\; despesa mínima 120.000 €\; 25–70% empresa\, 100% TECNIO.\n
+ Fitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — 
+ tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ub-f2i-obertura-20270701@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270701
+DTEND;VALUE=DATE:20270702
+SUMMARY:🟢 Universitat de Barcelona / Fundació Bosch i Gimpera · F2I 
+ – Fons per a l'Impuls de la Innovació (UB) — obertura (estimada)
+DESCRIPTION:Obertura estimada: F2I – Fons per a l'Impuls de la Innovació
+  (UB)\nData estimada. Verificar a la font oficial.\nÀmbit: Grups de recer
+ ca de la UB (titular o cotitular del coneixement).\nAjut: 100.000 € en t
+ otal\, fins a 25.000 €/projecte de prova de concepte + Mentor in Residen
+ ce.\nFitxa: https://f2i.fbg.ub.edu/
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://f2i.fbg.ub.edu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 Universitat de Barcelona / Fundació Bosch i Gimpera · F2
+ I – Fons per a l'Impuls de la Innovació (UB) — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-feder-innovacio-pimes-tancament-20270701@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270701
+DTEND;VALUE=DATE:20270702
+SUMMARY:🔴 ACCIÓ · Projectes d'innovació tecnològica de pimes (FEDER)
+  — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 22/07/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Pimes amb establiment a Catalunya
+ .\nAjut: Fins al 40% (mínim de projecte 100.000 €). Línia de 5 M€ (2
+ 025).\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empre
+ sa/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Projectes d'innovació tecnològica de pimes (FE
+ DER) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:nato-diana-tancament-20270703@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270703
+DTEND;VALUE=DATE:20270704
+SUMMARY:🔴 OTAN – DIANA · NATO DIANA Challenge Programme — tancament
+  (estimada)
+DESCRIPTION:Tancament estimat: NATO DIANA Challenge Programme\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Països membres de l'OTAN (Espany
+ a elegible).\nAjut: Contracte de 100.000 € (fase 1) + fins a 300.000 €
+  (fase 2) + accés a centres d'assaig.\nFitxa: https://www.diana.nato.int/
+ challenges.html
+CATEGORIES:internacional,tancament
+TRANSP:TRANSPARENT
+URL:https://www.diana.nato.int/challenges.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 OTAN – DIANA · NATO DIANA Challenge Programme — tanca
+ ment (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:defensa-coincidente-tancament-20270706@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270706
+DTEND;VALUE=DATE:20270707
+SUMMARY:🔴 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — tancam
+ ent (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 27/07/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Empreses i entitats espanyoles.\n
+ Ajut: Microempresa 70%\, petita 60%\, mitjana 40%. 2026: antidrons (975.00
+ 0 €)\, IA i entorn electromagnètic (805.785 €)\, sensors per a vigil
+ ància espacial (975.000 €).\nFitxa: https://tecnologiaeinnovacion.defen
+ sa.gob.es/en/colaboraci%C3%B3n-tecnol%C3%B3gica
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://tecnologiaeinnovacion.defensa.gob.es/en/colaboraci%C3%B3n-tecno
+ l%C3%B3gica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — ta
+ ncament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:women-techeu-tancament-20270708@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270708
+DTEND;VALUE=DATE:20270709
+SUMMARY:🔴 Comissió Europea – EIC · Women TechEU — tancament
+DESCRIPTION:Tall Women TechEU\nData confirmada.\nÀmbit: Startups deep tech
+  liderades per dones a la UE i associats.\nAjut: 75.000 € + mentoria (l'
+ esborrany 2027 el duplica a 150.000 €).\nFitxa: https://womentecheurope.
+ eu/active-calls/
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://womentecheurope.eu/active-calls/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · Women TechEU — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-startup-capital-tancament-20270709@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270709
+DTEND;VALUE=DATE:20270710
+SUMMARY:🔴 ACCIÓ · Startup Capital — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 30/07/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Startups amb establiment a Catalu
+ nya.\nAjut: 75%\, ~100.000 € (pressupost mínim 135.000 €)\, 24 mesos.
+ \nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Startup Capital — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aei-pruebas-concepto-tancament-20270710@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270710
+DTEND;VALUE=DATE:20270711
+SUMMARY:🔴 Agencia Estatal de Investigación · Pruebas de Concepto — t
+ ancament (estimada)
+DESCRIPTION:Tancament estimat: Pruebas de Concepto\nData estimada. Verifica
+ r a la font oficial.\nÀmbit: Grups de recerca amb projectes vigents del P
+ la Estatal.\nAjut: Fins a 300.000 €\, 2 anys\; 30 M€.\nFitxa: https://
+ www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i-para-la-re
+ alizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i
+ -para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Agencia Estatal de Investigación · Pruebas de Concepto 
+ — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-exploracio-tecnologica-vigilar-20270715@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270715
+DTEND;VALUE=DATE:20270716
+SUMMARY:👀 ACCIÓ · Projectes d'exploració tecnològica (línia R+D+i 2
+ 026) — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Empreses amb establiment oper
+ atiu a Catalunya\, sense restricció sectorial.\nAjut: 75% de la despesa\,
+  màxim 30.000 € (projecte ~40.000 €)\; pressupost mínim 20.000 €\;
+  10 mesos\; bestreta 60%\; auditoria al 100% fins 1.500 €.\nFitxa: https
+ ://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/26
+ 043-projectes-exploracio-tecnologica
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26043-projectes-exploracio-tecnologica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ · Projectes d'exploració tecnològica (línia R+D
+ +i 2026) — vigilar (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-automocio-mobilitat-vigilar-20270715@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270715
+DTEND;VALUE=DATE:20270716
+SUMMARY:👀 ACCIÓ · Projectes d'innovació tecnològica per al sector de
+  l'automòbil i la mobilitat (línia R+D+i 2026) — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Empreses del sector automoci
+ ó/mobilitat i de la seva cadena de subministrament amb establiment a Cata
+ lunya.\nAjut: Fins al 45%\, màxim 90.000 €\; pressupost mínim 40.000 
+ €.\nFitxa: https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tec
+ nologica-per-al-sector-de-lautomobil-i-la-mobilitat-2026/
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tecnologica-p
+ er-al-sector-de-lautomobil-i-la-mobilitat-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ · Projectes d'innovació tecnològica per al secto
+ r de l'automòbil i la mobilitat (línia R+D+i 2026) — vigilar (estimada
+ )
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-rd-quimic-vigilar-20270715@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270715
+DTEND;VALUE=DATE:20270716
+SUMMARY:👀 ACCIÓ · Projectes de recerca aplicada i desenvolupament tecn
+ ològic per a la cadena de valor del sector químic — vigilar (estimada)
+DESCRIPTION:Vigilar la publicació de les bases (DOGC/BOE/portal)\nData est
+ imada. Verificar a la font oficial.\nÀmbit: Empreses de la cadena de valo
+ r química amb establiment a Catalunya.\nAjut: Màxim 250.000 €\; pressu
+ post mínim 120.000 €\; 30 mesos.\nFitxa: https://www.accio.gencat.cat/c
+ a/serveis/cercador-ajuts-empresa/ajutsiserveis/26049-subvencions-projectes
+ -rd-sector-quimic
+CATEGORIES:catalunya,vigilar
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26049-subvencions-projectes-rd-sector-quimic
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:👀 ACCIÓ · Projectes de recerca aplicada i desenvolupament 
+ tecnològic per a la cadena de valor del sector químic — vigilar (estim
+ ada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bcn-impulsem-el-que-fas-tancament-20270717@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270717
+DTEND;VALUE=DATE:20270718
+SUMMARY:🔴 Ajuntament de Barcelona / Barcelona Activa · Impulsem el que 
+ fas — tancament (estimada)
+DESCRIPTION:Tancament estimat: Impulsem el que fas\nData estimada. Verifica
+ r a la font oficial.\nÀmbit: Seu o centre de treball a la ciutat de Barce
+ lona\; facturació ≤1 M€ o ≤20 treballadors.\nAjut: Fins a 40.000 
+ €\, 12 mesos\; 8 línies.\nFitxa: https://empreses.barcelonactiva.cat/en
+ /impulsem-el-que-fas-2026
+CATEGORIES:local,tancament
+TRANSP:TRANSPARENT
+URL:https://empreses.barcelonactiva.cat/en/impulsem-el-que-fas-2026
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Ajuntament de Barcelona / Barcelona Activa · Impulsem el 
+ que fas — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-nuclis-rd-tancament-20270721@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270721
+DTEND;VALUE=DATE:20270722
+SUMMARY:🔴 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — tanc
+ ament (estimada)
+DESCRIPTION:Tancament estimat: Nuclis d'R+D (individuals i en cooperació)\
+ nData estimada. Verificar a la font oficial.\nÀmbit: Empreses amb establi
+ ment operatiu a Catalunya\; poden participar centres TECNIO.\nAjut: Màxim
+  250.000 €/projecte\; despesa mínima 120.000 €\; 25–70% empresa\, 1
+ 00% TECNIO.\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts
+ -empresa/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Nuclis d'R+D (individuals i en cooperació) — 
+ tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-feder-innovacio-pimes-tancament-20270722@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270722
+DTEND;VALUE=DATE:20270723
+SUMMARY:🔴 ACCIÓ · Projectes d'innovació tecnològica de pimes (FEDER)
+  — tancament (estimada)
+DESCRIPTION:Tancament estimat: Projectes d'innovació tecnològica de pimes
+  (FEDER)\nData estimada. Verificar a la font oficial.\nÀmbit: Pimes amb e
+ stabliment a Catalunya.\nAjut: Fins al 40% (mínim de projecte 100.000 €
+ ). Línia de 5 M€ (2025).\nFitxa: https://www.accio.gencat.cat/ca/servei
+ s/cercador-ajuts-empresa/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Projectes d'innovació tecnològica de pimes (FE
+ DER) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:defensa-coincidente-tancament-20270727@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270727
+DTEND;VALUE=DATE:20270728
+SUMMARY:🔴 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — tancam
+ ent (estimada)
+DESCRIPTION:Tancament estimat: Programa COINCIDENTE\nData estimada. Verific
+ ar a la font oficial.\nÀmbit: Empreses i entitats espanyoles.\nAjut: Micr
+ oempresa 70%\, petita 60%\, mitjana 40%. 2026: antidrons (975.000 €)\, I
+ A i entorn electromagnètic (805.785 €)\, sensors per a vigilància espa
+ cial (975.000 €).\nFitxa: https://tecnologiaeinnovacion.defensa.gob.es/e
+ n/colaboraci%C3%B3n-tecnol%C3%B3gica
+CATEGORIES:estat,tancament
+TRANSP:TRANSPARENT
+URL:https://tecnologiaeinnovacion.defensa.gob.es/en/colaboraci%C3%B3n-tecno
+ l%C3%B3gica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Ministeri de Defensa (DGAM) · Programa COINCIDENTE — ta
+ ncament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-exploracio-tecnologica-obertura-20270729@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270729
+DTEND;VALUE=DATE:20270730
+SUMMARY:🟢 ACCIÓ · Projectes d'exploració tecnològica (línia R+D+i 2
+ 026) — obertura (estimada)
+DESCRIPTION:Obertura estimada: Projectes d'exploració tecnològica (línia
+  R+D+i 2026)\nData estimada. Verificar a la font oficial.\nÀmbit: Emprese
+ s amb establiment operatiu a Catalunya\, sense restricció sectorial.\nAju
+ t: 75% de la despesa\, màxim 30.000 € (projecte ~40.000 €)\; pressupo
+ st mínim 20.000 €\; 10 mesos\; bestreta 60%\; auditoria al 100% fins 1.
+ 500 €.\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-em
+ presa/ajutsiserveis/26043-projectes-exploracio-tecnologica
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26043-projectes-exploracio-tecnologica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 ACCIÓ · Projectes d'exploració tecnològica (línia R+D
+ +i 2026) — obertura (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-automocio-mobilitat-obertura-20270729@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270729
+DTEND;VALUE=DATE:20270730
+SUMMARY:🟢 ACCIÓ · Projectes d'innovació tecnològica per al sector de
+  l'automòbil i la mobilitat (línia R+D+i 2026) — obertura (estimada)
+DESCRIPTION:Obertura estimada: Projectes d'innovació tecnològica per al s
+ ector de l'automòbil i la mobilitat (línia R+D+i 2026)\nData estimada. V
+ erificar a la font oficial.\nÀmbit: Empreses del sector automoció/mobili
+ tat i de la seva cadena de subministrament amb establiment a Catalunya.\nA
+ jut: Fins al 45%\, màxim 90.000 €\; pressupost mínim 40.000 €.\nFitx
+ a: https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tecnologica-p
+ er-al-sector-de-lautomobil-i-la-mobilitat-2026/
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tecnologica-p
+ er-al-sector-de-lautomobil-i-la-mobilitat-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 ACCIÓ · Projectes d'innovació tecnològica per al secto
+ r de l'automòbil i la mobilitat (línia R+D+i 2026) — obertura (estimad
+ a)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-rd-quimic-obertura-20270729@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270729
+DTEND;VALUE=DATE:20270730
+SUMMARY:🟢 ACCIÓ · Projectes de recerca aplicada i desenvolupament tecn
+ ològic per a la cadena de valor del sector químic — obertura (estimada
+ )
+DESCRIPTION:Obertura estimada: Projectes de recerca aplicada i desenvolupam
+ ent tecnològic per a la cadena de valor del sector químic\nData estimada
+ . Verificar a la font oficial.\nÀmbit: Empreses de la cadena de valor qu
+ ímica amb establiment a Catalunya.\nAjut: Màxim 250.000 €\; pressupost
+  mínim 120.000 €\; 30 mesos.\nFitxa: https://www.accio.gencat.cat/ca/se
+ rveis/cercador-ajuts-empresa/ajutsiserveis/26049-subvencions-projectes-rd-
+ sector-quimic
+CATEGORIES:catalunya,obertura
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26049-subvencions-projectes-rd-sector-quimic
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟢 ACCIÓ · Projectes de recerca aplicada i desenvolupament 
+ tecnològic per a la cadena de valor del sector químic — obertura (esti
+ mada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-startup-capital-tancament-20270730@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270730
+DTEND;VALUE=DATE:20270731
+SUMMARY:🔴 ACCIÓ · Startup Capital — tancament (estimada)
+DESCRIPTION:Tancament estimat: Startup Capital\nData estimada. Verificar a 
+ la font oficial.\nÀmbit: Startups amb establiment a Catalunya.\nAjut: 75%
+ \, ~100.000 € (pressupost mínim 135.000 €)\, 24 mesos.\nFitxa: https:
+ //www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Startup Capital — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-pathfinder-tall-20270802@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270802
+DTEND;VALUE=DATE:20270803
+SUMMARY:🟠 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open i C
+ hallenges) — tall
+DESCRIPTION:Preparar proposta per al tall del 16/09/2027\nData confirmada.\
+ nÀmbit: Consorcis d'UE + associats (Open: normalment ≥3 entitats de 3 p
+ aïsos).\nAjut: Subvenció al 100%\; fins a ~3–4 M€ per projecte (lump
+  sum el 2027).\nFitxa: https://ec.europa.eu/info/funding-tenders/opportuni
+ ties/portal/screen/opportunities/topic-details/horizon-eic-2026-pathfinder
+ open
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/o
+ pportunities/topic-details/horizon-eic-2026-pathfinderopen
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open
+  i Challenges) — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-transition-tall-20270802@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270802
+DTEND;VALUE=DATE:20270803
+SUMMARY:🟠 Comissió Europea – EIC · EIC Transition — tall
+DESCRIPTION:Preparar proposta per al tall del 16/09/2027\nData confirmada.\
+ nÀmbit: UE + associats\; ha de partir de resultats de Pathfinder\, ERC Po
+ C o projectes del Pilar 2.\nAjut: Fins a 2\,5 M€.\nFitxa: https://www.ko
+ wi.de/en/kowi/news/draft-eic-work-programme-2027-includes-changes-to-appli
+ cation-procedure-for-pathfinder-and-transition.aspx
+CATEGORIES:europa,tall
+TRANSP:TRANSPARENT
+URL:https://www.kowi.de/en/kowi/news/draft-eic-work-programme-2027-includes
+ -changes-to-application-procedure-for-pathfinder-and-transition.aspx
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🟠 Comissió Europea – EIC · EIC Transition — tall
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-industrial-tech-tancament-20270814@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270814
+DTEND;VALUE=DATE:20270815
+SUMMARY:🔴 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleració de
+  hardware (UPC + CIM UPC) — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 04/09/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Projectes de recerca i spin-offs 
+ a Catalunya.\nAjut: Gratuït\, en espècie: 52 h tècniques (fabricació a
+ dditiva\, robòtica\, IoT) + 40 h de negoci i mentoria.\nFitxa: https://ww
+ w.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-industrial-tech
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-indu
+ strial-tech
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleraci
+ ó de hardware (UPC + CIM UPC) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-exploracio-tecnologica-tancament-20270831@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270831
+DTEND;VALUE=DATE:20270901
+SUMMARY:🔴 ACCIÓ · Projectes d'exploració tecnològica (línia R+D+i 2
+ 026) — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 21/09/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Empreses amb establiment operatiu
+  a Catalunya\, sense restricció sectorial.\nAjut: 75% de la despesa\, mà
+ xim 30.000 € (projecte ~40.000 €)\; pressupost mínim 20.000 €\; 10 
+ mesos\; bestreta 60%\; auditoria al 100% fins 1.500 €.\nFitxa: https://w
+ ww.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/26043-
+ projectes-exploracio-tecnologica
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26043-projectes-exploracio-tecnologica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Projectes d'exploració tecnològica (línia R+D
+ +i 2026) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-rd-quimic-tancament-20270901@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270901
+DTEND;VALUE=DATE:20270902
+SUMMARY:🔴 ACCIÓ · Projectes de recerca aplicada i desenvolupament tecn
+ ològic per a la cadena de valor del sector químic — tancament (estimad
+ a)
+DESCRIPTION:Darrera revisió: tancament estimat el 22/09/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Empreses de la cadena de valor qu
+ ímica amb establiment a Catalunya.\nAjut: Màxim 250.000 €\; pressupost
+  mínim 120.000 €\; 30 mesos.\nFitxa: https://www.accio.gencat.cat/ca/se
+ rveis/cercador-ajuts-empresa/ajutsiserveis/26049-subvencions-projectes-rd-
+ sector-quimic
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26049-subvencions-projectes-rd-sector-quimic
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Projectes de recerca aplicada i desenvolupament 
+ tecnològic per a la cadena de valor del sector químic — tancament (est
+ imada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-automocio-mobilitat-tancament-20270902@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270902
+DTEND;VALUE=DATE:20270903
+SUMMARY:🔴 ACCIÓ · Projectes d'innovació tecnològica per al sector de
+  l'automòbil i la mobilitat (línia R+D+i 2026) — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 23/09/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Empreses del sector automoció/mo
+ bilitat i de la seva cadena de subministrament amb establiment a Catalunya
+ .\nAjut: Fins al 45%\, màxim 90.000 €\; pressupost mínim 40.000 €.\n
+ Fitxa: https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tecnologi
+ ca-per-al-sector-de-lautomobil-i-la-mobilitat-2026/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tecnologica-p
+ er-al-sector-de-lautomobil-i-la-mobilitat-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Projectes d'innovació tecnològica per al secto
+ r de l'automòbil i la mobilitat (línia R+D+i 2026) — tancament (estima
+ da)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:upc-industrial-tech-tancament-20270904@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270904
+DTEND;VALUE=DATE:20270905
+SUMMARY:🔴 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleració de
+  hardware (UPC + CIM UPC) — tancament (estimada)
+DESCRIPTION:Tancament estimat: Industrial Tech – preacceleració de hardw
+ are (UPC + CIM UPC)\nData estimada. Verificar a la font oficial.\nÀmbit: 
+ Projectes de recerca i spin-offs a Catalunya.\nAjut: Gratuït\, en espèci
+ e: 52 h tècniques (fabricació additiva\, robòtica\, IoT) + 40 h de nego
+ ci i mentoria.\nFitxa: https://www.upc.edu/emprenupc/ca/noticies/nova-edic
+ io-del-programa-industrial-tech
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-indu
+ strial-tech
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 UPC / CIM UPC (FSE+) · Industrial Tech – preacceleraci
+ ó de hardware (UPC + CIM UPC) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ub-f2i-tancament-20270907@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270907
+DTEND;VALUE=DATE:20270908
+SUMMARY:🔴 Universitat de Barcelona / Fundació Bosch i Gimpera · F2I 
+ – Fons per a l'Impuls de la Innovació (UB) — tancament (estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 28/09/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Grups de recerca de la UB (titula
+ r o cotitular del coneixement).\nAjut: 100.000 € en total\, fins a 25.00
+ 0 €/projecte de prova de concepte + Mentor in Residence.\nFitxa: https:/
+ /f2i.fbg.ub.edu/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://f2i.fbg.ub.edu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Universitat de Barcelona / Fundació Bosch i Gimpera · F2
+ I – Fons per a l'Impuls de la Innovació (UB) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edf-eudis-tancament-20270908@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270908
+DTEND;VALUE=DATE:20270909
+SUMMARY:🔴 Comissió Europea – DG DEFIS · European Defence Fund (EDF) 
+ – convocatòries pimes i tecnologies disruptives (EUDIS) — tancament (
+ estimada)
+DESCRIPTION:Darrera revisió: tancament estimat el 29/09/2027\nData estimad
+ a. Verificar a la font oficial.\nÀmbit: Entitats de la UE i Noruega no co
+ ntrolades per tercers països\; consorcis.\nAjut: 2026: SME development 30
+  M€ (≤6 M€/projecte)\; pimes i organismes de recerca 35 M€ (≤5 M
+ €)\; disruptives 27 M€ (≤3 M€).\nFitxa: https://eudis.europa.eu/eu
+ dis-tracks/sme-calls_en
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://eudis.europa.eu/eudis-tracks/sme-calls_en
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – DG DEFIS · European Defence Fund (E
+ DF) – convocatòries pimes i tecnologies disruptives (EUDIS) — tancame
+ nt (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-pathfinder-tancament-20270916@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270916
+DTEND;VALUE=DATE:20270917
+SUMMARY:🔴 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open i C
+ hallenges) — tancament
+DESCRIPTION:Tall EIC Pathfinder (Open i Challenges)\nData confirmada.\nÀmb
+ it: Consorcis d'UE + associats (Open: normalment ≥3 entitats de 3 païso
+ s).\nAjut: Subvenció al 100%\; fins a ~3–4 M€ per projecte (lump sum 
+ el 2027).\nFitxa: https://ec.europa.eu/info/funding-tenders/opportunities/
+ portal/screen/opportunities/topic-details/horizon-eic-2026-pathfinderopen
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/o
+ pportunities/topic-details/horizon-eic-2026-pathfinderopen
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open
+  i Challenges) — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eic-transition-tancament-20270916@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270916
+DTEND;VALUE=DATE:20270917
+SUMMARY:🔴 Comissió Europea – EIC · EIC Transition — tancament
+DESCRIPTION:Tall EIC Transition\nData confirmada.\nÀmbit: UE + associats\;
+  ha de partir de resultats de Pathfinder\, ERC PoC o projectes del Pilar 2
+ .\nAjut: Fins a 2\,5 M€.\nFitxa: https://www.kowi.de/en/kowi/news/draft-
+ eic-work-programme-2027-includes-changes-to-application-procedure-for-path
+ finder-and-transition.aspx
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://www.kowi.de/en/kowi/news/draft-eic-work-programme-2027-includes
+ -changes-to-application-procedure-for-pathfinder-and-transition.aspx
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – EIC · EIC Transition — tancament
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-exploracio-tecnologica-tancament-20270921@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270921
+DTEND;VALUE=DATE:20270922
+SUMMARY:🔴 ACCIÓ · Projectes d'exploració tecnològica (línia R+D+i 2
+ 026) — tancament (estimada)
+DESCRIPTION:Tancament estimat: Projectes d'exploració tecnològica (línia
+  R+D+i 2026)\nData estimada. Verificar a la font oficial.\nÀmbit: Emprese
+ s amb establiment operatiu a Catalunya\, sense restricció sectorial.\nAju
+ t: 75% de la despesa\, màxim 30.000 € (projecte ~40.000 €)\; pressupo
+ st mínim 20.000 €\; 10 mesos\; bestreta 60%\; auditoria al 100% fins 1.
+ 500 €.\nFitxa: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-em
+ presa/ajutsiserveis/26043-projectes-exploracio-tecnologica
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26043-projectes-exploracio-tecnologica
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Projectes d'exploració tecnològica (línia R+D
+ +i 2026) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-rd-quimic-tancament-20270922@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270922
+DTEND;VALUE=DATE:20270923
+SUMMARY:🔴 ACCIÓ · Projectes de recerca aplicada i desenvolupament tecn
+ ològic per a la cadena de valor del sector químic — tancament (estimad
+ a)
+DESCRIPTION:Tancament estimat: Projectes de recerca aplicada i desenvolupam
+ ent tecnològic per a la cadena de valor del sector químic\nData estimada
+ . Verificar a la font oficial.\nÀmbit: Empreses de la cadena de valor qu
+ ímica amb establiment a Catalunya.\nAjut: Màxim 250.000 €\; pressupost
+  mínim 120.000 €\; 30 mesos.\nFitxa: https://www.accio.gencat.cat/ca/se
+ rveis/cercador-ajuts-empresa/ajutsiserveis/26049-subvencions-projectes-rd-
+ sector-quimic
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsise
+ rveis/26049-subvencions-projectes-rd-sector-quimic
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Projectes de recerca aplicada i desenvolupament 
+ tecnològic per a la cadena de valor del sector químic — tancament (est
+ imada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:accio-automocio-mobilitat-tancament-20270923@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270923
+DTEND;VALUE=DATE:20270924
+SUMMARY:🔴 ACCIÓ · Projectes d'innovació tecnològica per al sector de
+  l'automòbil i la mobilitat (línia R+D+i 2026) — tancament (estimada)
+DESCRIPTION:Tancament estimat: Projectes d'innovació tecnològica per al s
+ ector de l'automòbil i la mobilitat (línia R+D+i 2026)\nData estimada. V
+ erificar a la font oficial.\nÀmbit: Empreses del sector automoció/mobili
+ tat i de la seva cadena de subministrament amb establiment a Catalunya.\nA
+ jut: Fins al 45%\, màxim 90.000 €\; pressupost mínim 40.000 €.\nFitx
+ a: https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tecnologica-p
+ er-al-sector-de-lautomobil-i-la-mobilitat-2026/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tecnologica-p
+ er-al-sector-de-lautomobil-i-la-mobilitat-2026/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 ACCIÓ · Projectes d'innovació tecnològica per al secto
+ r de l'automòbil i la mobilitat (línia R+D+i 2026) — tancament (estima
+ da)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ub-f2i-tancament-20270928@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270928
+DTEND;VALUE=DATE:20270929
+SUMMARY:🔴 Universitat de Barcelona / Fundació Bosch i Gimpera · F2I 
+ – Fons per a l'Impuls de la Innovació (UB) — tancament (estimada)
+DESCRIPTION:Tancament estimat: F2I – Fons per a l'Impuls de la Innovació
+  (UB)\nData estimada. Verificar a la font oficial.\nÀmbit: Grups de recer
+ ca de la UB (titular o cotitular del coneixement).\nAjut: 100.000 € en t
+ otal\, fins a 25.000 €/projecte de prova de concepte + Mentor in Residen
+ ce.\nFitxa: https://f2i.fbg.ub.edu/
+CATEGORIES:catalunya,tancament
+TRANSP:TRANSPARENT
+URL:https://f2i.fbg.ub.edu/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Universitat de Barcelona / Fundació Bosch i Gimpera · F2
+ I – Fons per a l'Impuls de la Innovació (UB) — tancament (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:edf-eudis-tancament-20270929@radar-ajuts.stimulo
+DTSTAMP:20261006T060000Z
+DTSTART;VALUE=DATE:20270929
+DTEND;VALUE=DATE:20270930
+SUMMARY:🔴 Comissió Europea – DG DEFIS · European Defence Fund (EDF) 
+ – convocatòries pimes i tecnologies disruptives (EUDIS) — tancament (
+ estimada)
+DESCRIPTION:Tancament estimat: European Defence Fund (EDF) – convocatòri
+ es pimes i tecnologies disruptives (EUDIS)\nData estimada. Verificar a la 
+ font oficial.\nÀmbit: Entitats de la UE i Noruega no controlades per terc
+ ers països\; consorcis.\nAjut: 2026: SME development 30 M€ (≤6 M€/p
+ rojecte)\; pimes i organismes de recerca 35 M€ (≤5 M€)\; disruptives
+  27 M€ (≤3 M€).\nFitxa: https://eudis.europa.eu/eudis-tracks/sme-cal
+ ls_en
+CATEGORIES:europa,tancament
+TRANSP:TRANSPARENT
+URL:https://eudis.europa.eu/eudis-tracks/sme-calls_en
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:🔴 Comissió Europea – DG DEFIS · European Defence Fund (E
+ DF) – convocatòries pimes i tecnologies disruptives (EUDIS) — tancame
+ nt (estimada)
+TRIGGER;RELATED=START:PT9H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

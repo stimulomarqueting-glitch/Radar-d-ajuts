@@ -1,0 +1,40 @@
+# Jerarquia geogràfica del radar.
+# Una convocatòria declara a `zones` on ha d'estar establert el beneficiari.
+# Un client és elegible si alguna d'aquestes zones és la seva o un avantpassat de la seva.
+# Exemple: un client a ES-CT-B (província de Barcelona) és elegible per a ES-CT, ES, EU i INT.
+
+INT: {nom: "Internacional (sense restricció territorial)", pare: null}
+EU: {nom: "UE + països associats", pare: INT}
+# Nota: programes amb elegibilitat no europea (p. ex. NATO DIANA, països OTAN) es marquen com a INT
+# i el detall es descriu a `ambit_geografic` de la convocatòria.
+
+ES: {nom: "Espanya", pare: EU}
+PT: {nom: "Portugal", pare: EU}
+FR: {nom: "França", pare: EU}
+
+# Comunitats autònomes (codis ISO 3166-2:ES)
+ES-CT: {nom: "Catalunya", pare: ES}
+ES-AN: {nom: "Andalusia", pare: ES}
+ES-AR: {nom: "Aragó", pare: ES}
+ES-IB: {nom: "Illes Balears", pare: ES}
+ES-CN: {nom: "Canàries", pare: ES}
+ES-CL: {nom: "Castella i Lleó", pare: ES}
+ES-CM: {nom: "Castella-la Manxa", pare: ES}
+ES-VC: {nom: "Comunitat Valenciana", pare: ES}
+ES-EX: {nom: "Extremadura", pare: ES}
+ES-GA: {nom: "Galícia", pare: ES}
+ES-MC: {nom: "Múrcia", pare: ES}
+ES-MD: {nom: "Madrid", pare: ES}
+ES-NC: {nom: "Navarra", pare: ES}
+ES-PV: {nom: "País Basc", pare: ES}
+
+# Catalunya: províncies i àrees amb ajuts propis
+ES-CT-B: {nom: "Província de Barcelona", pare: ES-CT}
+ES-CT-AMB: {nom: "Àrea Metropolitana de Barcelona", pare: ES-CT-B}
+ES-CT-BCN: {nom: "Barcelona ciutat", pare: ES-CT-AMB}
+ES-CT-GI: {nom: "Província de Girona", pare: ES-CT}
+ES-CT-L: {nom: "Província de Lleida", pare: ES-CT}
+ES-CT-T: {nom: "Província de Tarragona", pare: ES-CT}
+
+# Andalusia (Cajamar Innova té seu a Almeria)
+ES-AN-AL: {nom: "Almeria", pare: ES-AN}

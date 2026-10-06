@@ -1,0 +1,164 @@
+# Perfils que el radar puntua: les empreses del grup (Stimulo, Inbrooll) i els clients.
+#
+# - tipus: agencia | empresa | client
+# - zona: codi de data/zones.yaml (on està establerta l'entitat)
+# - beneficiari_com: tipus d'entitat que és davant d'una convocatòria
+#     (pime, gran_empresa, startup, universitat, centre_recerca, centre_tecnologic, hospital,
+#      entitat_sense_anim_lucre, cluster_aei)
+# - rols: com pot participar (beneficiari, soci, proveidor_extern, subcontractat, assessor)
+# - focus: interessos temàtics ponderats 1-3 (vocabulari a radar/dades.py > FOCUS)
+# - paraules_clau: termes que els vigilants automàtics busquen a BDNS, F&T, TED i PLACSP
+#
+# Per afegir un client nou, copia el bloc de DOGA. El fitxer `sortida/enviaments_per_zona.csv`
+# creua cada client amb les convocatòries obertes o imminents de la seva zona.
+
+perfils:
+  stimulo:
+    nom: Stimulo
+    tipus: agencia
+    zona: ES-CT-B
+    descripcio: >
+      Agència de disseny i desenvolupament de producte (Stimulo Design SL, des del 2003). Disseny
+      industrial, enginyeria i industrialització de productes amb tecnologies profundes: medtech,
+      fotònica, quàntica, robòtica, mobilitat, agrotech, ús dual. Experiència en projectes AEI via
+      secpho (Q LEAF, SEPTIBELL, DRONSTORE II).
+    beneficiari_com: [pime]
+    rols: [beneficiari, soci, proveidor_extern, subcontractat]
+    trl: [2, 8]
+    focus:
+      deep_tech: 3
+      prova_concepte: 3
+      transferencia: 3
+      disseny: 3
+      dual: 3
+      sostenibilitat: 3
+      dispositius_medics: 2
+      salut: 2
+      mobilitat: 2
+      robotica: 2
+      agrotech: 2
+      fotonica: 2
+      economia_circular: 2
+      cooperacio: 2
+      industria: 2
+      defensa: 1
+      espai: 1
+      ia: 1
+      digital: 1
+    paraules_clau:
+      - prueba de concepto
+      - prova de concepte
+      - proof of concept
+      - prototipo
+      - prototip
+      - diseño industrial
+      - disseny industrial
+      - industrial design
+      - ecodiseño
+      - ecodisseny
+      - deep tech
+      - tecnologías disruptivas
+      - doble uso
+      - dual use
+      - transferencia de conocimiento
+      - transferència de coneixement
+      - valorización
+      - robótica
+      - robotics
+      - drones
+      - agrotech
+      - fotónica
+      - photonics
+      - producto sanitario
+      - medical device
+      - economía circular
+
+  inbrooll:
+    nom: Inbrooll
+    tipus: empresa
+    zona: ES-CT-GI
+    descripcio: >
+      Inbrooll Industries SL (Palol de Revardit, Girona). Enginyeria i fabricació per encàrrec
+      d'electrònica, mecànica, microfluídica i IoT; ISO 13485, 9001 i 14001; laboratori d'assajos.
+      Soci tecnològic estratègic de Stimulo.
+    beneficiari_com: [pime]
+    rols: [beneficiari, soci, proveidor_extern, subcontractat]
+    trl: [4, 9]
+    focus:
+      dispositius_medics: 3
+      salut: 3
+      industria: 3
+      prova_concepte: 2
+      cooperacio: 2
+      mobilitat: 2
+      digital: 2
+      economia_circular: 1
+      deep_tech: 1
+      energia: 1
+    paraules_clau:
+      - fabricación de dispositivos médicos
+      - microfluídica
+      - microfluidics
+      - electrónica embebida
+      - IoT
+      - industrialización
+      - punto de recarga
+
+  doga:
+    nom: DOGA
+    tipus: client
+    zona: ES-CT-B
+    contacte: Responsable de nous productes
+    descripcio: >
+      DOGA SA (Abrera, Baix Llobregat). Motors i motorreductors DC i brushless (sèrie BRL100,
+      24 V, CANopen), sistemes de neteja de parabrisa, elevavidres. Vehicle industrial, bus,
+      ferrocarril, maquinària agrícola i d'obra, nàutica. GRAN EMPRESA (378 treballadors a la SA,
+      grup >1.000; propietat de Nazca Capital): intensitats de gran empresa, +15 punts si coopera
+      amb pimes. Va obtenir PERTE VEC II (2023).
+    beneficiari_com: [gran_empresa]
+    rols: [beneficiari, soci]
+    trl: [4, 9]
+    focus:
+      automocio: 3
+      mobilitat: 3
+      industria: 3
+      prova_concepte: 2
+      robotica: 2
+      agrotech: 2
+      sostenibilitat: 2
+      economia_circular: 2
+      cooperacio: 2
+      energia: 1
+      dual: 1
+      digital: 1
+    paraules_clau:
+      - motor eléctrico
+      - electric motor
+      - motorreductor
+      - brushless
+      - actuador
+      - actuator
+      - vehículo industrial
+      - automoción
+      - movilidad eléctrica
+
+config:
+  # Pesos de la puntuació (0-100). Vegeu radar/puntuacio.py
+  pesos: {tematica: 40, rol: 20, zona: 15, trl: 10, impacte: 15}
+  # Dies d'antelació de cada senyal d'alerta. Vegeu radar/calendari.py
+  alertes: {preparar: 60, vigilar: 14, tancament: 21, tall: 45}
+  vigilancia:
+    paisos_ted: [ESP]
+    # CPV de serveis on Stimulo pot licitar (disseny, R+D, enginyeria, assajos)
+    cpv:
+      - "73000000"  # serveis d'R+D i consultoria relacionada
+      - "73100000"  # serveis de recerca i desenvolupament experimental
+      - "73200000"  # consultoria en R+D
+      - "73300000"  # disseny i execució d'R+D
+      - "73400000"  # R+D de seguretat i defensa
+      - "73420000"  # estudi de previabilitat i demostració tecnològica
+      - "71320000"  # serveis de disseny tècnic
+      - "71300000"  # serveis d'enginyeria
+      - "71600000"  # serveis d'assaig, anàlisi i consultoria tècnica
+      - "79930000"  # serveis de disseny especialitzat
+      - "79933000"  # serveis de suport al disseny

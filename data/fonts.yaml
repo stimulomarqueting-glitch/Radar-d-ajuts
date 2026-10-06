@@ -1,0 +1,285 @@
+# Fonts que alimenten el radar.
+# metode: api (vigilant automàtic a radar/vigilancia.py) | rss | web (revisió manual o scraping futur)
+#         | butlleti (subscripció per correu) | manual
+# frequencia: diaria | setmanal | mensual | per_convocatoria
+# vigilant: nom del vigilant automàtic (bdns, sedia, ted, placsp) si n'hi ha
+
+fonts:
+  # --- Transversals (automàtiques) -----------------------------------------------------------
+  - id: bdns
+    nom: BDNS / InfoSubvenciones (Base de Datos Nacional de Subvenciones)
+    nivell: transversal
+    url: https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias
+    metode: api
+    frequencia: setmanal
+    vigilant: bdns
+    cobreix: Totes les convocatòries públiques d'Espanya (estat, CCAA incl. Generalitat, ens locals)
+    notes: "API JSON pública: /bdnstrans/api/convocatorias/busqueda (documentació Swagger a /bdnstrans/doc/swagger)."
+
+  - id: sedia
+    nom: Funding & Tenders Portal (Comissió Europea) – API de cerca SEDIA
+    nivell: europa
+    url: https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+    metode: api
+    frequencia: setmanal
+    vigilant: sedia
+    cobreix: Horizon Europe (EIC, clústers), Digital Europe, LIFE, EDF, cascada (FSTP)
+    notes: "Estats 31094501 (oberta) i 31094502 (propera); tipus 1/2 subvencions, 8 cascada."
+
+  - id: ted
+    nom: TED – Tenders Electronic Daily (licitacions UE)
+    nivell: europa
+    url: https://ted.europa.eu/
+    metode: api
+    frequencia: setmanal
+    vigilant: ted
+    cobreix: Licitacions sobre llindar UE filtrades per CPV i país
+
+  - id: placsp
+    nom: Plataforma de Contratación del Sector Público (sindicació ATOM)
+    nivell: estat
+    url: https://contrataciondelestado.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3.atom
+    metode: api
+    frequencia: setmanal
+    vigilant: placsp
+    cobreix: Licitacions espanyoles (CPV de disseny, R+D, enginyeria i assajos)
+    notes: "Fitxers de 500 entrades amb enllaç rel=next. Agregades (incl. plataforma catalana): sindicacion_1044/PlataformasAgregadasSinMenores.atom."
+
+  - id: boe-sumari
+    nom: BOE – sumari diari (API de dades obertes)
+    nivell: estat
+    url: https://www.boe.es/datosabiertos/api/boe/sumario/
+    metode: api
+    frequencia: diaria
+    cobreix: Extractes de convocatòries (secció V-B) i bases (BOE-A)
+    notes: "GET /datosabiertos/api/boe/sumario/AAAAMMDD amb Accept: application/json. Pendent d'automatitzar."
+
+  # --- Catalunya ----------------------------------------------------------------------------
+  - id: accio-llistat
+    nom: ACCIÓ – llistat d'ajuts i serveis
+    nivell: catalunya
+    url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/
+    metode: web
+    frequencia: setmanal
+    cobreix: Totes les línies d'ACCIÓ
+    notes: "Les fitxes comencen per l'any (2026 = 26xxx): detectar noves fitxes 27xxx."
+
+  - id: accio-agenda
+    nom: ACCIÓ – agenda de sessions informatives
+    nivell: catalunya
+    url: https://agenda.accio.gencat.cat
+    metode: web
+    frequencia: setmanal
+    cobreix: Sessions de presentació que avancen convocatòries
+
+  - id: dogc
+    nom: DOGC – Diari Oficial de la Generalitat
+    nivell: catalunya
+    url: https://portaldogc.gencat.cat
+    metode: web
+    frequencia: diaria
+    cobreix: Bases i convocatòries (cercar "Resolució EMT/" i "REU/")
+
+  - id: cido-diba
+    nom: CIDO – Diputació de Barcelona (cercador de subvencions)
+    nivell: catalunya
+    url: https://cido.diba.cat/subvencions
+    metode: web
+    frequencia: setmanal
+    cobreix: Millor agregador català (inclou ACCIÓ, AGAUR, ajuntaments) amb referències DOGC
+
+  - id: govern-premsa
+    nom: Sala de premsa del Govern (Empresa i Treball, Recerca i Universitats)
+    nivell: catalunya
+    url: https://govern.cat/salapremsa/
+    metode: web
+    frequencia: setmanal
+    cobreix: Anuncis de nous programes (Estratègia 2026-2030, PILOT)
+
+  - id: exteriors-fons-europeus
+    nom: Exteriors – actualitat de fons europeus a Catalunya
+    nivell: catalunya
+    url: https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/actualitat/
+    metode: web
+    frequencia: setmanal
+    cobreix: Convocatòries cofinançades amb FEDER/FSE+ (Cupons, PILOT, Industrial Tech)
+
+  - id: agaur
+    nom: AGAUR – convocatòries per temes
+    nivell: catalunya
+    url: https://agaur.gencat.cat/ca/beques-i-ajuts/convocatories-per-temes/
+    metode: web
+    frequencia: setmanal
+    cobreix: Indústria del Coneixement, Doctorats Industrials, PILOT
+
+  - id: raisc
+    nom: RAISC – Registre d'ajuts i subvencions de Catalunya (dades obertes)
+    nivell: catalunya
+    url: https://analisi.transparenciacatalunya.cat
+    metode: api
+    frequencia: mensual
+    cobreix: "Concessions (qui ha rebut què): útil per detectar clients potencials"
+    notes: "Socrata: localitzar el dataset amb https://api.us.socrata.com/api/catalog/v1?domains=analisi.transparenciacatalunya.cat&q=subvencions"
+
+  - id: barcelona-activa
+    nom: Barcelona Activa – ajuts a empreses
+    nivell: local
+    url: https://empreses.barcelonactiva.cat/en/grants
+    metode: web
+    frequencia: mensual
+    cobreix: Impulsem el que fas, fons municipals
+
+  - id: f2i-fbg
+    nom: Fundació Bosch i Gimpera – F2I i actualitat de transferència
+    nivell: catalunya
+    url: https://f2i.fbg.ub.edu/
+    metode: web
+    frequencia: mensual
+    cobreix: PoC de la UB i grups guanyadors
+
+  - id: upc-innovacio
+    nom: UPC – LLAVOR, Industrial Tech, emprenUPC
+    nivell: catalunya
+    url: https://www.upc.edu/emprenupc/ca
+    metode: web
+    frequencia: mensual
+    cobreix: Valorització i preacceleració de hardware
+
+  # --- Estat ----------------------------------------------------------------------------------
+  - id: cdti
+    nom: CDTI – ajuts i agenda
+    nivell: estat
+    url: https://www.cdti.es/ayudas
+    metode: web
+    frequencia: setmanal
+    cobreix: PID, LIC, Cervera, NEOTEC, Misiones, INNTERCONECTA, CPI
+
+  - id: aei-calendari
+    nom: Agencia Estatal de Investigación – calendari previst de convocatòries
+    nivell: estat
+    url: https://www.aei.gob.es/en/announcements/calendario-previsto-convocatorias-agencia-estatal-investigacion
+    metode: web
+    frequencia: mensual
+    cobreix: Torres Quevedo, Doctorados Industriales, CPP, Pruebas de Concepto
+
+  - id: mintur-ajuts
+    nom: Ministeri d'Indústria – portal d'ajuts (AEI, PERTE)
+    nivell: estat
+    url: https://www.mintur.gob.es/portalayudas/agrupacionesempresariales
+    metode: web
+    frequencia: mensual
+    cobreix: Agrupaciones Empresariales Innovadoras
+
+  - id: defensa-etid
+    nom: Defensa – Tecnologia i innovació (COINCIDENTE, ETID)
+    nivell: estat
+    url: https://tecnologiaeinnovacion.defensa.gob.es
+    metode: web
+    frequencia: mensual
+    cobreix: Programes d'ús dual i republicació de convocatòries CDTI amb interès per a defensa
+
+  - id: aee
+    nom: Agencia Espacial Española – convocatòries
+    nivell: estat
+    url: https://www.aee.gob.es/Convocatorias/2026/
+    metode: web
+    frequencia: mensual
+    cobreix: BASS, GSTP i altres ajuts espacials
+
+  - id: secpho
+    nom: secpho – casos i convocatòries AEI
+    nivell: estat
+    url: https://www.secpho.org/
+    metode: butlleti
+    frequencia: per_convocatoria
+    cobreix: Consorcis AEI en fotònica i deep tech (Q LEAF, SEPTIBELL, DRONSTORE)
+
+  - id: sett
+    nom: SETT – instruments
+    nivell: estat
+    url: https://sett.gob.es/instrumentos/
+    metode: web
+    frequencia: mensual
+    cobreix: Fondo Next Tech, PERTE Chip
+
+  # --- Europa i internacional ----------------------------------------------------------------
+  - id: eic
+    nom: European Innovation Council – oportunitats i notícies
+    nivell: europa
+    url: https://eic.ec.europa.eu/
+    metode: web
+    frequencia: setmanal
+    cobreix: Pathfinder, Transition, Accelerator, STEP, Women TechEU
+
+  - id: eurostars
+    nom: EUREKA – Eurostars i clústers
+    nivell: europa
+    url: https://www.eurekanetwork.org/programmes-and-calls/
+    metode: web
+    frequencia: mensual
+    cobreix: Eurostars, SMART, ITEA, Xecs, Celtic-Next
+
+  - id: eudis
+    nom: EUDIS / DG DEFIS – defensa i innovació
+    nivell: europa
+    url: https://eudis.europa.eu/
+    metode: web
+    frequencia: mensual
+    cobreix: EDF, EDIP (BraveTech), Business Accelerator, hackathons
+
+  - id: diana
+    nom: NATO DIANA – reptes
+    nivell: internacional
+    url: https://www.diana.nato.int/challenges.html
+    metode: web
+    frequencia: mensual
+    cobreix: Challenge Programme anual
+
+  - id: eit
+    nom: EIT (Urban Mobility, Health, Manufacturing, Food, InnoEnergy)
+    nivell: europa
+    url: https://eit.europa.eu/
+    metode: web
+    frequencia: mensual
+    cobreix: Convocatòries de les comunitats EIT (Urban Mobility i Health tenen seu/node a Barcelona)
+
+  - id: cascade-funding
+    nom: Cascade Funding (agregador FSTP)
+    nivell: europa
+    url: https://cascadefunding.eu/
+    metode: web
+    frequencia: setmanal
+    cobreix: Convocatòries obertes de tercers en projectes europeus
+
+  # --- Privats i fundacions ------------------------------------------------------------------
+  - id: caixaresearch
+    nom: CaixaResearch (Fundació "la Caixa")
+    nivell: estat
+    url: https://caixaresearch.org/
+    metode: butlleti
+    frequencia: mensual
+    cobreix: CaixaImpulse Innovació en Salut, convocatòries de recerca
+
+  - id: caixabank-dayone
+    nom: CaixaBank DayOne (EmprendeXXI)
+    nivell: estat
+    url: https://www.caixabank.com/
+    metode: web
+    frequencia: mensual
+    cobreix: Premis i programes per a startups
+
+  - id: fgcsic
+    nom: Fundación General CSIC
+    nivell: estat
+    url: https://fgcsic.es/
+    metode: web
+    frequencia: mensual
+    cobreix: COMTE-Innovación, ComFuturo, Santander X Awards CSIC
+
+  - id: cajamar-innova
+    nom: Cajamar Innova
+    nivell: estat
+    url: https://cajamarinnova.es/es/
+    metode: web
+    frequencia: mensual
+    cobreix: Incubació aigua i agrotech

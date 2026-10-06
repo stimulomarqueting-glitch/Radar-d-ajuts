@@ -1,0 +1,1981 @@
+# Catàleg curat del Radar d'ajuts de Stimulo.
+#
+# Origen: "2025 Recull ajuts públics.xlsx" (data/origen/, camp excel_fila) + recerca d'octubre 2026.
+# Estat a 06/10/2026. Les dades marcades "(no verificat)" a les notes s'han de confirmar a la font
+# oficial abans de prendre decisions; `confianca` resumeix la solidesa de la fitxa:
+#   alta    = dades de font oficial o de diverses fonts coincidents
+#   mitjana = una font secundària fiable
+#   baixa   = estimació o dada pendent de verificar
+#
+# Camps (vegeu radar/dades.py):
+#   nivell: local | catalunya | estat | europa | internacional
+#   origen: public | privat | universitat | fundacio_publica | fundacio_privada | corporatiu | mixt
+#   instrument: subvencio | prestec | prestec_parcialment_reemborsable | cupo | premi | capital |
+#               acceleracio | licitacio | compra_publica_innovacio | beca_contracte | mixt
+#   zones: on ha d'estar establert el BENEFICIARI (data/zones.yaml)
+#   beneficiaris: pime | gran_empresa | startup | universitat | centre_recerca | centre_tecnologic |
+#                 hospital | entitat_sense_anim_lucre | cluster_aei | consorci | administracio
+#   rols_stimulo: com hi pot entrar una agència com Stimulo (beneficiari, soci, proveidor_extern,
+#                 subcontractat, assessor)
+#   calendari.recurrencia: anual | multiples_talls | continua | puntual | desconeguda
+#   calendari.obertura / tancament: última edició coneguda (o la vigent). Si ja ha passat i és
+#     anual, el radar n'estima la propera edició (+1 any) i genera les alertes.
+
+convocatories:
+
+# =============================================================================================
+# CATALUNYA
+# =============================================================================================
+
+- id: accio-exploracio-tecnologica
+  nom: "Projectes d'exploració tecnològica (línia R+D+i 2026)"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  fons: Generalitat (Estratègia d'innovació empresarial de Catalunya 2026-2030)
+  zones: [ES-CT]
+  ambit_geografic: Empreses amb establiment operatiu a Catalunya, sense restricció sectorial.
+  beneficiaris: [pime, gran_empresa, startup]
+  rols_stimulo: [proveidor_extern, beneficiari]
+  focus: [prova_concepte, deep_tech, industria, sostenibilitat, digital, ia]
+  intensitat_max: 75
+  import_max_eur: 30000
+  pressupost_min_eur: 20000
+  pressupost_total_eur: 4900000
+  durada_max_mesos: 10
+  trl: [3, 6]
+  modalitat: individual amb agent tecnològic extern obligatori
+  ajuda_text: "75% de la despesa, màxim 30.000 € (projecte ~40.000 €); pressupost mínim 20.000 €; 10 mesos; bestreta 60%; auditoria al 100% fins 1.500 €."
+  descripcio: >
+    Validar una tecnologia amb evidències objectives abans d'una inversió més gran: prova de
+    concepte, prototip o MVP, validació amb usuaris, proves experimentals, entrenament d'algorismes.
+    Obligatori col·laborar amb un agent tecnològic extern (startup, centre tecnològic o proveïdor
+    especialitzat). Despeses: personal propi, col·laboracions externes, materials de prototipatge.
+  notes: >
+    Règim de minimis (màx. 300.000 € per empresa en 3 exercicis). Línia NOVA del primer paquet de
+    l'Estratègia 2026-2030 (16,9 M€). Bases: Resolució EMT/2403/2026 (DOGC 9708, 15/07/2026);
+    convocatòria: Resolució EMT/2669/2026 (DOGC 9718, 29/07/2026). Tancament 21/09/2026 a les 14 h.
+    Les bases són generals per a la línia R+D+i: una edició 2027 no requeriria bases noves (no verificat).
+    Cal confirmar a les bases si una agència de disseny/enginyeria compta com a "proveïdor
+    especialitzat" (molt plausible; no hi ha registre d'acreditació obligatori detectat).
+  url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/26043-projectes-exploracio-tecnologica
+  fonts_verificacio:
+    - https://cecot.org/actualitat/emprenedoria-creixement-empresarial/enllac-seo-ajuts-accio-2026-projectes-exploracio-tecnologica/
+    - https://cido.diba.cat/subvencions/21935051/subvencions-per-a-projectes-dinnovacio-empresarial-rdi-any-2026-linia-de-projectes-dexploracio-tecnologica-generalitat-de-catalunya-agencia-per-a-la-competitivitat-de-lempresa-accio
+    - https://govern.cat/salapremsa/notes-premsa/858792/govern-activa-primers-17-milions-deuros-dajuts-inclosos-lestrategia-dinnovacio-empresarial-catalunya-2026-2030
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-07-29
+    tancament: 2026-09-21
+    finestra_habitual: "Estiu: publicació a finals de juliol, tancament a finals de setembre"
+    verificat: 2026-10-06
+    revisar: 2027-03-01
+    revisar_motiu: "Exploració tecnològica: comprovar si ACCIÓ anuncia l'edició 2027 (pla d'ajuts anual / sessions informatives)"
+
+- id: accio-automocio-mobilitat
+  nom: "Projectes d'innovació tecnològica per al sector de l'automòbil i la mobilitat (línia R+D+i 2026)"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  fons: Generalitat (Estratègia d'innovació empresarial 2026-2030)
+  zones: [ES-CT]
+  ambit_geografic: Empreses del sector automoció/mobilitat i de la seva cadena de subministrament amb establiment a Catalunya.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [proveidor_extern, subcontractat]
+  focus: [automocio, mobilitat, industria, sostenibilitat, prova_concepte]
+  intensitat_max: 45
+  import_max_eur: 90000
+  pressupost_min_eur: 40000
+  pressupost_total_eur: 5000000
+  ajuda_text: "Fins al 45%, màxim 90.000 €; pressupost mínim 40.000 €."
+  descripcio: Projectes d'innovació tecnològica de la cadena de valor de l'automoció i la mobilitat.
+  notes: >
+    Tancada el 23/09/2026. Encaix directe per a DOGA (proveïdor d'automoció i vehicle industrial).
+    Data d'obertura 2026 no verificada (es va publicar amb el paquet del juliol).
+  url: https://www.redessa.cat/ajut/ajuts-a-projectes-dinnovacio-tecnologica-per-al-sector-de-lautomobil-i-la-mobilitat-2026/
+  fonts_verificacio:
+    - https://www.canal21ebre.com/ajuts-accio-innovacio-empresarial-2026/
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-07-29
+    tancament: 2026-09-23
+    finestra_habitual: "Estiu (paquet de juliol de l'Estratègia)"
+    verificat: 2026-10-06
+
+- id: accio-rd-quimic
+  nom: "Projectes de recerca aplicada i desenvolupament tecnològic per a la cadena de valor del sector químic"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Empreses de la cadena de valor química amb establiment a Catalunya.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [subcontractat]
+  focus: [industria, sostenibilitat]
+  import_max_eur: 250000
+  pressupost_min_eur: 120000
+  pressupost_total_eur: 7000000
+  durada_max_mesos: 30
+  ajuda_text: "Màxim 250.000 €; pressupost mínim 120.000 €; 30 mesos."
+  descripcio: Recerca aplicada i desenvolupament tecnològic del sector químic.
+  notes: Tancada el 22/09/2026. Útil per a enviaments a clients químics de Catalunya.
+  url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/26049-subvencions-projectes-rd-sector-quimic
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-07-29
+    tancament: 2026-09-22
+    verificat: 2026-10-06
+
+- id: accio-estrategia-properes-linies
+  nom: "Estratègia d'innovació empresarial 2026-2030: properes línies d'ajut (≈61 M€ pendents de 2026)"
+  entitat: ACCIÓ / Departament d'Empresa i Treball
+  nivell: catalunya
+  origen: public
+  instrument: mixt
+  zones: [ES-CT]
+  ambit_geografic: Empreses establertes a Catalunya.
+  beneficiaris: [pime, gran_empresa, startup]
+  rols_stimulo: [proveidor_extern, soci, beneficiari]
+  focus: [deep_tech, dual, defensa, sostenibilitat, industria, salut, automocio, digital, prova_concepte]
+  pressupost_total_eur: 61000000
+  ajuda_text: "78 M€ en ajuts el 2026 (+30%); només 16,9 M€ convocats al juliol."
+  descripcio: >
+    L'Estratègia (aprovada el 14/07/2026) té 8 eixos i 33 actuacions: sobirania tecnològica,
+    sistematitzar la innovació, talent, transformació digital, descarbonització, startups i deep
+    tech, model unificat d'ajuts. Sectors prioritaris: alimentació, salut, automoció, química,
+    digital, seguretat i defensa. Objectiu 2030: R+D empresarial al 2% del PIB.
+  notes: >
+    Senyal de vigilància: falten ~61 M€ del pressupost 2026 per convocar (calendari no publicat).
+    Candidates a convocatòries de tardor-hivern. Revisar la sala de premsa del Govern i el llistat
+    d'ajuts d'ACCIÓ cada setmana.
+  url: https://govern.cat/gov/notes-premsa/849190/govern-aprova-lestrategia-dinnovacio-empresarial-catalunya-que-augmenta-30-percent-ajuts-empreses-aquest-2026
+  fonts_verificacio:
+    - https://cataloniatalent.cat/cat/noticia/catalunya-destinara-78-milions-anuals-per-reforcar-el-seu-ecosistema-dinnovacio/
+  confianca: mitjana
+  calendari:
+    recurrencia: puntual
+    estat: prevista
+    revisar: 2026-10-13
+    revisar_motiu: "Estratègia 2026-2030: comprovar si ACCIÓ ha publicat noves línies (≈61 M€ pendents)"
+
+- id: pilot-autonomia-estrategica
+  nom: "PILOT – Programa d'innovació tecnològica per a l'autonomia estratègica"
+  entitat: Departament de Recerca i Universitats (gestió AGAUR)
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  fons: Generalitat (amb col·laboració de la Fundació "la Caixa", no verificat)
+  zones: [ES-CT]
+  ambit_geografic: Consorcis amb entitats establertes a Catalunya.
+  beneficiaris: [consorci, universitat, centre_recerca, pime, gran_empresa]
+  rols_stimulo: [soci, subcontractat]
+  focus: [prova_concepte, deep_tech, transferencia, cooperacio, ia, fotonica, espai, agrotech, sostenibilitat, salut, dispositius_medics, dual]
+  pressupost_total_eur: 18000000
+  modalitat: "Consorci de 2 a 5 entitats: com a mínim 1 entitat pública generadora de coneixement + 1 empresa"
+  ajuda_text: "18 M€ en total; dues modalitats: (1) validació de prototips i (2) producció pilot. Import per projecte no verificat."
+  descripcio: >
+    Accelerar la innovació tecnològica en àmbits estratègics: tecnologies digitals avançades (IA,
+    HPC, quàntica), microelectrònica, fotònica i espai, agrotecnologia i bioeconomia,
+    descarbonització i tecnologies netes, salut i tecnologies mèdiques.
+  notes: >
+    Presentat el 22-23/09/2026. Termini i import per projecte NO verificats: és la prioritat número
+    1 de seguiment. Encaix ideal Stimulo (disseny i industrialització del prototip/pilot dins del
+    consorci) + DOGA (empresa sòcia en robòtica/mobilitat) + grup universitari/centre CERCA.
+  url: https://govern.cat/gov/notes-premsa/870016/el-govern-presenta-pilot-el-nou-programa-per-accelerar-la-innovacio-tecnologica
+  fonts_verificacio:
+    - https://www.viaempresa.cat/innovacio/govern-aporta-18-milions-accelerar-innovacio-tecnologica-proves-concepte_2240865_102.html
+    - https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/actualitat/detalls/noticia/20260923_pilot
+  confianca: mitjana
+  calendari:
+    recurrencia: puntual
+    estat: prevista
+    revisar: 2026-10-08
+    revisar_motiu: "PILOT: confirmar bases, import per projecte i termini (AGAUR / DOGC) i començar a muntar consorci"
+
+- id: accio-nuclis-rd
+  excel_fila: 5
+  nom: "Nuclis d'R+D (individuals i en cooperació)"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  fons: Generalitat (FEDER segons edició)
+  zones: [ES-CT]
+  ambit_geografic: Empreses amb establiment operatiu a Catalunya; poden participar centres TECNIO.
+  beneficiaris: [pime, gran_empresa, centre_tecnologic]
+  rols_stimulo: [soci, subcontractat, beneficiari]
+  focus: [deep_tech, industria, cooperacio, transferencia]
+  intensitat_max: 70
+  import_max_eur: 250000
+  pressupost_min_eur: 120000
+  trl: [3, 7]
+  ajuda_text: "Màxim 250.000 €/projecte; despesa mínima 120.000 €; 25–70% empresa, 100% TECNIO."
+  descripcio: Recerca industrial i desenvolupament experimental liderats per empresa catalana.
+  notes: >
+    Darrera edició detectada: 2025 (10/05–21/07/2025). No s'ha trobat edició 2026: possiblement
+    integrada a la nova línia R+D+i de l'Estratègia 2026-2030 (no verificat). Dates estimades.
+  url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: desconegut
+    obertura: 2025-05-10
+    tancament: 2025-07-21
+    finestra_habitual: "Publicació a finals de gener, presentació de maig a juliol"
+
+- id: accio-feder-innovacio-pimes
+  excel_fila: 2
+  nom: "Projectes d'innovació tecnològica de pimes (FEDER)"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  fons: UE – FEDER Catalunya 2021-2027 + Generalitat
+  zones: [ES-CT]
+  ambit_geografic: Pimes amb establiment a Catalunya.
+  beneficiaris: [pime]
+  rols_stimulo: [beneficiari, proveidor_extern, subcontractat]
+  focus: [industria, digital, sostenibilitat, prova_concepte]
+  intensitat_max: 40
+  pressupost_min_eur: 100000
+  pressupost_total_eur: 5000000
+  trl: [6, 9]
+  ajuda_text: "Fins al 40% (mínim de projecte 100.000 €). Línia de 5 M€ (2025)."
+  descripcio: Innovació tecnològica aplicada i propera al mercat per a la transformació tecnològica, digital o verda de pimes.
+  notes: >
+    Edició 2025 tancada el 22/07/2025. No s'ha trobat edició 2026 (sembla substituïda pel paquet de
+    l'Estratègia; no verificat). També existia una línia FEDER d'R+D individual de pimes (10 M€,
+    mínim 200.000 €, 40%, termini 31/07/2025).
+  url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: desconegut
+    tancament: 2025-07-22
+    mes_obertura_habitual: 5
+
+- id: accio-green
+  excel_fila: 3
+  nom: "Projectes d'innovació tecnològica Green – Canvi climàtic"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Pimes industrials o de serveis a la indústria a Catalunya.
+  beneficiaris: [pime]
+  rols_stimulo: [beneficiari, proveidor_extern]
+  focus: [sostenibilitat, economia_circular, industria, energia]
+  intensitat_max: 75
+  import_max_eur: 90000
+  trl: [6, 9]
+  ajuda_text: "Fins al 75%; màxim 90.000 € (+ auditor fins 1.500 € al 100%)."
+  descripcio: Innovació tecnològica per a la mitigació i adaptació al canvi climàtic (transició verda + digital).
+  notes: >
+    Edició 2025: 04/09–16/10/2025. Edició 2026 no localitzada: el radar estima una finestra
+    similar, però cal verificar si la línia continua o s'ha integrat a l'Estratègia 2026-2030.
+  url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: desconegut
+    obertura: 2025-09-04
+    tancament: 2025-10-16
+    revisar: 2026-10-09
+    revisar_motiu: "Green ACCIÓ: verificar si hi ha edició 2026 (la de 2025 tancava el 16/10)"
+
+- id: accio-inversions-alt-impacte
+  excel_fila: 4
+  nom: "Inversions empresarials d'alt impacte"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Empresa establerta o en procés d'establir-se a Catalunya.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: []
+  focus: [industria]
+  intensitat_max: 30
+  import_max_eur: 3000000
+  ajuda_text: "Ocupació: 30% fins 200.000–1.000.000 €. Actius: 10–15% fins 300.000–3.000.000 €."
+  descripcio: Projectes d'inversió d'alt impacte (creació d'ocupació, centres R+D+I, actius fixos).
+  notes: Edició 2025 oberta fins al 09/10/2025. Rellevant per a DOGA (noves línies productives / centre R+D). Edició 2026 no verificada.
+  url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: desconegut
+    tancament: 2025-10-09
+    mes_obertura_habitual: 6
+
+- id: accio-cupons
+  excel_fila: 6
+  nom: "Cupons ACCIÓ 2026 per a la competitivitat empresarial"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: cupo
+  zones: [ES-CT]
+  ambit_geografic: Empreses amb establiment a Catalunya.
+  beneficiaris: [pime]
+  rols_stimulo: [beneficiari, proveidor_extern]
+  focus: [internacionalitzacio, ia, digital, disseny, cooperacio]
+  import_max_eur: 12000
+  pressupost_total_eur: 500000
+  ajuda_text: "Estratègia de creixement 8.000 €; adopció d'IA 8.000 €; protecció de la innovació (patents, models d'utilitat, dissenys industrials europeus) 3.000 €; programes europeus d'R+D+I 12.000 €; internacionalització 8.000 €."
+  descripcio: Cupons per contractar serveis especialitzats a proveïdors.
+  notes: >
+    Obertes des del 07/05/2026. Algunes modalitats van tancar el 30/07/2026; d'altres segueixen
+    obertes fins al 16/11/2026 o fins exhaurir pressupost (no verificat quines). El cupó de
+    programes europeus (12.000 €) pot finançar la preparació d'una proposta EIC/Horizon/Eurostars;
+    el de protecció, el registre de dissenys industrials dels clients.
+  url: https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio/index.html
+  fonts_verificacio:
+    - https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/detalls/noticia/20260512_cupons
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: oberta
+    obertura: 2026-05-07
+    tancament: 2026-11-16
+    revisar: 2026-10-08
+    revisar_motiu: "Cupons ACCIÓ: confirmar quines modalitats segueixen obertes fins al 16/11 (programes europeus, protecció, IA)"
+
+- id: accio-startup-capital
+  excel_fila: 7
+  nom: "Startup Capital"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Startups amb establiment a Catalunya.
+  beneficiaris: [startup]
+  rols_stimulo: [proveidor_extern, subcontractat]
+  focus: [deep_tech, creixement_startup, prova_concepte]
+  intensitat_max: 75
+  import_max_eur: 100000
+  pressupost_min_eur: 135000
+  durada_max_mesos: 24
+  trl: [4, 9]
+  ajuda_text: "75%, ~100.000 € (pressupost mínim 135.000 €), 24 mesos."
+  descripcio: Subvenció per a startups deep tech de fins a 18 mesos amb finançament previ inferior a 250.000 €.
+  notes: >
+    Edició 2026 tancada el 30/07/2026 (font agregadora). Existeix també Startup Capital Coinversió
+    (80% préstec + 20% subvenció, 75.000–250.000 €, per a startups deep tech amb ronda tancada).
+  url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
+  fonts_verificacio:
+    - https://tecnociminnova.com/ca/buscador-ayudas/catalunya/cat-ajutsstartupcapital2026acciocatalunya
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    tancament: 2026-07-30
+    mes_obertura_habitual: 5
+
+- id: agaur-idc-llavor
+  excel_fila: 8
+  nom: "Indústria del Coneixement – Llavor"
+  entitat: AGAUR (Departament de Recerca i Universitats)
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Equips de recerca d'universitats i centres catalans.
+  beneficiaris: [universitat, centre_recerca]
+  rols_stimulo: [proveidor_extern]
+  focus: [transferencia, prova_concepte, deep_tech]
+  import_max_eur: 20000
+  durada_max_mesos: 6
+  trl: [1, 3]
+  ajuda_text: "20.000 € fixos, 6 mesos."
+  descripcio: Projectes amb potencial de valorització en fase inicial (preprototip).
+  url: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-coneixement/programa-industria-coneixement/
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-02-01
+    tancament: 2026-03-31
+    finestra_habitual: "Publicació a finals de gener; presentació febrer–març"
+
+- id: agaur-idc-producte
+  excel_fila: 9
+  nom: "Indústria del Coneixement – Producte"
+  entitat: AGAUR (Departament de Recerca i Universitats)
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Equips de recerca d'universitats i centres catalans.
+  beneficiaris: [universitat, centre_recerca]
+  rols_stimulo: [proveidor_extern, subcontractat]
+  focus: [transferencia, prova_concepte, deep_tech, disseny]
+  import_max_eur: 150000
+  durada_max_mesos: 18
+  trl: [3, 6]
+  ajuda_text: "Fins a 150.000 €, 18 mesos (pròrroga possible)."
+  descripcio: >
+    Prototip i prova de concepte per reduir incerteses tècniques i comercials abans de llicenciar
+    o crear una spin-off. És exactament la fase que fa Stimulo: oferir-se als grups abans de febrer.
+  url: https://agaur.gencat.cat/en/beques-i-ajuts/convocatories-per-temes/02-21429-IdC-Producte
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-02-01
+    tancament: 2026-03-31
+    finestra_habitual: "Publicació a finals de gener; presentació febrer–març"
+
+- id: agaur-idc-innovadors
+  excel_fila: 10
+  nom: "Indústria del Coneixement – Innovadors"
+  entitat: AGAUR (Departament de Recerca i Universitats)
+  nivell: catalunya
+  origen: public
+  instrument: beca_contracte
+  zones: [ES-CT]
+  ambit_geografic: Entitats de recerca catalanes.
+  beneficiaris: [universitat, centre_recerca]
+  rols_stimulo: [assessor]
+  focus: [transferencia, talent]
+  import_max_eur: 84000
+  durada_max_mesos: 18
+  trl: [2, 6]
+  ajuda_text: "Fins a 84.000 € (mínim 60.000 € per a contractació), 18 mesos."
+  descripcio: Contractar perfils emprenedors que liderin la transferència (spin-off, llicència).
+  url: https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/transferencia-coneixement/programa-industria-coneixement/
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-02-01
+    tancament: 2026-03-31
+
+- id: agaur-doctorats-industrials
+  excel_fila: 11
+  nom: "Doctorats Industrials (Generalitat)"
+  entitat: Departament de Recerca i Universitats / AGAUR
+  nivell: catalunya
+  origen: public
+  instrument: beca_contracte
+  zones: [ES-CT]
+  ambit_geografic: Empreses establertes a Catalunya + universitat catalana.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [beneficiari]
+  focus: [talent, transferencia, deep_tech, cooperacio]
+  import_max_eur: 36000
+  durada_max_mesos: 36
+  trl: [3, 7]
+  ajuda_text: "Contracte de 3 anys (sou mínim 22.000 €/any); ajut a l'entitat 12.000 €/any (bases 2025)."
+  descripcio: Tesi doctoral en col·laboració empresa–universitat amb projecte de recerca aplicada.
+  notes: >
+    Edició de referència 2025: 15/05–15/10/2025. El calendari 2026/2027 no s'ha pogut verificar: la
+    finestra estimada pot estar oberta ara mateix. L'IEEC complementa amb doctorats en l'àmbit espai.
+  url: https://doctoratsindustrials.gencat.cat
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: desconegut
+    obertura: 2025-05-15
+    tancament: 2025-10-15
+    revisar: 2026-10-08
+    revisar_motiu: "Doctorats Industrials: verificar si la convocatòria DI-2026/2027 està oberta"
+
+- id: icf-avalis
+  excel_fila: 12
+  nom: "ICF – Avalis i préstecs per a pimes (ICF Pime Innova, IFEM Innovació)"
+  entitat: ICF + Avalis de Catalunya
+  nivell: catalunya
+  origen: public
+  instrument: prestec
+  zones: [ES-CT]
+  ambit_geografic: Pimes i autònoms de Catalunya.
+  beneficiaris: [pime, startup]
+  rols_stimulo: [beneficiari]
+  focus: [industria, creixement_startup]
+  import_max_eur: 250000
+  ajuda_text: "Préstecs amb aval de 25.000–250.000 €; IFEM Innovació: préstec participatiu 50.000–200.000 € (fins 400.000 €) en coinversió."
+  descripcio: Finançament d'inversió i circulant; complement per avançar despesa de projectes subvencionats.
+  url: https://www.icf.cat/en/prestecs/innovacio/icf-pime-innova
+  confianca: mitjana
+  calendari:
+    recurrencia: continua
+    estat: permanent
+    tancament: 2026-12-31
+
+- id: bcn-impulsem-el-que-fas
+  nom: "Impulsem el que fas"
+  entitat: Ajuntament de Barcelona / Barcelona Activa
+  nivell: local
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT-BCN]
+  ambit_geografic: Seu o centre de treball a la ciutat de Barcelona; facturació ≤1 M€ o ≤20 treballadors.
+  beneficiaris: [pime, startup]
+  rols_stimulo: [beneficiari, proveidor_extern]
+  focus: [industria, sostenibilitat, digital, economia_circular]
+  import_max_eur: 40000
+  pressupost_total_eur: 2700000
+  durada_max_mesos: 12
+  ajuda_text: "Fins a 40.000 €, 12 mesos; 8 línies."
+  descripcio: Projectes d'empreses de la ciutat en innovació, sostenibilitat, digitalització, etc.
+  notes: Edició 2026 tancada (17/06–17/07/2026). Barcelona també té el Fons Barcelona DeepTech (via gestores de capital risc).
+  url: https://empreses.barcelonactiva.cat/en/impulsem-el-que-fas-2026
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-06-17
+    tancament: 2026-07-17
+
+- id: catalunya-seguretat-defensa
+  nom: "Programa de capacitació d'empreses catalanes en seguretat i defensa (fins a 400 empreses)"
+  entitat: Generalitat de Catalunya
+  nivell: catalunya
+  origen: public
+  instrument: acceleracio
+  zones: [ES-CT]
+  ambit_geografic: Empreses catalanes amb capacitats d'ús dual.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [beneficiari]
+  focus: [dual, defensa, industria]
+  ajuda_text: "Capacitació i acompanyament per entrar a la cadena de valor de seguretat i defensa."
+  descripcio: >
+    Programa anunciat l'abril de 2026 per capacitar fins a 400 empreses; la Cambra de Barcelona
+    identifica 812 empreses catalanes d'ús dual. L'Estratègia d'innovació prioritza seguretat i defensa.
+  notes: Organisme gestor i calendari no verificats. Porta d'entrada per a Stimulo i DOGA al mercat dual.
+  url: https://govern.cat/gov/notes-premsa/811465/nou-programa-per-capacitar-fins-a-400-empreses-catalanes-perque-s-introdueixin-en-el-sector-de-la-seguretat-i-la-defensa
+  confianca: baixa
+  calendari:
+    recurrencia: desconeguda
+    estat: desconegut
+    revisar: 2026-10-20
+    revisar_motiu: "Programa seguretat i defensa (Generalitat): saber qui el gestiona i com inscriure-s'hi"
+
+- id: esa-bic-barcelona
+  nom: "ESA BIC Barcelona (incubació espacial)"
+  entitat: ESA + Generalitat (gestió PMT)
+  nivell: europa
+  origen: public
+  instrument: acceleracio
+  zones: [ES-CT]
+  ambit_geografic: Startups que s'estableixin a Catalunya.
+  beneficiaris: [startup]
+  rols_stimulo: [proveidor_extern]
+  focus: [espai, deep_tech, creixement_startup, fotonica]
+  import_max_eur: 60000
+  ajuda_text: "60.000 € no dilutius (50% ESA / 50% Generalitat) + incubació; 4 places."
+  descripcio: Incubació de startups que fan servir tecnologia o dades espacials.
+  url: https://esabicbarcelona.pmt.es/
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: oberta
+    tancament: 2026-11-13
+
+# --- Universitats i fundacions (Catalunya) ----------------------------------------------------
+
+- id: ub-f2i
+  nom: "F2I – Fons per a l'Impuls de la Innovació (UB)"
+  entitat: Universitat de Barcelona / Fundació Bosch i Gimpera
+  nivell: catalunya
+  origen: universitat
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Grups de recerca de la UB (titular o cotitular del coneixement).
+  beneficiaris: [universitat]
+  rols_stimulo: [proveidor_extern, assessor]
+  focus: [transferencia, prova_concepte, deep_tech, salut]
+  import_max_eur: 25000
+  pressupost_total_eur: 100000
+  durada_max_mesos: 12
+  trl: [3, 6]
+  ajuda_text: "100.000 € en total, fins a 25.000 €/projecte de prova de concepte + Mentor in Residence."
+  descripcio: >
+    Proves de concepte de grups UB cap a llicència o spin-off. Les empreses no hi poden sol·licitar:
+    Stimulo hi entra com a proveïdor de disseny/prototip contractat via FBG (paquets < 15.000 €,
+    llindar de contracte menor) o com a mentor.
+  notes: >
+    Edició 2026 tancada el 28/09/2026; resolució prevista desembre–gener. Acció: contactar els grups
+    guanyadors amb una oferta de "paquet prototip PoC".
+  url: https://f2i.fbg.ub.edu/
+  fonts_verificacio:
+    - https://www.fbg.ub.edu/actualitat/la-universitat-de-barcelona-destinara-mes-de-100-000-euros-per-impulsar-la-transferencia-de-la-recerca-a-traves-dels-f2i/
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    tancament: 2026-09-28
+    mes_obertura_habitual: 7
+    revisar: 2027-01-15
+    revisar_motiu: "F2I UB: publicar-se la llista de projectes guanyadors → oferir paquet prototip PoC"
+
+- id: upc-llavor
+  nom: "LLAVOR UPC (valorització en fase inicial)"
+  entitat: UPC
+  nivell: catalunya
+  origen: universitat
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Investigadors de la UPC.
+  beneficiaris: [universitat]
+  rols_stimulo: [proveidor_extern]
+  focus: [transferencia, prova_concepte, robotica, mobilitat, fotonica]
+  import_max_eur: 10000
+  pressupost_total_eur: 100000
+  ajuda_text: "100.000 € en total, 10.000 €/projecte."
+  descripcio: Primeres proves de valorització de grups UPC (enginyeria, robòtica, mobilitat, fotònica).
+  notes: Aprovada pel Consell de Govern el 18/02/2026. Dates no verificades.
+  url: https://rdi.upc.edu/ca/financament/recerca-innovacio/llavor.pdf
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: desconegut
+    mes_obertura_habitual: 3
+    mes_tancament_habitual: 5
+
+- id: upc-industrial-tech
+  nom: "Industrial Tech – preacceleració de hardware (UPC + CIM UPC)"
+  entitat: UPC / CIM UPC (FSE+)
+  nivell: catalunya
+  origen: universitat
+  instrument: acceleracio
+  zones: [ES-CT]
+  ambit_geografic: Projectes de recerca i spin-offs a Catalunya.
+  beneficiaris: [universitat, startup]
+  rols_stimulo: [assessor, proveidor_extern]
+  focus: [deep_tech, robotica, industria, prova_concepte, transferencia]
+  ajuda_text: "Gratuït, en espècie: 52 h tècniques (fabricació additiva, robòtica, IoT) + 40 h de negoci i mentoria."
+  descripcio: "Cartera de projectes de hardware de la UPC: font directa de clients per a Stimulo."
+  notes: Programa del 14/09 al 03/12/2026 (inscripció fins al 04/09). Anar al demo day de desembre.
+  url: https://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-industrial-tech
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-05-15
+    tancament: 2026-09-04
+    revisar: 2026-12-01
+    revisar_motiu: "Industrial Tech UPC: demo day (començament de desembre) — captar projectes de hardware"
+
+# =============================================================================================
+# ESTAT
+# =============================================================================================
+
+- id: cdti-pid
+  excel_fila: 13
+  nom: "Proyectos de I+D (PID)"
+  entitat: CDTI (Ministeri de Ciència, Innovació i Universitats)
+  nivell: estat
+  origen: public
+  instrument: prestec_parcialment_reemborsable
+  zones: [ES]
+  ambit_geografic: Empreses establertes a Espanya; individual o cooperació nacional (2–6 empreses).
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [subcontractat, soci, beneficiari]
+  focus: [deep_tech, industria, cooperacio, sostenibilitat, digital]
+  intensitat_max: 85
+  pressupost_min_eur: 175000
+  trl: [3, 8]
+  ajuda_text: "Préstec fins al 85% del pressupost; tram no reemborsable 10–33%; mínim 175.000 €; retorn 10–15 anys."
+  descripcio: R+D empresarial per crear o millorar productes, processos o serveis.
+  notes: >
+    Finestreta oberta tot l'any. Per a una gran empresa com DOGA, cooperar amb pimes (Stimulo,
+    Inbrooll) eleva intensitats i qualitat del consorci. El CDTI reserva fins a 25 M€ el 2026 per
+    a projectes de tecnologia dual (instrument no verificat).
+  url: https://www.cdti.es/ayudas
+  confianca: alta
+  calendari:
+    recurrencia: continua
+    estat: permanent
+
+- id: cdti-lic
+  nom: "Línea Directa de Innovación (LIC / LDI)"
+  entitat: CDTI
+  nivell: estat
+  origen: public
+  instrument: prestec_parcialment_reemborsable
+  zones: [ES]
+  ambit_geografic: Empreses establertes a Espanya.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [subcontractat]
+  focus: [industria, digital, sostenibilitat]
+  intensitat_max: 85
+  import_max_eur: 6000000
+  pressupost_min_eur: 175000
+  durada_max_mesos: 24
+  trl: [6, 9]
+  ajuda_text: "75% (85% amb FEDER); tram no reemborsable 7–10%; 175.000 €–6 M€; 9–24 mesos."
+  descripcio: Innovació propera al mercat i incorporació de tecnologia (industrialització).
+  url: https://www.cdti.es/sites/default/files/2023-09/20230720_ficha_lic.pdf
+  confianca: alta
+  calendari:
+    recurrencia: continua
+    estat: permanent
+
+- id: cdti-cervera-transferencia
+  nom: "Proyectos de I+D de Transferencia Tecnológica Cervera"
+  entitat: CDTI
+  nivell: estat
+  origen: public
+  instrument: prestec_parcialment_reemborsable
+  zones: [ES]
+  ambit_geografic: Pimes i midcaps establertes a Espanya que contracten centres generadors de coneixement.
+  beneficiaris: [pime]
+  rols_stimulo: [beneficiari, soci, subcontractat]
+  focus: [transferencia, deep_tech, cooperacio, industria]
+  intensitat_max: 90
+  pressupost_min_eur: 175000
+  trl: [3, 7]
+  ajuda_text: "Fins al 90% del pressupost; tram no reemborsable 33%; bestreta fins 50% (màx. 300.000 €) sense garanties."
+  descripcio: R+D d'empresa amb col·laboració obligatòria de centres tecnològics o universitats.
+  notes: >
+    Oberta tot l'any (fitxa CDTI 2026-02). Les midcaps també hi accedeixen: verificar si DOGA hi
+    encaixa per plantilla de grup. Via natural Stimulo + UPC-CD6 / Eurecat / Leitat.
+  url: https://www.cdti.es/ayudas/proyectos-de-id-de-transferencia-tecnologica-cervera-0
+  confianca: alta
+  calendari:
+    recurrencia: continua
+    estat: permanent
+
+- id: cdti-neotec
+  excel_fila: 14
+  nom: "NEOTEC"
+  entitat: CDTI
+  nivell: estat
+  origen: public
+  instrument: subvencio
+  zones: [ES]
+  ambit_geografic: Petites empreses innovadores espanyoles de fins a 3 anys.
+  beneficiaris: [startup]
+  rols_stimulo: [proveidor_extern, subcontractat]
+  focus: [deep_tech, creixement_startup, prova_concepte]
+  intensitat_max: 85
+  import_max_eur: 325000
+  pressupost_min_eur: 175000
+  pressupost_total_eur: 20383300
+  trl: [4, 7]
+  ajuda_text: "70% (màx. 250.000 €); 85% (màx. 325.000 €) si contracta un doctor. Capital social ≥20.000 €."
+  descripcio: Empreses de base tecnològica amb tecnologia pròpia com a factor diferencial.
+  notes: >
+    Edició 2026: 14/04–14/05/2026 (BOE-B-2026-10827); 5 M€ reservats a projectes liderats per dones.
+    NEOTEC és el programa certificat Plug-in a l'EIC Accelerator (accés directe a proposta completa).
+  url: https://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocatoria-NEOTEC-2026.html
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-04-14
+    tancament: 2026-05-14
+
+- id: cdti-misiones
+  excel_fila: 16
+  nom: "Misiones Ciencia e Innovación"
+  entitat: CDTI
+  nivell: estat
+  origen: public
+  instrument: subvencio
+  zones: [ES]
+  ambit_geografic: Consorcis de 3–6 empreses espanyoles (mínim 1 pime).
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [soci, subcontractat]
+  focus: [cooperacio, deep_tech, dual, defensa, salut, energia, sostenibilitat]
+  pressupost_min_eur: 3500000
+  pressupost_total_eur: 60000000
+  trl: [4, 8]
+  ajuda_text: "Projectes de 3,5–10 M€; 60 M€ ampliables a 150 M€ (2026)."
+  descripcio: Grans projectes cooperatius orientats a 7 missions (energia, aeronàutica, seguretat i defensa, salut de la dona, sobirania alimentària...).
+  notes: Subcontractació mínima a organismes de recerca. Execució 2027–2030.
+  url: https://www.cdti.es/ayudas
+  fonts_verificacio:
+    - https://www.inncome.es/cdti-publica-programa-definitivo-misiones-ciencia-innovacion-2026.html
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-05-12
+    tancament: 2026-06-12
+
+- id: cdti-innterconecta-step
+  excel_fila: 15
+  nom: "INNTERCONECTA STEP 2026"
+  entitat: CDTI
+  nivell: estat
+  origen: public
+  instrument: subvencio
+  fons: UE – FEDER + Estat
+  zones: [ES-AN, ES-IB, ES-CN, ES-CL, ES-CM, ES-VC, ES-EX, ES-GA, ES-MC]
+  ambit_geografic: >
+    NOMÉS comunitats elegibles FEDER STEP: Andalusia, Balears, Canàries, Castella i Lleó,
+    Castella-la Manxa, C. Valenciana, Extremadura, Galícia i Múrcia (mínim 2 comunitats). Catalunya NO.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [subcontractat]
+  focus: [deep_tech, digital, sostenibilitat, salut, cooperacio]
+  intensitat_max: 80
+  pressupost_min_eur: 1000000
+  pressupost_total_eur: 138000000
+  trl: [4, 7]
+  ajuda_text: "Projectes d'1–4 M€ (mínim 175.000 €/empresa); intensitat 65% gran, 75% mitjana, 80% petita. 138 M€."
+  descripcio: R+D cooperativa en tecnologies STEP (digital, netes, biotecnologia).
+  notes: >
+    Obre a l'OCTUBRE de 2026 i tanca al novembre (dates exactes pendents). Consorci de 2–6
+    empreses amb ≥10% subcontractat a centres de coneixement. Oportunitat d'enviament a clients
+    d'aquestes comunitats; Stimulo només com a subcontractat.
+  url: https://idrconsulting.com/actualidad/innterconecta-step-2026-cdti-138-millones-octubre
+  fonts_verificacio:
+    - https://www.interempresas.net/Ciberseguridad/660249-CDTI-abrira-octubre-convocatoria-Innterconecta-STEP-2026-138-millones-proyectos-I-D.html
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: prevista
+    revisar: 2026-10-13
+    revisar_motiu: "INNTERCONECTA STEP: confirmar dates d'obertura (octubre) i avisar clients de les comunitats elegibles"
+
+- id: cdti-ecosistemes
+  excel_fila: 17
+  nom: "Ecosistemas de Innovación y Transferencia"
+  entitat: CDTI
+  nivell: estat
+  origen: public
+  instrument: subvencio
+  fons: UE – FEDER + Estat
+  zones: [ES]
+  ambit_geografic: Agrupacions de 4–8 entitats en ≥3 comunitats autònomes.
+  beneficiaris: [consorci, centre_tecnologic, universitat, pime, gran_empresa]
+  rols_stimulo: [soci]
+  focus: [transferencia, cooperacio]
+  pressupost_min_eur: 120000
+  pressupost_total_eur: 14280000
+  ajuda_text: "Projectes de 120.000 €–1 M€ (minimis). Cofinançament FEDER segons CA (Catalunya fins al 40%)."
+  descripcio: Actuacions interregionals de transferència, difusió i valorització del coneixement.
+  notes: La convocatòria 2025 va tancar l'11/03/2026; la de 2026 no està publicada.
+  url: https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2025-12-17
+    tancament: 2026-03-11
+
+- id: cdti-cpp-defensa
+  nom: "Compra Pública Precomercial (CPP) i consultes preliminars de mercat – CDTI / Defensa"
+  entitat: CDTI (Oficina CPI) + Ministeri de Defensa
+  nivell: estat
+  origen: public
+  instrument: compra_publica_innovacio
+  zones: [EU]
+  ambit_geografic: Licitadors de la UE (consorcis d'empreses i centres).
+  beneficiaris: [pime, gran_empresa, consorci, centre_tecnologic]
+  rols_stimulo: [soci, subcontractat]
+  focus: [dual, defensa, robotica, deep_tech, prova_concepte]
+  import_max_eur: 11905308
+  ajuda_text: "Contractes de serveis d'R+D (no és subvenció). Ex. 2026: robots terrestres autònoms, 11,9 M€ IVA inclòs, 30 mesos."
+  descripcio: >
+    El CDTI licita R+D precomercial per a necessitats públiques (sovint de Defensa). Abans, fa
+    consultes preliminars de mercat obertes a empreses: és el moment de posicionar-se.
+  notes: >
+    2026: CPP robot terrestre autònom (ofertes fins al 25/05/2026, tancada); consultes de vigilància
+    submarina i col·lisionadors de partícules. Vigilar l'agenda de l'Oficina CPI.
+  url: https://www.cdti.es/noticias/cdti-innovacion-fondos-feder-licitacion-compra-publica-precomercial-robot-terrestre-autonomo-tecnologia-dual-defensa-civil
+  confianca: mitjana
+  calendari:
+    recurrencia: desconeguda
+    estat: desconegut
+    revisar: 2026-11-02
+    revisar_motiu: "CDTI CPI/CPP: revisar noves consultes preliminars de mercat (robòtica, dual)"
+
+- id: mintur-aei
+  excel_fila: 18
+  nom: "Agrupaciones Empresariales Innovadoras (AEI)"
+  entitat: Ministeri d'Indústria i Turisme (DG Indústria i PIME)
+  nivell: estat
+  origen: public
+  instrument: subvencio
+  zones: [ES]
+  ambit_geografic: AEI inscrites al Registre del Ministeri i les seves entitats associades (secpho, CIAC, CataloniaBio...).
+  beneficiaris: [cluster_aei, pime, gran_empresa]
+  rols_stimulo: [soci, beneficiari]
+  focus: [cooperacio, deep_tech, industria, digital, dual, fotonica, salut]
+  intensitat_max: 80
+  import_max_eur: 250000
+  pressupost_total_eur: 9000000
+  ajuda_text: "L3 R+D+i: recerca industrial 50% (fins 80%), desenvolupament experimental 25% (fins 60%), innovació pime 50%; màx. 200.000 € (250.000 €) en R+D."
+  descripcio: >
+    Línies: L1 funcionament d'AEI incipients; L2 estudis de viabilitat; L3 projectes d'R+D+i per a
+    l'autonomia estratègica i la digitalització. És la via per on Stimulo ha fet Q LEAF IN VITRO,
+    SEPTIBELL i DRONSTORE II amb secpho.
+  notes: >
+    Edició 2026: 30/05–26/06/2026 (BOE-B-2026-17584), resolució pendent. L'Excel atribuïa aquesta
+    línia a ENISA: és del Ministeri d'Indústria (DG Indústria i PIME). DOGA hi pot accedir via CIAC
+    o Light Mobility Cluster (verificar inscripció al registre AEI).
+  url: https://www.mintur.gob.es/portalayudas/agrupacionesempresariales
+  fonts_verificacio:
+    - https://www.boe.es/boe/dias/2026/05/29/pdfs/BOE-B-2026-17584.pdf
+    - https://www.secpho.org/casos/qleaf-invitro/
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-05-30
+    tancament: 2026-06-26
+    finestra_habitual: "Maig–juny"
+
+- id: enisa
+  excel_fila: 19
+  nom: "ENISA – préstecs participatius"
+  entitat: ENISA (Ministeri d'Indústria i Turisme)
+  nivell: estat
+  origen: public
+  instrument: prestec
+  zones: [ES]
+  ambit_geografic: Pimes i startups espanyoles.
+  beneficiaris: [pime, startup]
+  rols_stimulo: [beneficiari, proveidor_extern]
+  focus: [creixement_startup, digital]
+  import_max_eur: 1500000
+  ajuda_text: "Jóvenes Emprendedores 25.000–75.000 €; Emprendedores fins 300.000 €; Crecimiento i Emprendedoras Digitales fins 1,5 M€."
+  descripcio: Préstec participatiu sense garanties per a fases inicials i de creixement.
+  notes: "L'Excel l'atribuïa a Red.es/NextGenEU: és ENISA (Ministeri d'Indústria). Oberta fins exhaurir pressupost."
+  url: https://www.enisa.es/es/financia-tu-empresa/lineas-de-financiacion/d/emprendedoras-digitales
+  confianca: alta
+  calendari:
+    recurrencia: continua
+    estat: permanent
+
+- id: redes-kit-digital
+  excel_fila: 20
+  nom: "Kit Digital"
+  entitat: Red.es (Ministeri per a la Transformació Digital)
+  nivell: estat
+  origen: public
+  instrument: cupo
+  fons: UE – NextGenerationEU (PRTR)
+  zones: [ES]
+  ambit_geografic: Pimes, microempreses i autònoms.
+  beneficiaris: [pime]
+  rols_stimulo: []
+  focus: [digital]
+  import_max_eur: 3000
+  ajuda_text: "Bo digital fins a 3.000 € (segment III)."
+  descripcio: Bo per contractar solucions digitals del catàleg a agents digitalitzadors.
+  notes: Programa finalitzat (termini 31/10/2025). Es manté per traçabilitat de l'Excel.
+  url: https://www.acelerapyme.gob.es/kit-digital
+  confianca: alta
+  calendari:
+    recurrencia: puntual
+    estat: tancada
+    tancament: 2025-10-31
+
+- id: redes-kit-consulting
+  excel_fila: 21
+  nom: "Kit Consulting"
+  entitat: Red.es (Ministeri per a la Transformació Digital)
+  nivell: estat
+  origen: public
+  instrument: cupo
+  fons: UE – NextGenerationEU (PRTR)
+  zones: [ES]
+  ambit_geografic: Pimes de 10 a 249 treballadors.
+  beneficiaris: [pime]
+  rols_stimulo: []
+  focus: [digital, ia]
+  import_max_eur: 24000
+  ajuda_text: "12.000 € (10–<50), 18.000 € (50–<100), 24.000 € (100–<250 treballadors)."
+  descripcio: Bo per a assessorament en transformació digital (dades, IA, processos, ciberseguretat).
+  notes: "L'Excel l'atribuïa al MINTUR; és de Red.es. Els fons NextGen acaben el 2026: comprovar si queda pressupost."
+  url: https://www.acelerapyme.gob.es/kit-consulting
+  confianca: mitjana
+  calendari:
+    recurrencia: puntual
+    estat: tancada
+    tancament: 2025-03-31
+
+- id: aei-torres-quevedo
+  nom: "Torres Quevedo (PTQ) 2026"
+  entitat: Agencia Estatal de Investigación
+  nivell: estat
+  origen: public
+  instrument: beca_contracte
+  zones: [ES]
+  ambit_geografic: Empreses, centres tecnològics i associacions empresarials d'Espanya.
+  beneficiaris: [pime, gran_empresa, startup, centre_tecnologic]
+  rols_stimulo: [beneficiari]
+  focus: [talent, deep_tech]
+  pressupost_total_eur: 20100000
+  durada_max_mesos: 36
+  ajuda_text: "Ajut per contractar un doctor durant 3 anys en un projecte d'R+D; 20,1 M€."
+  descripcio: Incorporar doctors a l'R+D empresarial.
+  url: https://www.ciencia.gob.es/Convocatorias/2026/PTQ2026.html
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: oberta
+    obertura: 2026-10-08
+    tancament: 2026-10-29
+
+- id: aei-doctorados-industriales
+  nom: "Doctorados Industriales 2026 (estatal)"
+  entitat: Agencia Estatal de Investigación
+  nivell: estat
+  origen: public
+  instrument: beca_contracte
+  zones: [ES]
+  ambit_geografic: Empreses espanyoles + universitat.
+  beneficiaris: [pime, gran_empresa, startup]
+  rols_stimulo: [beneficiari]
+  focus: [talent, transferencia, deep_tech, cooperacio]
+  import_max_eur: 137600
+  pressupost_total_eur: 11000000
+  durada_max_mesos: 48
+  ajuda_text: "Fins a 34.400 €/any (salari mínim 25.400 €), 4 anys."
+  descripcio: Contracte de doctorand en un projecte d'R+D de l'empresa amb una universitat.
+  url: https://www.apte.org/ayudas-para-contratos-de-doctorados-industriales-2026
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: oberta
+    obertura: 2026-09-30
+    tancament: 2026-10-26
+
+- id: aei-colaboracion-publico-privada
+  nom: "Proyectos de Colaboración Público-Privada (CPP)"
+  entitat: Agencia Estatal de Investigación
+  nivell: estat
+  origen: public
+  instrument: mixt
+  zones: [ES]
+  ambit_geografic: Consorcis amb ≥1 empresa i ≥1 organisme de recerca espanyols.
+  beneficiaris: [pime, gran_empresa, universitat, centre_recerca]
+  rols_stimulo: [soci, beneficiari]
+  focus: [transferencia, cooperacio, deep_tech, industria]
+  pressupost_min_eur: 350000
+  pressupost_total_eur: 300000000
+  ajuda_text: "Subvenció + préstec; pressupost mínim 350.000 €; 300 M€ (convocatòria 2025)."
+  descripcio: Projectes d'R+D cooperatius entre empreses i organismes de recerca.
+  notes: La convocatòria 2025 va tancar el 30/01/2026; la de 2026 s'ajornaria a la primavera de 2027 pel nou marc d'ajuts d'estat (no verificat).
+  url: https://www.aei.gob.es/cpp-proyectos-colaboracion-publico-privada
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: prevista
+    mes_obertura_habitual: 3
+    mes_tancament_habitual: 4
+
+- id: aei-pruebas-concepto
+  nom: "Pruebas de Concepto"
+  entitat: Agencia Estatal de Investigación
+  nivell: estat
+  origen: public
+  instrument: subvencio
+  zones: [ES]
+  ambit_geografic: Grups de recerca amb projectes vigents del Pla Estatal.
+  beneficiaris: [universitat, centre_recerca]
+  rols_stimulo: [subcontractat, proveidor_extern]
+  focus: [prova_concepte, transferencia, deep_tech]
+  import_max_eur: 300000
+  pressupost_total_eur: 30000000
+  durada_max_mesos: 24
+  trl: [3, 5]
+  ajuda_text: "Fins a 300.000 €, 2 anys; 30 M€."
+  descripcio: Portar resultats de recerca a prova de concepte (la UPC hi va obtenir 915.055 € per a 8 projectes).
+  url: https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i-para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-06-19
+    tancament: 2026-07-10
+
+- id: defensa-coincidente
+  nom: "Programa COINCIDENTE"
+  entitat: Ministeri de Defensa (DGAM)
+  nivell: estat
+  origen: public
+  instrument: subvencio
+  zones: [ES]
+  ambit_geografic: Empreses i entitats espanyoles.
+  beneficiaris: [pime, gran_empresa, centre_tecnologic, universitat]
+  rols_stimulo: [beneficiari, soci]
+  focus: [dual, defensa, deep_tech, robotica, espai, ia]
+  intensitat_max: 70
+  import_max_eur: 975000
+  pressupost_total_eur: 7491732
+  durada_max_mesos: 30
+  ajuda_text: "Microempresa 70%, petita 60%, mitjana 40%. 2026: antidrons (975.000 €), IA i entorn electromagnètic (805.785 €), sensors per a vigilància espacial (975.000 €)."
+  descripcio: Tecnologies civils amb aplicació a defensa (ús dual).
+  notes: "Edició 2026: 26/05–27/07/2026 (BOE-A-2026-11245). Intensitat per a gran empresa no verificada."
+  url: https://tecnologiaeinnovacion.defensa.gob.es/en/colaboraci%C3%B3n-tecnol%C3%B3gica
+  fonts_verificacio:
+    - https://otri.ugr.es/financiacion/investigacion-empresas/colaboracion/coincidente-2026
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-05-26
+    tancament: 2026-07-27
+
+- id: eoi-in-def
+  nom: "IN+DEF – pimes i startups a la cadena de valor de la defensa"
+  entitat: EOI (Ministeris d'Indústria, Defensa i Ciència)
+  nivell: estat
+  origen: public
+  instrument: acceleracio
+  zones: [ES]
+  ambit_geografic: Pimes i startups espanyoles.
+  beneficiaris: [pime, startup]
+  rols_stimulo: [beneficiari]
+  focus: [dual, defensa, deep_tech]
+  ajuda_text: "Reptes tecnològics d'ús dual, hackatons i formació; objectiu 500 pimes i startups."
+  descripcio: Programa d'innovació oberta per entrar a la cadena de valor de defensa.
+  notes: Llançat el 30/03/2026; candidatures 9–18/07/2026 (no verificat). Saber si hi haurà noves rondes.
+  url: https://www.eoi.es/es/noticias/eoi-lanza-el-programa-indef-una-iniciativa-destinada-incorporar-pymes-y-startups-en-la-cadena-de-valor-del-ambito-de-la-defensa
+  confianca: baixa
+  calendari:
+    recurrencia: desconeguda
+    estat: tancada
+    obertura: 2026-07-09
+    tancament: 2026-07-18
+    revisar: 2026-11-16
+    revisar_motiu: "IN+DEF (EOI): comprovar si obre nous reptes d'ús dual"
+
+- id: aee-bass
+  nom: "BASS 2026 – Agencia Espacial Española"
+  entitat: Agencia Espacial Española
+  nivell: estat
+  origen: public
+  instrument: subvencio
+  zones: [ES]
+  ambit_geografic: Només empreses espanyoles.
+  beneficiaris: [pime, gran_empresa, startup]
+  rols_stimulo: [beneficiari, soci]
+  focus: [espai, deep_tech]
+  ajuda_text: "Convocatòria de l'AEE per a empreses espanyoles (imports no verificats)."
+  descripcio: Desenvolupament de capacitats i aplicacions espacials.
+  url: https://www.aee.gob.es/Convocatorias/2026/BASS.html
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: oberta
+    obertura: 2026-04-27
+    tancament: 2026-11-27
+
+- id: sepides-faiip
+  nom: "FAIIP – Fondo de Apoyo a la Inversión Industrial Productiva"
+  entitat: SEPIDES (Ministeri d'Indústria i Turisme)
+  nivell: estat
+  origen: public
+  instrument: prestec
+  zones: [ES]
+  ambit_geografic: Empreses industrials establertes a Espanya.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: []
+  focus: [industria, sostenibilitat, energia]
+  intensitat_max: 75
+  import_max_eur: 60000000
+  ajuda_text: "Préstec fins al 75% de la inversió; 200.000 €–60 M€; fins a 10 anys."
+  descripcio: Inversió industrial productiva (noves línies, modernització).
+  notes: Oberta fins al 31/12/2026, per ordre cronològic. Rellevant per a DOGA (línies de motors brushless).
+  url: https://sepides.es/
+  confianca: mitjana
+  calendari:
+    recurrencia: continua
+    estat: permanent
+    tancament: 2026-12-31
+
+- id: sett-fondo-next-tech
+  nom: "SETT – Fondo Next Tech i PERTE Chip"
+  entitat: SETT (Sociedad Española para la Transformación Tecnológica)
+  nivell: estat
+  origen: public
+  instrument: capital
+  fons: UE – NextGenerationEU (PRTR)
+  zones: [ES]
+  ambit_geografic: Empreses deep tech amb activitat a Espanya (via fons de capital risc).
+  beneficiaris: [startup, pime]
+  rols_stimulo: [proveidor_extern]
+  focus: [deep_tech, creixement_startup, digital]
+  pressupost_total_eur: 4000000000
+  ajuda_text: "Fondo Next Tech: 4.000 M€ en coinversió amb capital risc; PERTE Chip: 12.250 M€."
+  descripcio: >
+    Entitat pública que gestiona >16.400 M€ del PRTR: inverteix en capital (directament o via
+    fons). No convoca subvencions per a pimes. Rellevància indirecta: startups clients finançades.
+  url: https://sett.gob.es/instrumentos/
+  confianca: mitjana
+  calendari:
+    recurrencia: continua
+    estat: permanent
+
+- id: cdti-innvierte
+  nom: "Innvierte (coinversió CDTI)"
+  entitat: CDTI
+  nivell: estat
+  origen: public
+  instrument: capital
+  zones: [ES]
+  ambit_geografic: Empreses tecnològiques espanyoles amb inversors acreditats.
+  beneficiaris: [startup, pime]
+  rols_stimulo: [proveidor_extern]
+  focus: [deep_tech, creixement_startup]
+  pressupost_total_eur: 790000000
+  ajuda_text: "Coinversió en capital al costat d'inversors privats; 790 M€ el 2026."
+  descripcio: Capital per a empreses tecnològiques en creixement.
+  url: https://www.ciencia.gob.es/Noticias/2026/junio/innvierte-abril-mayo-2026.html
+  confianca: mitjana
+  calendari:
+    recurrencia: continua
+    estat: permanent
+
+# --- Privats i fundacions (Estat) --------------------------------------------------------------
+
+- id: caixaimpulse-innovacio-salut
+  nom: "CaixaImpulse Innovació en Salut"
+  entitat: Fundació "la Caixa" (CaixaResearch)
+  nivell: estat
+  origen: fundacio_privada
+  instrument: subvencio
+  zones: [ES, PT]
+  ambit_geografic: Entitats sense ànim de lucre d'Espanya i Portugal (universitats, centres, hospitals).
+  beneficiaris: [universitat, centre_recerca, hospital, entitat_sense_anim_lucre]
+  rols_stimulo: [proveidor_extern]
+  focus: [salut, dispositius_medics, transferencia, prova_concepte]
+  import_max_eur: 500000
+  trl: [3, 7]
+  ajuda_text: "Fase 1 fins a 50.000 € (12 m); fase 2 fins a 150.000 € (24 m, inclou disseny del prototip); fase 3 fins a 500.000 €."
+  descripcio: >
+    Valorització de teràpies, productes sanitaris, diagnòstic i salut digital. Les empreses
+    constituïdes en queden excloses (spin-off com a tercer vinculat): Stimulo hi entra com a
+    proveïdor de disseny de dispositiu, idealment amb Inbrooll (ISO 13485).
+  notes: >
+    Referència d'alt impacte en l'àmbit privat. Edició 2026: 11/12/2025–19/02/2026 (resultats juliol
+    2026). Acció: contactar els projectes de fase 2 adjudicats el 2026.
+  url: https://caixaresearch.org/es/convocatoria-caixaimpulse-innovacion-salud
+  fonts_verificacio:
+    - https://caixaresearch.org/en/caixaimpulse-health-innovation-call-results-2026
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2025-12-11
+    tancament: 2026-02-19
+
+- id: emprendexxi
+  nom: "Premis EmprendeXXI"
+  entitat: CaixaBank DayOne + ENISA
+  nivell: estat
+  origen: mixt
+  instrument: premi
+  zones: [ES]
+  ambit_geografic: Empreses de base tecnològica amb seu a Espanya constituïdes a partir de l'01/01/2023.
+  beneficiaris: [startup]
+  rols_stimulo: [proveidor_extern]
+  focus: [creixement_startup, deep_tech, salut, sostenibilitat]
+  import_max_eur: 15000
+  ajuda_text: "17 premis territorials de 6.000 €; 9 Reptes del Demà de 15.000 €; accèssits de 9.000 €."
+  descripcio: Premi i acompanyament a startups; visibilitat alta.
+  url: https://www.caixabank.com/es/actualidad/noticias/arranca-la-convocatoria-para-participar-en-los-premios-emprendexxi-impulsados-por-caixabank-y-enisa?id=44289
+  confianca: alta
+  calendari:
+    recurrencia: anual
+    estat: oberta
+    obertura: 2026-10-01
+    tancament: 2027-01-22
+
+- id: fgcsic-comte-innovacion
+  nom: "COMTE-Innovación (Fundación General CSIC)"
+  entitat: Fundación General CSIC
+  nivell: estat
+  origen: fundacio_publica
+  instrument: acceleracio
+  zones: [ES]
+  ambit_geografic: "Investigadors del CSIC (a Catalunya: ICMAB, IIIA, IRI, IMB-CNM...)."
+  beneficiaris: [centre_recerca]
+  rols_stimulo: [proveidor_extern]
+  focus: [transferencia, deep_tech, prova_concepte]
+  ajuda_text: "Fins a 10 projectes; >60.000 € de valor estimat en espècie per projecte; 24 mesos."
+  descripcio: Valorització i acceleració d'actius protegits del CSIC (TRL 4–9).
+  notes: Convocatòria 2025 tancada el 31/10/2025; edició 2026 no verificada. Projectes que necessiten disseny de producte.
+  url: https://fgcsic.es/convocatoria-evento/comte-innovacion-envalor-2/
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: desconegut
+    tancament: 2025-10-31
+    mes_obertura_habitual: 9
+
+- id: cajamar-innova
+  nom: "Cajamar Innova – incubadora de tecnologies de l'aigua i agrotech"
+  entitat: Grupo Cooperativo Cajamar
+  nivell: estat
+  origen: corporatiu
+  instrument: acceleracio
+  zones: [ES]
+  ambit_geografic: Startups de tot Espanya; incubació a Almeria (presencialitat no verificada).
+  beneficiaris: [startup]
+  rols_stimulo: [proveidor_extern]
+  focus: [aigua, agrotech, sostenibilitat, creixement_startup]
+  ajuda_text: "Incubació d'alta tecnologia en aigua i agrotech (cofinançament FEDER/Incyde); imports no verificats."
+  descripcio: Programa corporatiu d'incubació en gestió de l'aigua i agricultura.
+  notes: Convocatòries 2026-27 no verificades (web bloquejada durant la recerca).
+  url: https://cajamarinnova.es/es/
+  confianca: baixa
+  calendari:
+    recurrencia: desconeguda
+    estat: desconegut
+    revisar: 2026-10-27
+    revisar_motiu: "Cajamar Innova: verificar convocatòries obertes i requisits d'ubicació"
+
+- id: fundacion-repsol-fondo-emprendedores
+  nom: "Fondo de Emprendedores – Fundación Repsol"
+  entitat: Fundación Repsol
+  nivell: estat
+  origen: fundacio_privada
+  instrument: acceleracio
+  zones: [ES]
+  ambit_geografic: Startups (principalment espanyoles).
+  beneficiaris: [startup]
+  rols_stimulo: [proveidor_extern]
+  focus: [energia, mobilitat, economia_circular, sostenibilitat, deep_tech]
+  ajuda_text: "Acceleració amb suport econòmic mensual i pilots a instal·lacions de Repsol (imports no verificats)."
+  descripcio: Acceleradora corporativa en energia, mobilitat i economia circular.
+  notes: Dates i imports 2026-27 no verificats.
+  url: https://www.fundacionrepsol.com/
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: desconegut
+    revisar: 2026-11-03
+    revisar_motiu: "Fundación Repsol: verificar dates de la propera convocatòria"
+
+# =============================================================================================
+# EUROPA
+# =============================================================================================
+
+- id: eic-pathfinder
+  excel_fila: 22
+  nom: "EIC Pathfinder (Open i Challenges)"
+  entitat: Comissió Europea – EIC / EISMEA
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  fons: UE – Horizon Europe
+  zones: [EU]
+  ambit_geografic: "Consorcis d'UE + associats (Open: normalment ≥3 entitats de 3 països)."
+  beneficiaris: [consorci, universitat, centre_recerca, pime, startup, gran_empresa]
+  rols_stimulo: [soci]
+  focus: [deep_tech, transferencia, cooperacio]
+  intensitat_max: 100
+  import_max_eur: 4000000
+  trl: [1, 4]
+  ajuda_text: "Subvenció al 100%; fins a ~3–4 M€ per projecte (lump sum el 2027)."
+  descripcio: >
+    Recerca visionària per a tecnologies radicalment noves. ATENCIÓ: l'Excel hi tenia la descripció
+    i el TRL de l'Accelerator; Pathfinder és recerca primerenca en consorci, no escalat de startups.
+  notes: >
+    Open 2026 tancat (12/05/2026). Challenges 2026 fins al 28/10/2026. 2027 (esborrany): Open en
+    dues fases 25/02/2027 i 16/09/2027; Challenges 29/09/2027.
+  url: https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-eic-2026-pathfinderopen
+  fonts_verificacio:
+    - https://www.myriadassociates.ie/resources/news/2026/eic-work-programme-2027/
+  confianca: mitjana
+  calendari:
+    recurrencia: multiples_talls
+    estat: oberta
+    talls: [2026-10-28, 2027-02-25, 2027-09-16, 2027-09-29]
+
+- id: eic-transition
+  excel_fila: 24
+  nom: "EIC Transition"
+  entitat: Comissió Europea – EIC
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  fons: UE – Horizon Europe
+  zones: [EU]
+  ambit_geografic: UE + associats; ha de partir de resultats de Pathfinder, ERC PoC o projectes del Pilar 2.
+  beneficiaris: [pime, startup, universitat, centre_recerca]
+  rols_stimulo: [proveidor_extern, subcontractat]
+  focus: [transferencia, deep_tech, prova_concepte]
+  import_max_eur: 2500000
+  trl: [4, 6]
+  ajuda_text: "Fins a 2,5 M€."
+  descripcio: Validació i demostració en entorn rellevant + model de negoci.
+  notes: "2026 tancat (16/09/2026). 2027 (esborrany): 16/09/2027, un sol beneficiari i carta d'intencions d'un client obligatòria."
+  url: https://www.kowi.de/en/kowi/news/draft-eic-work-programme-2027-includes-changes-to-application-procedure-for-pathfinder-and-transition.aspx
+  confianca: mitjana
+  calendari:
+    recurrencia: multiples_talls
+    estat: tancada
+    talls: [2027-09-16]
+
+- id: eic-accelerator
+  excel_fila: 23
+  nom: "EIC Accelerator (Open i Challenges)"
+  entitat: Comissió Europea – EIC
+  nivell: europa
+  origen: public
+  instrument: mixt
+  fons: UE – Horizon Europe
+  zones: [EU]
+  ambit_geografic: Pime o startup individual establerta a la UE o país associat.
+  beneficiaris: [pime, startup]
+  rols_stimulo: [proveidor_extern, subcontractat]
+  focus: [deep_tech, dual, creixement_startup, sostenibilitat, salut, dispositius_medics]
+  intensitat_max: 70
+  import_max_eur: 2500000
+  trl: [5, 8]
+  ajuda_text: "Subvenció fins a 2,5 M€ (70%) + inversió en capital via EIC Fund."
+  descripcio: Portar innovacions disruptives al mercat i escalar.
+  notes: >
+    Short application contínua. Talls de proposta completa: 04/11/2026 (darrer 2026); 2027
+    (esborrany) 03/02, 01/04, 01/09 i 03/11. Obert a tecnologies d'ús dual des del 17/06/2026.
+    Plug-in: NEOTEC dona accés directe a la proposta completa. El cupó ACCIÓ de programes europeus
+    pot finançar-ne la preparació.
+  url: https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-submit-my-application-503.php
+  fonts_verificacio:
+    - https://eic.ec.europa.eu/news/european-innovation-council-opens-defence-and-dual-use-technologies-2026-06-17_en
+  confianca: alta
+  calendari:
+    recurrencia: multiples_talls
+    estat: oberta
+    talls: [2026-11-04, 2027-02-03, 2027-04-01, 2027-09-01, 2027-11-03]
+
+- id: eic-step-scaleup
+  excel_fila: 25
+  nom: "EIC STEP Scale Up"
+  entitat: Comissió Europea – EIC
+  nivell: europa
+  origen: public
+  instrument: capital
+  fons: UE – Horizon Europe
+  zones: [EU]
+  ambit_geografic: Startups, pimes i small mid-caps de la UE i associats.
+  beneficiaris: [startup, pime]
+  rols_stimulo: [proveidor_extern]
+  focus: [deep_tech, dual, sostenibilitat, digital]
+  import_max_eur: 30000000
+  trl: [8, 9]
+  ajuda_text: "Inversió en capital de 10–30 M€."
+  descripcio: Escalar tecnologies estratègiques (digital, net-zero, biotec, defensa).
+  notes: Talls 25/11/2026; 2027 (esborrany) 28/01, 29/04, 06/09, 22/11. EIC STEP Defence Scale Up obert fins al 28/10/2026.
+  url: https://alientt.com/key-changes-in-the-eic-work-programme-2026/
+  confianca: mitjana
+  calendari:
+    recurrencia: multiples_talls
+    estat: oberta
+    talls: [2026-11-25, 2027-01-28, 2027-04-29, 2027-09-06, 2027-11-22]
+
+- id: women-techeu
+  nom: "Women TechEU"
+  entitat: Comissió Europea – EIC
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  zones: [EU]
+  ambit_geografic: Startups deep tech liderades per dones a la UE i associats.
+  beneficiaris: [startup]
+  rols_stimulo: [proveidor_extern]
+  focus: [deep_tech, creixement_startup]
+  import_max_eur: 75000
+  ajuda_text: "75.000 € + mentoria (l'esborrany 2027 el duplica a 150.000 €)."
+  descripcio: Primeres fases de startups deep tech fundades per dones.
+  notes: Proposta completa 14/01, 01/04 i 08/07/2027; l'elegibilitat s'ha d'enviar ≥3 setmanes abans.
+  url: https://womentecheurope.eu/active-calls/
+  confianca: mitjana
+  calendari:
+    recurrencia: multiples_talls
+    estat: oberta
+    talls: [2027-01-14, 2027-04-01, 2027-07-08]
+
+- id: eurostars
+  excel_fila: 26
+  nom: "Eurostars-3"
+  entitat: EUREKA + agències nacionals (CDTI a Espanya)
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  fons: EUREKA/Eurostars + finançament nacional
+  zones: [EU]
+  ambit_geografic: Consorci de ≥2 entitats de ≥2 països Eurostars; lidera una pime que fa R+D (pimes ≥50% del cost).
+  beneficiaris: [pime, startup]
+  rols_stimulo: [beneficiari, soci]
+  focus: [deep_tech, cooperacio, internacionalitzacio, industria]
+  import_max_eur: 400000
+  trl: [4, 7]
+  ajuda_text: "Finançament nacional (CDTI per a pimes espanyoles); referència de l'Excel: fins a 400.000 € per participant (no verificat)."
+  descripcio: R+D internacional orientada a mercat i liderada per pimes; aplicació civil.
+  notes: >
+    C11 tancada (10/09/2026). C12: obre 17/12/2026 i tanca 04/03/2027 a les 14 h CET. Un gran
+    client (DOGA) hi pot entrar com a soci, no com a líder.
+  url: https://www.eurekanetwork.org/programmes-and-calls/eurostars/
+  fonts_verificacio:
+    - https://myeurekaproject.org/competition/26/overview
+  confianca: alta
+  calendari:
+    recurrencia: multiples_talls
+    estat: prevista
+    obertura: 2026-12-17
+    talls: [2027-03-04]
+
+- id: eureka-smart
+  nom: "EUREKA SMART – Call 10 (fabricació avançada)"
+  entitat: EUREKA (clúster SMART) + CDTI
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  zones: [EU]
+  ambit_geografic: Consorcis internacionals de països EUREKA; finançament nacional (CDTI a Espanya).
+  beneficiaris: [pime, gran_empresa, centre_recerca, universitat]
+  rols_stimulo: [soci, subcontractat]
+  focus: [industria, cooperacio, sostenibilitat, digital, internacionalitzacio]
+  ajuda_text: "Finançament nacional per a cada soci (condicions CDTI)."
+  descripcio: Projectes internacionals de fabricació avançada. Molt adequat per a un fabricant com DOGA.
+  notes: "Project outline 26/01/2027 (11 h CET); proposta completa 15/04/2027. Altres clústers EUREKA: ITEA 4 (PO 02/11/2026), Xecs (PO 21/01/2027)."
+  url: https://www.eurekanetwork.org/programmes-and-calls/eureka-clusters/smart-call-10-2026/
+  confianca: mitjana
+  calendari:
+    recurrencia: multiples_talls
+    estat: oberta
+    talls: [2027-01-26, 2027-04-15]
+
+- id: horizon-europe-pilar2
+  excel_fila: 27
+  nom: "Horizon Europe – Pilar 2 (Clústers 1–6): visió general"
+  entitat: Comissió Europea – Funding & Tenders Portal
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  fons: UE – Horizon Europe
+  zones: [EU]
+  ambit_geografic: Consorcis europeus (habitualment ≥3 entitats de 3 països).
+  beneficiaris: [consorci, pime, gran_empresa, universitat, centre_recerca, centre_tecnologic]
+  rols_stimulo: [soci]
+  focus: [cooperacio, deep_tech, sostenibilitat]
+  intensitat_max: 100
+  trl: [1, 8]
+  ajuda_text: "RIA 100%; IA 70% per a empreses (100% sense ànim de lucre)."
+  descripcio: Fitxa paraigua de l'Excel. Vegeu les fitxes específiques de Clúster 1, 4, 5 i 6.
+  notes: Programa de treball 2026-2027; el proper programa marc (FP10 dins del Fons Europeu de Competitivitat, 2028-2034) està en negociació.
+  url: https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+  confianca: alta
+  calendari:
+    recurrencia: multiples_talls
+    estat: oberta
+    talls: [2027-02-02, 2027-02-17, 2027-03-18, 2027-04-14, 2027-09-16]
+
+- id: he-cl4-made-in-europe-2027
+  nom: "Horizon Europe Clúster 4 – Made in Europe 2027 (fabricació avançada i circular)"
+  entitat: Comissió Europea
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  zones: [EU]
+  ambit_geografic: Consorcis europeus.
+  beneficiaris: [consorci, pime, gran_empresa, universitat, centre_recerca, centre_tecnologic]
+  rols_stimulo: [soci]
+  focus: [industria, economia_circular, sostenibilitat, cooperacio, deep_tech]
+  intensitat_max: 70
+  import_max_eur: 8000000
+  ajuda_text: "IA 70% per a empreses; p. ex. M-P-02 'Advanced manufacturing for key products' 36 M€ (6–8 M€/projecte)."
+  descripcio: >
+    Topics CL4-2027-01: M-P-02 fabricació avançada de productes clau, M-P-03 des/re-fabricació
+    (RIA), M-P-06 materials avançats circulars del disseny al mercat. Encaix: motors elèctrics
+    remanufacturables (DOGA) amb ecodisseny (Stimulo).
+  url: https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-7-digital-industry-and-space_horizon-2026-2027_en.pdf
+  fonts_verificacio:
+    - https://www.effra.eu/wp-content/uploads/2025/10/MiE-Calls-20262027.pdf
+  confianca: mitjana
+  calendari:
+    recurrencia: puntual
+    estat: prevista
+    obertura: 2026-10-13
+    tancament: 2027-02-02
+
+- id: he-cl4-adra-robotica-2027
+  nom: "Horizon Europe Clúster 4 – AI-Driven Robotics for Industry (ADRA, 2027)"
+  entitat: Comissió Europea
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  zones: [EU]
+  ambit_geografic: Consorcis europeus.
+  beneficiaris: [consorci, pime, gran_empresa, universitat, centre_recerca]
+  rols_stimulo: [soci]
+  focus: [robotica, ia, industria, cooperacio, deep_tech]
+  intensitat_max: 100
+  ajuda_text: "Topic CL4-2027-04 DIGITAL-EMERGING-05."
+  descripcio: Robòtica industrial impulsada per IA.
+  url: https://ec.europa.eu/info/funding-tenders/opportunities/portal/
+  fonts_verificacio:
+    - https://microfluidics-innovation-center.com/horizon-europe/tips-tricks-for-horizon-cl4-2027-04-digital-emerging-05/
+  confianca: mitjana
+  calendari:
+    recurrencia: puntual
+    estat: prevista
+    obertura: 2026-11-17
+    tancament: 2027-03-18
+
+- id: he-cl5-2zero-2027
+  nom: "Horizon Europe Clúster 5 – 2Zero 2027 (vehicles de zero emissions)"
+  entitat: Comissió Europea
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  zones: [EU]
+  ambit_geografic: Consorcis europeus.
+  beneficiaris: [consorci, pime, gran_empresa, universitat, centre_recerca]
+  rols_stimulo: [soci]
+  focus: [mobilitat, automocio, sostenibilitat, energia, cooperacio]
+  intensitat_max: 70
+  ajuda_text: "IA 70% per a empreses."
+  descripcio: >
+    Partenariat 2Zero (càrrega a més tensió, seguretat davant incendis en VE...). També: CCAM 2027
+    (03/06 → 07/10/2027) i bateries en dues fases (14/04 i 07/10/2027).
+  url: https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-8-climate-energy-and-mobility_horizon-2026-2027_en.pdf
+  confianca: mitjana
+  calendari:
+    recurrencia: puntual
+    estat: prevista
+    obertura: 2026-12-15
+    tancament: 2027-04-14
+
+- id: he-cl6-2027
+  nom: "Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027"
+  entitat: Comissió Europea
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  zones: [EU]
+  ambit_geografic: Consorcis europeus.
+  beneficiaris: [consorci, pime, gran_empresa, universitat, centre_recerca]
+  rols_stimulo: [soci]
+  focus: [agrotech, sostenibilitat, cooperacio]
+  intensitat_max: 100
+  ajuda_text: "RIA 100% / IA 70%."
+  descripcio: Topics en dues fases (fase 1 07-08/04/2027, fase 2 14/09/2027) i d'una fase (20/04 → 22-23/09/2027).
+  url: https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-9-food-bioeconomy-natural-resources-agriculture-and-environment_horizon-2026-2027_en.pdf
+  confianca: mitjana
+  calendari:
+    recurrencia: puntual
+    estat: prevista
+    obertura: 2027-02-03
+    tancament: 2027-04-07
+
+- id: he-cl1-salut-2027
+  nom: "Horizon Europe Clúster 1 – Salut 2027 (dispositius i diagnòstic)"
+  entitat: Comissió Europea
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  zones: [EU]
+  ambit_geografic: Consorcis europeus.
+  beneficiaris: [consorci, pime, gran_empresa, universitat, centre_recerca, hospital]
+  rols_stimulo: [soci]
+  focus: [salut, dispositius_medics, cooperacio, deep_tech]
+  intensitat_max: 100
+  import_max_eur: 7000000
+  ajuda_text: "P. ex. IND-02 'Portable & versatile point-of-care diagnostics': 39,3 M€, 5–7 M€/projecte."
+  descripcio: HLTH-2027-01/02 obren el 29/10/2026; termini o fase 1 el 17/02/2027; fase 2 el 16/09/2027.
+  url: https://www.ffg.at/en/europa/heu/cluster1/call2027-twostage
+  confianca: mitjana
+  calendari:
+    recurrencia: puntual
+    estat: prevista
+    obertura: 2026-10-29
+    tancament: 2027-02-17
+
+- id: digital-europe
+  excel_fila: 28
+  nom: "Digital Europe Programme (EDIH, TEF i convocatòries DEP)"
+  entitat: Comissió Europea
+  nivell: europa
+  origen: public
+  instrument: mixt
+  fons: UE – Digital Europe Programme
+  zones: [EU]
+  ambit_geografic: Consorcis europeus i pilots; serveis via EDIH i TEF.
+  beneficiaris: [consorci, pime, gran_empresa, centre_tecnologic]
+  rols_stimulo: [soci]
+  focus: [digital, ia, robotica, salut, agrotech]
+  intensitat_max: 100
+  trl: [7, 9]
+  ajuda_text: "Cofinançament 50–100% segons tipus de convocatòria; els TEF i EDIH ofereixen serveis subvencionats."
+  descripcio: >
+    Desplegament de capacitats digitals (IA, dades, ciberseguretat). Més útil per a clients com a
+    usuaris de serveis subvencionats: TEF de robòtica, agrifood (agrifoodTEF), salut (TEF-Health).
+  notes: Convocatòries 2026-27 no verificades.
+  url: https://digital-strategy.ec.europa.eu/en/activities/digital-programme
+  confianca: baixa
+  calendari:
+    recurrencia: multiples_talls
+    estat: desconegut
+
+- id: life
+  excel_fila: 29
+  nom: "LIFE (Economia circular i qualitat de vida; Transició energètica neta)"
+  entitat: CINEA (Comissió Europea)
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  fons: UE – LIFE
+  zones: [EU]
+  ambit_geografic: Sol·licitants individuals o consorcis de la UE.
+  beneficiaris: [pime, gran_empresa, consorci, administracio, entitat_sense_anim_lucre]
+  rols_stimulo: [soci, beneficiari]
+  focus: [sostenibilitat, economia_circular, energia]
+  intensitat_max: 60
+  ajuda_text: "Cofinançament habitual ~60% (SAP)."
+  descripcio: Acció climàtica, medi ambient, economia circular, transició energètica.
+  notes: Finestra habitual d'abril-maig a setembre. LIFE 2027 estimat abril → setembre 2027 (no verificat).
+  url: https://cinea.ec.europa.eu/programmes/life_en
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: prevista
+    mes_obertura_habitual: 4
+    mes_tancament_habitual: 9
+
+- id: interreg
+  excel_fila: 30
+  nom: "Interreg (POCTEFA, SUDOE, Euro-MED, Interreg Europe)"
+  entitat: Programes Interreg + autoritats de gestió
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  fons: UE – Interreg (FEDER)
+  zones: [EU]
+  ambit_geografic: Depèn del programa (POCTEFA zona fronterera ES-FR-AD; SUDOE ES-PT-FR sud-oest; Euro-MED; Interreg Europe tota la UE).
+  beneficiaris: [consorci, administracio, centre_tecnologic, universitat, pime]
+  rols_stimulo: [soci]
+  focus: [cooperacio, sostenibilitat, transferencia]
+  ajuda_text: "Cofinançament FEDER variable segons programa."
+  descripcio: Cooperació territorial europea (innovació regional, pilots transfronterers).
+  notes: L'Excel indicava presentació el 06/2026. Convocatòries de final de període 2021-27 no verificades.
+  url: https://www.poctefa.eu/
+  confianca: baixa
+  calendari:
+    recurrencia: desconeguda
+    estat: desconegut
+    revisar: 2026-11-09
+    revisar_motiu: "Interreg: revisar convocatòries POCTEFA/SUDOE/Euro-MED de final de període"
+
+- id: edf-eudis
+  nom: "European Defence Fund (EDF) – convocatòries pimes i tecnologies disruptives (EUDIS)"
+  entitat: Comissió Europea – DG DEFIS
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  fons: UE – Fons Europeu de Defensa
+  zones: [EU]
+  ambit_geografic: Entitats de la UE i Noruega no controlades per tercers països; consorcis.
+  beneficiaris: [pime, gran_empresa, centre_recerca, consorci]
+  rols_stimulo: [soci, subcontractat]
+  focus: [dual, defensa, deep_tech, robotica]
+  intensitat_max: 100
+  import_max_eur: 6000000
+  ajuda_text: "2026: SME development 30 M€ (≤6 M€/projecte); pimes i organismes de recerca 35 M€ (≤5 M€); disruptives 27 M€ (≤3 M€)."
+  descripcio: R+D de defensa col·laborativa; línies específiques per a pimes i tecnologies disruptives.
+  notes: Edició 2026 tancada el 29/09/2026. Programa de treball 2027 previst a finals de 2026 (~1.000 M€); termini esperat T3-T4 2027 (última convocatòria EDF del període).
+  url: https://eudis.europa.eu/eudis-tracks/sme-calls_en
+  fonts_verificacio:
+    - https://www.hezelburcht.com/en/news/european-defence-fund-edf-2026-open-for-applications-until-29-september/
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    tancament: 2026-09-29
+    mes_obertura_habitual: 5
+    revisar: 2026-12-15
+    revisar_motiu: "EDF: publicació del programa de treball 2027 (topics per a pimes i disruptives)"
+
+- id: edip-bravetech
+  nom: "EDIP – BraveTech EU (subvencions per a pimes de defensa)"
+  entitat: Comissió Europea – DG DEFIS
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  fons: UE – European Defence Industry Programme
+  zones: [EU]
+  ambit_geografic: Pimes de la UE i d'Ucraïna.
+  beneficiaris: [pime, startup]
+  rols_stimulo: [beneficiari, soci]
+  focus: [dual, defensa, deep_tech, prova_concepte]
+  import_max_eur: 200000
+  pressupost_total_eur: 35300000
+  trl: [4, 7]
+  ajuda_text: "~170 subvencions de fins a 200.000 €; 35,3 M€; de TRL 4 a TRL 7."
+  descripcio: >
+    Instrument EDIP 2026-27 per accelerar tecnologies de defensa de pimes. Encaix molt alt per a
+    Stimulo (prototips de drons, robòtica, sensors) amb DOGA com a proveïdor de motors.
+  notes: Finestra setembre–desembre 2026 (dates exactes NO verificades). EDIP també té FAST (100 M€ en capital).
+  url: https://defence-industry-space.ec.europa.eu/edip-work-programme-adopted-2026-03-30_en
+  fonts_verificacio:
+    - https://www.zabala.eu/news/edip-defence-industry/
+  confianca: baixa
+  calendari:
+    recurrencia: puntual
+    estat: oberta
+    revisar: 2026-10-09
+    revisar_motiu: "BraveTech EU: confirmar dates (finestra set.–des. 2026) i requisits"
+
+- id: eudis-business-accelerator
+  nom: "EUDIS Defence Business Accelerator"
+  entitat: Comissió Europea – EUDIS
+  nivell: europa
+  origen: public
+  instrument: acceleracio
+  zones: [EU]
+  ambit_geografic: Startups i pimes de la UE.
+  beneficiaris: [startup, pime]
+  rols_stimulo: [beneficiari]
+  focus: [dual, defensa, creixement_startup]
+  import_max_eur: 120000
+  ajuda_text: "Acceleració + voucher de fins a 120.000 € (font secundària)."
+  descripcio: Acceleració per a empreses que volen entrar al mercat de defensa.
+  notes: 2 cohorts el 2027 (primavera i tardor); sol·licitud de primavera probablement des. 2026–gen. 2027 (no verificat).
+  url: https://eudis-business-accelerator.eu/
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: prevista
+    mes_obertura_habitual: 12
+    mes_tancament_habitual: 1
+
+- id: nato-diana
+  nom: "NATO DIANA Challenge Programme"
+  entitat: OTAN – DIANA
+  nivell: internacional
+  origen: public
+  instrument: acceleracio
+  zones: [INT]
+  ambit_geografic: Països membres de l'OTAN (Espanya elegible).
+  beneficiaris: [startup, pime, centre_recerca, universitat]
+  rols_stimulo: [beneficiari]
+  focus: [dual, defensa, deep_tech, robotica, espai]
+  import_max_eur: 300000
+  ajuda_text: "Contracte de 100.000 € (fase 1) + fins a 300.000 € (fase 2) + accés a centres d'assaig."
+  descripcio: Reptes d'ús dual (autonomia multidomini, sensors, logística, defensa aèria...).
+  notes: Convocatòria 2027 tancada (02/06–03/07/2026); la propera s'espera cap al juny de 2027 (no verificat).
+  url: https://www.diana.nato.int/challenges.html
+  confianca: mitjana
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-06-02
+    tancament: 2026-07-03
+
+- id: eit-urban-mobility
+  nom: "EIT Urban Mobility – convocatòries (startups i innovació estratègica)"
+  entitat: EIT Urban Mobility (seu a Barcelona)
+  nivell: europa
+  origen: public
+  instrument: mixt
+  zones: [EU]
+  ambit_geografic: UE + associats.
+  beneficiaris: [startup, pime, gran_empresa, universitat, administracio]
+  rols_stimulo: [soci, beneficiari]
+  focus: [mobilitat, sostenibilitat, deep_tech, cooperacio]
+  ajuda_text: "Financial Support to Startups i Strategic Innovation (imports per convocatòria; no verificats)."
+  descripcio: Innovació en mobilitat urbana amb pilots a ciutats.
+  notes: Startups tall 16/11/2026; Strategic Innovation talls 28/01/2027 i 03/06/2027.
+  url: https://www.eiturbanmobility.eu/call-for-proposals/
+  confianca: mitjana
+  calendari:
+    recurrencia: multiples_talls
+    estat: oberta
+    talls: [2026-11-16, 2027-01-28, 2027-06-03]
+
+- id: eit-health
+  nom: "EIT Health – convocatòries 2026 (startups, venture building, ecosistemes)"
+  entitat: EIT Health
+  nivell: europa
+  origen: public
+  instrument: mixt
+  zones: [EU]
+  ambit_geografic: UE + associats.
+  beneficiaris: [startup, pime, universitat, hospital, centre_recerca]
+  rols_stimulo: [soci, proveidor_extern]
+  focus: [salut, dispositius_medics, creixement_startup]
+  ajuda_text: "7 convocatòries obertes des de setembre de 2026."
+  descripcio: Programes de suport a la innovació en salut (Stimulo té precedent amb Leuko, EIT Health Catapult 2022).
+  url: https://eithealth.eu/news-article/eith-call-launch-3/
+  confianca: mitjana
+  calendari:
+    recurrencia: multiples_talls
+    estat: oberta
+    talls: [2026-11-02]
+
+- id: innovation-fund
+  nom: "Innovation Fund (inclou Industrial Decarbonisation Bank)"
+  entitat: Comissió Europea – CINEA
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  zones: [EU]
+  ambit_geografic: Projectes a la UE, Noruega i Islàndia.
+  beneficiaris: [pime, gran_empresa, consorci]
+  rols_stimulo: [soci, subcontractat]
+  focus: [sostenibilitat, energia, industria]
+  ajuda_text: "Grans i petites escales; condicions per convocatòria."
+  descripcio: Tecnologies netes i descarbonització industrial.
+  notes: Convocatòria anual que obre cap a desembre i tanca cap a abril (IF26 previst des. 2026 → abr. 2027, no verificat).
+  url: https://climate.ec.europa.eu/eu-action/eu-funding-climate-action/innovation-fund_en
+  confianca: baixa
+  calendari:
+    recurrencia: anual
+    estat: prevista
+    mes_obertura_habitual: 12
+    mes_tancament_habitual: 4
+
+- id: cascade-funding-fstp
+  nom: "Convocatòries en cascada (FSTP) – robòtica, IA, fabricació, medtech"
+  entitat: Projectes Horizon Europe / Digital Europe (agregats a cascadefunding.eu)
+  nivell: europa
+  origen: public
+  instrument: subvencio
+  zones: [EU]
+  ambit_geografic: Pimes i startups d'UE + associats.
+  beneficiaris: [pime, startup]
+  rols_stimulo: [beneficiari]
+  focus: [robotica, ia, industria, dispositius_medics, prova_concepte, deep_tech]
+  import_max_eur: 150000
+  ajuda_text: "Habitualment 50.000–150.000 € per pime, procés curt."
+  descripcio: >
+    Subvencions de tercers (FSTP) de projectes europeus per a experiments i pilots. Via ràpida per
+    a Stimulo com a beneficiari. El vigilant del Funding & Tenders (tipus 8) les detecta.
+  url: https://cascadefunding.eu/
+  confianca: baixa
+  calendari:
+    recurrencia: continua
+    estat: permanent
+
+- id: licitacions-disseny-rd
+  nom: "Licitacions públiques de serveis de disseny, enginyeria i R+D (PLACSP, TED)"
+  entitat: Administracions públiques (Espanya i UE)
+  nivell: estat
+  origen: public
+  instrument: licitacio
+  zones: [EU]
+  ambit_geografic: Licitadors de la UE (sovint cal solvència tècnica i econòmica).
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [beneficiari, soci]
+  focus: [disseny, prova_concepte, deep_tech, dual, salut]
+  ajuda_text: "Contractes; vigilats automàticament per CPV 73xxxxxx, 71320000, 71300000, 71600000, 79930000."
+  descripcio: >
+    Vigilància contínua de licitacions de serveis de disseny tècnic, R+D i assajos. El vigilant
+    setmanal escriu les novetats a sortida/novetats.md. Inclou la compra pública d'innovació.
+  url: https://contrataciondelestado.es/
+  confianca: alta
+  calendari:
+    recurrencia: continua
+    estat: permanent

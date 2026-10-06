@@ -1,0 +1,479 @@
+# Generat per `python -m radar importa-excel`. No editar a mà: edita l'Excel i torna a importar.
+files:
+- nivell: catalunya
+  nom: 'FEDER: Fons Europeu de Desenvolupament Regional'
+  entitat: ACCIÓ
+  fons: UE – FEDER (Catalunya 2021–2027) + Generalitat
+  terminis: Oberta fins 22/07/2025
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: Projectes d'innovació tecnològica aplicada, propers al mercat, per a la transformació tecnològica,
+    digital o verda de pimes a Catalunya (cofinançament FEDER).
+  ajuda: 'Fins al 40% de la despesa subvencionable (mínim projecte: 100.000 €). Pressupost línia: 5.000.000 €.'
+  tipologia: Projectes individuals (pime). Possibles col·laboracions externes/subcontractacions.
+  trl: 6–9
+  trl_rang:
+  - 6
+  - 9
+  dates_detectades:
+  - '2025-07-22'
+  excel_fila: 2
+- nivell: catalunya
+  nom: Subvencions per a projectes d'innovació tecnològica Green – Canvi climàtic
+  entitat: ACCIÓ
+  fons: Generalitat (poss. FEDER segons edició)
+  terminis: 04/09/2025 – 16/10/2025
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: 'Projectes d''innovació tecnològica aplicada per a mitigació/adaptació al canvi climàtic (twin transition:
+    verd + digital).'
+  ajuda: Fins al 75% de la despesa subvencionable; ajut màxim 90.000 € (+ auditor fins 1.500 € al 100%).
+  tipologia: Projectes individuals (pime industrial o de serveis a la indústria).
+  trl: 6–9
+  trl_rang:
+  - 6
+  - 9
+  dates_detectades:
+  - '2025-09-04'
+  - '2025-10-16'
+  excel_fila: 3
+- nivell: catalunya
+  nom: Subvencions per a inversions empresarials d'alt impacte
+  entitat: ACCIÓ
+  fons: Generalitat (poss. FEDER segons edició)
+  terminis: Oberta fins 09/10/2025
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: 'Ajuts a projectes d''inversió d''alt impacte a Catalunya: creació d''ocupació (incl. centres R+D+I)
+    i inversió en actius fixes.'
+  ajuda: 'Ocupació: 30% fins 200k–1.000.000 € (segons tipologia). Actius: 10–15% fins 300k–3.000.000 € (segons acció).'
+  tipologia: Projectes individuals (empresa establerta o en procés d'establir-se a Catalunya).
+  trl: Variable
+  trl_rang: null
+  dates_detectades:
+  - '2025-10-09'
+  excel_fila: 4
+- nivell: catalunya
+  nom: Nuclis d'R+D - convocatòria anual
+  entitat: ACCIÓ
+  fons: Generalitat (poss. FEDER segons edició)
+  terminis: 'Publicaicó finals de gener, presentació de Maig a Juliol
+
+    Convo 2025: 10/05/2025 – 21/07/2025'
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: Subvencions a projectes de recerca industrial i desenvolupament experimental liderats per empresa
+    catalana; poden participar centres TECNIO.
+  ajuda: Subvenció màxima 250.000 €/projecte; despesa mínima subvencionable 120.000 €; intensitats orientatives
+    25%–70% (empresa) i 100% (TECNIO).
+  tipologia: Individual o en cooperació (empreses; empreses + TECNIO).
+  trl: 3–7
+  trl_rang:
+  - 3
+  - 7
+  dates_detectades:
+  - '2025-05-10'
+  - '2025-07-21'
+  excel_fila: 5
+- nivell: catalunya
+  nom: Cupons ACCIÓ (innovació / estratègia / internacionalització, etc.) – convocatòria anual
+  entitat: ACCIÓ
+  fons: Generalitat (ACCIÓ)
+  terminis: Per ordre de sol·licitud fins exhaurir pressupost (dates variables)
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: Ajuts en forma de cupó per contractar serveis especialitzats (estratègia, innovació, internacionalització,
+    digital/verd, etc.).
+  ajuda: Variable segons cupó i any (consultar convocatòria).
+  tipologia: Projectes individuals (empresa). Execució via proveïdor/consultoria segons requisits del cupó.
+  trl: N/A (serveis / consultoria)
+  trl_rang: null
+  dates_detectades: []
+  excel_fila: 6
+- nivell: catalunya
+  nom: Startup Capital – convocatòria anual
+  entitat: ACCIÓ
+  fons: Generalitat (ACCIÓ)
+  terminis: 'Convo 2024: 07/05/2024 – 12/06/2024'
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: Subvenció per impulsar el creixement inicial de startups (despeses de creixement, consolidació i acceleració).
+  ajuda: Variable segons any (consultar convocatòria vigent).
+  tipologia: Projectes individuals (startup).
+  trl: 4–9
+  trl_rang:
+  - 4
+  - 9
+  dates_detectades:
+  - '2024-05-07'
+  - '2024-06-12'
+  excel_fila: 7
+- nivell: catalunya
+  nom: 'IdC: Programa Indústria del Coneixement  – Modalitat A: Llavor'
+  entitat: AGAUR
+  fons: Generalitat (AGAUR)
+  terminis: 'Publicaicó finals de gener, presentació de febrer a març
+
+    Exemple 2025: 27/02/2025 – 26/03/2025'
+  periodicitat: Convocatòria anual
+  descripcio: Projectes innovadors amb potencial de transferència/valorització (fase inicial) des d'equips de recerca
+    a Catalunya.
+  ajuda: Quantitat fixa 20.000 € (6 mesos).
+  tipologia: Equip de recerca (sol·licitant) + mentoria; empreses com a interessades/col·laboradores (segons projecte).
+  trl: 1–3
+  trl_rang:
+  - 1
+  - 3
+  dates_detectades:
+  - '2025-02-27'
+  - '2025-03-26'
+  excel_fila: 8
+- nivell: catalunya
+  nom: 'IdC: Programa Indústria del Coneixement  – Modalitat B: Producte'
+  entitat: AGAUR
+  fons: Generalitat (AGAUR)
+  terminis: 'Publicaicó finals de gener, presentació de febrer a març
+
+    Exemple 2025: 27/02/2025 – 26/03/2025'
+  periodicitat: Convocatòria anual
+  descripcio: Obtenció de prototipus i prova de concepte / validació per reduir incerteses tècniques i comercials
+    per a la transferència.
+  ajuda: Fins a 150.000 € (18 mesos; pròrroga possible).
+  tipologia: Equip de recerca (sol·licitant). Empreses com a stakeholders (llicència, co-desenvolupament, spin-off).
+  trl: 3–6
+  trl_rang:
+  - 3
+  - 6
+  dates_detectades:
+  - '2025-02-27'
+  - '2025-03-26'
+  excel_fila: 9
+- nivell: catalunya
+  nom: 'IdC: Programa Indústria del Coneixement  – Modalitat C: Innovadors'
+  entitat: AGAUR
+  fons: Generalitat (AGAUR)
+  terminis: 'Publicaicó finals de gener, presentació de febrer a març
+
+    Exemple 2025: 27/02/2025 – 26/03/2025'
+  periodicitat: Convocatòria anual
+  descripcio: Finançament per contractar perfils emprenedors que liderin activitats de transferència (spin-off,
+    llicència, acords).
+  ajuda: Fins a 84.000 € (mínim 60.000 € destinats a contractació; 18 mesos).
+  tipologia: Entitat de recerca contracta el perfil innovador; possible vinculació amb empresa/mercat.
+  trl: 2–6
+  trl_rang:
+  - 2
+  - 6
+  dates_detectades:
+  - '2025-02-27'
+  - '2025-03-26'
+  excel_fila: 10
+- nivell: catalunya
+  nom: Doctorats Industrials – convocatòria anual
+  entitat: AGAUR
+  fons: Generalitat (AGAUR)
+  terminis: 'Exemple 2025: 15/05/2025 – 15/10/2025'
+  periodicitat: Convocatòria anual
+  descripcio: Impulsa tesis doctorals en col·laboració empresa–universitat/centre, amb projecte de recerca aplicada
+    i transferència.
+  ajuda: 'Borsa doctorand/a: 22.800 €/any; ajut entitat beneficiària 12.000 €/any; ajut matrícula fins 400 €/any
+    (segons bases).'
+  tipologia: Projecte col·laboratiu empresa + entitat acadèmica (contracte doctorand/a).
+  trl: 3–7
+  trl_rang:
+  - 3
+  - 7
+  dates_detectades:
+  - '2025-05-15'
+  - '2025-10-15'
+  excel_fila: 11
+- nivell: catalunya
+  nom: ICF-Avalis (finançament amb aval) – línies per pimes i persones autònomes
+  entitat: ICF + Avalis de Catalunya
+  fons: ICF/Avalis (finançament) – Generalitat
+  terminis: Vigent (línies renovades periòdicament; fins 31/12/2026 segons producte).
+  periodicitat: Línea oberta renovable
+  descripcio: Préstecs amb aval per finançar inversió i circulant per pimes i autònoms a Catalunya.
+  ajuda: Préstecs 25.000 € – 250.000 € (segons línia; condicions variables).
+  tipologia: Projectes individuals (finançament).
+  trl: Variable
+  trl_rang: null
+  dates_detectades:
+  - '2026-12-31'
+  excel_fila: 12
+- nivell: estat
+  nom: CDTI de I+D
+  entitat: CDTI (Ministeri de Ciència, Innovació i Universitats)
+  fons: Estat (CDTI)
+  terminis: Obert tot l'any.
+  periodicitat: Convocatòria anual
+  descripcio: Ajuts a projectes d'I+D empresarials per crear o millorar processos, productes o serveis (investigació
+    industrial i/o desenvolupament experimental).
+  ajuda: Ajuda parcialment reemborsable fins 85% del pressupost aprovat; tram no reemborsable 10%–33%; mínim projecte
+    175.000 €.
+  tipologia: Projectes individuals o cooperació nacional (2–6 empreses).
+  trl: 3–8
+  trl_rang:
+  - 3
+  - 8
+  dates_detectades: []
+  excel_fila: 13
+- nivell: estat
+  nom: NEOTEC
+  entitat: CDTI
+  fons: Estat (CDTI)
+  terminis: 12/05/2025 – 12/06/2025
+  periodicitat: Convocatòria anual
+  descripcio: Subvenció per a la creació i consolidació d'empreses de base tecnològica amb tecnologia pròpia com
+    a factor diferencial.
+  ajuda: 'Fins 70% (màx. 250.000 €). Amb contractació d''1 doctor/a: fins 85% (màx. 325.000 €). Pressupost mínim
+    175.000 €.'
+  tipologia: Projecte individual (pime innovadora, ≤3 anys).
+  trl: 4–7
+  trl_rang:
+  - 4
+  - 7
+  dates_detectades:
+  - '2025-05-12'
+  - '2025-06-12'
+  excel_fila: 14
+- nivell: estat
+  nom: INNTERCONECTA – STEP
+  entitat: CDTI
+  fons: UE – FEDER + Estat (CDTI)
+  terminis: 'Exemple 2025: fins 21/05/2025'
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: Projectes cooperatius d'R+D en àrees STEP (digital, tecnologies netes i biotecnologia).
+  ajuda: 'Intensitats màximes 65% (gran), 75% (mitjana), 80% (petita). Pressupost projecte: 1 M€–4 M€.'
+  tipologia: Consorci 2–6 empreses (mínim 1 pime) + subcontractació mínima a organismes de recerca.
+  trl: 4–7
+  trl_rang:
+  - 4
+  - 7
+  dates_detectades:
+  - '2025-05-21'
+  excel_fila: 15
+- nivell: estat
+  nom: Misiones Ciencia e Innovación
+  entitat: CDTI
+  fons: Estat (CDTI)
+  terminis: 29/05/2025 – 01/07/2025
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: Grans projectes cooperatius orientats a missions (IA, indústria, clima, etc.).
+  ajuda: 'Intensitats màximes 65%/75%/80%. Pressupost projecte: 3,5 M€–15 M€; durada 3–4 anys.'
+  tipologia: Consorci 3–6 empreses (mínim 1 pime). Subcontractació mínima 15% a organismes de recerca.
+  trl: 4–8
+  trl_rang:
+  - 4
+  - 8
+  dates_detectades:
+  - '2025-05-29'
+  - '2025-07-01'
+  excel_fila: 16
+- nivell: estat
+  nom: Ecosistemas de Innovación y Transferencia 2025 (FEDER)
+  entitat: CDTI
+  fons: UE – FEDER + Estat (CDTI)
+  terminis: 17/12/2025 – 12/02/2026
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: Actuacions interregionals per impulsar transferència, difusió i valorització del coneixement i models
+    col·laboratius.
+  ajuda: 'Subvenció (minimis). Pressupost projecte: 120.000 €–1.000.000 €. Cofinançament FEDER depèn de CCAA (Catalunya
+    fins 40%).'
+  tipologia: Agrupació 4–8 entitats (mínim 1 centre generador de coneixement + 1 empresa/associació).
+  trl: Variable
+  trl_rang: null
+  dates_detectades:
+  - '2025-12-17'
+  - '2026-02-12'
+  excel_fila: 17
+- nivell: estat
+  nom: Agrupaciones Empresariales Innovadoras (AEI)
+  entitat: ENISA (MINTUR)
+  fons: Estat (ENISA / MINTUR)
+  terminis: Consultar BOE
+  periodicitat: Convocatòria anual (finestra variable)
+  descripcio: Ajuts a projectes col·laboratius de clústers/AEI per impulsar innovació, digitalització i competitivitat
+    sectorial.
+  ajuda: Variable segons línia i any (consultar convocatòria).
+  tipologia: Consorcis (AEI + empreses + agents).
+  trl: Variable
+  trl_rang: null
+  dates_detectades: []
+  excel_fila: 18
+- nivell: estat
+  nom: ENISA
+  entitat: Red.es (MINECO) – PRTR / NextGenEU
+  fons: UE – NextGenerationEU (PRTR) via Red.es
+  terminis: Finestres anuals segons pressupost
+  periodicitat: Convocatòria anual
+  descripcio: Finançament (préstec participatiu) per a startups i pimes en fases inicials i de creixement.
+  ajuda: 'Préstecs: mín. 25.000 €; màx. fins 1.500.000 € (segons línia).'
+  tipologia: Projecte individual (empresa).
+  trl: Variable
+  trl_rang: null
+  dates_detectades: []
+  excel_fila: 19
+- nivell: estat
+  nom: Kit Digital – Segment III (0 a <3 empleats)
+  entitat: Red.es (MINECO) – PRTR / NextGenEU
+  fons: UE – NextGenerationEU (PRTR) via Red.es
+  terminis: Fins 31/10/2025
+  periodicitat: Convocatòria anual
+  descripcio: Bono digital per contractar solucions digitals del catàleg (web, e-commerce, CRM, BI, ciberseguretat,
+    etc.).
+  ajuda: Fins 3.000 € per beneficiari (Segment III) + imports per categoria.
+  tipologia: Projecte individual (microempresa/autònom). Execució via Agents Digitalitzadors adherits.
+  trl: Variable
+  trl_rang: null
+  dates_detectades:
+  - '2025-10-31'
+  excel_fila: 20
+- nivell: estat
+  nom: Kit Consulting
+  entitat: MINTUR (clústers/AEI)
+  fons: Estat (MINTUR)
+  terminis: Fins 31/03/2025
+  periodicitat: Convocatòria anual
+  descripcio: Bono per contractar serveis d'assessorament per definir fulls de ruta digitals (dades, IA, processos,
+    ciber, etc.).
+  ajuda: 12.000 € (10–<50 empleats), 18.000 € (50–<100), 24.000 € (100–<250).
+  tipologia: Projecte individual (pime). Execució via assessors/agents adherits.
+  trl: Variable
+  trl_rang: null
+  dates_detectades:
+  - '2025-03-31'
+  excel_fila: 21
+- nivell: europa
+  nom: EIC Pathfinder
+  entitat: Comissió Europea (EIC) – Funding & Tenders Portal
+  fons: UE – Horizon Europe
+  terminis: Fins 12/05/2026
+  periodicitat: Fins exhaurir partides del Horizon Europe
+  descripcio: Suport a startups i SMEs per portar innovacions disruptives a mercat i escalar (grant-only i blended
+    finance).
+  ajuda: Grant-only fins 2,5 M€ (màx. per beneficiari) + component d'inversió via EIC Fund (blended).
+  tipologia: Individual (SME/startup/spin-off; en alguns casos small mid-caps).
+  trl: 6–9
+  trl_rang:
+  - 6
+  - 9
+  dates_detectades:
+  - '2026-05-12'
+  excel_fila: 22
+- nivell: europa
+  nom: EIC Accelerator (Horizon Europe) – Open/Challenges
+  entitat: Comissió Europea (EIC) – Funding & Tenders Portal
+  fons: UE – Horizon Europe
+  terminis: 'Convocatòries: 07/01, 04/03, 06/05, 08/07, 02/09, 04/11'
+  periodicitat: Fins exhaurir partides del Horizon Europe
+  descripcio: Suport a startups i SMEs per portar innovacions disruptives a mercat i escalar (grant-only i blended
+    finance).
+  ajuda: Grant-only fins 2,5 M€ (màx. per beneficiari) + component d'inversió via EIC Fund (blended).
+  tipologia: Individual (SME/startup/spin-off; en alguns casos small mid-caps).
+  trl: 6–9
+  trl_rang:
+  - 6
+  - 9
+  dates_detectades: []
+  excel_fila: 23
+- nivell: europa
+  nom: EIC Transition (Horizon Europe)
+  entitat: Comissió Europea (EIC)
+  fons: UE – Horizon Europe
+  terminis: Fins 16/09/2026
+  periodicitat: Fins exhaurir partides del Horizon Europe
+  descripcio: Validació i demostració en entorn rellevant + preparació de model de negoci per a aplicacions específiques.
+  ajuda: Grants fins 2,5 M€.
+  tipologia: Individual o petit consorci (2–3 entitats).
+  trl: Inicial TRL 3–4 fins a objectiu TRL 5–6
+  trl_rang:
+  - 3
+  - 6
+  dates_detectades:
+  - '2026-09-16'
+  excel_fila: 24
+- nivell: europa
+  nom: EIC STEP Scale Up (Horizon Europe)
+  entitat: Comissió Europea (EIC)
+  fons: UE – Horizon Europe
+  terminis: 'Convocatòries: 11/02, 06/05, 09/09'
+  periodicitat: Fins exhaurir partides del Horizon Europe
+  descripcio: Inversions per escalar tecnologies estratègiques (digital, net-zero i biotec) a Europa.
+  ajuda: 'Inversió: 10–30 M€.'
+  tipologia: Individual (startups/SMEs/small mid-caps; inversors en nom d'empreses elegibles).
+  trl: 8 o més
+  trl_rang:
+  - 8
+  - 9
+  dates_detectades: []
+  excel_fila: 25
+- nivell: europa
+  nom: Eurostars call for projects
+  entitat: Eureka Network (Eurostars-3) + agències nacionals
+  fons: EUREKA/Eurostars + finançament nacional (segons país)
+  terminis: Fins març 2026 (16/01/2026 – 19/03/2026)
+  periodicitat: Convocatòria anual
+  descripcio: Projectes internacionals d'R+D+i liderats per pimes innovadores amb orientació a mercat i aplicació
+    civil.
+  ajuda: Máximo de financiación es una subvención de 400.000 euros por participante
+  tipologia: Consorci internacional (mínim 2 països; pime innovadora lidera).
+  trl: 4–7
+  trl_rang:
+  - 4
+  - 7
+  dates_detectades:
+  - '2026-01-16'
+  - '2026-03-19'
+  excel_fila: 26
+- nivell: europa
+  nom: Horizon Europe – Calls (RIA/IA/CSA) per Clústers 1–6
+  entitat: Comissió Europea – Funding & Tenders Portal
+  fons: UE – Horizon Europe
+  terminis: Múltiples deadlines anuals segons topic (consultar portal).
+  periodicitat: null
+  descripcio: Projectes col·laboratius europeus (recerca, demostració, pilots, etc.) en salut, digital, clima, mobilitat,
+    alimentació, etc.
+  ajuda: Variable per topic (RIA/IA/CSA).
+  tipologia: Consorcis europeus (habitualment 3+ entitats de 3 països).
+  trl: 1–8
+  trl_rang:
+  - 1
+  - 8
+  dates_detectades: []
+  excel_fila: 27
+- nivell: europa
+  nom: Digital Europe Programme (DEP) – Calls
+  entitat: Comissió Europea – Funding & Tenders Portal
+  fons: UE – Digital Europe Programme (DEP)
+  terminis: Múltiples deadlines anuals segons call (consultar portal).
+  periodicitat: Convocatòria anual
+  descripcio: Desplegament i adopció de capacitats digitals (IA, dades, ciberseguretat, habilitats, etc.).
+  ajuda: Variable per call (cofinançament sovint 50%–100% segons tipus).
+  tipologia: Consorcis europeus i pilots.
+  trl: 7–9
+  trl_rang:
+  - 7
+  - 9
+  dates_detectades: []
+  excel_fila: 28
+- nivell: europa
+  nom: LIFE Programme – Calls
+  entitat: CINEA (Comissió Europea)
+  fons: UE – LIFE
+  terminis: Deadlines anuals per subprograma (consultar portal).
+  periodicitat: Convocatòria anual
+  descripcio: Projectes d'acció climàtica, medi ambient, transició energètica neta, natura i biodiversitat.
+  ajuda: Variable per topic (cofinançament habitual ~60% segons tipus).
+  tipologia: Consorcis o sol·licitants individuals (segons call).
+  trl: Variable
+  trl_rang: null
+  dates_detectades: []
+  excel_fila: 29
+- nivell: europa
+  nom: Interreg (p. ex. Interreg Europe / POCTEFA) – Calls
+  entitat: Programes Interreg + autoritats de gestió
+  fons: UE – Interreg (FEDER/ERDF)
+  terminis: Es presenten 06/2026
+  periodicitat: Convocatòries periòdiques
+  descripcio: Cooperació territorial europea (innovació regional, transferència de bones pràctiques, pilots transfronterers).
+  ajuda: Variable per programa i projecte (cofinançament FEDER).
+  tipologia: Consorcis transnacionals/transfronterers.
+  trl: Variable
+  trl_rang: null
+  dates_detectades: []
+  excel_fila: 30

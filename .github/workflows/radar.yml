@@ -1,0 +1,75 @@
+name: Radar d'ajuts (setmanal)
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"  # dilluns a les 06:17 UTC
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "data/**"
+      - "!data/estat/**"
+      - "radar/**"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Dependències
+        run: pip install -r requirements.txt
+
+      - name: Tests i validació del catàleg
+        run: |
+          python -m unittest discover -s tests
+          python -m radar valida
+
+      - name: Vigilància de fonts (BDNS, Funding & Tenders, TED, PLACSP)
+        if: github.event_name != 'push'
+        run: python -m radar vigila
+
+      - name: Informe, calendari d'alertes i enviaments per zona
+        run: python -m radar informe
+
+      - name: Desa les sortides
+        run: |
+          git config user.name "radar-ajuts[bot]"
+          git config user.email "radar-ajuts@users.noreply.github.com"
+          git add sortida data/estat
+          if git diff --cached --quiet; then
+            echo "Sense canvis"
+          else
+            git commit -m "Radar: actualització $(date +%F)"
+            git push
+          fi
+
+      - name: Avís setmanal (issue) amb novetats i alertes dels propers 14 dies
+        if: github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "## Alertes dels propers 14 dies"
+            echo
+            echo '```'
+            python -m radar alertes --dies 14
+            echo '```'
+            echo
+            if [ -f sortida/novetats.md ]; then cat sortida/novetats.md; fi
+            echo
+            echo "Tauler: sortida/radar.html · Calendari: sortida/alertes.ics · Enviaments: sortida/enviaments_per_zona.csv"
+          } > avis.md
+          gh label create radar --color 2A3DBA --description "Radar d'ajuts" 2>/dev/null || true
+          gh issue create --title "Radar d'ajuts — setmana del $(date +%d/%m/%Y)" --body-file avis.md --label radar
