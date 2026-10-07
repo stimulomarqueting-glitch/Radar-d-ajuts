@@ -1,6 +1,6 @@
 # Radar d'ajuts, subvencions i licitacions — Stimulo
 
-_Generat el 06/10/2026 amb `python -m radar informe`. 76 convocatòries al catàleg · 43 fonts vigilades._
+_Generat el 07/10/2026 amb `python -m radar informe`. 76 convocatòries al catàleg · 43 fonts vigilades._
 
 > Les dates marcades amb ≈ són **estimades** a partir de l'edició anterior: serveixen de senyal d'alerta, no substitueixen la convocatòria oficial.
 
