@@ -1,5 +1,5 @@
 {
- "generat": "2026-10-07",
+ "generat": "2026-10-08",
  "perfils": [
   {
    "id": "stimulo",
@@ -2048,11 +2048,11 @@
    ],
    "excel_fila": null,
    "finestra": {
-    "estat": "propera",
+    "estat": "oberta",
     "obertura": "2026-10-08",
     "tancament": "2026-10-29",
     "estimada": false,
-    "text": "08/10/2026 → 29/10/2026"
+    "text": "Oberta fins 29/10/2026"
    },
    "encaix": {
     "stimulo": {
@@ -4338,15 +4338,6 @@
   }
  ],
  "agenda": [
-  {
-   "data": "2026-10-07",
-   "tipus": "tancament",
-   "id": "eic-step-defence-scaleup",
-   "nom": "EIC STEP Scale Up Defence 2026",
-   "entitat": "Comissió Europea – EIC",
-   "estimada": false,
-   "text": "Darrera revisió: tancament confirmat el 28/10/2026"
-  },
   {
    "data": "2026-10-08",
    "tipus": "vigilar",

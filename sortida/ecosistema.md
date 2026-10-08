@@ -1,6 +1,6 @@
 # Ecosistema de defensa, ús dual i espai
 
-_Actualitzat el 07/10/2026. Portes d'entrada al sector per a Stimulo i els clients. Els ajuts són al radar (`sortida/radar.md`, tema «ús dual» o «defensa»)._
+_Actualitzat el 08/10/2026. Portes d'entrada al sector per a Stimulo i els clients. Els ajuts són al radar (`sortida/radar.md`, tema «ús dual» o «defensa»)._
 
 ## Trobades i programes
 
