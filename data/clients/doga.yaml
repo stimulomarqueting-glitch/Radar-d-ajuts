@@ -17,6 +17,9 @@ mida: gran_empresa
 beneficiari_com: [gran_empresa]
 rols: [beneficiari, soci]
 contacte: Responsable de nous productes
+# Si és true, les línies amb encaix A o B per a alguna divisió entren al correu del matí
+# («per compartir amb clients»), encara que no siguin prioritàries per a Stimulo.
+avisos: true
 descripcio: >
   Fabricant fundat el 1958 amb seu a Abrera. Disseny i fabricació de motors i motorreductors DC
   (escombretes i brushless, fins a 72 V), sistemes de neteja de parabrisa, elevavidres i altres

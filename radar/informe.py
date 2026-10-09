@@ -222,7 +222,7 @@ def dades_json(cat: Cataleg, avui: dt.date) -> dict:
             "focus": c.focus, "intensitat_max": c.intensitat_max, "import_max_eur": c.import_max_eur,
             "ajuda_text": c.ajuda_text, "trl": list(c.trl) if c.trl else None, "url": c.url,
             "notes": c.notes, "confianca": c.confianca, "beneficiaris": c.beneficiaris,
-            "rols_stimulo": c.rols_stimulo, "excel_fila": c.excel_fila,
+            "rols_stimulo": c.rols_stimulo, "excel_fila": c.excel_fila, "compartir_clients": c.compartir_clients,
             "finestra": {"estat": f.estat, "obertura": f.obertura.isoformat() if f.obertura else None,
                          "tancament": f.tancament.isoformat() if f.tancament else None,
                          "estimada": f.estimada, "text": _descriu_finestra(f)},

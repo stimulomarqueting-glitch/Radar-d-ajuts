@@ -84,7 +84,7 @@ function fila(c) {
     <summary>
       <span class="punts p-${e.prioritat}" title="Encaix amb ${esc(p.nom)}">${e.punts}<small>${e.prioritat}</small></span>
       <span class="tit"><strong>${esc(c.nom)}</strong>
-        <span class="meta"><span>${esc(c.entitat)}</span><span>${NIVELLS[c.nivell]}</span><span>${e.rol ? esc(NOMS_ROL[e.rol]) : "sense rol"}</span><span>${eur(c.import_max_eur)}${c.intensitat_max ? " · " + c.intensitat_max + "%" : ""}</span></span></span>
+        <span class="meta"><span>${esc(c.entitat)}</span><span>${NIVELLS[c.nivell]}</span><span>${e.rol ? esc(NOMS_ROL[e.rol]) : "sense rol"}</span><span>${eur(c.import_max_eur)}${c.intensitat_max ? " · " + c.intensitat_max + "%" : ""}</span>${c.compartir_clients ? `<span class="xip-clients" title="Línia per compartir amb clients i potencials clients">per a clients</span>` : ""}</span></span>
       <span class="estat e-${f.estat}${f.estimada && f.estat !== "permanent" ? " e-estimada" : ""}">${esc(f.text)}${quan}</span>
       <span class="zona"><b>${esc(c.zona_etiqueta)}</b>${esc(c.zones.join(" · "))}</span>
     </summary>

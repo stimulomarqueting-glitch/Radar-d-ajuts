@@ -110,6 +110,7 @@ class Convocatoria:
     encaix_stimulo: str = ""  # per què encaixa amb Stimulo (text curat per a l'avís per correu)
     punts_forts: list[str] = field(default_factory=list)  # altres consideracions positives
     socis_cal: list[str] = field(default_factory=list)  # tipus de soci a buscar (vegeu radar/socis.py)
+    compartir_clients: bool = False  # línia per avisar clients i potencials clients (el sol·licitant és el client)
 
 
 @dataclass
@@ -269,6 +270,7 @@ def _convocatoria(d: dict, zones: Zones) -> Convocatoria:
         encaix_stimulo=d.get("encaix_stimulo", "").strip(),
         punts_forts=list(d.get("punts_forts", [])),
         socis_cal=list(d.get("socis_cal", [])),
+        compartir_clients=bool(d.get("compartir_clients", False)),
     )
 
 

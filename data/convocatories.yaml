@@ -71,6 +71,7 @@ convocatories:
     - Admet grans empreses (règim de minimis).
     - 'Projecte petit (~40.000 €) i ràpid (10 mesos): bona porta d''entrada amb clients industrials.'
   socis_cal: [empresa, startup]
+  compartir_clients: true
   calendari:
     recurrencia: anual
     estat: tancada
@@ -108,6 +109,7 @@ convocatories:
   confianca: mitjana
   encaix_stimulo: Stimulo com a proveïdor de disseny i prototipatge d'un client de la cadena de valor de l'automoció i la mobilitat.
   socis_cal: [empresa]
+  compartir_clients: true
   calendari:
     recurrencia: anual
     estat: tancada
@@ -136,6 +138,7 @@ convocatories:
   notes: Tancada el 22/09/2026. Útil per a enviaments a clients químics de Catalunya.
   url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/26049-subvencions-projectes-rd-sector-quimic
   confianca: mitjana
+  compartir_clients: true
   calendari:
     recurrencia: anual
     estat: tancada
@@ -209,6 +212,7 @@ convocatories:
     - 'Àmbits prioritaris que coincideixen amb els de Stimulo: fotònica, agrotech, salut i tecnologies mèdiques, IA.'
     - Consorcis petits (2–5 entitats), fàcils de muntar amb socis habituals.
   socis_cal: [recerca, hospital, empresa]
+  compartir_clients: true
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -235,10 +239,12 @@ convocatories:
   ajuda_text: "Màxim 250.000 €/projecte; despesa mínima 120.000 €; 25–70% empresa, 100% TECNIO."
   descripcio: Recerca industrial i desenvolupament experimental liderats per empresa catalana.
   notes: >
-    Darrera edició detectada: 2025 (10/05–21/07/2025). No s'ha trobat edició 2026: possiblement
-    integrada a la nova línia R+D+i de l'Estratègia 2026-2030 (no verificat). Dates estimades.
+    Darrera edició detectada: 2025 (10/05–21/07/2025). A l'octubre de 2026 no s'ha publicat l'edició
+    2026: la línia R+D+i 2026 d'ACCIÓ s'ha concretat en exploració tecnològica, R+D per a la química i
+    innovació tecnològica per a l'automoció. Dates estimades.
   url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
   confianca: baixa
+  compartir_clients: true
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -271,6 +277,7 @@ convocatories:
     mínim 200.000 €, 40%, termini 31/07/2025).
   url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
   confianca: baixa
+  compartir_clients: true
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -299,6 +306,7 @@ convocatories:
     similar, però cal verificar si la línia continua o s'ha integrat a l'Estratègia 2026-2030.
   url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
   confianca: baixa
+  compartir_clients: true
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -315,22 +323,34 @@ convocatories:
   origen: public
   instrument: subvencio
   zones: [ES-CT]
-  ambit_geografic: Empresa establerta o en procés d'establir-se a Catalunya.
+  ambit_geografic: Empreses amb establiment operatiu a Catalunya o en procés d'establir-s'hi.
   beneficiaris: [pime, gran_empresa]
-  rols_stimulo: []
+  rols_stimulo: [assessor]
   focus: [industria]
-  intensitat_max: 30
-  import_max_eur: 3000000
-  ajuda_text: "Ocupació: 30% fins 200.000–1.000.000 €. Actius: 10–15% fins 300.000–3.000.000 €."
-  descripcio: Projectes d'inversió d'alt impacte (creació d'ocupació, centres R+D+I, actius fixos).
-  notes: Edició 2025 oberta fins al 09/10/2025. Rellevant per a DOGA (noves línies productives / centre R+D). Edició 2026 no verificada.
-  url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
-  confianca: baixa
+  intensitat_max: 50
+  import_max_eur: 2000000
+  ajuda_text: "Fins a 2 M€ per projecte (intensitat del 10 al 50 %). Inversió mínima segons l'actuació: 500.000 € en centres d'R+D+i; 3 M€ en nova activitat o ampliació de capacitat."
+  descripcio: >
+    Projectes amb alt impacte econòmic, industrial, tecnològic o en ocupació: creació de llocs de
+    treball (cost laboral dels primers sis mesos) i inversió en actius materials i immaterials. No
+    s'hi subvencionen obra civil, immobles, enginyeria ni consultoria.
+  notes: >
+    Convocatòria 2026: Resolució EMT/1923/2026, d'11 de juny (bases EMT/1812/2026), sol·licituds del
+    16–18/06 al 15/09/2026. Exclou comerç minorista, centres d'atenció telefònica, immobiliari i
+    producció agrària primària. Per a clients industrials (p. ex. DOGA) amb plans d'ampliació o un
+    centre d'R+D.
+  url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/
+  fonts_verificacio:
+    - https://tecnociminnova.com/ca/buscador-ayudas/catalunya/cat-inversionsempresarialsdaltimpacte2026acciocatalu
+    - https://leyton.com/wp-content/blogs.dir/11/files/2026/07/LeytonIberia_WP_Alt-Impacte_2026_Castellano.pdf
+    - https://www.aitpa.es/wp-content/uploads/news-87-a16-cat_-obert-termini-per-solicituds-de-subvencions-per-a-inversions-empresarials-dalt-impacte.pdf
+  confianca: mitjana
+  compartir_clients: true
   calendari:
     recurrencia: anual
-    estat: desconegut
-    tancament: 2025-10-09
-    mes_obertura_habitual: 6
+    estat: tancada
+    obertura: 2026-06-16
+    tancament: 2026-09-15
 
 - id: accio-cupons
   excel_fila: 6
@@ -349,23 +369,138 @@ convocatories:
   ajuda_text: "Estratègia de creixement 8.000 €; adopció d'IA 8.000 €; protecció de la innovació (patents, models d'utilitat, dissenys industrials europeus) 3.000 €; programes europeus d'R+D+I 12.000 €; internacionalització 8.000 €."
   descripcio: Cupons per contractar serveis especialitzats a proveïdors.
   notes: >
-    Obertes des del 07/05/2026. Algunes modalitats van tancar el 30/07/2026; d'altres segueixen
-    obertes fins al 16/11/2026 o fins exhaurir pressupost (no verificat quines). El cupó de
-    programes europeus (12.000 €) pot finançar la preparació d'una proposta EIC/Horizon/Eurostars;
-    el de protecció, el registre de dissenys industrials dels clients.
+    Sol·licituds des del 15/05/2026. Segons el llistat d'ACCIÓ, els cupons d'estratègia de
+    creixement i de programes europeus d'R+D+I segueixen oberts fins al 16/11/2026 a les 14:00 o fins
+    exhaurir el pressupost. Protecció de la innovació: 100 % fins a 3.000 € per registrar patents,
+    marques, models d'utilitat i dissenys industrials (proveïdors acreditats, assessorament fins al
+    30/07/2027). Innovació verda: assessorament per reduir emissions o adaptar-se al canvi climàtic
+    (un cupó per empresa; exclou qui en va rebre el 2024 o el 2025). Els cupons d'internacionalització
+    de plans van tancar el 15/09/2026.
   url: https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio/index.html
   fonts_verificacio:
     - https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/detalls/noticia/20260512_cupons
+    - https://www.accio.gencat.cat/web/.content/01_Serveis/innovacio/cupons-innovacio/docs/ACCIO-fitxa-informativa-cupons-proteccio-innovacio.pdf
+    - https://www.accio.gencat.cat/web/.content/01_Serveis/innovacio/cupons-innovacio/docs/ACCIO-fitxa-informativa-cupons-innovacio-verda.pdf
   confianca: mitjana
   encaix_stimulo: 'Stimulo n''és beneficiària directa: el cupó de programes europeus (12.000 €) pot pagar la preparació d''una proposta EIC, Horizon o Eurostars, i el de protecció, el registre de dissenys industrials.'
   socis_cal: [empresa]
+  compartir_clients: true
   calendari:
     recurrencia: anual
     estat: oberta
-    obertura: 2026-05-07
+    obertura: 2026-05-15
     tancament: 2026-11-16
     revisar: 2026-10-08
     revisar_motiu: "Cupons ACCIÓ: confirmar quines modalitats segueixen obertes fins al 16/11 (programes europeus, protecció, IA)"
+
+- id: accio-noves-oportunitats-negoci
+  nom: "Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: >-
+    Empreses amb establiment operatiu a Catalunya (SL, SA, societat laboral o cooperativa). Excloses
+    les microempreses, excepte en 23 comarques: Alt Urgell, Alta Ribagorça, Aran, Baix Ebre, Baix
+    Empordà, Baix Penedès, Berguedà, Cerdanya, Conca de Barberà, Garrigues, Lluçanès, Moianès, Montsià,
+    Noguera, Pallars Jussà, Pallars Sobirà, Pla d'Urgell, Priorat, Ribera d'Ebre, Ripollès, Segarra,
+    Solsonès i Terra Alta.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [proveidor_extern, beneficiari]
+  focus: [industria, prova_concepte, disseny, sostenibilitat]
+  intensitat_max: 75
+  import_max_eur: 90000
+  ajuda_text: "Canvi estratègic: 75 % del pla de negoci, màxim 30.000 €. Canvi estructural: màxim 90.000 €; despeses externes (prototips, simulació, certificacions, homologacions) i personal 75 %; maquinària 20/10/10 % (petita/mitjana/gran); formació 25 %; auditoria 100 % fins a 1.000 €."
+  descripcio: >
+    Dues fases per obrir una nova línia de negoci: (1) canvi estratègic, un pla de negoci fet per un
+    consultor acreditat per ACCIÓ (estratègia, valor compartit o finances corporatives); (2) canvi
+    estructural, implementar les accions del pla. Nova oportunitat vol dir, entre d'altres, una nova
+    gamma de productes de més valor afegit, entrar en altres sectors, servititzar els productes o
+    créixer per adquisició. Excloses la simple reducció de costos, la internacionalització, l'ampliació
+    d'instal·lacions i la digitalització.
+  notes: >
+    Convocatòria 2026: Resolució EMT/1900/2026, de 10 de juny (bases EMT/1811/2026; BDNS 912188),
+    sol·licituds del 15/06 al 16/07/2026. Execució: estratègic fins al 31/12/2027; estructural fins al
+    31/12/2028, sense pròrroga. Per optar a l'estructural cal haver estat beneficiari de l'estratègic en
+    convocatòries anteriors. Concurrència competitiva: mínim 250 de 500 punts (impacte, alineament amb
+    el sector o clúster, capacitat, valor compartit, reequilibri territorial). Règim de minimis i
+    Reglament general d'exempció; bestreta del 60 % sense garanties; tres ofertes. Gestió tècnica:
+    unitat de clústers d'ACCIÓ.
+  url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/
+  fonts_verificacio:
+    - https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/912188
+  confianca: alta
+  encaix_stimulo: "A la fase de canvi estructural, el desenvolupament de la nova gamma de producte (prototips, simulació, certificació i homologació) es finança al 75 %: Stimulo hi entra com a proveïdor del client. El pla de negoci de la fase estratègica l'ha de fer un consultor acreditat per ACCIÓ."
+  punts_forts:
+    - Pensada per a noves línies de producte i servitització, el que fa Stimulo amb els clients.
+    - Admet grans empreses (p. ex. DOGA) amb intensitats altes per a despeses externes (75 %).
+    - Encadena dues fases (pla i implementació) fins al 2028.
+  compartir_clients: true
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-06-15
+    tancament: 2026-07-16
+    revisar: 2027-03-15
+    revisar_motiu: "Noves oportunitats de negoci (ACCIÓ): identificar amb clients i potencials clients una nova línia de producte i el consultor acreditat per a la fase estratègica de 2027"
+
+- id: accio-inversions-productives
+  nom: "Projectes d'inversions productives a Catalunya"
+  entitat: Departament d'Empresa i Treball (cercador d'ajuts d'ACCIÓ)
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Empreses industrials amb projectes d'inversió a Catalunya.
+  beneficiaris: [pime, gran_empresa]
+  rols_stimulo: [assessor]
+  focus: [industria]
+  ajuda_text: "Per confirmar a les bases de 2027."
+  descripcio: >
+    Projectes d'inversió industrial a Catalunya, sobretot noves plantes de producció i ampliacions.
+  notes: >
+    Convocatòria 2026: Resolució EMT/634/2026, de 3 de març; termini fins al 22/04/2026. Per a clients
+    industrials amb plans d'inversió; per a Stimulo només com a assessor.
+  url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/25140-dgi-inversions-productives
+  fonts_verificacio:
+    - https://www.aitpa.es/wp-content/uploads/news-47-a07-cat-oberta-conv-subv-pojectes-inversion-productives-a-cat-.pdf
+  confianca: mitjana
+  compartir_clients: true
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    tancament: 2026-04-22
+    mes_obertura_habitual: 3
+
+- id: accio-internacionalitzacio-projectes
+  nom: "Projectes per a la internacionalització (ACCIÓ 2026)"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: subvencio
+  zones: [ES-CT]
+  ambit_geografic: Empreses amb establiment operatiu a Catalunya (beneficiaris per verificar a les bases).
+  beneficiaris: [pime]
+  rols_stimulo: [proveidor_extern]
+  focus: [internacionalitzacio, disseny]
+  descripcio: >
+    Línia de projectes d'internacionalització: bases Resolució EMT/1879/2026, de 10 de juny (DOGC
+    15/06/2026), i convocatòria Resolució EMT/2000/2026, de 18 de juny.
+  notes: >
+    Termini, import i beneficiaris per verificar. Les edicions anteriors de promoció internacional
+    subvencionaven el 50 % fins a 30.000 €. Encaix per a clients que exporten (adaptació de producte i
+    material per a nous mercats).
+  url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/
+  fonts_verificacio:
+    - https://laadministracionaldia.inap.es/noticia.asp?id=1266781
+  confianca: baixa
+  compartir_clients: true
+  calendari:
+    recurrencia: anual
+    estat: desconegut
+    revisar: 2026-10-13
+    revisar_motiu: "Internacionalització ACCIÓ 2026 (EMT/2000/2026): confirmar termini, import i beneficiaris"
 
 - id: accio-startup-capital
   excel_fila: 7
@@ -625,6 +760,7 @@ convocatories:
     - https://cambrabcn.org/wp-content/uploads/2026/05/Base-tecnologica-i-industrial-Catalunya_Maig_2026.pdf
   confianca: mitjana
   encaix_stimulo: "Formació i xarxa per entrar al sector dual; Stimulo hi pot anar com a empresa i recomanar-lo als clients industrials."
+  compartir_clients: true
   calendari:
     recurrencia: desconeguda
     estat: oberta
@@ -767,6 +903,7 @@ convocatories:
     a projectes de tecnologia dual (instrument no verificat).
   url: https://www.cdti.es/ayudas
   confianca: alta
+  compartir_clients: true
   calendari:
     recurrencia: continua
     estat: permanent
@@ -791,6 +928,7 @@ convocatories:
   descripcio: Innovació propera al mercat i incorporació de tecnologia (industrialització).
   url: https://www.cdti.es/sites/default/files/2023-09/20230720_ficha_lic.pdf
   confianca: alta
+  compartir_clients: true
   calendari:
     recurrencia: continua
     estat: permanent

@@ -78,6 +78,7 @@ class Client:
     preguntes: list[str]
     fonts: list[str]
     divisions: list[Divisio]
+    avisos: bool = True  # les seves línies A/B entren al correu del matí
 
     def divisio(self, id_: str) -> Divisio:
         for d in self.divisions:
@@ -151,7 +152,7 @@ def _client(d: dict, cat: Cataleg) -> Client:
     return Client(id_, d["nom"], d.get("rao_social", d["nom"]), d.get("web", ""), d["zona"], d.get("ubicacio", ""),
                   d.get("mida", ""), d.get("contacte", ""), " ".join(d.get("descripcio", "").split()),
                   d.get("estat_dades", ""), list(d.get("consideracions", [])), list(d.get("preguntes", [])),
-                  list(d.get("fonts", [])), divisions)
+                  list(d.get("fonts", [])), divisions, bool(d.get("avisos", True)))
 
 
 def carrega_clients(cat: Cataleg, dirs: tuple[Path, ...] = (DIR_CLIENTS, DIR_CLIENTS_PRIVAT)) -> dict[str, Client]:

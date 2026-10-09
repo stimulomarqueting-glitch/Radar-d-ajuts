@@ -1,5 +1,5 @@
 {
- "generat": "2026-10-06",
+ "generat": "2026-10-09",
  "perfils": [
   {
    "id": "stimulo",
@@ -157,6 +157,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": true,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-29",
@@ -212,6 +213,7 @@
     "subcontractat"
    ],
    "excel_fila": null,
+   "compartir_clients": true,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-29",
@@ -263,6 +265,7 @@
     "subcontractat"
    ],
    "excel_fila": null,
+   "compartir_clients": true,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-29",
@@ -324,6 +327,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -389,6 +393,7 @@
     "subcontractat"
    ],
    "excel_fila": null,
+   "compartir_clients": true,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -435,7 +440,7 @@
     7
    ],
    "url": "https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/",
-   "notes": "Darrera edició detectada: 2025 (10/05–21/07/2025). No s'ha trobat edició 2026: possiblement integrada a la nova línia R+D+i de l'Estratègia 2026-2030 (no verificat). Dates estimades.",
+   "notes": "Darrera edició detectada: 2025 (10/05–21/07/2025). A l'octubre de 2026 no s'ha publicat l'edició 2026: la línia R+D+i 2026 d'ACCIÓ s'ha concretat en exploració tecnològica, R+D per a la química i innovació tecnològica per a l'automoció. Dates estimades.",
    "confianca": "baixa",
    "beneficiaris": [
     "pime",
@@ -448,6 +453,7 @@
     "beneficiari"
    ],
    "excel_fila": 5,
+   "compartir_clients": true,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-10",
@@ -505,6 +511,7 @@
     "subcontractat"
    ],
    "excel_fila": 2,
+   "compartir_clients": true,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-01",
@@ -561,6 +568,7 @@
     "proveidor_extern"
    ],
    "excel_fila": 3,
+   "compartir_clients": true,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-09-04",
@@ -587,34 +595,37 @@
    "nivell": "catalunya",
    "origen": "public",
    "instrument": "subvencio",
-   "descripcio": "Projectes d'inversió d'alt impacte (creació d'ocupació, centres R+D+I, actius fixos).",
+   "descripcio": "Projectes amb alt impacte econòmic, industrial, tecnològic o en ocupació: creació de llocs de treball (cost laboral dels primers sis mesos) i inversió en actius materials i immaterials. No s'hi subvencionen obra civil, immobles, enginyeria ni consultoria.",
    "zones": [
     "ES-CT"
    ],
    "zona_etiqueta": "Catalunya",
-   "ambit_geografic": "Empresa establerta o en procés d'establir-se a Catalunya.",
+   "ambit_geografic": "Empreses amb establiment operatiu a Catalunya o en procés d'establir-s'hi.",
    "focus": [
     "industria"
    ],
-   "intensitat_max": 30,
-   "import_max_eur": 3000000,
-   "ajuda_text": "Ocupació: 30% fins 200.000–1.000.000 €. Actius: 10–15% fins 300.000–3.000.000 €.",
+   "intensitat_max": 50,
+   "import_max_eur": 2000000,
+   "ajuda_text": "Fins a 2 M€ per projecte (intensitat del 10 al 50 %). Inversió mínima segons l'actuació: 500.000 € en centres d'R+D+i; 3 M€ en nova activitat o ampliació de capacitat.",
    "trl": null,
-   "url": "https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/",
-   "notes": "Edició 2025 oberta fins al 09/10/2025. Rellevant per a DOGA (noves línies productives / centre R+D). Edició 2026 no verificada.",
-   "confianca": "baixa",
+   "url": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/",
+   "notes": "Convocatòria 2026: Resolució EMT/1923/2026, d'11 de juny (bases EMT/1812/2026), sol·licituds del 16–18/06 al 15/09/2026. Exclou comerç minorista, centres d'atenció telefònica, immobiliari i producció agrària primària. Per a clients industrials (p. ex. DOGA) amb plans d'ampliació o un centre d'R+D.",
+   "confianca": "mitjana",
    "beneficiaris": [
     "pime",
     "gran_empresa"
    ],
-   "rols_stimulo": [],
+   "rols_stimulo": [
+    "assessor"
+   ],
    "excel_fila": 4,
+   "compartir_clients": true,
    "finestra": {
-    "estat": "oberta",
-    "obertura": "2026-06-01",
-    "tancament": "2026-10-09",
+    "estat": "propera",
+    "obertura": "2027-06-16",
+    "tancament": "2027-09-15",
     "estimada": true,
-    "text": "Oberta fins ≈ 09/10/2026"
+    "text": "≈ 16/06/2027 → 15/09/2027"
    },
    "encaix": {
     "stimulo": {
@@ -653,7 +664,7 @@
    "ajuda_text": "Estratègia de creixement 8.000 €; adopció d'IA 8.000 €; protecció de la innovació (patents, models d'utilitat, dissenys industrials europeus) 3.000 €; programes europeus d'R+D+I 12.000 €; internacionalització 8.000 €.",
    "trl": null,
    "url": "https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio/index.html",
-   "notes": "Obertes des del 07/05/2026. Algunes modalitats van tancar el 30/07/2026; d'altres segueixen obertes fins al 16/11/2026 o fins exhaurir pressupost (no verificat quines). El cupó de programes europeus (12.000 €) pot finançar la preparació d'una proposta EIC/Horizon/Eurostars; el de protecció, el registre de dissenys industrials dels clients.",
+   "notes": "Sol·licituds des del 15/05/2026. Segons el llistat d'ACCIÓ, els cupons d'estratègia de creixement i de programes europeus d'R+D+I segueixen oberts fins al 16/11/2026 a les 14:00 o fins exhaurir el pressupost. Protecció de la innovació: 100 % fins a 3.000 € per registrar patents, marques, models d'utilitat i dissenys industrials (proveïdors acreditats, assessorament fins al 30/07/2027). Innovació verda: assessorament per reduir emissions o adaptar-se al canvi climàtic (un cupó per empresa; exclou qui en va rebre el 2024 o el 2025). Els cupons d'internacionalització de plans van tancar el 15/09/2026.",
    "confianca": "mitjana",
    "beneficiaris": [
     "pime"
@@ -663,9 +674,10 @@
     "proveidor_extern"
    ],
    "excel_fila": 6,
+   "compartir_clients": true,
    "finestra": {
     "estat": "oberta",
-    "obertura": "2026-05-07",
+    "obertura": "2026-05-15",
     "tancament": "2026-11-16",
     "estimada": false,
     "text": "Oberta fins 16/11/2026"
@@ -678,6 +690,163 @@
      "motius": [
       "temes: disseny, cooperacio, ia, digital",
       "rol: beneficiari"
+     ]
+    }
+   }
+  },
+  {
+   "id": "accio-noves-oportunitats-negoci",
+   "nom": "Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)",
+   "entitat": "ACCIÓ",
+   "nivell": "catalunya",
+   "origen": "public",
+   "instrument": "subvencio",
+   "descripcio": "Dues fases per obrir una nova línia de negoci: (1) canvi estratègic, un pla de negoci fet per un consultor acreditat per ACCIÓ (estratègia, valor compartit o finances corporatives); (2) canvi estructural, implementar les accions del pla. Nova oportunitat vol dir, entre d'altres, una nova gamma de productes de més valor afegit, entrar en altres sectors, servititzar els productes o créixer per adquisició. Excloses la simple reducció de costos, la internacionalització, l'ampliació d'instal·lacions i la digitalització.",
+   "zones": [
+    "ES-CT"
+   ],
+   "zona_etiqueta": "Catalunya",
+   "ambit_geografic": "Empreses amb establiment operatiu a Catalunya (SL, SA, societat laboral o cooperativa). Excloses les microempreses, excepte en 23 comarques: Alt Urgell, Alta Ribagorça, Aran, Baix Ebre, Baix Empordà, Baix Penedès, Berguedà, Cerdanya, Conca de Barberà, Garrigues, Lluçanès, Moianès, Montsià, Noguera, Pallars Jussà, Pallars Sobirà, Pla d'Urgell, Priorat, Ribera d'Ebre, Ripollès, Segarra, Solsonès i Terra Alta.",
+   "focus": [
+    "industria",
+    "prova_concepte",
+    "disseny",
+    "sostenibilitat"
+   ],
+   "intensitat_max": 75,
+   "import_max_eur": 90000,
+   "ajuda_text": "Canvi estratègic: 75 % del pla de negoci, màxim 30.000 €. Canvi estructural: màxim 90.000 €; despeses externes (prototips, simulació, certificacions, homologacions) i personal 75 %; maquinària 20/10/10 % (petita/mitjana/gran); formació 25 %; auditoria 100 % fins a 1.000 €.",
+   "trl": null,
+   "url": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/",
+   "notes": "Convocatòria 2026: Resolució EMT/1900/2026, de 10 de juny (bases EMT/1811/2026; BDNS 912188), sol·licituds del 15/06 al 16/07/2026. Execució: estratègic fins al 31/12/2027; estructural fins al 31/12/2028, sense pròrroga. Per optar a l'estructural cal haver estat beneficiari de l'estratègic en convocatòries anteriors. Concurrència competitiva: mínim 250 de 500 punts (impacte, alineament amb el sector o clúster, capacitat, valor compartit, reequilibri territorial). Règim de minimis i Reglament general d'exempció; bestreta del 60 % sense garanties; tres ofertes. Gestió tècnica: unitat de clústers d'ACCIÓ.",
+   "confianca": "alta",
+   "beneficiaris": [
+    "pime",
+    "gran_empresa"
+   ],
+   "rols_stimulo": [
+    "proveidor_extern",
+    "beneficiari"
+   ],
+   "excel_fila": null,
+   "compartir_clients": true,
+   "finestra": {
+    "estat": "propera",
+    "obertura": "2027-06-15",
+    "tancament": "2027-07-16",
+    "estimada": true,
+    "text": "≈ 15/06/2027 → 16/07/2027"
+   },
+   "encaix": {
+    "stimulo": {
+     "punts": 84,
+     "prioritat": "A",
+     "rol": "beneficiari",
+     "motius": [
+      "temes: sostenibilitat, prova_concepte, disseny, industria",
+      "rol: beneficiari"
+     ]
+    }
+   }
+  },
+  {
+   "id": "accio-inversions-productives",
+   "nom": "Projectes d'inversions productives a Catalunya",
+   "entitat": "Departament d'Empresa i Treball (cercador d'ajuts d'ACCIÓ)",
+   "nivell": "catalunya",
+   "origen": "public",
+   "instrument": "subvencio",
+   "descripcio": "Projectes d'inversió industrial a Catalunya, sobretot noves plantes de producció i ampliacions.",
+   "zones": [
+    "ES-CT"
+   ],
+   "zona_etiqueta": "Catalunya",
+   "ambit_geografic": "Empreses industrials amb projectes d'inversió a Catalunya.",
+   "focus": [
+    "industria"
+   ],
+   "intensitat_max": null,
+   "import_max_eur": null,
+   "ajuda_text": "Per confirmar a les bases de 2027.",
+   "trl": null,
+   "url": "https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/25140-dgi-inversions-productives",
+   "notes": "Convocatòria 2026: Resolució EMT/634/2026, de 3 de març; termini fins al 22/04/2026. Per a clients industrials amb plans d'inversió; per a Stimulo només com a assessor.",
+   "confianca": "mitjana",
+   "beneficiaris": [
+    "pime",
+    "gran_empresa"
+   ],
+   "rols_stimulo": [
+    "assessor"
+   ],
+   "excel_fila": null,
+   "compartir_clients": true,
+   "finestra": {
+    "estat": "propera",
+    "obertura": "2027-03-01",
+    "tancament": "2027-04-22",
+    "estimada": true,
+    "text": "≈ 01/03/2027 → 22/04/2027"
+   },
+   "encaix": {
+    "stimulo": {
+     "punts": 31,
+     "prioritat": "C",
+     "rol": null,
+     "motius": [
+      "temes: industria",
+      "sense rol possible"
+     ]
+    }
+   }
+  },
+  {
+   "id": "accio-internacionalitzacio-projectes",
+   "nom": "Projectes per a la internacionalització (ACCIÓ 2026)",
+   "entitat": "ACCIÓ",
+   "nivell": "catalunya",
+   "origen": "public",
+   "instrument": "subvencio",
+   "descripcio": "Línia de projectes d'internacionalització: bases Resolució EMT/1879/2026, de 10 de juny (DOGC 15/06/2026), i convocatòria Resolució EMT/2000/2026, de 18 de juny.",
+   "zones": [
+    "ES-CT"
+   ],
+   "zona_etiqueta": "Catalunya",
+   "ambit_geografic": "Empreses amb establiment operatiu a Catalunya (beneficiaris per verificar a les bases).",
+   "focus": [
+    "internacionalitzacio",
+    "disseny"
+   ],
+   "intensitat_max": null,
+   "import_max_eur": null,
+   "ajuda_text": "",
+   "trl": null,
+   "url": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/",
+   "notes": "Termini, import i beneficiaris per verificar. Les edicions anteriors de promoció internacional subvencionaven el 50 % fins a 30.000 €. Encaix per a clients que exporten (adaptació de producte i material per a nous mercats).",
+   "confianca": "baixa",
+   "beneficiaris": [
+    "pime"
+   ],
+   "rols_stimulo": [
+    "proveidor_extern"
+   ],
+   "excel_fila": null,
+   "compartir_clients": true,
+   "finestra": {
+    "estat": "sense_dades",
+    "obertura": null,
+    "tancament": null,
+    "estimada": true,
+    "text": "Sense dates"
+   },
+   "encaix": {
+    "stimulo": {
+     "punts": 50,
+     "prioritat": "C",
+     "rol": "proveidor_extern",
+     "motius": [
+      "temes: disseny",
+      "rol: proveidor_extern"
      ]
     }
    }
@@ -718,6 +887,7 @@
     "subcontractat"
    ],
    "excel_fila": 7,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-01",
@@ -777,6 +947,7 @@
     "proveidor_extern"
    ],
    "excel_fila": 8,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-01",
@@ -837,6 +1008,7 @@
     "subcontractat"
    ],
    "excel_fila": 9,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-01",
@@ -894,6 +1066,7 @@
     "assessor"
    ],
    "excel_fila": 10,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-01",
@@ -950,6 +1123,7 @@
     "beneficiari"
    ],
    "excel_fila": 11,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-05-15",
@@ -1001,6 +1175,7 @@
     "beneficiari"
    ],
    "excel_fila": 12,
+   "compartir_clients": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1055,6 +1230,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-17",
@@ -1110,6 +1286,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": true,
    "finestra": {
     "estat": "sense_dades",
     "obertura": "2026-04-27",
@@ -1162,6 +1339,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -1218,6 +1396,7 @@
     "assessor"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-01",
@@ -1271,6 +1450,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-03-01",
@@ -1326,6 +1506,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-15",
@@ -1385,6 +1566,7 @@
     "beneficiari"
    ],
    "excel_fila": 13,
+   "compartir_clients": true,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1440,6 +1622,7 @@
     "subcontractat"
    ],
    "excel_fila": null,
+   "compartir_clients": true,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1497,6 +1680,7 @@
     "subcontractat"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1552,6 +1736,7 @@
     "subcontractat"
    ],
    "excel_fila": 14,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-04-14",
@@ -1612,6 +1797,7 @@
     "subcontractat"
    ],
    "excel_fila": 16,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-12",
@@ -1677,6 +1863,7 @@
     "subcontractat"
    ],
    "excel_fila": 15,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -1732,6 +1919,7 @@
     "soci"
    ],
    "excel_fila": 17,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-17",
@@ -1789,6 +1977,7 @@
     "subcontractat"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -1847,6 +2036,7 @@
     "beneficiari"
    ],
    "excel_fila": 18,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-30",
@@ -1899,6 +2089,7 @@
     "proveidor_extern"
    ],
    "excel_fila": 19,
+   "compartir_clients": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1946,6 +2137,7 @@
    ],
    "rols_stimulo": [],
    "excel_fila": 20,
+   "compartir_clients": false,
    "finestra": {
     "estat": "tancada",
     "obertura": null,
@@ -1994,6 +2186,7 @@
    ],
    "rols_stimulo": [],
    "excel_fila": 21,
+   "compartir_clients": false,
    "finestra": {
     "estat": "tancada",
     "obertura": null,
@@ -2047,12 +2240,13 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
-    "estat": "propera",
+    "estat": "oberta",
     "obertura": "2026-10-08",
     "tancament": "2026-10-29",
     "estimada": false,
-    "text": "08/10/2026 → 29/10/2026"
+    "text": "Oberta fins 29/10/2026"
    },
    "encaix": {
     "stimulo": {
@@ -2101,6 +2295,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-09-30",
@@ -2157,6 +2352,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -2213,6 +2409,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-19",
@@ -2271,6 +2468,7 @@
     "soci"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-26",
@@ -2323,6 +2521,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": "2026-07-09",
@@ -2376,6 +2575,7 @@
     "soci"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-04-27",
@@ -2426,6 +2626,7 @@
    ],
    "rols_stimulo": [],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2478,6 +2679,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2529,6 +2731,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2588,6 +2791,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-11",
@@ -2640,6 +2844,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-10-01",
@@ -2691,6 +2896,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-09-01",
@@ -2743,6 +2949,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -2796,6 +3003,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -2855,6 +3063,7 @@
     "soci"
    ],
    "excel_fila": 22,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -2913,6 +3122,7 @@
     "subcontractat"
    ],
    "excel_fila": 24,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -2972,6 +3182,7 @@
     "subcontractat"
    ],
    "excel_fila": 23,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3030,6 +3241,7 @@
     "assessor"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-06-30",
@@ -3086,6 +3298,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "tancada",
     "obertura": "2026-10-06",
@@ -3142,6 +3355,7 @@
     "assessor"
    ],
    "excel_fila": 25,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3192,6 +3406,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3249,6 +3464,7 @@
     "soci"
    ],
    "excel_fila": 26,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-17",
@@ -3306,6 +3522,7 @@
     "subcontractat"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3365,6 +3582,7 @@
     "soci"
    ],
    "excel_fila": 27,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3423,6 +3641,7 @@
     "soci"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-10-13",
@@ -3480,6 +3699,7 @@
     "soci"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-11-17",
@@ -3537,6 +3757,7 @@
     "soci"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-15",
@@ -3592,6 +3813,7 @@
     "soci"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-03",
@@ -3649,6 +3871,7 @@
     "soci"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-10-29",
@@ -3708,6 +3931,7 @@
     "soci"
    ],
    "excel_fila": 28,
+   "compartir_clients": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -3764,6 +3988,7 @@
     "beneficiari"
    ],
    "excel_fila": 29,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -3819,6 +4044,7 @@
     "soci"
    ],
    "excel_fila": 30,
+   "compartir_clients": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -3875,6 +4101,7 @@
     "subcontractat"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-01",
@@ -3932,6 +4159,7 @@
     "soci"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3984,6 +4212,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -4040,6 +4269,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-02",
@@ -4097,6 +4327,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -4153,6 +4384,7 @@
     "proveidor_extern"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -4207,6 +4439,7 @@
     "subcontractat"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -4262,6 +4495,7 @@
     "beneficiari"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -4317,6 +4551,7 @@
     "soci"
    ],
    "excel_fila": null,
+   "compartir_clients": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -4339,60 +4574,6 @@
  ],
  "agenda": [
   {
-   "data": "2026-10-07",
-   "tipus": "tancament",
-   "id": "eic-step-defence-scaleup",
-   "nom": "EIC STEP Scale Up Defence 2026",
-   "entitat": "Comissió Europea – EIC",
-   "estimada": false,
-   "text": "Darrera revisió: tancament confirmat el 28/10/2026"
-  },
-  {
-   "data": "2026-10-08",
-   "tipus": "vigilar",
-   "id": "accio-cupons",
-   "nom": "Cupons ACCIÓ 2026 per a la competitivitat empresarial",
-   "entitat": "ACCIÓ",
-   "estimada": false,
-   "text": "Cupons ACCIÓ: confirmar quines modalitats segueixen obertes fins al 16/11 (programes europeus, protecció, IA)"
-  },
-  {
-   "data": "2026-10-08",
-   "tipus": "vigilar",
-   "id": "agaur-doctorats-industrials",
-   "nom": "Doctorats Industrials (Generalitat)",
-   "entitat": "Departament de Recerca i Universitats / AGAUR",
-   "estimada": false,
-   "text": "Doctorats Industrials: verificar si la convocatòria DI-2026/2027 està oberta"
-  },
-  {
-   "data": "2026-10-08",
-   "tipus": "vigilar",
-   "id": "pilot-autonomia-estrategica",
-   "nom": "PILOT – Programa d'innovació tecnològica per a l'autonomia estratègica",
-   "entitat": "Departament de Recerca i Universitats (gestió AGAUR)",
-   "estimada": false,
-   "text": "PILOT: confirmar bases, import per projecte i termini (AGAUR / DOGC) i començar a muntar consorci"
-  },
-  {
-   "data": "2026-10-08",
-   "tipus": "obertura",
-   "id": "aei-torres-quevedo",
-   "nom": "Torres Quevedo (PTQ) 2026",
-   "entitat": "Agencia Estatal de Investigación",
-   "estimada": false,
-   "text": "Obertura confirmada: Torres Quevedo (PTQ) 2026"
-  },
-  {
-   "data": "2026-10-08",
-   "tipus": "tancament",
-   "id": "aei-torres-quevedo",
-   "nom": "Torres Quevedo (PTQ) 2026",
-   "entitat": "Agencia Estatal de Investigación",
-   "estimada": false,
-   "text": "Darrera revisió: tancament confirmat el 29/10/2026"
-  },
-  {
    "data": "2026-10-09",
    "tipus": "vigilar",
    "id": "edip-bravetech",
@@ -4400,15 +4581,6 @@
    "entitat": "Comissió Europea – DG DEFIS",
    "estimada": false,
    "text": "BraveTech EU: confirmar dates (finestra set.–des. 2026) i requisits"
-  },
-  {
-   "data": "2026-10-09",
-   "tipus": "tancament",
-   "id": "accio-inversions-alt-impacte",
-   "nom": "Inversions empresarials d'alt impacte",
-   "entitat": "ACCIÓ",
-   "estimada": true,
-   "text": "Tancament estimat: Inversions empresarials d'alt impacte"
   },
   {
    "data": "2026-10-09",
@@ -4481,6 +4653,15 @@
    "entitat": "Red.es (Ministeri per a la Transformació Digital i de la Funció Pública)",
    "estimada": false,
    "text": "Red.es infraestructures d'ús dual: confirmar el termini al BOE i si s'obre la convocatòria per a empreses i centres tecnològics"
+  },
+  {
+   "data": "2026-10-13",
+   "tipus": "vigilar",
+   "id": "accio-internacionalitzacio-projectes",
+   "nom": "Projectes per a la internacionalització (ACCIÓ 2026)",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Internacionalització ACCIÓ 2026 (EMT/2000/2026): confirmar termini, import i beneficiaris"
   },
   {
    "data": "2026-10-15",
@@ -4897,6 +5078,15 @@
    "text": "Preparar projecte i socis: obertura estimada el 01/03/2027"
   },
   {
+   "data": "2026-12-31",
+   "tipus": "preparar",
+   "id": "accio-inversions-productives",
+   "nom": "Projectes d'inversions productives a Catalunya",
+   "entitat": "Departament d'Empresa i Treball (cercador d'ajuts d'ACCIÓ)",
+   "estimada": true,
+   "text": "Preparar projecte i socis: obertura estimada el 01/03/2027"
+  },
+  {
    "data": "2027-01-01",
    "tipus": "tancament",
    "id": "emprendexxi",
@@ -5141,6 +5331,15 @@
   },
   {
    "data": "2027-02-15",
+   "tipus": "vigilar",
+   "id": "accio-inversions-productives",
+   "nom": "Projectes d'inversions productives a Catalunya",
+   "entitat": "Departament d'Empresa i Treball (cercador d'ajuts d'ACCIÓ)",
+   "estimada": true,
+   "text": "Vigilar la publicació de les bases (DOGC/BOE/portal)"
+  },
+  {
+   "data": "2027-02-15",
    "tipus": "tall",
    "id": "women-techeu",
    "nom": "Women TechEU",
@@ -5228,6 +5427,15 @@
    "entitat": "ACCIÓ",
    "estimada": false,
    "text": "Exploració tecnològica: comprovar si ACCIÓ anuncia l'edició 2027 (pla d'ajuts anual / sessions informatives)"
+  },
+  {
+   "data": "2027-03-01",
+   "tipus": "obertura",
+   "id": "accio-inversions-productives",
+   "nom": "Projectes d'inversions productives a Catalunya",
+   "entitat": "Departament d'Empresa i Treball (cercador d'ajuts d'ACCIÓ)",
+   "estimada": true,
+   "text": "Obertura estimada: Projectes d'inversions productives a Catalunya"
   },
   {
    "data": "2027-03-02",
@@ -5327,6 +5535,15 @@
    "entitat": "Comissió Europea – EIC",
    "estimada": false,
    "text": "Preparar proposta per al tall del 29/04/2027"
+  },
+  {
+   "data": "2027-03-15",
+   "tipus": "vigilar",
+   "id": "accio-noves-oportunitats-negoci",
+   "nom": "Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Noves oportunitats de negoci (ACCIÓ): identificar amb clients i potencials clients una nova línia de producte i el consultor acreditat per a la fase estratègica de 2027"
   },
   {
    "data": "2027-03-16",
@@ -5439,6 +5656,15 @@
   {
    "data": "2027-04-01",
    "tipus": "tancament",
+   "id": "accio-inversions-productives",
+   "nom": "Projectes d'inversions productives a Catalunya",
+   "entitat": "Departament d'Empresa i Treball (cercador d'ajuts d'ACCIÓ)",
+   "estimada": true,
+   "text": "Darrera revisió: tancament estimat el 22/04/2027"
+  },
+  {
+   "data": "2027-04-01",
+   "tipus": "tancament",
    "id": "women-techeu",
    "nom": "Women TechEU",
    "entitat": "Comissió Europea – EIC",
@@ -5500,6 +5726,15 @@
    "text": "Tall EUREKA SMART – Call 10 (fabricació avançada)"
   },
   {
+   "data": "2027-04-16",
+   "tipus": "preparar",
+   "id": "accio-noves-oportunitats-negoci",
+   "nom": "Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Preparar projecte i socis: obertura estimada el 15/06/2027"
+  },
+  {
    "data": "2027-04-17",
    "tipus": "vigilar",
    "id": "edf-eudis",
@@ -5507,6 +5742,15 @@
    "entitat": "Comissió Europea – DG DEFIS",
    "estimada": true,
    "text": "Vigilar la publicació de les bases (DOGC/BOE/portal)"
+  },
+  {
+   "data": "2027-04-17",
+   "tipus": "preparar",
+   "id": "accio-inversions-alt-impacte",
+   "nom": "Inversions empresarials d'alt impacte",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Preparar projecte i socis: obertura estimada el 16/06/2027"
   },
   {
    "data": "2027-04-17",
@@ -5552,6 +5796,15 @@
    "entitat": "Agencia Estatal de Investigación",
    "estimada": true,
    "text": "Preparar projecte i socis: obertura estimada el 19/06/2027"
+  },
+  {
+   "data": "2027-04-22",
+   "tipus": "tancament",
+   "id": "accio-inversions-productives",
+   "nom": "Projectes d'inversions productives a Catalunya",
+   "entitat": "Departament d'Empresa i Treball (cercador d'ajuts d'ACCIÓ)",
+   "estimada": true,
+   "text": "Tancament estimat: Projectes d'inversions productives a Catalunya"
   },
   {
    "data": "2027-04-23",
@@ -5770,6 +6023,24 @@
    "text": "Preparar projecte i socis: obertura estimada el 29/07/2027"
   },
   {
+   "data": "2027-06-01",
+   "tipus": "vigilar",
+   "id": "accio-noves-oportunitats-negoci",
+   "nom": "Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Vigilar la publicació de les bases (DOGC/BOE/portal)"
+  },
+  {
+   "data": "2027-06-02",
+   "tipus": "vigilar",
+   "id": "accio-inversions-alt-impacte",
+   "nom": "Inversions empresarials d'alt impacte",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Vigilar la publicació de les bases (DOGC/BOE/portal)"
+  },
+  {
    "data": "2027-06-02",
    "tipus": "obertura",
    "id": "nato-diana",
@@ -5833,6 +6104,24 @@
    "text": "Darrera revisió: tancament estimat el 03/07/2027"
   },
   {
+   "data": "2027-06-15",
+   "tipus": "obertura",
+   "id": "accio-noves-oportunitats-negoci",
+   "nom": "Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Obertura estimada: Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)"
+  },
+  {
+   "data": "2027-06-16",
+   "tipus": "obertura",
+   "id": "accio-inversions-alt-impacte",
+   "nom": "Inversions empresarials d'alt impacte",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Obertura estimada: Inversions empresarials d'alt impacte"
+  },
+  {
    "data": "2027-06-17",
    "tipus": "vigilar",
    "id": "ub-f2i",
@@ -5867,6 +6156,15 @@
    "entitat": "Agencia Estatal de Investigación",
    "estimada": true,
    "text": "Darrera revisió: tancament estimat el 10/07/2027"
+  },
+  {
+   "data": "2027-06-25",
+   "tipus": "tancament",
+   "id": "accio-noves-oportunitats-negoci",
+   "nom": "Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Darrera revisió: tancament estimat el 16/07/2027"
   },
   {
    "data": "2027-06-26",
@@ -5986,6 +6284,15 @@
    "text": "Vigilar la publicació de les bases (DOGC/BOE/portal)"
   },
   {
+   "data": "2027-07-16",
+   "tipus": "tancament",
+   "id": "accio-noves-oportunitats-negoci",
+   "nom": "Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Tancament estimat: Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)"
+  },
+  {
    "data": "2027-07-17",
    "tipus": "tancament",
    "id": "bcn-impulsem-el-que-fas",
@@ -6085,6 +6392,15 @@
    "text": "Darrera revisió: tancament estimat el 04/09/2027"
   },
   {
+   "data": "2027-08-25",
+   "tipus": "tancament",
+   "id": "accio-inversions-alt-impacte",
+   "nom": "Inversions empresarials d'alt impacte",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Darrera revisió: tancament estimat el 15/09/2027"
+  },
+  {
    "data": "2027-08-31",
    "tipus": "tancament",
    "id": "accio-exploracio-tecnologica",
@@ -6137,6 +6453,15 @@
    "entitat": "Comissió Europea – DG DEFIS",
    "estimada": true,
    "text": "Darrera revisió: tancament estimat el 29/09/2027"
+  },
+  {
+   "data": "2027-09-15",
+   "tipus": "tancament",
+   "id": "accio-inversions-alt-impacte",
+   "nom": "Inversions empresarials d'alt impacte",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Tancament estimat: Inversions empresarials d'alt impacte"
   },
   {
    "data": "2027-09-16",

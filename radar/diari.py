@@ -112,7 +112,13 @@ def prepara_avis(avui: dt.date, envia: bool = False, tot: bool = False, maxim: i
     cfg = {**avisos.CONFIG_PER_DEFECTE, **cat.config.get("avisos", {})}
     fitxer_estat = ARREL / "data" / "estat" / "notificades.json"
     estat = avisos.llegeix_estat(fitxer_estat)
-    candidates = avisos.candidates(cat, avui, cfg)
+    from . import screening
+
+    try:
+        clients_servei = [cl for cl in screening.carrega_clients(cat).values() if cl.avisos]
+    except Exception:  # un fitxer de client mal format no ha d'aturar l'avís
+        clients_servei = []
+    candidates = avisos.candidates(cat, avui, cfg, clients_servei)
     noves = candidates if tot else avisos.noves(candidates, estat)
     maxim = maxim or cfg["maxim_linies"]
     principals, resum = noves[:maxim], noves[maxim:]
@@ -129,7 +135,7 @@ def prepara_avis(avui: dt.date, envia: bool = False, tot: bool = False, maxim: i
         return r
     contactes, motiu = contactes_holded(fitxer_contactes)
     llista_socis = socis.construeix(contactes) if contactes else []
-    avisos.afegeix_socis(principals, llista_socis, cat, cfg["maxim_socis"])
+    avisos.afegeix_socis(principals, llista_socis, cat, cfg["maxim_socis"], cfg.get("maxim_socis_clients"))
     r.assumpte, text, cos_html = avisos.compon(principals, avui, cfg, resum, novetats,
                                                motiu if principals else "", recordatoris, lics)
     r.copia = avisos.desa_copia(ARREL / "privat" / "avisos", avui, r.assumpte, text, cos_html)

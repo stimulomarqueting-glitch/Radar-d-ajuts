@@ -57,12 +57,18 @@ def _get(url: str, dades: bytes | None = None, capcaleres: dict | None = None) -
 BDNS_URL = "https://www.infosubvenciones.es/bdnstrans/api/convocatorias/busqueda"
 
 
-def bdns_parse(payload: dict, paraules: list[str]) -> list[Troballa]:
+# Òrgans que s'avisen sempre (encara que el títol no tingui paraules clau): totes les línies d'ACCIÓ
+ORGANISMES_SEMPRE = {"ACCIÓ": ["competitivitat de l'empresa", "competitividad de la empresa", "accio"]}
+
+
+def bdns_parse(payload: dict, paraules: list[str], organismes: dict[str, list[str]] | None = None) -> list[Troballa]:
+    organismes = ORGANISMES_SEMPRE if organismes is None else organismes
     sortida = []
     for item in payload.get("content", []):
         titol = item.get("descripcion") or item.get("descripcionLeng") or ""
         organisme = " / ".join(filter(None, [item.get("nivel1"), item.get("nivel2"), item.get("nivel3")]))
         trobades = coincidencies(f"{titol} {organisme}", paraules)
+        trobades += [nom for nom, patrons in organismes.items() if coincidencies(organisme, patrons)]
         if not trobades:
             continue
         num = str(item.get("numeroConvocatoria") or item.get("id"))

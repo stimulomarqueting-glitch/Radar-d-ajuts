@@ -42,7 +42,7 @@ NOMS_ROL = {"beneficiari": "beneficiari", "soci": "soci de consorci", "proveidor
 NOMS_TIPUS = {"recerca": "recerca", "hospital": "hospital / institut sanitari", "empresa": "empresa",
               "startup": "startup", "cluster": "clúster", "inversor": "inversor"}
 CONFIG_PER_DEFECTE = {"prioritats": ["A"], "prioritat_b_dies": 45, "antelacio_dies": 60, "maxim_linies": 8,
-                      "maxim_socis": 3, "remitent_nom": "Radar d'ajuts Stimulo",
+                      "maxim_socis": 3, "maxim_socis_clients": 5, "remitent_nom": "Radar d'ajuts Stimulo",
                       "signatura": "Xavi\nStimulo · stimulo.com"}
 
 
@@ -54,6 +54,8 @@ class Linia:
     clau: str
     motiu: str
     propostes: list[Proposta] = field(default_factory=list)
+    per_clients: bool = False  # línia per compartir amb clients i potencials clients
+    clients_servei: list[str] = field(default_factory=list)  # divisions de clients de servei amb encaix A/B
 
 
 def _data(d: dt.date | None, estimada: bool = False) -> str:
@@ -90,10 +92,26 @@ def _motiu(f: calendari.Finestra, avui: dt.date) -> str:
     return "Anunciada: dates pendents"
 
 
-def candidates(cat: Cataleg, avui: dt.date, config: dict | None = None) -> list[Linia]:
-    """Línies amb potencial ara mateix (sense mirar l'estat de notificacions)."""
+def _clients_servei(c: Convocatoria, cat: Cataleg, clients: list) -> list[str]:
+    """Divisions de clients de servei (data/clients) amb encaix A o B per a la línia."""
+    sortida = []
+    for cl in clients:
+        for d in cl.divisions:
+            e = puntua(c, d.perfil, cat.zones, cat.config.get("pesos"))
+            if e.prioritat in ("A", "B") and e.rol:
+                sortida.append(f"{cl.nom} · {d.nom} ({e.punts} {e.prioritat})")
+    return sortida
+
+
+def candidates(cat: Cataleg, avui: dt.date, config: dict | None = None, clients: list | None = None) -> list[Linia]:
+    """Línies amb potencial ara mateix (sense mirar l'estat de notificacions).
+
+    Hi entren les de prioritat alta per a Stimulo, les marcades per compartir amb clients
+    (`compartir_clients`) i les que encaixen amb una divisió d'un client de servei (`clients`).
+    """
     cfg = {**CONFIG_PER_DEFECTE, **(config or {})}
     perfil = next(iter(cat.perfils.values()))  # el radar puntua per a Stimulo (primer perfil actiu)
+    clients = clients or []
     sortida = []
     for c in cat.convocatories:
         f = calendari.propera_finestra(c, avui)
@@ -107,13 +125,13 @@ def candidates(cat: Cataleg, avui: dt.date, config: dict | None = None) -> list[
         if f.estat == "propera" and not f.obertura and f.tancament \
                 and (f.tancament - avui).days > cfg["antelacio_dies"] + 45:
             continue  # tall llunyà d'una convocatòria que encara no ha obert
-        if e.prioritat in cfg["prioritats"]:
-            pass
-        elif e.prioritat == "B" and dies is not None and 0 <= dies <= cfg["prioritat_b_dies"]:
-            pass
-        else:
+        servei = _clients_servei(c, cat, clients)
+        per_stimulo = e.prioritat in cfg["prioritats"] or (
+            e.prioritat == "B" and dies is not None and 0 <= dies <= cfg["prioritat_b_dies"])
+        if not (per_stimulo or c.compartir_clients or servei):
             continue
-        sortida.append(Linia(c, f, e, clau_edicio(c, f, avui), _motiu(f, avui)))
+        sortida.append(Linia(c, f, e, clau_edicio(c, f, avui), _motiu(f, avui),
+                             per_clients=c.compartir_clients or bool(servei), clients_servei=servei))
     # Primer les línies amb dates (les fitxes fiables abans que les pendents de verificar, i per encaix);
     # les obertes tot l'any, al final
     sortida.sort(key=lambda l: (l.f.estat == "permanent", l.c.confianca == "baixa", -l.e.punts,
@@ -132,9 +150,11 @@ def noves(linies: list[Linia], estat: dict) -> list[Linia]:
     return [l for l in linies if l.clau not in estat]
 
 
-def afegeix_socis(linies: list[Linia], socis: list[Soci], cat: Cataleg, maxim: int) -> None:
+def afegeix_socis(linies: list[Linia], socis: list[Soci], cat: Cataleg, maxim: int,
+                  maxim_clients: int | None = None) -> None:
+    """Socis de Holded per a cada línia; a les línies per a clients, més empreses (clients i contactes)."""
     for l in linies:
-        l.propostes = proposa(l.c, socis, cat.zones, maxim)
+        l.propostes = proposa(l.c, socis, cat.zones, (maxim_clients or maxim) if l.per_clients else maxim)
 
 
 # --- Redacció ----------------------------------------------------------------------------------
@@ -240,6 +260,23 @@ def esborrany(l: Linia, p: Proposta, signatura: str) -> dict:
             "assumpte": assumpte, "cos": cos, "idioma": "ca" if catala else "es"}
 
 
+def _per_clients(l: Linia) -> str:
+    """Qui en pot ser sol·licitant i què hi fa Stimulo (per a les línies que es comparteixen amb clients)."""
+    noms = {"pime": "pimes", "gran_empresa": "grans empreses", "startup": "startups"}
+    qui = [noms[b] for b in l.c.beneficiaris if b in noms]
+    rols = set(l.c.rols_stimulo)
+    if rols & {"proveidor_extern", "subcontractat"}:
+        stimulo = "Stimulo hi entra com a proveïdor (disseny, prototip, validació)"
+    elif rols & {"soci", "beneficiari"}:
+        stimulo = "Stimulo hi pot ser soci del projecte"
+    else:
+        stimulo = "Stimulo pot ajudar a preparar-la"
+    text = (f"Sol·licitant: el client ({', '.join(qui) or 'vegeu les bases'}). {stimulo}.")
+    if l.clients_servei:
+        text += " Clients de servei amb encaix: " + "; ".join(l.clients_servei) + "."
+    return text
+
+
 def _resum(text: str, maxim: int = 260) -> str:
     text = " ".join(text.split())
     if len(text) <= maxim:
@@ -282,6 +319,9 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
     n = len(linies)
     assumpte = (f"Radar d'ajuts · {n} línia nova amb potencial" if n == 1 else
                 f"Radar d'ajuts · {n} línies noves amb potencial") + f" · {avui:%d/%m/%Y}"
+    n_clients = sum(1 for l in linies if l.per_clients)
+    if linies and n_clients:
+        assumpte = assumpte.replace(f" · {avui:%d/%m/%Y}", f" ({n_clients} per compartir amb clients) · {avui:%d/%m/%Y}")
     if not linies and licitacions:
         assumpte = (f"Radar d'ajuts · {len(licitacions)} licitaci{'ó nova' if len(licitacions) == 1 else 'ons noves'}"
                     f" amb encaix · {avui:%d/%m/%Y}")
@@ -296,6 +336,8 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
         t += ["Recordatoris d'avui:"] + [f"- {r}" for r in recordatoris] + [""]
     for i, l in enumerate(linies, 1):
         t += [f"{i}. {l.c.nom} — {l.c.entitat}", f"   {l.motiu} · encaix {l.e.punts}/100 ({l.e.prioritat})"]
+        if l.per_clients:
+            t.append(f"   PER COMPARTIR AMB CLIENTS: {_per_clients(l)}")
         t += [f"   {k}: {v}" for k, v in _camps(l)]
         t += [f"   Descripció: {_resum(l.c.descripcio, 500)}", f"   Per què encaixem: {_encaix(l)}"]
         if l.propostes:
@@ -326,8 +368,9 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
         t.append("")
     if novetats:
         t += ["Detectat a les fonts oficials (pendent de classificar):"]
-        t += [f"- {nv['titol']} · {nv['organisme']} · termini {nv.get('termini') or '—'} · {nv['url']}"
-              for nv in novetats[:15]]
+        t += [f"- {'[ACCIÓ] ' if 'ACCIÓ' in nv.get('paraules', []) else ''}{nv['titol']} · {nv['organisme']} · "
+              f"termini {nv.get('termini') or '—'} · {nv['url']}"
+              for nv in sorted(novetats, key=lambda x: 'ACCIÓ' not in x.get('paraules', []))[:15]]
         t.append("")
     esborranys = [(l, p, esborrany(l, p, cfg["signatura"])) for l in linies for p in l.propostes]
     if esborranys:
@@ -361,6 +404,10 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
         h.append(f'<p style="margin:0 0 6px;font-size:12px;color:{accent};font-weight:bold">{e(l.motiu)} · '
                  f'encaix {l.e.punts}/100 ({e(l.e.prioritat)})</p>')
         h.append(f'<h2 style="margin:0 0 12px;font-size:17px;line-height:1.3">{i}. {e(c.nom)}</h2>')
+        if l.per_clients:
+            h.append(f'<p style="margin:0 0 12px;font-size:13px;line-height:1.5;background:#E1F2E9;color:#13202A;'
+                     f'border-radius:6px;padding:8px 10px"><b style="color:#19744B">Per compartir amb clients.</b> '
+                     f'{e(_per_clients(l))}</p>')
         h.append('<table role="presentation" style="border-collapse:collapse;width:100%;font-size:14px;margin:0 0 12px">')
         for k, v in _camps(l):
             h.append(f'<tr><td style="padding:4px 12px 4px 0;color:{gris};white-space:nowrap;vertical-align:top;width:110px">'
@@ -417,8 +464,10 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
                      + "</div>")
     if novetats:
         h.append(f'<h3 style="font-size:15px;margin:22px 0 8px">Detectat a les fonts oficials (pendent de classificar)</h3><ul style="font-size:13px;line-height:1.5;padding-left:18px">')
-        for nv in novetats[:15]:
-            h.append(f'<li><a href="{e(nv["url"])}" style="color:{accent}">{e(nv["titol"][:160])}</a> · {e(nv["organisme"][:80])}'
+        for nv in sorted(novetats, key=lambda x: "ACCIÓ" not in x.get("paraules", []))[:15]:
+            accio = "ACCIÓ" in nv.get("paraules", [])
+            h.append(f'<li>{"<b>ACCIÓ · </b>" if accio else ""}<a href="{e(nv["url"])}" style="color:{accent}">'
+                     f'{e(nv["titol"][:160])}</a> · {e(nv["organisme"][:80])}'
                      f' · termini {e(nv.get("termini") or "—")}</li>')
         h.append("</ul>")
     if esborranys:

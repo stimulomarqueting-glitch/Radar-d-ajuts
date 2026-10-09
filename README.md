@@ -50,7 +50,12 @@ La revisió es fa **cada matí**: al VPS, amb el servei `programador` (a les 07:
 no estigui instal·lat, amb GitHub Actions (05:17 UTC). Si no hi ha res nou, no s'envia cap correu.
 
 **Quan avisa.** Una línia es considera nova amb potencial si compleix tres condicions:
-- **Encaix:** és de prioritat A, o de prioritat B amb data límit en els 45 dies següents.
+- **Encaix:** n'hi ha prou que es compleixi un d'aquests tres casos:
+  - és de prioritat A per a Stimulo, o de prioritat B amb data límit en els 45 dies següents;
+  - està marcada per compartir amb clients (`compartir_clients: true`): el sol·licitant és el client i
+    Stimulo hi entra com a proveïdor o soci. Per exemple, les línies d'ACCIÓ de noves oportunitats de
+    negoci, d'exploració tecnològica o d'inversions;
+  - encaixa (A o B) amb una divisió d'un client de servei de `data/clients/`.
 - **Dates:** està oberta, obre en els 60 dies següents o està oberta tot l'any.
 - **Novetat:** encara no s'havia avisat aquesta edició.
 
@@ -62,6 +67,13 @@ L'estat es desa a `data/estat/notificades.json`, que només conté identificador
 - Per què encaixem.
 - Altres consideracions.
 - Fins a 3 socis potencials de Holded, amb la persona de contacte i un enllaç «obrir esborrany» amb el correu ja redactat: en català als socis de Catalunya i en castellà a la resta.
+
+Les línies per compartir amb clients porten una nota amb:
+- qui en pot ser sol·licitant i què hi fa Stimulo;
+- fins a 5 clients o contactes de Holded que hi encaixen, cadascun amb el correu ja redactat.
+
+Al tauler porten l'etiqueta «per a clients». Qualsevol convocatòria nova d'ACCIÓ que es publiqui al
+BDNS surt al correu marcada «ACCIÓ», encara que el títol no tingui cap paraula clau.
 
 El correu també inclou les novetats que els vigilants han trobat a les fonts oficials i, si tens
 sol·licituds en preparació a l'aplicació, recordatoris de termini (21, 14, 7, 3 i 1 dies abans del

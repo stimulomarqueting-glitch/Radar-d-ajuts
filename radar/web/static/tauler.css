@@ -128,3 +128,4 @@ footer p { margin: 0; max-width: 90ch; }
 .boto { display: inline-block; font: 600 14px/1 var(--f-body); background: var(--accent); color: var(--accent-ink); text-decoration: none; border: 0; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
 .boto:hover { filter: brightness(1.08); }
 .boto.secundari { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.xip-clients { font: 600 11px/1 var(--f-body); color: var(--ok); background: var(--ok-soft); padding: 3px 6px; border-radius: 4px; }
