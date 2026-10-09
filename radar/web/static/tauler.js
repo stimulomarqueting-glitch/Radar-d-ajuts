@@ -38,7 +38,7 @@ function iniFiltres() {
     zones.map(([k, z]) => `<option value="${esc(k)}">${esc(z.nom)} (${esc(k)})</option>`).join("");
   const temes = [...new Set(D.convocatories.flatMap(c => c.focus))].sort((a, b) => (NOMS_FOCUS[a] || a).localeCompare(NOMS_FOCUS[b] || b, "ca"));
   document.getElementById("f-focus").innerHTML += temes.map(t => `<option value="${esc(t)}">${esc(NOMS_FOCUS[t] || t)}</option>`).join("");
-  for (const id of ["f-estat", "f-zona", "f-nivell", "f-focus", "f-ordre"]) document.getElementById(id).addEventListener("change", pinta);
+  for (const id of ["f-estat", "f-linia", "f-zona", "f-nivell", "f-focus", "f-ordre"]) document.getElementById(id).addEventListener("change", pinta);
   document.getElementById("f-text").addEventListener("input", pinta);
   document.getElementById("generat").textContent = `Radar d'ajuts · actualitzat el ${dataTxt(D.generat)}`;
 }
@@ -48,12 +48,14 @@ function refData(c) { const f = c.finestra; return f.estat === "oberta" ? f.tanc
 function filtra() {
   const estat = document.getElementById("f-estat").value, zona = document.getElementById("f-zona").value;
   const nivell = document.getElementById("f-nivell").value, focus = document.getElementById("f-focus").value;
+  const linia = document.getElementById("f-linia").value;
   const text = document.getElementById("f-text").value.trim().toLowerCase();
   let llista = D.convocatories.filter(c => {
     const e = c.finestra.estat;
     if (estat === "actives" && !["oberta", "propera", "permanent"].includes(e)) return false;
     if (["oberta", "propera", "permanent"].includes(estat) && e !== estat) return false;
     if (nivell && c.nivell !== nivell) return false;
+    if (linia && !(c.linies || []).includes(linia)) return false;
     if (focus && !c.focus.includes(focus)) return false;
     if (!elegible(c, zona)) return false;
     if (text && !(c.nom + " " + c.entitat + " " + c.descripcio + " " + c.focus.join(" ")).toLowerCase().includes(text)) return false;

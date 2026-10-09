@@ -13,6 +13,7 @@
     python -m radar contrasenya                  # genera les claus d'accés de l'aplicació
     python -m radar screening doga               # informe d'ajuts per a un client, per divisions
     python -m radar licitacions                  # licitacions (PSCP, PLACSP, TED) amb semàfor go/no-go
+    python -m radar pla [--privat]               # pla nov.–juny en dues línies: projectes amb clients i creixement
 """
 
 from __future__ import annotations
@@ -97,6 +98,36 @@ def ordre_screening(args) -> int:
         print(f"{r.divisio.nom}: {len(r.oportunitats)} línies · {screening.missatge_divisio(r)}")
     for tipus, ruta in screening.genera(sc, dir_sortida, cat.config.get("alertes")).items():
         print(f"→ {ruta}")
+    return 0
+
+
+def ordre_pla(args) -> int:
+    from . import pla, screening
+
+    cat = dades.carrega()
+    avui = _avui(args.avui)
+    inici, fi = pla.horitzo(avui)
+    inici = dt.date.fromisoformat(args.des) if args.des else inici
+    fi = dt.date.fromisoformat(args.fins) if args.fins else fi
+    if fi <= inici:
+        print("--fins ha de ser posterior a --des", file=sys.stderr)
+        return 2
+    llista_socis, clients = None, None
+    if args.privat:
+        from . import diari, socis
+
+        contactes, motiu = diari.contactes_holded(args.contactes)
+        llista_socis = socis.construeix(contactes) if contactes else []
+        if motiu:
+            print(f"Socis de Holded: {motiu}")
+        clients = [c for c in screening.carrega_clients(cat).values() if c.avisos]
+    p = pla.construeix(cat, avui, inici, fi, llista_socis, clients)
+    r = pla.resum(p)
+    print(f"{r['projectes']} convocatòries per a projectes ({r['alt']} amb retorn alt) · {r['creixement']} per al "
+          f"creixement · {r['comencar_ja']} per començar ja · {r['terminis_30']} terminis en 30 dies")
+    dir_sortida = ARREL / "privat" if args.privat else DIR_SORTIDA
+    for ruta in pla.genera(p, dir_sortida, args.privat).values():
+        print(f"→ {ruta.relative_to(ARREL) if ruta.is_relative_to(ARREL) else ruta}")
     return 0
 
 
@@ -267,6 +298,12 @@ def main(argv: list[str] | None = None) -> int:
     sc.set_defaults(f=ordre_screening)
     sub.add_parser("licitacions", parents=[comu],
                    help="cerca licitacions (PSCP, PLACSP, TED) i les avalua").set_defaults(f=ordre_licitacions)
+    pl = sub.add_parser("pla", parents=[comu], help="pla per línies: projectes amb clients i creixement de Stimulo")
+    pl.add_argument("--des", help="inici de l'horitzó AAAA-MM-DD (per defecte, l'1 de novembre)")
+    pl.add_argument("--fins", help="fi de l'horitzó AAAA-MM-DD (per defecte, el 30 de juny següent)")
+    pl.add_argument("--privat", action="store_true", help="amb clients i socis de Holded, a privat/")
+    pl.add_argument("--contactes", help="JSON de contactes de Holded (si no, HOLDED_API_KEY o privat/)")
+    pl.set_defaults(f=ordre_pla)
     i = sub.add_parser("importa-excel", parents=[comu])
     i.add_argument("fitxer")
     i.set_defaults(f=ordre_importa_excel)

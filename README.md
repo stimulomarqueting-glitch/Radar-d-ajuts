@@ -9,6 +9,7 @@ esborrany de correu per a cadascun.
 També inclou una **aplicació web privada** (per al VPS, amb contrasenya) per preparar cada sol·licitud
 amb un assistent de Claude que ja té tot el context de Stimulo, de l'ajut i dels socis.
 
+- **Pla 2026-2027 en dues línies (projectes amb clients i creixement):** [docs/pla-dues-linies.md](docs/pla-dues-linies.md) · pla actual: [sortida/pla-2026-2027.md](sortida/pla-2026-2027.md)
 - **Proposta v1:** [docs/proposta-radar.md](docs/proposta-radar.md)
 - **Briefing DOGA:** [docs/briefing-doga.md](docs/briefing-doga.md)
 - **Manual de gestió d'ajuts:** [docs/gestio-ajuts.md](docs/gestio-ajuts.md)
@@ -21,10 +22,10 @@ amb un assistent de Claude que ja té tot el context de Stimulo, de l'ajut i del
 
 ```
 data/origen/*.xlsx ──importa-excel──▶ data/importat/   (control de files noves)
-data/convocatories.yaml  (catàleg curat: 74 fitxes)
+data/convocatories.yaml  (catàleg curat: 79 fitxes)
 data/perfils.yaml        (Stimulo; clients de servei desactivats)          ──▶ radar ──▶ sortida/
 data/zones.yaml          (jerarquia geogràfica ISO 3166-2)                       radar.md · radar.html · alertes.ics
-data/fonts.yaml          (33 fonts vigilades)
+data/fonts.yaml          (43 fonts vigilades)
 APIs: BDNS · Funding & Tenders UE ──vigila──▶ sortida/novetats.md
 PSCP · PLACSP · TED ──licitacions──▶ sortida/licitacions.md (+ app > Licitacions)
 Holded (només lectura) + classificació privada ──avisa──▶ correu a Stimulo (mai al repositori)
@@ -41,6 +42,13 @@ Holded (només lectura) + classificació privada ──avisa──▶ correu a S
   - Les senyals d'alerta són: preparar (−60 dies), vigilar (−14 dies), obertura, darrera revisió
     (−21 dies) i tancament.
   - Les dates estimades porten ≈.
+- **Dues línies de treball** (`linies` a cada fitxa):
+  - **projectes**: el client o el consorci sol·licita i Stimulo fa el producte. Té més retorn comercial
+    i va primer;
+  - **creixement**: Stimulo sol·licita per a ella mateixa.
+
+  `python -m radar pla` en fa el pla de novembre a juny, amb el retorn estimat per projecte
+  (vegeu [docs/pla-dues-linies.md](docs/pla-dues-linies.md)).
 - **Zones:** cada convocatòria diu on ha d'estar el beneficiari (p. ex. `ES-CT-B` ⊂ `ES-CT` ⊂ `ES` ⊂ `EU`).
   Els socis que haurien de ser els sol·licitants només es proposen si són de la zona elegible.
 
@@ -60,6 +68,10 @@ no estigui instal·lat, amb GitHub Actions (05:17 UTC). Si no hi ha res nou, no 
 - **Novetat:** encara no s'havia avisat aquesta edició.
 
 L'estat es desa a `data/estat/notificades.json`, que només conté identificadors de convocatòries.
+
+**Ordre.** Primer la línia 1 (projectes amb clients i consorcis), amb el retorn estimat per projecte,
+i després la línia 2 (creixement de Stimulo), que té 2 places reservades entre les línies amb fitxa
+completa. Cada línia té la seva capçalera al correu.
 
 **Què hi ha a cada línia:**
 - Inici, finalització, import i zona elegible.
@@ -181,6 +193,8 @@ python -m radar diari                           # revisió del matí: vigila + i
 python -m radar programador                     # servei que fa la revisió cada dia a RADAR_HORA
 python -m radar web                             # aplicació web a http://127.0.0.1:8000
 python -m radar contrasenya                     # genera les claus d'accés per al fitxer .env
+python -m radar pla                             # pla nov.–juny per línies (sortida/pla-*.md i .html)
+python -m radar pla --privat                    # el mateix amb clients i socis de Holded (privat/)
 python -m radar screening doga                  # informe per a un client, divisió per divisió
 python -m radar licitacions                     # licitacions de PSCP, PLACSP i TED amb semàfor
 python -m radar perfil doga                     # encaix per a un client de servei (encara que estigui inactiu)

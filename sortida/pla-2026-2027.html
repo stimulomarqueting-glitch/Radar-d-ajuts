@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pla d&#x27;ajuts 2026-2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@600;800&display=swap">
+<style>
+/* Informe de lliurament: capçalera, resum, mètode, filtre per divisió (sense JS), matriu, fitxes per divisió i calendari */
+:root {
+  --bg: #F3F5F9; --surface: #FFFFFF; --ink: #131A2A; --muted: #5B6579; --line: #DCE1EA;
+  --accent: #2A3DBA; --accent-soft: #E7EAFB; --accent-ink: #FFFFFF;
+  --ok: #19744B; --ok-soft: #E1F2E9; --warn: #9A5800; --warn-soft: #FAEED8; --off-soft: #ECEFF4;
+  --f-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0D121C; --surface: #151C2A; --ink: #E6EAF2; --muted: #9AA3B6; --line: #273145;
+  --accent: #8F9DFF; --accent-soft: #222A50; --accent-ink: #0D121C;
+  --ok: #5BC892; --ok-soft: #153126; --warn: #EFB25A; --warn-soft: #382912; --off-soft: #1C2332; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0D121C; --surface: #151C2A; --ink: #E6EAF2; --muted: #9AA3B6; --line: #273145;
+  --accent: #8F9DFF; --accent-soft: #222A50; --accent-ink: #0D121C;
+  --ok: #5BC892; --ok-soft: #153126; --warn: #EFB25A; --warn-soft: #382912; --off-soft: #1C2332; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--f-body); margin: 0; }
+.informe { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 32px 64px; display: grid; gap: 28px; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(30px, 4.6vw, 46px); line-height: 1.05; letter-spacing: -.02em; font-weight: 800; }
+h2 { font-size: 22px; line-height: 1.2; font-weight: 800; }
+h3 { font-size: 17px; line-height: 1.3; font-weight: 600; }
+p { margin: 0; }
+.eti { font: 500 12px/1.3 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.sub { color: var(--muted); max-width: 68ch; }
+.cap { display: grid; gap: 10px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
+.meta b { color: var(--ink); font-weight: 500; }
+.xip { display: inline-flex; align-items: center; gap: 6px; font: 600 12px/1 var(--f-body); padding: 6px 9px; border-radius: 6px; width: fit-content; }
+.xip-avis { background: var(--warn-soft); color: var(--warn); }
+.seccio { display: grid; gap: 14px; }
+.seccio > header { display: grid; gap: 4px; }
+.xifres { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.xifres div { background: var(--surface); padding: 14px 16px; display: grid; gap: 2px; }
+.xifres b { font: 800 28px/1.1 var(--f-display); font-variant-numeric: tabular-nums; }
+.xifres span { color: var(--muted); font-size: 13px; }
+.missatges { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.missatges li { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 4px 16px; padding: 10px 0; border-top: 1px solid var(--line); }
+.missatges li b { font-weight: 600; }
+.passos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: pas; }
+.passos li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; display: grid; gap: 6px; align-content: start; counter-increment: pas; font-size: 14px; }
+.passos li::before { content: counter(pas); font: 500 12px/1 var(--f-mono); color: var(--accent); }
+.passos b { font-weight: 600; }
+.passos span { color: var(--muted); }
+.filtre-input { position: absolute; opacity: 0; pointer-events: none; }
+.filtre { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; background: var(--bg); padding-block: 10px; }
+.filtre > span { font: 500 12px/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.seg { display: inline-flex; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+.seg label { font: 600 14px/1 var(--f-body); color: var(--ink); border-radius: 999px; padding: 9px 14px; cursor: pointer; }
+.contingut { display: grid; gap: 28px; }
+.taula-embolcall { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th { text-align: left; font: 500 11px/1.3 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.nom { min-width: 240px; }
+td.nom small { display: block; color: var(--muted); }
+td.punt { text-align: center; white-space: nowrap; }
+.p { display: inline-grid; place-items: center; min-width: 46px; padding: 5px 6px; border-radius: 7px; font: 500 13px/1 var(--f-mono); font-variant-numeric: tabular-nums; }
+.p-A { background: var(--accent); color: var(--accent-ink); }
+.p-B { background: var(--accent-soft); color: var(--accent); }
+.p-no { color: var(--muted); }
+.estat { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; padding: 4px 8px; border-radius: 6px; width: fit-content; white-space: nowrap; }
+.estat::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.e-oberta { background: var(--ok-soft); color: var(--ok); }
+.e-propera { background: var(--warn-soft); color: var(--warn); }
+.e-permanent { background: var(--accent-soft); color: var(--accent); }
+.e-estimada { outline: 1px dashed currentColor; outline-offset: -1px; }
+.divisio { display: grid; gap: 14px; }
+.divisio > header { display: grid; gap: 6px; padding-top: 18px; border-top: 2px solid var(--ink); }
+.etiquetes { display: flex; flex-wrap: wrap; gap: 6px; }
+.etiquetes span { font: 12px/1 var(--f-mono); padding: 5px 7px; border-radius: 5px; background: var(--off-soft); color: var(--muted); }
+.ops { display: grid; gap: 10px; }
+.op { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); min-width: 0; }
+.op[open] { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.op-cap { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 16px; cursor: pointer; list-style: none; }
+.op-cap::-webkit-details-marker { display: none; }
+.op-cap .p { min-width: 52px; padding: 10px 6px; font-size: 16px; }
+.op-tit { display: grid; gap: 2px; min-width: 0; }
+.op-tit small { color: var(--muted); font-size: 13px; }
+.op-cos { display: grid; gap: 12px; padding: 0 18px 16px 82px; }
+.fitxa { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px 20px; margin: 0; }
+.fitxa dt { font: 500 11px/1.3 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.fitxa dd { margin: 2px 0 0; font-size: 14px; overflow-wrap: anywhere; }
+.idea { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; display: grid; gap: 2px; font-size: 14px; }
+.idea b { font-weight: 600; }
+.idea span { color: var(--muted); }
+.atencio { margin: 0; padding-left: 18px; font-size: 13px; color: var(--muted); display: grid; gap: 2px; }
+.op-peu { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; }
+.boto { display: inline-block; font: 600 14px/1 var(--f-body); background: var(--accent); color: var(--accent-ink); text-decoration: none; border-radius: 8px; padding: 9px 13px; }
+.buit { padding: 18px; color: var(--muted); background: var(--surface); border: 1px dashed var(--line); border-radius: var(--r); }
+.cal { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow-x: auto; }
+.cal-grid { min-width: 760px; display: grid; grid-template-columns: 260px minmax(0, 1fr); }
+.cal-mesos { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.cal-mesos span { font: 500 11px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding: 10px 6px; border-left: 1px solid var(--line); }
+.cal-nom { padding: 8px 12px; font-size: 13px; border-bottom: 1px solid var(--line); min-width: 0; }
+.cal-nom small { color: var(--muted); display: block; }
+.cal-fila { position: relative; border-bottom: 1px solid var(--line); background-image: linear-gradient(to right, var(--line) 1px, transparent 1px); background-size: calc(100% / 12) 100%; }
+.cal-barra { position: absolute; top: 50%; height: 14px; margin-top: -7px; left: var(--l); width: var(--w); min-width: 6px; border-radius: 4px; background: var(--accent); }
+.cal-barra.estimada { background: repeating-linear-gradient(135deg, var(--accent) 0 6px, var(--accent-soft) 6px 10px); }
+.cal-barra.permanent { background: var(--accent-soft); }
+.cal-cap { border-bottom: 1px solid var(--line); }
+.llegenda { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.llegenda i { display: inline-block; width: 18px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.llegenda .l1 { background: var(--accent); }
+.llegenda .l2 { background: repeating-linear-gradient(135deg, var(--accent) 0 6px, var(--accent-soft) 6px 10px); }
+.llegenda .l3 { background: var(--accent-soft); }
+.dues { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.bloc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px; display: grid; gap: 10px; align-content: start; }
+.bloc ul, .bloc ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 14px; }
+.serveis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.serveis div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; display: grid; gap: 6px; align-content: start; font-size: 14px; }
+.serveis b { font-family: var(--f-display); font-size: 16px; }
+.serveis span { color: var(--muted); }
+.llista-neta { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.llista-neta li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: start; font-size: 14px; }
+.llista-neta li:not(:has(> .p, > .xip-tipus)) { grid-template-columns: minmax(0, 1fr); }
+.llista-neta li span { min-width: 0; }
+.llista-neta small { display: block; color: var(--muted); font-size: 13px; }
+.llista-neta .p { min-width: 40px; }
+.xip-tipus { font: 500 10px/1.2 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 4px 6px; border-radius: 4px; white-space: nowrap; margin-top: 2px; }
+.sector > header { padding-top: 18px; border-top: 2px solid var(--ink); }
+.bloc h3 { font-size: 16px; }
+footer { color: var(--muted); font-size: 13px; display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px; }
+footer p { max-width: 100ch; overflow-wrap: anywhere; }
+@media (max-width: 900px) {
+  .passos, .serveis { grid-template-columns: minmax(0, 1fr); }
+  .dues { grid-template-columns: minmax(0, 1fr); }
+  .missatges li { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .informe { padding-inline: 16px; }
+  .xifres { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .op-cap { grid-template-columns: auto minmax(0, 1fr); }
+  .op-cap .estat { grid-column: 2; }
+  .op-cos { padding-left: 16px; }
+  .filtre { position: static; }
+}
+@media print {
+  .filtre, .filtre-input { display: none !important; }
+  .informe { padding-block: 0; }
+  .op, .bloc, .divisio > header { break-inside: avoid; }
+}
+
+
+.linia-cap { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.nivell { font: 600 12px/1 var(--f-body); padding: 4px 7px; border-radius: 5px; white-space: nowrap; }
+.n-alt { background: var(--ok-soft); color: var(--ok); }
+.n-mitjà { background: var(--accent-soft); color: var(--accent); }
+.n-baix, .n-cap { background: var(--off-soft); color: var(--muted); }
+td small { display: block; color: var(--muted); font-size: 12px; }
+.mesos { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.mes { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; display: grid; gap: 8px; align-content: start; }
+.mes h3 { font-size: 16px; text-transform: capitalize; }
+.mes ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 13px; }
+.mes li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 8px; }
+.mes time { font: 500 12px/1.4 var(--f-mono); color: var(--muted); }
+.t-prospectar { color: var(--ok); font-weight: 600; }
+.t-termini { color: var(--danger, #B3261E); font-weight: 600; }
+.t-preparar, .t-presentar { color: var(--accent); font-weight: 600; }
+.tag-linia { font: 500 10px/1 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; padding: 3px 5px; border-radius: 4px; }
+.tag-projectes { background: var(--ok-soft); color: var(--ok); }
+.tag-creixement { background: var(--accent-soft); color: var(--accent); }
+.tornar { margin: 0 0 8px; font-size: 14px; }
+</style>
+</head>
+<body>
+<main class="informe">
+
+<header class="cap"><span class="eti">Stimulo · Radar d'ajuts</span><h1>Pla d&#x27;ajuts 2026-2027: dues línies de treball</h1><p class="sub">De novembre de 2026 a juny de 2027. La línia de projectes amb clients i consorcis va primer: és la que té més retorn comercial. La de creixement recull el finançament per a Stimulo.</p><div class="meta"><span>Generat el <b>09/10/2026</b></span></div></header>
+<section class="seccio"><div class="xifres"><div><b>45</b><span>convocatòries per a projectes amb clients</span></div><div><b>20</b><span>amb retorn alt (≥ 75 k€ per projecte)</span></div><div><b>13</b><span>per al creixement de Stimulo</span></div><div><b>13</b><span>on cal començar ja</span></div></div></section>
+<section class="seccio"><header><span class="eti">Abans del 01/11/2026</span><h2>Ara mateix</h2><p class="sub">Obertes i tanquen abans de començar l'horitzó: decidir aquesta setmana si s'hi va.</p></header><ul class="missatges"><li><b>Doctorats Industrials (Generalitat)</b><span>Oberta fins al ≈ 15/10/2026 · Departament de Recerca i Universitats / AGAUR · línia de creixement</span></li><li><b>Projectes d&#x27;innovació tecnològica Green – Canvi climàtic</b><span>Oberta fins al ≈ 16/10/2026 · ACCIÓ · línia de projectes</span></li><li><b>Doctorados Industriales 2026 (estatal)</b><span>Oberta fins al 26/10/2026 · Agencia Estatal de Investigación · línia de creixement</span></li><li><b>EIC Pathfinder (Open i Challenges)</b><span>Oberta fins al 28/10/2026 · Comissió Europea – EIC / EISMEA · línia de projectes</span></li><li><b>EIC STEP Scale Up Defence 2026</b><span>Oberta fins al 28/10/2026 · Comissió Europea – EIC · línia de projectes</span></li><li><b>COMTE-Innovación (Fundación General CSIC)</b><span>Oberta fins al ≈ 31/10/2026 · Fundación General CSIC · línia de projectes</span></li></ul></section>
+<section class="seccio"><header><h2>Començar ja</h2><p class="sub">La feina prèvia ideal (prospectar clients ≈ 90 dies abans d'obrir, o preparar la sol·licitud ≈ 45) ja hauria d'haver començat.</p></header><ul class="missatges"><li><b>Horizon Europe Clúster 4 – Made in Europe 2027 (fabricació avançada i circular)</b><span>13/10/2026 → 02/02/2027 · línia de projectes · retorn 190 k€–500 k€ (alt)</span></li><li><b>Horizon Europe Clúster 1 – Salut 2027 (dispositius i diagnòstic)</b><span>29/10/2026 → 17/02/2027 · línia de projectes · retorn 117 k€–500 k€ (alt)</span></li><li><b>EIC Accelerator (Open i Challenges)</b><span>Oberta fins al 04/11/2026 · línia de projectes · retorn ≈ 300 k€ (alt)</span></li><li><b>Horizon Europe Clúster 4 – AI-Driven Robotics for Industry (ADRA, 2027)</b><span>17/11/2026 → 18/03/2027 · línia de projectes · retorn 100 k€–500 k€ (alt)</span></li><li><b>Horizon Europe Clúster 5 – 2Zero 2027 (vehicles de zero emissions)</b><span>15/12/2026 → 14/04/2027 · línia de projectes · retorn 100 k€–500 k€ (alt)</span></li><li><b>CaixaImpulse Innovació en Salut</b><span>≈ 11/12/2026 → 19/02/2027 · línia de projectes · retorn 50 k€–300 k€ (alt)</span></li><li><b>Eurostars-3</b><span>17/12/2026 → 04/03/2027 · línia de projectes · retorn 7 k€–60 k€ (mitjà)</span></li><li><b>Ecosistemas de Innovación y Transferencia</b><span>≈ 17/12/2026 → 11/03/2027 · línia de projectes · retorn 6 k€–54 k€ (mitjà)</span></li><li><b>ESA BIC Barcelona (incubació espacial)</b><span>Oberta fins al 13/11/2026 · línia de projectes · retorn 6 k€–36 k€ (mitjà)</span></li><li><b>Cupons ACCIÓ 2026 per a la competitivitat empresarial</b><span>Oberta fins al 16/11/2026 · línia de projectes · retorn 1 k€–7 k€ (baix)</span></li><li><b>EIT Urban Mobility – convocatòries (startups i innovació estratègica)</b><span>Oberta fins al 16/11/2026 · línia de projectes · retorn per estimar</span></li><li><b>BASS 2026 – Agencia Espacial Española</b><span>Oberta fins al 27/11/2026 · línia de projectes · retorn per estimar</span></li><li><b>EIT Health – convocatòries 2026 (startups, venture building, ecosistemes)</b><span>Oberta fins al 02/11/2026 · línia de projectes · retorn per estimar</span></li></ul></section>
+<section class="seccio"><header><span class="eti">Línia 1 · més retorn comercial</span><h2>Projectes de producte amb clients i consorcis</h2><p class="sub">Convocatòries on el client o el consorci demana l'ajut i Stimulo fa el desenvolupament de producte. Ordenades per retorn estimat per projecte.</p></header><div class="taula-embolcall"><table><thead><tr><th>Convocatòria</th><th>Finestra</th><th>Rol</th><th>Retorn per projecte</th><th>Encaix</th></tr></thead><tbody>
+<tr><td class="nom"><b>Horizon Europe Clúster 4 – Made in Europe 2027 (fabricació avançada i circular)</b><small>Comissió Europea</small></td><td>13/10/2026 → 02/02/2027</td><td>soci de consorci</td><td><span class="nivell n-alt">190 k€–500 k€ (alt)</span><small>projecte de 3,8 M€ a 11,4 M€; part de Stimulo com a soci de consorci: 5%–15%, màxim 500 k€</small></td><td class="punt">84 A</td></tr>
+<tr><td class="nom"><b>Horizon Europe Clúster 1 – Salut 2027 (dispositius i diagnòstic)</b><small>Comissió Europea</small></td><td>29/10/2026 → 17/02/2027</td><td>soci de consorci</td><td><span class="nivell n-alt">117 k€–500 k€ (alt)</span><small>projecte de 2,3 M€ a 7,0 M€; part de Stimulo com a soci de consorci: 5%–15%, màxim 500 k€</small></td><td class="punt">81 A</td></tr>
+<tr><td class="nom"><b>EIC Accelerator (Open i Challenges)</b><small>Comissió Europea – EIC</small></td><td>Oberta fins al 04/11/2026</td><td>proveïdor</td><td><span class="nivell n-alt">≈ 300 k€ (alt)</span><small>projecte de 1,2 M€ a 3,6 M€; part de Stimulo com a proveïdor: 30%–60%, màxim 300 k€</small></td><td class="punt">92 A</td></tr>
+<tr><td class="nom"><b>European Defence Fund (EDF) – convocatòries pimes i tecnologies disruptives (EUDIS)</b><small>Comissió Europea – DG DEFIS</small></td><td>≈ 01/05/2027 → 29/09/2027</td><td>subcontractat</td><td><span class="nivell n-alt">≈ 300 k€ (alt)</span><small>projecte de 2,0 M€ a 6,0 M€; part de Stimulo com a subcontractat: 15%–40%, màxim 300 k€</small></td><td class="punt">84 A</td></tr>
+<tr><td class="nom"><b>Misiones Ciencia e Innovación</b><small>CDTI</small></td><td>≈ 12/05/2027 → 12/06/2027</td><td>subcontractat</td><td><span class="nivell n-alt">≈ 300 k€ (alt)</span><small>projecte de 3,5 M€ a 10,5 M€ (a partir del pressupost mínim); part de Stimulo com a subcontractat: 15%–40%, màxim 300 k€</small></td><td class="punt">82 A</td></tr>
+<tr><td class="nom"><b>Horizon Europe – Pilar 2 (Clústers 1–6): visió general</b><small>Comissió Europea – Funding &amp; Tenders Portal</small></td><td>Oberta fins al 02/02/2027</td><td>soci de consorci</td><td><span class="nivell n-alt">100 k€–500 k€ (alt)</span><small>projecte de 2,0 M€ a 6,0 M€ (projecte europeu en consorci típic); part de Stimulo com a soci de consorci: 5%–15%, màxim 500 k€</small></td><td class="punt">72 B</td></tr>
+<tr><td class="nom"><b>Horizon Europe Clúster 4 – AI-Driven Robotics for Industry (ADRA, 2027)</b><small>Comissió Europea</small></td><td>17/11/2026 → 18/03/2027</td><td>soci de consorci</td><td><span class="nivell n-alt">100 k€–500 k€ (alt)</span><small>projecte de 2,0 M€ a 6,0 M€ (projecte europeu en consorci típic); part de Stimulo com a soci de consorci: 5%–15%, màxim 500 k€</small></td><td class="punt">70 B</td></tr>
+<tr><td class="nom"><b>Horizon Europe Clúster 5 – 2Zero 2027 (vehicles de zero emissions)</b><small>Comissió Europea</small></td><td>15/12/2026 → 14/04/2027</td><td>soci de consorci</td><td><span class="nivell n-alt">100 k€–500 k€ (alt)</span><small>projecte de 2,0 M€ a 6,0 M€ (projecte europeu en consorci típic); part de Stimulo com a soci de consorci: 5%–15%, màxim 500 k€</small></td><td class="punt">64 C</td></tr>
+<tr><td class="nom"><b>Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027</b><small>Comissió Europea</small></td><td>03/02/2027 → 07/04/2027</td><td>soci de consorci</td><td><span class="nivell n-alt">100 k€–500 k€ (alt)</span><small>projecte de 2,0 M€ a 6,0 M€ (projecte europeu en consorci típic); part de Stimulo com a soci de consorci: 5%–15%, màxim 500 k€</small></td><td class="punt">64 C</td></tr>
+<tr><td class="nom"><b>EIC Transition</b><small>Comissió Europea – EIC</small></td><td>Termini 16/09/2027</td><td>proveïdor</td><td><span class="nivell n-alt">250 k€–300 k€ (alt)</span><small>projecte de 833 k€ a 2,5 M€; part de Stimulo com a proveïdor: 30%–60%, màxim 300 k€</small></td><td class="punt">85 A</td></tr>
+<tr><td class="nom"><b>CaixaImpulse Innovació en Salut</b><small>Fundació &quot;la Caixa&quot; (CaixaResearch)</small></td><td>≈ 11/12/2026 → 19/02/2027</td><td>proveïdor</td><td><span class="nivell n-alt">50 k€–300 k€ (alt)</span><small>projecte de 167 k€ a 500 k€; part de Stimulo com a proveïdor: 30%–60%, màxim 300 k€</small></td><td class="punt">84 A</td></tr>
+<tr><td class="nom"><b>Línea Directa de Innovación (LIC / LDI)</b><small>CDTI</small></td><td>Oberta tot l&#x27;any</td><td>subcontractat</td><td><span class="nivell n-alt">26 k€–300 k€ (alt)</span><small>projecte de 175 k€ a 7,1 M€; part de Stimulo com a subcontractat: 15%–40%, màxim 300 k€</small></td><td class="punt">72 B</td></tr>
+<tr><td class="nom"><b>NEOTEC</b><small>CDTI</small></td><td>≈ 14/04/2027 → 14/05/2027</td><td>proveïdor</td><td><span class="nivell n-alt">52 k€–229 k€ (alt)</span><small>projecte de 175 k€ a 382 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">70 B</td></tr>
+<tr><td class="nom"><b>Proyectos de I+D (PID)</b><small>CDTI (Ministeri de Ciència, Innovació i Universitats)</small></td><td>Oberta tot l&#x27;any</td><td>subcontractat</td><td><span class="nivell n-alt">26 k€–210 k€ (alt)</span><small>projecte de 175 k€ a 525 k€ (a partir del pressupost mínim); part de Stimulo com a subcontractat: 15%–40%</small></td><td class="punt">83 A</td></tr>
+<tr><td class="nom"><b>Proyectos de I+D de Transferencia Tecnológica Cervera</b><small>CDTI</small></td><td>Oberta tot l&#x27;any</td><td>subcontractat</td><td><span class="nivell n-alt">26 k€–210 k€ (alt)</span><small>projecte de 175 k€ a 525 k€ (a partir del pressupost mínim); part de Stimulo com a subcontractat: 15%–40%</small></td><td class="punt">83 A</td></tr>
+<tr><td class="nom"><b>Programa COINCIDENTE</b><small>Ministeri de Defensa (DGAM)</small></td><td>≈ 26/05/2027 → 27/07/2027</td><td>soci de consorci</td><td><span class="nivell n-alt">23 k€–209 k€ (alt)</span><small>projecte de 464 k€ a 1,4 M€; part de Stimulo com a soci de consorci: 5%–15%</small></td><td class="punt">86 A</td></tr>
+<tr><td class="nom"><b>Projectes d&#x27;innovació tecnològica de pimes (FEDER)</b><small>ACCIÓ</small></td><td>≈ 01/05/2027 → 22/07/2027</td><td>proveïdor</td><td><span class="nivell n-alt">30 k€–180 k€ (alt)</span><small>projecte de 100 k€ a 300 k€ (a partir del pressupost mínim); part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">80 A</td></tr>
+<tr><td class="nom"><b>Pruebas de Concepto</b><small>Agencia Estatal de Investigación</small></td><td>≈ 19/06/2027 → 10/07/2027</td><td>proveïdor</td><td><span class="nivell n-alt">30 k€–180 k€ (alt)</span><small>projecte de 100 k€ a 300 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">80 A</td></tr>
+<tr><td class="nom"><b>Licitacions públiques de serveis de disseny, enginyeria i R+D (PLACSP, TED)</b><small>Administracions públiques (Espanya i UE)</small></td><td>Oberta tot l&#x27;any</td><td>soci de consorci</td><td><span class="nivell n-alt">15 k€–150 k€ (alt)</span><small>fixat a la fitxa</small></td><td class="punt">84 A</td></tr>
+<tr><td class="nom"><b>Nuclis d&#x27;R+D (individuals i en cooperació)</b><small>ACCIÓ</small></td><td>≈ 10/05/2027 → 21/07/2027</td><td>subcontractat</td><td><span class="nivell n-alt">18 k€–143 k€ (alt)</span><small>projecte de 120 k€ a 357 k€; part de Stimulo com a subcontractat: 15%–40%</small></td><td class="punt">88 A</td></tr>
+<tr><td class="nom"><b>Projectes d&#x27;innovació tecnològica per al sector de l&#x27;automòbil i la mobilitat (línia R+D+i 2026)</b><small>ACCIÓ</small></td><td>≈ 29/07/2027 → 23/09/2027</td><td>proveïdor</td><td><span class="nivell n-mitjà">12 k€–120 k€ (mitjà)</span><small>projecte de 40 k€ a 200 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">75 B</td></tr>
+<tr><td class="nom"><b>Startup Capital</b><small>ACCIÓ</small></td><td>≈ 01/05/2027 → 30/07/2027</td><td>proveïdor</td><td><span class="nivell n-mitjà">40 k€–80 k€ (mitjà)</span><small>projecte de 133 k€ a 133 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">67 B</td></tr>
+<tr><td class="nom"><b>Projectes de recerca aplicada i desenvolupament tecnològic per a la cadena de valor del sector químic</b><small>ACCIÓ</small></td><td>≈ 29/07/2027 → 22/09/2027</td><td>subcontractat</td><td><span class="nivell n-mitjà">18 k€–100 k€ (mitjà)</span><small>projecte de 120 k€ a 250 k€; part de Stimulo com a subcontractat: 15%–40%</small></td><td class="punt">58 C</td></tr>
+<tr><td class="nom"><b>Indústria del Coneixement – Producte</b><small>AGAUR (Departament de Recerca i Universitats)</small></td><td>≈ 01/02/2027 → 31/03/2027</td><td>proveïdor</td><td><span class="nivell n-mitjà">15 k€–90 k€ (mitjà)</span><small>projecte de 50 k€ a 150 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">88 A</td></tr>
+<tr><td class="nom"><b>Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)</b><small>ACCIÓ</small></td><td>≈ 15/06/2027 → 16/07/2027</td><td>proveïdor</td><td><span class="nivell n-mitjà">12 k€–72 k€ (mitjà)</span><small>projecte de 40 k€ a 120 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">84 A</td></tr>
+<tr><td class="nom"><b>Eurostars-3</b><small>EUREKA + agències nacionals (CDTI a Espanya)</small></td><td>17/12/2026 → 04/03/2027</td><td>soci de consorci</td><td><span class="nivell n-mitjà">7 k€–60 k€ (mitjà)</span><small>projecte de 133 k€ a 400 k€; part de Stimulo com a soci de consorci: 5%–15%</small></td><td class="punt">79 B</td></tr>
+<tr><td class="nom"><b>Ecosistemas de Innovación y Transferencia</b><small>CDTI</small></td><td>≈ 17/12/2026 → 11/03/2027</td><td>soci de consorci</td><td><span class="nivell n-mitjà">6 k€–54 k€ (mitjà)</span><small>projecte de 120 k€ a 360 k€ (a partir del pressupost mínim); part de Stimulo com a soci de consorci: 5%–15%</small></td><td class="punt">57 C</td></tr>
+<tr><td class="nom"><b>Women TechEU</b><small>Comissió Europea – EIC</small></td><td>Oberta fins al 14/01/2027</td><td>proveïdor</td><td><span class="nivell n-mitjà">8 k€–45 k€ (mitjà)</span><small>projecte de 25 k€ a 75 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">52 C</td></tr>
+<tr><td class="nom"><b>Agrupaciones Empresariales Innovadoras (AEI)</b><small>Ministeri d&#x27;Indústria i Turisme (DG Indústria i PIME)</small></td><td>≈ 30/05/2027 → 26/06/2027</td><td>soci de consorci</td><td><span class="nivell n-mitjà">5 k€–47 k€ (mitjà)</span><small>projecte de 104 k€ a 312 k€; part de Stimulo com a soci de consorci: 5%–15%</small></td><td class="punt">83 A</td></tr>
+<tr><td class="nom"><b>ESA BIC Barcelona (incubació espacial)</b><small>ESA + Generalitat (gestió PMT)</small></td><td>Oberta fins al 13/11/2026</td><td>proveïdor</td><td><span class="nivell n-mitjà">6 k€–36 k€ (mitjà)</span><small>projecte de 20 k€ a 60 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">64 C</td></tr>
+<tr><td class="nom"><b>EDIP – BraveTech EU (subvencions per a pimes de defensa)</b><small>Comissió Europea – DG DEFIS</small></td><td>Oberta</td><td>soci de consorci</td><td><span class="nivell n-baix">3 k€–30 k€ (baix)</span><small>projecte de 67 k€ a 200 k€; part de Stimulo com a soci de consorci: 5%–15%</small></td><td class="punt">91 A</td></tr>
+<tr><td class="nom"><b>Projectes d&#x27;exploració tecnològica (línia R+D+i 2026)</b><small>ACCIÓ</small></td><td>≈ 29/07/2027 → 21/09/2027</td><td>proveïdor</td><td><span class="nivell n-baix">6 k€–24 k€ (baix)</span><small>projecte de 20 k€ a 40 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">86 A</td></tr>
+<tr><td class="nom"><b>F2I – Fons per a l&#x27;Impuls de la Innovació (UB)</b><small>Universitat de Barcelona / Fundació Bosch i Gimpera</small></td><td>≈ 01/07/2027 → 28/09/2027</td><td>proveïdor</td><td><span class="nivell n-baix">2 k€–15 k€ (baix)</span><small>projecte de 8 k€ a 25 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">81 A</td></tr>
+<tr><td class="nom"><b>Indústria del Coneixement – Llavor</b><small>AGAUR (Departament de Recerca i Universitats)</small></td><td>≈ 01/02/2027 → 31/03/2027</td><td>proveïdor</td><td><span class="nivell n-baix">2 k€–12 k€ (baix)</span><small>projecte de 7 k€ a 20 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">83 A</td></tr>
+<tr><td class="nom"><b>Premis EmprendeXXI</b><small>CaixaBank DayOne + ENISA</small></td><td>Oberta fins al 22/01/2027</td><td>proveïdor</td><td><span class="nivell n-baix">2 k€–9 k€ (baix)</span><small>projecte de 5 k€ a 15 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">64 C</td></tr>
+<tr><td class="nom"><b>Cupons ACCIÓ 2026 per a la competitivitat empresarial</b><small>ACCIÓ</small></td><td>Oberta fins al 16/11/2026</td><td>proveïdor</td><td><span class="nivell n-baix">1 k€–7 k€ (baix)</span><small>projecte de 4 k€ a 12 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">65 B</td></tr>
+<tr><td class="nom"><b>LLAVOR UPC (valorització en fase inicial)</b><small>UPC</small></td><td>≈ 01/03/2027 → 01/05/2027</td><td>proveïdor</td><td><span class="nivell n-baix">1 k€–6 k€ (baix)</span><small>projecte de 3 k€ a 10 k€; part de Stimulo com a proveïdor: 30%–60%</small></td><td class="punt">70 B</td></tr>
+<tr><td class="nom"><b>Convocatòries en cascada (FSTP) – robòtica, IA, fabricació, medtech</b><small>Projectes Horizon Europe / Digital Europe (agregats a cascadefunding.eu)</small></td><td>Oberta tot l&#x27;any</td><td>—</td><td><span class="nivell n-cap">per estimar</span></td><td class="punt">82 A</td></tr>
+<tr><td class="nom"><b>EIT Urban Mobility – convocatòries (startups i innovació estratègica)</b><small>EIT Urban Mobility (seu a Barcelona)</small></td><td>Oberta fins al 16/11/2026</td><td>—</td><td><span class="nivell n-cap">per estimar</span></td><td class="punt">78 B</td></tr>
+<tr><td class="nom"><b>Industrial Tech – preacceleració de hardware (UPC + CIM UPC)</b><small>UPC / CIM UPC (FSE+)</small></td><td>≈ 15/05/2027 → 04/09/2027</td><td>—</td><td><span class="nivell n-cap">per estimar</span></td><td class="punt">76 B</td></tr>
+<tr><td class="nom"><b>EUREKA SMART – Call 10 (fabricació avançada)</b><small>EUREKA (clúster SMART) + CDTI</small></td><td>Oberta fins al 26/01/2027</td><td>—</td><td><span class="nivell n-cap">per estimar</span></td><td class="punt">67 B</td></tr>
+<tr><td class="nom"><b>BASS 2026 – Agencia Espacial Española</b><small>Agencia Espacial Española</small></td><td>Oberta fins al 27/11/2026</td><td>—</td><td><span class="nivell n-cap">per estimar</span></td><td class="punt">61 C</td></tr>
+<tr><td class="nom"><b>EIT Health – convocatòries 2026 (startups, venture building, ecosistemes)</b><small>EIT Health</small></td><td>Oberta fins al 02/11/2026</td><td>—</td><td><span class="nivell n-cap">per estimar</span></td><td class="punt">54 C</td></tr>
+<tr><td class="nom"><b>SETT – Fondo Next Tech i PERTE Chip</b><small>SETT (Sociedad Española para la Transformación Tecnológica)</small></td><td>Oberta tot l&#x27;any</td><td>—</td><td><span class="nivell n-cap">per estimar</span></td><td class="punt">53 C</td></tr>
+<tr><td class="nom"><b>Innvierte (coinversió CDTI)</b><small>CDTI</small></td><td>Oberta tot l&#x27;any</td><td>—</td><td><span class="nivell n-cap">per estimar</span></td><td class="punt">50 C</td></tr>
+</tbody></table></div></section>
+<section class="seccio"><header><span class="eti">Línia 2</span><h2>Creixement i transformació de Stimulo</h2><p class="sub">Ajuts que Stimulo pot demanar per a ella mateixa: talent, R+D propi, cupons, internacionalització i finançament. Només les de prioritat A o B.</p></header><div class="taula-embolcall"><table><thead><tr><th>Convocatòria</th><th>Finestra</th><th>Ajut</th><th>Encaix</th></tr></thead><tbody>
+<tr><td class="nom"><b>EDIP – BraveTech EU (subvencions per a pimes de defensa)</b><small>Comissió Europea – DG DEFIS</small></td><td>Oberta</td><td>~170 subvencions de fins a 200.000 €; 35,3 M€; de TRL 4 a TRL 7.</td><td class="punt">91 A</td></tr>
+<tr><td class="nom"><b>Nuclis d&#x27;R+D (individuals i en cooperació)</b><small>ACCIÓ</small></td><td>≈ 10/05/2027 → 21/07/2027</td><td>Màxim 250.000 €/projecte; despesa mínima 120.000 €; 25–70% empresa, 100% TECNIO.</td><td class="punt">88 A</td></tr>
+<tr><td class="nom"><b>Programa COINCIDENTE</b><small>Ministeri de Defensa (DGAM)</small></td><td>≈ 26/05/2027 → 27/07/2027</td><td>Microempresa 70%, petita 60%, mitjana 40%. 2026: antidrons (975.000 €), IA i entorn electromagnètic (805.785 €), sensors per a vigilància espacial (975.000 €).</td><td class="punt">86 A</td></tr>
+<tr><td class="nom"><b>Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)</b><small>ACCIÓ</small></td><td>≈ 15/06/2027 → 16/07/2027</td><td>Canvi estratègic: 75 % del pla de negoci, màxim 30.000 €. Canvi estructural: màxim 90.000 €; despeses externes (prototips, simulació, certificacions, homologacions) i personal 75 %; maquinària 20/10/10 % (petita/mitjana/gran); formació 25 %; auditoria 100 % fins a 1.000 €.</td><td class="punt">84 A</td></tr>
+<tr><td class="nom"><b>Agrupaciones Empresariales Innovadoras (AEI)</b><small>Ministeri d&#x27;Indústria i Turisme (DG Indústria i PIME)</small></td><td>≈ 30/05/2027 → 26/06/2027</td><td>L3 R+D+i: recerca industrial 50% (fins 80%), desenvolupament experimental 25% (fins 60%), innovació pime 50%; màx. 200.000 € (250.000 €) en R+D.</td><td class="punt">83 A</td></tr>
+<tr><td class="nom"><b>NATO DIANA Challenge Programme</b><small>OTAN – DIANA</small></td><td>≈ 02/06/2027 → 03/07/2027</td><td>Contracte de 100.000 € (fase 1) + fins a 300.000 € (fase 2) + accés a centres d&#x27;assaig.</td><td class="punt">83 A</td></tr>
+<tr><td class="nom"><b>Proyectos de I+D (PID)</b><small>CDTI (Ministeri de Ciència, Innovació i Universitats)</small></td><td>Oberta tot l&#x27;any</td><td>Préstec fins al 85% del pressupost; tram no reemborsable 10–33%; mínim 175.000 €; retorn 10–15 anys.</td><td class="punt">83 A</td></tr>
+<tr><td class="nom"><b>Proyectos de I+D de Transferencia Tecnológica Cervera</b><small>CDTI</small></td><td>Oberta tot l&#x27;any</td><td>Fins al 90% del pressupost; tram no reemborsable 33%; bestreta fins 50% (màx. 300.000 €) sense garanties.</td><td class="punt">83 A</td></tr>
+<tr><td class="nom"><b>Convocatòries en cascada (FSTP) – robòtica, IA, fabricació, medtech</b><small>Projectes Horizon Europe / Digital Europe (agregats a cascadefunding.eu)</small></td><td>Oberta tot l&#x27;any</td><td>Habitualment 50.000–150.000 € per pime, procés curt.</td><td class="punt">82 A</td></tr>
+<tr><td class="nom"><b>Projectes d&#x27;innovació tecnològica de pimes (FEDER)</b><small>ACCIÓ</small></td><td>≈ 01/05/2027 → 22/07/2027</td><td>Fins al 40% (mínim de projecte 100.000 €). Línia de 5 M€ (2025).</td><td class="punt">80 A</td></tr>
+<tr><td class="nom"><b>Eurostars-3</b><small>EUREKA + agències nacionals (CDTI a Espanya)</small></td><td>17/12/2026 → 04/03/2027</td><td>Finançament nacional (CDTI per a pimes espanyoles); referència de l&#x27;Excel: fins a 400.000 € per participant (no verificat).</td><td class="punt">79 B</td></tr>
+<tr><td class="nom"><b>EIT Urban Mobility – convocatòries (startups i innovació estratègica)</b><small>EIT Urban Mobility (seu a Barcelona)</small></td><td>Oberta fins al 16/11/2026</td><td>Financial Support to Startups i Strategic Innovation (imports per convocatòria; no verificats).</td><td class="punt">78 B</td></tr>
+<tr><td class="nom"><b>Cupons ACCIÓ 2026 per a la competitivitat empresarial</b><small>ACCIÓ</small></td><td>Oberta fins al 16/11/2026</td><td>Estratègia de creixement 8.000 €; adopció d&#x27;IA 8.000 €; protecció de la innovació (patents, models d&#x27;utilitat, dissenys industrials europeus) 3.000 €; programes europeus d&#x27;R+D+I 12.000 €; internacionalització 8.000 €.</td><td class="punt">65 B</td></tr>
+</tbody></table></div></section>
+<section class="seccio"><header><h2>Obertes tot l'any</h2><p class="sub">Sense calendari: es poden proposar a cada conversa amb clients.</p></header><ul class="missatges"><li><b>Línea Directa de Innovación (LIC / LDI)</b><span>CDTI · línia de projectes</span></li><li><b>Proyectos de I+D (PID)</b><span>CDTI (Ministeri de Ciència, Innovació i Universitats) · línia de projectes</span></li><li><b>Proyectos de I+D de Transferencia Tecnológica Cervera</b><span>CDTI · línia de projectes</span></li><li><b>Licitacions públiques de serveis de disseny, enginyeria i R+D (PLACSP, TED)</b><span>Administracions públiques (Espanya i UE) · línia de projectes</span></li><li><b>Convocatòries en cascada (FSTP) – robòtica, IA, fabricació, medtech</b><span>Projectes Horizon Europe / Digital Europe (agregats a cascadefunding.eu) · línia de projectes</span></li><li><b>SETT – Fondo Next Tech i PERTE Chip</b><span>SETT (Sociedad Española para la Transformación Tecnológica) · línia de projectes</span></li><li><b>Innvierte (coinversió CDTI)</b><span>CDTI · línia de projectes</span></li></ul></section>
+<section class="seccio"><header><h2>Accions mes a mes</h2><p class="sub">Prospectar clients ≈ 90 dies abans de l'obertura; tancar client i pressupost 30 dies abans; tancament intern 7 dies abans del termini.</p></header><div class="mesos">
+<div class="mes"><h3>octubre 2026</h3><ul>
+<li><time>09/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: EDIP – BraveTech EU (subvencions per a pimes de defensa)</span></li>
+<li><time>09/10</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-preparar">Preparar la sol·licitud de Stimulo</span>: EDIP – BraveTech EU (subvencions per a pimes de defensa)</span></li>
+<li><time>15/10</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-termini">Termini (data estimada)</span>: Doctorats Industrials (Generalitat)</span></li>
+<li><time>16/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: Projectes d&#x27;innovació tecnològica Green – Canvi climàtic</span></li>
+<li><time>18/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Horizon Europe Clúster 4 – AI-Driven Robotics for Industry (ADRA, 2027)</span></li>
+<li><time>19/10</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-presentar">Tancament intern de la proposta</span>: Doctorados Industriales 2026 (estatal)</span></li>
+<li><time>21/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: EIC Pathfinder (Open i Challenges)</span></li>
+<li><time>21/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: EIC STEP Scale Up Defence 2026</span></li>
+<li><time>24/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: COMTE-Innovación (Fundación General CSIC)</span></li>
+<li><time>26/10</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-termini">Termini</span>: Doctorados Industriales 2026 (estatal)</span></li>
+<li><time>26/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: EIT Health – convocatòries 2026 (startups, venture building, ecosistemes)</span></li>
+<li><time>28/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: EIC Accelerator (Open i Challenges)</span></li>
+<li><time>28/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: EIC Pathfinder (Open i Challenges)</span></li>
+<li><time>28/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: EIC STEP Scale Up Defence 2026</span></li>
+<li><time>31/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: COMTE-Innovación (Fundación General CSIC)</span></li>
+<li><time>31/10</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Women TechEU</span></li>
+</ul></div>
+<div class="mes"><h3>novembre 2026</h3><ul>
+<li><time>02/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: EIT Health – convocatòries 2026 (startups, venture building, ecosistemes)</span></li>
+<li><time>02/11</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-preparar">Preparar la sol·licitud de Stimulo</span>: Eurostars-3</span></li>
+<li><time>03/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Indústria del Coneixement – Llavor</span></li>
+<li><time>03/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Indústria del Coneixement – Producte</span></li>
+<li><time>04/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: EIC Accelerator (Open i Challenges)</span></li>
+<li><time>05/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027</span></li>
+<li><time>06/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: ESA BIC Barcelona (incubació espacial)</span></li>
+<li><time>08/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Premis EmprendeXXI</span></li>
+<li><time>09/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Cupons ACCIÓ 2026 per a la competitivitat empresarial</span></li>
+<li><time>09/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: EIT Urban Mobility – convocatòries (startups i innovació estratègica)</span></li>
+<li><time>11/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: CaixaImpulse Innovació en Salut</span></li>
+<li><time>12/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: EUREKA SMART – Call 10 (fabricació avançada)</span></li>
+<li><time>13/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: ESA BIC Barcelona (incubació espacial)</span></li>
+<li><time>15/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Horizon Europe Clúster 5 – 2Zero 2027 (vehicles de zero emissions)</span></li>
+<li><time>16/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Cupons ACCIÓ 2026 per a la competitivitat empresarial</span></li>
+<li><time>16/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: EIT Urban Mobility – convocatòries (startups i innovació estratègica)</span></li>
+<li><time>17/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Ecosistemas de Innovación y Transferencia</span></li>
+<li><time>17/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Eurostars-3</span></li>
+<li><time>19/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Horizon Europe – Pilar 2 (Clústers 1–6): visió general</span></li>
+<li><time>20/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: BASS 2026 – Agencia Espacial Española</span></li>
+<li><time>27/11</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: BASS 2026 – Agencia Espacial Española</span></li>
+</ul></div>
+<div class="mes"><h3>desembre 2026</h3><ul>
+<li><time>01/12</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: LLAVOR UPC (valorització en fase inicial)</span></li>
+</ul></div>
+<div class="mes"><h3>gener 2027</h3><ul>
+<li><time>02/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Indústria del Coneixement – Llavor</span></li>
+<li><time>02/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Indústria del Coneixement – Producte</span></li>
+<li><time>04/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027</span></li>
+<li><time>07/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Women TechEU</span></li>
+<li><time>14/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: NEOTEC</span></li>
+<li><time>14/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Women TechEU</span></li>
+<li><time>15/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Premis EmprendeXXI</span></li>
+<li><time>19/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: EUREKA SMART – Call 10 (fabricació avançada)</span></li>
+<li><time>22/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Premis EmprendeXXI</span></li>
+<li><time>26/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: EUREKA SMART – Call 10 (fabricació avançada)</span></li>
+<li><time>26/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Horizon Europe Clúster 4 – Made in Europe 2027 (fabricació avançada i circular)</span></li>
+<li><time>26/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Horizon Europe – Pilar 2 (Clústers 1–6): visió general</span></li>
+<li><time>30/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: LLAVOR UPC (valorització en fase inicial)</span></li>
+<li><time>31/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: European Defence Fund (EDF) – convocatòries pimes i tecnologies disruptives (EUDIS)</span></li>
+<li><time>31/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Projectes d&#x27;innovació tecnològica de pimes (FEDER)</span></li>
+<li><time>31/01</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Startup Capital</span></li>
+</ul></div>
+<div class="mes"><h3>febrer 2027</h3><ul>
+<li><time>02/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Horizon Europe Clúster 4 – Made in Europe 2027 (fabricació avançada i circular)</span></li>
+<li><time>02/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Horizon Europe – Pilar 2 (Clústers 1–6): visió general</span></li>
+<li><time>09/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Nuclis d&#x27;R+D (individuals i en cooperació)</span></li>
+<li><time>10/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Horizon Europe Clúster 1 – Salut 2027 (dispositius i diagnòstic)</span></li>
+<li><time>11/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Misiones Ciencia e Innovación</span></li>
+<li><time>12/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: CaixaImpulse Innovació en Salut</span></li>
+<li><time>14/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Industrial Tech – preacceleració de hardware (UPC + CIM UPC)</span></li>
+<li><time>17/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Horizon Europe Clúster 1 – Salut 2027 (dispositius i diagnòstic)</span></li>
+<li><time>19/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: CaixaImpulse Innovació en Salut</span></li>
+<li><time>25/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Eurostars-3</span></li>
+<li><time>25/02</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Programa COINCIDENTE</span></li>
+</ul></div>
+<div class="mes"><h3>març 2027</h3><ul>
+<li><time>01/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Agrupaciones Empresariales Innovadoras (AEI)</span></li>
+<li><time>04/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Ecosistemas de Innovación y Transferencia</span></li>
+<li><time>04/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Eurostars-3</span></li>
+<li><time>11/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: Ecosistemas de Innovación y Transferencia</span></li>
+<li><time>11/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Horizon Europe Clúster 4 – AI-Driven Robotics for Industry (ADRA, 2027)</span></li>
+<li><time>15/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: NEOTEC</span></li>
+<li><time>17/03</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-preparar">Preparar la sol·licitud de Stimulo</span>: Projectes d&#x27;innovació tecnològica de pimes (FEDER)</span></li>
+<li><time>17/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)</span></li>
+<li><time>18/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Horizon Europe Clúster 4 – AI-Driven Robotics for Industry (ADRA, 2027)</span></li>
+<li><time>21/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Pruebas de Concepto</span></li>
+<li><time>24/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Indústria del Coneixement – Llavor</span></li>
+<li><time>24/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Indústria del Coneixement – Producte</span></li>
+<li><time>26/03</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-preparar">Preparar la sol·licitud de Stimulo</span>: Nuclis d&#x27;R+D (individuals i en cooperació)</span></li>
+<li><time>31/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027</span></li>
+<li><time>31/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: Indústria del Coneixement – Llavor</span></li>
+<li><time>31/03</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: Indústria del Coneixement – Producte</span></li>
+</ul></div>
+<div class="mes"><h3>abril 2027</h3><ul>
+<li><time>01/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: European Defence Fund (EDF) – convocatòries pimes i tecnologies disruptives (EUDIS)</span></li>
+<li><time>01/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Projectes d&#x27;innovació tecnològica de pimes (FEDER)</span></li>
+<li><time>01/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Startup Capital</span></li>
+<li><time>02/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: F2I – Fons per a l&#x27;Impuls de la Innovació (UB)</span></li>
+<li><time>07/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Horizon Europe Clúster 5 – 2Zero 2027 (vehicles de zero emissions)</span></li>
+<li><time>07/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027</span></li>
+<li><time>10/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Nuclis d&#x27;R+D (individuals i en cooperació)</span></li>
+<li><time>11/04</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-preparar">Preparar la sol·licitud de Stimulo</span>: Programa COINCIDENTE</span></li>
+<li><time>12/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Misiones Ciencia e Innovación</span></li>
+<li><time>14/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini</span>: Horizon Europe Clúster 5 – 2Zero 2027 (vehicles de zero emissions)</span></li>
+<li><time>15/04</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-preparar">Preparar la sol·licitud de Stimulo</span>: Agrupaciones Empresariales Innovadoras (AEI)</span></li>
+<li><time>15/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Industrial Tech – preacceleració de hardware (UPC + CIM UPC)</span></li>
+<li><time>18/04</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-preparar">Preparar la sol·licitud de Stimulo</span>: NATO DIANA Challenge Programme</span></li>
+<li><time>24/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: LLAVOR UPC (valorització en fase inicial)</span></li>
+<li><time>26/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Programa COINCIDENTE</span></li>
+<li><time>30/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Agrupaciones Empresariales Innovadoras (AEI)</span></li>
+<li><time>30/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Projectes d&#x27;exploració tecnològica (línia R+D+i 2026)</span></li>
+<li><time>30/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Projectes d&#x27;innovació tecnològica per al sector de l&#x27;automòbil i la mobilitat (línia R+D+i 2026)</span></li>
+<li><time>30/04</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-prospectar">Prospectar clients i socis i triar la idea de projecte</span>: Projectes de recerca aplicada i desenvolupament tecnològic per a la cadena de valor del sector químic</span></li>
+</ul></div>
+<div class="mes"><h3>maig 2027</h3><ul>
+<li><time>01/05</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: LLAVOR UPC (valorització en fase inicial)</span></li>
+<li><time>01/05</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-preparar">Preparar la sol·licitud de Stimulo</span>: Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)</span></li>
+<li><time>07/05</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: NEOTEC</span></li>
+<li><time>14/05</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: NEOTEC</span></li>
+<li><time>16/05</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)</span></li>
+<li><time>20/05</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Pruebas de Concepto</span></li>
+</ul></div>
+<div class="mes"><h3>juny 2027</h3><ul>
+<li><time>01/06</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: F2I – Fons per a l&#x27;Impuls de la Innovació (UB)</span></li>
+<li><time>05/06</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Misiones Ciencia e Innovación</span></li>
+<li><time>12/06</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: Misiones Ciencia e Innovación</span></li>
+<li><time>19/06</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-presentar">Tancament intern de la proposta</span>: Agrupaciones Empresariales Innovadoras (AEI)</span></li>
+<li><time>26/06</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-termini">Termini (data estimada)</span>: Agrupaciones Empresariales Innovadoras (AEI)</span></li>
+<li><time>26/06</time><span><span class="tag-linia tag-creixement">creixement</span> <span class="t-presentar">Tancament intern de la proposta</span>: NATO DIANA Challenge Programme</span></li>
+<li><time>29/06</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Projectes d&#x27;exploració tecnològica (línia R+D+i 2026)</span></li>
+<li><time>29/06</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Projectes d&#x27;innovació tecnològica per al sector de l&#x27;automòbil i la mobilitat (línia R+D+i 2026)</span></li>
+<li><time>29/06</time><span><span class="tag-linia tag-projectes">projectes</span> <span class="t-preparar">Tancar client, consorci i pressupost</span>: Projectes de recerca aplicada i desenvolupament tecnològic per a la cadena de valor del sector químic</span></li>
+</ul></div>
+</div></section>
+<section class="seccio"><header><h2>Anunciades, a vigilar</h2></header><ul class="missatges"><li><b>Estratègia d&#x27;innovació empresarial 2026-2030: properes línies d&#x27;ajut (≈61 M€ pendents de 2026)</b><span>ACCIÓ / Departament d&#x27;Empresa i Treball · línia de projectes</span></li><li><b>PILOT – Programa d&#x27;innovació tecnològica per a l&#x27;autonomia estratègica</b><span>Departament de Recerca i Universitats (gestió AGAUR) · línia de projectes</span></li><li><b>Proyectos de Colaboración Público-Privada (CPP)</b><span>Agencia Estatal de Investigación · línia de projectes</span></li><li><b>INNTERCONECTA STEP 2026</b><span>CDTI · línia de projectes</span></li><li><b>LIFE (Economia circular i qualitat de vida; Transició energètica neta)</b><span>CINEA (Comissió Europea) · línia de projectes</span></li><li><b>Innovation Fund (inclou Industrial Decarbonisation Bank)</b><span>Comissió Europea – CINEA · línia de projectes</span></li><li><b>EUDIS Defence Business Accelerator</b><span>Comissió Europea – EUDIS · línia de creixement</span></li></ul></section>
+<footer><p>Retorn per projecte: Ordre de magnitud per prioritzar: mida típica del projecte segons l&#x27;import màxim i la intensitat de la fitxa, per la part que sol correspondre a Stimulo segons el rol (proveïdor 30–60 %, subcontractat 15–40 %, soci de consorci 5–15 %), amb un sostre per projecte. Alt ≥ 75 k€, mitjà ≥ 20 k€ (punt mitjà de l&#x27;interval). Una mateixa convocatòria pot donar diversos projectes amb clients diferents. Les dates amb ≈ són estimades.</p></footer></main>
+</body>
+</html>

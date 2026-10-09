@@ -57,6 +57,26 @@ class Linia:
     per_clients: bool = False  # línia per compartir amb clients i potencials clients
     clients_servei: list[str] = field(default_factory=list)  # divisions de clients de servei amb encaix A/B
 
+    @property
+    def linia(self) -> str:
+        """Línia de treball principal: projectes amb clients i consorcis (més retorn) o creixement de Stimulo."""
+        return next((x for x in ("projectes", "creixement") if x in self.c.linies), "")
+
+    @property
+    def retorn(self) -> str:
+        """Retorn estimat per projecte (línia de projectes), en text."""
+        if self.linia != "projectes":
+            return ""
+        from . import pla
+
+        r = pla.retorn(self.c)
+        return pla._retorn_text(r) if r else ""
+
+
+TITOLS_LINIA = {"projectes": "Línia 1 · Projectes amb clients i consorcis (més retorn comercial)",
+                "creixement": "Línia 2 · Creixement i transformació de Stimulo",
+                "": "Altres línies"}
+
 
 def _data(d: dt.date | None, estimada: bool = False) -> str:
     if not d:
@@ -132,9 +152,11 @@ def candidates(cat: Cataleg, avui: dt.date, config: dict | None = None, clients:
             continue
         sortida.append(Linia(c, f, e, clau_edicio(c, f, avui), _motiu(f, avui),
                              per_clients=c.compartir_clients or bool(servei), clients_servei=servei))
-    # Primer les línies amb dates (les fitxes fiables abans que les pendents de verificar, i per encaix);
+    # Primer la línia de projectes amb clients (més retorn comercial), després la de creixement. Dins de cada
+    # línia, les que tenen dates (les fitxes fiables abans que les pendents de verificar, i per encaix);
     # les obertes tot l'any, al final
-    sortida.sort(key=lambda l: (l.f.estat == "permanent", l.c.confianca == "baixa", -l.e.punts,
+    ordre_linia = {"projectes": 0, "creixement": 1, "": 2}
+    sortida.sort(key=lambda l: (ordre_linia[l.linia], l.f.estat == "permanent", l.c.confianca == "baixa", -l.e.punts,
                                 (l.f.tancament if l.f.estat == "oberta" else l.f.obertura) or dt.date.max))
     return sortida
 
@@ -144,6 +166,16 @@ def linia(cat: Cataleg, c: Convocatoria, avui: dt.date) -> Linia:
     f = calendari.propera_finestra(c, avui)
     e = puntua(c, next(iter(cat.perfils.values())), cat.zones, cat.config.get("pesos"))
     return Linia(c, f, e, clau_edicio(c, f, avui), _motiu(f, avui))
+
+
+def reparteix(linies: list[Linia], maxim: int, reserva_creixement: int = 2) -> tuple[list[Linia], list[Linia]]:
+    """(amb fitxa completa, resum). Projectes primer, però amb `reserva_creixement` places per a la línia de
+    creixement si n'hi ha: així el correu sempre mostra les dues línies. Conserva l'ordre de `linies`."""
+    creixement = [l for l in linies if l.linia == "creixement"][:min(reserva_creixement, maxim)]
+    places = maxim - len(creixement)
+    altres = [l for l in linies if l not in creixement][:places]
+    triades = {id(l) for l in creixement + altres}
+    return [l for l in linies if id(l) in triades], [l for l in linies if id(l) not in triades]
 
 
 def noves(linies: list[Linia], estat: dict) -> list[Linia]:
@@ -335,7 +367,10 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
     if recordatoris:
         t += ["Recordatoris d'avui:"] + [f"- {r}" for r in recordatoris] + [""]
     for i, l in enumerate(linies, 1):
-        t += [f"{i}. {l.c.nom} — {l.c.entitat}", f"   {l.motiu} · encaix {l.e.punts}/100 ({l.e.prioritat})"]
+        if i == 1 or l.linia != linies[i - 2].linia:
+            t += [f"== {TITOLS_LINIA[l.linia].upper()} ==", ""]
+        t += [f"{i}. {l.c.nom} — {l.c.entitat}", f"   {l.motiu} · encaix {l.e.punts}/100 ({l.e.prioritat})"
+              + (f" · retorn per projecte {l.retorn}" if l.retorn else "")]
         if l.per_clients:
             t.append(f"   PER COMPARTIR AMB CLIENTS: {_per_clients(l)}")
         t += [f"   {k}: {v}" for k, v in _camps(l)]
@@ -353,7 +388,7 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
         t.append("")
     if resum:
         t += ["Altres línies obertes o properes amb encaix:"]
-        t += [f"- {l.c.nom} ({l.c.entitat}) · {l.motiu} · {l.e.punts}/100" for l in resum]
+        t += [f"- [{l.linia or 'altres'}] {l.c.nom} ({l.c.entitat}) · {l.motiu} · {l.e.punts}/100" for l in resum]
         t.append("")
     if licitacions:
         t += ["LICITACIONS NOVES AMB ENCAIX (detall i decisió a l'aplicació > Licitacions)"]
@@ -400,9 +435,13 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
                  + "".join(f"<li>{e(r)}</li>" for r in recordatoris) + "</ul></div>")
     for i, l in enumerate(linies, 1):
         c = l.c
+        if i == 1 or l.linia != linies[i - 2].linia:
+            h.append(f'<p style="margin:22px 0 10px;font:bold 12px/1.4 monospace;letter-spacing:.06em;'
+                     f'text-transform:uppercase;color:{gris}">{e(TITOLS_LINIA[l.linia])}</p>')
         h.append(f'<div style="background:#fff;border:1px solid {linia};border-radius:10px;padding:18px 20px;margin:0 0 14px">')
         h.append(f'<p style="margin:0 0 6px;font-size:12px;color:{accent};font-weight:bold">{e(l.motiu)} · '
-                 f'encaix {l.e.punts}/100 ({e(l.e.prioritat)})</p>')
+                 f'encaix {l.e.punts}/100 ({e(l.e.prioritat)})'
+                 + (f' · retorn per projecte {e(l.retorn)}' if l.retorn else "") + '</p>')
         h.append(f'<h2 style="margin:0 0 12px;font-size:17px;line-height:1.3">{i}. {e(c.nom)}</h2>')
         if l.per_clients:
             h.append(f'<p style="margin:0 0 12px;font-size:13px;line-height:1.5;background:#E1F2E9;color:#13202A;'

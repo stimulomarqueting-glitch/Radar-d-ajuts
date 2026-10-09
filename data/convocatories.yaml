@@ -17,6 +17,10 @@
 #                 hospital | entitat_sense_anim_lucre | cluster_aei | consorci | administracio
 #   rols_stimulo: com hi pot entrar una agència com Stimulo (beneficiari, soci, proveidor_extern,
 #                 subcontractat, assessor)
+#   linies: creixement (finançament per al creixement i la transformació de Stimulo) |
+#           projectes (genera projectes de desenvolupament de producte amb clients i consorcis)
+#   compartir_clients: true si s'ha d'avisar als clients (el sol·licitant és el client)
+#   retorn_eur: [mínim, màxim] per projecte per a Stimulo, només si no es pot calcular de l'import
 #   calendari.recurrencia: anual | multiples_talls | continua | puntual | desconeguda
 #   calendari.obertura / tancament: última edició coneguda (o la vigent). Si ja ha passat i és
 #     anual, el radar n'estima la propera edició (+1 any) i genera les alertes.
@@ -72,6 +76,7 @@ convocatories:
     - 'Projecte petit (~40.000 €) i ràpid (10 mesos): bona porta d''entrada amb clients industrials.'
   socis_cal: [empresa, startup]
   compartir_clients: true
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -110,6 +115,7 @@ convocatories:
   encaix_stimulo: Stimulo com a proveïdor de disseny i prototipatge d'un client de la cadena de valor de l'automoció i la mobilitat.
   socis_cal: [empresa]
   compartir_clients: true
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -139,6 +145,7 @@ convocatories:
   url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/26049-subvencions-projectes-rd-sector-quimic
   confianca: mitjana
   compartir_clients: true
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -172,6 +179,7 @@ convocatories:
   fonts_verificacio:
     - https://cataloniatalent.cat/cat/noticia/catalunya-destinara-78-milions-anuals-per-reforcar-el-seu-ecosistema-dinnovacio/
   confianca: mitjana
+  linies: [projectes, creixement]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -213,6 +221,7 @@ convocatories:
     - Consorcis petits (2–5 entitats), fàcils de muntar amb socis habituals.
   socis_cal: [recerca, hospital, empresa]
   compartir_clients: true
+  linies: [projectes]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -245,6 +254,7 @@ convocatories:
   url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
   confianca: baixa
   compartir_clients: true
+  linies: [projectes, creixement]
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -278,6 +288,7 @@ convocatories:
   url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
   confianca: baixa
   compartir_clients: true
+  linies: [projectes, creixement]
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -307,6 +318,7 @@ convocatories:
   url: https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/
   confianca: baixa
   compartir_clients: true
+  linies: [projectes, creixement]
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -346,6 +358,7 @@ convocatories:
     - https://www.aitpa.es/wp-content/uploads/news-87-a16-cat_-obert-termini-per-solicituds-de-subvencions-per-a-inversions-empresarials-dalt-impacte.pdf
   confianca: mitjana
   compartir_clients: true
+  linies: []
   calendari:
     recurrencia: anual
     estat: tancada
@@ -385,6 +398,7 @@ convocatories:
   encaix_stimulo: 'Stimulo n''és beneficiària directa: el cupó de programes europeus (12.000 €) pot pagar la preparació d''una proposta EIC, Horizon o Eurostars, i el de protecció, el registre de dissenys industrials.'
   socis_cal: [empresa]
   compartir_clients: true
+  linies: [projectes, creixement]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -437,6 +451,7 @@ convocatories:
     - Admet grans empreses (p. ex. DOGA) amb intensitats altes per a despeses externes (75 %).
     - Encadena dues fases (pla i implementació) fins al 2028.
   compartir_clients: true
+  linies: [projectes, creixement]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -467,6 +482,7 @@ convocatories:
     - https://www.aitpa.es/wp-content/uploads/news-47-a07-cat-oberta-conv-subv-pojectes-inversion-productives-a-cat-.pdf
   confianca: mitjana
   compartir_clients: true
+  linies: []
   calendari:
     recurrencia: anual
     estat: tancada
@@ -496,6 +512,7 @@ convocatories:
     - https://laadministracionaldia.inap.es/noticia.asp?id=1266781
   confianca: baixa
   compartir_clients: true
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -528,6 +545,7 @@ convocatories:
   fonts_verificacio:
     - https://tecnociminnova.com/ca/buscador-ayudas/catalunya/cat-ajutsstartupcapital2026acciocatalunya
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -567,6 +585,7 @@ convocatories:
     secundàries que citen les convocatòries 2025 i 2026; la pàgina oficial d'AGAUR no s'ha pogut
     consultar directament. En edicions antigues hi havia una modalitat «Mercat» (préstec participatiu
     d'IFEM/ICF per a spin-offs) que no apareix a les convocatòries 2025 i 2026.
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -611,6 +630,7 @@ convocatories:
     UAB, CSIC, centres CERCA, fundacions hospitalàries) i els grups amb resultats a TRL 3–4 per
     oferir-los el prototip com a part del pressupost. Comprovar a les bases 2027 el límit de
     subcontractació.
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -646,6 +666,7 @@ convocatories:
     - https://xarxah2cat.org/industria-del-coneixement-agaur/
     - https://tecnociminnova.com/ca/buscador-ayudas/catalunya/cat-programaindustriadelconeixement2026llavorproduct
   confianca: mitjana
+  linies: []
   calendari:
     recurrencia: anual
     estat: tancada
@@ -676,6 +697,7 @@ convocatories:
   url: https://doctoratsindustrials.gencat.cat
   confianca: baixa
   socis_cal: [recerca]
+  linies: [creixement]
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -701,6 +723,7 @@ convocatories:
   descripcio: Finançament d'inversió i circulant; complement per avançar despesa de projectes subvencionats.
   url: https://www.icf.cat/en/prestecs/innovacio/icf-pime-innova
   confianca: mitjana
+  linies: [creixement]
   calendari:
     recurrencia: continua
     estat: permanent
@@ -725,6 +748,7 @@ convocatories:
   notes: Edició 2026 tancada (17/06–17/07/2026). Barcelona també té el Fons Barcelona DeepTech (via gestores de capital risc).
   url: https://empreses.barcelonactiva.cat/en/impulsem-el-que-fas-2026
   confianca: mitjana
+  linies: [creixement]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -761,6 +785,7 @@ convocatories:
   confianca: mitjana
   encaix_stimulo: "Formació i xarxa per entrar al sector dual; Stimulo hi pot anar com a empresa i recomanar-lo als clients industrials."
   compartir_clients: true
+  linies: [projectes, creixement]
   calendari:
     recurrencia: desconeguda
     estat: oberta
@@ -785,6 +810,7 @@ convocatories:
   url: https://esabicbarcelona.pmt.es/
   confianca: mitjana
   socis_cal: [startup]
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -820,6 +846,7 @@ convocatories:
     - https://www.fbg.ub.edu/actualitat/la-universitat-de-barcelona-destinara-mes-de-100-000-euros-per-impulsar-la-transferencia-de-la-recerca-a-traves-dels-f2i/
   confianca: alta
   socis_cal: [recerca]
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -846,6 +873,7 @@ convocatories:
   notes: Aprovada pel Consell de Govern el 18/02/2026. Dates no verificades.
   url: https://rdi.upc.edu/ca/financament/recerca-innovacio/llavor.pdf
   confianca: baixa
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -868,6 +896,7 @@ convocatories:
   notes: Programa del 14/09 al 03/12/2026 (inscripció fins al 04/09). Anar al demo day de desembre.
   url: https://www.upc.edu/emprenupc/ca/noticies/nova-edicio-del-programa-industrial-tech
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -904,6 +933,7 @@ convocatories:
   url: https://www.cdti.es/ayudas
   confianca: alta
   compartir_clients: true
+  linies: [projectes, creixement]
   calendari:
     recurrencia: continua
     estat: permanent
@@ -929,6 +959,7 @@ convocatories:
   url: https://www.cdti.es/sites/default/files/2023-09/20230720_ficha_lic.pdf
   confianca: alta
   compartir_clients: true
+  linies: [projectes]
   calendari:
     recurrencia: continua
     estat: permanent
@@ -956,6 +987,7 @@ convocatories:
   confianca: alta
   encaix_stimulo: 'Projecte d''R+D propi de Stimulo amb un centre tecnològic o una universitat (UPC, Eurecat...): fins al 90 % del pressupost i un 33 % no reemborsable.'
   socis_cal: [recerca]
+  linies: [projectes, creixement]
   calendari:
     recurrencia: continua
     estat: permanent
@@ -984,6 +1016,7 @@ convocatories:
     NEOTEC és el programa certificat Plug-in a l'EIC Accelerator (accés directe a proposta completa).
   url: https://www.ciencia.gob.es/Noticias/2026/abril/MICIU-lanza-convocatoria-NEOTEC-2026.html
   confianca: alta
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -1012,6 +1045,7 @@ convocatories:
   fonts_verificacio:
     - https://www.inncome.es/cdti-publica-programa-definitivo-misiones-ciencia-innovacion-2026.html
   confianca: alta
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -1047,6 +1081,7 @@ convocatories:
   fonts_verificacio:
     - https://www.interempresas.net/Ciberseguridad/660249-CDTI-abrira-octubre-convocatoria-Innterconecta-STEP-2026-138-millones-proyectos-I-D.html
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: prevista
@@ -1073,6 +1108,7 @@ convocatories:
   notes: La convocatòria 2025 va tancar l'11/03/2026; la de 2026 no està publicada.
   url: https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-7477
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -1100,6 +1136,7 @@ convocatories:
     submarina i col·lisionadors de partícules. Vigilar l'agenda de l'Oficina CPI.
   url: https://www.cdti.es/noticias/cdti-innovacion-fondos-feder-licitacion-compra-publica-precomercial-robot-terrestre-autonomo-tecnologia-dual-defensa-civil
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: desconeguda
     estat: desconegut
@@ -1137,6 +1174,7 @@ convocatories:
   confianca: alta
   encaix_stimulo: És la via que Stimulo ja domina amb secpho (Q LEAF IN VITRO, SEPTIBELL, DRONSTORE II).
   socis_cal: [cluster, empresa, recerca]
+  linies: [projectes, creixement]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -1162,6 +1200,7 @@ convocatories:
   notes: "L'Excel l'atribuïa a Red.es/NextGenEU: és ENISA (Ministeri d'Indústria). Oberta fins exhaurir pressupost."
   url: https://www.enisa.es/es/financia-tu-empresa/lineas-de-financiacion/d/emprendedoras-digitales
   confianca: alta
+  linies: [creixement]
   calendari:
     recurrencia: continua
     estat: permanent
@@ -1185,6 +1224,7 @@ convocatories:
   notes: Programa finalitzat (termini 31/10/2025). Es manté per traçabilitat de l'Excel.
   url: https://www.acelerapyme.gob.es/kit-digital
   confianca: alta
+  linies: [creixement]
   calendari:
     recurrencia: puntual
     estat: tancada
@@ -1209,6 +1249,7 @@ convocatories:
   notes: "L'Excel l'atribuïa al MINTUR; és de Red.es. Els fons NextGen acaben el 2026: comprovar si queda pressupost."
   url: https://www.acelerapyme.gob.es/kit-consulting
   confianca: mitjana
+  linies: [creixement]
   calendari:
     recurrencia: puntual
     estat: tancada
@@ -1233,6 +1274,7 @@ convocatories:
   confianca: alta
   encaix_stimulo: Incorporar un doctor a Stimulo durant 3 anys per reforçar la línia deep tech, amb el contracte cofinançat.
   socis_cal: [recerca]
+  linies: [creixement]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -1259,6 +1301,7 @@ convocatories:
   confianca: alta
   encaix_stimulo: Doctorand a Stimulo amb una universitat per a una línia de recerca aplicada (p. ex. ecodisseny o fotònica).
   socis_cal: [recerca]
+  linies: [creixement]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -1283,6 +1326,7 @@ convocatories:
   notes: La convocatòria 2025 va tancar el 30/01/2026; la de 2026 s'ajornaria a la primavera de 2027 pel nou marc d'ajuts d'estat (no verificat).
   url: https://www.aei.gob.es/cpp-proyectos-colaboracion-publico-privada
   confianca: baixa
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: prevista
@@ -1308,6 +1352,7 @@ convocatories:
   descripcio: Portar resultats de recerca a prova de concepte (la UPC hi va obtenir 915.055 € per a 8 projectes).
   url: https://www.fibao.es/convocatoria/b-b-17481-ayudas-a-proyectos-de-i-d-i-para-la-realizaci-xc3-x93n-de-pruebas-de-concepto-2026/
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -1336,6 +1381,7 @@ convocatories:
   fonts_verificacio:
     - https://otri.ugr.es/financiacion/investigacion-empresas/colaboracion/coincidente-2026
   confianca: alta
+  linies: [projectes, creixement]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -1362,6 +1408,7 @@ convocatories:
     ACCIÓ el programa de capacitació en seguretat i defensa.
   url: https://www.eoi.es/es/noticias/eoi-lanza-el-programa-indef-una-iniciativa-destinada-incorporar-pymes-y-startups-en-la-cadena-de-valor-del-ambito-de-la-defensa
   confianca: baixa
+  linies: [creixement]
   calendari:
     recurrencia: desconeguda
     estat: tancada
@@ -1385,6 +1432,7 @@ convocatories:
   descripcio: Desenvolupament de capacitats i aplicacions espacials.
   url: https://www.aee.gob.es/Convocatorias/2026/BASS.html
   confianca: mitjana
+  linies: [projectes, creixement]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -1409,6 +1457,7 @@ convocatories:
   notes: Oberta fins al 31/12/2026, per ordre cronològic. Rellevant per a DOGA (línies de motors brushless).
   url: https://sepides.es/
   confianca: mitjana
+  linies: []
   calendari:
     recurrencia: continua
     estat: permanent
@@ -1433,6 +1482,7 @@ convocatories:
     fons). No convoca subvencions per a pimes. Rellevància indirecta: startups clients finançades.
   url: https://sett.gob.es/instrumentos/
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: continua
     estat: permanent
@@ -1453,6 +1503,7 @@ convocatories:
   descripcio: Capital per a empreses tecnològiques en creixement.
   url: https://www.ciencia.gob.es/Noticias/2026/junio/innvierte-abril-mayo-2026.html
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: continua
     estat: permanent
@@ -1489,6 +1540,7 @@ convocatories:
     - Referència privada d'alt impacte en salut a Espanya i Portugal.
     - Fins a 500.000 € a la fase 3.
   socis_cal: [hospital, recerca]
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -1512,6 +1564,7 @@ convocatories:
   url: https://www.caixabank.com/es/actualidad/noticias/arranca-la-convocatoria-para-participar-en-los-premios-emprendexxi-impulsados-por-caixabank-y-enisa?id=44289
   confianca: alta
   socis_cal: [startup]
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: oberta
@@ -1534,6 +1587,7 @@ convocatories:
   notes: Convocatòria 2025 tancada el 31/10/2025; edició 2026 no verificada. Projectes que necessiten disseny de producte.
   url: https://fgcsic.es/convocatoria-evento/comte-innovacion-envalor-2/
   confianca: baixa
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -1556,6 +1610,7 @@ convocatories:
   notes: Convocatòries 2026-27 no verificades (web bloquejada durant la recerca).
   url: https://cajamarinnova.es/es/
   confianca: baixa
+  linies: [projectes]
   calendari:
     recurrencia: desconeguda
     estat: desconegut
@@ -1578,6 +1633,7 @@ convocatories:
   notes: Dates i imports 2026-27 no verificats.
   url: https://www.fundacionrepsol.com/
   confianca: baixa
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: desconegut
@@ -1615,6 +1671,7 @@ convocatories:
   fonts_verificacio:
     - https://www.myriadassociates.ie/resources/news/2026/eic-work-programme-2027/
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: multiples_talls
     estat: oberta
@@ -1640,6 +1697,7 @@ convocatories:
   notes: "2026 tancat (16/09/2026). 2027 (esborrany): 16/09/2027, un sol beneficiari i carta d'intencions d'un client obligatòria."
   url: https://www.kowi.de/en/kowi/news/draft-eic-work-programme-2027-includes-changes-to-application-procedure-for-pathfinder-and-transition.aspx
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: multiples_talls
     estat: tancada
@@ -1678,6 +1736,7 @@ convocatories:
     - Subvenció de fins a 2,5 M€ més capital de l'EIC Fund.
     - Els guanyadors de NEOTEC hi tenen accés directe (Plug-in).
   socis_cal: [startup, inversor]
+  linies: [projectes]
   calendari:
     recurrencia: multiples_talls
     estat: oberta
@@ -1716,6 +1775,7 @@ convocatories:
     - Termini 28/10/2026.
     - Fins a 30 M€ d'inversió directa de l'EIC per empresa.
   socis_cal: [inversor]
+  linies: [projectes]
   calendari:
     recurrencia: puntual
     estat: oberta
@@ -1755,6 +1815,7 @@ convocatories:
   confianca: mitjana
   encaix_stimulo: "Els centres que creïn infraestructures d'assaig dual necessiten disseny d'equips i bancs d'assaig: Stimulo com a proveïdor."
   socis_cal: [recerca]
+  linies: [projectes]
   calendari:
     recurrencia: puntual
     estat: oberta
@@ -1782,6 +1843,7 @@ convocatories:
   notes: Talls 25/11/2026; 2027 (esborrany) 28/01, 29/04, 06/09, 22/11. EIC STEP Defence Scale Up obert fins al 28/10/2026.
   url: https://alientt.com/key-changes-in-the-eic-work-programme-2026/
   confianca: mitjana
+  linies: []
   calendari:
     recurrencia: multiples_talls
     estat: oberta
@@ -1804,6 +1866,7 @@ convocatories:
   notes: Proposta completa 14/01, 01/04 i 08/07/2027; l'elegibilitat s'ha d'enviar ≥3 setmanes abans.
   url: https://womentecheurope.eu/active-calls/
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: multiples_talls
     estat: oberta
@@ -1835,6 +1898,7 @@ convocatories:
   confianca: alta
   encaix_stimulo: Stimulo, Inbrooll o una pime client pot liderar un projecte d'R+D internacional amb finançament del CDTI per a la part espanyola.
   socis_cal: [empresa, startup, recerca]
+  linies: [projectes, creixement]
   calendari:
     recurrencia: multiples_talls
     estat: prevista
@@ -1857,6 +1921,7 @@ convocatories:
   notes: "Project outline 26/01/2027 (11 h CET); proposta completa 15/04/2027. Altres clústers EUREKA: ITEA 4 (PO 02/11/2026), Xecs (PO 21/01/2027)."
   url: https://www.eurekanetwork.org/programmes-and-calls/eureka-clusters/smart-call-10-2026/
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: multiples_talls
     estat: oberta
@@ -1882,6 +1947,7 @@ convocatories:
   notes: Programa de treball 2026-2027; el proper programa marc (FP10 dins del Fons Europeu de Competitivitat, 2028-2034) està en negociació.
   url: https://ec.europa.eu/info/funding-tenders/opportunities/portal/
   confianca: alta
+  linies: [projectes]
   calendari:
     recurrencia: multiples_talls
     estat: oberta
@@ -1911,6 +1977,7 @@ convocatories:
   confianca: mitjana
   encaix_stimulo: Soci pime de disseny i ecodisseny en un consorci europeu de fabricació avançada i circular (re-fabricació, materials circulars del disseny al mercat).
   socis_cal: [empresa, recerca]
+  linies: [projectes]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -1935,6 +2002,7 @@ convocatories:
   fonts_verificacio:
     - https://microfluidics-innovation-center.com/horizon-europe/tips-tricks-for-horizon-cl4-2027-04-digital-emerging-05/
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -1959,6 +2027,7 @@ convocatories:
     (03/06 → 07/10/2027) i bateries en dues fases (14/04 i 07/10/2027).
   url: https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-8-climate-energy-and-mobility_horizon-2026-2027_en.pdf
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -1981,6 +2050,7 @@ convocatories:
   descripcio: Topics en dues fases (fase 1 07-08/04/2027, fase 2 14/09/2027) i d'una fase (20/04 → 22-23/09/2027).
   url: https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/wp-call/2026-2027/wp-9-food-bioeconomy-natural-resources-agriculture-and-environment_horizon-2026-2027_en.pdf
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -2006,6 +2076,7 @@ convocatories:
   confianca: mitjana
   encaix_stimulo: Soci pime de disseny de dispositius (diagnòstic al punt d'atenció) en un consorci europeu amb hospitals i centres de recerca.
   socis_cal: [hospital, recerca, empresa]
+  linies: [projectes]
   calendari:
     recurrencia: puntual
     estat: prevista
@@ -2034,6 +2105,7 @@ convocatories:
   notes: Convocatòries 2026-27 no verificades.
   url: https://digital-strategy.ec.europa.eu/en/activities/digital-programme
   confianca: baixa
+  linies: [projectes]
   calendari:
     recurrencia: multiples_talls
     estat: desconegut
@@ -2057,6 +2129,7 @@ convocatories:
   notes: Finestra habitual d'abril-maig a setembre. LIFE 2027 estimat abril → setembre 2027 (no verificat).
   url: https://cinea.ec.europa.eu/programmes/life_en
   confianca: baixa
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: prevista
@@ -2081,6 +2154,7 @@ convocatories:
   notes: L'Excel indicava presentació el 06/2026. Convocatòries de final de període 2021-27 no verificades.
   url: https://www.poctefa.eu/
   confianca: baixa
+  linies: [projectes]
   calendari:
     recurrencia: desconeguda
     estat: desconegut
@@ -2108,6 +2182,7 @@ convocatories:
   fonts_verificacio:
     - https://www.hezelburcht.com/en/news/european-defence-fund-edf-2026-open-for-applications-until-29-september/
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -2145,6 +2220,7 @@ convocatories:
     - 'Unes 170 subvencions: probabilitat d''èxit alta per a un instrument europeu.'
     - 'Precedent de Stimulo: DRONSTORE II (dron autònom per a l''Exèrcit, via secpho).'
   socis_cal: [empresa, startup, recerca]
+  linies: [projectes, creixement]
   calendari:
     recurrencia: puntual
     estat: oberta
@@ -2168,6 +2244,7 @@ convocatories:
   notes: 2 cohorts el 2027 (primavera i tardor); sol·licitud de primavera probablement des. 2026–gen. 2027 (no verificat).
   url: https://eudis-business-accelerator.eu/
   confianca: baixa
+  linies: [creixement]
   calendari:
     recurrencia: anual
     estat: prevista
@@ -2191,6 +2268,7 @@ convocatories:
   notes: Convocatòria 2027 tancada (02/06–03/07/2026); la propera s'espera cap al juny de 2027 (no verificat).
   url: https://www.diana.nato.int/challenges.html
   confianca: mitjana
+  linies: [creixement]
   calendari:
     recurrencia: anual
     estat: tancada
@@ -2213,6 +2291,7 @@ convocatories:
   notes: Startups tall 16/11/2026; Strategic Innovation talls 28/01/2027 i 03/06/2027.
   url: https://www.eiturbanmobility.eu/call-for-proposals/
   confianca: mitjana
+  linies: [projectes, creixement]
   calendari:
     recurrencia: multiples_talls
     estat: oberta
@@ -2233,6 +2312,7 @@ convocatories:
   descripcio: Programes de suport a la innovació en salut (Stimulo té precedent amb Leuko, EIT Health Catapult 2022).
   url: https://eithealth.eu/news-article/eith-call-launch-3/
   confianca: mitjana
+  linies: [projectes]
   calendari:
     recurrencia: multiples_talls
     estat: oberta
@@ -2254,6 +2334,7 @@ convocatories:
   notes: Convocatòria anual que obre cap a desembre i tanca cap a abril (IF26 previst des. 2026 → abr. 2027, no verificat).
   url: https://climate.ec.europa.eu/eu-action/eu-funding-climate-action/innovation-fund_en
   confianca: baixa
+  linies: [projectes]
   calendari:
     recurrencia: anual
     estat: prevista
@@ -2278,6 +2359,7 @@ convocatories:
     a Stimulo com a beneficiari. El vigilant del Funding & Tenders (tipus 8) les detecta.
   url: https://cascadefunding.eu/
   confianca: baixa
+  linies: [projectes, creixement]
   calendari:
     recurrencia: continua
     estat: permanent
@@ -2299,6 +2381,8 @@ convocatories:
     setmanal escriu les novetats a sortida/novetats.md. Inclou la compra pública d'innovació.
   url: https://contrataciondelestado.es/
   confianca: alta
+  retorn_eur: [15000, 150000]
+  linies: [projectes]
   calendari:
     recurrencia: continua
     estat: permanent

@@ -158,6 +158,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": true,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-29",
@@ -214,6 +217,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": true,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-29",
@@ -266,6 +272,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": true,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-29",
@@ -328,6 +337,10 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -394,6 +407,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": true,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -454,6 +470,10 @@
    ],
    "excel_fila": 5,
    "compartir_clients": true,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-10",
@@ -512,6 +532,10 @@
    ],
    "excel_fila": 2,
    "compartir_clients": true,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-01",
@@ -569,6 +593,10 @@
    ],
    "excel_fila": 3,
    "compartir_clients": true,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-09-04",
@@ -620,6 +648,7 @@
    ],
    "excel_fila": 4,
    "compartir_clients": true,
+   "linies": [],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-16",
@@ -675,6 +704,10 @@
    ],
    "excel_fila": 6,
    "compartir_clients": true,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-05-15",
@@ -730,6 +763,10 @@
    ],
    "excel_fila": null,
    "compartir_clients": true,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-15",
@@ -781,6 +818,7 @@
    ],
    "excel_fila": null,
    "compartir_clients": true,
+   "linies": [],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-03-01",
@@ -832,6 +870,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": true,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -888,6 +929,9 @@
    ],
    "excel_fila": 7,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-01",
@@ -948,6 +992,9 @@
    ],
    "excel_fila": 8,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-01",
@@ -1009,6 +1056,9 @@
    ],
    "excel_fila": 9,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-01",
@@ -1067,6 +1117,7 @@
    ],
    "excel_fila": 10,
    "compartir_clients": false,
+   "linies": [],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-01",
@@ -1124,6 +1175,9 @@
    ],
    "excel_fila": 11,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-05-15",
@@ -1176,6 +1230,9 @@
    ],
    "excel_fila": 12,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1231,6 +1288,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-17",
@@ -1287,6 +1347,10 @@
    ],
    "excel_fila": null,
    "compartir_clients": true,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "sense_dades",
     "obertura": "2026-04-27",
@@ -1340,6 +1404,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -1397,6 +1464,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-01",
@@ -1451,6 +1521,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-03-01",
@@ -1507,6 +1580,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-15",
@@ -1567,6 +1643,10 @@
    ],
    "excel_fila": 13,
    "compartir_clients": true,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1623,6 +1703,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": true,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1681,6 +1764,10 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1737,6 +1824,9 @@
    ],
    "excel_fila": 14,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-04-14",
@@ -1798,6 +1888,9 @@
    ],
    "excel_fila": 16,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-12",
@@ -1864,6 +1957,9 @@
    ],
    "excel_fila": 15,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -1920,6 +2016,9 @@
    ],
    "excel_fila": 17,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-17",
@@ -1978,6 +2077,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -2037,6 +2139,10 @@
    ],
    "excel_fila": 18,
    "compartir_clients": false,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-30",
@@ -2090,6 +2196,9 @@
    ],
    "excel_fila": 19,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2138,6 +2247,9 @@
    "rols_stimulo": [],
    "excel_fila": 20,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "tancada",
     "obertura": null,
@@ -2187,6 +2299,9 @@
    "rols_stimulo": [],
    "excel_fila": 21,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "tancada",
     "obertura": null,
@@ -2241,6 +2356,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-10-08",
@@ -2296,6 +2414,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-09-30",
@@ -2353,6 +2474,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -2410,6 +2534,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-19",
@@ -2469,6 +2596,10 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-26",
@@ -2522,6 +2653,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "sense_dades",
     "obertura": "2026-07-09",
@@ -2576,6 +2710,10 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-04-27",
@@ -2627,6 +2765,7 @@
    "rols_stimulo": [],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [],
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2680,6 +2819,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2732,6 +2874,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2792,6 +2937,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-11",
@@ -2845,6 +2993,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-10-01",
@@ -2897,6 +3048,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-09-01",
@@ -2950,6 +3104,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -3004,6 +3161,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -3064,6 +3224,9 @@
    ],
    "excel_fila": 22,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3123,6 +3286,9 @@
    ],
    "excel_fila": 24,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -3183,6 +3349,9 @@
    ],
    "excel_fila": 23,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3242,6 +3411,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-06-30",
@@ -3299,6 +3471,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "tancada",
     "obertura": "2026-10-06",
@@ -3356,6 +3531,7 @@
    ],
    "excel_fila": 25,
    "compartir_clients": false,
+   "linies": [],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3407,6 +3583,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3465,6 +3644,10 @@
    ],
    "excel_fila": 26,
    "compartir_clients": false,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-17",
@@ -3523,6 +3706,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3583,6 +3769,9 @@
    ],
    "excel_fila": 27,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3642,6 +3831,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2026-10-13",
@@ -3700,6 +3892,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2026-11-17",
@@ -3758,6 +3953,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-15",
@@ -3814,6 +4012,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-03",
@@ -3872,6 +4073,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2026-10-29",
@@ -3932,6 +4136,9 @@
    ],
    "excel_fila": 28,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -3989,6 +4196,9 @@
    ],
    "excel_fila": 29,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -4045,6 +4255,9 @@
    ],
    "excel_fila": 30,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -4102,6 +4315,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-01",
@@ -4160,6 +4376,10 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -4213,6 +4433,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -4270,6 +4493,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "creixement"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-02",
@@ -4328,6 +4554,10 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -4385,6 +4615,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -4440,6 +4673,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -4496,6 +4732,10 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -4552,6 +4792,9 @@
    ],
    "excel_fila": null,
    "compartir_clients": false,
+   "linies": [
+    "projectes"
+   ],
    "finestra": {
     "estat": "permanent",
     "obertura": null,

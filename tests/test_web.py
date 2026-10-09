@@ -276,6 +276,26 @@ class TestExpedients(BaseWeb):
         self.assertNotIn(CONTRASENYA, r.text)
 
 
+class TestPlaWeb(BaseWeb):
+    def test_pla_amb_socis_i_sense_scripts(self):
+        self.assertEqual(self.c.get("/pla", follow_redirects=False).status_code, 303)
+        self.entra()
+        r = self.c.get("/pla?des=2026-11-01&fins=2027-06-30")
+        self.assertEqual(r.status_code, 200)
+        self.assertIn("default-src 'none'", r.headers["content-security-policy"])
+        self.assertIn("Projectes de producte amb clients i consorcis", r.text)
+        self.assertIn("Clients i socis (Holded)", r.text)
+        self.assertIn("Motors Exemple SA", r.text)
+        self.assertIn("/expedients/nou?convocatoria=", r.text)
+        self.assertNotIn("<script", r.text)
+        self.assertIn('href="/pla"', self.c.get("/").text)
+        baixada = self.c.get("/pla?descarrega=1")
+        self.assertIn("attachment", baixada.headers["content-disposition"])
+        self.assertNotIn("/expedients/nou", baixada.text)
+        self.assertEqual(self.c.get("/pla?des=2027-07-01&fins=2027-01-01").status_code, 400)
+        self.assertEqual(self.c.get("/pla?des=ahir").status_code, 400)
+
+
 class TestUtilitats(unittest.TestCase):
     def test_markdown_segur(self):
         h = markdown_html("# Títol\n\n<script>alert(1)</script> [x](javascript:alert(1)) [y](https://a.example)")

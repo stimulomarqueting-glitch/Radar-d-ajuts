@@ -223,6 +223,7 @@ def dades_json(cat: Cataleg, avui: dt.date) -> dict:
             "ajuda_text": c.ajuda_text, "trl": list(c.trl) if c.trl else None, "url": c.url,
             "notes": c.notes, "confianca": c.confianca, "beneficiaris": c.beneficiaris,
             "rols_stimulo": c.rols_stimulo, "excel_fila": c.excel_fila, "compartir_clients": c.compartir_clients,
+            "linies": c.linies,
             "finestra": {"estat": f.estat, "obertura": f.obertura.isoformat() if f.obertura else None,
                          "tancament": f.tancament.isoformat() if f.tancament else None,
                          "estimada": f.estimada, "text": _descriu_finestra(f)},
@@ -270,6 +271,11 @@ def genera_tot(cat: Cataleg, avui: dt.date, dir_sortida: Path) -> list[Path]:
     eco_md = dir_sortida / "ecosistema.md"
     eco_md.write_text(ecosistema.markdown(ecosistema.carrega(cat), avui), encoding="utf-8")
     generats.append(eco_md)
+
+    from . import pla  # pla públic per línies (sense clients ni socis de Holded)
+
+    inici, fi = pla.horitzo(avui)
+    generats += pla.genera(pla.construeix(cat, avui, inici, fi), dir_sortida).values()
 
     js = dir_sortida / "radar.json"
     js.write_text(json.dumps(dades_json(cat, avui), ensure_ascii=False, indent=1), encoding="utf-8")

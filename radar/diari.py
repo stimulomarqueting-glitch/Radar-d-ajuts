@@ -121,7 +121,7 @@ def prepara_avis(avui: dt.date, envia: bool = False, tot: bool = False, maxim: i
     candidates = avisos.candidates(cat, avui, cfg, clients_servei)
     noves = candidates if tot else avisos.noves(candidates, estat)
     maxim = maxim or cfg["maxim_linies"]
-    principals, resum = noves[:maxim], noves[maxim:]
+    principals, resum = avisos.reparteix(noves, maxim)
     novetats = novetats or []
     from . import ecosistema
 

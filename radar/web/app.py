@@ -31,6 +31,7 @@ from fastapi.templating import Jinja2Templates
 from markupsafe import Markup
 
 from .. import avisos, calendari, dades, diari, ecosistema, informe, licitacions, screening
+from .. import pla as mod_pla
 from .. import socis as mod_socis
 from ..puntuacio import puntua
 from . import auth, context, exporta, ia, plantilles
@@ -566,6 +567,27 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
         if descarrega:
             capcaleres["Content-Disposition"] = f'attachment; filename="screening-{slug(cl.nom)}-{avui:%Y-%m-%d}.html"'
         return HTMLResponse(pagina_html, headers=capcaleres)
+
+    # --- Pla per línies (projectes amb clients i creixement), amb clients i socis de Holded
+    @app.get("/pla", response_class=HTMLResponse)
+    def pla_pagina(des: str = "", fins: str = "", descarrega: bool = False):
+        cat, avui = estat.cataleg(), dt.date.today()
+        inici, fi = mod_pla.horitzo(avui)
+        try:
+            inici = dt.date.fromisoformat(des) if des else inici
+            fi = dt.date.fromisoformat(fins) if fins else fi
+        except ValueError:
+            raise HTTPException(400, "Dates en format AAAA-MM-DD")
+        if fi <= inici:
+            raise HTTPException(400, "La data final ha de ser posterior a la inicial")
+        socis, _motiu = estat.socis()
+        clients = [cl for cl in estat.clients().values() if cl.avisos]
+        p = mod_pla.construeix(cat, avui, inici, fi, socis, clients)
+        capcaleres = {"Content-Security-Policy": CSP_INFORME}
+        if descarrega:
+            capcaleres["Content-Disposition"] = f'attachment; filename="pla-{inici.year}-{fi.year}-{avui:%Y-%m-%d}.html"'
+        return HTMLResponse(mod_pla.pagina(mod_pla.informe_html(p, privat=True, app=not descarrega)),
+                            headers=capcaleres)
 
     # --- Licitacions: detecció, decisió go/no-go i oferta
     def licitacio_o_404(id_: str) -> dict:

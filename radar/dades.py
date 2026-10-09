@@ -59,6 +59,10 @@ FOCUS = (
     "cooperacio",
 )
 ROLS = ("beneficiari", "soci", "proveidor_extern", "subcontractat", "assessor")
+# Línies de treball del radar (visió 2026-2027):
+#   creixement = finançament per al creixement i la transformació de Stimulo (Stimulo sol·licitant)
+#   projectes  = convocatòries que generen projectes de desenvolupament de producte amb clients i consorcis
+LINIES = ("creixement", "projectes")
 # Tipus de soci que el radar busca a Holded per a cada convocatòria (radar/socis.py)
 TIPUS_SOCI = ("recerca", "hospital", "empresa", "startup", "cluster", "inversor")
 
@@ -111,6 +115,8 @@ class Convocatoria:
     punts_forts: list[str] = field(default_factory=list)  # altres consideracions positives
     socis_cal: list[str] = field(default_factory=list)  # tipus de soci a buscar (vegeu radar/socis.py)
     compartir_clients: bool = False  # línia per avisar clients i potencials clients (el sol·licitant és el client)
+    linies: list[str] = field(default_factory=list)  # creixement / projectes (vegeu LINIES)
+    retorn_eur: tuple[float, float] | None = None  # retorn per a Stimulo per projecte, si no es pot calcular
 
 
 @dataclass
@@ -198,6 +204,19 @@ def _llegeix_yaml(path: Path):
         return yaml.safe_load(f)
 
 
+def linies_per_defecte(d: dict) -> list[str]:
+    """Línies d'una fitxa que no les declara: «projectes» si Stimulo hi entra amb clients o socis,
+    «creixement» si Stimulo (pime) en pot ser beneficiària directa."""
+    rols, benef = set(d.get("rols_stimulo", [])), set(d.get("beneficiaris", []))
+    sortida = []
+    if rols & {"proveidor_extern", "subcontractat", "soci"} or d.get("compartir_clients") \
+            or d.get("instrument") in ("licitacio", "compra_publica_innovacio"):
+        sortida.append("projectes")
+    if "beneficiari" in rols and "pime" in benef:
+        sortida.append("creixement")
+    return sortida
+
+
 def _convocatoria(d: dict, zones: Zones) -> Convocatoria:
     cid = d.get("id") or "?"
     ctx = f"convocatòria {cid}"
@@ -216,6 +235,11 @@ def _convocatoria(d: dict, zones: Zones) -> Convocatoria:
         _comprova(r, ROLS, ctx + " (rols_stimulo)")
     for s in d.get("socis_cal", []):
         _comprova(s, TIPUS_SOCI, ctx + " (socis_cal)")
+    for li in d.get("linies", []) or []:
+        _comprova(li, LINIES, ctx + " (linies)")
+    retorn = d.get("retorn_eur")
+    if retorn is not None and (len(retorn) != 2 or retorn[0] > retorn[1]):
+        raise ErrorValidacio(f"{ctx}: retorn_eur ha de ser [mínim, màxim]")
 
     cal = d.get("calendari", {}) or {}
     _comprova(cal.get("recurrencia", "desconeguda"), RECURRENCIES, ctx + " (recurrencia)")
@@ -271,6 +295,8 @@ def _convocatoria(d: dict, zones: Zones) -> Convocatoria:
         punts_forts=list(d.get("punts_forts", [])),
         socis_cal=list(d.get("socis_cal", [])),
         compartir_clients=bool(d.get("compartir_clients", False)),
+        linies=list(d["linies"]) if d.get("linies") is not None else linies_per_defecte(d),
+        retorn_eur=tuple(d["retorn_eur"]) if d.get("retorn_eur") else None,
     )
 
 
