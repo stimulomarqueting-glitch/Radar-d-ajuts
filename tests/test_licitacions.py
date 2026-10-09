@@ -140,6 +140,32 @@ class TestAvaluacio(unittest.TestCase):
         self.assertIn("Data límit interna", f)
 
 
+class TestCalibratgeAmbDadesReals(unittest.TestCase):
+    """Falsos positius de les primeres revisions reals (octubre de 2026) i un cas bo."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.cfg = L.config(dades.carrega())
+
+    def test_falsos_positius_descartats(self):
+        casos = [("Revisió de Plans d'Autoprotecció en centres propis (PAU)", ["71317200"]),
+                 ("Servicios y suministros para la organización de eventos corporativos", ["79952000", "79931000"]),
+                 ("Servicio de mejora del conocimiento de las poblaciones marinas", ["73112000"]),
+                 ("Redacción de Proyecto y Dirección de Obra de urbanización", ["71240000", "71317210"])]
+        for titol, cpv in casos:
+            a = L.avalua(lic(titol=titol, cpv=cpv), self.cfg, AVUI)
+            self.assertFalse(a.encaix and a.recomanacio != "Descartar", titol)
+
+    def test_disseny_de_producte_en_verd(self):
+        a = L.avalua(lic(titol="Servei de disseny industrial del nou mobiliari de biblioteca", cpv=["79930000"]),
+                     self.cfg, AVUI)
+        self.assertEqual(a.semafor, "verd")
+
+    def test_nomes_cpv_sense_paraula_clau_es_groc(self):
+        a = L.avalua(lic(titol="Servei d'enginyeria de detall", cpv=["71320000"]), self.cfg, AVUI)
+        self.assertEqual(a.semafor, "groc")
+
+
 class TestExecucioIRecordatoris(unittest.TestCase):
     def test_executa_desa_informe_noves_i_bd(self):
         with tempfile.TemporaryDirectory() as d:

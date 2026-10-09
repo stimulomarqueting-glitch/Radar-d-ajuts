@@ -41,7 +41,9 @@ ESTATS_ACTIUS = ("en anàlisi", "go")
 DIES_RECORDATORI = (7, 3, 1, 0)
 
 CONFIG_PER_DEFECTE = {
-    "cpv_principals": ["71320000", "79930000", "73100000", "73300000", "73420000"],
+    # CPV: 8 xifres = codi exacte; menys xifres = família (prefix). Calibrat amb les dades reals d'octubre de 2026
+    "cpv_principals": ["7132", "79930000", "79933000", "79934000", "733", "7342"],
+    "cpv": ["7312", "734", "73100000"],
     "paraules_clau": [],
     "exclou": [],
     "import_min": 15000,
@@ -299,10 +301,10 @@ def ted(cpvs: list[str], paisos: list[str], avui: dt.date, dies: int = 7) -> lis
 
 # --- Avaluació go/no-go ---------------------------------------------------------------------------
 
-def _prefix(cpv) -> str:
-    """Prefix jeràrquic d'un CPV: 71320000 → 7132 (tota la família)."""
-    p = str(cpv).rstrip("0")
-    return p if len(p) >= 2 else str(cpv)[:2]
+def coincideix_cpv(cpv: str, entrada) -> bool:
+    """Una entrada de 8 xifres és un codi exacte; una de menys xifres, una família (prefix)."""
+    entrada = str(entrada).strip()
+    return cpv == entrada if len(entrada) >= 8 else cpv.startswith(entrada)
 
 
 def _es_catalunya(l: Licitacio) -> bool:
@@ -319,11 +321,11 @@ def avalua(l: Licitacio, cfg: dict, avui: dt.date) -> Avaluacio:
     fase = normalitza(l.fase)
     informativa = bool(fase) and not any(f in fase for f in FASES_OBERTES)
 
-    principals = [c for c in l.cpv if any(c.startswith(_prefix(p)) for p in cfg["cpv_principals"])]
-    generals = [c for c in l.cpv if any(c.startswith(_prefix(p)) for p in cfg.get("cpv", []))]
+    principals = [c for c in l.cpv if any(coincideix_cpv(c, p) for p in cfg["cpv_principals"])]
+    generals = [c for c in l.cpv if any(coincideix_cpv(c, p) for p in cfg.get("cpv", []))]
     paraules = coincidencies(text, cfg["paraules_clau"])
-    tema = 30 if principals else 20 if generals else 0
-    tema = min(45, tema + 8 * len(paraules))
+    tema = 25 if principals else 12 if generals else 0
+    tema = min(45, tema + 10 * min(2, len(paraules)))
     if principals or generals:
         motius.append("CPV: " + ", ".join(sorted(set(principals or generals))))
     if paraules:
@@ -376,7 +378,7 @@ def avalua(l: Licitacio, cfg: dict, avui: dt.date) -> Avaluacio:
         semafor, recomanacio = "vermell", "Descartar"
     elif not tema:
         semafor, recomanacio = "gris", "Descartar"
-    elif punts >= 70:
+    elif punts >= 70 and tema >= 33:  # verd: CPV de disseny i paraula clau, o dues paraules clau
         semafor, recomanacio = "verd", "Analitzar"
     elif punts >= 50:
         semafor, recomanacio = "groc", "Vigilar"
@@ -429,10 +431,16 @@ def rellevants(licitacions: list[Licitacio], cfg: dict, avui: dt.date) -> list[t
 
 
 def config(cat) -> dict:
-    """Configuració de licitacions (perfils.yaml > config.licitacions) amb els CPV de la vigilància."""
+    """Configuració de licitacions (perfils.yaml > config.licitacions).
+
+    `cpv_ted` són els codis que es demanen a TED (la consulta hi afina); la puntuació fa servir
+    `cpv_principals` i `cpv`, més estrets.
+    """
     vig = cat.config.get("vigilancia", {})
     cfg = {**CONFIG_PER_DEFECTE, **cat.config.get("licitacions", {})}
-    cfg["cpv"] = [str(c) for c in cfg.get("cpv") or vig.get("cpv", [])]
+    cfg["cpv"] = [str(c) for c in cfg.get("cpv", [])]
+    cfg["cpv_principals"] = [str(c) for c in cfg.get("cpv_principals", [])]
+    cfg["cpv_ted"] = [str(c) for c in vig.get("cpv", [])]
     cfg["paisos_ted"] = vig.get("paisos_ted", ["ESP"])
     return cfg
 
@@ -440,7 +448,7 @@ def config(cat) -> dict:
 def executa(cat, avui: dt.date, dir_sortida: Path, fitxer_vistos: Path, db=None) -> dict:
     """Cerca, avalua i desa: informe públic (sortida/), llista de noves i, si hi ha aplicació, la BD."""
     cfg = config(cat)
-    totes, errors = cerca(cfg, avui, cfg["cpv"], cfg["paisos_ted"])
+    totes, errors = cerca(cfg, avui, cfg["cpv_ted"], cfg["paisos_ted"])
     parells = rellevants(totes, cfg, avui)
     vistos = set(json.loads(fitxer_vistos.read_text())) if fitxer_vistos.exists() else set()
     noves = [(l, a) for l, a in parells if l.id not in vistos]

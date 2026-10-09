@@ -116,10 +116,17 @@ algun, va a **no-go** amb el motiu escrit: així, amb el temps, sabrem per què 
 
 ## Límits que cal tenir presents
 
-- **Fonts no provades en viu:** no s'han pogut consultar des de l'entorn de desenvolupament.
-  - El primer cop que la revisió del matí funcioni al VPS o a GitHub Actions es veurà si hi ha
-    errors. Cada font falla per separat i l'error surt a la pàgina d'avisos.
-  - Les columnes de la PSCP es resolen automàticament a partir de les metadades del conjunt.
+- **Fonts provades en viu:** GitHub Actions les ha consultat del 7 al 9 d'octubre de 2026 i les tres
+  funcionen (PSCP, PLACSP i TED), igual que el BDNS. A la PSCP, les columnes del conjunt de dades
+  es resolen automàticament.
+- **Calibratge (9 d'octubre):** la primera revisió va deixar passar 88 anuncis «amb encaix»,
+  massa genèrics. Ara:
+  - els CPV són exactes o famílies estretes;
+  - el verd demana un CPV de disseny i una paraula clau (o dues paraules clau);
+  - s'exclouen obres, direccions d'obra, manteniment, PRL i semblants.
+
+  Amb la mateixa mostra, de 26 anuncis nous en queden 2. Cal revisar-ho al cap d'unes setmanes,
+  per si ara se n'escapa algun de bo.
 - **El canal d'agregació de la PLACSP està desactivat** (`placsp_agregades_url` buit) fins a
   confirmar-ne l'adreça.
 - **El semàfor és orientatiu:** la decisió es pren sempre amb els plecs.

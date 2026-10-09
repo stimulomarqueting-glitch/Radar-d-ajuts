@@ -66,7 +66,9 @@ perfils:
       - tecnologías disruptivas
       - doble uso
       - dual use
-      - defensa
+      - industria de defensa
+      - sector de la defensa
+      - tecnologías de defensa
       - defence
       - seguridad y defensa
       - antidrón
@@ -143,8 +145,20 @@ config:
     signatura: "Xavi\nStimulo · stimulo.com"
   # Licitacions (python -m radar licitacions; aplicació > Licitacions). Vegeu docs/licitacions.md
   licitacions:
-    # CPV de serveis on Stimulo encaixa de ple (la resta de CPV de vigilancia.cpv sumen menys)
-    cpv_principals: ["71320000", "79930000", "73100000", "73300000", "73420000"]
+    # CPV: 8 xifres = codi exacte; menys = família. Calibrat amb les primeres revisions reals (oct. 2026):
+    # els codis genèrics d'enginyeria (713…), d'assaigs (716…) i de consultoria d'R+D (732…) portaven
+    # direccions d'obra, PRL i estudis sense relació amb Stimulo.
+    cpv_principals:
+      - "7132"      # serveis de disseny d'enginyeria
+      - "79930000"  # serveis de disseny especialitzat
+      - "79933000"  # serveis de suport al disseny
+      - "79934000"  # disseny de mobiliari
+      - "733"       # disseny i execució d'R+D
+      - "7342"      # estudis de previabilitat i demostració tecnològica
+    cpv:            # sumen menys: cal una paraula clau per arribar a verd
+      - "7312"      # desenvolupament experimental
+      - "734"       # R+D en seguretat i defensa
+      - "73100000"  # serveis d'R+D (codi genèric exacte)
     paraules_clau:
       - disseny industrial
       - diseño industrial
@@ -173,7 +187,10 @@ config:
       - robòtica
       - robótica
     # Paraules del títol que descarten un anunci encara que el CPV encaixi
-    exclou: [obres, obras, neteja d'edificis, limpieza de edificios, vigilància, vigilancia y seguridad, assegurances, seguros]
+    exclou: [obres, obras, direcció d'obra, dirección de obra, projecte constructiu, proyecto constructivo,
+             redacció del projecte, redacción de proyecto, manteniment, mantenimiento, neteja, limpieza,
+             vigilància, vigilancia y seguridad, prevenció de riscos, prevención de riesgos, assegurances, seguros,
+             arqueològica, arqueológica, topogràfic, topográfico, urbanisme, urbanismo, auditoria, auditoría]
     import_min: 15000        # per sota, l'esforç d'oferta rarament compensa
     import_max: 750000       # per sobre, cal solvència alta o UTE
     dies_minims: 10          # menys dies que aquests: termini just
