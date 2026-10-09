@@ -1,99 +1,359 @@
 [
  {
   "licitacio": {
-   "id": "ted:692635-2026",
-   "font": "TED",
-   "titol": "España – Servicios científicos y técnicos relacionados con la ingeniería – Mantenimiento de la infraestructura geodésica de Gipuzkoa durante 2027",
-   "organ": "Diputación Foral de Gipuzkoa - Departamento de Movilidad, Turismo y Ordenación del Territorio",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/692635-2026",
-   "expedient": "692635-2026",
-   "tipus": "",
-   "procediment": "",
-   "fase": "",
+   "id": "placsp:T-SER 30.24/8.2026:gerencia de transportes interurbanos de ",
+   "font": "PLACSP",
+   "titol": "Servicios y suministros necesarios para la organización y producción de los eventos corporativos de  TITSA, previstos para los días 11 y 18 de diciembre de 2026, a celebrar en algún espacio con capacidad para albergar hasta 600 personas por evento",
+   "organ": "Gerencia de Transportes Interurbanos de Tenerife S.A.U.",
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=50YhN11KjgmcCF8sV%2BqtYA%3D%3D",
+   "expedient": "T-SER 30.24/8.2026",
+   "tipus": "2",
+   "procediment": "9",
+   "fase": "PUB",
    "cpv": [
-    "71350000",
-    "71350000"
+    "79952000",
+    "79931000",
+    "39220000",
+    "39298900",
+    "45451000",
+    "39000000",
+    "32321300",
+    "15000000",
+    "55000000",
+    "79710000",
+    "79950000",
+    "32320000",
+    "71317000"
    ],
-   "import_eur": null,
-   "valor_estimat": null,
-   "publicada": "2026-10-07",
-   "termini": "2026-11-05",
-   "lloc": "UE",
+   "import_eur": 58800.0,
+   "valor_estimat": 58800.0,
+   "publicada": "2026-10-08",
+   "termini": "2026-10-26",
+   "lloc": "ES709",
    "lot": ""
   },
   "avaluacio": {
-   "punts": 56,
-   "semafor": "groc",
-   "recomanacio": "Vigilar",
+   "punts": 73,
+   "semafor": "verd",
+   "recomanacio": "Analitzar",
    "motius": [
-    "CPV: 71350000"
+    "CPV: 79931000"
    ],
-   "alertes": [
-    "Import per confirmar."
-   ],
-   "dies": 28,
+   "alertes": [],
+   "dies": 17,
    "encaix": true
   }
  },
  {
   "licitacio": {
-   "id": "ted:693030-2026",
-   "font": "TED",
-   "titol": "España – Servicios de arquitectura, ingeniería y planificación – Redacción de Proyecto, Dirección de Obra, Coordinación de Seguridad y Salud, de Urbanización de diversas calles, Programa de Ayuda a Inversiones (PAI), cofinanciado por la Unión Europea - Fondo Europeo de Desarrollo Regional (FEDER) en el Marco del Programa operativo Plurirregional de España POPE 2021-2027, 2 lotes.",
+   "id": "pscp:ac516b44-9b06-49c2-b766-7d25baa03be8",
+   "font": "PSCP",
+   "titol": "SERVEIS D'ASSISTÈNCIA TÈCNICA A LÀREA D'INFRAESTRUCTURES DE CIRCUITS DE CATALUNYA",
+   "organ": "Circuits de Catalunya, SL",
+   "url": "https://contractaciopublica.cat/ca/detall-publicacio/ac516b44-9b06-49c2-b766-7d25baa03be8/300904475",
+   "expedient": "CCSL 2026-07-21",
+   "tipus": "Serveis",
+   "procediment": "Obert",
+   "fase": "Anunci de licitació",
+   "cpv": [
+    "71356200"
+   ],
+   "import_eur": 46800.0,
+   "valor_estimat": 140400.0,
+   "publicada": "2026-10-08",
+   "termini": "2026-10-23",
+   "lloc": "Montmeló",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 69,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 71356200"
+   ],
+   "alertes": [],
+   "dies": 14,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "placsp:20809/2026:concejalia delegada en materia de contra",
+   "font": "PLACSP",
+   "titol": "Redacción de Proyecto, Dirección de Obra, Coordinación de Seguridad y Salud, de Urbanización de diversas calles, Programa de Ayuda a Inversiones (PAI), cofinanciado por la Unión Europea - Fondo Europeo de Desarrollo Regional (FEDER) en el Marco del Programa operativo Plurirregional de España POPE 2021-2027, 2 lotes.",
    "organ": "Concejalía Delegada en Materia de Contratación del Ayuntamiento de Torremolinos",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/693030-2026",
-   "expedient": "693030-2026",
-   "tipus": "",
-   "procediment": "",
-   "fase": "",
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=NuVWnp7aDfB9PLkba5eRog%3D%3D",
+   "expedient": "20809/2026",
+   "tipus": "2",
+   "procediment": "1",
+   "fase": "PUB",
    "cpv": [
     "71240000",
     "71317210",
     "71240000",
-    "71240000",
     "71317210",
+    "71240000",
     "71317210"
    ],
-   "import_eur": null,
-   "valor_estimat": null,
+   "import_eur": 539314.15,
+   "valor_estimat": 647176.98,
    "publicada": "2026-10-08",
    "termini": "2026-11-05",
-   "lloc": "UE",
+   "lloc": "ES617",
    "lot": ""
   },
   "avaluacio": {
-   "punts": 56,
+   "punts": 69,
    "semafor": "groc",
    "recomanacio": "Vigilar",
    "motius": [
     "CPV: 71317210"
    ],
-   "alertes": [
-    "Import per confirmar."
-   ],
-   "dies": 28,
+   "alertes": [],
+   "dies": 27,
    "encaix": true
   }
  },
  {
   "licitacio": {
-   "id": "ted:693239-2026",
+   "id": "pscp:d5bc96c1-12df-4e37-a92e-242f6e348fd8",
+   "font": "PSCP",
+   "titol": "Revisió de Plans d'Autoprotecció en centres propis (PAU)",
+   "organ": "Departament de Drets Socials i Inclusió",
+   "url": "https://contractaciopublica.cat/ca/detall-publicacio/d5bc96c1-12df-4e37-a92e-242f6e348fd8/300904054",
+   "expedient": "BE-2027-55",
+   "tipus": "Serveis",
+   "procediment": "",
+   "fase": "Anunci de licitació",
+   "cpv": [
+    "71317200"
+   ],
+   "import_eur": 44070.0,
+   "valor_estimat": 44070.0,
+   "publicada": "2026-10-08",
+   "termini": "2026-10-23",
+   "lloc": "Catalunya",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 66,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 71317200"
+   ],
+   "alertes": [],
+   "dies": 14,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:695584-2026",
    "font": "TED",
-   "titol": "España – Servicios topográficos – Servicio para la elaboración de estudios topográficos en distintas localizaciones aeronáuticas",
-   "organ": "Presidencia de la Agencia Estatal de Meteorología",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/693239-2026",
-   "expedient": "693239-2026",
+   "titol": "España – Servicios de investigación y desarrollo experimental – Compra Pública Precomercial de servicios de i+D para el desarrollo de prototipos de sistemas terrestres no tripulados (UGV) para misiones de seguridad y defensa que requieran del uso de medios pesados, eliminando el riesgo para el personal que las ejecuta con cargo al FONDO EUROPEO DE DESARROLLO REGIONAL (FEDER)",
+   "organ": "Dirección General del Centro para el Desarrollo Tecnológico y la Innovación, E.P.E",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/695584-2026",
+   "expedient": "695584-2026",
    "tipus": "",
    "procediment": "",
    "fase": "",
    "cpv": [
-    "71351810",
-    "71351810"
+    "73100000",
+    "73300000",
+    "73410000",
+    "73420000",
+    "73423000",
+    "73430000",
+    "73433000",
+    "73100000",
+    "73100000",
+    "73300000",
+    "73410000",
+    "73420000",
+    "73423000",
+    "73430000",
+    "73433000",
+    "73300000",
+    "73410000",
+    "73420000",
+    "73423000",
+    "73430000",
+    "73433000"
    ],
    "import_eur": null,
    "valor_estimat": null,
    "publicada": "2026-10-08",
-   "termini": "2026-11-11",
+   "termini": null,
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 64,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 73100000, 73300000, 73420000, 73423000",
+    "paraules: compra pública precomercial"
+   ],
+   "alertes": [
+    "Termini per confirmar a l'anunci.",
+    "Import per confirmar."
+   ],
+   "dies": null,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "placsp:CMAYOR/2026/FIRAV/0026:direccion general de la societat valenci",
+   "font": "PLACSP",
+   "titol": "Servicios de prevención de riesgos laborales, cardio protección, plataforma CAE de gestión documental con validación delegada y recursos preventivos en Feria Valencia.",
+   "organ": "Dirección General de la Societat Valenciana FIRA València S.A.",
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=y4mSGDrlLkzVGIpKDxgsAQ%3D%3D",
+   "expedient": "CMAYOR/2026/FIRAV/0026",
+   "tipus": "2",
+   "procediment": "1",
+   "fase": "PUB",
+   "cpv": [
+    "71317200",
+    "80550000",
+    "50421000",
+    "71317210",
+    "48000000",
+    "72416000",
+    "71317200",
+    "50421000",
+    "80550000",
+    "72416000",
+    "48000000",
+    "72267100",
+    "71317210",
+    "71317200"
+   ],
+   "import_eur": 28000.0,
+   "valor_estimat": 84000.0,
+   "publicada": "2026-10-08",
+   "termini": "2026-10-23",
+   "lloc": "ES523",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 63,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 71317200, 71317210"
+   ],
+   "alertes": [],
+   "dies": 14,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:696244-2026",
+   "font": "TED",
+   "titol": "España – Servicios de investigación marina – Contratación del servicio de mejora del conocimiento de las poblaciones de cetáceos mediante campañas de foto-identificación financiado con el Fondo Europeo de Desarrollo Regional (FEDER).",
+   "organ": "Tecnologías y Servicios Agrarios S.A.,S.M.E., M.P., (TRAGSATEC)",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/696244-2026",
+   "expedient": "696244-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "73112000",
+    "73112000",
+    "73112000",
+    "73112000",
+    "73112000",
+    "73112000",
+    "73112000"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-08",
+   "termini": "2026-10-22",
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 60,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 73112000"
+   ],
+   "alertes": [
+    "Import per confirmar."
+   ],
+   "dies": 13,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:697630-2026",
+   "font": "TED",
+   "titol": "España – Servicios de investigación marina – Contratación del servicio de mejora del conocimiento de las poblaciones de cetáceos mediante campañas de foto-identificación financiado con el Fondo Europeo de Desarrollo Regional (FEDER).",
+   "organ": "Tecnologías y Servicios Agrarios S.A.,S.M.E., M.P., (TRAGSATEC)",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/697630-2026",
+   "expedient": "697630-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "73112000",
+    "73112000",
+    "73112000",
+    "73112000",
+    "73112000",
+    "73112000",
+    "73112000"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": "2026-10-22",
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 60,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 73112000"
+   ],
+   "alertes": [
+    "Import per confirmar."
+   ],
+   "dies": 13,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:696027-2026",
+   "font": "TED",
+   "titol": "España – Servicios de investigación – Servicio de elaboración de informes sobre indicadores clave de rendimiento en seguridad vial. 5 lotes.",
+   "organ": "Dirección General de Tráfico",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/696027-2026",
+   "expedient": "696027-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "73110000",
+    "63712710",
+    "79315000",
+    "73110000"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-08",
+   "termini": null,
    "lloc": "UE",
    "lot": ""
   },
@@ -102,33 +362,228 @@
    "semafor": "groc",
    "recomanacio": "Vigilar",
    "motius": [
-    "CPV: 71351810"
+    "CPV: 73110000"
    ],
    "alertes": [
+    "Termini per confirmar a l'anunci.",
     "Import per confirmar."
    ],
-   "dies": 34,
+   "dies": null,
    "encaix": true
   }
  },
  {
   "licitacio": {
-   "id": "ted:693781-2026",
+   "id": "ted:696998-2026",
    "font": "TED",
-   "titol": "España – Servicios de inspección técnica de automóviles – Revisión técnica de los vehículos autotaxi",
-   "organ": "Área de Gobierno de Urbanismo, Medio Ambiente y Movilidad del Ayuntamiento de Madrid",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/693781-2026",
-   "expedient": "693781-2026",
+   "titol": "España – Servicios de ingeniería – Tercera revisión y análisis general de la seguridad de las presas y embalses de Sichar, derivación de Sichar, Alcora y María Cristina (Castellón)",
+   "organ": "Presidencia de la Confederación Hidrográfica del Júcar",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/696998-2026",
+   "expedient": "696998-2026",
    "tipus": "",
    "procediment": "",
    "fase": "",
    "cpv": [
-    "71631200",
-    "71631200"
+    "71300000",
+    "71300000"
    ],
    "import_eur": null,
    "valor_estimat": null,
-   "publicada": "2026-10-08",
+   "publicada": "2026-10-09",
+   "termini": "2026-11-09",
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 56,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 71300000"
+   ],
+   "alertes": [
+    "Import per confirmar."
+   ],
+   "dies": 31,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:697840-2026",
+   "font": "TED",
+   "titol": "España – Servicios de investigación – Servicio de elaboración de informes sobre indicadores clave de rendimiento en seguridad vial. 5 lotes.",
+   "organ": "Dirección General de Tráfico",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/697840-2026",
+   "expedient": "697840-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "73110000",
+    "63712710",
+    "79315000",
+    "63712710",
+    "63712710"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": null,
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 56,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 73110000"
+   ],
+   "alertes": [
+    "Termini per confirmar a l'anunci.",
+    "Import per confirmar."
+   ],
+   "dies": null,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:697982-2026",
+   "font": "TED",
+   "titol": "España – Servicios de arquitectura y servicios conexos – Redacción de proyecto básico y de ejecución del nuevo edificio de Ingeniería del Agua (4R) en el Campus de Vera de la Universitat Politècnica de València",
+   "organ": "Rectorado de la Universitat Politècnica de València",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/697982-2026",
+   "expedient": "697982-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "71200000",
+    "71300000",
+    "71200000",
+    "71300000"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": "2026-11-23",
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 56,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 71300000"
+   ],
+   "alertes": [
+    "Import per confirmar."
+   ],
+   "dies": 45,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:698171-2026",
+   "font": "TED",
+   "titol": "España – Servicios de ingeniería – Asistencia técnica para la redacción del anteproyecto para la ampliación de la ETAP de Rioseco.",
+   "organ": "Consorcio para el Abastecimiento de Agua y Saneamiento en el Principado de Asturias",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/698171-2026",
+   "expedient": "698171-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "71300000",
+    "71300000"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": "2026-11-09",
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 56,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 71300000"
+   ],
+   "alertes": [
+    "Import per confirmar."
+   ],
+   "dies": 31,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:698614-2026",
+   "font": "TED",
+   "titol": "España – Servicios de urbanismo – Contratación del servicio de asistencia técnica sobre condiciones urbanísticas y de viabilidad para el desarrollo de suelos destinados a usos industriales y actividades productivas en Castilla y León, incluyendo la planificación y la gestión de las actuaciones seleccionada, mediante los instrumentos de ordenación del territorio y de planificación urbanística, general y de desarrollo.",
+   "organ": "Sociedad Pública de Infraestructuras y Medio Ambiente de Castilla y León S.A.",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/698614-2026",
+   "expedient": "698614-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "71410000",
+    "71210000",
+    "71311300",
+    "71410000",
+    "71210000",
+    "71311300"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": "2026-11-09",
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 56,
+   "semafor": "groc",
+   "recomanacio": "Vigilar",
+   "motius": [
+    "CPV: 71311300"
+   ],
+   "alertes": [
+    "Import per confirmar."
+   ],
+   "dies": 31,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:699301-2026",
+   "font": "TED",
+   "titol": "España – Servicios de desarrollo de software personalizado – Servicio de diseño, desarrollo e implementación de sistemas de gestión de información del Centro de Coordinación de la Información Nacional sobre Incendios Forestales, orientados al apoyo a la coordinación, planificación, análisis del riesgo y toma de decisiones en el ámbito de los incendios forestales.",
+   "organ": "Dirección General de Biodiversidad, Bosques y Desertificación",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/699301-2026",
+   "expedient": "699301-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "72230000",
+    "71351610",
+    "72222300",
+    "72230000",
+    "71351610",
+    "72222300"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
    "termini": "2026-11-10",
    "lloc": "UE",
    "lot": ""
@@ -138,51 +593,7 @@
    "semafor": "groc",
    "recomanacio": "Vigilar",
    "motius": [
-    "CPV: 71631200"
-   ],
-   "alertes": [
-    "Import per confirmar."
-   ],
-   "dies": 33,
-   "encaix": true
-  }
- },
- {
-  "licitacio": {
-   "id": "ted:694054-2026",
-   "font": "TED",
-   "titol": "España – Servicios de auditoría medioambiental de empresas – Servicio de cualificación anual de la Bioseguridad Ambiental y evaluación semestral del nivel de higienización del sistema de ventilación en quirófanos y otras salas. Evaluación trimestral del nivel de contención en quirófanos y otras salas de ambiente controlado, respetuoso con el medio ambiente, del Hospital de Denia",
-   "organ": "Departamento de Salud de Denia. Dirección Económica-Gerencia",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/694054-2026",
-   "expedient": "694054-2026",
-   "tipus": "",
-   "procediment": "",
-   "fase": "",
-   "cpv": [
-    "90714200",
-    "71610000",
-    "71620000",
-    "90714500",
-    "90731100",
-    "90714200",
-    "71610000",
-    "71620000",
-    "90714500",
-    "90731100"
-   ],
-   "import_eur": null,
-   "valor_estimat": null,
-   "publicada": "2026-10-08",
-   "termini": "2026-11-09",
-   "lloc": "UE",
-   "lot": ""
-  },
-  "avaluacio": {
-   "punts": 56,
-   "semafor": "groc",
-   "recomanacio": "Vigilar",
-   "motius": [
-    "CPV: 71610000, 71620000"
+    "CPV: 71351610"
    ],
    "alertes": [
     "Import per confirmar."
@@ -193,28 +604,71 @@
  },
  {
   "licitacio": {
-   "id": "ted:694332-2026",
+   "id": "ted:699459-2026",
    "font": "TED",
-   "titol": "España – Servicios de ingeniería – Servicio de redacción del anteproyecto de la actuación «mejora del funcionamiento y calidad del agua de la ETAP de Río Verde (T.M. Marbella)», para ACOSOL, S.A.",
-   "organ": "Consejería delegada de ACOSOL, S.A.U.",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/694332-2026",
-   "expedient": "694332-2026",
+   "titol": "España – Servicios de planificación forestal sectorial – El objeto del presente contrato es la redacción de instrumentos de ordenación forestal, de acuerdo con la normativa vigente.",
+   "organ": "Consejería de Medio Ambiente y Energía de la Junta de Castilla y León",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/699459-2026",
+   "expedient": "699459-2026",
    "tipus": "",
    "procediment": "",
    "fase": "",
    "cpv": [
-    "71300000",
-    "71200000",
-    "71243000",
-    "71311300",
-    "71300000",
-    "71200000",
-    "71243000",
-    "71311300"
+    "77231900",
+    "73220000",
+    "90712200",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "77231900",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200",
+    "73220000",
+    "90712200"
    ],
    "import_eur": null,
    "valor_estimat": null,
-   "publicada": "2026-10-08",
+   "publicada": "2026-10-09",
    "termini": "2026-11-09",
    "lloc": "UE",
    "lot": ""
@@ -224,121 +678,113 @@
    "semafor": "groc",
    "recomanacio": "Vigilar",
    "motius": [
-    "CPV: 71300000, 71311300"
+    "CPV: 73220000"
    ],
    "alertes": [
     "Import per confirmar."
    ],
-   "dies": 32,
+   "dies": 31,
    "encaix": true
   }
  },
  {
   "licitacio": {
-   "id": "ted:694424-2026",
-   "font": "TED",
-   "titol": "España – Servicios especializados de diseño – Servicio de Diseño, Creatividad, Planes de Medios de Impresión de Material Publicitario para las Campañas de Sensibilización y Concienciación en materia de Igualdad y Violencia de Género del Ayuntamiento de Málaga respetuoso con el Medio Ambiente.",
-   "organ": "Junta de Gobierno del Ayuntamiento de Málaga",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/694424-2026",
-   "expedient": "694424-2026",
-   "tipus": "",
-   "procediment": "",
-   "fase": "",
+   "id": "placsp:HIL/2023/01/F/0020:gerencia del hospital intermutual de lev",
+   "font": "PLACSP",
+   "titol": "Sistema Dinámico de Adquisición para el suministro (Adquisición/Alquiler) de equipos de electromedicina y producto sanitario asociado a su uso para el Hospital Intermutual de Levante",
+   "organ": "Gerencia del Hospital Intermutual de Levante",
+   "url": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=bXyk9Mb3lflvYnTkQN0%2FZA%3D%3D",
+   "expedient": "HIL/2023/01/F/0020",
+   "tipus": "1",
+   "procediment": "2",
+   "fase": "EV",
    "cpv": [
-    "79930000",
-    "79341400",
-    "79930000",
-    "79341400"
+    "30000000",
+    "33000000",
+    "33000000"
    ],
-   "import_eur": null,
-   "valor_estimat": null,
+   "import_eur": 276000.0,
+   "valor_estimat": 276000.0,
    "publicada": "2026-10-08",
-   "termini": null,
-   "lloc": "UE",
+   "termini": "2027-05-03",
+   "lloc": "ES523",
    "lot": ""
   },
   "avaluacio": {
-   "punts": 56,
-   "semafor": "groc",
-   "recomanacio": "Vigilar",
+   "punts": 57,
+   "semafor": "gris",
+   "recomanacio": "Informació",
    "motius": [
-    "CPV: 79930000"
+    "paraules: producto sanitario",
+    "fase: EV (no admet ofertes)"
    ],
-   "alertes": [
-    "Termini per confirmar a l'anunci.",
-    "Import per confirmar."
-   ],
-   "dies": null,
+   "alertes": [],
+   "dies": 206,
    "encaix": true
   }
  },
  {
   "licitacio": {
-   "id": "ted:693048-2026",
-   "font": "TED",
-   "titol": "España – Servicios de investigación y desarrollo experimental – Pre-commercial Procurement of an innovative Systemic Sustainability Transition Solution for Health Care Organisations (suHCO)",
-   "organ": "Consorci de Salut i d’Atenció Social de Catalunya",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/693048-2026",
-   "expedient": "693048-2026",
-   "tipus": "",
-   "procediment": "",
-   "fase": "",
+   "id": "pscp:c54b5846-332c-4a28-9392-81b71699c8e8",
+   "font": "PSCP",
+   "titol": "Contractació menor del servei de redacció d'un estudi d'aïllament i de condicionament acústic de la Sala de Cultura de Cal Gallifa",
+   "organ": "Ajuntament de Sant Joan de Vilatorrada",
+   "url": "https://contractaciopublica.cat/ca/detall-publicacio/c54b5846-332c-4a28-9392-81b71699c8e8/300902853",
+   "expedient": "X2026002711",
+   "tipus": "Serveis",
+   "procediment": "Contracte menor",
+   "fase": "Anunci de licitació",
    "cpv": [
-    "73100000",
-    "73110000",
-    "72212445",
-    "72222300",
-    "90713000",
-    "90714100",
-    "90711300",
-    "80500000",
-    "79342200",
-    "90711000",
-    "72212783",
-    "73100000"
+    "71313200"
    ],
-   "import_eur": null,
-   "valor_estimat": null,
-   "publicada": "2026-10-08",
-   "termini": "2026-10-17",
-   "lloc": "UE",
+   "import_eur": 10000.0,
+   "valor_estimat": 10000.0,
+   "publicada": "2026-10-07",
+   "termini": "2026-10-15",
+   "lloc": "Sant Joan de Vilatorrada",
    "lot": ""
   },
   "avaluacio": {
-   "punts": 52,
-   "semafor": "groc",
-   "recomanacio": "Vigilar",
+   "punts": 47,
+   "semafor": "gris",
+   "recomanacio": "Descartar",
    "motius": [
-    "CPV: 73100000, 73110000"
+    "CPV: 71313200",
+    "import petit (10.000 €)"
    ],
    "alertes": [
-    "Termini just: 9 dies.",
-    "Import per confirmar."
+    "Termini just: 6 dies."
    ],
-   "dies": 9,
+   "dies": 6,
    "encaix": true
   }
  },
  {
   "licitacio": {
-   "id": "ted:693744-2026",
+   "id": "ted:696508-2026",
    "font": "TED",
-   "titol": "España – Trabajos de instalación de cableado y accesorios eléctricos – Primera prórroga del Servicio de conexión y desconexión de los buques y los trabajos de mantenimiento del contrato para la Redacción, ejecución del proyecto y realización del servicio piloto de suministro eléctrico a buques portacontenedores",
-   "organ": "Presidencia del Consejo de Administración de la Autoridad Portuaria de Barcelona (PORT DE BARCELONA)",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/693744-2026",
-   "expedient": "693744-2026",
+   "titol": "España – Productos químicos puros y otros productos químicos – Establecimiento de un Sistema Dinámico de Adquisición (SDA) para el suministro de medios de cultivo, reactivos, material de uso general, material de referencia y ejercicios de Inter comparación, para la realización de análisis microbiológicos y fisicoquímicos de aguas y alimentos para el desarrollo de los Programas del Laboratorio Municipal",
+   "organ": "Junta de Gobierno del Ayuntamiento de Alcobendas",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/696508-2026",
+   "expedient": "696508-2026",
    "tipus": "",
    "procediment": "",
    "fase": "",
    "cpv": [
-    "45311000",
-    "43316000",
-    "50532000",
-    "71310000",
-    "45311000",
-    "43316000",
-    "50532000",
-    "71310000"
+    "24900000",
+    "24111800",
+    "24931250",
+    "33696500",
+    "38000000",
+    "38416000",
+    "73200000",
+    "24900000",
+    "24111800",
+    "24931250",
+    "33696500",
+    "38000000",
+    "38416000",
+    "73200000"
    ],
    "import_eur": null,
    "valor_estimat": null,
@@ -352,7 +798,7 @@
    "semafor": "gris",
    "recomanacio": "Descartar",
    "motius": [
-    "CPV: 71310000"
+    "CPV: 73200000"
    ],
    "alertes": [
     "Termini per confirmar a l'anunci.",
@@ -364,99 +810,45 @@
  },
  {
   "licitacio": {
-   "id": "ted:694070-2026",
+   "id": "ted:696990-2026",
    "font": "TED",
-   "titol": "España – Servicios de consultoría en materia de carreteras – Explotación de la red de estaciones de aforos de carreteras y los estudios relativos a la movilidad y el tráfico en el Territorio Histórico de Bizkaia",
-   "organ": "Diputación Foral de Bizkaia - Departamento de Infraestructuras y Desarrollo Territorial",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/694070-2026",
-   "expedient": "694070-2026",
+   "titol": "España – Trabajos de mejoramiento del medio ambiente – Acuerdo Marco para tratamientos selvícolas en montes de utilidad pública de Castilla-La Mancha.",
+   "organ": "Secretaría General de la Consejería de Desarrollo Sostenible de la Junta de Comunidades de Castilla-La Mancha",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/696990-2026",
+   "expedient": "696990-2026",
    "tipus": "",
    "procediment": "",
    "fase": "",
    "cpv": [
-    "71311210",
-    "71311210"
-   ],
-   "import_eur": null,
-   "valor_estimat": null,
-   "publicada": "2026-10-08",
-   "termini": null,
-   "lloc": "UE",
-   "lot": ""
-  },
-  "avaluacio": {
-   "punts": 46,
-   "semafor": "gris",
-   "recomanacio": "Descartar",
-   "motius": [
-    "CPV: 71311210"
-   ],
-   "alertes": [
-    "Termini per confirmar a l'anunci.",
-    "Import per confirmar."
-   ],
-   "dies": null,
-   "encaix": true
-  }
- },
- {
-  "licitacio": {
-   "id": "ted:695184-2026",
-   "font": "TED",
-   "titol": "España – Luces para alumbrado exterior – Suministro en régimen de alquiler de elementos de alumbrado navideño en Zaragoza para la Navidad 2026-2027 y la asistencia técnica para el montaje y desmontaje del alumbrado navideño. 3 Lotes.",
-   "organ": "Gobierno de Zaragoza",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/695184-2026",
-   "expedient": "695184-2026",
-   "tipus": "",
-   "procediment": "",
-   "fase": "",
-   "cpv": [
-    "31527200",
-    "45316100",
+    "45262640",
     "71300000",
-    "31527200",
-    "45316100"
-   ],
-   "import_eur": null,
-   "valor_estimat": null,
-   "publicada": "2026-10-08",
-   "termini": null,
-   "lloc": "UE",
-   "lot": ""
-  },
-  "avaluacio": {
-   "punts": 46,
-   "semafor": "gris",
-   "recomanacio": "Descartar",
-   "motius": [
-    "CPV: 71300000"
-   ],
-   "alertes": [
-    "Termini per confirmar a l'anunci.",
-    "Import per confirmar."
-   ],
-   "dies": null,
-   "encaix": true
-  }
- },
- {
-  "licitacio": {
-   "id": "ted:695418-2026",
-   "font": "TED",
-   "titol": "España – Servicios de ingeniería – Technology Development Programme Call 2025",
-   "organ": "The European Joint Undertaking for ITER and the Development of Fusion Energy ('Fusion for Energy')",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/695418-2026",
-   "expedient": "695418-2026",
-   "tipus": "",
-   "procediment": "",
-   "fase": "",
-   "cpv": [
+    "77230000",
+    "45262640",
+    "45262640",
+    "45262640",
+    "45262640",
+    "45262640",
+    "45262640",
+    "45262640",
+    "45262640",
+    "45262640",
+    "45262640",
+    "77230000",
+    "71300000",
+    "71300000",
+    "71300000",
+    "71300000",
+    "71300000",
+    "71300000",
+    "71300000",
+    "71300000",
+    "71300000",
     "71300000",
     "71300000"
    ],
    "import_eur": null,
    "valor_estimat": null,
-   "publicada": "2026-10-08",
+   "publicada": "2026-10-09",
    "termini": null,
    "lloc": "UE",
    "lot": ""
@@ -478,28 +870,22 @@
  },
  {
   "licitacio": {
-   "id": "ted:695518-2026",
+   "id": "ted:697228-2026",
    "font": "TED",
-   "titol": "España – Trabajos de construcción de instalaciones para investigación y ensayos – Redacción de proyecto y construcción de planta piloto de chips fotónicos.",
-   "organ": "Rectorado de la Universitat Politècnica de València",
-   "url": "https://ted.europa.eu/ca/notice/-/detail/695518-2026",
-   "expedient": "695518-2026",
+   "titol": "España – Servicios de consultoría en sistemas de transporte – REDACCIÓN DE DIFERENTES PROYECTOS DE CONSTRUCCIÓN DE CARRETERAS EN EL ÁMBITO DE ANDALUCÍA (5 LOTES)",
+   "organ": "Consejeria de Fomento y Movilidad",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/697228-2026",
+   "expedient": "697228-2026",
    "tipus": "",
    "procediment": "",
    "fase": "",
    "cpv": [
-    "45214620",
-    "45214631",
-    "71240000",
-    "71300000",
-    "45214620",
-    "45214631",
-    "71240000",
-    "71300000"
+    "71311200",
+    "71000000"
    ],
    "import_eur": null,
    "valor_estimat": null,
-   "publicada": "2026-10-08",
+   "publicada": "2026-10-09",
    "termini": null,
    "lloc": "UE",
    "lot": ""
@@ -509,13 +895,204 @@
    "semafor": "gris",
    "recomanacio": "Descartar",
    "motius": [
-    "CPV: 71300000"
+    "CPV: 71311200"
    ],
    "alertes": [
     "Termini per confirmar a l'anunci.",
     "Import per confirmar."
    ],
    "dies": null,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:697961-2026",
+   "font": "TED",
+   "titol": "España – Servicios de ensayo, análisis y consultoría técnicos – Ejecución del plan integral de seguimiento de la calidad ambiental de las aguas de la dársena del Puerto de Sevilla",
+   "organ": "Autoridad Portuaria de Sevilla",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/697961-2026",
+   "expedient": "697961-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "71600000",
+    "71600000"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": null,
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 46,
+   "semafor": "gris",
+   "recomanacio": "Descartar",
+   "motius": [
+    "CPV: 71600000"
+   ],
+   "alertes": [
+    "Termini per confirmar a l'anunci.",
+    "Import per confirmar."
+   ],
+   "dies": null,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:698015-2026",
+   "font": "TED",
+   "titol": "España – Servicios de asesoramiento y consultoría en ingeniería – Servicios de asistencia técnica a la gestión técnica de mantenimiento y servicios generales de L'Auditori, con medidas de contratación pública sostenible",
+   "organ": "Consorci de l'Auditori i l'Orquestra",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/698015-2026",
+   "expedient": "698015-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "71318000",
+    "50000000",
+    "71318000",
+    "50000000"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": null,
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 46,
+   "semafor": "gris",
+   "recomanacio": "Descartar",
+   "motius": [
+    "CPV: 71318000"
+   ],
+   "alertes": [
+    "Termini per confirmar a l'anunci.",
+    "Import per confirmar."
+   ],
+   "dies": null,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:698513-2026",
+   "font": "TED",
+   "titol": "España – Servicios de consultoría en sistemas de transporte – REDACCIÓN DE DIFERENTES PROYECTOS DE CONSTRUCCIÓN DE CARRETERAS EN EL ÁMBITO DE ANDALUCÍA (5 LOTES)",
+   "organ": "Consejeria de Fomento y Movilidad",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/698513-2026",
+   "expedient": "698513-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "71311200",
+    "71000000"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": null,
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 46,
+   "semafor": "gris",
+   "recomanacio": "Descartar",
+   "motius": [
+    "CPV: 71311200"
+   ],
+   "alertes": [
+    "Termini per confirmar a l'anunci.",
+    "Import per confirmar."
+   ],
+   "dies": null,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:698629-2026",
+   "font": "TED",
+   "titol": "España – Servicios de consultoría en telecomunicaciones – Seguimiento de la caracterización de la red de telefonía de la Diputación Foral de Bizkaia durante los años 2023 y 2024",
+   "organ": "Diputación Foral de Bizkaia - Departamento de Administración Pública y Relaciones Institucionales",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/698629-2026",
+   "expedient": "698629-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "71316000",
+    "71356200",
+    "71316000",
+    "71356200"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": null,
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 46,
+   "semafor": "gris",
+   "recomanacio": "Descartar",
+   "motius": [
+    "CPV: 71316000, 71356200"
+   ],
+   "alertes": [
+    "Termini per confirmar a l'anunci.",
+    "Import per confirmar."
+   ],
+   "dies": null,
+   "encaix": true
+  }
+ },
+ {
+  "licitacio": {
+   "id": "ted:698827-2026",
+   "font": "TED",
+   "titol": "España – Servicios de ingeniería ferroviaria – Servicios para la redacción del proyecto de construcción de remodelación de la terminal de transporte de mercancías de Córdoba. Vía, electrificación, urbanización y accesos.",
+   "organ": "Administrador de Infraestructuras Ferroviarias",
+   "url": "https://ted.europa.eu/ca/notice/-/detail/698827-2026",
+   "expedient": "698827-2026",
+   "tipus": "",
+   "procediment": "",
+   "fase": "",
+   "cpv": [
+    "71311230",
+    "71356000",
+    "71311230",
+    "71356000"
+   ],
+   "import_eur": null,
+   "valor_estimat": null,
+   "publicada": "2026-10-09",
+   "termini": "2026-10-14",
+   "lloc": "UE",
+   "lot": ""
+  },
+  "avaluacio": {
+   "punts": 42,
+   "semafor": "gris",
+   "recomanacio": "Descartar",
+   "motius": [
+    "CPV: 71311230, 71356000"
+   ],
+   "alertes": [
+    "Termini just: 5 dies.",
+    "Import per confirmar."
+   ],
+   "dies": 5,
    "encaix": true
   }
  }

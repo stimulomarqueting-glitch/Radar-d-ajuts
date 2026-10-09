@@ -1,6 +1,6 @@
 # Radar d'ajuts, subvencions i licitacions — Stimulo
 
-_Generat el 08/10/2026 amb `python -m radar informe`. 76 convocatòries al catàleg · 43 fonts vigilades._
+_Generat el 09/10/2026 amb `python -m radar informe`. 76 convocatòries al catàleg · 43 fonts vigilades._
 
 > Les dates marcades amb ≈ són **estimades** a partir de l'edició anterior: serveixen de senyal d'alerta, no substitueixen la convocatòria oficial.
 
@@ -33,11 +33,6 @@ _Generat el 08/10/2026 amb `python -m radar informe`. 76 convocatòries al catà
 
 | Data | Senyal | Convocatòria | Acció |
 |---|---|---|---|
-| 08/10/2026 | 👀 vigilar | ACCIÓ · Cupons ACCIÓ 2026 per a la competitivitat empresarial | Cupons ACCIÓ: confirmar quines modalitats segueixen obertes fins al 16/11 (programes europeus, protecció, IA) |
-| 08/10/2026 | 👀 vigilar | Departament de Recerca i Universitats / AGAUR · Doctorats Industrials (Generalitat) | Doctorats Industrials: verificar si la convocatòria DI-2026/2027 està oberta |
-| 08/10/2026 | 👀 vigilar | Departament de Recerca i Universitats (gestió AGAUR) · PILOT – Programa d'innovació tecnològica per a l'autonomia estratègica | PILOT: confirmar bases, import per projecte i termini (AGAUR / DOGC) i començar a muntar consorci |
-| 08/10/2026 | 🟢 obertura | Agencia Estatal de Investigación · Torres Quevedo (PTQ) 2026 | Obertura confirmada: Torres Quevedo (PTQ) 2026 |
-| 08/10/2026 | 🔴 tancament | Agencia Estatal de Investigación · Torres Quevedo (PTQ) 2026 | Darrera revisió: tancament confirmat el 29/10/2026 |
 | 09/10/2026 | 👀 vigilar | Comissió Europea – DG DEFIS · EDIP – BraveTech EU (subvencions per a pimes de defensa) | BraveTech EU: confirmar dates (finestra set.–des. 2026) i requisits |
 | ≈ 09/10/2026 | 🔴 tancament | ACCIÓ · Inversions empresarials d'alt impacte | Tancament estimat: Inversions empresarials d'alt impacte |
 | 09/10/2026 | 👀 vigilar | ACCIÓ · Projectes d'innovació tecnològica Green – Canvi climàtic | Green ACCIÓ: verificar si hi ha edició 2026 (la de 2025 tancava el 16/10) |
@@ -156,6 +151,7 @@ _Generat el 08/10/2026 amb `python -m radar informe`. 76 convocatòries al catà
 | 01/04/2027 | 🔴 tancament | Comissió Europea – EIC · EIC Accelerator (Open i Challenges) | Tall EIC Accelerator (Open i Challenges) |
 | 01/04/2027 | 🔴 tancament | Comissió Europea – EIC · Women TechEU | Tall Women TechEU |
 | ≈ 03/04/2027 | 🟡 preparar | OTAN – DIANA · NATO DIANA Challenge Programme | Preparar projecte i socis: obertura estimada el 02/06/2027 |
+| 07/04/2027 | 🔴 tancament | Comissió Europea · Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027 | Tancament confirmat: Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027 |
 
 ## 3. Millors oportunitats per a Stimulo
 

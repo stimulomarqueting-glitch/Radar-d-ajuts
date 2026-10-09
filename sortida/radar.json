@@ -1,5 +1,5 @@
 {
- "generat": "2026-10-08",
+ "generat": "2026-10-09",
  "perfils": [
   {
    "id": "stimulo",
@@ -4338,51 +4338,6 @@
   }
  ],
  "agenda": [
-  {
-   "data": "2026-10-08",
-   "tipus": "vigilar",
-   "id": "accio-cupons",
-   "nom": "Cupons ACCIÓ 2026 per a la competitivitat empresarial",
-   "entitat": "ACCIÓ",
-   "estimada": false,
-   "text": "Cupons ACCIÓ: confirmar quines modalitats segueixen obertes fins al 16/11 (programes europeus, protecció, IA)"
-  },
-  {
-   "data": "2026-10-08",
-   "tipus": "vigilar",
-   "id": "agaur-doctorats-industrials",
-   "nom": "Doctorats Industrials (Generalitat)",
-   "entitat": "Departament de Recerca i Universitats / AGAUR",
-   "estimada": false,
-   "text": "Doctorats Industrials: verificar si la convocatòria DI-2026/2027 està oberta"
-  },
-  {
-   "data": "2026-10-08",
-   "tipus": "vigilar",
-   "id": "pilot-autonomia-estrategica",
-   "nom": "PILOT – Programa d'innovació tecnològica per a l'autonomia estratègica",
-   "entitat": "Departament de Recerca i Universitats (gestió AGAUR)",
-   "estimada": false,
-   "text": "PILOT: confirmar bases, import per projecte i termini (AGAUR / DOGC) i començar a muntar consorci"
-  },
-  {
-   "data": "2026-10-08",
-   "tipus": "obertura",
-   "id": "aei-torres-quevedo",
-   "nom": "Torres Quevedo (PTQ) 2026",
-   "entitat": "Agencia Estatal de Investigación",
-   "estimada": false,
-   "text": "Obertura confirmada: Torres Quevedo (PTQ) 2026"
-  },
-  {
-   "data": "2026-10-08",
-   "tipus": "tancament",
-   "id": "aei-torres-quevedo",
-   "nom": "Torres Quevedo (PTQ) 2026",
-   "entitat": "Agencia Estatal de Investigación",
-   "estimada": false,
-   "text": "Darrera revisió: tancament confirmat el 29/10/2026"
-  },
   {
    "data": "2026-10-09",
    "tipus": "vigilar",
