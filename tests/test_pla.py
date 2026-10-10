@@ -37,7 +37,7 @@ class TestLinies(unittest.TestCase):
 
     def test_exemples_del_cataleg(self):
         self.assertEqual(self.cat.per_id("eic-accelerator").linies, ["projectes"])
-        self.assertIn("creixement", self.cat.per_id("accio-cupons").linies)
+        self.assertIn("creixement", self.cat.per_id("accio-cupons-estrategia").linies)
         self.assertIn("projectes", self.cat.per_id("accio-noves-oportunitats-negoci").linies)
 
 

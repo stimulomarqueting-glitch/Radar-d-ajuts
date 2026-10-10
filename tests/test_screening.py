@@ -40,7 +40,7 @@ class TestScreening(unittest.TestCase):
 
     def test_gran_empresa_no_veu_linies_nomes_per_a_pimes(self):
         ids = {o.c.id for o in self.sc.oportunitats}
-        self.assertFalse(ids & {"accio-cupons", "accio-green", "accio-feder-innovacio-pimes", "eic-accelerator"})
+        self.assertFalse(ids & {"accio-cupons-estrategia", "accio-green", "accio-feder-innovacio-pimes", "eic-accelerator"})
 
     def test_idees_segons_els_temes_de_la_linia(self):
         for r in self.sc.resultats:

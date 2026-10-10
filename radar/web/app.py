@@ -32,6 +32,7 @@ from markupsafe import Markup
 
 from .. import avisos, calendari, dades, diari, ecosistema, informe, licitacions, screening
 from .. import pla as mod_pla
+from .. import seguiment as mod_seguiment
 from .. import socis as mod_socis
 from ..puntuacio import puntua
 from . import auth, context, exporta, ia, plantilles
@@ -729,6 +730,19 @@ def crea_app(cfg: Config | None = None, client=None) -> FastAPI:
         return pagina(request, "ecosistema.html", "ecosistema", trobades=ecosistema.trobades_actives(eco, avui),
                       actors=actors, requisits=eco.requisits, linies=linies, avui=avui,
                       NOMS=ecosistema.NOMS_TIPUS)
+
+    # --- Seguiment actiu (programes com els Cupons ACCIÓ)
+    @app.get("/seguiment", response_class=HTMLResponse)
+    def seguiment_pagina(request: Request):
+        cat, avui = estat.cataleg(), dt.date.today()
+        grups = []
+        for programa, modalitats in mod_seguiment.per_programa(cat, avui):
+            grups.append({"programa": programa, "nom": programa.nom if programa else modalitats[0][0].nom,
+                          "obertes": sum(1 for _c, e in modalitats if e.f.estat == "oberta"),
+                          "modalitats": [{"c": c, "e": e, "nom": mod_seguiment.nom_curt(c)} for c, e in modalitats]})
+        socis, motiu = estat.socis()
+        return pagina(request, "seguiment.html", "seguiment", grups=grups,
+                      candidats=mod_seguiment.candidats_holded(socis), motiu=motiu)
 
     # --- Socis (Holded)
     @app.get("/socis", response_class=HTMLResponse)

@@ -296,6 +296,20 @@ class TestPlaWeb(BaseWeb):
         self.assertEqual(self.c.get("/pla?des=ahir").status_code, 400)
 
 
+class TestSeguimentWeb(BaseWeb):
+    def test_pagina_de_seguiment(self):
+        self.assertEqual(self.c.get("/seguiment", follow_redirects=False).status_code, 303)
+        self.entra()
+        r = self.c.get("/seguiment")
+        self.assertEqual(r.status_code, 200)
+        self.assertIn("Cupons ACCIÓ a la competitivitat de l&#39;empresa", r.text)
+        self.assertIn("protecció de la innovació", r.text)
+        self.assertIn("/expedients/nou?convocatoria=accio-cupons-proteccio", r.text)
+        self.assertIn("Motors Exemple SA", r.text)  # client de Holded a Catalunya
+        self.assertIn('href="/seguiment" aria-current="page"', r.text)
+        self.assertIn("default-src 'self'", r.headers["content-security-policy"])
+
+
 class TestUtilitats(unittest.TestCase):
     def test_markdown_segur(self):
         h = markdown_html("# Títol\n\n<script>alert(1)</script> [x](javascript:alert(1)) [y](https://a.example)")

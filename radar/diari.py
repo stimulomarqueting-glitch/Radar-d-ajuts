@@ -123,9 +123,10 @@ def prepara_avis(avui: dt.date, envia: bool = False, tot: bool = False, maxim: i
     maxim = maxim or cfg["maxim_linies"]
     principals, resum = avisos.reparteix(noves, maxim)
     novetats = novetats or []
-    from . import ecosistema
+    from . import ecosistema, seguiment
 
-    recordatoris = (senyals_manuals(cat, avui) + ecosistema.recordatoris(ecosistema.carrega(cat), avui)
+    recordatoris = (seguiment.recordatoris(cat, avui) + senyals_manuals(cat, avui)
+                    + ecosistema.recordatoris(ecosistema.carrega(cat), avui)
                     + recordatoris_expedients(cat, avui, path_db) + recordatoris_licitacions(avui, path_db))
     lics = [(l, a) for l, a in (noves_licitacions or []) if a.semafor in ("verd", "groc")][:8]
     r = ResultatAvis(linies=len(noves), novetats=len(novetats), recordatoris=len(recordatoris))
@@ -162,7 +163,8 @@ def executa_diari(avui: dt.date | None = None, envia: bool = True, path_db: Path
         cat = dades.carrega()
         paraules = sorted({k for p in cat.perfils.values() for k in p.paraules_clau})
         noves, errors_vigilancia = vigilancia.executa(cat.config.get("vigilancia", {}), paraules,
-                                                      ARREL / "data" / "estat" / "vistos.json")
+                                                      ARREL / "data" / "estat" / "vistos.json",
+                                                      [f for f in cat.fonts if f.vigilant == "pagina"])
         errors.update({f"vigilancia.{k}": v for k, v in errors_vigilancia.items()})
         sortida = ARREL / "sortida"
         sortida.mkdir(exist_ok=True)

@@ -1,0 +1,59 @@
+# Programes en seguiment actiu del Radar d'ajuts de Stimulo.
+#
+# Un programa agrupa diverses modalitats que es convoquen juntes (p. ex. els Cupons ACCIÓ). Cada
+# modalitat és una fitxa de data/convocatories.yaml amb `programa: <id>` i `seguiment: true`.
+# El radar en fa:
+#   - recordatoris de termini al correu del matí (30, 21, 14, 7, 3, 1 i 0 dies abans);
+#   - un bloc propi al pla i la pàgina «Seguiment» de l'aplicació;
+#   - el vigilant de canvis de la pàgina oficial (data/fonts.yaml, vigilant: pagina).
+#
+# Camps: id, nom, entitat, edicio, url (pàgina oficial), tramit, bdns, bases, convocatoria,
+# descripcio, regles (llista), stimulo (com el pot fer servir Stimulo), preguntes (pendents de
+# confirmar), propera_edicio, missatge_clients (text base per compartir amb clients).
+
+programes:
+
+  - id: cupons-accio
+    nom: "Cupons ACCIÓ a la competitivitat de l'empresa"
+    entitat: ACCIÓ
+    edicio: 2026
+    url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/
+    tramit: https://tramits.gencat.cat/ca/tramits/tramits-temes/subvencions-cupons-competitivitat-empresarial-any-2026
+    bdns: "904675"
+    bases: >
+      Resolució EMT/1297/2026, de 27 d'abril (DOGC 9656, 30/04/2026), modificada per la Resolució
+      EMT/1400/2026, de 4 de maig (DOGC 9661, 08/05/2026).
+    convocatoria: >
+      Resolució EMT/1470/2026, de 9 de maig (DOGC 9665, 14/05/2026). Un document d'ACCIÓ la cita com a
+      EMT/1469/2026: cal confirmar el número al DOGC.
+    descripcio: >
+      Ajuts perquè les pimes de Catalunya contractin serveis d'assessorament a proveïdors acreditats per
+      ACCIÓ: estratègia, programes europeus, protecció de la innovació, IA, internacionalització i
+      innovació verda. El 2026 n'hi ha set modalitats.
+    regles:
+      - "Sol·licituds des del 15/05/2026 a les 9:00, per ordre d'entrada fins que s'exhaureix el pressupost. Solen esgotar-se de pressa."
+      - "Un cupó per línia i empresa; a programes europeus, fins a dos, per a convocatòries europees diferents."
+      - "El proveïdor ha d'estar acreditat per ACCIÓ en l'àrea del cupó en el moment de presentar la sol·licitud."
+      - "Règim de minimis: com a màxim 300.000 € d'ajuts en tres anys."
+      - "Es demanen al Canal Empresa de la Generalitat."
+    stimulo: >
+      Tres usos. (1) Stimulo com a beneficiària: preparar propostes europees (programes europeus),
+      registrar dissenys propis (protecció) o revisar l'estratègia de creixement. (2) Eina comercial amb
+      clients: un cupó obre la porta a un projecte de producte; per exemple, el client registra el disseny
+      industrial que ha fet Stimulo o paga la redacció d'una proposta europea on Stimulo és sòcia.
+      (3) Stimulo com a proveïdora acreditada: si ho és, els clients poden pagar serveis de Stimulo amb
+      el cupó. Cal confirmar-ho.
+    preguntes:
+      - "Stimulo està acreditada com a proveïdora d'ACCIÓ? En quina àrea? Si no, val la pena demanar-ho per a l'edició de 2027?"
+      - "Queda pressupost als cupons d'estratègia, programes europeus, protecció i Green abans del 16/11/2026?"
+      - "Quina és la setena modalitat de 2026? No apareix a les fonts consultades."
+    propera_edicio: >
+      Si es manté el calendari de 2026: bases a l'abril i obertura a mitjan maig de 2027. Les modalitats
+      s'esgoten per ordre d'entrada: convé tenir els clients preparats abans de l'obertura.
+    missatge_clients: >
+      ACCIÓ té oberts fins al 16 de novembre de 2026 (o fins que s'acabi el pressupost, per ordre
+      d'entrada) diversos Cupons a la competitivitat de l'empresa per a pimes de Catalunya. Els que us
+      poden interessar: protecció de la innovació (100 % fins a 3.000 € per registrar patents, models
+      d'utilitat o dissenys industrials), programes europeus d'R+D+I (fins a 12.000 € per preparar una
+      proposta europea si la coordineu) i innovació verda (fins a 8.000 €). Si voleu, en parlem i us
+      ajudem a veure quin encaixa amb el vostre projecte.

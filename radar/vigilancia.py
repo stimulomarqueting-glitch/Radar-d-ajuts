@@ -11,6 +11,7 @@ Formats d'API documentats per l'emissor però pendents de validar en la primera 
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
 import re
 import unicodedata
@@ -18,6 +19,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import asdict, dataclass
+from html.parser import HTMLParser
 from pathlib import Path
 
 AGENT = "RadarAjutsStimulo/0.1 (+https://github.com/stimulomarqueting-glitch/Radar-d-ajuts)"
@@ -221,7 +223,100 @@ def placsp(paraules: list[str], cpvs: list[str]) -> list[Troballa]:
 
 # --- Orquestració ------------------------------------------------------------------------------
 
-def executa(config: dict, paraules: list[str], fitxer_vistos: Path) -> tuple[list[Troballa], dict[str, str]]:
+# --- Pàgines oficials sense API: canvis en el text que importa (terminis, pressupost, modalitats) ---
+
+# Línies que es comparen: les que parlen de terminis, estat o pressupost, o porten dates
+PARAULES_PAGINA = re.compile(
+    r"cup[oó]|termini|exhaur|esgota|tancad|obert|convocat|sol[·.]?licitud|pressupost|import|ajut|"
+    r"\b20[2-3]\d\b|\d{1,2}/\d{1,2}/\d{2,4}", re.IGNORECASE)
+_BLOCS = {"p", "li", "h1", "h2", "h3", "h4", "h5", "h6", "td", "th", "tr", "dt", "dd", "div", "section",
+          "article", "br", "option", "summary", "caption", "figcaption", "blockquote"}
+_IGNORA = {"script", "style", "noscript", "nav", "header", "footer", "svg", "form", "select", "template"}
+
+
+class _TextPagina(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.trossos: list[str] = []
+        self._ignora = 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in _IGNORA:
+            self._ignora += 1
+        elif tag in _BLOCS:
+            self.trossos.append("\n")
+
+    def handle_endtag(self, tag):
+        if tag in _IGNORA:
+            self._ignora = max(0, self._ignora - 1)
+        elif tag in _BLOCS:
+            self.trossos.append("\n")
+
+    def handle_data(self, data):
+        if not self._ignora:
+            self.trossos.append(data)
+
+
+def pagina_linies(html_text: str, filtre: str = "") -> list[str]:
+    """Línies de text rellevants d'una pàgina (sense menús ni scripts), en ordre i sense repetir."""
+    parser = _TextPagina()
+    parser.feed(html_text)
+    filtre_re = re.compile(filtre, re.IGNORECASE) if filtre else None
+    vistes, sortida = set(), []
+    for linia in "".join(parser.trossos).split("\n"):
+        linia = re.sub(r"\s+", " ", linia).strip()
+        if not 12 <= len(linia) <= 400 or linia in vistes:
+            continue
+        if PARAULES_PAGINA.search(linia) and (filtre_re is None or filtre_re.search(linia)):
+            vistes.add(linia)
+            sortida.append(linia)
+    return sortida
+
+
+def pagina_canvis(anteriors: list[str], actuals: list[str]) -> tuple[list[str], list[str]]:
+    """(línies noves, línies que ja no hi són), en l'ordre de la pàgina."""
+    a, b = set(anteriors), set(actuals)
+    return [l for l in actuals if l not in a], [l for l in anteriors if l not in b]
+
+
+def troballa_pagina(font, afegides: list[str], tretes: list[str], avui: dt.date) -> Troballa:
+    clau = hashlib.sha1("\n".join(afegides + ["--"] + tretes).encode("utf-8")).hexdigest()[:12]
+    resum = afegides[0] if afegides else f"ja no hi diu «{tretes[0]}»"
+    extra = len(afegides) + len(tretes) - 1
+    organisme = font.nom.split(" – ")[0]
+    return Troballa(font="Pàgines oficials", id=f"pagina:{font.id}:{clau}",
+                    titol=f"Canvis a {font.nom}: {resum[:180]}" + (f" (i {extra} canvis més)" if extra > 0 else ""),
+                    organisme=organisme, data=avui.isoformat(), termini="", url=font.url,
+                    paraules=(["ACCIÓ"] if "ACCIÓ" in font.nom else []) + ["canvi a la pàgina"])
+
+
+def pagines(fonts: list, fitxer_estat: Path, avui: dt.date | None = None) -> tuple[list[Troballa], dict[str, str]]:
+    """Compara el text rellevant de cada pàgina amb el de l'última revisió (data/estat/pagines.json).
+
+    La primera vegada només desa l'estat. Cada pàgina falla de manera aïllada."""
+    avui = avui or dt.date.today()
+    estat = json.loads(fitxer_estat.read_text(encoding="utf-8")) if fitxer_estat.exists() else {}
+    troballes, errors = [], {}
+    for f in fonts:
+        try:
+            linies = pagina_linies(_get(f.url).decode("utf-8", "replace"), getattr(f, "filtre", ""))
+            if not linies:
+                raise ValueError("cap línia amb dates o terminis: la pàgina pot haver canviat de format")
+            anteriors = estat.get(f.id)
+            estat[f.id] = linies
+            if anteriors is not None:
+                afegides, tretes = pagina_canvis(anteriors, linies)
+                if afegides or tretes:
+                    troballes.append(troballa_pagina(f, afegides, tretes, avui))
+        except Exception as e:  # una pàgina caiguda no ha d'aturar la resta
+            errors[f"pagina.{f.id}"] = f"{type(e).__name__}: {e}"
+    fitxer_estat.parent.mkdir(parents=True, exist_ok=True)
+    fitxer_estat.write_text(json.dumps(estat, ensure_ascii=False, indent=1), encoding="utf-8")
+    return troballes, errors
+
+
+def executa(config: dict, paraules: list[str], fitxer_vistos: Path, fonts_pagina: list | None = None,
+            fitxer_pagines: Path | None = None) -> tuple[list[Troballa], dict[str, str]]:
     """Executa tots els vigilants i retorna només les troballes noves (no vistes abans)."""
     vistos = set(json.loads(fitxer_vistos.read_text())) if fitxer_vistos.exists() else set()
     # Les licitacions (TED, PLACSP i PSCP) tenen el seu propi mòdul: radar/licitacions.py
@@ -238,6 +333,13 @@ def executa(config: dict, paraules: list[str], fitxer_vistos: Path) -> tuple[lis
                     vistos.add(t.id)
         except Exception as e:  # una font caiguda no ha d'aturar la resta
             errors[nom] = f"{type(e).__name__}: {e}"
+    if fonts_pagina:
+        troballes, errors_pagina = pagines(fonts_pagina, fitxer_pagines or fitxer_vistos.with_name("pagines.json"))
+        errors.update(errors_pagina)
+        for t in troballes:
+            if t.id not in vistos:
+                noves.append(t)
+                vistos.add(t.id)
     fitxer_vistos.parent.mkdir(parents=True, exist_ok=True)
     fitxer_vistos.write_text(json.dumps(sorted(vistos), indent=0))
     return noves, errors

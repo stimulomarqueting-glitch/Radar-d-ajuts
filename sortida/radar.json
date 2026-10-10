@@ -1,5 +1,5 @@
 {
- "generat": "2026-10-09",
+ "generat": "2026-10-10",
  "perfils": [
   {
    "id": "stimulo",
@@ -161,6 +161,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-29",
@@ -220,6 +221,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-29",
@@ -275,6 +277,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-29",
@@ -341,6 +344,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -410,6 +414,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -474,6 +479,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-10",
@@ -536,6 +542,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-01",
@@ -597,6 +604,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-09-04",
@@ -649,6 +657,7 @@
    "excel_fila": 4,
    "compartir_clients": true,
    "linies": [],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-16",
@@ -669,45 +678,43 @@
    }
   },
   {
-   "id": "accio-cupons",
-   "nom": "Cupons ACCIÓ 2026 per a la competitivitat empresarial",
+   "id": "accio-cupons-programes-europeus",
+   "nom": "Cupons ACCIÓ per a programes europeus d'R+D+I 2026",
    "entitat": "ACCIÓ",
    "nivell": "catalunya",
    "origen": "public",
    "instrument": "cupo",
-   "descripcio": "Cupons per contractar serveis especialitzats a proveïdors.",
+   "descripcio": "Assessorament extern per preparar una proposta a un programa europeu d'R+D+I (Horizon Europe i altres programes europeus).",
    "zones": [
     "ES-CT"
    ],
    "zona_etiqueta": "Catalunya",
-   "ambit_geografic": "Empreses amb establiment a Catalunya.",
+   "ambit_geografic": "Pimes amb establiment operatiu a Catalunya.",
    "focus": [
-    "internacionalitzacio",
-    "ia",
-    "digital",
-    "disseny",
-    "cooperacio"
+    "cooperacio",
+    "deep_tech",
+    "internacionalitzacio"
    ],
    "intensitat_max": null,
    "import_max_eur": 12000,
-   "ajuda_text": "Estratègia de creixement 8.000 €; adopció d'IA 8.000 €; protecció de la innovació (patents, models d'utilitat, dissenys industrials europeus) 3.000 €; programes europeus d'R+D+I 12.000 €; internacionalització 8.000 €.",
+   "ajuda_text": "Fins a 12.000 € si l'empresa coordina el projecte europeu i fins a 5.000 € si n'és sòcia. Fins a dos cupons per empresa, per a convocatòries diferents. 500.000 € reservats.",
    "trl": null,
-   "url": "https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio/index.html",
-   "notes": "Sol·licituds des del 15/05/2026. Segons el llistat d'ACCIÓ, els cupons d'estratègia de creixement i de programes europeus d'R+D+I segueixen oberts fins al 16/11/2026 a les 14:00 o fins exhaurir el pressupost. Protecció de la innovació: 100 % fins a 3.000 € per registrar patents, marques, models d'utilitat i dissenys industrials (proveïdors acreditats, assessorament fins al 30/07/2027). Innovació verda: assessorament per reduir emissions o adaptar-se al canvi climàtic (un cupó per empresa; exclou qui en va rebre el 2024 o el 2025). Els cupons d'internacionalització de plans van tancar el 15/09/2026.",
-   "confianca": "mitjana",
+   "url": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/",
+   "notes": "Oberta fins al 16/11/2026 a les 14:00 o fins que s'exhaureixi el pressupost, per ordre d'entrada. Bases EMT/1297/2026; convocatòria EMT/1470/2026 (BDNS 904675).",
+   "confianca": "alta",
    "beneficiaris": [
     "pime"
    ],
    "rols_stimulo": [
-    "beneficiari",
-    "proveidor_extern"
+    "beneficiari"
    ],
-   "excel_fila": 6,
+   "excel_fila": null,
    "compartir_clients": true,
    "linies": [
-    "projectes",
-    "creixement"
+    "creixement",
+    "projectes"
    ],
+   "seguiment": true,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-05-15",
@@ -717,11 +724,288 @@
    },
    "encaix": {
     "stimulo": {
-     "punts": 65,
-     "prioritat": "B",
+     "punts": 59,
+     "prioritat": "C",
      "rol": "beneficiari",
      "motius": [
-      "temes: disseny, cooperacio, ia, digital",
+      "temes: deep_tech, cooperacio",
+      "rol: beneficiari"
+     ]
+    }
+   }
+  },
+  {
+   "id": "accio-cupons-proteccio",
+   "nom": "Cupons ACCIÓ de protecció de la innovació 2026",
+   "entitat": "ACCIÓ",
+   "nivell": "catalunya",
+   "origen": "public",
+   "instrument": "cupo",
+   "descripcio": "Assessorament d'un proveïdor acreditat per ACCIÓ (agent de propietat industrial) per protegir la innovació de l'empresa.",
+   "zones": [
+    "ES-CT"
+   ],
+   "zona_etiqueta": "Catalunya",
+   "ambit_geografic": "Pimes amb establiment operatiu a Catalunya.",
+   "focus": [
+    "disseny",
+    "transferencia"
+   ],
+   "intensitat_max": 100,
+   "import_max_eur": 3000,
+   "ajuda_text": "100 % fins a 3.000 € d'assessorament per registrar patents, models d'utilitat, dissenys industrials i marques europees, i per a estudis de patentabilitat o de llibertat d'operació. Les taxes de registre no són subvencionables.",
+   "trl": null,
+   "url": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/",
+   "notes": "El servei s'ha de fer abans del 30/07/2027 (segons la fitxa). La convocatòria general tanca el 16/11/2026 a les 14:00; ACCIÓ no en confirma el termini concret per a aquesta línia a les fonts consultades.",
+   "confianca": "mitjana",
+   "beneficiaris": [
+    "pime"
+   ],
+   "rols_stimulo": [
+    "beneficiari"
+   ],
+   "excel_fila": null,
+   "compartir_clients": true,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
+   "seguiment": true,
+   "finestra": {
+    "estat": "oberta",
+    "obertura": "2026-05-15",
+    "tancament": "2026-11-16",
+    "estimada": false,
+    "text": "Oberta fins 16/11/2026"
+   },
+   "encaix": {
+    "stimulo": {
+     "punts": 60,
+     "prioritat": "C",
+     "rol": "beneficiari",
+     "motius": [
+      "temes: transferencia, disseny",
+      "rol: beneficiari"
+     ]
+    }
+   }
+  },
+  {
+   "id": "accio-cupons-green",
+   "nom": "Cupons ACCIÓ d'innovació verda (Green) 2026",
+   "entitat": "ACCIÓ",
+   "nivell": "catalunya",
+   "origen": "public",
+   "instrument": "cupo",
+   "descripcio": "Assessorament d'un proveïdor acreditat per ACCIÓ en canvi climàtic o d'un centre TECNIO per identificar oportunitats d'innovació verda.",
+   "zones": [
+    "ES-CT"
+   ],
+   "zona_etiqueta": "Catalunya",
+   "ambit_geografic": "Pimes amb establiment operatiu a Catalunya.",
+   "focus": [
+    "sostenibilitat",
+    "economia_circular",
+    "energia"
+   ],
+   "intensitat_max": null,
+   "import_max_eur": 8000,
+   "ajuda_text": "Fins a 8.000 € d'assessorament per identificar oportunitats d'innovació per reduir emissions o adaptar-se al canvi climàtic.",
+   "trl": null,
+   "url": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/",
+   "notes": "Un cupó per empresa; en queden excloses les beneficiàries de Cupons Green el 2024 o el 2025. Termini: el de la convocatòria general (16/11/2026 a les 14:00), pendent de confirmar per a aquesta línia.",
+   "confianca": "mitjana",
+   "beneficiaris": [
+    "pime"
+   ],
+   "rols_stimulo": [
+    "beneficiari"
+   ],
+   "excel_fila": null,
+   "compartir_clients": true,
+   "linies": [
+    "projectes",
+    "creixement"
+   ],
+   "seguiment": true,
+   "finestra": {
+    "estat": "oberta",
+    "obertura": "2026-05-15",
+    "tancament": "2026-11-16",
+    "estimada": false,
+    "text": "Oberta fins 16/11/2026"
+   },
+   "encaix": {
+    "stimulo": {
+     "punts": 58,
+     "prioritat": "C",
+     "rol": "beneficiari",
+     "motius": [
+      "temes: sostenibilitat, economia_circular",
+      "rol: beneficiari"
+     ]
+    }
+   }
+  },
+  {
+   "id": "accio-cupons-estrategia",
+   "nom": "Cupons ACCIÓ d'estratègia de creixement 2026",
+   "entitat": "ACCIÓ",
+   "nivell": "catalunya",
+   "origen": "public",
+   "instrument": "cupo",
+   "descripcio": "Assessorament extern al comitè de direcció per revisar el model de negoci i la capacitat de canvi, i fixar les prioritats de competitivitat.",
+   "zones": [
+    "ES-CT"
+   ],
+   "zona_etiqueta": "Catalunya",
+   "ambit_geografic": "Pimes amb establiment operatiu a Catalunya.",
+   "focus": [
+    "industria",
+    "digital"
+   ],
+   "intensitat_max": null,
+   "import_max_eur": 8000,
+   "ajuda_text": "Fins a 8.000 € per contractar un assessor acreditat per ACCIÓ en estratègia.",
+   "trl": null,
+   "url": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/",
+   "notes": "Oberta fins al 16/11/2026 a les 14:00 o fins que s'exhaureixi el pressupost, per ordre d'entrada. ACCIÓ avisa que les sol·licituds rebudes ja superen el pressupost disponible: si es demana ara, pot quedar sense fons. L'assessor ha d'estar acreditat en estratègia en el moment de la sol·licitud.",
+   "confianca": "alta",
+   "beneficiaris": [
+    "pime"
+   ],
+   "rols_stimulo": [
+    "beneficiari"
+   ],
+   "excel_fila": 6,
+   "compartir_clients": true,
+   "linies": [
+    "creixement"
+   ],
+   "seguiment": true,
+   "finestra": {
+    "estat": "oberta",
+    "obertura": "2026-05-15",
+    "tancament": "2026-11-16",
+    "estimada": false,
+    "text": "Oberta fins 16/11/2026"
+   },
+   "encaix": {
+    "stimulo": {
+     "punts": 51,
+     "prioritat": "C",
+     "rol": "beneficiari",
+     "motius": [
+      "temes: industria, digital",
+      "rol: beneficiari"
+     ]
+    }
+   }
+  },
+  {
+   "id": "accio-cupons-ia",
+   "nom": "Cupons ACCIÓ per a la incorporació de la IA 2026",
+   "entitat": "ACCIÓ",
+   "nivell": "catalunya",
+   "origen": "public",
+   "instrument": "cupo",
+   "descripcio": "Assessorament per identificar i prioritzar solucions d'intel·ligència artificial per a l'empresa.",
+   "zones": [
+    "ES-CT"
+   ],
+   "zona_etiqueta": "Catalunya",
+   "ambit_geografic": "Empreses amb establiment operatiu a Catalunya, de més de 10 treballadors, amb 2 anys d'activitat i de sectors prioritaris de l'estratègia industrial europea.",
+   "focus": [
+    "ia",
+    "digital",
+    "industria"
+   ],
+   "intensitat_max": 100,
+   "import_max_eur": 8000,
+   "ajuda_text": "Fins a 8.000 € (100 %, segons fonts secundàries) per a un diagnòstic i un full de ruta d'IA a curt i mitjà termini.",
+   "trl": null,
+   "url": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/",
+   "notes": "Proveïdor acreditat per ACCIÓ en Tecnologia o Tecnologies Indústria 4.0, amb un mínim de 3 projectes d'IA. Termini de 2026: del 15/05 al 30/07/2026 segons una font secundària (Tecnocim Innova); ja tancat. Línia nova el 2026.",
+   "confianca": "baixa",
+   "beneficiaris": [
+    "pime"
+   ],
+   "rols_stimulo": [
+    "beneficiari"
+   ],
+   "excel_fila": null,
+   "compartir_clients": true,
+   "linies": [
+    "projectes"
+   ],
+   "seguiment": true,
+   "finestra": {
+    "estat": "propera",
+    "obertura": "2027-05-15",
+    "tancament": "2027-07-30",
+    "estimada": true,
+    "text": "≈ 15/05/2027 → 30/07/2027"
+   },
+   "encaix": {
+    "stimulo": {
+     "punts": 54,
+     "prioritat": "C",
+     "rol": "beneficiari",
+     "motius": [
+      "temes: industria, ia, digital",
+      "rol: beneficiari"
+     ]
+    }
+   }
+  },
+  {
+   "id": "accio-cupons-internacionalitzacio",
+   "nom": "Cupons ACCIÓ de plans d'internacionalització 2026",
+   "entitat": "ACCIÓ",
+   "nivell": "catalunya",
+   "origen": "public",
+   "instrument": "cupo",
+   "descripcio": "Assessorament d'un agent d'internacionalització acreditat per ACCIÓ per definir l'estratègia internacional de l'empresa.",
+   "zones": [
+    "ES-CT"
+   ],
+   "zona_etiqueta": "Catalunya",
+   "ambit_geografic": "Pimes amb establiment operatiu a Catalunya i una facturació mínima de 250.000 € l'últim exercici tancat.",
+   "focus": [
+    "internacionalitzacio"
+   ],
+   "intensitat_max": null,
+   "import_max_eur": 8000,
+   "ajuda_text": "Fins a 8.000 € per a un pla d'internacionalització amb un assessor acreditat: diagnosi, posicionament internacional, estratègia global i pla d'acció.",
+   "trl": null,
+   "url": "https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/",
+   "notes": "La línia de 2026 va tancar el 15/09/2026.",
+   "confianca": "alta",
+   "beneficiaris": [
+    "pime"
+   ],
+   "rols_stimulo": [
+    "beneficiari"
+   ],
+   "excel_fila": null,
+   "compartir_clients": true,
+   "linies": [
+    "creixement"
+   ],
+   "seguiment": true,
+   "finestra": {
+    "estat": "propera",
+    "obertura": "2027-05-15",
+    "tancament": "2027-09-15",
+    "estimada": true,
+    "text": "≈ 15/05/2027 → 15/09/2027"
+   },
+   "encaix": {
+    "stimulo": {
+     "punts": 41,
+     "prioritat": "C",
+     "rol": "beneficiari",
+     "motius": [
       "rol: beneficiari"
      ]
     }
@@ -767,6 +1051,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-15",
@@ -819,6 +1104,7 @@
    "excel_fila": null,
    "compartir_clients": true,
    "linies": [],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-03-01",
@@ -873,6 +1159,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -932,6 +1219,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-01",
@@ -995,6 +1283,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-01",
@@ -1059,6 +1348,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-01",
@@ -1118,6 +1408,7 @@
    "excel_fila": 10,
    "compartir_clients": false,
    "linies": [],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-01",
@@ -1178,6 +1469,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-05-15",
@@ -1233,6 +1525,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1291,6 +1584,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-17",
@@ -1351,6 +1645,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": "2026-04-27",
@@ -1407,6 +1702,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -1467,6 +1763,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-07-01",
@@ -1524,6 +1821,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-03-01",
@@ -1583,6 +1881,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-15",
@@ -1647,6 +1946,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1706,6 +2006,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1768,6 +2069,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -1827,6 +2129,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-04-14",
@@ -1891,6 +2194,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-12",
@@ -1960,6 +2264,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -2019,6 +2324,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-17",
@@ -2080,6 +2386,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -2143,6 +2450,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-30",
@@ -2199,6 +2507,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2250,6 +2559,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "tancada",
     "obertura": null,
@@ -2302,6 +2612,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "tancada",
     "obertura": null,
@@ -2359,6 +2670,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-10-08",
@@ -2417,6 +2729,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-09-30",
@@ -2477,6 +2790,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -2537,6 +2851,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-19",
@@ -2600,6 +2915,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-26",
@@ -2656,6 +2972,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": "2026-07-09",
@@ -2714,6 +3031,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-04-27",
@@ -2766,6 +3084,7 @@
    "excel_fila": null,
    "compartir_clients": false,
    "linies": [],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2822,6 +3141,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2877,6 +3197,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -2940,6 +3261,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-11",
@@ -2996,6 +3318,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-10-01",
@@ -3051,6 +3374,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-09-01",
@@ -3107,6 +3431,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -3164,6 +3489,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -3227,6 +3553,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3289,6 +3616,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -3352,6 +3680,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3414,6 +3743,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": "2026-06-30",
@@ -3474,6 +3804,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "tancada",
     "obertura": "2026-10-06",
@@ -3532,6 +3863,7 @@
    "excel_fila": 25,
    "compartir_clients": false,
    "linies": [],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3586,6 +3918,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3648,6 +3981,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-17",
@@ -3709,6 +4043,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3772,6 +4107,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -3834,6 +4170,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-10-13",
@@ -3895,6 +4232,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-11-17",
@@ -3956,6 +4294,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-12-15",
@@ -4015,6 +4354,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-02-03",
@@ -4076,6 +4416,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2026-10-29",
@@ -4139,6 +4480,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -4199,6 +4541,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -4258,6 +4601,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "sense_dades",
     "obertura": null,
@@ -4318,6 +4662,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-05-01",
@@ -4380,6 +4725,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -4436,6 +4782,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -4496,6 +4843,7 @@
    "linies": [
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": "2027-06-02",
@@ -4558,6 +4906,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -4618,6 +4967,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "oberta",
     "obertura": null,
@@ -4676,6 +5026,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "propera",
     "obertura": null,
@@ -4736,6 +5087,7 @@
     "projectes",
     "creixement"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -4795,6 +5147,7 @@
    "linies": [
     "projectes"
    ],
+   "seguiment": false,
    "finestra": {
     "estat": "permanent",
     "obertura": null,
@@ -4816,24 +5169,6 @@
   }
  ],
  "agenda": [
-  {
-   "data": "2026-10-09",
-   "tipus": "vigilar",
-   "id": "edip-bravetech",
-   "nom": "EDIP – BraveTech EU (subvencions per a pimes de defensa)",
-   "entitat": "Comissió Europea – DG DEFIS",
-   "estimada": false,
-   "text": "BraveTech EU: confirmar dates (finestra set.–des. 2026) i requisits"
-  },
-  {
-   "data": "2026-10-09",
-   "tipus": "vigilar",
-   "id": "accio-green",
-   "nom": "Projectes d'innovació tecnològica Green – Canvi climàtic",
-   "entitat": "ACCIÓ",
-   "estimada": false,
-   "text": "Green ACCIÓ: verificar si hi ha edició 2026 (la de 2025 tancava el 16/10)"
-  },
   {
    "data": "2026-10-10",
    "tipus": "tancament",
@@ -4945,6 +5280,42 @@
   {
    "data": "2026-10-20",
    "tipus": "vigilar",
+   "id": "accio-cupons-estrategia",
+   "nom": "Cupons ACCIÓ d'estratègia de creixement 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Cupons d'estratègia: comprovar si encara s'accepten sol·licituds (pressupost superat)"
+  },
+  {
+   "data": "2026-10-20",
+   "tipus": "vigilar",
+   "id": "accio-cupons-green",
+   "nom": "Cupons ACCIÓ d'innovació verda (Green) 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Cupons Green: confirmar el termini d'aquesta línia i si queda pressupost"
+  },
+  {
+   "data": "2026-10-20",
+   "tipus": "vigilar",
+   "id": "accio-cupons-proteccio",
+   "nom": "Cupons ACCIÓ de protecció de la innovació 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Cupons de protecció: confirmar el termini d'aquesta línia i si queda pressupost"
+  },
+  {
+   "data": "2026-10-20",
+   "tipus": "vigilar",
+   "id": "accio-cupons-programes-europeus",
+   "nom": "Cupons ACCIÓ per a programes europeus d'R+D+I 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Cupons de programes europeus: comprovar si queda pressupost (ordre d'entrada)"
+  },
+  {
+   "data": "2026-10-20",
+   "tipus": "vigilar",
    "id": "catalunya-seguretat-defensa",
    "nom": "Dual Technology & Industry Readiness Programme (capacitació en seguretat i defensa, fins a 400 empreses)",
    "entitat": "ACCIÓ i EOI, amb el Ministeri de Defensa i AeroS",
@@ -4963,8 +5334,35 @@
   {
    "data": "2026-10-26",
    "tipus": "tancament",
-   "id": "accio-cupons",
-   "nom": "Cupons ACCIÓ 2026 per a la competitivitat empresarial",
+   "id": "accio-cupons-estrategia",
+   "nom": "Cupons ACCIÓ d'estratègia de creixement 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Darrera revisió: tancament confirmat el 16/11/2026"
+  },
+  {
+   "data": "2026-10-26",
+   "tipus": "tancament",
+   "id": "accio-cupons-green",
+   "nom": "Cupons ACCIÓ d'innovació verda (Green) 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Darrera revisió: tancament confirmat el 16/11/2026"
+  },
+  {
+   "data": "2026-10-26",
+   "tipus": "tancament",
+   "id": "accio-cupons-proteccio",
+   "nom": "Cupons ACCIÓ de protecció de la innovació 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Darrera revisió: tancament confirmat el 16/11/2026"
+  },
+  {
+   "data": "2026-10-26",
+   "tipus": "tancament",
+   "id": "accio-cupons-programes-europeus",
+   "nom": "Cupons ACCIÓ per a programes europeus d'R+D+I 2026",
    "entitat": "ACCIÓ",
    "estimada": false,
    "text": "Darrera revisió: tancament confirmat el 16/11/2026"
@@ -5098,11 +5496,38 @@
   {
    "data": "2026-11-16",
    "tipus": "tancament",
-   "id": "accio-cupons",
-   "nom": "Cupons ACCIÓ 2026 per a la competitivitat empresarial",
+   "id": "accio-cupons-estrategia",
+   "nom": "Cupons ACCIÓ d'estratègia de creixement 2026",
    "entitat": "ACCIÓ",
    "estimada": false,
-   "text": "Tancament confirmat: Cupons ACCIÓ 2026 per a la competitivitat empresarial"
+   "text": "Tancament confirmat: Cupons ACCIÓ d'estratègia de creixement 2026"
+  },
+  {
+   "data": "2026-11-16",
+   "tipus": "tancament",
+   "id": "accio-cupons-green",
+   "nom": "Cupons ACCIÓ d'innovació verda (Green) 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Tancament confirmat: Cupons ACCIÓ d'innovació verda (Green) 2026"
+  },
+  {
+   "data": "2026-11-16",
+   "tipus": "tancament",
+   "id": "accio-cupons-proteccio",
+   "nom": "Cupons ACCIÓ de protecció de la innovació 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Tancament confirmat: Cupons ACCIÓ de protecció de la innovació 2026"
+  },
+  {
+   "data": "2026-11-16",
+   "tipus": "tancament",
+   "id": "accio-cupons-programes-europeus",
+   "nom": "Cupons ACCIÓ per a programes europeus d'R+D+I 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Tancament confirmat: Cupons ACCIÓ per a programes europeus d'R+D+I 2026"
   },
   {
    "data": "2026-11-16",
@@ -5791,6 +6216,24 @@
   {
    "data": "2027-03-16",
    "tipus": "preparar",
+   "id": "accio-cupons-internacionalitzacio",
+   "nom": "Cupons ACCIÓ de plans d'internacionalització 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Preparar projecte i socis: obertura estimada el 15/05/2027"
+  },
+  {
+   "data": "2027-03-16",
+   "tipus": "preparar",
+   "id": "accio-cupons-ia",
+   "nom": "Cupons ACCIÓ per a la incorporació de la IA 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Preparar projecte i socis: obertura estimada el 15/05/2027"
+  },
+  {
+   "data": "2027-03-16",
+   "tipus": "preparar",
    "id": "upc-industrial-tech",
    "nom": "Industrial Tech – preacceleració de hardware (UPC + CIM UPC)",
    "entitat": "UPC / CIM UPC (FSE+)",
@@ -5961,6 +6404,15 @@
   },
   {
    "data": "2027-04-15",
+   "tipus": "vigilar",
+   "id": "accio-cupons-ia",
+   "nom": "Cupons ACCIÓ per a la incorporació de la IA 2026",
+   "entitat": "ACCIÓ",
+   "estimada": false,
+   "text": "Cupons ACCIÓ 2027: bases i calendari (la IA va tancar el 30/07 el 2026)"
+  },
+  {
+   "data": "2027-04-15",
    "tipus": "tancament",
    "id": "eureka-smart",
    "nom": "EUREKA SMART – Call 10 (fabricació avançada)",
@@ -6087,6 +6539,24 @@
   },
   {
    "data": "2027-05-01",
+   "tipus": "vigilar",
+   "id": "accio-cupons-internacionalitzacio",
+   "nom": "Cupons ACCIÓ de plans d'internacionalització 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Vigilar la publicació de les bases (DOGC/BOE/portal)"
+  },
+  {
+   "data": "2027-05-01",
+   "tipus": "vigilar",
+   "id": "accio-cupons-ia",
+   "nom": "Cupons ACCIÓ per a la incorporació de la IA 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Vigilar la publicació de les bases (DOGC/BOE/portal)"
+  },
+  {
+   "data": "2027-05-01",
    "tipus": "obertura",
    "id": "edf-eudis",
    "nom": "European Defence Fund (EDF) – convocatòries pimes i tecnologies disruptives (EUDIS)",
@@ -6174,6 +6644,24 @@
    "entitat": "CDTI",
    "estimada": true,
    "text": "Tancament estimat: NEOTEC"
+  },
+  {
+   "data": "2027-05-15",
+   "tipus": "obertura",
+   "id": "accio-cupons-internacionalitzacio",
+   "nom": "Cupons ACCIÓ de plans d'internacionalització 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Obertura estimada: Cupons ACCIÓ de plans d'internacionalització 2026"
+  },
+  {
+   "data": "2027-05-15",
+   "tipus": "obertura",
+   "id": "accio-cupons-ia",
+   "nom": "Cupons ACCIÓ per a la incorporació de la IA 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Obertura estimada: Cupons ACCIÓ per a la incorporació de la IA 2026"
   },
   {
    "data": "2027-05-15",
@@ -6484,6 +6972,15 @@
   {
    "data": "2027-07-09",
    "tipus": "tancament",
+   "id": "accio-cupons-ia",
+   "nom": "Cupons ACCIÓ per a la incorporació de la IA 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Darrera revisió: tancament estimat el 30/07/2027"
+  },
+  {
+   "data": "2027-07-09",
+   "tipus": "tancament",
    "id": "accio-startup-capital",
    "nom": "Startup Capital",
    "entitat": "ACCIÓ",
@@ -6601,6 +7098,15 @@
   {
    "data": "2027-07-30",
    "tipus": "tancament",
+   "id": "accio-cupons-ia",
+   "nom": "Cupons ACCIÓ per a la incorporació de la IA 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Tancament estimat: Cupons ACCIÓ per a la incorporació de la IA 2026"
+  },
+  {
+   "data": "2027-07-30",
+   "tipus": "tancament",
    "id": "accio-startup-capital",
    "nom": "Startup Capital",
    "entitat": "ACCIÓ",
@@ -6633,6 +7139,15 @@
    "entitat": "UPC / CIM UPC (FSE+)",
    "estimada": true,
    "text": "Darrera revisió: tancament estimat el 04/09/2027"
+  },
+  {
+   "data": "2027-08-25",
+   "tipus": "tancament",
+   "id": "accio-cupons-internacionalitzacio",
+   "nom": "Cupons ACCIÓ de plans d'internacionalització 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Darrera revisió: tancament estimat el 15/09/2027"
   },
   {
    "data": "2027-08-25",
@@ -6696,6 +7211,15 @@
    "entitat": "Comissió Europea – DG DEFIS",
    "estimada": true,
    "text": "Darrera revisió: tancament estimat el 29/09/2027"
+  },
+  {
+   "data": "2027-09-15",
+   "tipus": "tancament",
+   "id": "accio-cupons-internacionalitzacio",
+   "nom": "Cupons ACCIÓ de plans d'internacionalització 2026",
+   "entitat": "ACCIÓ",
+   "estimada": true,
+   "text": "Tancament estimat: Cupons ACCIÓ de plans d'internacionalització 2026"
   },
   {
    "data": "2027-09-15",

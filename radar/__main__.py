@@ -193,7 +193,8 @@ def ordre_vigila(args) -> int:
     avui = _avui(args.avui)
     paraules = sorted({k for p in cat.perfils.values() for k in p.paraules_clau})
     noves, errors = vigilancia.executa(cat.config.get("vigilancia", {}), paraules,
-                                       ARREL / "data" / "estat" / "vistos.json")
+                                       ARREL / "data" / "estat" / "vistos.json",
+                                       [f for f in cat.fonts if f.vigilant == "pagina"])
     DIR_SORTIDA.mkdir(exist_ok=True)
     (DIR_SORTIDA / "novetats.md").write_text(vigilancia.informe_novetats(noves, errors, avui), encoding="utf-8")
     (DIR_SORTIDA / "novetats.json").write_text(vigilancia.a_json(noves), encoding="utf-8")

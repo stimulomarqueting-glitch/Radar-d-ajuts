@@ -2,7 +2,9 @@
 # metode: api (vigilant automàtic a radar/vigilancia.py) | rss | web (revisió manual o scraping futur)
 #         | butlleti (subscripció per correu) | manual
 # frequencia: diaria | setmanal | mensual | per_convocatoria
-# vigilant: nom del vigilant automàtic (bdns, sedia, ted, placsp) si n'hi ha
+# vigilant: nom del vigilant automàtic (bdns, sedia, ted, placsp) si n'hi ha. «pagina» compara cada dia
+#           el text de la pàgina que parla de terminis, estat o pressupost i avisa si canvia
+#           (filtre: expressió regular opcional per quedar-se només amb unes línies)
 
 fonts:
   # --- Transversals (automàtiques) -----------------------------------------------------------
@@ -60,9 +62,20 @@ fonts:
     nivell: catalunya
     url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/
     metode: web
-    frequencia: setmanal
-    cobreix: Totes les línies d'ACCIÓ
-    notes: "Les fitxes comencen per l'any (2026 = 26xxx): detectar noves fitxes 27xxx."
+    frequencia: diaria
+    vigilant: pagina
+    filtre: "cup[oó]"
+    cobreix: Totes les línies d'ACCIÓ (el vigilant només compara les línies dels cupons)
+    notes: "Les fitxes comencen per l'any (2026 = 26xxx): detectar noves fitxes 27xxx. Marca les línies exhaurides."
+
+  - id: accio-cupons
+    nom: ACCIÓ – Cupons a la competitivitat de l'empresa
+    nivell: catalunya
+    url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/
+    metode: web
+    frequencia: diaria
+    vigilant: pagina
+    cobreix: Modalitats, terminis i pressupost dels Cupons ACCIÓ (programa en seguiment)
 
   - id: accio-agenda
     nom: ACCIÓ – agenda de sessions informatives

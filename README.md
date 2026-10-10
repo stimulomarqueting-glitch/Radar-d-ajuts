@@ -22,10 +22,10 @@ amb un assistent de Claude que ja té tot el context de Stimulo, de l'ajut i del
 
 ```
 data/origen/*.xlsx ──importa-excel──▶ data/importat/   (control de files noves)
-data/convocatories.yaml  (catàleg curat: 79 fitxes)
+data/convocatories.yaml  (catàleg curat: 84 fitxes)
 data/perfils.yaml        (Stimulo; clients de servei desactivats)          ──▶ radar ──▶ sortida/
 data/zones.yaml          (jerarquia geogràfica ISO 3166-2)                       radar.md · radar.html · alertes.ics
-data/fonts.yaml          (43 fonts vigilades)
+data/fonts.yaml          (44 fonts vigilades)
 APIs: BDNS · Funding & Tenders UE ──vigila──▶ sortida/novetats.md
 PSCP · PLACSP · TED ──licitacions──▶ sortida/licitacions.md (+ app > Licitacions)
 Holded (només lectura) + classificació privada ──avisa──▶ correu a Stimulo (mai al repositori)
@@ -49,6 +49,14 @@ Holded (només lectura) + classificació privada ──avisa──▶ correu a S
 
   `python -m radar pla` en fa el pla de novembre a juny, amb el retorn estimat per projecte
   (vegeu [docs/pla-dues-linies.md](docs/pla-dues-linies.md)).
+- **Seguiment actiu** (`seguiment: true`): programes que cal seguir de prop, com els **Cupons ACCIÓ**
+  (`data/programes.yaml`, una fitxa per modalitat). Tenen:
+  - recordatoris al correu del matí 30, 21, 14, 7, 3, 1 i 0 dies abans del tancament, i abans de
+    l'obertura de la propera edició;
+  - un vigilant que compara cada dia la pàgina oficial i avisa si canvia (pressupost exhaurit,
+    modalitats noves, terminis);
+  - un bloc propi al pla i la pestanya **Seguiment** de l'aplicació, amb els clients de Holded a qui
+    oferir-los i un missatge per copiar.
 - **Zones:** cada convocatòria diu on ha d'estar el beneficiari (p. ex. `ES-CT-B` ⊂ `ES-CT` ⊂ `ES` ⊂ `EU`).
   Els socis que haurien de ser els sol·licitants només es proposen si són de la zona elegible.
 

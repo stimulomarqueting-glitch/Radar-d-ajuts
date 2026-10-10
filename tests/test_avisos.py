@@ -120,7 +120,8 @@ class TestAvisos(unittest.TestCase):
     def test_nomes_linies_noves(self):
         linies = avisos.candidates(self.cat, AVUI, self.cat.config.get("avisos"))
         self.assertTrue(linies)
-        self.assertTrue(all(l.e.prioritat in ("A", "B") for l in linies))
+        # Prioritat A o B, o bé línies per compartir amb clients (p. ex. els Cupons ACCIÓ)
+        self.assertTrue(all(l.e.prioritat in ("A", "B") or l.c.compartir_clients for l in linies))
         estat = {linies[0].clau: "2026-10-01"}
         self.assertNotIn(linies[0].clau, [l.clau for l in avisos.noves(linies, estat)])
 

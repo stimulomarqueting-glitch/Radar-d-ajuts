@@ -117,6 +117,8 @@ class Convocatoria:
     compartir_clients: bool = False  # línia per avisar clients i potencials clients (el sol·licitant és el client)
     linies: list[str] = field(default_factory=list)  # creixement / projectes (vegeu LINIES)
     retorn_eur: tuple[float, float] | None = None  # retorn per a Stimulo per projecte, si no es pot calcular
+    programa: str = ""  # programa en seguiment al qual pertany (data/programes.yaml), p. ex. cupons-accio
+    seguiment: bool = False  # seguiment actiu: recordatoris de termini al correu i bloc propi al pla i a l'app
 
 
 @dataclass
@@ -147,6 +149,27 @@ class Font:
     cobreix: str = ""
     vigilant: str | None = None  # nom del vigilant automàtic a radar.vigilancia
     notes: str = ""
+    filtre: str = ""  # vigilant «pagina»: expressió regular per triar les línies de text que es comparen
+
+
+@dataclass
+class Programa:
+    """Programa amb diverses modalitats que es fan com una sola convocatòria (p. ex. els Cupons ACCIÓ)."""
+    id: str
+    nom: str
+    entitat: str
+    edicio: int | None = None
+    url: str = ""
+    tramit: str = ""
+    bdns: str = ""
+    bases: str = ""
+    convocatoria: str = ""
+    descripcio: str = ""
+    regles: list[str] = field(default_factory=list)
+    stimulo: str = ""  # com el pot fer servir Stimulo (beneficiària, eina comercial, proveïdora)
+    preguntes: list[str] = field(default_factory=list)  # dades pendents de confirmar
+    propera_edicio: str = ""
+    missatge_clients: str = ""  # text base per compartir amb clients
 
 
 @dataclass
@@ -156,6 +179,10 @@ class Cataleg:
     fonts: list[Font]
     zones: Zones
     config: dict
+    programes: dict[str, Programa] = field(default_factory=dict)
+
+    def del_programa(self, id_programa: str) -> list[Convocatoria]:
+        return [c for c in self.convocatories if c.programa == id_programa]
 
     def per_id(self, id_: str) -> Convocatoria:
         for c in self.convocatories:
@@ -297,6 +324,8 @@ def _convocatoria(d: dict, zones: Zones) -> Convocatoria:
         compartir_clients=bool(d.get("compartir_clients", False)),
         linies=list(d["linies"]) if d.get("linies") is not None else linies_per_defecte(d),
         retorn_eur=tuple(d["retorn_eur"]) if d.get("retorn_eur") else None,
+        programa=d.get("programa", ""),
+        seguiment=bool(d.get("seguiment", False)),
     )
 
 
@@ -346,5 +375,17 @@ def carrega(dir_dades: Path = DIR_DADES, inclou_inactius: bool = False) -> Catal
     for f in fonts:
         _comprova(f.nivell, NIVELLS + ("transversal",), f"font {f.id}")
 
+    programes = {}
+    if (dir_dades / "programes.yaml").exists():
+        for d in _llegeix_yaml(dir_dades / "programes.yaml")["programes"]:
+            pr = Programa(**{k: (v.strip() if isinstance(v, str) else v) for k, v in d.items()})
+            if pr.id in programes:
+                raise ErrorValidacio(f"Programa duplicat: {pr.id}")
+            programes[pr.id] = pr
+    for c in convocatories:
+        if c.programa and c.programa not in programes:
+            raise ErrorValidacio(f"convocatòria {c.id}: programa desconegut '{c.programa}' (data/programes.yaml)")
+
     config = perfils_brut.get("config", {})
-    return Cataleg(convocatories=convocatories, perfils=perfils, fonts=fonts, zones=zones, config=config)
+    return Cataleg(convocatories=convocatories, perfils=perfils, fonts=fonts, zones=zones, config=config,
+                   programes=programes)

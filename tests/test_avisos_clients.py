@@ -17,7 +17,7 @@ class TestAvisosPerAClients(unittest.TestCase):
 
     def test_linia_marcada_entra_encara_que_no_sigui_prioritaria(self):
         linies = {l.c.id: l for l in avisos.candidates(self.cat, AVUI, self.cfg)}
-        self.assertTrue(linies["accio-cupons"].per_clients)
+        self.assertTrue(linies["accio-cupons-proteccio"].per_clients)
         self.assertFalse(linies["eic-accelerator"].per_clients)
 
     def test_clients_de_servei(self):

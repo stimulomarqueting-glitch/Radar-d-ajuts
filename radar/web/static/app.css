@@ -125,3 +125,11 @@ small.bloc-petit { display: block; color: var(--muted); }
 .s-vermell { background: color-mix(in srgb, var(--danger) 14%, var(--surface)); color: var(--danger); }
 .s-gris { background: var(--off-soft); color: var(--muted); }
 details.bloc > summary { cursor: pointer; }
+/* Seguiment (programes com els Cupons ACCIÓ) */
+.cap-seguiment { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.cap-seguiment h2 { margin: 0; }
+.enllacos { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.graella-seguiment { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; align-items: start; }
+.graella-seguiment .targeta { align-content: start; }
+.taula tr.urgent td:first-child { box-shadow: inset 3px 0 0 var(--warn); }
+.seguiment textarea { width: 100%; font: 14px/1.5 var(--f-body); }

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block titol %}Seguiment{% endblock %}
+{% block contingut %}
+<header class="cap">
+  <div class="marca">
+    <span class="eti">Seguiment actiu</span>
+    <h1>Seguiment</h1>
+    <p class="sub">Programes que el radar segueix de prop: estat de cada modalitat, terminis i a qui oferir-los. Els terminis arriben al correu del matí 30, 21, 14, 7, 3 i 1 dies abans, i el radar avisa si canvia la pàgina oficial.</p>
+  </div>
+</header>
+
+{% for g in grups %}
+<section class="bloc seguiment">
+  <div class="cap-seguiment">
+    <h2>{{ g.nom }}{% if g.programa and g.programa.edicio %} · {{ g.programa.edicio }}{% endif %}</h2>
+    {% if g.obertes %}<span class="estat e-oberta">{{ g.obertes }} {{ 'modalitat oberta' if g.obertes == 1 else 'modalitats obertes' }}</span>{% endif %}
+  </div>
+  {% if g.programa %}
+  <p>{{ g.programa.descripcio }}</p>
+  <p class="ajuda enllacos">
+    {% if g.programa.url %}<a href="{{ g.programa.url }}" target="_blank" rel="noopener">Pàgina oficial ↗</a>{% endif %}
+    {% if g.programa.tramit %}<a href="{{ g.programa.tramit }}" target="_blank" rel="noopener">Tràmit ↗</a>{% endif %}
+    {% if g.programa.bdns %}<a href="https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/{{ g.programa.bdns }}" target="_blank" rel="noopener">BDNS {{ g.programa.bdns }} ↗</a>{% endif %}
+  </p>
+  {% endif %}
+  <div class="taula-embolcall">
+  <table class="taula">
+    <thead><tr><th>Modalitat</th><th>Estat</th><th>Ajut</th><th>Requisits i ús</th><th></th></tr></thead>
+    <tbody>
+    {% for m in g.modalitats %}
+    <tr{% if m.e.urgent %} class="urgent"{% endif %}>
+      <td><strong>{{ m.nom }}</strong><small class="bloc-petit">línia de {{ m.c.linies|join(' i ') }}{% if m.c.confianca == 'baixa' %} · per verificar{% endif %}</small></td>
+      <td><span class="estat e-{{ m.e.f.estat }}{% if m.e.f.estimada %} e-estimada{% endif %}">{{ m.e.etiqueta }}</span><small class="bloc-petit">{{ m.e.text }}</small></td>
+      <td>{{ m.c.ajuda_text or (m.c.import_max_eur|eur) }}</td>
+      <td>{{ m.c.notes }}{% if m.c.encaix_stimulo %}<small class="bloc-petit"><b>Per a Stimulo:</b> {{ m.c.encaix_stimulo }}</small>{% endif %}</td>
+      <td><a class="boto secundari" href="/expedients/nou?convocatoria={{ m.c.id }}">Preparar sol·licitud</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% if g.programa %}
+  <div class="graella-seguiment">
+    {% if g.programa.regles %}<div class="targeta"><p><strong>Com funciona</strong></p><ul class="docs">{% for r in g.programa.regles %}<li>{{ r }}</li>{% endfor %}</ul></div>{% endif %}
+    {% if g.programa.stimulo %}<div class="targeta"><p><strong>Com el fa servir Stimulo</strong></p><p>{{ g.programa.stimulo }}</p>
+      {% if g.programa.propera_edicio %}<p class="ajuda"><b>Propera edició:</b> {{ g.programa.propera_edicio }}</p>{% endif %}</div>{% endif %}
+    {% if g.programa.preguntes %}<div class="targeta"><p><strong>Pendent de confirmar</strong></p><ul class="docs">{% for q in g.programa.preguntes %}<li>{{ q }}</li>{% endfor %}</ul></div>{% endif %}
+  </div>
+  {% if g.programa.missatge_clients and g.obertes %}
+  <div class="targeta">
+    <p><strong>Missatge per als clients</strong> <span class="ajuda">Text base per enviar o adaptar.</span></p>
+    <textarea id="missatge-{{ loop.index }}" rows="6" readonly>{{ g.programa.missatge_clients }}</textarea>
+    <p><button type="button" class="boto secundari" data-copia="missatge-{{ loop.index }}">Copiar el text</button></p>
+  </div>
+  {% endif %}
+  {% endif %}
+</section>
+{% else %}
+<p class="ajuda">Cap convocatòria en seguiment. Marca-les amb <code>seguiment: true</code> a <code>data/convocatories.yaml</code>.</p>
+{% endfor %}
+
+<section class="bloc">
+  <h2>A qui oferir-los</h2>
+  <p class="ajuda">Clients i contactes de Holded de Catalunya (empreses i startups). Holded no diu la mida de l'empresa: comprova que sigui una pime abans d'oferir-li un cupó.</p>
+  {% if motiu %}<p class="avis-error">{{ motiu }}</p>{% endif %}
+  {% if candidats %}
+  <div class="taula-embolcall">
+  <table class="taula">
+    <thead><tr><th>Empresa</th><th>Relació</th><th>Temes</th><th>Contacte</th></tr></thead>
+    <tbody>
+    {% for s in candidats %}
+    <tr><td><strong>{{ s.nom }}</strong><small class="bloc-petit">{{ s.tipus }}</small></td>
+      <td>{{ s.relacio }}</td><td>{{ s.focus|join(', ') }}</td>
+      <td>{% if s.destinatari %}{{ s.destinatari.nom }} {% if s.destinatari.email %}&lt;{{ s.destinatari.email }}&gt;{% endif %}{% else %}—{% endif %}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% elif not motiu %}<p class="ajuda">Cap client o contacte de Catalunya a Holded.</p>{% endif %}
+</section>
+{% endblock %}

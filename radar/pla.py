@@ -23,7 +23,7 @@ import html
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from . import calendari
+from . import calendari, seguiment as mod_seguiment
 from .dades import Cataleg, Convocatoria
 from .puntuacio import Encaix, puntua
 
@@ -63,6 +63,7 @@ class Fita:
     c: Convocatoria
     linia: str = "projectes"
     ja: bool = False  # la data ideal ja ha passat: cal començar ara
+    titol: str = ""  # el que es mostra en lloc del nom de la convocatòria (p. ex. un programa sencer)
 
 
 @dataclass
@@ -86,10 +87,16 @@ class Pla:
     creixement: list[Entrada]
     vigilar: list[Entrada]  # anunciades sense dates
     ara: list[Entrada] = field(default_factory=list)  # tanquen abans de començar l'horitzó
+    # Programes en seguiment actiu (p. ex. Cupons ACCIÓ): [(programa o None, [(convocatòria, estat)])]
+    seguiment: list = field(default_factory=list)
+    fites_seguiment: list[Fita] = field(default_factory=list)
 
     def fites(self) -> list[Fita]:
         """Fites sense repetir (una convocatòria a les dues línies comparteix el tancament i el termini)."""
         vistes, totes = set(), []
+        for f in self.fites_seguiment:
+            vistes.add((f.c.id, f.data, f.tipus))
+            totes.append(f)
         for e in self.ara + self.projectes + self.creixement:
             for f in e.fites:
                 clau = (f.c.id, f.data, f.tipus if f.tipus in ("presentar", "termini") else f.tipus + f.linia)
@@ -204,7 +211,7 @@ def construeix(cat: Cataleg, avui: dt.date, inici: dt.date, fi: dt.date, socis: 
     perfil = next(iter(cat.perfils.values()))
     projectes, creixement, vigilar, ara = [], [], [], []
     for c in cat.convocatories:
-        if not c.linies:
+        if not c.linies or c.seguiment:  # les que estan en seguiment tenen el seu bloc
             continue
         f = calendari.propera_finestra(c, avui)
         e = puntua(c, perfil, cat.zones, cat.config.get("pesos"))
@@ -236,7 +243,28 @@ def construeix(cat: Cataleg, avui: dt.date, inici: dt.date, fi: dt.date, socis: 
     creixement = [x for x in creixement if x.e.prioritat in ("A", "B")]
     vigilar.sort(key=lambda x: (x.linia != "projectes", -x.e.punts))
     ara.sort(key=lambda x: x.f.tancament or dt.date.max)
-    return Pla(avui, inici, fi, projectes, creixement, vigilar, ara)
+    segs = mod_seguiment.per_programa(cat, avui)
+    return Pla(avui, inici, fi, projectes, creixement, vigilar, ara, segs, _fites_seguiment(segs, avui, fi))
+
+
+def _fites_seguiment(segs: list, avui: dt.date, fi: dt.date) -> list[Fita]:
+    """Obertures i terminis dels programes en seguiment, una fita per programa i data."""
+    grups: dict[tuple, list[Convocatoria]] = {}
+    for programa, modalitats in segs:
+        for c, e in modalitats:
+            if e.f.estat == "propera" and e.f.obertura and avui <= e.f.obertura <= fi:
+                grups.setdefault((programa.id if programa else c.id, e.f.obertura, "preparar"), []).append(c)
+            if e.f.estat in ("oberta", "propera") and e.f.tancament and avui <= e.f.tancament <= fi:
+                grups.setdefault((programa.id if programa else c.id, e.f.tancament, "termini"), []).append(c)
+    noms = {(programa.id if programa else ms[0][0].id): programa for programa, ms in segs if ms}
+    fites = []
+    for (clau, data, tipus), cs in grups.items():
+        programa = noms.get(clau)
+        titol = (f"{programa.nom} ({', '.join(mod_seguiment.nom_curt(c) for c in cs)})" if programa else cs[0].nom)
+        text = ("Obren: tenir les sol·licituds a punt (ordre d'entrada)" if tipus == "preparar"
+                else "Termini" + (" (o quan s'exhaureixi el pressupost)" if cs[0].instrument == "cupo" else ""))
+        fites.append(Fita(data, tipus, text, cs[0], cs[0].linies[0] if cs[0].linies else "projectes", titol=titol))
+    return fites
 
 
 # --- Sortides -------------------------------------------------------------------------------------
@@ -267,6 +295,7 @@ def resum(pla: Pla) -> dict:
     alts = [e for e in pla.projectes if e.retorn and e.retorn.nivell == "alt"]
     return {"projectes": len(pla.projectes), "alt": len(alts), "creixement": len(pla.creixement),
             "comencar_ja": len(pla.comencar_ja()),
+            "seguiment_obertes": sum(1 for _p, ms in pla.seguiment for _c, e in ms if e.f.estat == "oberta"),
             "terminis_30": sum(1 for f in pla.fites() if f.tipus == "termini" and 0 <= (f.data - pla.avui).days <= 30)}
 
 
@@ -302,6 +331,13 @@ def markdown(pla: Pla, privat: bool = False) -> str:
     if pla.ara:
         t += [f"## Ara mateix: tanquen abans del {pla.inici:%d/%m/%Y}", ""]
         t += [f"- {e.c.nom} ({e.c.entitat}) · {_finestra(e.f)} · línia de {e.linia}" for e in pla.ara] + [""]
+    for programa, modalitats in pla.seguiment:
+        nom = programa.nom if programa else modalitats[0][0].nom
+        t += [f"## En seguiment: {nom}", ""]
+        if programa and programa.regles:
+            t += [f"_{programa.regles[0]}_", ""]
+        t += [f"- **{mod_seguiment.nom_curt(c)}** · {e.etiqueta.lower()}: {e.text} · {c.ajuda_text or '—'}"
+              for c, e in modalitats] + [""]
     if pla.comencar_ja():
         t += ["## Començar ja", "", "La feina prèvia ideal (prospectar ≈ 90 dies abans d'obrir, o preparar ≈ 45) "
               "ja hauria d'haver començat:", ""]
@@ -328,7 +364,8 @@ def markdown(pla: Pla, privat: bool = False) -> str:
         t += [f"- {e.c.nom} ({e.c.entitat}) · línia de {e.linia}" for e in pla.permanents()]
     t += ["", "## Accions mes a mes", ""]
     for mes, fites in mesos(pla):
-        t += [f"### {mes.capitalize()}", ""] + [f"- {f.data:%d/%m} · {f.text}: **{f.c.nom}**" for f in fites] + [""]
+        t += [f"### {mes.capitalize()}", ""] + [f"- {f.data:%d/%m} · {f.text}: **{f.titol or f.c.nom}**"
+                                                 for f in fites] + [""]
     if pla.vigilar:
         t += ["## Anunciades, a vigilar", ""]
         t += [f"- {e.c.nom} ({e.c.entitat}) · línia de {e.linia}" for e in pla.vigilar] + [""]
@@ -400,6 +437,21 @@ def informe_html(pla: Pla, privat: bool = False, app: bool = False) -> str:
                  'decidir aquesta setmana si s\'hi va.</p></header>'
                  + _llista(pla.ara, lambda e: f"{_finestra(e.f)} · {e.c.entitat} · línia de {e.linia}")
                  + "</section>")
+    for programa, modalitats in pla.seguiment:
+        nom = programa.nom if programa else modalitats[0][0].nom
+        regla = f'<p class="sub">{_e(programa.regles[0])}</p>' if programa and programa.regles else ""
+        enllac = (f'<p class="sub"><a href="{_e(programa.url)}" target="_blank" rel="noopener">Pàgina oficial ↗</a>'
+                  + (' · <a href="/seguiment">Seguiment a l\'aplicació</a>' if app else "") + "</p>"
+                  if programa and programa.url else "")
+        h.append(f'<section class="seccio"><header><span class="eti">En seguiment</span><h2>{_e(nom)}</h2>{regla}'
+                 f'{enllac}</header><div class="taula-embolcall"><table><thead><tr><th>Modalitat</th><th>Estat</th>'
+                 '<th>Ajut</th><th>Línia</th></tr></thead><tbody>')
+        for c, e in modalitats:
+            classe = "n-alt" if e.f.estat == "oberta" else "n-mitjà" if e.f.estat == "propera" else "n-cap"
+            h.append(f'<tr><td class="nom"><b>{_e(mod_seguiment.nom_curt(c))}</b></td>'
+                     f'<td><span class="nivell {classe}">{_e(e.etiqueta)}</span><small>{_e(e.text)}</small></td>'
+                     f'<td>{_e(c.ajuda_text or "—")}</td><td>{_e(", ".join(c.linies))}</td></tr>')
+        h.append("</tbody></table></div></section>")
     if pla.comencar_ja():
         h.append('<section class="seccio"><header><h2>Començar ja</h2><p class="sub">La feina prèvia ideal '
                  '(prospectar clients ≈ 90 dies abans d\'obrir, o preparar la sol·licitud ≈ 45) ja hauria d\'haver '
@@ -456,7 +508,7 @@ def informe_html(pla: Pla, privat: bool = False, app: bool = False) -> str:
         h.append(f'<div class="mes"><h3>{_e(mes)}</h3><ul>')
         for f in fites:
             h.append(f'<li><time>{f.data:%d/%m}</time><span><span class="tag-linia tag-{f.linia}">{f.linia}</span> '
-                     f'<span class="t-{f.tipus}">{_e(f.text)}</span>: {_e(f.c.nom)}</span></li>')
+                     f'<span class="t-{f.tipus}">{_e(f.text)}</span>: {_e(f.titol or f.c.nom)}</span></li>')
         h.append("</ul></div>")
     h.append("</div></section>")
 

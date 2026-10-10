@@ -1,10 +1,10 @@
 # Radar d'ajuts, subvencions i licitacions — Stimulo
 
-_Generat el 09/10/2026 amb `python -m radar informe`. 79 convocatòries al catàleg · 43 fonts vigilades._
+_Generat el 10/10/2026 amb `python -m radar informe`. 84 convocatòries al catàleg · 44 fonts vigilades._
 
 > Les dates marcades amb ≈ són **estimades** a partir de l'edició anterior: serveixen de senyal d'alerta, no substitueixen la convocatòria oficial.
 
-## 1. Oberts ara (19)
+## 1. Oberts ara (22)
 
 | Convocatòria | Entitat | Zona elegible | Tanca | Ajut | Stimulo |
 |---|---|---|---|---|---|
@@ -18,7 +18,10 @@ _Generat el 09/10/2026 amb `python -m radar informe`. 79 convocatòries al catà
 | [EIT Health – convocatòries 2026 (startups, venture building, ecosistemes)](https://eithealth.eu/news-article/eith-call-launch-3/) | EIT Health | UE + països associats | 02/11/2026 | — | 54 (C) |
 | [EIC Accelerator (Open i Challenges)](https://www.nks-eic-accelerator.de/en/eic-accelerator-when-can-i-submit-my-application-503.php) | Comissió Europea – EIC | UE + països associats | 04/11/2026 | 2,5 M€ | 92 (A) |
 | [ESA BIC Barcelona (incubació espacial)](https://esabicbarcelona.pmt.es/) | ESA + Generalitat (gestió PMT) | Catalunya | 13/11/2026 | 60.000 € | 64 (C) |
-| [Cupons ACCIÓ 2026 per a la competitivitat empresarial](https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio/index.html) | ACCIÓ | Catalunya | 16/11/2026 | 12.000 € | 65 (B) |
+| [Cupons ACCIÓ per a programes europeus d'R+D+I 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | Catalunya | 16/11/2026 | 12.000 € | 59 (C) |
+| [Cupons ACCIÓ de protecció de la innovació 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | Catalunya | 16/11/2026 | 3.000 € | 60 (C) |
+| [Cupons ACCIÓ d'innovació verda (Green) 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | Catalunya | 16/11/2026 | 8.000 € | 58 (C) |
+| [Cupons ACCIÓ d'estratègia de creixement 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | Catalunya | 16/11/2026 | 8.000 € | 51 (C) |
 | [EIT Urban Mobility – convocatòries (startups i innovació estratègica)](https://www.eiturbanmobility.eu/call-for-proposals/) | EIT Urban Mobility (seu a Barcelona) | UE + països associats | 16/11/2026 | — | 78 (B) |
 | [EIC STEP Scale Up](https://alientt.com/key-changes-in-the-eic-work-programme-2026/) | Comissió Europea – EIC | UE + països associats | 25/11/2026 | 30,0 M€ | 40 (C) |
 | [BASS 2026 – Agencia Espacial Española](https://www.aee.gob.es/Convocatorias/2026/BASS.html) | Agencia Espacial Española | Espanya | 27/11/2026 | — | 61 (C) |
@@ -32,8 +35,6 @@ _Generat el 09/10/2026 amb `python -m radar informe`. 79 convocatòries al catà
 
 | Data | Senyal | Convocatòria | Acció |
 |---|---|---|---|
-| 09/10/2026 | 👀 vigilar | Comissió Europea – DG DEFIS · EDIP – BraveTech EU (subvencions per a pimes de defensa) | BraveTech EU: confirmar dates (finestra set.–des. 2026) i requisits |
-| 09/10/2026 | 👀 vigilar | ACCIÓ · Projectes d'innovació tecnològica Green – Canvi climàtic | Green ACCIÓ: verificar si hi ha edició 2026 (la de 2025 tancava el 16/10) |
 | ≈ 10/10/2026 | 🔴 tancament | Fundación General CSIC · COMTE-Innovación (Fundación General CSIC) | Darrera revisió: tancament estimat el 31/10/2026 |
 | 11/10/2026 | 🟠 tall | Comissió Europea – EIC · EIC STEP Scale Up | Preparar proposta per al tall del 25/11/2026 |
 | ≈ 12/10/2026 | 🟡 preparar | Fundació "la Caixa" (CaixaResearch) · CaixaImpulse Innovació en Salut | Preparar projecte i socis: obertura estimada el 11/12/2026 |
@@ -46,9 +47,16 @@ _Generat el 09/10/2026 amb `python -m radar informe`. 79 convocatòries al catà
 | 16/10/2026 | 🟡 preparar | Comissió Europea · Horizon Europe Clúster 5 – 2Zero 2027 (vehicles de zero emissions) | Preparar projecte i socis: obertura confirmada el 15/12/2026 |
 | ≈ 16/10/2026 | 🔴 tancament | ACCIÓ · Projectes d'innovació tecnològica Green – Canvi climàtic | Tancament estimat: Projectes d'innovació tecnològica Green – Canvi climàtic |
 | ≈ 18/10/2026 | 🟡 preparar | CDTI · Ecosistemas de Innovación y Transferencia | Preparar projecte i socis: obertura estimada el 17/12/2026 |
+| 20/10/2026 | 👀 vigilar | ACCIÓ · Cupons ACCIÓ d'estratègia de creixement 2026 | Cupons d'estratègia: comprovar si encara s'accepten sol·licituds (pressupost superat) |
+| 20/10/2026 | 👀 vigilar | ACCIÓ · Cupons ACCIÓ d'innovació verda (Green) 2026 | Cupons Green: confirmar el termini d'aquesta línia i si queda pressupost |
+| 20/10/2026 | 👀 vigilar | ACCIÓ · Cupons ACCIÓ de protecció de la innovació 2026 | Cupons de protecció: confirmar el termini d'aquesta línia i si queda pressupost |
+| 20/10/2026 | 👀 vigilar | ACCIÓ · Cupons ACCIÓ per a programes europeus d'R+D+I 2026 | Cupons de programes europeus: comprovar si queda pressupost (ordre d'entrada) |
 | 20/10/2026 | 👀 vigilar | ACCIÓ i EOI, amb el Ministeri de Defensa i AeroS · Dual Technology & Industry Readiness Programme (capacitació en seguretat i defensa, fins a 400 empreses) | Dual Technology & Industry Readiness (ACCIÓ/EOI): consultar les properes sessions i inscriure-hi Stimulo i clients |
 | 23/10/2026 | 🔴 tancament | ESA + Generalitat (gestió PMT) · ESA BIC Barcelona (incubació espacial) | Darrera revisió: tancament confirmat el 13/11/2026 |
-| 26/10/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ 2026 per a la competitivitat empresarial | Darrera revisió: tancament confirmat el 16/11/2026 |
+| 26/10/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ d'estratègia de creixement 2026 | Darrera revisió: tancament confirmat el 16/11/2026 |
+| 26/10/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ d'innovació verda (Green) 2026 | Darrera revisió: tancament confirmat el 16/11/2026 |
+| 26/10/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ de protecció de la innovació 2026 | Darrera revisió: tancament confirmat el 16/11/2026 |
+| 26/10/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ per a programes europeus d'R+D+I 2026 | Darrera revisió: tancament confirmat el 16/11/2026 |
 | 26/10/2026 | 🔴 tancament | Agencia Estatal de Investigación · Doctorados Industriales 2026 (estatal) | Tancament confirmat: Doctorados Industriales 2026 (estatal) |
 | 27/10/2026 | 👀 vigilar | Grupo Cooperativo Cajamar · Cajamar Innova – incubadora de tecnologies de l'aigua i agrotech | Cajamar Innova: verificar convocatòries obertes i requisits d'ubicació |
 | 28/10/2026 | 🔴 tancament | Comissió Europea – EIC / EISMEA · EIC Pathfinder (Open i Challenges) | Tall EIC Pathfinder (Open i Challenges) |
@@ -63,7 +71,10 @@ _Generat el 09/10/2026 amb `python -m radar informe`. 79 convocatòries al catà
 | 06/11/2026 | 🔴 tancament | Agencia Espacial Española · BASS 2026 – Agencia Espacial Española | Darrera revisió: tancament confirmat el 27/11/2026 |
 | 09/11/2026 | 👀 vigilar | Programes Interreg + autoritats de gestió · Interreg (POCTEFA, SUDOE, Euro-MED, Interreg Europe) | Interreg: revisar convocatòries POCTEFA/SUDOE/Euro-MED de final de període |
 | 13/11/2026 | 🔴 tancament | ESA + Generalitat (gestió PMT) · ESA BIC Barcelona (incubació espacial) | Tancament confirmat: ESA BIC Barcelona (incubació espacial) |
-| 16/11/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ 2026 per a la competitivitat empresarial | Tancament confirmat: Cupons ACCIÓ 2026 per a la competitivitat empresarial |
+| 16/11/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ d'estratègia de creixement 2026 | Tancament confirmat: Cupons ACCIÓ d'estratègia de creixement 2026 |
+| 16/11/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ d'innovació verda (Green) 2026 | Tancament confirmat: Cupons ACCIÓ d'innovació verda (Green) 2026 |
+| 16/11/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ de protecció de la innovació 2026 | Tancament confirmat: Cupons ACCIÓ de protecció de la innovació 2026 |
+| 16/11/2026 | 🔴 tancament | ACCIÓ · Cupons ACCIÓ per a programes europeus d'R+D+I 2026 | Tancament confirmat: Cupons ACCIÓ per a programes europeus d'R+D+I 2026 |
 | 16/11/2026 | 🔴 tancament | EIT Urban Mobility (seu a Barcelona) · EIT Urban Mobility – convocatòries (startups i innovació estratègica) | Tall EIT Urban Mobility – convocatòries (startups i innovació estratègica) |
 | 16/11/2026 | 👀 vigilar | EOI (Ministeris d'Indústria, Defensa i Ciència) · IN+DEF – pimes i startups a la cadena de valor de la defensa | IN+DEF (EOI): comprovar si obre nous reptes d'ús dual |
 | 16/11/2026 | 👀 vigilar | AGAUR (Departament de Recerca i Universitats) · Indústria del Coneixement – Producte | Indústria del Coneixement – Producte: començar a contactar OTRI i grups de recerca per entrar als projectes de la convocatòria 2027 |
@@ -140,6 +151,8 @@ _Generat el 09/10/2026 amb `python -m radar informe`. 79 convocatòries al catà
 | ≈ 13/03/2027 | 🟡 preparar | CDTI · Misiones Ciencia e Innovación | Preparar projecte i socis: obertura estimada el 12/05/2027 |
 | 15/03/2027 | 🟠 tall | Comissió Europea – EIC · EIC STEP Scale Up | Preparar proposta per al tall del 29/04/2027 |
 | 15/03/2027 | 👀 vigilar | ACCIÓ · Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural) | Noves oportunitats de negoci (ACCIÓ): identificar amb clients i potencials clients una nova línia de producte i el consultor acreditat per a la fase estratègica de 2027 |
+| ≈ 16/03/2027 | 🟡 preparar | ACCIÓ · Cupons ACCIÓ de plans d'internacionalització 2026 | Preparar projecte i socis: obertura estimada el 15/05/2027 |
+| ≈ 16/03/2027 | 🟡 preparar | ACCIÓ · Cupons ACCIÓ per a la incorporació de la IA 2026 | Preparar projecte i socis: obertura estimada el 15/05/2027 |
 | ≈ 16/03/2027 | 🟡 preparar | UPC / CIM UPC (FSE+) · Industrial Tech – preacceleració de hardware (UPC + CIM UPC) | Preparar projecte i socis: obertura estimada el 15/05/2027 |
 | 17/03/2027 | 🔴 tancament | Comissió Europea · Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027 | Darrera revisió: tancament confirmat el 07/04/2027 |
 | 18/03/2027 | 🔴 tancament | Comissió Europea · Horizon Europe Clúster 4 – AI-Driven Robotics for Industry (ADRA, 2027) | Tancament confirmat: Horizon Europe Clúster 4 – AI-Driven Robotics for Industry (ADRA, 2027) |
@@ -179,8 +192,8 @@ _Generat el 09/10/2026 amb `python -m radar informe`. 79 convocatòries al catà
 
 ## 4. Per zona geogràfica on ha d'estar el beneficiari
 
+- **Catalunya** (29): Doctorats Industrials (Generalitat), Projectes d'innovació tecnològica Green – Canvi climàtic, ESA BIC Barcelona (incubació espacial), Cupons ACCIÓ per a programes europeus d'R+D+I 2026, Cupons ACCIÓ de protecció de la innovació 2026, Cupons ACCIÓ d'innovació verda (Green) 2026, Cupons ACCIÓ d'estratègia de creixement 2026, Indústria del Coneixement – Llavor, Indústria del Coneixement – Producte, Indústria del Coneixement – Innovadors, Projectes d'inversions productives a Catalunya, LLAVOR UPC (valorització en fase inicial), Projectes d'innovació tecnològica de pimes (FEDER), Startup Capital, Nuclis d'R+D (individuals i en cooperació), Cupons ACCIÓ per a la incorporació de la IA 2026, Cupons ACCIÓ de plans d'internacionalització 2026, Industrial Tech – preacceleració de hardware (UPC + CIM UPC), Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural), Inversions empresarials d'alt impacte, F2I – Fons per a l'Impuls de la Innovació (UB), Projectes d'exploració tecnològica (línia R+D+i 2026), Projectes d'innovació tecnològica per al sector de l'automòbil i la mobilitat (línia R+D+i 2026), Projectes de recerca aplicada i desenvolupament tecnològic per a la cadena de valor del sector químic, Estratègia d'innovació empresarial 2026-2030: properes línies d'ajut (≈61 M€ pendents de 2026), PILOT – Programa d'innovació tecnològica per a l'autonomia estratègica, ICF – Avalis i préstecs per a pimes (ICF Pime Innova, IFEM Innovació), Dual Technology & Industry Readiness Programme (capacitació en seguretat i defensa, fins a 400 empreses), Projectes per a la internacionalització (ACCIÓ 2026)
 - **UE + països associats** (26): EIC Pathfinder (Open i Challenges), EIC STEP Scale Up Defence 2026, EIT Health – convocatòries 2026 (startups, venture building, ecosistemes), EIC Accelerator (Open i Challenges), EIT Urban Mobility – convocatòries (startups i innovació estratègica), EIC STEP Scale Up, Women TechEU, EUREKA SMART – Call 10 (fabricació avançada), Horizon Europe – Pilar 2 (Clústers 1–6): visió general, EDIP – BraveTech EU (subvencions per a pimes de defensa), Horizon Europe Clúster 4 – Made in Europe 2027 (fabricació avançada i circular), Horizon Europe Clúster 1 – Salut 2027 (dispositius i diagnòstic), Horizon Europe Clúster 4 – AI-Driven Robotics for Industry (ADRA, 2027), Horizon Europe Clúster 5 – 2Zero 2027 (vehicles de zero emissions), Eurostars-3, Horizon Europe Clúster 6 – Alimentació, bioeconomia i agricultura 2027, European Defence Fund (EDF) – convocatòries pimes i tecnologies disruptives (EUDIS), EIC Transition, LIFE (Economia circular i qualitat de vida; Transició energètica neta), EUDIS Defence Business Accelerator, Innovation Fund (inclou Industrial Decarbonisation Bank), Convocatòries en cascada (FSTP) – robòtica, IA, fabricació, medtech, Licitacions públiques de serveis de disseny, enginyeria i R+D (PLACSP, TED), Compra Pública Precomercial (CPP) i consultes preliminars de mercat – CDTI / Defensa, Digital Europe Programme (EDIH, TEF i convocatòries DEP), Interreg (POCTEFA, SUDOE, Euro-MED, Interreg Europe)
-- **Catalunya** (24): Doctorats Industrials (Generalitat), Projectes d'innovació tecnològica Green – Canvi climàtic, ESA BIC Barcelona (incubació espacial), Cupons ACCIÓ 2026 per a la competitivitat empresarial, Indústria del Coneixement – Llavor, Indústria del Coneixement – Producte, Indústria del Coneixement – Innovadors, Projectes d'inversions productives a Catalunya, LLAVOR UPC (valorització en fase inicial), Projectes d'innovació tecnològica de pimes (FEDER), Startup Capital, Nuclis d'R+D (individuals i en cooperació), Industrial Tech – preacceleració de hardware (UPC + CIM UPC), Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural), Inversions empresarials d'alt impacte, F2I – Fons per a l'Impuls de la Innovació (UB), Projectes d'exploració tecnològica (línia R+D+i 2026), Projectes d'innovació tecnològica per al sector de l'automòbil i la mobilitat (línia R+D+i 2026), Projectes de recerca aplicada i desenvolupament tecnològic per a la cadena de valor del sector químic, Estratègia d'innovació empresarial 2026-2030: properes línies d'ajut (≈61 M€ pendents de 2026), PILOT – Programa d'innovació tecnològica per a l'autonomia estratègica, ICF – Avalis i préstecs per a pimes (ICF Pime Innova, IFEM Innovació), Dual Technology & Industry Readiness Programme (capacitació en seguretat i defensa, fins a 400 empreses), Projectes per a la internacionalització (ACCIÓ 2026)
 - **Espanya** (22): Doctorados Industriales 2026 (estatal), Torres Quevedo (PTQ) 2026, COMTE-Innovación (Fundación General CSIC), BASS 2026 – Agencia Espacial Española, Premis EmprendeXXI, Ecosistemas de Innovación y Transferencia, NEOTEC, Misiones Ciencia e Innovación, Programa COINCIDENTE, Agrupaciones Empresariales Innovadoras (AEI), Pruebas de Concepto, Proyectos de Colaboración Público-Privada (CPP), FAIIP – Fondo de Apoyo a la Inversión Industrial Productiva, Proyectos de I+D (PID), Línea Directa de Innovación (LIC / LDI), Proyectos de I+D de Transferencia Tecnológica Cervera, ENISA – préstecs participatius, SETT – Fondo Next Tech i PERTE Chip, Innvierte (coinversió CDTI), IN+DEF – pimes i startups a la cadena de valor de la defensa, Cajamar Innova – incubadora de tecnologies de l'aigua i agrotech, Fondo de Emprendedores – Fundación Repsol
 - **Andalusia · Illes Balears · Canàries · Castella i Lleó · Castella-la Manxa · Comunitat Valenciana · Extremadura · Galícia · Múrcia** (1): INNTERCONECTA STEP 2026
 - **Barcelona ciutat** (1): Impulsem el que fas
@@ -192,7 +205,12 @@ _Generat el 09/10/2026 amb `python -m radar informe`. 79 convocatòries al catà
 | Nivell | Origen | Convocatòria | Entitat | Instrument | Intensitat | Màx. | TRL | Finestra | Confiança |
 |---|---|---|---|---|---|---|---|---|---|
 | Local | Públic | [Impulsem el que fas](https://empreses.barcelonactiva.cat/en/impulsem-el-que-fas-2026) | Ajuntament de Barcelona / Barcelona Activa | subvencio | — | 40.000 € | — | ≈ 17/06/2027 → 17/07/2027 | mitjana |
-| Catalunya | Públic | [Cupons ACCIÓ 2026 per a la competitivitat empresarial](https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio/index.html) | ACCIÓ | cupo | — | 12.000 € | — | Oberta fins 16/11/2026 | mitjana |
+| Catalunya | Públic | [Cupons ACCIÓ d'estratègia de creixement 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | cupo | — | 8.000 € | — | Oberta fins 16/11/2026 | alta |
+| Catalunya | Públic | [Cupons ACCIÓ d'innovació verda (Green) 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | cupo | — | 8.000 € | — | Oberta fins 16/11/2026 | mitjana |
+| Catalunya | Públic | [Cupons ACCIÓ de plans d'internacionalització 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | cupo | — | 8.000 € | — | ≈ 15/05/2027 → 15/09/2027 | alta |
+| Catalunya | Públic | [Cupons ACCIÓ de protecció de la innovació 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | cupo | 100% | 3.000 € | — | Oberta fins 16/11/2026 | mitjana |
+| Catalunya | Públic | [Cupons ACCIÓ per a la incorporació de la IA 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | cupo | 100% | 8.000 € | — | ≈ 15/05/2027 → 30/07/2027 | baixa |
+| Catalunya | Públic | [Cupons ACCIÓ per a programes europeus d'R+D+I 2026](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/) | ACCIÓ | cupo | — | 12.000 € | — | Oberta fins 16/11/2026 | alta |
 | Catalunya | Públic | [Inversions empresarials d'alt impacte](https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/llistat-ajuts/) | ACCIÓ | subvencio | 50% | 2,0 M€ | — | ≈ 16/06/2027 → 15/09/2027 | mitjana |
 | Catalunya | Públic | [Nuclis d'R+D (individuals i en cooperació)](https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/) | ACCIÓ | subvencio | 70% | 250.000 € | 3–7 | ≈ 10/05/2027 → 21/07/2027 | baixa |
 | Catalunya | Públic | [Projectes d'exploració tecnològica (línia R+D+i 2026)](https://www.accio.gencat.cat/ca/serveis/cercador-ajuts-empresa/ajutsiserveis/26043-projectes-exploracio-tecnologica) | ACCIÓ | subvencio | 75% | 30.000 € | 3–6 | ≈ 29/07/2027 → 21/09/2027 | alta |

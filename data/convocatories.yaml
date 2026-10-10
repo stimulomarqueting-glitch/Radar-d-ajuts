@@ -21,6 +21,8 @@
 #           projectes (genera projectes de desenvolupament de producte amb clients i consorcis)
 #   compartir_clients: true si s'ha d'avisar als clients (el sol·licitant és el client)
 #   retorn_eur: [mínim, màxim] per projecte per a Stimulo, només si no es pot calcular de l'import
+#   programa: id d'un programa de data/programes.yaml quan la fitxa n'és una modalitat (p. ex. cupons-accio)
+#   seguiment: true per fer-ne seguiment actiu (recordatoris de termini al correu, bloc al pla i a l'app)
 #   calendari.recurrencia: anual | multiples_talls | continua | puntual | desconeguda
 #   calendari.obertura / tancament: última edició coneguda (o la vigent). Si ja ha passat i és
 #     anual, el radar n'estima la propera edició (+1 any) i genera les alertes.
@@ -365,38 +367,90 @@ convocatories:
     obertura: 2026-06-16
     tancament: 2026-09-15
 
-- id: accio-cupons
-  excel_fila: 6
-  nom: "Cupons ACCIÓ 2026 per a la competitivitat empresarial"
+# --- Cupons ACCIÓ a la competitivitat de l'empresa (programa en seguiment: data/programes.yaml) ---
+# Una fitxa per modalitat: cada una té el seu termini, import i requisit de proveïdor acreditat.
+
+- id: accio-cupons-programes-europeus
+  nom: "Cupons ACCIÓ per a programes europeus d'R+D+I 2026"
   entitat: ACCIÓ
   nivell: catalunya
   origen: public
   instrument: cupo
+  programa: cupons-accio
+  seguiment: true
   zones: [ES-CT]
-  ambit_geografic: Empreses amb establiment a Catalunya.
+  ambit_geografic: Pimes amb establiment operatiu a Catalunya.
   beneficiaris: [pime]
-  rols_stimulo: [beneficiari, proveidor_extern]
-  focus: [internacionalitzacio, ia, digital, disseny, cooperacio]
+  rols_stimulo: [beneficiari]
+  focus: [cooperacio, deep_tech, internacionalitzacio]
   import_max_eur: 12000
   pressupost_total_eur: 500000
-  ajuda_text: "Estratègia de creixement 8.000 €; adopció d'IA 8.000 €; protecció de la innovació (patents, models d'utilitat, dissenys industrials europeus) 3.000 €; programes europeus d'R+D+I 12.000 €; internacionalització 8.000 €."
-  descripcio: Cupons per contractar serveis especialitzats a proveïdors.
+  ajuda_text: "Fins a 12.000 € si l'empresa coordina el projecte europeu i fins a 5.000 € si n'és sòcia. Fins a dos cupons per empresa, per a convocatòries diferents. 500.000 € reservats."
+  descripcio: >
+    Assessorament extern per preparar una proposta a un programa europeu d'R+D+I (Horizon Europe i
+    altres programes europeus).
   notes: >
-    Sol·licituds des del 15/05/2026. Segons el llistat d'ACCIÓ, els cupons d'estratègia de
-    creixement i de programes europeus d'R+D+I segueixen oberts fins al 16/11/2026 a les 14:00 o fins
-    exhaurir el pressupost. Protecció de la innovació: 100 % fins a 3.000 € per registrar patents,
-    marques, models d'utilitat i dissenys industrials (proveïdors acreditats, assessorament fins al
-    30/07/2027). Innovació verda: assessorament per reduir emissions o adaptar-se al canvi climàtic
-    (un cupó per empresa; exclou qui en va rebre el 2024 o el 2025). Els cupons d'internacionalització
-    de plans van tancar el 15/09/2026.
-  url: https://www.accio.gencat.cat/en/serveis/innovacio/cupons-a-la-innovacio/index.html
+    Oberta fins al 16/11/2026 a les 14:00 o fins que s'exhaureixi el pressupost, per ordre d'entrada.
+    Bases EMT/1297/2026; convocatòria EMT/1470/2026 (BDNS 904675).
+  url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/
   fonts_verificacio:
+    - https://www.accio.gencat.cat/web/.content/01_Serveis/innovacio/cupons-innovacio/docs/ACCIO-fitxa-informativa-cupons-programes-europeus-rdi.pdf
+    - https://tramits.gencat.cat/ca/tramits/tramits-temes/subvencions-cupons-competitivitat-empresarial-any-2026
     - https://exteriors.gencat.cat/ca/ambits-dactuacio/afers_exteriors/ue/fons_europeus/detalls/noticia/20260512_cupons
+  confianca: alta
+  encaix_stimulo: >-
+    Paga la preparació de propostes europees. Stimulo el pot demanar com a sòcia (5.000 €) o
+    coordinadora (12.000 €). Un client que coordini una proposta on Stimulo fa el producte també el
+    pot fer servir per pagar-ne la redacció: lliga amb Horizon Europe Clúster 4 i Clúster 1 (terminis al
+    febrer de 2027).
+  punts_forts:
+    - "Es pot demanar dues vegades, per a dues convocatòries europees diferents."
+  socis_cal: [empresa, startup]
+  compartir_clients: true
+  linies: [creixement, projectes]
+  calendari:
+    recurrencia: anual
+    estat: oberta
+    obertura: 2026-05-15
+    tancament: 2026-11-16
+    revisar: 2026-10-20
+    revisar_motiu: "Cupons de programes europeus: comprovar si queda pressupost (ordre d'entrada)"
+
+- id: accio-cupons-proteccio
+  nom: "Cupons ACCIÓ de protecció de la innovació 2026"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: cupo
+  programa: cupons-accio
+  seguiment: true
+  zones: [ES-CT]
+  ambit_geografic: Pimes amb establiment operatiu a Catalunya.
+  beneficiaris: [pime]
+  rols_stimulo: [beneficiari]
+  focus: [disseny, transferencia]
+  intensitat_max: 100
+  import_max_eur: 3000
+  ajuda_text: "100 % fins a 3.000 € d'assessorament per registrar patents, models d'utilitat, dissenys industrials i marques europees, i per a estudis de patentabilitat o de llibertat d'operació. Les taxes de registre no són subvencionables."
+  descripcio: >
+    Assessorament d'un proveïdor acreditat per ACCIÓ (agent de propietat industrial) per protegir la
+    innovació de l'empresa.
+  notes: >
+    El servei s'ha de fer abans del 30/07/2027 (segons la fitxa). La convocatòria general tanca el
+    16/11/2026 a les 14:00; ACCIÓ no en confirma el termini concret per a aquesta línia a les fonts
+    consultades.
+  url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/
+  fonts_verificacio:
     - https://www.accio.gencat.cat/web/.content/01_Serveis/innovacio/cupons-innovacio/docs/ACCIO-fitxa-informativa-cupons-proteccio-innovacio.pdf
-    - https://www.accio.gencat.cat/web/.content/01_Serveis/innovacio/cupons-innovacio/docs/ACCIO-fitxa-informativa-cupons-innovacio-verda.pdf
+    - https://tramits.gencat.cat/ca/tramits/tramits-temes/subvencions-cupons-competitivitat-empresarial-any-2026
   confianca: mitjana
-  encaix_stimulo: 'Stimulo n''és beneficiària directa: el cupó de programes europeus (12.000 €) pot pagar la preparació d''una proposta EIC, Horizon o Eurostars, i el de protecció, el registre de dissenys industrials.'
-  socis_cal: [empresa]
+  encaix_stimulo: >-
+    Molt útil amb clients: quan Stimulo dissenya un producte, el client en pot registrar el disseny
+    industrial amb el 100 % de l'assessorament pagat (fins a 3.000 €). També serveix a Stimulo per
+    protegir dissenys propis.
+  punts_forts:
+    - "Ajut del 100 %: el client no hi posa diners, fora de les taxes."
+  socis_cal: [empresa, startup]
   compartir_clients: true
   linies: [projectes, creixement]
   calendari:
@@ -404,8 +458,167 @@ convocatories:
     estat: oberta
     obertura: 2026-05-15
     tancament: 2026-11-16
-    revisar: 2026-10-08
-    revisar_motiu: "Cupons ACCIÓ: confirmar quines modalitats segueixen obertes fins al 16/11 (programes europeus, protecció, IA)"
+    revisar: 2026-10-20
+    revisar_motiu: "Cupons de protecció: confirmar el termini d'aquesta línia i si queda pressupost"
+
+- id: accio-cupons-green
+  nom: "Cupons ACCIÓ d'innovació verda (Green) 2026"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: cupo
+  programa: cupons-accio
+  seguiment: true
+  fons: Fons Climàtic de la Generalitat (amb el Departament de Territori, Habitatge i Transició Ecològica)
+  zones: [ES-CT]
+  ambit_geografic: Pimes amb establiment operatiu a Catalunya.
+  beneficiaris: [pime]
+  rols_stimulo: [beneficiari]
+  focus: [sostenibilitat, economia_circular, energia]
+  import_max_eur: 8000
+  ajuda_text: "Fins a 8.000 € d'assessorament per identificar oportunitats d'innovació per reduir emissions o adaptar-se al canvi climàtic."
+  descripcio: >
+    Assessorament d'un proveïdor acreditat per ACCIÓ en canvi climàtic o d'un centre TECNIO per
+    identificar oportunitats d'innovació verda.
+  notes: >
+    Un cupó per empresa; en queden excloses les beneficiàries de Cupons Green el 2024 o el 2025.
+    Termini: el de la convocatòria general (16/11/2026 a les 14:00), pendent de confirmar per a
+    aquesta línia.
+  url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/
+  fonts_verificacio:
+    - https://www.accio.gencat.cat/web/.content/01_Serveis/innovacio/cupons-innovacio/docs/ACCIO-fitxa-informativa-cupons-innovacio-verda.pdf
+    - https://fegp.cat/footprint-mappa-acompanya-les-pimes-industrials-a-accedir-als-nous-cupons-green-daccio-2026/
+  confianca: mitjana
+  encaix_stimulo: >-
+    Per a clients industrials: el diagnòstic verd sovint porta a redissenyar el producte (ecodisseny,
+    materials, eficiència), que és feina de Stimulo.
+  compartir_clients: true
+  linies: [projectes, creixement]
+  calendari:
+    recurrencia: anual
+    estat: oberta
+    obertura: 2026-05-15
+    tancament: 2026-11-16
+    revisar: 2026-10-20
+    revisar_motiu: "Cupons Green: confirmar el termini d'aquesta línia i si queda pressupost"
+
+- id: accio-cupons-estrategia
+  excel_fila: 6
+  nom: "Cupons ACCIÓ d'estratègia de creixement 2026"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: cupo
+  programa: cupons-accio
+  seguiment: true
+  zones: [ES-CT]
+  ambit_geografic: Pimes amb establiment operatiu a Catalunya.
+  beneficiaris: [pime]
+  rols_stimulo: [beneficiari]
+  focus: [industria, digital]
+  import_max_eur: 8000
+  ajuda_text: "Fins a 8.000 € per contractar un assessor acreditat per ACCIÓ en estratègia."
+  descripcio: >
+    Assessorament extern al comitè de direcció per revisar el model de negoci i la capacitat de canvi, i
+    fixar les prioritats de competitivitat.
+  notes: >
+    Oberta fins al 16/11/2026 a les 14:00 o fins que s'exhaureixi el pressupost, per ordre d'entrada.
+    ACCIÓ avisa que les sol·licituds rebudes ja superen el pressupost disponible: si es demana ara, pot
+    quedar sense fons. L'assessor ha d'estar acreditat en estratègia en el moment de la sol·licitud.
+  url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/
+  fonts_verificacio:
+    - https://www.accio.gencat.cat/web/.content/01_Serveis/estrategia-i-creixement/cupons-estrategia/docs/ACCIO-fitxa-informativa-cupons-estrategia-creixement.pdf
+    - https://tramits.gencat.cat/ca/tramits/tramits-temes/subvencions-cupons-competitivitat-empresarial-any-2026
+  confianca: alta
+  encaix_stimulo: >-
+    Stimulo el pot demanar per revisar la seva estratègia (dues línies de treball, serveis nous). Per
+    als clients pime és una porta d'entrada: un pla estratègic sovint acaba en projectes de producte.
+  compartir_clients: true
+  linies: [creixement]
+  calendari:
+    recurrencia: anual
+    estat: oberta
+    obertura: 2026-05-15
+    tancament: 2026-11-16
+    revisar: 2026-10-20
+    revisar_motiu: "Cupons d'estratègia: comprovar si encara s'accepten sol·licituds (pressupost superat)"
+
+- id: accio-cupons-ia
+  nom: "Cupons ACCIÓ per a la incorporació de la IA 2026"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: cupo
+  programa: cupons-accio
+  seguiment: true
+  zones: [ES-CT]
+  ambit_geografic: >-
+    Empreses amb establiment operatiu a Catalunya, de més de 10 treballadors, amb 2 anys d'activitat i
+    de sectors prioritaris de l'estratègia industrial europea.
+  beneficiaris: [pime]
+  rols_stimulo: [beneficiari]
+  focus: [ia, digital, industria]
+  intensitat_max: 100
+  import_max_eur: 8000
+  ajuda_text: "Fins a 8.000 € (100 %, segons fonts secundàries) per a un diagnòstic i un full de ruta d'IA a curt i mitjà termini."
+  descripcio: >
+    Assessorament per identificar i prioritzar solucions d'intel·ligència artificial per a l'empresa.
+  notes: >
+    Proveïdor acreditat per ACCIÓ en Tecnologia o Tecnologies Indústria 4.0, amb un mínim de 3 projectes
+    d'IA. Termini de 2026: del 15/05 al 30/07/2026 segons una font secundària (Tecnocim Innova); ja
+    tancat. Línia nova el 2026.
+  url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/
+  fonts_verificacio:
+    - https://www.accio.gencat.cat/web/.content/01_Serveis/innovacio/cupons-innovacio/docs/ACCIO-fitxa-informativa-cupons-incorporacio-ia.pdf
+    - https://tecnociminnova.com/ca/buscador-ayudas/catalunya/cat-cuponsaccioperalaincorporaciodia/pdf
+  confianca: baixa
+  encaix_stimulo: >-
+    Per a clients industrials: el full de ruta d'IA sovint acaba en producte connectat o en equips nous,
+    i Stimulo en pot fer el desenvolupament. Stimulo només el podria demanar si té més de 10 treballadors.
+  compartir_clients: true
+  linies: [projectes]
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-05-15
+    tancament: 2026-07-30
+    revisar: 2027-04-15
+    revisar_motiu: "Cupons ACCIÓ 2027: bases i calendari (la IA va tancar el 30/07 el 2026)"
+
+- id: accio-cupons-internacionalitzacio
+  nom: "Cupons ACCIÓ de plans d'internacionalització 2026"
+  entitat: ACCIÓ
+  nivell: catalunya
+  origen: public
+  instrument: cupo
+  programa: cupons-accio
+  seguiment: true
+  zones: [ES-CT]
+  ambit_geografic: Pimes amb establiment operatiu a Catalunya i una facturació mínima de 250.000 € l'últim exercici tancat.
+  beneficiaris: [pime]
+  rols_stimulo: [beneficiari]
+  focus: [internacionalitzacio]
+  import_max_eur: 8000
+  ajuda_text: "Fins a 8.000 € per a un pla d'internacionalització amb un assessor acreditat: diagnosi, posicionament internacional, estratègia global i pla d'acció."
+  descripcio: >
+    Assessorament d'un agent d'internacionalització acreditat per ACCIÓ per definir l'estratègia
+    internacional de l'empresa.
+  notes: >
+    La línia de 2026 va tancar el 15/09/2026.
+  url: https://www.accio.gencat.cat/ca/serveis/convocatories-dajuts/cupons-accio-a-la-competitivitat-de-l-empresa/
+  fonts_verificacio:
+    - https://www.accio.gencat.cat/web/.content/01_Serveis/internacionalitzacio/comencar-a-exportar/Cupons-internacionalitzacio/docs/ACCIO-fitxa-informativa-cupons-plans-internacionalitzacio.pdf
+  confianca: alta
+  encaix_stimulo: >-
+    Per a Stimulo, si vol obrir mercats a fora. Amb clients, lliga poc amb el desenvolupament de
+    producte, però es pot comentar amb les pimes que exporten.
+  compartir_clients: true
+  linies: [creixement]
+  calendari:
+    recurrencia: anual
+    estat: tancada
+    obertura: 2026-05-15
+    tancament: 2026-09-15
 
 - id: accio-noves-oportunitats-negoci
   nom: "Projectes de creixement: noves oportunitats de negoci (canvi estratègic i canvi estructural)"
