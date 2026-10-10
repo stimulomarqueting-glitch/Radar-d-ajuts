@@ -358,7 +358,8 @@ def compon(linies: list[Linia], avui: dt.date, config: dict | None = None, resum
         assumpte = (f"Radar d'ajuts · {len(licitacions)} licitaci{'ó nova' if len(licitacions) == 1 else 'ons noves'}"
                     f" amb encaix · {avui:%d/%m/%Y}")
     elif not linies and novetats:
-        assumpte = f"Radar d'ajuts · {len(novetats)} novetats a les fonts oficials · {avui:%d/%m/%Y}"
+        assumpte = (f"Radar d'ajuts · {len(novetats)} "
+                    f"{'novetat' if len(novetats) == 1 else 'novetats'} a les fonts oficials · {avui:%d/%m/%Y}")
     elif not linies and recordatoris:
         assumpte = f"Radar d'ajuts · recordatoris d'avui · {avui:%d/%m/%Y}"
 
